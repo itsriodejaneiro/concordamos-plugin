@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  watcher-concordamos-plugin:
+    build:
+      context: .
+      dockerfile: ./compose/watcher/Dockerfile
+    volumes:
+      - ./trunk:/app

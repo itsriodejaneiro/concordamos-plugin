@@ -1,0 +1,107 @@
+@mixin small {
+  @media (max-width: $small-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+    @media (max-width: $tablet-width) {
+        @content;
+    }
+}
+@mixin mobile-up {
+  @media (min-width: #{$tablet-width}) {
+      @content;
+  }
+}
+
+@mixin tablet {
+    @media (max-width: $desktop-width) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-width) {
+        @content;
+    }
+}
+@mixin desktop-large {
+  @media (min-width: $desktop-large-width) {
+      @content;
+  }
+}
+@mixin desktop-xlarge {
+  @media (min-width: $desktop-xlarge-width) {
+      @content;
+  }
+}
+
+@mixin retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+
+@mixin triangle($direction, $sizeH, $sizeV, $color){
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(.9999);
+
+  @if $direction == top {
+    border-width: 0 $sizeV $sizeH $sizeV;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == bottom{
+    border-width: $sizeV $sizeH 0 $sizeV;
+    border-color: $color transparent transparent transparent;
+  }
+  @if $direction == left{
+    border-width: $sizeV $sizeH $sizeV 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == right{
+    border-width: $sizeV 0 $sizeV $sizeH;
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == topright{
+    border-width: 0 $sizeH $sizeV 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == bottomright{
+    border-width: 0 0 $sizeH $sizeV;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == bottomleft{
+    border-width: $sizeH 0 0 $sizeV;
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == topleft{
+    border-width: $sizeH $sizeV 0 0;
+    border-color: $color transparent transparent transparent;
+  }
+}
+
+$base-size: 16;
+
+//Function to convert px value into rem
+//You can replace rem with any other value you want (rem is most preferred value for web)
+@function size($target, $context: $base-size) {
+    @return ($target / $context) * 1rem;
+}
