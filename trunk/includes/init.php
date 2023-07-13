@@ -34,5 +34,10 @@ new CPT( 'option', [
 ] );
 
 
-
-
+// Register usermeta on role `concordamos_network`
+new UserMetadata( 'concordamos_network', 'info', __( 'Additional information (by Concordamos)', 'concordamos-textdomain' ), [
+	[
+		'id' => 'sample',
+		'label' => 'Sample'
+	]
+] );

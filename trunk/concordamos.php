@@ -26,4 +26,14 @@ define( 'CONCORDAMOS_PLUGIN_VERSION', '0.0.1' );
 require_once( 'includes/class/class-posttype.php' );
 require_once( 'includes/class/class-metadata.php' );
 require_once( 'includes/class/class-taxonomy.php' );
+require_once( 'includes/class/class-user-metadata.php' );
+
+function concordamos_init() {
+	// Add custom role `concordamos_network`
+	remove_role( 'concordamos_network' );
+	add_role( 'concordamos_network', __( 'Concordamos Network', 'concordamos-textdomain' ), ['read' => true] );
+}
+
+register_activation_hook( __FILE__, 'concordamos_init' );
+
 require_once( 'includes/init.php' );
