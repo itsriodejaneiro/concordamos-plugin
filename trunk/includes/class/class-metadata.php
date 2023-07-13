@@ -39,15 +39,12 @@ class Metadata {
 			foreach ( $this->fields as $field ) {
 				// Get field ID and label
 				$field_id = $field['id'];
-				$field_label = $field['label'];
-				$field_type = isset( $field['type'] ) ? $field['type'] : 'text';
-				$field_css = isset( $field['css'] ) ? $field['css'] : '';
 
 				// Get metadata value for the field or set it to an empty string
 				$meta_value = isset( $metadata[$field_id][0] ) ? esc_attr( $metadata[$field_id][0] ) : '';
 
 				// Render field based on type
-				$html = $this->render_field( $field_id, $field_label, $field_type, $field_css, $meta_value );
+				$html = $this->render_field( $field, $meta_value );
 
 				echo $html;
 			}
@@ -92,27 +89,34 @@ class Metadata {
 		}
 	}
 
-	public function render_field( $id, $label, $type, $css, $value ) {
-
+	public function render_field( $field, $value ) {
+		$label     = $field['label'];
+		$type      = isset( $field['type'] ) ? $field['type'] : 'text';
+		$css       = isset( $field['css'] ) ? $field['css'] : '';
 		$css_class = $css ? "field field-{$type} $css" : "field field-{$type}";
 
 		$html = "
 			<div class='{$css_class}'>
-				<label for='{$id}'>
+				<label>
 					<span class='label'>{$label}</span>
-					{$this->render_input( $id, $type, $value )}
+					{$this->render_input( $field, $value )}
 				</label>
 			</div>
 		";
 
 		return $html;
-
 	}
 
-	public function render_input( $id, $type, $value ) {
+	public function render_input( $field, $value ) {
+		$id      = $field['id'];
+		$type    = isset( $field['type'] ) ? $field['type'] : 'text';
+		$options = isset( $field['options'] ) ? $field['options'] : [];
+
 		switch ( $type ) {
 			case 'text':
 				return "<input type='text' id='{$id}' name='{$id}' value='{$value}' />";
+			case 'number':
+				return "<input type='number' id='{$id}' name='{$id}' value='{$value}' min='0' />";
 			case 'textarea':
 				$value = esc_textarea( $value );
 				return "<textarea id='{$id}' name='{$id}'>{$value}</textarea>";
@@ -122,8 +126,9 @@ class Metadata {
 			case 'radio':
 				// For radio input, value should be an array of options
 				$html = '';
-				foreach ($value as $option_value => $option_label) {
-					$html .= "<input type='radio' id='{$id}_{$option_value}' name='{$id}' value='{$option_value}'>{$option_label}<br>";
+				foreach ($options as $option_value => $option_label) {
+					$checked = ($value == $option_value) ? 'checked' : '';
+					$html .= "<input type='radio' id='{$id}_{$option_value}' name='{$id}' value='{$option_value}' {$checked}>{$option_label}<br>";
 				}
 				return $html;
 			default:
