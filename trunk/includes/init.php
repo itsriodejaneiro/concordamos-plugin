@@ -7,17 +7,51 @@ new CPT( 'vote', [
 	'menu_icon' => 'dashicons-forms'
 ] );
 
-new Metadata( 'vote', 'info', __( 'Additional information', 'concordamos-textdomain' ), [
-	[
-		'id' => 'sample',
-		'label' => 'Sample'
-	]
-] );
-
 
 // Custom post type `voting`
 new CPT( 'voting', [
 	'menu_icon' => 'dashicons-yes-alt'
+] );
+
+new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textdomain' ), [
+	[
+		'id'    => 'voting_type',
+		'label' => __( 'Voting type', 'concordamos-textdomain' ),
+		'type'  => 'radio',
+		'css'   => 'inline',
+		'options' => [
+			'public' => 'Publico',
+			'private' => 'Privada'
+		]
+	],
+	[
+		'id'          => 'voting_name',
+		'label'       => __( 'Voting name', 'concordamos-textdomain' ),
+		'placeholder' => __( 'Give the event a name', 'concordamos-textdomain' ),
+	],
+	[
+		'id'          => 'description',
+		'label'       => __( 'Description of the voting', 'concordamos-textdomain' ),
+		'placeholder' => __( 'Give theDescribe event details', 'concordamos-textdomain' ),
+	],
+	[
+		'id'          => 'number_voters',
+		'label'       => __( 'Number of voters', 'concordamos-textdomain' ),
+		'placeholder' => __( 'How many voting links would you like to generate?', 'concordamos-textdomain' ),
+		'type'        => 'number'
+	],
+	[
+		'id'          => 'credits_voter',
+		'label'       => __( 'Voting credits per voter', 'concordamos-textdomain' ),
+		'placeholder' => __( 'How many votes will each voter receive?', 'concordamos-textdomain' ),
+		'type'        => 'number'
+	],
+	[
+		'id'          => 'voting_options',
+		'label'       => __( 'Options of the voting', 'concordamos-textdomain' ),
+		'placeholder' => __( 'Select options of the voting', 'concordamos-textdomain' ),
+		'type'        => 'hidden'
+	]
 ] );
 
 // Taxonomy `tag`

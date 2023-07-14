@@ -1,0 +1,43 @@
+.post-metadata-fields {
+	.field {
+		margin-bottom: 10px;
+
+		.label {
+			display: block;
+			margin-bottom: 3px;
+		}
+
+		input[type="text"],
+		input[type="number"],
+		textarea {
+			width: 100%;
+		}
+
+		.input-hidden {
+			font-size: 11px;
+			font-style: italic;
+		}
+
+		// Radio field
+		&-radio {
+			&.inline {
+				.radio-options {
+					align-items: center;
+					display: flex;
+
+					input {
+						margin-left: 13px;
+
+						&:first-of-type {
+							margin-left: 0;
+						}
+					}
+
+					br {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

@@ -123,13 +123,16 @@ class Metadata {
 			case 'checkbox':
 				$checked = $value ? 'checked' : '';
 				return "<input type='checkbox' id='{$id}' name='{$id}' {$checked} />";
+			case 'hidden':
+				return "<input type='text' id='{$id}' name='{$id}' value='{$value}' /><span class='input-hidden'>(Input hidden)</span>";
 			case 'radio':
 				// For radio input, value should be an array of options
-				$html = '';
-				foreach ($options as $option_value => $option_label) {
+				$html = '<div class="radio-options">';
+				foreach ( $options as $option_value => $option_label ) {
 					$checked = ($value == $option_value) ? 'checked' : '';
 					$html .= "<input type='radio' id='{$id}_{$option_value}' name='{$id}' value='{$option_value}' {$checked}>{$option_label}<br>";
 				}
+				$html .= '</div>';
 				return $html;
 			default:
 				return "<input type='text' id='{$id}' name='{$id}' value='{$value}' />";
