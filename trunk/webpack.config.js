@@ -5,6 +5,7 @@ const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extract
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 const globAll = require('glob-all');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 const isProduction = process.env.NODE_ENV === 'development';
 
@@ -14,33 +15,25 @@ const getLiveReloadPort = (inputPort) => {
 };
 
 function getEntries() {
-	const out = {};
-	globAll.sync("./blocks/**/{index,script,front}.js").forEach(entry => {
-		out[entry.split('/')[2] + "-" + entry.split('/')[3].split(".")[0]] = entry;
-	});
+    const out = {};
+    const baseDirs = ['./assets/javascript/', './assets/scss/'];
+    baseDirs.forEach(baseDir => {
+        globAll.sync(path.join(baseDir, "**/*.@(js|scss)")).forEach(entry => {
+            let relativePath = path.relative(baseDir, entry);
+            let key = relativePath.replace(path.extname(entry), '');
+            out[key] = '.' + path.sep + entry;
+        });
+    });
 	return out;
-}
-
-function getScssEntries() {
-	const scssFiles = globAll.sync(['./assets/scss/**/*.scss']);
-	const entries = {};
-
-	scssFiles.forEach(file => {
-		const entryName = path.basename(file, path.extname(file));
-		entries[entryName] = file;
-	});
-
-	return entries;
 }
 
 module.exports = {
 	...defaultConfig,
 	entry: {
-		...getEntries(),
-		...getScssEntries()
+		...getEntries()
 	},
 	output: {
-		filename: 'js/[name]/[name].js',
+		filename: 'js/[name].js',
 		path: path.resolve(process.cwd(), 'build')
 	},
 	module: {
@@ -69,8 +62,9 @@ module.exports = {
 		new CleanWebpackPlugin({
 			cleanAfterEveryBuildPatterns: ['!fonts/**', '!images/**'],
 		}),
+		new FixStyleOnlyEntriesPlugin(),
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].css'
+			filename: ({ chunk }) => `css/${chunk.name.replace(/\\/g, '/')}.css`,
 		}),
 		process.env.WP_BUNDLE_ANALYZER && new BundleAnalyzerPlugin(),
 		!isProduction &&

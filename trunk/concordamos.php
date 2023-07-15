@@ -36,5 +36,8 @@ function concordamos_init() {
 
 register_activation_hook( __FILE__, 'concordamos_init' );
 
+require_once( 'includes/helpers.php' );
 require_once( 'includes/enqueues.php' );
+require_once( 'includes/templates.php' );
+require_once( 'includes/settings-page.php' );
 require_once( 'includes/init.php' );
