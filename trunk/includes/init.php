@@ -10,7 +10,8 @@ new CPT( 'vote', [
 
 // Custom post type `voting`
 new CPT( 'voting', [
-	'menu_icon' => 'dashicons-yes-alt'
+	'menu_icon' => 'dashicons-yes-alt',
+	'supports' => ['author', 'editor', 'title']
 ] );
 
 new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textdomain' ), [

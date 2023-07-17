@@ -14,6 +14,14 @@ function enqueue_scripts_frontend() {
 
 		if ( get_the_ID() == $voting_page ) {
 			wp_enqueue_script( 'concordamos-voting-form', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-page/index.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+			wp_localize_script(
+				'concordamos-voting-form',
+				'concordamos',
+				[
+					'nonce'   => wp_create_nonce( 'wp_rest' ),
+					'user_id' => get_current_user_id()
+				]
+			);
 		}
 	}
 }

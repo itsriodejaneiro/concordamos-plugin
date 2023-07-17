@@ -3,6 +3,7 @@ import Radio from "./Radio";
 import Text from "./Text";
 import Textarea from "./Textarea";
 import Number from "./Number";
+import Hidden from "./Hidden";
 
 const Form = () => {
 
@@ -12,6 +13,9 @@ const Form = () => {
 	const [numberOfVoters, setNumberOfVoters] = useState("");
 	const [votingCredits, setVotingCredits] = useState("");
 	const [tags, setTags] = useState("");
+	const [options, setOptions] = useState([]);
+
+	const baseUrl = window.location.origin + '/wp-json/concordamos/v1/create-voting/'
 
 	// voting_type options
 	const votingTypeOptions = {
@@ -27,14 +31,42 @@ const Form = () => {
 			return;
 		}
 
-		// todo: make submit form
+		fetch(baseUrl, {
+			headers: {
+				'Content-Type': 'application/json',
+				'X-WP-Nonce'  : concordamos.nonce
+		  },
+		  method: 'POST',
+			body: JSON.stringify({
+				"user_id"           : concordamos.user_id,
+				"voting_type"       : votingType,
+				"voting_name"       : votingName,
+				"voting_description": description,
+				"number_voters"     : numberOfVoters,
+				"credits_voter"     : votingCredits,
+				"tags"              : tags,
+				"options_voting"    : {
+					"option1": "Opção 1",
+					"option2": "Opção 2"
+				}
+			})
+		})
+		.then(response => response.json())
+		.then(response => {
+			if (response.status === 'error') {
+				throw new Error(response.message);
+			} else {
+				console.log(response);
+			}
+		})
+		.catch(error => console.error('Error:', error));
 	};
 
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
 				<Radio
-					defaultValue="public"
+					defaultValue={votingType}
 					label="Tipo de votação"
 					name="voting_type"
 					options={votingTypeOptions}
@@ -69,6 +101,10 @@ const Form = () => {
 					name="tags"
 					placeholder="Add comma separated tags"
 					onChange={e => setTags(e.target.value)}
+				/>
+				<Hidden
+					name="voting_options"
+					onChange={e => setOptions(e.target.value)}
 				/>
 				<button type="submit">Enviar</button>
 			</form>

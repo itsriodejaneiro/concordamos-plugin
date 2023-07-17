@@ -1,12 +1,4 @@
-import { useState } from "react"
-
-const Radio = ({defaultValue, label, name, options}) => {
-	const [selectedOption, setSelectedOption] = useState(defaultValue);
-
-	const handleChange = (event) => {
-		setSelectedOption(event.target.value);
-	};
-
+const Radio = ({defaultValue, label, name, onChange, options}) => {
 	return (
 		<>
 			<div className="field field-radio">
@@ -20,8 +12,8 @@ const Radio = ({defaultValue, label, name, options}) => {
 										name={name}
 										type="radio"
 										value={value}
-										checked={selectedOption === value}
-										onChange={handleChange}
+										checked={value === defaultValue}
+										onChange={onChange}
 									/>
 									{label}
 								</label>
