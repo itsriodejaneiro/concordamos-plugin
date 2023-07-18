@@ -40,13 +40,14 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$params = $request->get_json_params();
 
 	$required_params = [
-		"user_id",
-		"voting_type",
-		"voting_name",
-		"voting_description",
-		"number_voters",
 		"credits_voter",
-		"tags"
+		"number_voters",
+		"tags",
+		"user_id",
+		"voting_description",
+		"voting_name",
+		"voting_options",
+		"voting_type"
 	];
 
 	foreach ( $required_params as $param ) {
@@ -59,6 +60,16 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		}
 	}
 
+	$voting_options = $params['voting_options'];
+
+	foreach ( $voting_options as &$item ) {
+		$item['option_name'] = sanitize_text_field( $item['option_name'] );
+		$item['option_description'] = wp_kses_post( $item['option_description'] );
+		$item['option_link'] = esc_url( $item['option_link'] );
+	}
+
+	unset( $item );
+
 	$args = [
 		'post_type'    => 'voting',
 		'post_title'   => sanitize_text_field( $params['voting_name'] ),
@@ -69,11 +80,12 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			"tag" => sanitize_text_field( $params['tags'] )
 		],
 		'meta_input' => [
-			'voting_type'   => sanitize_text_field( $params['voting_type'] ),
-			'voting_name'   => sanitize_text_field( $params['voting_name'] ),
-			'description'   => wp_kses_post( $params['voting_description'] ),
-			'number_voters' => intval( $params['number_voters'] ),
-			'credits_voter' => intval( $params['credits_voter'] )
+			'voting_type'    => sanitize_text_field( $params['voting_type'] ),
+			'voting_name'    => sanitize_text_field( $params['voting_name'] ),
+			'description'    => wp_kses_post( $params['voting_description'] ),
+			'number_voters'  => intval( $params['number_voters'] ),
+			'credits_voter'  => intval( $params['credits_voter'] ),
+			'voting_options' => $voting_options
 		]
 	];
 

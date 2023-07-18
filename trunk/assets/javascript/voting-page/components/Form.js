@@ -4,6 +4,7 @@ import Text from "./Text";
 import Textarea from "./Textarea";
 import Number from "./Number";
 import Hidden from "./Hidden";
+import Options from "./Options";
 
 const Form = () => {
 
@@ -13,7 +14,7 @@ const Form = () => {
 	const [numberOfVoters, setNumberOfVoters] = useState("");
 	const [votingCredits, setVotingCredits] = useState("");
 	const [tags, setTags] = useState("");
-	const [options, setOptions] = useState([]);
+	const [votingOptions, setVotingOptions] = useState([]);
 
 	const baseUrl = window.location.origin + '/wp-json/concordamos/v1/create-voting/'
 
@@ -26,7 +27,7 @@ const Form = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		if (!votingType || !votingName || !description || !numberOfVoters || !votingCredits || !tags) {
+		if (!votingType || !votingName || !description || !numberOfVoters || !votingCredits || !tags || !votingOptions) {
 			alert('Please, check empty fields');
 			return;
 		}
@@ -45,10 +46,7 @@ const Form = () => {
 				"number_voters"     : numberOfVoters,
 				"credits_voter"     : votingCredits,
 				"tags"              : tags,
-				"options_voting"    : {
-					"option1": "Opção 1",
-					"option2": "Opção 2"
-				}
+				"voting_options"    : votingOptions
 			})
 		})
 		.then(response => response.json())
@@ -102,11 +100,19 @@ const Form = () => {
 					placeholder="Add comma separated tags"
 					onChange={e => setTags(e.target.value)}
 				/>
-				<Hidden
+				<Options
+					label="Opções de voto"
 					name="voting_options"
-					onChange={e => setOptions(e.target.value)}
+					value={votingOptions}
+					setVotingOptions={setVotingOptions}
 				/>
-				<button type="submit">Enviar</button>
+
+				{
+					(votingOptions.length >= 2)
+					? <button type="submit">Enviar</button>
+					: <button type="button">Adicione ao menos duas opções</button>
+				}
+
 			</form>
 		</>
 	)
