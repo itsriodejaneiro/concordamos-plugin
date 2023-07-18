@@ -14,33 +14,27 @@ class UserMetadata {
 		$this->metabox_title = $metabox_title;
 		$this->fields        = $fields;
 
+		add_action( 'user_new_form', [$this, 'show_user_meta_fields'] );
 		add_action( 'show_user_profile', [$this, 'show_user_meta_fields'] );
 		add_action( 'edit_user_profile', [$this, 'show_user_meta_fields'] );
 
+		add_action( 'edit_user_created_user', [$this, 'save_user_meta_fields'] );
 		add_action( 'personal_options_update', [$this, 'save_user_meta_fields'] );
 		add_action( 'edit_user_profile_update', [$this, 'save_user_meta_fields'] );
 	}
 
 	public function show_user_meta_fields( $user ) {
-		// Check if the current user has the role this meta box is intended for
-		if( ! in_array( $this->user_role, (array) $user->roles ) ) {
-			return;
-		}
-
 		// Nonce field for security
 		wp_nonce_field( $this->metabox_id . '_save', $this->metabox_id . '_nonce' );
 
-		// Get current meta data
-		$metadata = get_user_meta( $user->ID );
-
-		// do_action( 'qm/debug', $metadata);
-
-		echo '<h3>' . $this->metabox_title . '</h3>';
+		echo '<div class="user-metadata-concordamos">';
+		echo '<h2>' . $this->metabox_title . '</h2>';
 		echo '<table class="form-table">';
-
-			$this->render_user_meta_fields( $user );
-
+		echo '<tbody>';
+		$this->render_user_meta_fields( $user );
+		echo '</tbody>';
 		echo '</table>';
+		echo '</div>';
 	}
 
 	public function render_user_meta_fields( $user ) {
@@ -100,17 +94,17 @@ class UserMetadata {
 
 	public function render_field( $id, $label, $type, $css, $value ) {
 
-		do_action('qm/debug', [$id, $label, $type, $css, $value]);
-
 		$css_class = $css ? "field field-{$type} $css" : "field field-{$type}";
 
 		$html = "
-			<div class='{$css_class}'>
-				<label>
-					<span class='label'>{$label}</span>
+			<tr class='{$css_class}'>
+				<th scope='row'>
+					<label for='{$id}'>{$label}</label>
+				</th>
+				<td>
 					{$this->render_input( $id, $type, $value )}
-				</label>
-			</div>
+				</td>
+			</tr>
 		";
 
 		return $html;
