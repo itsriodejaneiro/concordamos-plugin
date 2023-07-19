@@ -79,6 +79,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'date_start'    => intval( $params['date_start'] ),
 			'description'   => wp_kses_post( $params['voting_description'] ),
 			'number_voters' => intval( $params['number_voters'] ),
+			'voting_access' => sanitize_text_field( $params['voting_access'] ),
 			'voting_name'   => sanitize_text_field( $params['voting_name'] ),
 			'voting_type'   => sanitize_text_field( $params['voting_type'] )
 		]
