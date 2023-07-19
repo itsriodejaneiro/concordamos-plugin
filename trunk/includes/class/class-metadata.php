@@ -134,7 +134,7 @@ class Metadata {
 				// For radio input, value should be an array of options
 				$html = '<div class="radio-options">';
 				foreach ( $options as $option_value => $option_label ) {
-					$checked = ($value == $option_value) ? 'checked' : '';
+					$checked = ( $value == $option_value ) ? 'checked' : '';
 					$html .= "<input type='radio' id='{$id}_{$option_value}' name='{$id}' value='{$option_value}' {$checked}>{$option_label}<br>";
 				}
 				$html .= '</div>';

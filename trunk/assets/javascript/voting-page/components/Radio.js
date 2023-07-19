@@ -1,9 +1,9 @@
-const Radio = ({defaultValue, label, name, onChange, options}) => {
+const Radio = ({defaultValue, label, name, onChange, options, titleCssClass}) => {
 	return (
 		<>
 			<div className="field field-radio inline">
 				<label>
-					<span className="title-section">{label}</span>
+					<span className={titleCssClass ? titleCssClass : "label"}>{label}</span>
 					<div className="radio-options">
 						{Object.entries(options).map(([value, label]) => (
 							<div key={value}>

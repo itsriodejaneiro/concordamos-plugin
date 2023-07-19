@@ -26,6 +26,16 @@ new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textd
 		]
 	],
 	[
+		'id'    => 'voting_access',
+		'label' => __( 'Require login?', 'concordamos-textdomain' ),
+		'type'  => 'radio',
+		'css'   => 'inline',
+		'options' => [
+			'yes' => 'Sim',
+			'no'  => 'Não'
+		]
+	],
+	[
 		'id'          => 'voting_name',
 		'label'       => __( 'Voting name', 'concordamos-textdomain' ),
 		'placeholder' => __( 'Give the event a name', 'concordamos-textdomain' ),

@@ -9,6 +9,7 @@ import Options from "./Options";
 const Form = () => {
 
 	const [votingType, setVotingType] = useState("public");
+	const [votingAccess, setVotingAccess] = useState("yes");
 	const [votingName, setVotingName] = useState("");
 	const [description, setDescription] = useState("");
 	const [numberOfVoters, setNumberOfVoters] = useState("");
@@ -23,6 +24,12 @@ const Form = () => {
 	const votingTypeOptions = {
 		'public': 'Votação Pública',
 		'private': 'Votação Privada'
+	}
+
+	// voting_access options
+	const votingAccessOptions = {
+		'yes': 'Sim',
+		'no': 'Não'
 	}
 
 	const handleSubmit = (event) => {
@@ -42,6 +49,7 @@ const Form = () => {
 			body: JSON.stringify({
 				"user_id"           : concordamos.user_id,
 				"voting_type"       : votingType,
+				"voting_access"     : votingAccess,
 				"voting_name"       : votingName,
 				"voting_description": description,
 				"number_voters"     : numberOfVoters,
@@ -70,8 +78,16 @@ const Form = () => {
 					defaultValue={votingType}
 					label="Tipo de votação"
 					name="voting_type"
-					options={votingTypeOptions}
 					onChange={e => setVotingType(e.target.value)}
+					options={votingTypeOptions}
+					titleCssClass="title-section"
+				/>
+				<Radio
+					defaultValue={votingAccess}
+					label="Require login?"
+					name="voting_access"
+					onChange={e => setVotingAccess(e.target.value)}
+					options={votingAccessOptions}
 				/>
 				<Text
 					label="Voting name"
