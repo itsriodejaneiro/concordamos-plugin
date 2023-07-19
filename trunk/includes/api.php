@@ -62,14 +62,6 @@ function create_voting_callback( \WP_REST_Request $request ) {
 
 	$voting_options = $params['voting_options'];
 
-	foreach ( $voting_options as &$item ) {
-		$item['option_name'] = sanitize_text_field( $item['option_name'] );
-		$item['option_description'] = wp_kses_post( $item['option_description'] );
-		$item['option_link'] = esc_url( $item['option_link'] );
-	}
-
-	unset( $item );
-
 	$args = [
 		'post_type'    => 'voting',
 		'post_title'   => sanitize_text_field( $params['voting_name'] ),
@@ -85,20 +77,42 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'description'    => wp_kses_post( $params['voting_description'] ),
 			'number_voters'  => intval( $params['number_voters'] ),
 			'credits_voter'  => intval( $params['credits_voter'] ),
-			'voting_options' => $voting_options
 		]
 	];
 
 	// Create post
 	$post_id = wp_insert_post( $args );
 
-	// Return
 	if ( $post_id ) {
+
+		foreach ( $voting_options as $item ) {
+			$option_name        = sanitize_text_field( $item['option_name'] );
+			$option_description = wp_kses_post( $item['option_description'] );
+			$option_link        = esc_url( $item['option_link'] );
+
+			$options_args = [
+				'post_type'   => 'option',
+				'post_title'  => $option_name,
+				'post_status' => 'publish',
+				'post_author' => get_current_user_id(),
+				'meta_input'  => [
+					'option_name'        => $option_name,
+					'option_description' => $option_description,
+					'option_link'        => $option_link,
+					'voting_id'          => $post_id
+				]
+			];
+
+			// Create option
+			$option_id = wp_insert_post( $options_args );
+		}
+
 		$response = [
 			'status' => 'success',
 			'message' => 'Votação criada com sucesso!'
 		];
 		return new \WP_REST_Response( $response, 200 );
+
 	} else {
 		$response = [
 			'status' => 'error',

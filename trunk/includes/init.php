@@ -33,7 +33,7 @@ new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textd
 	[
 		'id'          => 'description',
 		'label'       => __( 'Description of the voting', 'concordamos-textdomain' ),
-		'placeholder' => __( 'Give theDescribe event details', 'concordamos-textdomain' ),
+		'placeholder' => __( 'Give the describe event details', 'concordamos-textdomain' ),
 	],
 	[
 		'id'          => 'number_voters',
@@ -46,12 +46,6 @@ new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textd
 		'label'       => __( 'Voting credits per voter', 'concordamos-textdomain' ),
 		'placeholder' => __( 'How many votes will each voter receive?', 'concordamos-textdomain' ),
 		'type'        => 'number'
-	],
-	[
-		'id'          => 'voting_options',
-		'label'       => __( 'Options of the voting', 'concordamos-textdomain' ),
-		'placeholder' => __( 'Select options of the voting', 'concordamos-textdomain' ),
-		'type'        => 'hidden'
 	]
 ] );
 
@@ -65,7 +59,31 @@ new Taxonomy( 'voting', 'tag', [
 
 // Custom post type `options`
 new CPT( 'option', [
-	'menu_icon' => 'dashicons-table-row-after'
+	'menu_icon' => 'dashicons-table-row-after',
+	'supports' => ['author', 'title']
+] );
+
+new Metadata( 'option', 'info', __( 'Additional information', 'concordamos-textdomain' ), [
+	[
+		'id'          => 'option_name',
+		'label'       => __( 'Option name', 'concordamos-textdomain' ),
+		'placeholder' => __( 'Give the option a name', 'concordamos-textdomain' )
+	],
+	[
+		'id'          => 'option_description',
+		'label'       => __( 'Option description', 'concordamos-textdomain' ),
+		'placeholder' => __( 'Give the describe option details', 'concordamos-textdomain' )
+	],
+	[
+		'id'          => 'option_link',
+		'label'       => __( 'Option link', 'concordamos-textdomain' ),
+		'placeholder' => __( 'Give the link option', 'concordamos-textdomain' )
+	],
+	[
+		'id'          => 'voting_id',
+		'label'       => __( 'Voting ID', 'concordamos-textdomain' ),
+		'placeholder' => __( 'Relationship with the voting', 'concordamos-textdomain' )
+	]
 ] );
 
 
