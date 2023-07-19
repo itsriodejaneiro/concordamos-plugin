@@ -46,6 +46,16 @@ new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textd
 		'label'       => __( 'Voting credits per voter', 'concordamos-textdomain' ),
 		'placeholder' => __( 'How many votes will each voter receive?', 'concordamos-textdomain' ),
 		'type'        => 'number'
+	],
+	[
+		'id'    => 'date_start',
+		'label' => __( 'Start date', 'concordamos-textdomain' ),
+		'type'  => 'date'
+	],
+	[
+		'id'    => 'date_end',
+		'label' => __( 'End date', 'concordamos-textdomain' ),
+		'type'  => 'date'
 	]
 ] );
 

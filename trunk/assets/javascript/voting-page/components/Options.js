@@ -36,7 +36,7 @@ const Options = ({label, setVotingOptions}) => {
 	return (
 		<>
 			<div className="field field-options">
-				<span className="label">{label}</span>
+				<span className="title-section">{label}</span>
 
 				<div className="fields">
 					{inputFields.map((input, index) => {

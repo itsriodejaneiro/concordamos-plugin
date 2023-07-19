@@ -115,6 +115,11 @@ class Metadata {
 		switch ( $type ) {
 			case 'text':
 				return "<input type='text' id='{$id}' name='{$id}' value='{$value}' />";
+			case 'date':
+				$date = new \DateTime();
+				$date->setTimestamp( intval( $value ) / 1000 );
+				$date->setTimezone( new \DateTimeZone( wp_timezone_string() ) );
+				return "<input type='text' id='{$id}' name='{$id}' value='{$date->format('d/m/Y \a\t H:i:s')}' />";
 			case 'number':
 				return "<input type='number' id='{$id}' name='{$id}' value='{$value}' min='0' />";
 			case 'textarea':

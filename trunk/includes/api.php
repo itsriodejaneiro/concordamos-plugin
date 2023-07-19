@@ -47,6 +47,8 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		"voting_description",
 		"voting_name",
 		"voting_options",
+		"date_start",
+		"date_end",
 		"voting_type"
 	];
 
@@ -63,20 +65,22 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$voting_options = $params['voting_options'];
 
 	$args = [
-		'post_type'    => 'voting',
-		'post_title'   => sanitize_text_field( $params['voting_name'] ),
+		'post_author'  => get_current_user_id(), // todo: add option to vote without login
 		'post_content' => wp_kses_post( $params['voting_description'] ),
 		'post_status'  => 'draft',
-		'post_author'  => get_current_user_id(),
+		'post_title'   => sanitize_text_field( $params['voting_name'] ),
+		'post_type'    => 'voting',
 		'tax_input'    => [
-			"tag" => sanitize_text_field( $params['tags'] )
+			'tag' => sanitize_text_field( $params['tags'] )
 		],
 		'meta_input' => [
-			'voting_type'    => sanitize_text_field( $params['voting_type'] ),
-			'voting_name'    => sanitize_text_field( $params['voting_name'] ),
-			'description'    => wp_kses_post( $params['voting_description'] ),
-			'number_voters'  => intval( $params['number_voters'] ),
-			'credits_voter'  => intval( $params['credits_voter'] ),
+			'credits_voter' => intval( $params['credits_voter'] ),
+			'date_end'      => intval( $params['date_end'] ),
+			'date_start'    => intval( $params['date_start'] ),
+			'description'   => wp_kses_post( $params['voting_description'] ),
+			'number_voters' => intval( $params['number_voters'] ),
+			'voting_name'   => sanitize_text_field( $params['voting_name'] ),
+			'voting_type'   => sanitize_text_field( $params['voting_type'] )
 		]
 	];
 
@@ -108,14 +112,14 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		}
 
 		$response = [
-			'status' => 'success',
+			'status'  => 'success',
 			'message' => 'Votação criada com sucesso!'
 		];
 		return new \WP_REST_Response( $response, 200 );
 
 	} else {
 		$response = [
-			'status' => 'error',
+			'status'  => 'error',
 			'message' => 'Verifique todos os campos e envie novamente.'
 		];
 		return new \WP_REST_Response( $response, 400 );

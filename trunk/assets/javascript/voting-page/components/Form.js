@@ -3,7 +3,7 @@ import Radio from "./Radio";
 import Text from "./Text";
 import Textarea from "./Textarea";
 import Number from "./Number";
-import Hidden from "./Hidden";
+import StartEnd from "./StartEnd";
 import Options from "./Options";
 
 const Form = () => {
@@ -15,6 +15,7 @@ const Form = () => {
 	const [votingCredits, setVotingCredits] = useState("");
 	const [tags, setTags] = useState("");
 	const [votingOptions, setVotingOptions] = useState([]);
+	const [startEndDateTime, setStartEndDateTime] = useState([]);
 
 	const baseUrl = window.location.origin + '/wp-json/concordamos/v1/create-voting/'
 
@@ -27,7 +28,7 @@ const Form = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		if (!votingType || !votingName || !description || !numberOfVoters || !votingCredits || !tags || !votingOptions) {
+		if (!votingType || !votingName || !description || !numberOfVoters || !votingCredits || !tags || !startEndDateTime || !votingOptions) {
 			alert('Please, check empty fields');
 			return;
 		}
@@ -46,6 +47,8 @@ const Form = () => {
 				"number_voters"     : numberOfVoters,
 				"credits_voter"     : votingCredits,
 				"tags"              : tags,
+				"date_start"        : startEndDateTime[0],
+				"date_end"          : startEndDateTime[1],
 				"voting_options"    : votingOptions
 			})
 		})
@@ -99,6 +102,10 @@ const Form = () => {
 					name="tags"
 					placeholder="Add comma separated tags"
 					onChange={e => setTags(e.target.value)}
+				/>
+				<StartEnd
+					label="Duration of the event"
+					setStartEndDateTime={setStartEndDateTime}
 				/>
 				<Options
 					label="Opções de voto"

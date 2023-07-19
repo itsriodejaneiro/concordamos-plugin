@@ -6,12 +6,18 @@ form {
 	display: block;
 	margin-bottom: 1rem;
 
-	> label {
+	label {
 		span {
 			display: block;
 			font-weight: 700;
 			margin-bottom: .25rem;
 		}
+	}
+
+	span.label {
+		display: block;
+		font-weight: 700;
+		margin-bottom: .25rem;
 	}
 
 	input[type="text"],
@@ -27,6 +33,14 @@ form {
 	textarea {
 		min-height: 160px;
 		resize: none;
+	}
+
+	.title-section {
+		display: flex;
+		font-size: 1.5rem;
+		font-weight: 500;
+		margin-bottom: 1rem;
+		margin-top: 1.5rem;
 	}
 
 	&-radio {
@@ -45,12 +59,6 @@ form {
 	}
 
 	&-options {
-		span.label {
-			display: block;
-			font-weight: 700;
-			margin-bottom: .25rem;
-		}
-
 		.fields {
 			.option {
 				display: block;
@@ -77,5 +85,36 @@ form {
 				}
 			}
 		}
+	}
+
+	&-start-end {
+		.line {
+			margin-bottom: 1rem;
+
+			.date-time-inputs {
+				align-items: center;
+				display: flex;
+
+				span.at {
+					padding-left: 1rem;
+					padding-right: 1rem;
+				}
+
+				.react-datepicker-wrapper {
+					display: flex;
+					width: 100%;
+
+					.react-datepicker__tab-loop {
+						background-color: orange;
+					}
+
+					input {
+						box-sizing: border-box;
+					}
+				}
+			}
+
+		}
+
 	}
 }

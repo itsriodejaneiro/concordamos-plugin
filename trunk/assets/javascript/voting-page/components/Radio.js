@@ -3,7 +3,7 @@ const Radio = ({defaultValue, label, name, onChange, options}) => {
 		<>
 			<div className="field field-radio inline">
 				<label>
-					<span>{label}</span>
+					<span className="title-section">{label}</span>
 					<div className="radio-options">
 						{Object.entries(options).map(([value, label]) => (
 							<div key={value}>
