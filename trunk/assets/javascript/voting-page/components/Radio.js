@@ -1,7 +1,7 @@
 const Radio = ({defaultValue, label, name, onChange, options}) => {
 	return (
 		<>
-			<div className="field field-radio">
+			<div className="field field-radio inline">
 				<label>
 					<span>{label}</span>
 					<div className="radio-options">

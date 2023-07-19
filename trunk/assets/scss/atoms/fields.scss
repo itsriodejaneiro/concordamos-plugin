@@ -1,0 +1,81 @@
+form {
+	margin-bottom: 2rem;
+}
+
+.field {
+	display: block;
+	margin-bottom: 1rem;
+
+	> label {
+		span {
+			display: block;
+			font-weight: 700;
+			margin-bottom: .25rem;
+		}
+	}
+
+	input[type="text"],
+	input[type="number"],
+	textarea {
+		border: 3px solid #000000;
+		border-radius: 8px;
+		display: block;
+		padding: .6rem;
+		width: 100%;
+	}
+
+	textarea {
+		min-height: 160px;
+		resize: none;
+	}
+
+	&-radio {
+		&.inline {
+			.radio-options {
+				gap: 1rem;
+				display: flex;
+			}
+		}
+
+		.radio-options {
+			input {
+				margin-right: .5rem;
+			}
+		}
+	}
+
+	&-options {
+		span.label {
+			display: block;
+			font-weight: 700;
+			margin-bottom: .25rem;
+		}
+
+		.fields {
+			.option {
+				display: block;
+				margin-bottom: 2rem;
+
+				label {
+					display: block;
+					margin-bottom: 1rem;
+
+					span {
+						display: block;
+						font-weight: 700;
+						margin-bottom: .25rem;
+					}
+
+					input[type="text"],
+					textarea {
+						border: 3px solid #000000;
+						border-radius: 8px;
+						display: block;
+						padding: .6rem;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

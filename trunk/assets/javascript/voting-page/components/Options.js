@@ -36,18 +36,17 @@ const Options = ({label, setVotingOptions}) => {
 	return (
 		<>
 			<div className="field field-options">
+				<span className="label">{label}</span>
 
 				<div className="fields">
-					<span className="label">{label}</span>
-
 					{inputFields.map((input, index) => {
 						return (
-							<div key={index}>
+							<div className="option" key={index}>
 								<label>
 
 									{
 										(inputFields.length >= 2)
-										? <span>Opção {index + 1} <button type="button" onClick={() => removeFields(index)}>Remover opção</button></span>
+										? <span>Opção {index + 1} <button type="button" className="close" onClick={() => removeFields(index)}>Remover opção</button></span>
 										: <span>Opção {index + 1}</span>
 									}
 
@@ -55,6 +54,7 @@ const Options = ({label, setVotingOptions}) => {
 									<input
 										name='option_name'
 										placeholder='Título da opção'
+										type='text'
 										value={input.option_name}
 										onChange={event => handleFormChange(index, event)}
 									/>
@@ -65,6 +65,7 @@ const Options = ({label, setVotingOptions}) => {
 									<input
 										name='option_description'
 										placeholder='Descrição da opção 1'
+										type='text'
 										value={input.option_description}
 										onChange={e => handleFormChange(index, e)}
 									/>
@@ -75,6 +76,7 @@ const Options = ({label, setVotingOptions}) => {
 									<input
 										name='option_link'
 										placeholder='www.com.br'
+										type='text'
 										value={input.option_link}
 										onChange={e => handleFormChange(index, e)}
 									/>
@@ -84,7 +86,7 @@ const Options = ({label, setVotingOptions}) => {
 					})}
 				</div>
 
-				<button type="button" onClick={addFields}>Adicionar opção</button>
+				<button type="button" class="button-full" onClick={addFields}>Adicionar opção</button>
 			</div>
 		</>
 	)

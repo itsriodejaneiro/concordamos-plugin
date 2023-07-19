@@ -22,6 +22,8 @@ function enqueue_scripts_frontend() {
 					'user_id' => get_current_user_id()
 				]
 			);
+
+			wp_enqueue_style( 'concordamos-voting-form-style', CONCORDAMOS_PLUGIN_URL . 'build/css/voting-page.css', [], CONCORDAMOS_PLUGIN_VERSION );
 		}
 	}
 }

@@ -109,8 +109,8 @@ const Form = () => {
 
 				{
 					(votingOptions.length >= 2)
-					? <button type="submit">Enviar</button>
-					: <button type="button">Adicione ao menos duas opções</button>
+					? <button type="submit" class="button-full">Enviar</button>
+					: <button type="button" class="button-full disabled">Adicione ao menos duas opções</button>
 				}
 
 			</form>

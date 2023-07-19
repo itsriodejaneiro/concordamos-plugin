@@ -6,7 +6,7 @@ const Text = ({label, name, onChange, placeholder}) => {
 			<div className="field field-text">
 				<label>
 					<span>{label}</span>
-					<input name={name} placeholder={placeholder} onChange={onChange} />
+					<input name={name} placeholder={placeholder} type="text" onChange={onChange} />
 				</label>
 			</div>
 		</>
