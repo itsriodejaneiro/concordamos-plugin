@@ -161,17 +161,14 @@
 					.option-voting-grid {
 						display: grid;
 						gap: 4px;
-						grid-template-rows: repeat(var(--grid-rows), 20px);
+						grid-auto-flow: row;
+						grid-template-columns: repeat(var(--grid-rows), auto);
 						justify-content: center;
 
-						&__row {
-							display: grid;
-							gap: 4px;
-							grid-template-columns: repeat(var(--grid-rows), 20px);
-						}
-
 						&__cell {
-							background-color: #333;
+							background-color: black;
+							height: 20px;
+							width: 20px;
 						}
 					}
 
