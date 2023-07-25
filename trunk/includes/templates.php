@@ -37,9 +37,9 @@ function restrict_voting_single_access() {
 	// Check if is private voting
 	if ( $raw_post_meta['voting_type'][0] === 'private' ) {
 		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
-		$unique_ids = array_filter( explode( ',', $raw_post_meta['unique_ids'][0] ) );
+		$expired_unique_ids = array_filter( explode( ',', get_post_meta( $post_id, 'expired_unique_ids', true ) ) );
 
-		if ( $unique_id && in_array( $unique_id, $unique_ids ) ) {
+		if ( ! in_array( $unique_id, $expired_unique_ids ) ) {
 			return;
 		}
 
