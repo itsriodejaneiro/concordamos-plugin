@@ -215,13 +215,39 @@
 				}
 			}
 
-			button[type="submit"] {
+			&.view-mode {
+				.options {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					gap: size(32);
+					margin-bottom: size(32);
+
+					.option-voting {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			&.voting-mode {
+			}
+		}
+
+		.actions {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			gap: size(32);
+
+			button {
 				background-color: #FFF766;
 				display: flex;
-				margin-left: auto;
-				margin-right: auto;
 				padding-left: size(20);
 				padding-right: size(20);
+			}
+
+			.back-link {
+				cursor: pointer;
+				text-decoration: underline;
 			}
 		}
 	}
