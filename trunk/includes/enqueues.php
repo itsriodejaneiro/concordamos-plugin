@@ -26,6 +26,11 @@ function enqueue_scripts_frontend() {
 			wp_enqueue_style( 'concordamos-voting-form-style', CONCORDAMOS_PLUGIN_URL . 'build/css/voting-page.css', [], CONCORDAMOS_PLUGIN_VERSION );
 		}
 	}
+
+	if ( is_singular( 'voting' ) ) {
+		wp_enqueue_script( 'concordamos-voting-single', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-single/index.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+		wp_enqueue_style( 'concordamos-single-voting-style', CONCORDAMOS_PLUGIN_URL . 'build/css/single-voting.css', [], CONCORDAMOS_PLUGIN_VERSION );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'Concordamos\enqueue_scripts_frontend' );

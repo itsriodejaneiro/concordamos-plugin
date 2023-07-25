@@ -35,6 +35,7 @@ function permission_check( \WP_REST_Request $request ) {
 
 function create_voting_callback( \WP_REST_Request $request ) {
 
+	// Check if user has permission
 	permission_check( $request );
 
 	$params = $request->get_json_params();
@@ -52,6 +53,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		"voting_type"
 	];
 
+	// Check required params
 	foreach ( $required_params as $param ) {
 		if ( ! isset( $params[$param] ) || empty( $params[$param] ) ) {
 			$response = [
@@ -62,11 +64,27 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		}
 	}
 
-	$voting_options = $params['voting_options'];
+	$number_voters = intval( $params['number_voters'] );
+	$voting_type = sanitize_text_field( $params['voting_type'] );
+
+	$unique_ids = '';
+
+	// Generate all unique links to voting if is private
+	if ( $voting_type === 'private' ) {
+		for ( $i = 0; $i < $number_voters; $i++ ) {
+			$prefix = 'u-' . random_int( 100, 999 );
+			$unique_ids .= uniqid( $prefix ) . ',';
+		}
+	}
+
+	// Generate the post_name using random_int and uniqid functions
+	$prefix = 'v-' . random_int( 100, 999 );
+	$post_name = uniqid( $prefix );
 
 	$args = [
-		'post_author'  => get_current_user_id(), // todo: add option to vote without login
+		'post_author'  => get_current_user_id(), // @todo: add option to vote without login
 		'post_content' => wp_kses_post( $params['voting_description'] ),
+		'post_name'    => $post_name,
 		'post_status'  => 'draft',
 		'post_title'   => sanitize_text_field( $params['voting_name'] ),
 		'post_type'    => 'voting',
@@ -78,10 +96,11 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'date_end'      => intval( $params['date_end'] ),
 			'date_start'    => intval( $params['date_start'] ),
 			'description'   => wp_kses_post( $params['voting_description'] ),
-			'number_voters' => intval( $params['number_voters'] ),
+			'number_voters' => $number_voters,
+			'unique_ids'    => $unique_ids,
 			'voting_access' => sanitize_text_field( $params['voting_access'] ),
 			'voting_name'   => sanitize_text_field( $params['voting_name'] ),
-			'voting_type'   => sanitize_text_field( $params['voting_type'] )
+			'voting_type'   => $voting_type
 		]
 	];
 
@@ -89,6 +108,8 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$post_id = wp_insert_post( $args );
 
 	if ( $post_id ) {
+
+		$voting_options = $params['voting_options'];
 
 		foreach ( $voting_options as $item ) {
 			$option_name        = sanitize_text_field( $item['option_name'] );

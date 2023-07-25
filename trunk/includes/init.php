@@ -66,6 +66,11 @@ new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textd
 		'id'    => 'date_end',
 		'label' => __( 'End date', 'concordamos-textdomain' ),
 		'type'  => 'date'
+	],
+	[
+		'id'    => 'unique_ids',
+		'label' => __( 'Unique IDs to restrict voting', 'concordamos-textdomain' ),
+		'type'  => 'csv'
 	]
 ] );
 
