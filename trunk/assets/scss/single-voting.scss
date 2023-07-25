@@ -159,7 +159,20 @@
 					}
 
 					.option-voting-grid {
-						text-align: center;
+						display: grid;
+						gap: 4px;
+						grid-template-rows: repeat(var(--grid-rows), 20px);
+						justify-content: center;
+
+						&__row {
+							display: grid;
+							gap: 4px;
+							grid-template-columns: repeat(var(--grid-rows), 20px);
+						}
+
+						&__cell {
+							background-color: #333;
+						}
 					}
 
 					.option-voting-vote {
