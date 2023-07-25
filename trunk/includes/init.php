@@ -47,70 +47,70 @@ new CPT( 'voting', [
 	'supports' => ['author', 'editor', 'title']
 ] );
 
-new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textdomain' ), [
-	[
-		'id'    => 'voting_type',
-		'label' => __( 'Voting type', 'concordamos-textdomain' ),
-		'type'  => 'radio',
-		'css'   => 'inline',
-		'options' => [
-			'public' => 'Publico',
-			'private' => 'Privada'
-		]
-	],
-	[
-		'id'    => 'voting_access',
-		'label' => __( 'Require login?', 'concordamos-textdomain' ),
-		'type'  => 'radio',
-		'css'   => 'inline',
-		'options' => [
-			'yes' => 'Sim',
-			'no'  => 'Não'
-		]
-	],
-	[
-		'id'          => 'voting_name',
-		'label'       => __( 'Voting name', 'concordamos-textdomain' ),
-		'placeholder' => __( 'Give the event a name', 'concordamos-textdomain' ),
-	],
-	[
-		'id'          => 'description',
-		'label'       => __( 'Description of the voting', 'concordamos-textdomain' ),
-		'placeholder' => __( 'Give the describe event details', 'concordamos-textdomain' ),
-	],
-	[
-		'id'          => 'number_voters',
-		'label'       => __( 'Number of voters', 'concordamos-textdomain' ),
-		'placeholder' => __( 'How many voting links would you like to generate?', 'concordamos-textdomain' ),
-		'type'        => 'number'
-	],
-	[
-		'id'          => 'credits_voter',
-		'label'       => __( 'Voting credits per voter', 'concordamos-textdomain' ),
-		'placeholder' => __( 'How many votes will each voter receive?', 'concordamos-textdomain' ),
-		'type'        => 'number'
-	],
-	[
-		'id'    => 'date_start',
-		'label' => __( 'Start date', 'concordamos-textdomain' ),
-		'type'  => 'date'
-	],
-	[
-		'id'    => 'date_end',
-		'label' => __( 'End date', 'concordamos-textdomain' ),
-		'type'  => 'date'
-	],
-	[
-		'id'    => 'unique_ids',
-		'label' => __( 'Unique IDs to restrict voting', 'concordamos-textdomain' ),
-		'type'  => 'csv'
-	],
-	[
-		'id' => 'expired_unique_ids',
-		'label' => __( 'Expired unique IDs', 'concordamos-textdomain' ),
-		'type'  => 'csv'
-	]
-] );
+// new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textdomain' ), [
+// 	[
+// 		'id'    => 'voting_type',
+// 		'label' => __( 'Voting type', 'concordamos-textdomain' ),
+// 		'type'  => 'radio',
+// 		'css'   => 'inline',
+// 		'options' => [
+// 			'public' => 'Publico',
+// 			'private' => 'Privada'
+// 		]
+// 	],
+// 	[
+// 		'id'    => 'voting_access',
+// 		'label' => __( 'Require login?', 'concordamos-textdomain' ),
+// 		'type'  => 'radio',
+// 		'css'   => 'inline',
+// 		'options' => [
+// 			'yes' => 'Sim',
+// 			'no'  => 'Não'
+// 		]
+// 	],
+// 	[
+// 		'id'          => 'voting_name',
+// 		'label'       => __( 'Voting name', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Give the event a name', 'concordamos-textdomain' ),
+// 	],
+// 	[
+// 		'id'          => 'description',
+// 		'label'       => __( 'Description of the voting', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Give the describe event details', 'concordamos-textdomain' ),
+// 	],
+// 	[
+// 		'id'          => 'number_voters',
+// 		'label'       => __( 'Number of voters', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'How many voting links would you like to generate?', 'concordamos-textdomain' ),
+// 		'type'        => 'number'
+// 	],
+// 	[
+// 		'id'          => 'credits_voter',
+// 		'label'       => __( 'Voting credits per voter', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'How many votes will each voter receive?', 'concordamos-textdomain' ),
+// 		'type'        => 'number'
+// 	],
+// 	[
+// 		'id'    => 'date_start',
+// 		'label' => __( 'Start date', 'concordamos-textdomain' ),
+// 		'type'  => 'date'
+// 	],
+// 	[
+// 		'id'    => 'date_end',
+// 		'label' => __( 'End date', 'concordamos-textdomain' ),
+// 		'type'  => 'date'
+// 	],
+// 	[
+// 		'id'    => 'unique_ids',
+// 		'label' => __( 'Unique IDs to restrict voting', 'concordamos-textdomain' ),
+// 		'type'  => 'csv'
+// 	],
+// 	[
+// 		'id' => 'expired_unique_ids',
+// 		'label' => __( 'Expired unique IDs', 'concordamos-textdomain' ),
+// 		'type'  => 'csv'
+// 	]
+// ] );
 
 // Taxonomy `tag`
 new Taxonomy( 'voting', 'tag', [
