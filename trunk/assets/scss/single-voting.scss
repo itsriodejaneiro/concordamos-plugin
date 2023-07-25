@@ -10,20 +10,37 @@
 		.container {
 			align-items: center;
 			display: grid;
+			gap: size(48);
 			grid-template-columns: 2fr 1fr;
 
 			&::after,
 			&::before {
 				display: none;
 			}
+
+			@include mobile {
+				gap: 0;
+				grid-template-columns: 1fr;
+			}
 		}
 
 		.info {
+			.voting-title {
+				font-size: size(48);
+				margin-bottom: size(16);
+				margin-top: size(16);
+			}
+
 			.meta {
 				align-items: center;
 				display: flex;
 				gap: size(16);
 				margin-top: size(16);
+
+				@include mobile {
+					align-items: flex-start;
+					flex-direction: column;
+				}
 
 				.list-terms {
 					margin-bottom: 0;
@@ -32,6 +49,7 @@
 					li {
 						border-radius: size(16);
 						border: 3px solid #EDE103;
+						margin-bottom: size(5);
 						padding: size(2) size(16);
 
 						&::after {
@@ -50,6 +68,7 @@
 			position: relative;
 
 			@include mobile {
+				max-width: 100%;
 				padding-top: size(32);
 			}
 
@@ -76,17 +95,18 @@
 				z-index: 1;
 
 				.icon {
+					align-items: center;
 					background-color: #FFF766;
 					background-image: none;
-					background-repeat: no-repeat;
 					background-position: center;
+					background-repeat: no-repeat;
 					border-radius: size(16);
-					height: size(64);
-					width: size(64);
 					display: flex;
-					align-items: center;
-					justify-content: center;
 					font-size: size(24);
+					height: size(64);
+					justify-content: center;
+					margin-bottom: size(16);
+					width: size(64);
 				}
 
 				h3 {
@@ -126,6 +146,7 @@
 				grid-template-columns: 6fr 3fr minmax(auto, 180px);
 
 				@include mobile {
+					gap: 0;
 					grid-template-columns: 1fr;
 				}
 

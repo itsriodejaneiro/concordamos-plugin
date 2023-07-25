@@ -30,6 +30,18 @@ function enqueue_scripts_frontend() {
 	if ( is_singular( 'voting' ) ) {
 		wp_enqueue_script( 'concordamos-voting-single', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-single/index.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
 		wp_enqueue_style( 'concordamos-single-voting-style', CONCORDAMOS_PLUGIN_URL . 'build/css/single-voting.css', [], CONCORDAMOS_PLUGIN_VERSION );
+
+		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
+
+		wp_localize_script(
+			'concordamos-voting-single',
+			'concordamos',
+			[
+				'nonce' => wp_create_nonce( 'wp_rest' ),
+				'u_id'  => $unique_id,
+				'v_id'  => get_the_ID()
+			]
+		);
 	}
 }
 

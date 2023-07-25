@@ -93,3 +93,43 @@ function get_html_terms( int $post_id, string $tax, bool $use_link = false ) {
     return $html;
 
 }
+
+/**
+ *
+ * Formats a given timestamp into a specified date format.
+ *
+ * @param  mixed $timestamp The timestamp to be formatted. It can be in seconds or milliseconds.
+ * @param  string $format   The format in which the date should be output. Defaults to 'Y-m-d H:i:s'.
+ * @return string           The formatted date string.
+ *
+ */
+function format_timestamp_date( $timestamp, $format = 'Y-m-d H:i:s' ) {
+	if ( strlen( $timestamp ) >= 13 ) {
+		$timestamp_in_seconds = $timestamp / 1000;
+		$date = new \DateTime();
+		$date->setTimestamp( (string) $timestamp_in_seconds );
+		return $date->format( $format );
+	} else {
+		$date = new \DateTime();
+		$date->setTimestamp( (string) $timestamp );
+		return $date->format( $format );
+	}
+}
+
+/**
+ *
+ * Checks whether a given date is in the future or present.
+ *
+ * @param  string $date_string The input date as a string, expected to be in 'Y-m-d H:i:s' format.
+ * @return bool   Returns true if the input date is in the future or present, false otherwise.
+ *
+ */
+function is_future_date( $date_string ) {
+    $now = new \DateTime();
+
+    $input_date = \DateTime::createFromFormat( 'Y-m-d H:i:s', $date_string );
+
+    $interval = $now->diff( $input_date );
+
+    return $interval->invert === 0;
+}

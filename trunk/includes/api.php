@@ -8,6 +8,12 @@ function register_endpoints() {
 		'callback'            => 'Concordamos\\create_voting_callback',
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
+
+	register_rest_route( 'concordamos/v1', '/vote/', [
+		'methods'             => 'POST',
+		'callback'            => 'Concordamos\\vote_callback',
+		'permission_callback' => 'Concordamos\\permission_vote_check'
+	] );
 }
 add_action( 'rest_api_init', 'Concordamos\\register_endpoints' );
 
@@ -85,7 +91,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		'post_author'  => get_current_user_id(), // @todo: add option to vote without login
 		'post_content' => wp_kses_post( $params['voting_description'] ),
 		'post_name'    => $post_name,
-		'post_status'  => 'draft',
+		'post_status'  => 'publish',
 		'post_title'   => sanitize_text_field( $params['voting_name'] ),
 		'post_type'    => 'voting',
 		'tax_input'    => [
@@ -146,4 +152,87 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		];
 		return new \WP_REST_Response( $response, 400 );
 	}
+}
+
+// Vote
+function vote_callback( \WP_REST_Request $request ) {
+
+	$params = $request->get_json_params();
+
+	$unique_id = sanitize_title( $params['u_id'] );
+	$voting_id = intval( $params['v_id'] );
+
+	$raw_post_meta = get_post_meta( $voting_id );
+
+	$is_private = false;
+
+	if ( $raw_post_meta['voting_type'][0] === 'private' ) {
+		$is_private = true;
+	}
+
+	// Check if voting has unique ID and is private
+	if ( preg_match( '/^u-[a-z0-9]+$/i', $unique_id ) && $is_private ) {
+		$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
+
+		// Checks that unique ID was not used
+		if ( in_array( $unique_id, $expired_unique_ids ) ) {
+			$response = [
+				'status'  => 'error',
+				'message' => __( 'Expired link', 'concordamos-textdomain' )
+			];
+			return new \WP_REST_Response( $response, 400 );
+		}
+	}
+
+	// Generate the post_title using random_int and uniqid functions
+	$prefix = 'v-' . random_int( 100, 999 );
+	$post_title = uniqid( $prefix );
+
+	$args = [
+		'post_author' => get_current_user_id(),
+		'post_status' => 'publish',
+		'post_title'  => $post_title,
+		'post_type'   => 'vote',
+		'meta_input'  => [
+			'logged_user'    => is_user_logged_in() ? 'yes' : 'no',
+			'unique_id'      => $unique_id,
+			'voting_date'    => gmdate( 'Y-m-d H:i:s' ),
+			'voting_id'      => $voting_id,
+			'voting_options' => $params['votes']
+		],
+	];
+
+	// Create post
+	$post_id = wp_insert_post( $args );
+
+	if ( $post_id ) {
+		if ( $is_private ) {
+			$get_expired_unique_ids = get_post_meta( $voting_id, 'expired_unique_ids', true );
+			$get_expired_unique_ids .= $unique_id . ',';
+		}
+
+		$response = [
+			'status'  => 'success',
+			'message' => __( 'Vote registered successfully', 'concordamos-textdomain')
+		];
+
+		return new \WP_REST_Response( $response, 200 );
+	} else {
+		$response = [
+			'status'  => 'error',
+			'message' => __( 'Error registering your vote, please try again', 'concordamos-textdomain' )
+		];
+
+		return new \WP_REST_Response( $response, 400 );
+	}
+}
+
+function permission_vote_check( \WP_REST_Request $request ) {
+	$nonce = isset( $_SERVER['HTTP_X_WP_NONCE'] ) ? $_SERVER['HTTP_X_WP_NONCE'] : '';
+
+	if ( ! wp_verify_nonce( $nonce, 'wp_rest' ) ) {
+		return false;
+	}
+
+	return true;
 }

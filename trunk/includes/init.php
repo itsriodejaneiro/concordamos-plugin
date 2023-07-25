@@ -7,6 +7,39 @@ new CPT( 'vote', [
 	'menu_icon' => 'dashicons-forms'
 ] );
 
+// new Metadata( 'vote', 'info', __( 'Additional information', 'concordamos-textdomain' ), [
+// 	[
+// 		'id'    => 'logged_user',
+// 		'label' => __( 'User logged?', 'concordamos-textdomain' ),
+// 		'type'  => 'radio',
+// 		'css'   => 'inline',
+// 		'options' => [
+// 			'yes' => 'Sim',
+// 			'no'  => 'Não'
+// 		]
+// 	],
+// 	[
+// 		'id'          => 'unique_id',
+// 		'label'       => __( 'Unique ID', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Unique ID used to vote on private voting', 'concordamos-textdomain' ),
+// 	],
+// 	[
+// 		'id'    => 'voting_date',
+// 		'label' => __( 'Date voting', 'concordamos-textdomain' ),
+// 		'type'  => 'date'
+// 	],
+// 	[
+// 		'id'          => 'voting_id',
+// 		'label'       => __( 'Voting ID', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Voting ID relationship', 'concordamos-textdomain' ),
+// 	],
+// 	[
+// 		'id'          => 'voting_options',
+// 		'label'       => __( 'Options and credits', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Options and credits of the vote', 'concordamos-textdomain' ),
+// 	]
+// ] );
+
 
 // Custom post type `voting`
 new CPT( 'voting', [
@@ -71,6 +104,11 @@ new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos-textd
 		'id'    => 'unique_ids',
 		'label' => __( 'Unique IDs to restrict voting', 'concordamos-textdomain' ),
 		'type'  => 'csv'
+	],
+	[
+		'id' => 'expired_unique_ids',
+		'label' => __( 'Expired unique IDs', 'concordamos-textdomain' ),
+		'type'  => 'csv'
 	]
 ] );
 
@@ -88,28 +126,28 @@ new CPT( 'option', [
 	'supports' => ['author', 'title']
 ] );
 
-new Metadata( 'option', 'info', __( 'Additional information', 'concordamos-textdomain' ), [
-	[
-		'id'          => 'option_name',
-		'label'       => __( 'Option name', 'concordamos-textdomain' ),
-		'placeholder' => __( 'Give the option a name', 'concordamos-textdomain' )
-	],
-	[
-		'id'          => 'option_description',
-		'label'       => __( 'Option description', 'concordamos-textdomain' ),
-		'placeholder' => __( 'Give the describe option details', 'concordamos-textdomain' )
-	],
-	[
-		'id'          => 'option_link',
-		'label'       => __( 'Option link', 'concordamos-textdomain' ),
-		'placeholder' => __( 'Give the link option', 'concordamos-textdomain' )
-	],
-	[
-		'id'          => 'voting_id',
-		'label'       => __( 'Voting ID', 'concordamos-textdomain' ),
-		'placeholder' => __( 'Relationship with the voting', 'concordamos-textdomain' )
-	]
-] );
+// new Metadata( 'option', 'info', __( 'Additional information', 'concordamos-textdomain' ), [
+// 	[
+// 		'id'          => 'option_name',
+// 		'label'       => __( 'Option name', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Give the option a name', 'concordamos-textdomain' )
+// 	],
+// 	[
+// 		'id'          => 'option_description',
+// 		'label'       => __( 'Option description', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Give the describe option details', 'concordamos-textdomain' )
+// 	],
+// 	[
+// 		'id'          => 'option_link',
+// 		'label'       => __( 'Option link', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Give the link option', 'concordamos-textdomain' )
+// 	],
+// 	[
+// 		'id'          => 'voting_id',
+// 		'label'       => __( 'Voting ID', 'concordamos-textdomain' ),
+// 		'placeholder' => __( 'Relationship with the voting', 'concordamos-textdomain' )
+// 	]
+// ] );
 
 
 // Register usermeta on role `concordamos_network`

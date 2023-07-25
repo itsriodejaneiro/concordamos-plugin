@@ -8,6 +8,10 @@ export function App({ initialData }) {
 	const initialVotes = Object.keys(parseOptions).map(key => ({ id: key, count: 0 }));
 	const [votes, setVotes] = useState(initialVotes);
 
+	const formatedDateEnd = new Date(Number(date_end));
+
+	const baseUrl = window.location.origin + '/wp-json/concordamos/v1/vote/'
+
 	function handleVoteChange(id, change) {
 		setVotes(prevVotes => {
 			return prevVotes.map(vote => {
@@ -21,6 +25,29 @@ export function App({ initialData }) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+
+		fetch(baseUrl, {
+			headers: {
+				'Content-Type': 'application/json',
+				'X-WP-Nonce'  : concordamos.nonce
+		  },
+		  method: 'POST',
+			body: JSON.stringify({
+				"u_id"  : concordamos.u_id,
+				"v_id"  : concordamos.v_id,
+				"votes" : votes
+			})
+		})
+		.then(response => response.json())
+		.then(response => {
+			if (response.status === 'error') {
+				throw new Error(response.message);
+			} else {
+				console.log(response);
+				setVotes(initialVotes)
+			}
+		})
+		.catch(error => console.error('Error:', error));
 	}
 
 	return (
@@ -28,7 +55,7 @@ export function App({ initialData }) {
 			<div className="content">
 				<h2>Distribute your votes</h2>
 				<p>You can use up to {credits_voter} credits to vote during this poll</p>
-				<p>This poll ends on {date_end}</p>
+				<p>This poll ends on {formatedDateEnd.toLocaleDateString('pt-BR')}</p>
 
 				<form onSubmit={handleSubmit}>
 					{Object.keys(parseOptions).map(key => {
