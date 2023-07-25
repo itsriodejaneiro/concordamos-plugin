@@ -106,7 +106,7 @@ export function App({ initialData }) {
 						})}
 
 						<div className="actions">
-							<span onClick={(e) => handleViewChange(e)} className="back-link">Back to poll details</span>
+							<span onClick={handleViewChange} className="back-link">Back to poll details</span>
 							<button type="submit">Confirmar voto</button>
 						</div>
 					</form>
