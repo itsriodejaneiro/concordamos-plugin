@@ -209,6 +209,7 @@ function vote_callback( \WP_REST_Request $request ) {
 		if ( $is_private ) {
 			$get_expired_unique_ids = get_post_meta( $voting_id, 'expired_unique_ids', true );
 			$get_expired_unique_ids .= $unique_id . ',';
+			update_post_meta( $post_id, 'expired_unique_ids', $get_expired_unique_ids );
 		}
 
 		$response = [
