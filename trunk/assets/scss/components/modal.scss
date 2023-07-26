@@ -1,6 +1,6 @@
 .voting-modal {
 	border-radius: 32px;
-	max-width: calc(100% - 40px);
+	max-width: calc(100% - 30px);
 	padding: 0;
 
 	&__wrapper {
@@ -10,7 +10,7 @@
 		height: 100vh;
 		justify-content: center;
 		left: 0;
-		padding: 20px;
+		padding: 15px;
 		position: fixed;
 		top: 0;
 		width: 100vw;
@@ -22,7 +22,7 @@
 	}
 
 	header, main {
-		padding: 16px 32px
+		padding: 16px 32px;
 	}
 
 
