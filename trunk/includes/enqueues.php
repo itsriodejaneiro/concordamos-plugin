@@ -43,6 +43,20 @@ function enqueue_scripts_frontend() {
 			]
 		);
 	}
+
+	if ( is_post_type_archive( 'voting' ) ) {
+		wp_enqueue_script( 'concordamos-voting-archive', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-archive/index.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+		wp_enqueue_style( 'concordamos-voting-archive-style', CONCORDAMOS_PLUGIN_URL . 'build/css/archive-voting.css', [], CONCORDAMOS_PLUGIN_VERSION );
+
+		wp_localize_script(
+			'concordamos-voting-archive',
+			'concordamos',
+			[
+				'is_admin' => current_user_can( 'manage_options' ),
+				'nonce' => wp_create_nonce( 'wp-rest' ),
+			]
+		);
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'Concordamos\enqueue_scripts_frontend' );

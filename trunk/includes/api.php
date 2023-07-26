@@ -14,6 +14,12 @@ function register_endpoints() {
 		'callback'            => 'Concordamos\\vote_callback',
 		'permission_callback' => 'Concordamos\\permission_vote_check'
 	] );
+
+	register_rest_route( 'concordamos/v1', '/votings/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\search_votings_callback',
+		'permission_callback' => '__return_true',
+	]);
 }
 add_action( 'rest_api_init', 'Concordamos\\register_endpoints' );
 
@@ -37,6 +43,44 @@ function permission_check( \WP_REST_Request $request ) {
 
 	return true;
 
+}
+
+function search_votings_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$args = [
+		'post_type' => 'voting',
+		'posts_per_page' => 6,
+		'paged' => empty($params['page']) ? 1 : $params['page'],
+	];
+
+	$meta_query = [];
+
+	if (!empty($params['query'])) {
+		$args['s'] = $params['query'];
+	}
+
+	if (!empty($params['type'])) {
+		$meta_query[] = [ 'key' => 'voting_type', 'value' => $params['type'] ];
+	}
+
+	if (!empty($params['access'])) {
+		$meta_query[] = [ 'key' => 'voting_access', 'value' => $params['access'] ];
+	}
+
+	if (!empty($params['status'])) {
+		if ($params['status'] === 'open') {
+			$meta_query[] = [ 'key' => 'date_end', 'compare' => '>', 'value' => time() ];
+		} else if ($params['status'] === 'closed') {
+			$meta_query[] = [ 'key' => 'date_end', 'compare' => '<', 'value' => time() ];
+		}
+	}
+
+	if (!empty($meta_query)) {
+		$args['meta_query'] = $meta_query;
+	}
+
+	return get_posts($args);
 }
 
 function create_voting_callback( \WP_REST_Request $request ) {
