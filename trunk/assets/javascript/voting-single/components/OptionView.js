@@ -11,7 +11,7 @@ const OptionView = ({ key, name, description, link, id }) => {
 					}
 
 					{ link
-						? <a className="voting-link" href="{link}" target="_blank" rel="noopener">{link}</a>
+						? <a className="voting-link" href={link} target="_blank" rel="noopener">{link}</a>
 						: null
 					}
 				</div>
