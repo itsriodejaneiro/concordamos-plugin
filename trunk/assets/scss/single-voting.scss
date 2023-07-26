@@ -221,6 +221,10 @@
 					gap: size(32);
 					margin-bottom: size(32);
 
+					@include mobile {
+						grid-template-columns: 1fr;
+					}
+
 					.option-voting {
 						display: flex;
 						margin-bottom: 0;
