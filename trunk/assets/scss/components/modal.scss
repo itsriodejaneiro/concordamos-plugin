@@ -1,0 +1,43 @@
+.voting-modal {
+	border-radius: 32px;
+	max-width: calc(100% - 40px);
+	padding: 0;
+
+	&__wrapper {
+		align-items: center;
+		background-color: #111111A3;
+		display: none;
+		height: 100vh;
+		justify-content: center;
+		left: 0;
+		padding: 20px;
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		z-index: 1000;
+
+		&.open {
+			display: flex;
+		}
+	}
+
+	header, main {
+		padding: 16px 32px
+	}
+
+
+	header {
+		align-items: center;
+		background-color: #26A9F9;
+		border-radius: 29px 29px 0 0;
+		display: flex;
+		justify-content: end;
+	}
+
+	main {
+
+		h2 {
+			text-transform: initial;
+		}
+	}
+}

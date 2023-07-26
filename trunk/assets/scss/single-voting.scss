@@ -1,5 +1,7 @@
-@import '../scss/settings/mixins.scss';
-@import '../scss/atoms/buttons.scss';
+@import 'settings/mixins';
+@import 'atoms/buttons';
+
+@import 'components/modal';
 
 .single-voting {
 	.voting-header {
@@ -239,13 +241,18 @@
 			button {
 				background-color: #FFF766;
 				display: flex;
-				padding-left: size(20);
-				padding-right: size(20);
 			}
 
 			.back-link {
 				cursor: pointer;
 				text-decoration: underline;
+			}
+		}
+
+		.voting-modal {
+
+			.button.primary {
+				background-color: #FFF766;
 			}
 		}
 	}

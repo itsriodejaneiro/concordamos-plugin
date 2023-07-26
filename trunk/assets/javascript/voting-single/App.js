@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Modal from '../shared/components/Modal'
 import Option from "./components/Option"
 import OptionView from "./components/OptionView"
 
@@ -15,6 +16,7 @@ export function App({ initialData }) {
 
 	const initialVotes = Object.keys(parseOptions).map(key => ({ id: key, count: 0 }));
 	const [votes, setVotes] = useState(initialVotes);
+	const [modalOpen, setModalOpen] = useState(false);
 
 	const formatedDateEnd = new Date(Number(date_end));
 
@@ -29,6 +31,19 @@ export function App({ initialData }) {
 				return vote;
 			});
 		});
+	}
+
+	function closeModal () {
+		setModalOpen(false)
+	}
+
+	function openModal () {
+		setModalOpen(true)
+	}
+
+	function confirmVote (event) {
+		event.preventDefault();
+		openModal();
 	}
 
 	const handleSubmit = (event) => {
@@ -89,7 +104,7 @@ export function App({ initialData }) {
 					<p>You can use up to {credits_voter} credits to vote during this poll</p>
 					<p>This poll ends on {formatedDateEnd.toLocaleDateString('pt-BR')}</p>
 
-					<form onSubmit={handleSubmit}>
+					<form onSubmit={confirmVote}>
 						{Object.keys(parseOptions).map(key => {
 							const voteCount = votes.find(vote => vote.id === key)?.count || 0;
 							return (
@@ -110,6 +125,15 @@ export function App({ initialData }) {
 							<button type="submit">Confirmar voto</button>
 						</div>
 					</form>
+
+					<Modal open={modalOpen} onClose={closeModal}>
+						<h2>Confirmação de voto</h2>
+						<p>Após confirmar seu voto, ele não poderá ser alterado. Você pode acessar as suas opções de votos nas <a href="#">informações da votação</a>.</p>
+						<div class="buttons">
+							<button type="button" className="button primary" onClick={handleSubmit}>Votar</button>
+							<button type="button" className="button link" onClick={closeModal}>Cancelar</button>
+						</div>
+					</Modal>
 				</div>
 			}
 		</>
