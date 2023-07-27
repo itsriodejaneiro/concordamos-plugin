@@ -1,15 +1,16 @@
 import { useState } from "react"
+import Checkbox from "./Checkbox";
+import Number from "./Number";
+import Options from "./Options";
 import Radio from "./Radio";
+import StartEnd from "./StartEnd";
 import Text from "./Text";
 import Textarea from "./Textarea";
-import Number from "./Number";
-import StartEnd from "./StartEnd";
-import Options from "./Options";
 
 const Form = () => {
 
 	const [votingType, setVotingType] = useState("public");
-	const [votingAccess, setVotingAccess] = useState("yes");
+	const [votingAccess, setVotingAccess] = useState("no");
 	const [votingName, setVotingName] = useState("");
 	const [description, setDescription] = useState("");
 	const [numberOfVoters, setNumberOfVoters] = useState("");
@@ -17,6 +18,10 @@ const Form = () => {
 	const [tags, setTags] = useState("");
 	const [votingOptions, setVotingOptions] = useState([]);
 	const [startEndDateTime, setStartEndDateTime] = useState([]);
+
+	const handleChange = (event) => {
+		setVotingAccess(event.target.checked ? "yes" : "no");
+	};
 
 	const baseUrl = window.location.origin + '/wp-json/concordamos/v1/create-voting/'
 
@@ -97,12 +102,14 @@ const Form = () => {
 					options={votingTypeOptions}
 					titleCssClass="title-section"
 				/>
-				<Radio
-					defaultValue={votingAccess}
-					label="Require login?"
+
+				<span className="title-section">General voting settings</span>
+				<p>Enter the name, description, number of voters, credits and tags for the poll</p>
+
+				<Checkbox
+					label="Request login to vote"
 					name="voting_access"
-					onChange={e => setVotingAccess(e.target.value)}
-					options={votingAccessOptions}
+					onChange={e => handleChange(e)}
 				/>
 				<Text
 					label="Voting name"
@@ -136,6 +143,7 @@ const Form = () => {
 				/>
 				<StartEnd
 					label="Duration of the event"
+					description="Once the voting period has started, the vote cannot be deleted. You can change the duration of the poll later"
 					setStartEndDateTime={setStartEndDateTime}
 				/>
 				<Options

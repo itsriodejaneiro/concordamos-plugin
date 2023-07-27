@@ -8,6 +8,7 @@
 			background-image: url(../../assets/images/edit.svg);
 			background-repeat: no-repeat;
 			background-position: left center;
+			background-size: size(14);
 			border: 0;
 			border-radius: 0;
 			margin-left: size(16);
@@ -19,6 +20,7 @@
 			background-image: url(../../assets/images/trash.svg);
 			background-repeat: no-repeat;
 			background-position: left center;
+			background-size: size(14);
 			border: 0;
 			border-radius: 0;
 			margin-left: size(16);
@@ -29,7 +31,19 @@
 	label {
 		button {
 			&.trash {
+				opacity: 0;
 				text-indent: -9999px;
+				transition: opacity .3s ease;
+			}
+		}
+	}
+
+	.option.open:hover {
+		label {
+			button {
+				&.trash {
+					opacity: 1;
+				}
 			}
 		}
 	}

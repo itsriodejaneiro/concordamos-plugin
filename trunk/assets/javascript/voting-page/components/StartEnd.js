@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const StartEnd = ({ label, setStartEndDateTime }) => {
+const StartEnd = ({ description, label, setStartEndDateTime }) => {
 
 	const today = new Date()
 
@@ -18,6 +18,11 @@ const StartEnd = ({ label, setStartEndDateTime }) => {
 		<>
 			<div className="field field-start-end">
 				<span className="title-section">{label}</span>
+				{
+					description
+					? <span className="description-section">{description}</span>
+					: null
+				}
 
 				<div className="line">
 					<span className="label">Start</span>
