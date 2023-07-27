@@ -85,8 +85,7 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 	$query = new \WP_Query($args);
 
 	return [
-		'page' => $currentPage,
-		'pages' => $query->max_num_pages,
+		'num_pages' => $query->max_num_pages,
 		'posts' => array_map('Concordamos\\prepare_voting_for_api', $query->posts),
 	];
 }

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import Paginate from 'react-paginate'
 
 import Radio from './components/Radio'
 import { useFetch } from '../shared/hooks/fetch'
@@ -41,10 +42,6 @@ export function App() {
 	const [filters, setFilters] = useState({ access: '', status: '' })
 	const [page, setPage] = useState(1)
 
-	useEffect(() => {
-		setPage(1)
-	}, [query, filters])
-
 	const { data } = useFetch(buildUrl(query, filters, page), {
 		method: 'GET',
 		headers: {
@@ -52,10 +49,20 @@ export function App() {
 		}
 	}, [query, filters, page])
 
-	function setFilter (key) {
+	function onQueryChange (event) {
+		setQuery(event)
+		setPage(1)
+	}
+
+	function onFilterChange (key) {
 		return function (value) {
 			setFilters((filters) => ({ ...filters, [key]: value }))
+			setPage(1)
 		}
+	}
+
+	function onPageChange (event) {
+		setPage(event.selected + 1)
 	}
 
 	return (
@@ -63,7 +70,7 @@ export function App() {
 			<div class="voting-archive-header">
 				<h1>Busque uma votação</h1>
 				<form>
-					<input type="search" placeholder="Buscar por..." value={query} onChange={setQuery}/>
+					<input type="search" placeholder="Buscar por..." value={query} onChange={onQueryChange}/>
 					<button type="submit">
 						<span>Pesquisar</span>
 					</button>
@@ -71,12 +78,21 @@ export function App() {
 				<details>
 					<summary>Filtros</summary>
 					<div class="filter-label">Status da votação</div>
-					<Radio name="status" options={votingStatusOptions} value={filters.status} onChange={setFilter('status')}/>
+					<Radio name="status" options={votingStatusOptions} value={filters.status} onChange={onFilterChange('status')}/>
 					<div class="filter-label">Requer login?</div>
-					<Radio name="access" options={votingAccessOptions} value={filters.access} onChange={setFilter('access')}/>
+					<Radio name="access" options={votingAccessOptions} value={filters.access} onChange={onFilterChange('access')}/>
 				</details>
 			</div>
 			<pre>{JSON.stringify(data, null, 2)}</pre>
+			<Paginate
+				breakLabel="..."
+				forcePage={page - 1}
+				nextLabel="Próxima"
+				pageCount={data?.num_pages ?? 0}
+				previousLabel="Anterior"
+				renderOnZeroPageCount={null}
+				onPageChange={onPageChange}
+			/>
 		</div>
 	)
 }
