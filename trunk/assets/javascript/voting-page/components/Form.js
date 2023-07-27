@@ -22,14 +22,14 @@ const Form = () => {
 
 	// voting_type options
 	const votingTypeOptions = {
-		'public': 'Votação Pública',
-		'private': 'Votação Privada'
+		'public': 'Public voting',
+		'private': 'Private voting'
 	}
 
 	// voting_access options
 	const votingAccessOptions = {
-		'yes': 'Sim',
-		'no': 'Não'
+		'yes': 'Yes',
+		'no': 'No'
 	}
 
 	const handleSubmit = (event) => {
@@ -91,7 +91,7 @@ const Form = () => {
 			<form onSubmit={handleSubmit}>
 				<Radio
 					defaultValue={votingType}
-					label="Tipo de votação"
+					label="Type of the voting"
 					name="voting_type"
 					onChange={e => setVotingType(e.target.value)}
 					options={votingTypeOptions}
@@ -139,7 +139,7 @@ const Form = () => {
 					setStartEndDateTime={setStartEndDateTime}
 				/>
 				<Options
-					label="Opções de voto"
+					label="Options of the voting"
 					description="Enter your poll options (add at least 2 options to advance)"
 					name="voting_options"
 					value={votingOptions}
