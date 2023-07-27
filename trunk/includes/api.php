@@ -72,9 +72,9 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 
 	if (!empty($params['status'])) {
 		if ($params['status'] === 'open') {
-			$meta_query[] = [ 'key' => 'date_end', 'compare' => '>', 'value' => time() ];
+			$meta_query[] = [ 'key' => 'date_end', 'compare' => '>', 'value' => 1000 * time() ];
 		} else if ($params['status'] === 'closed') {
-			$meta_query[] = [ 'key' => 'date_end', 'compare' => '<', 'value' => time() ];
+			$meta_query[] = [ 'key' => 'date_end', 'compare' => '<', 'value' => 1000 * time() ];
 		}
 	}
 

@@ -134,7 +134,15 @@ function is_future_date( $date_string ) {
     return $interval->invert === 0;
 }
 
-function prepare_voting_for_api ( \WP_Post $post ) {
+function is_voting_open (\WP_Post $post) {
+	$start = get_post_meta($post->ID, 'date_start', true);
+	$end = get_post_meta($post->ID, 'date_end', true);
+	$now = 1000 * time();
+
+	return $now > $start && $now < $end;
+}
+
+function prepare_voting_for_api (\WP_Post $post) {
 	$rawPostMeta = get_post_meta($post->ID);
 	$postMeta = [];
 
@@ -152,6 +160,7 @@ function prepare_voting_for_api ( \WP_Post $post ) {
 		'excerpt' => $post->post_excerpt,
 		'status' => $post->post_status,
 		'permalink' => get_permalink($post),
+		'open' => is_voting_open($post),
 		'meta' => $postMeta,
 	];
 }
