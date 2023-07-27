@@ -52,7 +52,12 @@ module.exports = {
 				test: /\.scss$/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					'css-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							url: false
+						}
+					},
 					'sass-loader',
 				],
 			},
@@ -60,7 +65,12 @@ module.exports = {
 				test: /\.css$/,
 				use: [
 				  'style-loader',
-				  'css-loader',
+				  {
+					loader: 'css-loader',
+					options: {
+						url: false
+					}
+				  },
 				  'sass-loader',
 				],
 			  },

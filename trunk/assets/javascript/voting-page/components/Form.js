@@ -1,15 +1,16 @@
 import { useState } from "react"
+import Checkbox from "./Checkbox";
+import Number from "./Number";
+import Options from "./Options";
 import Radio from "./Radio";
+import StartEnd from "./StartEnd";
 import Text from "./Text";
 import Textarea from "./Textarea";
-import Number from "./Number";
-import StartEnd from "./StartEnd";
-import Options from "./Options";
 
 const Form = () => {
 
 	const [votingType, setVotingType] = useState("public");
-	const [votingAccess, setVotingAccess] = useState("yes");
+	const [votingAccess, setVotingAccess] = useState("no");
 	const [votingName, setVotingName] = useState("");
 	const [description, setDescription] = useState("");
 	const [numberOfVoters, setNumberOfVoters] = useState("");
@@ -18,18 +19,22 @@ const Form = () => {
 	const [votingOptions, setVotingOptions] = useState([]);
 	const [startEndDateTime, setStartEndDateTime] = useState([]);
 
+	const handleChange = (event) => {
+		setVotingAccess(event.target.checked ? "yes" : "no");
+	};
+
 	const baseUrl = window.location.origin + '/wp-json/concordamos/v1/create-voting/'
 
 	// voting_type options
 	const votingTypeOptions = {
-		'public': 'Votação Pública',
-		'private': 'Votação Privada'
+		'public': 'Public voting',
+		'private': 'Private voting'
 	}
 
 	// voting_access options
 	const votingAccessOptions = {
-		'yes': 'Sim',
-		'no': 'Não'
+		'yes': 'Yes',
+		'no': 'No'
 	}
 
 	const handleSubmit = (event) => {
@@ -91,18 +96,20 @@ const Form = () => {
 			<form onSubmit={handleSubmit}>
 				<Radio
 					defaultValue={votingType}
-					label="Tipo de votação"
+					label="Type of the voting"
 					name="voting_type"
 					onChange={e => setVotingType(e.target.value)}
 					options={votingTypeOptions}
 					titleCssClass="title-section"
 				/>
-				<Radio
-					defaultValue={votingAccess}
-					label="Require login?"
+
+				<span className="title-section">General voting settings</span>
+				<p>Enter the name, description, number of voters, credits and tags for the poll</p>
+
+				<Checkbox
+					label="Request login to vote"
 					name="voting_access"
-					onChange={e => setVotingAccess(e.target.value)}
-					options={votingAccessOptions}
+					onChange={e => handleChange(e)}
 				/>
 				<Text
 					label="Voting name"
@@ -136,10 +143,11 @@ const Form = () => {
 				/>
 				<StartEnd
 					label="Duration of the event"
+					description="Once the voting period has started, the vote cannot be deleted. You can change the duration of the poll later"
 					setStartEndDateTime={setStartEndDateTime}
 				/>
 				<Options
-					label="Opções de voto"
+					label="Options of the voting"
 					description="Enter your poll options (add at least 2 options to advance)"
 					name="voting_options"
 					value={votingOptions}
@@ -148,10 +156,9 @@ const Form = () => {
 
 				{
 					(votingOptions.length >= 2)
-					? <button type="submit" class="button-full">Enviar</button>
-					: <button type="button" class="button-full disabled">Adicione ao menos duas opções</button>
+					? <button type="submit" class="button-full">Send vote</button>
+					: <button type="button" class="button-full disabled">Add at least two options</button>
 				}
-
 			</form>
 		</>
 	)

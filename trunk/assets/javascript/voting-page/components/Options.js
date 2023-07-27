@@ -96,8 +96,8 @@ const Options = ({label, description, setVotingOptions}) => {
 									<label>
 										{
 											inputFields.length >= 2
-											? <span>Opção {index + 1} <button className="trash" type="button" onClick={() => removeFields(index)}>Delete</button></span>
-											: <span>Opção {index + 1}</span>
+											? <span>Option {index + 1} <button className="trash" type="button" onClick={() => removeFields(index)}>Delete</button></span>
+											: <span>Option {index + 1}</span>
 										}
 
 										<input
@@ -110,7 +110,7 @@ const Options = ({label, description, setVotingOptions}) => {
 									</label>
 
 									<label>
-										<span>Descrição da opção {index + 1}</span>
+										<span>Description of the option {index + 1}</span>
 										<input
 											name='option_description'
 											placeholder='Description of the option'
@@ -121,7 +121,7 @@ const Options = ({label, description, setVotingOptions}) => {
 									</label>
 
 									<label>
-										<span>Link da opção {index + 1}</span>
+										<span>Link of the option {index + 1}</span>
 										<input
 											name='option_link'
 											placeholder='www.example.com.br'

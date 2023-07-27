@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 const Text = ({label, name, onChange, placeholder}) => {
 	return (
 		<>

@@ -5,14 +5,46 @@
 	button {
 		&.edit {
 			background-color: transparent;
+			background-image: url(../../assets/images/edit.svg);
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: size(14);
 			border: 0;
-			padding: 0 size(16);
+			border-radius: 0;
+			margin-left: size(16);
+			padding: 0 size(16) 0 size(24);
 		}
 
 		&.trash {
 			background-color: transparent;
+			background-image: url(../../assets/images/trash.svg);
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: size(14);
 			border: 0;
-			padding: 0 size(16);
+			border-radius: 0;
+			margin-left: size(16);
+			padding: 0 size(16) 0 size(24);
+		}
+	}
+
+	label {
+		button {
+			&.trash {
+				opacity: 0;
+				text-indent: -9999px;
+				transition: opacity .3s ease;
+			}
+		}
+	}
+
+	.option.open:hover {
+		label {
+			button {
+				&.trash {
+					opacity: 1;
+				}
+			}
 		}
 	}
 }
