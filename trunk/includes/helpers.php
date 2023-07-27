@@ -154,13 +154,26 @@ function prepare_voting_for_api (\WP_Post $post) {
 		}
 	}
 
+	$rawTags = get_the_terms($post, 'tag');
+	$tags = [];
+
+	foreach ($rawTags as $tag) {
+		$tags[] = [
+			'ID' => $tag->term_id,
+			'name' => $tag->name,
+			'slug' => $tag->slug,
+		];
+	}
+
 	return [
 		'ID' => $post->ID,
 		'title' => $post->post_title,
+		'content' => $post->post_content,
 		'excerpt' => $post->post_excerpt,
 		'status' => $post->post_status,
 		'permalink' => get_permalink($post),
 		'open' => is_voting_open($post),
 		'meta' => $postMeta,
+		'tags' => $tags,
 	];
 }
