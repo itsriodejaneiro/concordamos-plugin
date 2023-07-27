@@ -35,8 +35,23 @@ const Form = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
+		if (numberOfVoters <= 0) {
+			alert('The number of voters must be greater than zero');
+			return;
+		}
+
+		if (votingCredits <= 0) {
+			alert('The number of credits must be greater than zero');
+			return;
+		}
+
 		if (!votingType || !votingName || !description || !numberOfVoters || !votingCredits || !tags || !startEndDateTime || !votingOptions) {
-			alert('Please, check empty fields');
+			alert('Check empty fields');
+			return;
+		}
+
+		if (startEndDateTime[1] <= startEndDateTime[0]) {
+			alert('Check start and end date');
 			return;
 		}
 
@@ -125,6 +140,7 @@ const Form = () => {
 				/>
 				<Options
 					label="Opções de voto"
+					description="Enter your poll options (add at least 2 options to advance)"
 					name="voting_options"
 					value={votingOptions}
 					setVotingOptions={setVotingOptions}

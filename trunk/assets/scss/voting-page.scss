@@ -1,5 +1,18 @@
 @import 'atoms/fields';
 @import 'atoms/buttons';
 
-body {
+#concordamos-voting-form {
+	button {
+		&.edit {
+			background-color: transparent;
+			border: 0;
+			padding: 0 size(16);
+		}
+
+		&.trash {
+			background-color: transparent;
+			border: 0;
+			padding: 0 size(16);
+		}
+	}
 }
