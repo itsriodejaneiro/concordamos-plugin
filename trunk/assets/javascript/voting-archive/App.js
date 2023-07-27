@@ -71,10 +71,11 @@ export function App() {
 		<div className="voting-archive">
 			<div class="voting-archive-header">
 				<h1>Busque uma votação</h1>
-				<form>
+				<form className="voting-search-form">
 					<DebounceInput type="search" debounceTimeout={500} placeholder="Buscar por..." value={query} onChange={onQueryChange}/>
 					<button type="submit">
-						<span>Pesquisar</span>
+						<span className="sr-only">Pesquisar</span>
+						<i className="icon"/>
 					</button>
 				</form>
 				<details>

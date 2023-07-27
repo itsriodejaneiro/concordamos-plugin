@@ -1,1 +1,37 @@
 @import 'settings/mixins';
+
+.voting-archive {
+	margin: auto;
+	max-width: 1200px;
+	padding-inline: 15px;
+	width: 100%;
+
+	.icon {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 1em;
+		display: inline-block;
+		height: 1em;
+		width: 1em;
+	}
+
+	.voting-archive-header {
+
+		h1 {
+			font-family: 'Osvald';
+			font-size: 4rem;
+			text-align: center;
+		}
+
+		form {
+
+			button {
+				line-height: 1;
+
+				.icon {
+					background-image: url(../../assets/images/search.svg);
+				}
+			}
+		}
+	}
+}
