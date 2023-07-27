@@ -35,8 +35,18 @@ const Form = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
+		if (numberOfVoters <= 0) {
+			alert('The number of voters must be greater than zero');
+			return;
+		}
+
+		if (votingCredits <= 0) {
+			alert('The number of credits must be greater than zero');
+			return;
+		}
+
 		if (!votingType || !votingName || !description || !numberOfVoters || !votingCredits || !tags || !startEndDateTime || !votingOptions) {
-			alert('Please, check empty fields');
+			alert('Check empty fields');
 			return;
 		}
 
