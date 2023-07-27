@@ -18,8 +18,8 @@ function buildUrl (query, filters, page) {
 	if (filters.access) {
 		params.set('access', filters.access)
 	}
-	if (filters.status) {
-		params.set('status', filters.status)
+	if (filters.time) {
+		params.set('time', filters.time)
 	}
 
 	return url
@@ -31,15 +31,16 @@ const votingAccessOptions = {
 	'': 'Tudo',
 }
 
-const votingStatusOptions = {
-	'open': 'Abertas',
-	'closed': 'Fechadas',
+const votingTimeOptions = {
+	'past': 'Concluídas',
+	'present': 'Abertas',
+	'future': 'Futuras',
 	'': 'Todas',
 }
 
 export function App() {
 	const [query, setQuery] = useState('')
-	const [filters, setFilters] = useState({ access: '', status: '' })
+	const [filters, setFilters] = useState({ access: '', time: '' })
 	const [page, setPage] = useState(1)
 
 	const { data } = useFetch(buildUrl(query, filters, page), {
@@ -78,7 +79,7 @@ export function App() {
 				<details>
 					<summary>Filtros</summary>
 					<div class="filter-label">Status da votação</div>
-					<Radio name="status" options={votingStatusOptions} value={filters.status} onChange={onFilterChange('status')}/>
+					<Radio name="time" options={votingTimeOptions} value={filters.time} onChange={onFilterChange('time')}/>
 					<div class="filter-label">Requer login?</div>
 					<Radio name="access" options={votingAccessOptions} value={filters.access} onChange={onFilterChange('access')}/>
 				</details>

@@ -52,6 +52,7 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 
 	$args = [
 		'post_type' => 'voting',
+		'post_status' => 'publish',
 		'posts_per_page' => 6,
 		'paged' => $currentPage,
 	];
@@ -70,11 +71,19 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 		$meta_query[] = [ 'key' => 'voting_access', 'value' => $params['access'] ];
 	}
 
-	if (!empty($params['status'])) {
-		if ($params['status'] === 'open') {
-			$meta_query[] = [ 'key' => 'date_end', 'compare' => '>', 'value' => 1000 * time() ];
-		} else if ($params['status'] === 'closed') {
-			$meta_query[] = [ 'key' => 'date_end', 'compare' => '<', 'value' => 1000 * time() ];
+	if (!empty($params['time'])) {
+		$now = 1000 * time();
+
+		if ($params['time'] === 'present') {
+			$meta_query[] = [
+				[ 'key' => 'date_end', 'compare' => '>', 'value' => $now ],
+				[ 'key' => 'date_start', 'compare' => '<', 'value' => $now ],
+				'relation' => 'AND',
+			];
+		} else if ($params['time'] === 'past') {
+			$meta_query[] = [ 'key' => 'date_end', 'compare' => '<', 'value' => $now ];
+		} else if ($params['time'] === 'future') {
+			$meta_query[] = [ 'key' => 'date_start', 'compare' => '>', 'value' => $now ];
 		}
 	}
 
