@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { DebounceInput } from 'react-debounce-input'
 import Paginate from 'react-paginate'
 
 import Radio from './components/Radio'
@@ -71,7 +72,7 @@ export function App() {
 			<div class="voting-archive-header">
 				<h1>Busque uma votação</h1>
 				<form>
-					<input type="search" placeholder="Buscar por..." value={query} onChange={onQueryChange}/>
+					<DebounceInput type="search" debounceTimeout={500} placeholder="Buscar por..." value={query} onChange={onQueryChange}/>
 					<button type="submit">
 						<span>Pesquisar</span>
 					</button>
