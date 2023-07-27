@@ -75,6 +75,10 @@ form {
 					align-items: center;
 					display: flex;
 					justify-content: space-between;
+
+					span {
+						font-weight: 700;
+					}
 				}
 
 				&-content {
@@ -145,8 +149,6 @@ form {
 					}
 				}
 			}
-
 		}
-
 	}
 }
