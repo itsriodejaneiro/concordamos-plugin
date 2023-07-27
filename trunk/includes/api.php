@@ -48,10 +48,12 @@ function permission_check( \WP_REST_Request $request ) {
 function search_votings_callback ( \WP_REST_Request $request ) {
 	$params = $request->get_params();
 
+	$currentPage = empty($params['page']) ? 1 : $params['page'];
+
 	$args = [
 		'post_type' => 'voting',
 		'posts_per_page' => 6,
-		'paged' => empty($params['page']) ? 1 : $params['page'],
+		'paged' => $currentPage,
 	];
 
 	$meta_query = [];
@@ -80,7 +82,13 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 		$args['meta_query'] = $meta_query;
 	}
 
-	return get_posts($args);
+	$query = new \WP_Query($args);
+
+	return [
+		'page' => $currentPage,
+		'pages' => $query->max_num_pages,
+		'posts' => $query->posts,
+	];
 }
 
 function create_voting_callback( \WP_REST_Request $request ) {

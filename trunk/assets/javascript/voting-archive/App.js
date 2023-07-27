@@ -7,13 +7,13 @@ const userIsAdmin = concordamos.is_admin
 
 function buildUrl (query, filters) {
 	const votingStatus = (filters.open) ? (filters.closed ? '' : 'open') : (filters.closed ? 'closed' : '')
-	const votingAccess = (filters.withoutLogin) ? (filters.withLogin ? '' : 'yes') : (filters.withLogin ? 'no' : '')
+	const votingAccess = (filters.unlogged) ? (filters.logged ? '' : 'no') : (filters.logged ? 'yes' : '')
 	return `${baseUrl}?query=${query}&type=public&status=${votingStatus}&access=${votingAccess}`
 }
 
 export function App() {
 	const [query, setQuery] = useState('')
-	const [filters, setFilters] = useState({ closed: true, open: true, withLogin: true, withoutLogin: true })
+	const [filters, setFilters] = useState({ closed: true, logged: true, open: true, unlogged: true })
 
 	const { data: results } = useFetch(buildUrl(query, filters), {
 		method: 'GET',
