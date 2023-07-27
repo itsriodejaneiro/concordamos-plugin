@@ -1,3 +1,4 @@
+@import '../settings/variables.scss';
 @import '../settings/mixins.scss';
 
 form {
@@ -159,6 +160,22 @@ form {
 
 					input {
 						box-sizing: border-box;
+
+						&.date {
+							background-image: url(../../assets/images/calendar.svg);
+							background-repeat: no-repeat;
+							background-position: size(5) center;
+							background-size: size(20);
+							padding-left: size(32);
+						}
+
+						&.time {
+							background-image: url(../../assets/images/clock.svg);
+							background-repeat: no-repeat;
+							background-position: size(5) center;
+							background-size: size(20);
+							padding-left: size(30);
+						}
 					}
 				}
 			}

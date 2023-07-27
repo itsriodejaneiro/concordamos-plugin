@@ -29,6 +29,7 @@ const StartEnd = ({ description, label, setStartEndDateTime }) => {
 
 					<div className="date-time-inputs">
 						<DatePicker
+							className="date"
 							dateFormat="dd/MM/yyyy"
 							minDate={new Date()}
 							selected={startDate}
@@ -38,6 +39,7 @@ const StartEnd = ({ description, label, setStartEndDateTime }) => {
 						<span class="at">at</span>
 
 						<DatePicker
+							className="time"
 							minDate={today}
 							selected={startDate}
 							onChange={(date) => setStartDate(date.getTime())}
@@ -54,6 +56,7 @@ const StartEnd = ({ description, label, setStartEndDateTime }) => {
 
 					<div className="date-time-inputs">
 						<DatePicker
+							className="date"
 							dateFormat="dd/MM/yyyy"
 							minDate={today}
 							selected={endDate}
@@ -63,12 +66,13 @@ const StartEnd = ({ description, label, setStartEndDateTime }) => {
 						<span class="at">at</span>
 
 						<DatePicker
+							className="time"
 							minDate={today}
 							selected={endDate}
 							onChange={(date) => setEndDate(date.getTime())}
 							showTimeSelect
 							showTimeSelectOnly
-							timeCaption="Horário"
+							timeCaption="Time"
 							dateFormat="hh:mm aa"
 							timeIntervals={10}
 						/>
