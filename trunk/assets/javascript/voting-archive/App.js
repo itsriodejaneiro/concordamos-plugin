@@ -51,7 +51,7 @@ export function App() {
 	}, [query, filters, page])
 
 	function onQueryChange (event) {
-		setQuery(event)
+		setQuery(event.target.value)
 		setPage(1)
 	}
 
