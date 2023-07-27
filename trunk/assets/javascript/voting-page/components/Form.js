@@ -40,6 +40,11 @@ const Form = () => {
 			return;
 		}
 
+		if (startEndDateTime[1] <= startEndDateTime[0]) {
+			alert('Check start and end date');
+			return;
+		}
+
 		fetch(baseUrl, {
 			headers: {
 				'Content-Type': 'application/json',
