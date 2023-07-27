@@ -48,7 +48,7 @@ function permission_check( \WP_REST_Request $request ) {
 function search_votings_callback ( \WP_REST_Request $request ) {
 	$params = $request->get_params();
 
-	$currentPage = empty($params['page']) ? 1 : $params['page'];
+	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
 
 	$args = [
 		'post_type' => 'voting',
@@ -87,7 +87,7 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 	return [
 		'page' => $currentPage,
 		'pages' => $query->max_num_pages,
-		'posts' => $query->posts,
+		'posts' => array_map('Concordamos\\prepare_voting_for_api', $query->posts),
 	];
 }
 

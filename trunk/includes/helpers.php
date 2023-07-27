@@ -133,3 +133,25 @@ function is_future_date( $date_string ) {
 
     return $interval->invert === 0;
 }
+
+function prepare_voting_for_api ( \WP_Post $post ) {
+	$rawPostMeta = get_post_meta($post->ID);
+	$postMeta = [];
+
+	$skippedMeta = ['expired_unique_id', 'unique_ids'];
+
+	foreach ($rawPostMeta as $key => $value) {
+		if (!str_starts_with($key, '_') && !in_array($key, $skippedMeta) && !empty($value)) {
+			$postMeta[$key] = $value[0];
+		}
+	}
+
+	return [
+		'ID' => $post->ID,
+		'title' => $post->post_title,
+		'excerpt' => $post->post_excerpt,
+		'status' => $post->post_status,
+		'permalink' => get_permalink($post),
+		'meta' => $postMeta,
+	];
+}
