@@ -38,15 +38,8 @@ const votingStatusOptions = {
 
 export function App() {
 	const [query, setQuery] = useState('')
-	// const [filters, setFilters] = useState({ closed: true, logged: true, open: true, unlogged: true })
 	const [filters, setFilters] = useState({ access: '', status: '' })
 	const [page, setPage] = useState(1)
-
-	// function toggleFilter (key) {
-	// 	return function () {
-	// 		setFilters((filters) => ({ ...filters, [key]: !filters[key] }))
-	// 	}
-	// }
 
 	useEffect(() => {
 		setPage(1)

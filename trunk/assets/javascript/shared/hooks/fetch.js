@@ -6,20 +6,26 @@ export function useFetch (url, options, dependencies) {
 	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
-		let ignore = false
+		const abort = new AbortController()
 
 		async function fetchData () {
 			setLoading(true)
 
-			const res = await fetch(url, options)
-			const json = await res.json()
+			try {
+				const response = await fetch(url, {signal: abort.signal, ...options })
+				const data = await response.json()
 
-			if (!ignore) {
 				setLoading(false)
-				if (json.status === 'error') {
-					setError(json.message)
+				if (data.status === 'error') {
+					setError(new Error(data.message))
 				} else {
-					setData(json)
+					setData(data)
+				}
+			} catch (err) {
+				if (!err instanceof AbortController) {
+					setLoading(false)
+					setError(err)
+					console.error(err)
 				}
 			}
 		}
@@ -27,7 +33,7 @@ export function useFetch (url, options, dependencies) {
 		fetchData()
 
 		return () => {
-			ignore = true
+			abort.abort()
 		}
 	}, dependencies)
 
