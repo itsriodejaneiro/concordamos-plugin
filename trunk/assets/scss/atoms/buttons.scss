@@ -1,3 +1,6 @@
+@import '../settings/variables.scss';
+@import '../settings/mixins.scss';
+
 button {
 	background-color: #FFFFFF;
 	border-radius: 50px;
@@ -11,16 +14,6 @@ button {
 	&.disabled {
 		opacity: .6;
 		pointer-events: none;
-	}
-
-	&.close {
-		background-color: red;
-		border-radius: 2rem;
-		border: 0;
-		height: 20px;
-		padding: 0;
-		text-indent: -9999px;
-		width: 20px;
 	}
 
 	&.link {

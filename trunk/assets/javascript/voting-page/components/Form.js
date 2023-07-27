@@ -140,6 +140,7 @@ const Form = () => {
 				/>
 				<Options
 					label="Opções de voto"
+					description="Enter your poll options (add at least 2 options to advance)"
 					name="voting_options"
 					value={votingOptions}
 					setVotingOptions={setVotingOptions}

@@ -1,3 +1,5 @@
+@import '../settings/mixins.scss';
+
 form {
 	margin-bottom: 2rem;
 }
@@ -62,7 +64,22 @@ form {
 		.fields {
 			.option {
 				display: block;
-				margin-bottom: 2rem;
+				margin-bottom: size(16);
+				margin-top: size(16);
+				background-color: #FFFFFF;
+				border: 3px solid #000000;
+				border-radius: size(16);
+				padding: size(16);
+
+				&-header {
+					align-items: center;
+					display: flex;
+					justify-content: space-between;
+				}
+
+				&-content {
+					display: none;
+				}
 
 				label {
 					display: block;
@@ -82,6 +99,21 @@ form {
 						padding: .6rem;
 						width: 100%;
 					}
+				}
+			}
+
+			.option.open {
+				background-color: transparent;
+				border: 0;
+				border-radius: 0;
+				padding: 0;
+
+				.option-header {
+					display: none;
+				}
+
+				.option-content {
+					display: block;
 				}
 			}
 		}
