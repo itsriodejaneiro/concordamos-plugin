@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Concordamos
  * Description:       Sistema de voto quadrático do Concordamos
- * Version:           0.0.5
+ * Version:           0.0.6
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Author:            Hacklab Team
@@ -21,7 +21,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 define( 'CONCORDAMOS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CONCORDAMOS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'CONCORDAMOS_PLUGIN_VERSION', '0.0.5' );
+define( 'CONCORDAMOS_PLUGIN_VERSION', '0.0.6' );
 
 require_once( 'includes/class/class-posttype.php' );
 require_once( 'includes/class/class-metadata.php' );
@@ -39,6 +39,7 @@ register_activation_hook( __FILE__, 'concordamos_init' );
 require_once( 'includes/rewrite.php' );
 require_once( 'includes/helpers.php' );
 require_once( 'includes/enqueues.php' );
+require_once( 'includes/redirects.php' );
 require_once( 'includes/templates.php' );
 require_once( 'includes/settings-page.php' );
 require_once( 'includes/api.php' );
