@@ -22,15 +22,31 @@
 			font-size: 4rem;
 			text-align: center;
 		}
+	}
 
-		form {
+	.voting-search-form {
+		display: flex;
 
-			button {
-				line-height: 1;
+		& > * {
+			border: 3px solid black;
+		}
 
-				.icon {
-					background-image: url(../../assets/images/search.svg);
-				}
+		input {
+			background-color: white;
+			border-right: none;
+			border-radius: 32px 0 0 32px;
+			flex: 1;
+			padding: 0.5rem 32px;
+		}
+
+		button {
+			background-color: #26A9F9;
+			border-radius: 0 32px 32px 0;
+			line-height: 1;
+			padding: 0.5rem 32px;
+
+			.icon {
+				background-image: url(../../assets/images/search.svg);
 			}
 		}
 	}

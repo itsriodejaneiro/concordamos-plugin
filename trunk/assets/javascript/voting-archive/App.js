@@ -3,6 +3,7 @@ import { DebounceInput } from 'react-debounce-input'
 import Paginate from 'react-paginate'
 
 import Radio from './components/Radio'
+import VotingCard from './components/VotingCard'
 import { useFetch } from '../shared/hooks/fetch'
 
 const baseUrl = window.location.origin + '/wp-json/concordamos/v1/votings/'
@@ -71,22 +72,28 @@ export function App() {
 		<div className="voting-archive">
 			<div class="voting-archive-header">
 				<h1>Busque uma votação</h1>
-				<form className="voting-search-form">
-					<DebounceInput type="search" debounceTimeout={500} placeholder="Buscar por..." value={query} onChange={onQueryChange}/>
-					<button type="submit">
-						<span className="sr-only">Pesquisar</span>
-						<i className="icon"/>
-					</button>
-				</form>
-				<details>
-					<summary>Filtros</summary>
-					<div class="filter-label">Status da votação</div>
-					<Radio name="time" options={votingTimeOptions} value={filters.time} onChange={onFilterChange('time')}/>
-					<div class="filter-label">Requer login?</div>
-					<Radio name="access" options={votingAccessOptions} value={filters.access} onChange={onFilterChange('access')}/>
-				</details>
+				<div class="voting-archive-filters">
+					<form className="voting-search-form">
+						<DebounceInput type="search" debounceTimeout={500} placeholder="Buscar por..." value={query} onChange={onQueryChange}/>
+						<button type="submit">
+							<span className="sr-only">Pesquisar</span>
+							<i className="icon"/>
+						</button>
+					</form>
+					<details>
+						<summary>Filtros</summary>
+						<div class="filter-label">Status da votação</div>
+						<Radio name="time" options={votingTimeOptions} value={filters.time} onChange={onFilterChange('time')}/>
+						<div class="filter-label">Requer login?</div>
+						<Radio name="access" options={votingAccessOptions} value={filters.access} onChange={onFilterChange('access')}/>
+					</details>
+				</div>
 			</div>
-			<pre>{JSON.stringify(data, null, 2)}</pre>
+			<div className="voting-archive-grid">
+			{(data?.posts ?? []).map((post) => (
+				<VotingCard key={post.ID} voting={post}/>
+			))}
+			</div>
 			<Paginate
 				breakLabel="..."
 				forcePage={page - 1}
