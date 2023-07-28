@@ -14,6 +14,7 @@
 			display: grid;
 			gap: size(48);
 			grid-template-columns: 2fr 1fr;
+			width: 100%;
 
 			&::after,
 			&::before {
@@ -121,7 +122,7 @@
 				&.finished {
 					.icon {
 						background-color: #EDE103;
-						background-image: url(../images/visto.svg);
+						background-image: url(../../assets/images/visto.svg);
 						text-indent: -99999px;
 					}
 				}
@@ -134,105 +135,144 @@
 		border-top: 3px solid #000000;
 		padding-bottom: size(48);
 
-		.content {
-			.option-voting {
-				align-items: center;
-				background-color: #FFFFFF;
-				border: 3px solid #000000;
-				border-radius: 32px;
-				gap: size(16);
-				margin-bottom: size(32);
-				padding: size(32);
+		.wrapper {
+			display: grid;
+			gap: size(16);
+			grid-template-columns: 3fr 1fr;
 
-				display: grid;
-				grid-template-columns: 6fr 3fr minmax(auto, 180px);
-
-				@include mobile {
-					gap: 0;
-					grid-template-columns: 1fr;
-				}
-
-				> div {
-					h3 {
-						font-size: size(24);
-						font-weight: 600;
-						margin-bottom: 0;
-						margin-top: 0;
-					}
-
-					.option-voting-grid {
-						display: grid;
-						gap: 4px;
-						grid-auto-flow: row;
-						grid-template-columns: repeat(var(--grid-rows), auto);
-						justify-content: center;
-
-						&__cell {
-							background-color: black;
-							height: 20px;
-							width: 20px;
-						}
-					}
-
-					.option-voting-vote {
-						display: flex;
-						justify-content: space-between;
-						gap: size(8);
-
-						@include mobile {
-							justify-content: center;
-						}
-
-						button {
-							align-items: center;
-							border-radius: 8px;
-							border: 3px solid #000000;
-							display: flex;
-							font-size: size(20);
-							height: 40px;
-							justify-content: center;
-							line-height: 1;
-							text-align: center;
-							width: 40px;
-
-							&.button-down {
-								background-color: #FF2E22;
-							}
-
-							&.button-up {
-								background-color: #26A9F9;
-							}
-						}
-
-						input {
-							background-color: transparent;
-							border: 0;
-							max-width: size(80);
-							text-align: center;
-						}
-					}
-				}
+			@include mobile {
+				display: flex;
+				flex-direction: column-reverse;
 			}
 
-			&.view-mode {
-				.options {
-					display: grid;
-					grid-template-columns: 1fr 1fr;
-					gap: size(32);
+			.content {
+				.option-voting {
+					align-items: center;
+					background-color: #FFFFFF;
+					border: 3px solid #000000;
+					border-radius: 32px;
+					gap: size(16);
 					margin-bottom: size(32);
+					padding: size(32);
+
+					display: grid;
+					grid-template-columns: 6fr 3fr minmax(auto, 180px);
 
 					@include mobile {
+						gap: 0;
 						grid-template-columns: 1fr;
 					}
 
-					.option-voting {
-						display: flex;
-						margin-bottom: 0;
+					> div {
+						h3 {
+							font-size: size(24);
+							font-weight: 600;
+							margin-bottom: 0;
+							margin-top: 0;
+						}
+
+						.option-voting-grid {
+							display: grid;
+							gap: 4px;
+							grid-auto-flow: row;
+							grid-template-columns: repeat(var(--grid-rows), auto);
+							justify-content: center;
+
+							&__cell {
+								background-color: black;
+								height: 20px;
+								width: 20px;
+							}
+						}
+
+						.option-voting-vote {
+							display: flex;
+							justify-content: space-between;
+							gap: size(8);
+
+							@include mobile {
+								justify-content: center;
+							}
+
+							button {
+								align-items: center;
+								border-radius: 8px;
+								border: 3px solid #000000;
+								display: flex;
+								font-size: size(20);
+								height: 40px;
+								justify-content: center;
+								line-height: 1;
+								text-align: center;
+								width: 40px;
+
+								&.button-down {
+									background-color: #FF2E22;
+								}
+
+								&.button-up {
+									background-color: #26A9F9;
+								}
+							}
+
+							input {
+								background-color: transparent;
+								border: 0;
+								max-width: size(80);
+								text-align: center;
+							}
+						}
 					}
+				}
+
+				&.view-mode {
+					.options {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						gap: size(32);
+						margin-bottom: size(32);
+
+						@include tablet {
+							grid-template-columns: 1fr;
+						}
+
+						.option-voting {
+							display: flex;
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				&.voting-mode {
 				}
 			}
 
-			&.voting-mode {
+			.sidebar {
+				padding-top: size(64);
+
+				@include mobile {
+					padding-top: size(32);
+				}
+
+				.option-voting-grid {
+					display: grid;
+					gap: 2px;
+					grid-auto-flow: row;
+					grid-template-columns: repeat(var(--grid-rows), auto);
+					justify-content: center;
+					margin-bottom: size(16);
+
+					&__cell {
+						background-color: black;
+						height: 10px;
+						width: 10px;
+					}
+				}
+
+				span {
+					display: block;
+					text-align: center;
+				}
 			}
 		}
 
@@ -254,7 +294,6 @@
 		}
 
 		.voting-modal {
-
 			.button.primary {
 				background-color: #FFF766;
 			}

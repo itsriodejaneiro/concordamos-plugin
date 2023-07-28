@@ -25,6 +25,7 @@ function load_single_voting_template( $template ) {
 }
 
 add_filter( 'single_template', 'Concordamos\load_single_voting_template' );
+add_filter( 'singular_template', 'Concordamos\load_single_voting_template' );
 
 function load_voting_archive_template( $template ) {
 	if ( is_post_type_archive( 'voting' ) && $template !== locate_template( [ 'archive-voting.php' ] ) ) {
