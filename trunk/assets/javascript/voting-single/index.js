@@ -7,7 +7,8 @@ const elementRender = document.getElementById('concordamos-voting-single')
 const initialData = {
 	credits_voter: elementRender.dataset.credits_voter,
 	date_end: elementRender.dataset.date_end,
-	options: elementRender.dataset.options
+	options: elementRender.dataset.options,
+	is_panel: elementRender.dataset.is_panel
 }
 
 ReactDOM.render(<App initialData={initialData} />, elementRender);

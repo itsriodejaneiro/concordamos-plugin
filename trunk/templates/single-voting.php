@@ -19,6 +19,8 @@ $date_end = $raw_post_meta['date_end'][0];
 
 $date_start_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_date( $date_start ) ) ) ? 'date date-start' : 'date date-start started';
 $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_date( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
+
+$is_panel = get_query_var( 'panel' );
 ?>
 
 	<div class="voting-header">
@@ -35,10 +37,19 @@ $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_dat
 				<?php endif; ?>
 
 				<div class="meta">
-					<?php echo Concordamos\get_html_terms( $post_id, 'tag' ); ?>
-					<span class="author"><?php _e( 'Criado por:' ); ?> <?php echo $voting_author; ?></span>
+					<?php if ( ! $is_panel ) : ?>
+						<?php echo Concordamos\get_html_terms( $post_id, 'tag' ); ?>
+						<span class="author"><?php _e( 'Criado por:' ); ?> <?php echo $voting_author; ?></span>
+					<?php else : ?>
+						<?php if ( Concordamos\is_voting_owner( $post_id ) ) : ?>
+							<?php // @todo: Adicionar links e ícones ?>
+							<span>Alterar duração</span>
+							<span>Deletar votação</span>
+						<?php endif; ?>
+					<?php endif; ?>
 				</div>
 			</div>
+
 			<div class="dates">
 				<div class="<?php echo $date_start_class; ?>">
 					<div class="icon">1</div>
@@ -56,12 +67,15 @@ $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_dat
 		</div>
 	</div>
 
-	<div class="voting-content">
+	<?php $content_class = $is_panel ? "voting-content is-panel" : "voting-content"; ?>
+
+	<div class="<?php echo $content_class; ?>">
 		<div class="container">
  			<div class="render" id="concordamos-voting-single"
 				data-credits_voter="<?php echo $raw_post_meta['credits_voter'][0]; ?>"
 				data-options="<?php echo htmlspecialchars( json_encode( $options ) , ENT_QUOTES, 'UTF-8' ); ?>"
 				data-date_end="<?php echo htmlspecialchars( $date_end ); ?>"
+				data-is_panel=<?php echo $is_panel; ?>
 			></div>
 		</div>
 	</div>

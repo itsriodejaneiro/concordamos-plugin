@@ -134,6 +134,27 @@ function is_future_date( $date_string ) {
     return $interval->invert === 0;
 }
 
+/**
+ *
+ * Checks if the currently logged-in user is the author of a given post.
+ *
+ * @param int $voting_id The ID of the post to check.
+ *
+ * @return bool True if the currently logged-in user is the author of the post, false otherwise.
+ *
+ */
+function is_voting_owner( $voting_id ) {
+	$current_user_id = get_current_user_id();
+
+	$post_author_id = get_post_field( 'post_author', $voting_id );
+
+	if ( $current_user_id == $post_author_id ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function get_voting_status (\WP_Post $post) {
 	$start = get_post_meta($post->ID, 'date_start', true);
 	$end = get_post_meta($post->ID, 'date_end', true);
