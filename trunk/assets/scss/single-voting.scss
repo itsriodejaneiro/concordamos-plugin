@@ -179,9 +179,13 @@
 							justify-content: center;
 
 							&__cell {
-								background-color: black;
+								background-color: #CCC;
 								height: 20px;
 								width: 20px;
+
+								&.consumed {
+									background-color: #111;
+								}
 							}
 						}
 
@@ -263,9 +267,13 @@
 					margin-bottom: size(16);
 
 					&__cell {
-						background-color: black;
+						background-color: #CCC;
 						height: 10px;
 						width: 10px;
+
+						&.consumed {
+							background-color: #111;
+						}
 					}
 				}
 

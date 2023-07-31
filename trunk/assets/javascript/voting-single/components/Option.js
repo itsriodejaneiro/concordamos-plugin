@@ -19,7 +19,7 @@ const Option = ({ key, name, description, link, id, count, onVoteChange }) => {
 					}
 				</div>
 				<div>
-					<Grid count={count} />
+					<Grid squares={count ** 2} />
 				</div>
 				<div>
 					<Vote id={id} count={count} onVoteChange={onVoteChange} />

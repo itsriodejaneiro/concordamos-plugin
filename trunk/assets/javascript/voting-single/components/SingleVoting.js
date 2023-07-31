@@ -6,7 +6,7 @@ import Option from './Option'
 
 const baseUrl = window.location.origin + '/wp-json/concordamos/v1/vote/'
 
-export default function SingleVoting ({ handleViewChange, handleVoteChange, initialData, votes }) {
+export default function SingleVoting ({ credits, handleViewChange, handleVoteChange, initialData, votes }) {
 	const { credits_voter, date_end, options } = initialData
 	const parsedOptions = JSON.parse(options)
 
@@ -92,9 +92,9 @@ export default function SingleVoting ({ handleViewChange, handleVoteChange, init
 				</Modal>
 			</div>
 			<div className="sidebar">
-				<Grid count={credits_voter} />
+				<Grid squares={Number(credits_voter)} consumed={credits}/>
 				<span>Available credits</span>
-				<span>{`${credits_voter} / ${credits_voter}`}</span>
+				<span>{`${credits} / ${credits_voter}`}</span>
 			</div>
 		</div>
 	)

@@ -31,7 +31,7 @@ export default function SingleView ({ handleViewChange, initialData, votes }) {
 				</div>
 			</div>
 			<div className="sidebar">
-				<Grid count={credits_voter} />
+				<Grid squares={Number(credits_voter)} />
 				<span>Available credits</span>
 				<span>{`${credits_voter} / ${credits_voter}`}</span>
 			</div>

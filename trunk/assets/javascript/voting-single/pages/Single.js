@@ -24,7 +24,7 @@ export default function Single ({ initialData }) {
 		setVotes((prevVotes) => {
 			return prevVotes.map(vote => {
 				if (vote.id === id) {
-					if ((usedCredits - (vote.count ** 2) + ((vote.count + change) ** 2)) <= (credits_voter ** 2)) {
+					if ((usedCredits - (vote.count ** 2) + ((vote.count + change) ** 2)) <= Number(credits_voter)) {
 						return { ...vote, count: vote.count + change }
 					}
 				}
@@ -41,6 +41,7 @@ export default function Single ({ initialData }) {
 		/>
 	) : (
 		<SingleVoting
+			credits={usedCredits}
 			handleViewChange={handleViewChange}
 			handleVoteChange={handleVoteChange}
 			initialData={initialData}
