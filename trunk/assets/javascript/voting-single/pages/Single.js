@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import SingleView from '../components/SingleView'
 import SingleVoting from '../components/SingleVoting'
 
 export default function Single ({ initialData }) {
-	const parsedOptions = JSON.parse(initialData.options)
+	const { credits_voter, options } = initialData
+	const parsedOptions = JSON.parse(options)
 
 	const[viewMode, setViewMode] = useState(true)
 	const handleViewChange = (event) => {
@@ -15,11 +16,17 @@ export default function Single ({ initialData }) {
 	const initialVotes = Object.keys(parsedOptions).map(key => ({ id: key, count: 0 }))
 	const [votes, setVotes] = useState(initialVotes)
 
+	const usedCredits = useMemo(() => {
+		return votes.reduce((credits, vote) => credits + (vote.count ** 2), 0)
+	}, [votes])
+
 	function handleVoteChange(id, change) {
-		setVotes(prevVotes => {
+		setVotes((prevVotes) => {
 			return prevVotes.map(vote => {
 				if (vote.id === id) {
-					return { ...vote, count: vote.count + change }
+					if ((usedCredits - (vote.count ** 2) + ((vote.count + change) ** 2)) <= (credits_voter ** 2)) {
+						return { ...vote, count: vote.count + change }
+					}
 				}
 				return vote
 			})
