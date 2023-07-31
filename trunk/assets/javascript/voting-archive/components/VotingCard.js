@@ -39,7 +39,7 @@ export default function VotingCard ({ voting }) {
 				<span>{getVotingDate(voting)}</span>
 			</header>
 			<main>
-				<h2>{voting.title}</h2>
+				<h2><a href={voting.permalink}>{voting.title}</a></h2>
 				<p>{voting.content}</p>
 				<p><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? 'Login necessário' : 'Login necessário para acessar os resultados') : 'Sem login'}</p>
 				<ul className="voting-card__tags">
