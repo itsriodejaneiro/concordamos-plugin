@@ -1,0 +1,60 @@
+.voting-card {
+	border: 3px solid black;
+	border-radius: 2rem;
+
+	header {
+		border-radius: calc(2rem - 3px) calc(2rem - 3px) 0 0;
+		display: flex;
+		justify-content: space-between;
+		padding: 0.5rem 2rem;
+
+		& > :first-child {
+			font-weight: bold;
+		}
+	}
+
+	main {
+		padding: 2rem;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+		margin: 0;
+		text-transform: initial;
+	}
+
+	p {
+		margin: 1rem 0;
+	}
+
+	&__tags {
+		display: flex;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+
+		li {
+			border: 2px solid #EDE103;
+			border-radius: 1rem;
+			display: inline-block;
+			font-weight: bold;
+			line-height: 1;
+			list-style: none;
+			padding: 0.5rem;
+		}
+	}
+
+	&.open {
+
+		header {
+			background-color: #26A9F9;
+		}
+	}
+
+	&.closed {
+
+		header {
+			background-color: #FF2E22;
+		}
+	}
+}

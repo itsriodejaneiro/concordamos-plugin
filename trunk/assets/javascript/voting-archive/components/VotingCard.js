@@ -31,7 +31,7 @@ export default function VotingCard ({ voting }) {
 	const requiresLogin = voting.access === 'yes'
 
 	return (
-		<article className="voting-card">
+		<article className={`voting-card ${isOpen ? 'open' : 'closed'}`}>
 			<header className={`${isOpen ? 'open' : 'closed'}`}>
 				<span>{getVotingStatus(voting)}</span>
 				<span>{getVotingDate(voting)}</span>

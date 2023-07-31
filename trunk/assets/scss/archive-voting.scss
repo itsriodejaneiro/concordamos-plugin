@@ -1,4 +1,5 @@
 @import 'settings/mixins';
+@import 'components/voting-card';
 
 .voting-archive {
 	margin: auto;
@@ -48,6 +49,16 @@
 			.icon {
 				background-image: url(../../assets/images/search.svg);
 			}
+		}
+	}
+
+	.voting-archive-grid {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+
+		@media screen and (max-width: 20rem) {
+			grid-template-columns: 1fr;
 		}
 	}
 
