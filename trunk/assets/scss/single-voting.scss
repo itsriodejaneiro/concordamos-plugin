@@ -130,6 +130,24 @@
 		}
 	}
 
+	.option-voting-grid {
+		display: grid;
+		gap: 3px;
+		grid-auto-flow: row;
+		grid-template-columns: repeat(var(--grid-rows), auto);
+		justify-content: center;
+
+		&__cell {
+			background-color: #CCC;
+			height: 15px;
+			width: 15px;
+
+			&.consumed {
+				background-color: #111;
+			}
+		}
+	}
+
 	.voting-content {
 		background-color: #F5F5F5;
 		border-top: 3px solid #000000;
@@ -169,24 +187,6 @@
 							font-weight: 600;
 							margin-bottom: 0;
 							margin-top: 0;
-						}
-
-						.option-voting-grid {
-							display: grid;
-							gap: 4px;
-							grid-auto-flow: row;
-							grid-template-columns: repeat(var(--grid-rows), auto);
-							justify-content: center;
-
-							&__cell {
-								background-color: #CCC;
-								height: 20px;
-								width: 20px;
-
-								&.consumed {
-									background-color: #111;
-								}
-							}
 						}
 
 						.option-voting-vote {
@@ -246,9 +246,6 @@
 						}
 					}
 				}
-
-				&.voting-mode {
-				}
 			}
 
 			.sidebar {
@@ -259,22 +256,7 @@
 				}
 
 				.option-voting-grid {
-					display: grid;
-					gap: 2px;
-					grid-auto-flow: row;
-					grid-template-columns: repeat(var(--grid-rows), auto);
-					justify-content: center;
 					margin-bottom: size(16);
-
-					&__cell {
-						background-color: #CCC;
-						height: 10px;
-						width: 10px;
-
-						&.consumed {
-							background-color: #111;
-						}
-					}
 				}
 
 				span {
