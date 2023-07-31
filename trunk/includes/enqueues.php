@@ -54,6 +54,7 @@ function enqueue_scripts_frontend() {
 			[
 				'is_admin' => current_user_can( 'manage_options' ),
 				'nonce' => wp_create_nonce( 'wp-rest' ),
+				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 			]
 		);
 	}

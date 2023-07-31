@@ -1,3 +1,5 @@
+import Image from './Image'
+
 const dateFormatter = new Intl.DateTimeFormat('pt-br', { dateStyle: 'short' })
 
 function formatDate (timestamp) {
@@ -39,7 +41,7 @@ export default function VotingCard ({ voting }) {
 			<main>
 				<h2>{voting.title}</h2>
 				<p>{voting.content}</p>
-				<p>{requiresLogin ? (isOpen ? 'Login necessário' : 'Login necessário para acessar os resultados') : 'Sem login'}</p>
+				<p><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? 'Login necessário' : 'Login necessário para acessar os resultados') : 'Sem login'}</p>
 				<ul className="voting-card__tags">
 				{voting.tags.map((tag) => (
 					<li key={tag.ID}>#{tag.name}</li>
