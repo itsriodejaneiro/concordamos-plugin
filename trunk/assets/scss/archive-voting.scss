@@ -50,4 +50,28 @@
 			}
 		}
 	}
+
+	.voting-archive-paginator {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 1rem auto;
+		padding: 0;
+
+		li {
+			border: 3px solid transparent;
+			list-style: none;
+			padding: 0 0.5rem;
+
+			&.selected {
+				background-color: #FF73E7;
+				border-color: black;
+			}
+
+			&.previous, &.next {
+				font-weight: bold;
+			}
+		}
+	}
 }

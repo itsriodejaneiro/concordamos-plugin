@@ -94,15 +94,18 @@ export function App() {
 				<VotingCard key={post.ID} voting={post}/>
 			))}
 			</div>
-			<Paginate
-				breakLabel="..."
-				forcePage={page - 1}
-				nextLabel="Próxima"
-				pageCount={data?.num_pages ?? 0}
-				previousLabel="Anterior"
-				renderOnZeroPageCount={null}
-				onPageChange={onPageChange}
-			/>
+			{(data?.num_pages && data.num_pages > 1) ? (
+				<Paginate
+					breakLabel="..."
+					className="voting-archive-paginator"
+					forcePage={page - 1}
+					nextLabel=">"
+					pageCount={data?.num_pages ?? 0}
+					previousLabel="<"
+					renderOnZeroPageCount={null}
+					onPageChange={onPageChange}
+				/>
+			) : null}
 		</div>
 	)
 }
