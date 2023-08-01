@@ -1,5 +1,5 @@
 import { __, _x, sprintf } from '@wordpress/i18n'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import Grid from './Grid'
 import Modal from '../../shared/components/Modal'
@@ -7,9 +7,12 @@ import Option from './Option'
 
 const baseUrl = window.location.origin + '/wp-json/concordamos/v1/vote/'
 
-export default function SingleVoting ({ credits, handleViewChange, handleVoteChange, initialData, votes }) {
+export default function SingleVoting ({ handleViewChange, initialData }) {
 	const { credits_voter, date_end, options } = initialData
 	const parsedOptions = JSON.parse(options)
+
+	const initialVotes = Object.keys(parsedOptions).map((key) => ({ id: key, count: 0 }))
+	const [votes, setVotes] = useState(initialVotes)
 
 	const formattedDateEnd = new Date(Number(date_end))
 
@@ -26,6 +29,23 @@ export default function SingleVoting ({ credits, handleViewChange, handleVoteCha
 	function confirmVote (event) {
 		event.preventDefault()
 		openModal()
+	}
+
+	const usedCredits = useMemo(() => {
+		return votes.reduce((credits, vote) => credits + (vote.count ** 2), 0)
+	}, [votes])
+
+	function handleVoteChange(id, change) {
+		setVotes((prevVotes) => {
+			return prevVotes.map(vote => {
+				if (vote.id === id) {
+					if ((usedCredits - (vote.count ** 2) + ((vote.count + change) ** 2)) <= Number(credits_voter)) {
+						return { ...vote, count: vote.count + change }
+					}
+				}
+				return vote
+			})
+		})
 	}
 
 	function handleSubmit (event) {
@@ -93,9 +113,9 @@ export default function SingleVoting ({ credits, handleViewChange, handleVoteCha
 				</Modal>
 			</div>
 			<div className="sidebar">
-				<Grid squares={Number(credits_voter)} consumed={credits}/>
+				<Grid squares={Number(credits_voter)} consumed={usedCredits}/>
 				<span>{__('Available credits', 'concordamos')}</span>
-				<span>{`${credits} / ${credits_voter}`}</span>
+				<span>{`${usedCredits} / ${credits_voter}`}</span>
 			</div>
 		</div>
 	)

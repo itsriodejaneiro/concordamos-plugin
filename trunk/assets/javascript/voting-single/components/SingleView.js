@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n'
 import Grid from './Grid'
 import OptionView from './OptionView'
 
-export default function SingleView ({ handleViewChange, initialData, votes }) {
+export default function SingleView ({ handleViewChange, initialData }) {
 	const { credits_voter, options } = initialData
 
 	const parsedOptions = JSON.parse(options)
@@ -14,7 +14,6 @@ export default function SingleView ({ handleViewChange, initialData, votes }) {
 				<h2>{__('Voting options', 'concordamos')}</h2>
 				<div className="options">
 					{Object.keys(parsedOptions).map(key => {
-						const voteCount = votes.find(vote => vote.id === key)?.count || 0
 						return (
 							<OptionView
 								key={key}
