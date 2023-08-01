@@ -1,20 +1,32 @@
 import { __ } from '@wordpress/i18n'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export default function Modal ({ children, onClose, open }) {
+export function useModal (startOpen = false) {
+	const [isOpen, setIsOpen] = useState(startOpen)
+
+	const open = () => setIsOpen(true)
+	const close = () => setIsOpen(false)
+	const toggle = () => setIsOpen((isOpen) => !isOpen)
+
+	return { close, isOpen, open, toggle }
+}
+
+export default function Modal ({ children, controller }) {
+	const { close, isOpen } = controller
+
 	const dialogRef = useRef()
 
 	useEffect(() => {
-		if (open) {
+		if (isOpen) {
 			dialogRef.current.focus()
 		}
-	}, [open])
+	}, [isOpen])
 
 	return (
-		<div className={`voting-modal__wrapper ${open ? 'open' : ''}`}>
-			<dialog className="voting-modal" ref={dialogRef} open={open}>
+		<div className={`voting-modal__wrapper ${isOpen ? 'open' : ''}`}>
+			<dialog className="voting-modal" ref={dialogRef} open={isOpen}>
 				<header>
-					<button type="button" className="button close" onClick={onClose}>{__('Close', 'concordamos')}</button>
+					<button type="button" className="button close" onClick={close}>{__('Close', 'concordamos')}</button>
 				</header>
 				<main>{children}</main>
 			</dialog>

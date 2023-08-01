@@ -2,7 +2,7 @@ import { __, _x, sprintf } from '@wordpress/i18n'
 import { useMemo, useState } from 'react'
 
 import Grid from './Grid'
-import Modal from '../../shared/components/Modal'
+import Modal, { useModal } from '../../shared/components/Modal'
 import Option from './Option'
 
 const baseUrl = window.location.origin + '/wp-json/concordamos/v1/vote/'
@@ -16,19 +16,11 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 
 	const formattedDateEnd = new Date(Number(date_end))
 
-	const [modalOpen, setModalOpen] = useState(false)
-
-	function closeModal () {
-		setModalOpen(false)
-	}
-
-	function openModal () {
-		setModalOpen(true)
-	}
+	const confirmVoteModal = useModal(false)
 
 	function confirmVote (event) {
 		event.preventDefault()
-		openModal()
+		confirmVoteModal.open()
 	}
 
 	const usedCredits = useMemo(() => {
@@ -103,12 +95,12 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 					</div>
 				</form>
 
-				<Modal open={modalOpen} onClose={closeModal}>
+				<Modal controller={confirmVoteModal}>
 					<h2>{__('Vote confirmation', 'concordamos')}</h2>
 					<p dangerouslySetInnerHTML={ { __html: sprintf(__("After confirming your vote, it can't be changed. You can access your voting option on <a href='%s'>voting infos</a>.", 'concordamos'), '#') } }></p>
 					<div class="buttons">
 						<button type="button" className="button primary" onClick={handleSubmit}>{_x('Vote', 'verb', 'concordamos')}</button>
-						<button type="button" className="button link" onClick={closeModal}>{__('Cancel', 'concordamos')}</button>
+						<button type="button" className="button link" onClick={confirmVoteModal.close}>{__('Cancel', 'concordamos')}</button>
 					</div>
 				</Modal>
 			</div>
