@@ -31,7 +31,7 @@ require_once( 'includes/class/class-user-metadata.php' );
 function concordamos_init() {
 	// Add custom role `concordamos_network`
 	remove_role( 'concordamos_network' );
-	add_role( 'concordamos_network', __( 'Concordamos Network', 'concordamos-textdomain' ), ['read' => true] );
+	add_role( 'concordamos_network', __( 'Concordamos Network', 'concordamos' ), ['read' => true] );
 }
 
 register_activation_hook( __FILE__, 'concordamos_init' );

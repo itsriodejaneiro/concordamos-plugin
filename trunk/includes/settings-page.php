@@ -11,8 +11,8 @@ namespace Concordamos;
  */
 function add_admin_menu() {
     add_menu_page(
-        __( 'Concordamos Settings', 'concordamos-textdomain' ),
-        __( 'Concordamos Settings', 'concordamos-textdomain' ),
+        __( 'Concordamos Settings', 'concordamos' ),
+        __( 'Concordamos Settings', 'concordamos' ),
         'manage_options',
         'concordamos-settings',
         'Concordamos\settings_page_html',
@@ -41,7 +41,7 @@ function settings_page_html() {
 
     settings_fields( 'concordamos' );
     do_settings_sections( 'concordamos-settings' );
-    submit_button( __( 'Save Settings', 'concordamos-textdomain' ) );
+    submit_button( __( 'Save Settings', 'concordamos' ) );
 
     echo '</form>';
     echo '</div>';
@@ -67,7 +67,7 @@ function settings_init() {
 
     add_settings_field(
         'votting_page',
-        __( 'Select page to add form to create voting', 'concordamos-textdomain' ),
+        __( 'Select page to add form to create voting', 'concordamos' ),
         'Concordamos\select_field_render',
         'concordamos-settings',
         'concordamos_section'
@@ -85,7 +85,7 @@ function select_field_render() {
 
 	?>
 	<select name='concordamos_options[votting_page]'>
-		<option value='' <?php selected( $options['votting_page'], '', false ); ?>><?php _e( 'Select a page', 'concordamos-textdomain' ); ?></option>
+		<option value='' <?php selected( $options['votting_page'], '', false ); ?>><?php _e( 'Select a page', 'concordamos' ); ?></option>
 		<?php
 		foreach ( $pages as $page ) {
 			echo "<option value='{$page->ID}' " . selected( $options['votting_page'], $page->ID, false ) . ">{$page->post_title}</option>";

@@ -239,7 +239,7 @@ function vote_callback( \WP_REST_Request $request ) {
 		if ( in_array( $unique_id, $expired_unique_ids ) ) {
 			$response = [
 				'status'  => 'error',
-				'message' => __( 'Expired link', 'concordamos-textdomain' )
+				'message' => __( 'Expired link', 'concordamos' )
 			];
 			return new \WP_REST_Response( $response, 400 );
 		}
@@ -275,14 +275,14 @@ function vote_callback( \WP_REST_Request $request ) {
 
 		$response = [
 			'status'  => 'success',
-			'message' => __( 'Vote registered successfully', 'concordamos-textdomain')
+			'message' => __( 'Vote registered successfully', 'concordamos')
 		];
 
 		return new \WP_REST_Response( $response, 200 );
 	} else {
 		$response = [
 			'status'  => 'error',
-			'message' => __( 'Error registering your vote, please try again', 'concordamos-textdomain' )
+			'message' => __( 'Error registering your vote, please try again', 'concordamos' )
 		];
 
 		return new \WP_REST_Response( $response, 400 );

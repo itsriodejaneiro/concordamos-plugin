@@ -20,10 +20,10 @@ class CPT {
 		$plural = $name . 's';
 
 		$labels = [
-			'name'           => _x( $plural, 'Post type general name', 'concordamos-textdomain' ),
-			'singular_name'  => _x( $name, 'Post type singular name', 'concordamos-textdomain' ),
-			'menu_name'      => _x( $plural, 'Admin menu text', 'concordamos-textdomain' ),
-			'name_admin_bar' => _x( $name, 'Add New on toolbar', 'concordamos-textdomain' ),
+			'name'           => _x( $plural, 'Post type general name', 'concordamos' ),
+			'singular_name'  => _x( $name, 'Post type singular name', 'concordamos' ),
+			'menu_name'      => _x( $plural, 'Admin menu text', 'concordamos' ),
+			'name_admin_bar' => _x( $name, 'Add New on toolbar', 'concordamos' ),
 		];
 
 		$args = [

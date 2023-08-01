@@ -19,17 +19,17 @@ class Taxonomy {
 
 	public function register_taxonomy() {
 		$default_labels = [
-			'name'              => _x( 'Tags', 'taxonomy general name', 'concordamos-textdomain' ),
-			'singular_name'     => _x( 'Tag', 'taxonomy singular name', 'concordamos-textdomain' ),
-			'search_items'      => __( 'Search Tags', 'concordamos-textdomain' ),
-			'all_items'         => __( 'All Tags', 'concordamos-textdomain' ),
-			'parent_item'       => __( 'Parent Tag', 'concordamos-textdomain' ),
-			'parent_item_colon' => __( 'Parent Tag:', 'concordamos-textdomain' ),
-			'edit_item'         => __( 'Edit Tag', 'concordamos-textdomain' ),
-			'update_item'       => __( 'Update Tag', 'concordamos-textdomain' ),
-			'add_new_item'      => __( 'Add New Tag', 'concordamos-textdomain' ),
-			'new_item_name'     => __( 'New Tag Name', 'concordamos-textdomain' ),
-			'menu_name'         => __( 'Tags', 'concordamos-textdomain' ),
+			'name'              => _x( 'Tags', 'taxonomy general name', 'concordamos' ),
+			'singular_name'     => _x( 'Tag', 'taxonomy singular name', 'concordamos' ),
+			'search_items'      => __( 'Search Tags', 'concordamos' ),
+			'all_items'         => __( 'All Tags', 'concordamos' ),
+			'parent_item'       => __( 'Parent Tag', 'concordamos' ),
+			'parent_item_colon' => __( 'Parent Tag:', 'concordamos' ),
+			'edit_item'         => __( 'Edit Tag', 'concordamos' ),
+			'update_item'       => __( 'Update Tag', 'concordamos' ),
+			'add_new_item'      => __( 'Add New Tag', 'concordamos' ),
+			'new_item_name'     => __( 'New Tag Name', 'concordamos' ),
+			'menu_name'         => __( 'Tags', 'concordamos' ),
 		];
 		$labels = wp_parse_args( $this->labels, $default_labels );
 

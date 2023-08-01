@@ -27,7 +27,7 @@ $is_panel = get_query_var( 'panel' );
 		<div class="container">
 			<div class="info">
 				<span class="voting-breadcrumb">
-					<?php _e( 'Voting', 'concordamos-textdomain' ); ?>
+					<?php _e( 'Voting', 'concordamos' ); ?>
 				</span>
 
 				<h1 class="voting-title"><?php echo apply_filters( 'the_title', $raw_post_meta['voting_name'][0] ); ?></h1>
@@ -53,13 +53,13 @@ $is_panel = get_query_var( 'panel' );
 			<div class="dates">
 				<div class="<?php echo $date_start_class; ?>">
 					<div class="icon">1</div>
-					<h3><?php _e( 'Start', 'concordamos-textdomain' ); ?></h3>
+					<h3><?php _e( 'Start', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'h\hi' ); ?></span>
 				</div>
 				<div class="<?php echo $date_end_class; ?>">
 					<div class="icon">2</div>
-					<h3><?php _e( 'End', 'concordamos-textdomain' ); ?></h3>
+					<h3><?php _e( 'End', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'h\hi' ); ?></span>
 				</div>
