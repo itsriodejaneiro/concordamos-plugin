@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { __, sprintf } from '@wordpress/i18n'
+import React, { useState, useEffect } from 'react'
 
 const Options = ({label, description, setVotingOptions}) => {
 
@@ -80,11 +81,11 @@ const Options = ({label, description, setVotingOptions}) => {
 										}
 
 										<div className="buttons">
-											<button className="edit" type="button" onClick={() => handleToggle(index)}>Editar</button>
+											<button className="edit" type="button" onClick={() => handleToggle(index)}>{__('Edit', 'concordamos')}</button>
 
 											{
 												inputFields.length >= 2
-												? <button className="trash" type="button" onClick={() => removeFields(index)}>Delete</button>
+												? <button className="trash" type="button" onClick={() => removeFields(index)}>{__('Delete', 'concordamos')}</button>
 												: null
 											}
 										</div>
@@ -96,13 +97,13 @@ const Options = ({label, description, setVotingOptions}) => {
 									<label>
 										{
 											inputFields.length >= 2
-											? <span>Option {index + 1} <button className="trash" type="button" onClick={() => removeFields(index)}>Delete</button></span>
-											: <span>Option {index + 1}</span>
+											? <span>{sprintf(__('Option %s', 'concordamos'), index + 1)} <button className="trash" type="button" onClick={() => removeFields(index)}>{__('Delete', 'concordamos')}</button></span>
+											: <span>{sprintf(__('Option %s', 'concordamos'), index + 1)}</span>
 										}
 
 										<input
 											name='option_name'
-											placeholder='Title of the option'
+											placeholder={__('Title of the option', 'concordamos')}
 											type='text'
 											value={input.option_name}
 											onChange={event => handleFormChange(index, event)}
@@ -110,10 +111,10 @@ const Options = ({label, description, setVotingOptions}) => {
 									</label>
 
 									<label>
-										<span>Description of the option {index + 1}</span>
+										<span>{sprintf(__('Description of the option %s', 'concordamos'), index + 1)}</span>
 										<input
 											name='option_description'
-											placeholder='Description of the option'
+											placeholder={__('Description of the option', 'concordamos')}
 											type='text'
 											value={input.option_description}
 											onChange={e => handleFormChange(index, e)}
@@ -121,10 +122,10 @@ const Options = ({label, description, setVotingOptions}) => {
 									</label>
 
 									<label>
-										<span>Link of the option {index + 1}</span>
+										<span>{sprintf(__('Link of the option %s', 'concordamos'), index + 1)}</span>
 										<input
 											name='option_link'
-											placeholder='www.example.com.br'
+											placeholder='www.example.com'
 											type='text'
 											value={input.option_link}
 											onChange={e => handleFormChange(index, e)}
@@ -136,7 +137,7 @@ const Options = ({label, description, setVotingOptions}) => {
 					})}
 				</div>
 
-				<button type="button" class="button-full" onClick={addFields}>+ Add option</button>
+				<button type="button" class="button-full" onClick={addFields}>+ {__('Add option', 'concordamos')}</button>
 			</div>
 		</>
 	)

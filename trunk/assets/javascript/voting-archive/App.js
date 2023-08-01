@@ -1,3 +1,4 @@
+import { __, _x } from '@wordpress/i18n'
 import { useState } from 'react'
 import { DebounceInput } from 'react-debounce-input'
 import Paginate from 'react-paginate'
@@ -28,16 +29,16 @@ function buildUrl (query, filters, page) {
 }
 
 const votingAccessOptions = {
-	'yes': 'Sim',
-	'no': 'Não',
-	'': 'Tudo',
+	'yes': __('Yes', 'concordamos'),
+	'no': __('No', 'concordamos'),
+	'': _x('All', 'accesses', 'concordamos'),
 }
 
 const votingTimeOptions = {
-	'past': 'Concluídas',
-	'present': 'Abertas',
-	'future': 'Futuras',
-	'': 'Todas',
+	'past': _x('Concluded', 'votings', 'concordamos'),
+	'present': _x('Open', 'votings', 'concordamos'),
+	'future': _x('Future', 'votings', 'concordamos'),
+	'': _x('All', 'votings', 'concordamos'),
 }
 
 export function App() {
@@ -71,20 +72,20 @@ export function App() {
 	return (
 		<div className="voting-archive">
 			<div class="voting-archive-header">
-				<h1>Busque uma votação</h1>
+				<h1>{__('Search for a voting', 'concordamos')}</h1>
 				<div class="voting-archive-filters">
 					<form className="voting-search-form">
 						<DebounceInput type="search" debounceTimeout={500} placeholder="Buscar por..." value={query} onChange={onQueryChange}/>
 						<button type="submit">
-							<span className="sr-only">Pesquisar</span>
+							<span className="sr-only">{__('Search', 'concordamos')}</span>
 							<i className="icon"/>
 						</button>
 					</form>
 					<details>
-						<summary>Filtros</summary>
-						<div class="filter-label">Status da votação</div>
+						<summary>{__('Filters', 'concordamos')}</summary>
+						<div class="filter-label">{__('Voting status', 'concordamos')}</div>
 						<Radio name="time" options={votingTimeOptions} value={filters.time} onChange={onFilterChange('time')}/>
-						<div class="filter-label">Requer login?</div>
+						<div class="filter-label">{__('Does it require login?', 'concordamos')}</div>
 						<Radio name="access" options={votingAccessOptions} value={filters.access} onChange={onFilterChange('access')}/>
 					</details>
 				</div>
@@ -99,9 +100,9 @@ export function App() {
 					breakLabel="..."
 					className="voting-archive-paginator"
 					forcePage={page - 1}
-					nextLabel=">"
+					nextLabel={_x('Next', 'page', 'concordamos')}
 					pageCount={data?.num_pages ?? 0}
-					previousLabel="<"
+					previousLabel={_x('Previous', 'page', 'concordamos')}
 					renderOnZeroPageCount={null}
 					onPageChange={onPageChange}
 				/>

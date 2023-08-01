@@ -1,3 +1,5 @@
+import { __, _x, sprintf } from '@wordpress/i18n'
+
 import Image from './Image'
 
 const dateFormatter = new Intl.DateTimeFormat('pt-br', { dateStyle: 'short' })
@@ -9,22 +11,22 @@ function formatDate (timestamp) {
 function getVotingStatus (voting) {
 	switch (voting.time) {
 		case 'past':
-			return 'Concluída'
+			return _x('Concluded', 'voting', 'concordamos')
 		case 'present':
-			return 'Aberta'
+			return _x('Open', 'voting', 'concordamos')
 		case 'future':
-			return 'Agendada'
+			return _x('Scheduled', 'voting', 'concordamos')
 	}
 }
 
 function getVotingDate (voting) {
 	switch (voting.time) {
 		case 'past':
-			return `Desde o dia ${formatDate(voting.meta.date_end)}`
+			return sprintf(_x('Since %s', 'date', 'concordamos'), formatDate(voting.meta.date_end))
 		case 'present':
-			return `Até o dia ${formatDate(voting.meta.date_end)}`
+			return sprintf(_x('Until %s', 'date', 'concordamos'), formatDate(voting.meta.date_end))
 		case 'future':
-			return `A partir do dia ${formatDate(voting.meta.date_start)}`
+			return sprintf(_x('From %s', 'date', 'concordamos'), formatDate(voting.meta.date_start))
 	}
 }
 
@@ -41,7 +43,7 @@ export default function VotingCard ({ voting }) {
 			<main>
 				<h2><a href={voting.permalink}>{voting.title}</a></h2>
 				<p>{voting.content}</p>
-				<p><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? 'Login necessário' : 'Login necessário para acessar os resultados') : 'Sem login'}</p>
+				<p><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? __('Login required', 'concordamos') : __('Login required to see results', 'concordamos')) : __('No login', 'concordamos')}</p>
 				<ul className="voting-card__tags">
 				{voting.tags.map((tag) => (
 					<li key={tag.ID}>#{tag.name}</li>

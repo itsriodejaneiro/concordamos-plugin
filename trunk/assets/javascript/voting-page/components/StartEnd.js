@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react"
-import DatePicker from "react-datepicker";
+import { __, _x } from '@wordpress/i18n'
+import { useState, useEffect } from 'react'
+import DatePicker from 'react-datepicker'
 
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css'
 
 const StartEnd = ({ description, label, setStartEndDateTime }) => {
 
 	const today = new Date()
 
 	const [startDate, setStartDate] = useState(today.getTime())
-	const [endDate, setEndDate] = useState(today.getTime() + 24*60*60*1000); // increment 24 hours
+	const [endDate, setEndDate] = useState(today.getTime() + 24*60*60*1000) // increment 24 hours
 
 	useEffect(() => {
 		setStartEndDateTime([startDate, endDate])
@@ -25,18 +26,18 @@ const StartEnd = ({ description, label, setStartEndDateTime }) => {
 				}
 
 				<div className="line">
-					<span className="label">Start</span>
+					<span className="label">{__('Start', 'concordamos')}</span>
 
 					<div className="date-time-inputs">
 						<DatePicker
 							className="date"
-							dateFormat="dd/MM/yyyy"
+							dateFormat={__('MM/dd/yyyy', 'concordamos')}
 							minDate={new Date()}
 							selected={startDate}
 							onChange={(date) => setStartDate(date.getTime())}
 						/>
 
-						<span class="at">at</span>
+						<span class="at">{_x('at', 'hour', 'concordamos')}</span>
 
 						<DatePicker
 							className="time"
@@ -45,25 +46,25 @@ const StartEnd = ({ description, label, setStartEndDateTime }) => {
 							onChange={(date) => setStartDate(date.getTime())}
 							showTimeSelect
 							showTimeSelectOnly
-							timeCaption="Horário"
-							dateFormat="hh:mm aa"
+							timeCaption={_x('Time', 'hour', 'concordamos')}
+							dateFormat={__('hh:mm aa', 'concordamos')}
 							timeIntervals={10}
 						/>
 					</div>
 				</div>
 				<div className="line">
-					<span className="label">End</span>
+					<span className="label">{__('End', 'concordamos')}</span>
 
 					<div className="date-time-inputs">
 						<DatePicker
 							className="date"
-							dateFormat="dd/MM/yyyy"
+							dateFormat={__('MM/dd/yyyy', 'concordamos')}
 							minDate={today}
 							selected={endDate}
 							onChange={(date) => setEndDate(date.getTime())}
 						/>
 
-						<span class="at">at</span>
+						<span class="at">{_x('at', 'hour', 'concordamos')}</span>
 
 						<DatePicker
 							className="time"
@@ -72,8 +73,8 @@ const StartEnd = ({ description, label, setStartEndDateTime }) => {
 							onChange={(date) => setEndDate(date.getTime())}
 							showTimeSelect
 							showTimeSelectOnly
-							timeCaption="Time"
-							dateFormat="hh:mm aa"
+							timeCaption={_x('Time', 'hour', 'concordamos')}
+							dateFormat={__('hh:mm aa', 'concordamos')}
 							timeIntervals={10}
 						/>
 					</div>

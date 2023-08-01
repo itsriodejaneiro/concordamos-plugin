@@ -1,3 +1,4 @@
+import { __, _x, sprintf } from '@wordpress/i18n'
 import { useState } from 'react'
 
 import Grid from './Grid'
@@ -56,9 +57,9 @@ export default function SingleVoting ({ credits, handleViewChange, handleVoteCha
 	return (
 		<div className="wrapper">
 			<div className="content voting-mode">
-				<h2>Distribute your votes</h2>
-				<p>You can use up to {credits_voter} credits to vote during this poll</p>
-				<p>This poll ends on {formattedDateEnd.toLocaleDateString('pt-BR')}, {formattedDateEnd.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: true })}</p>
+				<h2>{__('Distribute your votes', 'concordamos')}</h2>
+				<p>{sprintf(__('You can use up to %s credits to vote during this poll', 'concordamos'), credits_voter)}</p>
+				<p>{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString('pt-BR'), formattedDateEnd.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: true }))}</p>
 
 				<form onSubmit={confirmVote}>
 					{Object.keys(parsedOptions).map(key => {
@@ -77,23 +78,23 @@ export default function SingleVoting ({ credits, handleViewChange, handleVoteCha
 					})}
 
 					<div className="actions">
-						<span onClick={handleViewChange} className="back-link">Back to poll details</span>
-						<button type="submit">Confirmar voto</button>
+						<span onClick={handleViewChange} className="back-link">{__('Back to poll options', 'concordamos')}</span>
+						<button type="submit">{__('Confirm vote', 'concordamos')}</button>
 					</div>
 				</form>
 
 				<Modal open={modalOpen} onClose={closeModal}>
-					<h2>Confirmação de voto</h2>
-					<p>Após confirmar seu voto, ele não poderá ser alterado. Você pode acessar as suas opções de votos nas <a href="#">informações da votação</a>.</p>
+					<h2>{__('Vote confirmation', 'concordamos')}</h2>
+					<p dangerouslySetInnerHTML={ { __html: sprintf(__("After confirming your vote, it can't be changed. You can access your voting option on <a href='%s'>voting infos</a>.", 'concordamos'), '#') } }></p>
 					<div class="buttons">
-						<button type="button" className="button primary" onClick={handleSubmit}>Votar</button>
-						<button type="button" className="button link" onClick={closeModal}>Cancelar</button>
+						<button type="button" className="button primary" onClick={handleSubmit}>{_x('Vote', 'verb', 'concordamos')}</button>
+						<button type="button" className="button link" onClick={closeModal}>{__('Cancel', 'concordamos')}</button>
 					</div>
 				</Modal>
 			</div>
 			<div className="sidebar">
 				<Grid squares={Number(credits_voter)} consumed={credits}/>
-				<span>Available credits</span>
+				<span>{__('Available credits', 'concordamos')}</span>
 				<span>{`${credits} / ${credits_voter}`}</span>
 			</div>
 		</div>
