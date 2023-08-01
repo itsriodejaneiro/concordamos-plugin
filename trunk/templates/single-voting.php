@@ -39,7 +39,7 @@ $is_panel = get_query_var( 'panel' );
 				<div class="meta">
 					<?php if ( ! $is_panel ) : ?>
 						<?php echo Concordamos\get_html_terms( $post_id, 'tag' ); ?>
-						<span class="author"><?php _e( 'Criado por:' ); ?> <?php echo $voting_author; ?></span>
+						<span class="author"><?php _e( 'Created by:', 'concordamos' ); ?> <?php echo $voting_author; ?></span>
 					<?php else : ?>
 						<?php if ( Concordamos\is_voting_owner( $post_id ) ) : ?>
 							<?php // @todo: Adicionar links e ícones ?>
