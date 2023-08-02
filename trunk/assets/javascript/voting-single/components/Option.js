@@ -1,7 +1,7 @@
 import Grid from "./Grid"
 import Vote from "./Vote"
 
-const Option = ({ key, name, description, link, id, count, onVoteChange }) => {
+const Option = ({ count, description, id, link, name, onVoteChange, readonly = false }) => {
 	return (
 		<>
 			<div className="option-voting">
@@ -22,7 +22,11 @@ const Option = ({ key, name, description, link, id, count, onVoteChange }) => {
 					<Grid squares={count ** 2} />
 				</div>
 				<div>
-					<Vote id={id} count={count} onVoteChange={onVoteChange} />
+					{readonly ? (
+						<div className="option-voting__count">{count}</div>
+					) : (
+						<Vote id={id} count={count} onVoteChange={onVoteChange} />
+					)}
 				</div>
 			</div>
 		</>

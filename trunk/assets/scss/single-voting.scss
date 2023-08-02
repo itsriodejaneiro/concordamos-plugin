@@ -181,6 +181,10 @@
 						grid-template-columns: 1fr;
 					}
 
+					&__count {
+						text-align: center;
+					}
+
 					> div {
 						h3 {
 							font-size: size(24);
