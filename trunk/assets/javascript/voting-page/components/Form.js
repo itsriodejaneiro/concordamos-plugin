@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n'
 import { useState } from 'react'
 
 import Checkbox from './Checkbox'
+import Modal, { useModal } from '../../shared/components/Modal'
 import Number from './Number'
 import Options from './Options'
 import Radio from './Radio'
@@ -20,6 +21,13 @@ const Form = () => {
 	const [tags, setTags] = useState('')
 	const [votingOptions, setVotingOptions] = useState([])
 	const [startEndDateTime, setStartEndDateTime] = useState([])
+
+	const confirmModal = useModal(false)
+
+	function confirmCreation (event) {
+		event.preventDefault()
+		confirmModal.open()
+	}
 
 	const handleChange = (event) => {
 		setVotingAccess(event.target.checked ? 'yes' : 'no')
@@ -93,7 +101,7 @@ const Form = () => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={confirmCreation}>
 				<Radio
 					defaultValue={votingType}
 					label={__('Type of the voting', 'concordamos')}
@@ -160,6 +168,14 @@ const Form = () => {
 					: <button type="button" class="button-full disabled">{__('Add at least two votes', 'concordamos')}</button>
 				}
 			</form>
+			<Modal controller={confirmModal}>
+				<h2>{ __('Confirm voting creation', 'concordamos') }</h2>
+				<p dangerouslySetInnerHTML={ { __html: __('After creation the voting, you can <strong>only</strong> change its <strong>start</strong> and <strong>end dates</strong>.', 'concordamos') } }/>
+				<div className="buttons">
+					<button type="button" className="button primary" onClick={handleSubmit}>{__('Create voting', 'concordamos')}</button>
+					<button type="button" className="button link" onClick={confirmModal.close}>{__('Cancel', 'concordamos')}</button>
+				</div>
+			</Modal>
 		</>
 	)
 }
