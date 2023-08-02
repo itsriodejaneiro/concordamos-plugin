@@ -44,17 +44,24 @@
 		}
 	}
 
-	&.open {
+	&.past {
+
+		header {
+			background-color: #FF2E22;
+		}
+	}
+
+	&.present {
 
 		header {
 			background-color: #26A9F9;
 		}
 	}
 
-	&.closed {
+	&.future {
 
 		header {
-			background-color: #FF2E22;
+			background-color: #D7D7D7;
 		}
 	}
 }
