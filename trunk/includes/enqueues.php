@@ -62,4 +62,5 @@ function enqueue_scripts_frontend() {
 	}
 }
 
+
 add_action( 'wp_enqueue_scripts', 'Concordamos\enqueue_scripts_frontend' );
