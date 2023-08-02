@@ -2,6 +2,83 @@
 @import 'atoms/buttons';
 
 #concordamos-voting-form {
+	
+	.field-checkbox{
+		margin-top: 30px;
+	}
+	.field-text, .field-textarea, .field-checkbox{
+		label{
+			color: #111;
+			font-family: 'Inter Tight' !important;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			letter-spacing: -0.16px;	
+		}
+	}
+	.title-section{
+		font-family: 'Oswald';
+		font-weight: 500;
+		font-size: 24px;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		line-height: 130%; 
+		letter-spacing: -0.24px;
+		padding-right: 15px;
+		@media(max-width: 781px){
+			margin-top: 25px;    
+		}
+	}
+
+	.description-section{
+		color: var(--wp--preset--color--black);
+		font-family: 'Inter';
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.16px;	
+		
+	}
+
+	.line{
+		margin-top: 1rem;
+		.label{
+			color: var(--wp--preset--color--black);
+			font-family: 'Libre Franklin' !important;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;	
+		}
+		.at{
+			padding-left: 7px;
+			padding-right: 3px;
+			width: 50px;
+		}
+	}
+
+	.radio-options{
+		label{
+			font-weight: 700;
+			font-family: 'Inter Tight' !important;
+		}
+	}
+	.option{
+		@media(max-width: 781px){
+			margin-bottom: 5px;    
+		} 
+		span{
+		font-family: 'Oswald';
+		font-size: 24px;
+		line-height: 130%;
+		letter-spacing: -0.24px;
+		font-weight: 500;
+		margin-bottom: 11px;     
+		}
+	}
+
 	button {
 		&.edit {
 			background-color: transparent;
@@ -48,3 +125,28 @@
 		}
 	}
 }
+
+.entry-content{
+	
+	h2{
+		font-family: 'Oswald' !important;
+		font-size: 48px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 112%;
+		letter-spacing: -0.48px;
+		text-transform: uppercase;	
+	}
+	p{
+		color: var(--wp--preset--color--black);
+		font-family: 'Inter' !important;
+		font-size: 16px !important;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 130%;
+		letter-spacing: -0.16px;
+	}
+}
+
+
+

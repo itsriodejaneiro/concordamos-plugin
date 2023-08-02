@@ -8,13 +8,21 @@
 		background-color: #FFFFFF;
 		padding-bottom: size(32);
 		padding-top: size(32);
+		min-height: 393px;
+		padding-top: 3.8rem;
+		@media(max-width: 781px){
+			padding-top: 2rem;   
+		}
 
 		.container {
 			align-items: center;
 			display: grid;
-			gap: size(48);
+			gap: 3rem;
 			grid-template-columns: 2fr 1fr;
 			width: 100%;
+			max-width: 1140px;
+			margin-left: auto;
+			margin-right: auto;
 
 			&::after,
 			&::before {
@@ -28,17 +36,29 @@
 		}
 
 		.info {
+			.voting-breadcrumb{
+				font-size: 20px;
+				margin-top: 10px;
+				font-family: 'Inter' !important;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
 			.voting-title {
-				font-size: size(48);
-				margin-bottom: size(16);
-				margin-top: size(16);
+				font-size: 48px;
+				margin-bottom: 16px;
+				margin-top: 16px;
+				line-height: 112%;
+				letter-spacing: -0.48px;
+				margin-top: 8px;
+				font-family: 'Oswald';
+				text-transform: uppercase;    
 			}
 
 			.meta {
 				align-items: center;
 				display: flex;
-				gap: size(16);
-				margin-top: size(16);
+				gap: 16px;
+				margin-top: 16px;
 
 				@include mobile {
 					align-items: flex-start;
@@ -48,12 +68,21 @@
 				.list-terms {
 					margin-bottom: 0;
 					margin-top: 0;
+					list-style: none;
+					margin-left: 0;
+					display: flex;
 
 					li {
-						border-radius: size(16);
+						border-radius: 16px;
 						border: 3px solid #EDE103;
 						margin-bottom: size(5);
-						padding: size(2) size(16);
+						padding: 2px 16px;
+						margin-left: 0;
+						color: #111;
+						font-family: 'Inter' !important;
+						font-size: 12px;
+						font-weight: 700;
+						letter-spacing: -0.12px;
 
 						&::after {
 							display: none;
@@ -65,7 +94,7 @@
 
 		.dates {
 			display: flex;
-			gap: size(16);
+			gap: 16px;
 			justify-content: space-between;
 			max-width: 400px;
 			position: relative;
@@ -73,6 +102,14 @@
 			@include mobile {
 				max-width: 100%;
 				padding-top: size(32);
+			}
+
+			h3{
+				font-family: 'Oswald';
+				font-size: 24px;
+				line-height: 130%;
+				letter-spacing: -0.24px;
+				font-weight: 500;
 			}
 
 			&::after {
@@ -103,13 +140,13 @@
 					background-image: none;
 					background-position: center;
 					background-repeat: no-repeat;
-					border-radius: size(16);
+					border-radius: 16px;
 					display: flex;
 					font-size: size(24);
-					height: size(64);
+					height: 70px;
 					justify-content: center;
-					margin-bottom: size(16);
-					width: size(64);
+					margin-bottom: 16px;
+					width: 70px;
 				}
 
 				h3 {
@@ -126,6 +163,15 @@
 						text-indent: -99999px;
 					}
 				}
+			}
+			.date, .time{
+				font-family: 'Inter';
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 150%;
+				letter-spacing: -0.14px;
+				text-transform: uppercase;    
 			}
 		}
 	}
@@ -155,8 +201,11 @@
 
 		.wrapper {
 			display: grid;
-			gap: size(16);
+			gap: 16px;
 			grid-template-columns: 3fr 1fr;
+			max-width: 1140px;
+			margin-left: auto;
+			margin-right: auto;
 
 			@include mobile {
 				display: flex;
@@ -169,7 +218,7 @@
 					background-color: #FFFFFF;
 					border: 3px solid #000000;
 					border-radius: 32px;
-					gap: size(16);
+					gap: 16px;
 					margin-bottom: size(32);
 					padding: size(32);
 
@@ -256,7 +305,7 @@
 				}
 
 				.option-voting-grid {
-					margin-bottom: size(16);
+					margin-bottom: 16px;
 				}
 
 				span {
