@@ -8,15 +8,19 @@ const Option = ({ count, description, id, link, name, onVoteChange, readonly = f
 				<div>
 					<h3>{name}</h3>
 
-					{ description
-						? <p>{description}</p>
-						: null
-					}
-
-					{ link
-						? <a className="voting-link" href={link} target="_blank" rel="noopener">{link}</a>
-						: null
-					}
+					{ description ? (
+						link ? (
+							<p><a className="voting-link" href={link} target="_blank" rel="noopener">{description}</a></p>
+						) : (
+							<p>{description}</p>
+						)
+					) : (
+						link ? (
+							<p><a className="voting-link" href={link} target="_blank" rel="noopener">{link}</a></p>
+						): (
+							null
+						)
+					) }
 				</div>
 				<div>
 					<Grid squares={count ** 2} />
