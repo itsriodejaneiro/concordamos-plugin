@@ -2,13 +2,24 @@
 @import '../settings/mixins.scss';
 
 button {
-	background-color: #FFFFFF;
-	border-radius: 50px;
-	border: 3px solid #000000;
-	padding: 0.6rem 1.2rem;
+	background-color: #FFFFFF !important;
+	border-radius: 50px !important;
+	border: 3px solid #000 !important;
+	padding: 9px 32px !important;
+	
+	
+	
 
 	&.button-full {
 		width: 100%;
+		font-family: 'Oswald' !important;
+		font-size: 24px !important;
+		line-height: 130%;
+		letter-spacing: -0.24px !important;
+		font-weight: 500;
+		text-transform: capitalize !important;
+		color: var(--wp--preset--color--black) !important;
+		border-radius: 80px !important;	
 	}
 
 	&.disabled {

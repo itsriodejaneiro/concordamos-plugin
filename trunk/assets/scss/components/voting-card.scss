@@ -1,6 +1,7 @@
 .voting-card {
 	border: 3px solid black;
 	border-radius: 2rem;
+	background-color: #fff;
 
 	header {
 		border-radius: calc(2rem - 3px) calc(2rem - 3px) 0 0;
@@ -12,35 +13,51 @@
 			font-weight: bold;
 		}
 	}
+	
 
 	main {
 		padding: 2rem;
 	}
 
 	h2 {
-		font-size: 1.25rem;
 		margin: 0;
 		text-transform: initial;
+		font-family: 'Oswald';
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 130%;
+		letter-spacing: -0.24px;
+		color: #111;
+		a{
+			text-decoration: none;
+		}
 	}
 
 	p {
-		margin: 1rem 0;
+		margin: 16px 0;
+		color: #666;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.14px;
 	}
 
 	&__tags {
 		display: flex;
-		gap: 1rem;
+		gap: 8px;
 		margin: 0;
 		padding: 0;
 
 		li {
-			border: 2px solid #EDE103;
-			border-radius: 1rem;
+			border: 3px solid #EDE103;
+			border-radius: 16px;
 			display: inline-block;
 			font-weight: bold;
 			line-height: 1;
 			list-style: none;
-			padding: 0.5rem;
+			padding: 6px;
+			font-size: 12px;
 		}
 	}
 
@@ -54,14 +71,23 @@
 	&.present {
 
 		header {
+			
 			background-color: #26A9F9;
 		}
 	}
 
-	&.future {
-
+	&.closed {
+		span{
+			color: #111;
+			font-family: 'Inter Tight' !important;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 150%;
+			letter-spacing: -0.16px;	
+		}
 		header {
-			background-color: #D7D7D7;
+			background-color: #FF2E22;	
+			
 		}
 	}
 }

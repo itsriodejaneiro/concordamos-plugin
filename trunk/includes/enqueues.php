@@ -9,6 +9,8 @@ function enqueue_scripts_admin() {
 add_action( 'admin_enqueue_scripts', 'Concordamos\enqueue_scripts_admin' );
 
 function enqueue_scripts_frontend() {
+	wp_register_style('concordamos', CONCORDAMOS_PLUGIN_URL . 'build/css/plugin.css', [], CONCORDAMOS_PLUGIN_VERSION);
+
 	if ( is_page() ) {
 		$voting_page = get_voting_page();
 
@@ -23,13 +25,13 @@ function enqueue_scripts_frontend() {
 				]
 			);
 
-			wp_enqueue_style( 'concordamos-voting-form-style', CONCORDAMOS_PLUGIN_URL . 'build/css/voting-page.css', [], CONCORDAMOS_PLUGIN_VERSION );
+			wp_enqueue_style( 'concordamos-voting-form-style', CONCORDAMOS_PLUGIN_URL . 'build/css/voting-page.css', ['concordamos'], CONCORDAMOS_PLUGIN_VERSION );
 		}
 	}
 
 	if ( is_singular( 'voting' ) ) {
-		wp_enqueue_script( 'concordamos-voting-single', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-single/index.js', ['wp-element', 'wp-i18n'], CONCORDAMOS_PLUGIN_VERSION, true );
-		wp_enqueue_style( 'concordamos-single-voting-style', CONCORDAMOS_PLUGIN_URL . 'build/css/single-voting.css', [], CONCORDAMOS_PLUGIN_VERSION );
+		wp_enqueue_script( 'concordamos-voting-single', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-single/index.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+		wp_enqueue_style( 'concordamos-single-voting-style', CONCORDAMOS_PLUGIN_URL . 'build/css/single-voting.css', ['concordamos'], CONCORDAMOS_PLUGIN_VERSION );
 
 		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
 
@@ -45,8 +47,8 @@ function enqueue_scripts_frontend() {
 	}
 
 	if ( is_post_type_archive( 'voting' ) ) {
-		wp_enqueue_script( 'concordamos-voting-archive', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-archive/index.js', ['wp-element', 'wp-i18n'], CONCORDAMOS_PLUGIN_VERSION, true );
-		wp_enqueue_style( 'concordamos-voting-archive-style', CONCORDAMOS_PLUGIN_URL . 'build/css/archive-voting.css', [], CONCORDAMOS_PLUGIN_VERSION );
+		wp_enqueue_script( 'concordamos-voting-archive', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-archive/index.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+		wp_enqueue_style( 'concordamos-voting-archive-style', CONCORDAMOS_PLUGIN_URL . 'build/css/archive-voting.css', ['concordamos'], CONCORDAMOS_PLUGIN_VERSION );
 
 		wp_localize_script(
 			'concordamos-voting-archive',
@@ -59,5 +61,6 @@ function enqueue_scripts_frontend() {
 		);
 	}
 }
+
 
 add_action( 'wp_enqueue_scripts', 'Concordamos\enqueue_scripts_frontend' );
