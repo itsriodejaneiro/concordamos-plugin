@@ -18,13 +18,13 @@ function register_endpoints() {
 	register_rest_route( 'concordamos/v1', '/my-votings/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\list_my_votings_callback',
-		'permission_callback' => 'Concordamos\\permission_vote_check',
+		'permission_callback' => 'Concordamos\\permission_check',
 	]);
 
 	register_rest_route( 'concordamos/v1', '/participated-votings/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\list_participated_votings_callback',
-		'permission_callback' => 'Concordamos\\permission_vote_check',
+		'permission_callback' => 'Concordamos\\permission_check',
 	]);
 
 	register_rest_route( 'concordamos/v1', '/votings/', [
