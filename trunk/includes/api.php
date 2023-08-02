@@ -15,6 +15,12 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_vote_check'
 	] );
 
+	register_rest_route( 'concordamos/v1', '/my-votings/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\list_my_votings_callback',
+		'permission_callback' => 'Concordamos\\permission_vote_check',
+	]);
+
 	register_rest_route( 'concordamos/v1', '/votings/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\search_votings_callback',
@@ -43,6 +49,27 @@ function permission_check( \WP_REST_Request $request ) {
 
 	return true;
 
+}
+
+function list_my_votings_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+
+	$args = [
+		'post_type' => 'voting',
+		'post_status' => 'publish',
+		'post_author' => get_current_user_id(),
+		'posts_per_page' => 6,
+		'paged' => $currentPage,
+	];
+
+	$query = new \WP_Query($args);
+
+	return [
+		'num_pages' => $query->max_num_pages,
+		'posts' => array_map('Concordamos\\prepare_voting_for_api', $query->posts),
+	];
 }
 
 function search_votings_callback ( \WP_REST_Request $request ) {
