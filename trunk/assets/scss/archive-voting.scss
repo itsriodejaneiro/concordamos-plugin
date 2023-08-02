@@ -12,16 +12,30 @@
 		background-position: center;
 		background-size: 1em;
 		display: inline-block;
-		height: 1em;
-		width: 1em;
+		height: 16px;
+		width: 16px;
 	}
 
 	.voting-archive-header {
 
 		h1 {
-			font-family: 'Osvald';
-			font-size: 4rem;
+			font-family: 'Oswald' !important;
+			font-size: 64px;
 			text-align: center;
+			text-transform: uppercase;
+			font-weight: 600;
+			margin-top: 67px;
+			margin-bottom: 47px;
+		}
+		.voting-archive-filters{
+			display: grid;
+			grid-template-columns: 4fr 1fr;
+			gap: 33px;
+			details{
+				border: 3px solid black;
+				border-radius: 32px;
+					
+			}
 		}
 	}
 
@@ -37,7 +51,12 @@
 			border-right: none;
 			border-radius: 32px 0 0 32px;
 			flex: 1;
-			padding: 0.5rem 32px;
+			padding: 29px 32px 17px;
+			&::placeholder{
+				font-family: 'Oswald';
+				color: #666;
+				font-size: 24px;
+			}
 		}
 
 		button {
@@ -56,7 +75,7 @@
 		display: grid;
 		gap: 1rem;
 		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-		margin: 2rem auto;
+		margin: 45px auto;
 
 		@media screen and (max-width: 20rem) {
 			grid-template-columns: 1fr;

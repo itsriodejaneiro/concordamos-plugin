@@ -51,7 +51,8 @@
 				letter-spacing: -0.48px;
 				margin-top: 8px;
 				font-family: 'Oswald';
-				text-transform: uppercase;    
+				text-transform: uppercase;
+				font-weight: 700;    
 			}
 
 			.meta {
@@ -71,6 +72,8 @@
 					list-style: none;
 					margin-left: 0;
 					display: flex;
+					gap: 8px;
+					padding-left: 0;
 
 					li {
 						border-radius: 16px;
@@ -232,10 +235,14 @@
 
 					> div {
 						h3 {
-							font-size: size(24);
-							font-weight: 600;
+							font-size: 24px;
 							margin-bottom: 0;
 							margin-top: 0;
+							font-family: 'Oswald';
+							font-weight: 500;
+							line-height: 130%;
+							letter-spacing: -0.24px;
+							color: #000;
 						}
 
 						.option-voting-vote {
@@ -279,6 +286,15 @@
 				}
 
 				&.view-mode {
+					h2{
+						color: #111;
+						font-family: 'Oswald';
+						font-size: 32px;
+						font-weight: 700;
+						line-height: 130%;
+						letter-spacing: -0.32px;
+						text-transform: uppercase;	
+					}
 					.options {
 						display: grid;
 						grid-template-columns: 1fr 1fr;
