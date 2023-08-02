@@ -107,7 +107,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 			<div className="sidebar">
 				<Grid squares={Number(credits_voter)} consumed={usedCredits}/>
 				<span>{__('Available credits', 'concordamos')}</span>
-				<span>{`${usedCredits} / ${credits_voter}`}</span>
+				<span>{`${credits_voter - usedCredits} / ${credits_voter}`}</span>
 			</div>
 		</div>
 	)
