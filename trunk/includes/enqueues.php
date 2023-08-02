@@ -30,7 +30,7 @@ function enqueue_scripts_frontend() {
 	}
 
 	if ( is_singular( 'voting' ) ) {
-		wp_enqueue_script( 'concordamos-voting-single', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-single/index.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+		wp_enqueue_script( 'concordamos-voting-single', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-single/index.js', ['wp-element', 'wp-i18n'], CONCORDAMOS_PLUGIN_VERSION, true );
 		wp_enqueue_style( 'concordamos-single-voting-style', CONCORDAMOS_PLUGIN_URL . 'build/css/single-voting.css', ['concordamos'], CONCORDAMOS_PLUGIN_VERSION );
 
 		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
@@ -47,7 +47,7 @@ function enqueue_scripts_frontend() {
 	}
 
 	if ( is_post_type_archive( 'voting' ) ) {
-		wp_enqueue_script( 'concordamos-voting-archive', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-archive/index.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+		wp_enqueue_script( 'concordamos-voting-archive', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-archive/index.js', ['wp-element', 'wp-i18n'], CONCORDAMOS_PLUGIN_VERSION, true );
 		wp_enqueue_style( 'concordamos-voting-archive-style', CONCORDAMOS_PLUGIN_URL . 'build/css/archive-voting.css', ['concordamos'], CONCORDAMOS_PLUGIN_VERSION );
 
 		wp_localize_script(
