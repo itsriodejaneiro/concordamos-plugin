@@ -8,6 +8,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
     <h1>Create user</h1>
     <?php wp_footer(); ?>
 </body>
