@@ -22,7 +22,7 @@ $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_dat
 
 $is_panel = get_query_var( 'panel' );
 ?>
-
+<div>	
 	<div class="voting-header">
 		<div class="container">
 			<div class="info">
@@ -79,5 +79,5 @@ $is_panel = get_query_var( 'panel' );
 			></div>
 		</div>
 	</div>
-
+</div>
 <?php get_footer(); ?>

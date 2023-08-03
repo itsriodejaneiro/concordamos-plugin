@@ -60,17 +60,31 @@ function settings_init() {
 
     add_settings_section(
         'concordamos_section',
-        '',
+        __('Pages Templates', 'concordamos'),
         'Concordamos\section_callback',
         'concordamos-settings'
     );
 
     add_settings_field(
-        'votting_page',
-        __( 'Select page to add form to create voting', 'concordamos' ),
+        'voting_page',
+        __( 'Create voting', 'concordamos' ),
         'Concordamos\select_field_render',
         'concordamos-settings',
-        'concordamos_section'
+        'concordamos_section',
+        [
+            'name' => 'voting_page',
+        ]
+    );
+
+    add_settings_field(
+        'login_page',
+        __( 'Login', 'concordamos' ),
+        'Concordamos\select_field_render',
+        'concordamos-settings',
+        'concordamos_section',
+        [
+            'name' => 'login_page',
+        ]
     );
 }
 add_action( 'admin_init', 'Concordamos\settings_init' );
@@ -79,16 +93,17 @@ function section_callback() {
     echo '';
 }
 
-function select_field_render() {
+function select_field_render($args) {
 	$options = get_option( 'concordamos_options' );
 	$pages = get_pages();
+    $name = $args['name'];
 
 	?>
-	<select name='concordamos_options[votting_page]'>
-		<option value='' <?php selected( $options['votting_page'], '', false ); ?>><?php _e( 'Select a page', 'concordamos' ); ?></option>
+	<select name='concordamos_options[<?php echo $name; ?>]'>
+		<option value='' <?php selected( $options[$name], '', false ); ?>><?php _e( 'Select a page', 'concordamos' ); ?></option>
 		<?php
 		foreach ( $pages as $page ) {
-			echo "<option value='{$page->ID}' " . selected( $options['votting_page'], $page->ID, false ) . ">{$page->post_title}</option>";
+			echo "<option value='{$page->ID}' " . selected( $options[$name], $page->ID, false ) . ">{$page->post_title}</option>";
 		}
 		?>
 	</select>

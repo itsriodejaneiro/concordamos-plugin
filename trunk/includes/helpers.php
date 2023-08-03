@@ -5,8 +5,18 @@ namespace Concordamos;
 function get_voting_page() {
 	$options = get_option( 'concordamos_options' );
 
-	if ( isset( $options['votting_page'] ) && ! empty( $options['votting_page'] ) ) {
-		return $options['votting_page'];
+	if ( isset( $options['voting_page'] ) && ! empty( $options['voting_page'] ) ) {
+		return $options['voting_page'];
+	}
+
+	return '';
+}
+
+function get_login_page() {
+	$options = get_option( 'concordamos_options' );
+
+	if ( isset( $options['login_page'] ) && ! empty( $options['login_page'] ) ) {
+		return $options['login_page'];
 	}
 
 	return '';
