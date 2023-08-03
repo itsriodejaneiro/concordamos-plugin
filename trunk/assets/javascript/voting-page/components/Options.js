@@ -1,4 +1,5 @@
 import { __, sprintf } from '@wordpress/i18n'
+import classNames from 'classnames'
 import React, { useState, useEffect } from 'react'
 
 const Options = ({label, description, setVotingOptions}) => {
@@ -68,7 +69,7 @@ const Options = ({label, description, setVotingOptions}) => {
 				<div className="fields">
 					{inputFields.map((input, index) => {
 						return (
-							<div className={`option ${toggleStates[index] ? "open" : ""}`} key={index}>
+							<div className={classNames('option', { 'open': toggleStates[index] })} key={index}>
 
 								{
 									! toggleStates[index]

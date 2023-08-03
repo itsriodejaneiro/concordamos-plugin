@@ -74,16 +74,16 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 				<p>{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString('pt-BR'), formattedDateEnd.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: true }))}</p>
 
 				<form onSubmit={confirmVote}>
-					{Object.keys(parsedOptions).map(key => {
-						const voteCount = votes.find(vote => vote.id === key)?.count || 0
+					{Object.entries(parsedOptions).map(([key, option]) => {
+						const voteCount = votes.find((vote) => vote.id === key)?.count ?? 0
 						return (
 							<Option
 								key={key}
 								id={key}
 								count={voteCount}
-								name={parsedOptions[key].option_name}
-								description={parsedOptions[key].option_description}
-								link={parsedOptions[key].option_link}
+								name={option.option_name}
+								description={option.option_description}
+								link={option.option_link}
 								onVoteChange={handleVoteChange}
 							/>
 						)

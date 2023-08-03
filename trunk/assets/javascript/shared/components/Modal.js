@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n'
+import classNames from 'classnames'
 import { useEffect, useRef, useState } from 'react'
 
 export function useModal (startOpen = false) {
@@ -23,7 +24,7 @@ export default function Modal ({ children, controller }) {
 	}, [isOpen])
 
 	return (
-		<div className={`voting-modal__wrapper ${isOpen ? 'open' : ''}`}>
+		<div className={classNames('voting-modal__wrapper', { 'open': isOpen })}>
 			<dialog className="voting-modal" ref={dialogRef} open={isOpen}>
 				<header>
 					<button type="button" className="button close" onClick={close}>{__('Close', 'concordamos')}</button>

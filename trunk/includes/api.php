@@ -15,6 +15,12 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_vote_check'
 	] );
 
+	register_rest_route( 'concordamos/v1', '/my-vote/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\get_my_vote_callback',
+		'permission_callback' => 'Concordamos\\permission_check',
+	] );
+
 	register_rest_route( 'concordamos/v1', '/my-votings/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\list_my_votings_callback',
@@ -38,19 +44,21 @@ add_action( 'rest_api_init', 'Concordamos\\register_endpoints' );
 function permission_check( \WP_REST_Request $request ) {
 
 	if ( ! is_user_logged_in() ) {
-		return new \WP_Error( 'rest_forbidden', 'Você não está logado.', array( 'status' => 401 ) );
+		return new \WP_Error( 'rest_forbidden', __('You are not signed in.', 'concordamos'), array( 'status' => 401 ) );
 	}
 
 	$user = wp_get_current_user();
 
 	if ( ! in_array( 'concordamos_network', $user->roles ) && ! in_array( 'administrator', $user->roles ) ) {
-		return new \WP_Error( 'rest_forbidden', 'Você não tem permissões suficientes.', array( 'status' => 403 ) );
+		return new \WP_Error( 'rest_forbidden', __("You don't have enough permissions.", 'concordamos'), array( 'status' => 403 ) );
 	}
 
-	$params = $request->get_json_params();
+	if ( $request->get_method() === 'POST' ) {
+		$params = $request->get_json_params();
 
-	if ( $params['user_id'] != $user->ID ) {
-		return new \WP_Error( 'rest_forbidden', 'Você não tem permissões suficientes.', array( 'status' => 403 ) );
+		if ( $params['user_id'] != $user->ID ) {
+			return new \WP_Error( 'rest_forbidden', __("You don't have enough permissions.", 'concordamos'), array( 'status' => 403 ) );
+		}
 	}
 
 	return true;
@@ -167,16 +175,16 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$params = $request->get_json_params();
 
 	$required_params = [
-		"credits_voter",
-		"number_voters",
-		"tags",
-		"user_id",
-		"voting_description",
-		"voting_name",
-		"voting_options",
-		"date_start",
-		"date_end",
-		"voting_type"
+		'credits_voter',
+		'number_voters',
+		'tags',
+		'user_id',
+		'voting_description',
+		'voting_name',
+		'voting_options',
+		'date_start',
+		'date_end',
+		'voting_type'
 	];
 
 	// Check required params
@@ -184,7 +192,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		if ( ! isset( $params[$param] ) || empty( $params[$param] ) ) {
 			$response = [
 				'status' => 'error',
-				'message' => 'Campo necessário não recebido ou está vazio: ' . $param
+				'message' => __('Required field is either missing or blank:', 'concordamos') . ' ' . $param
 			];
 			return new \WP_REST_Response( $response, 400 );
 		}
@@ -196,11 +204,10 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$unique_ids = '';
 
 	// Generate all unique links to voting if is private
-	// @todo: https://www.php.net/manual/en/function.random-bytes.php
 	if ( $voting_type === 'private' ) {
 		for ( $i = 0; $i < $number_voters; $i++ ) {
-			$prefix = 'u-' . random_int( 100, 999 );
-			$unique_ids .= uniqid( $prefix ) . ',';
+			$prefix = 'u-' . bin2hex( random_bytes( 6 ) );
+			$unique_ids .= $prefix . ',';
 		}
 	}
 
@@ -262,16 +269,50 @@ function create_voting_callback( \WP_REST_Request $request ) {
 
 		$response = [
 			'status'  => 'success',
-			'message' => 'Votação criada com sucesso!'
+			'message' => __('Voting created successfully!', 'concordamos'),
 		];
 		return new \WP_REST_Response( $response, 200 );
 
 	} else {
 		$response = [
 			'status'  => 'error',
-			'message' => 'Verifique todos os campos e envie novamente.'
+			'message' => __('Verify all fields and try again.'. 'concordamos'),
 		];
 		return new \WP_REST_Response( $response, 400 );
+	}
+}
+
+function get_my_vote_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	if (empty($params['v_id'])) {
+		$response = [
+			'status' => 'error',
+			'message' => __('Required field is either missing or blank:', 'concordamos') . ' v_id',
+		];
+		return new \WP_REST_Response($response, 400);
+	}
+
+	$args = [
+		'post_type' => 'vote',
+		'post_status' => 'publish',
+		'post_author' => get_current_user_id(),
+		'meta_query' => [
+			[ 'key' => 'voting_id', 'value' => $params['v_id'] ],
+		],
+	];
+
+	$query = new \WP_Query($args);
+
+	if ($query->have_posts()) {
+		$votes = get_post_meta($query->post->ID, 'voting_options', true);
+		return maybe_unserialize($votes);
+	} else {
+		$response = [
+			'status' => 'error',
+			'message' => __('Vote not found.', 'concordamos'),
+		];
+		return new \WP_REST_Response($response, 404);
 	}
 }
 
@@ -292,7 +333,7 @@ function vote_callback( \WP_REST_Request $request ) {
 	}
 
 	// Check if voting has unique ID and is private
-	if ( preg_match( '/^u-[a-z0-9]+$/i', $unique_id ) && $is_private ) {
+	if ( preg_match( '/^u-[A-Za-z0-9]+$/i', $unique_id ) && $is_private ) {
 		$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
 
 		// Checks that unique ID was not used
