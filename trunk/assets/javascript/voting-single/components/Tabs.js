@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-export function Tabs ({ onChange, tab, tabs }) {
+export default function Tabs ({ onChange, tab, tabs }) {
 	function selectTab (newTab) {
 		return function (event) {
 			onChange(newTab)
