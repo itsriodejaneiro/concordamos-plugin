@@ -198,11 +198,10 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$unique_ids = '';
 
 	// Generate all unique links to voting if is private
-	// @todo: https://www.php.net/manual/en/function.random-bytes.php
 	if ( $voting_type === 'private' ) {
 		for ( $i = 0; $i < $number_voters; $i++ ) {
-			$prefix = 'u-' . random_int( 100, 999 );
-			$unique_ids .= uniqid( $prefix ) . ',';
+			$prefix = 'u-' . bin2hex( random_bytes( 6 ) );
+			$unique_ids .= $prefix . ',';
 		}
 	}
 
@@ -294,7 +293,7 @@ function vote_callback( \WP_REST_Request $request ) {
 	}
 
 	// Check if voting has unique ID and is private
-	if ( preg_match( '/^u-[a-z0-9]+$/i', $unique_id ) && $is_private ) {
+	if ( preg_match( '/^u-[A-Za-z0-9]+$/i', $unique_id ) && $is_private ) {
 		$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
 
 		// Checks that unique ID was not used
