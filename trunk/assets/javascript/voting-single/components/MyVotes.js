@@ -47,7 +47,7 @@ export default function MyVotes ({ initialData }) {
 				</div>
 			</div>
 			<div className="sidebar">
-				<Grid squares={credits_voter}/>
+				<Grid squares={credits_voter} consumed={usedCredits}/>
 				<span>{__('Distributed credits', 'concordamos')}</span>
 				<span>{`${usedCredits} / ${credits_voter}`}</span>
 			</div>
