@@ -13,17 +13,15 @@ export default function SingleView ({ handleViewChange, initialData }) {
 			<div className="content view-mode">
 				<h2>{__('Voting options', 'concordamos')}</h2>
 				<div className="options">
-					{Object.keys(parsedOptions).map(key => {
-						return (
-							<OptionView
-								key={key}
-								id={key}
-								name={parsedOptions[key].option_name}
-								description={parsedOptions[key].option_description}
-								link={parsedOptions[key].option_link}
-							/>
-						)
-					})}
+					{Object.entries(parsedOptions).map(([key, option]) => (
+						<OptionView
+							key={key}
+							id={key}
+							name={option.option_name}
+							description={option.option_description}
+							link={option.option_link}
+						/>
+					))}
 				</div>
 
 				<div className="actions">

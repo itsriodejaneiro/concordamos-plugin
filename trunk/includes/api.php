@@ -15,6 +15,12 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_vote_check'
 	] );
 
+	register_rest_route( 'concordamos/v1', '/my-vote/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\get_my_vote_callback',
+		'permission_callback' => 'Concordamos\\permission_check',
+	] );
+
 	register_rest_route( 'concordamos/v1', '/my-votings/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\list_my_votings_callback',
@@ -273,6 +279,40 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'message' => __('Verify all fields and try again.'. 'concordamos'),
 		];
 		return new \WP_REST_Response( $response, 400 );
+	}
+}
+
+function get_my_vote_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	if (empty($params['v_id'])) {
+		$response = [
+			'status' => 'error',
+			'message' => __('Required field is either missing or blank:', 'concordamos') . ' v_id',
+		];
+		return new \WP_REST_Response($response, 400);
+	}
+
+	$args = [
+		'post_type' => 'vote',
+		'post_status' => 'publish',
+		'post_author' => get_current_user_id(),
+		'meta_query' => [
+			[ 'key' => 'voting_id', 'value' => $params['v_id'] ],
+		],
+	];
+
+	$query = new \WP_Query($args);
+
+	if ($query->have_posts()) {
+		$votes = get_post_meta($query->post->ID, 'voting_options', true);
+		return maybe_unserialize($votes);
+	} else {
+		$response = [
+			'status' => 'error',
+			'message' => __('Vote not found.', 'concordamos'),
+		];
+		return new \WP_REST_Response($response, 404);
 	}
 }
 

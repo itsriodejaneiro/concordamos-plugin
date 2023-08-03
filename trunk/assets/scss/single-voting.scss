@@ -4,7 +4,7 @@
 @import 'components/modal';
 
 .single-voting {
-	
+
 	.voting-header {
 		background-color: #FFFFFF;
 		padding-bottom: size(32);
@@ -12,7 +12,7 @@
 		min-height: 393px;
 		padding-top: 3.8rem;
 		@media(max-width: 781px){
-			padding-top: 2rem;   
+			padding-top: 2rem;
 		}
 
 		.container {
@@ -53,7 +53,7 @@
 				margin-top: 8px;
 				font-family: 'Oswald';
 				text-transform: uppercase;
-				font-weight: 700;    
+				font-weight: 700;
 			}
 
 			.meta {
@@ -175,7 +175,7 @@
 				font-weight: 600;
 				line-height: 150%;
 				letter-spacing: -0.14px;
-				text-transform: uppercase;    
+				text-transform: uppercase;
 			}
 		}
 	}
@@ -298,7 +298,7 @@
 						font-weight: 700;
 						line-height: 130%;
 						letter-spacing: -0.32px;
-						text-transform: uppercase;	
+						text-transform: uppercase;
 					}
 					.options {
 						display: grid;
@@ -315,6 +315,10 @@
 							margin-bottom: 0;
 						}
 					}
+				}
+
+				.votings-list {
+					padding-top: 4rem;
 				}
 			}
 
