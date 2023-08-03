@@ -38,19 +38,19 @@ add_action( 'rest_api_init', 'Concordamos\\register_endpoints' );
 function permission_check( \WP_REST_Request $request ) {
 
 	if ( ! is_user_logged_in() ) {
-		return new \WP_Error( 'rest_forbidden', 'Você não está logado.', array( 'status' => 401 ) );
+		return new \WP_Error( 'rest_forbidden', __('You are not signed in.', 'concordamos'), array( 'status' => 401 ) );
 	}
 
 	$user = wp_get_current_user();
 
 	if ( ! in_array( 'concordamos_network', $user->roles ) && ! in_array( 'administrator', $user->roles ) ) {
-		return new \WP_Error( 'rest_forbidden', 'Você não tem permissões suficientes.', array( 'status' => 403 ) );
+		return new \WP_Error( 'rest_forbidden', __("You don't have enough permissions.", 'concordamos'), array( 'status' => 403 ) );
 	}
 
 	if ( $request->get_method() === 'POST' ) {
-	$params = $request->get_json_params();
+		$params = $request->get_json_params();
 
-	if ( $params['user_id'] != $user->ID ) {
+		if ( $params['user_id'] != $user->ID ) {
 			return new \WP_Error( 'rest_forbidden', __("You don't have enough permissions.", 'concordamos'), array( 'status' => 403 ) );
 		}
 	}
@@ -169,16 +169,16 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$params = $request->get_json_params();
 
 	$required_params = [
-		"credits_voter",
-		"number_voters",
-		"tags",
-		"user_id",
-		"voting_description",
-		"voting_name",
-		"voting_options",
-		"date_start",
-		"date_end",
-		"voting_type"
+		'credits_voter',
+		'number_voters',
+		'tags',
+		'user_id',
+		'voting_description',
+		'voting_name',
+		'voting_options',
+		'date_start',
+		'date_end',
+		'voting_type'
 	];
 
 	// Check required params
@@ -186,7 +186,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		if ( ! isset( $params[$param] ) || empty( $params[$param] ) ) {
 			$response = [
 				'status' => 'error',
-				'message' => 'Campo necessário não recebido ou está vazio: ' . $param
+				'message' => __('Required field is either missing or blank:', 'concordamos') . ' ' . $param
 			];
 			return new \WP_REST_Response( $response, 400 );
 		}
@@ -264,14 +264,14 @@ function create_voting_callback( \WP_REST_Request $request ) {
 
 		$response = [
 			'status'  => 'success',
-			'message' => 'Votação criada com sucesso!'
+			'message' => __('Voting created successfully!', 'concordamos'),
 		];
 		return new \WP_REST_Response( $response, 200 );
 
 	} else {
 		$response = [
 			'status'  => 'error',
-			'message' => 'Verifique todos os campos e envie novamente.'
+			'message' => __('Verify all fields and try again.'. 'concordamos'),
 		];
 		return new \WP_REST_Response( $response, 400 );
 	}
