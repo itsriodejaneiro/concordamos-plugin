@@ -47,10 +47,12 @@ function permission_check( \WP_REST_Request $request ) {
 		return new \WP_Error( 'rest_forbidden', 'Você não tem permissões suficientes.', array( 'status' => 403 ) );
 	}
 
+	if ( $request->get_method() === 'POST' ) {
 	$params = $request->get_json_params();
 
 	if ( $params['user_id'] != $user->ID ) {
-		return new \WP_Error( 'rest_forbidden', 'Você não tem permissões suficientes.', array( 'status' => 403 ) );
+			return new \WP_Error( 'rest_forbidden', __("You don't have enough permissions.", 'concordamos'), array( 'status' => 403 ) );
+		}
 	}
 
 	return true;
