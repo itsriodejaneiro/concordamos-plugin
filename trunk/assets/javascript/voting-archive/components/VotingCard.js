@@ -1,4 +1,5 @@
 import { __, _x, sprintf } from '@wordpress/i18n'
+import classNames from 'classnames'
 
 import Image from './Image'
 
@@ -43,7 +44,7 @@ export default function VotingCard ({ panel = false, voting }) {
 	const requiresLogin = voting.access === 'yes'
 
 	return (
-		<article className={`voting-card ${voting.time}`}>
+		<article className={classNames('voting-card', voting.time)}>
 			<header>
 				<span>{getVotingStatus(voting)}</span>
 				<span>{getVotingDate(voting)}</span>
