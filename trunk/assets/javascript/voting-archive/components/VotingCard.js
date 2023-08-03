@@ -4,6 +4,14 @@ import Image from './Image'
 
 const dateFormatter = new Intl.DateTimeFormat('pt-br', { dateStyle: 'short' })
 
+function buildPanelUrl (url) {
+	if (url.includes('?')) {
+		return `${url}&panel=1`
+	} else {
+		return `${url}?panel=1`
+	}
+}
+
 function formatDate (timestamp) {
 	return dateFormatter.format(timestamp)
 }
@@ -30,7 +38,7 @@ function getVotingDate (voting) {
 	}
 }
 
-export default function VotingCard ({ voting }) {
+export default function VotingCard ({ panel = false, voting }) {
 	const isOpen = voting.time === 'present'
 	const requiresLogin = voting.access === 'yes'
 
@@ -41,9 +49,11 @@ export default function VotingCard ({ voting }) {
 				<span>{getVotingDate(voting)}</span>
 			</header>
 			<main>
-				<h2><a href={voting.permalink}>{voting.title}</a></h2>
+				<h2><a href={panel ? buildPanelUrl(voting.permalink) : voting.permalink}>{voting.title}</a></h2>
 				<p>{voting.content}</p>
-				<p><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? __('Login required', 'concordamos') : __('Login required to see results', 'concordamos')) : __('No login', 'concordamos')}</p>
+				{ panel ? null : (
+					<p><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? __('Login required', 'concordamos') : __('Login required to see results', 'concordamos')) : __('No login', 'concordamos')}</p>
+				)}
 				<ul className="voting-card__tags">
 				{voting.tags.map((tag) => (
 					<li key={tag.ID}>#{tag.name}</li>
