@@ -11,10 +11,8 @@
 	<?php wp_body_open(); ?>
     <section class="concordamos-balloon">
         <div class="balloon-content">
-            <img src="" alt="">
-            <p class="balloon-subtitle">
-                A way to vote for consensus             
-            </p>
+            <p class="balloon-subtitle">A way to vote for consensus</p>          
+            <img src= "/../../assets/images/login-logo.png" alt="">
         </div>    
     </section>
     <section class="login-form">
