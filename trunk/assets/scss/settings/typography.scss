@@ -1,4 +1,32 @@
 @font-face {
+    font-family: 'Oswald';
+    font-weight: 'semibold';
+    font-display: swap;
+    src: url('../../assets/fonts/Oswald-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-weight: 'bold';
+    font-display: swap;
+    src: url('../../assets/fonts/Oswald-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-weight: 'medium';
+    font-display: swap;
+    src: url('../../assets/fonts/Oswald-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-weight: 'normal';
+    font-display: swap;
+    src: url('../../assets/fonts/Oswald-Regular.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'Inter Tight';
     font-weight: normal;
     font-display: swap;
@@ -13,8 +41,50 @@
 }
 
 @font-face {
-    font-family: 'Oswald';
+    font-family: 'Inter';
+    font-weight: bold;
+    font-display: swap;
+    src: url('../../assets/fonts/Inter-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: normal;
+    font-display: swap;
+    src: url('../../assets/fonts/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
     font-weight: 'semibold';
     font-display: swap;
-    src: url('../../assets/fonts/Oswald-SemiBold.ttf') format('truetype');
+    src: url('../../assets/fonts/Inter-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Libre Franklin';
+    font-weight: bold;
+    font-display: swap;
+    src: url('../../assets/fonts/LibreFranklin-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Libre Franklin';
+    font-weight: normal;
+    font-display: swap;
+    src: url('../../assets/fonts/LibreFranklin-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-display: swap;
+    src: url('../../assets/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-display: swap;
+    src: url('../../assets/OpenSans-Regular.ttf') format('truetype');
 }

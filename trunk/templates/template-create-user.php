@@ -31,7 +31,7 @@
                     <input name="email" type="text">
                 </label>
             </div>
-            <div class="password-field">
+            <div class="register-password-field">
                 <label>
                     <span>Password</span>
                     <input name="password" type="text">

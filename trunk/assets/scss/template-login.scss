@@ -1,0 +1,59 @@
+@import 'settings/mixins';
+
+
+.page-template-template-login,
+.page-template-template-create-user{
+    .concordamos-balloon{
+        background-image: url(../../assets/images/meialua2.png);
+        background-repeat: no-repeat;
+        min-height: 500px;
+        .balloon-content{
+            max-width: 570px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    }
+    .login-form,
+    .register-form{
+        .container{
+            max-width: 570px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;    
+        }
+        input{
+            border-radius: 8px;
+            border: 3px solid #000;
+            background: #FFF;
+        }
+        .register-submit,
+        .login-submit{
+            border-radius: 80px;
+            border: 3px solid #000;
+            background: #FFF766;
+            color: #111;
+            max-width: 570px;
+            width: 100%;    
+        }
+        p, img{
+            text-align: center;
+        }
+    }
+    .login-password-field{
+        a{
+            font-size: 12px;
+            color: #FF2E22;
+        }
+    }
+    .register-password-field{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+}
