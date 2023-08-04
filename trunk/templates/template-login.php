@@ -9,7 +9,37 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-    <h1>Login</h1>
+    <section class="concordamos-balloon">
+        <div class="balloon-content">
+            <img src="" alt="">
+            <p class="balloon-subtitle">
+                A way to vote for consensus             
+            </p>
+        </div>    
+    </section>
+    <section class="login-form">
+        <div class="container">
+            <div class="email-field">
+                <label>
+                    <span>E-mail</span>
+                    <input name="email" type="text">
+                </label>
+            </div>
+            <div class="password-field">
+                <label>
+                    <span>Password</span>
+                    <input name="password" type="text">
+                </label>
+                <a href="#">I forgot my password</a>
+            </div>
+            <div class="login-button">
+                <button class="login-submit" type="submit">Let's go!</button>
+                <p>Don't have an account? <a href="#">Register here.</a></p>
+                <img src="" alt="">   
+            </div>
+           
+        </div>
+    </section>
     <?php wp_footer(); ?>
 </body>
 </html>

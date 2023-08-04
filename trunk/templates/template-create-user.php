@@ -9,7 +9,49 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-    <h1>Create user</h1>
+    <section class="concordamos-balloon">
+        <div class="balloon-content">
+            <img src="" alt="">
+            <p class="balloon-subtitle">
+                A way to vote for consensus             
+            </p>
+        </div>    
+    </section>
+    <section class="register-form">
+        <div class="container">
+            <div class="name-field">
+                <label>
+                    <span>Name</span>
+                    <input name="name" type="text">
+                </label>
+            </div>
+            <div class="email-field">
+                <label>
+                    <span>E-mail</span>
+                    <input name="email" type="text">
+                </label>
+            </div>
+            <div class="password-field">
+                <label>
+                    <span>Password</span>
+                    <input name="password" type="text">
+                </label>
+                <label>
+                    <span>Repeat password</span>
+                    <input name="repeat-password" type="text">
+                </label>
+            </div>
+            <div class="register-button">
+                <button class="register-submit" type="submit">Let's go!</button>
+                <p>Already have an account?<a href="#">Access here.</a></p>
+                <img src="" alt="">   
+            </div>
+            <div class="register-terms">
+                <p>By creating an account on we agree you accept the <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></p>
+                <img src="" alt=""> 
+            </div>  
+        </div>
+    </section>
     <?php wp_footer(); ?>
 </body>
 </html>
