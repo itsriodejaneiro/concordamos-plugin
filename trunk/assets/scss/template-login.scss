@@ -6,7 +6,9 @@
     .concordamos-balloon{
         background-image: url(../../assets/images/meialua2.png);
         background-repeat: no-repeat;
+        background-position: center;
         min-height: 500px;
+        margin-top: -166px;
         .balloon-content{
             max-width: 570px;
             width: 100%;
@@ -23,7 +25,8 @@
                 line-height: 130%;
                 letter-spacing: -0.2px;
                 text-transform: uppercase;
-                color: #000;    
+                color: #000;
+                margin-top: 210px;    
             }
         }
         
@@ -34,7 +37,8 @@
             max-width: 570px;
             width: 100%;
             margin-left: auto;
-            margin-right: auto;    
+            margin-right: auto;
+            margin-top: 83px;    
         }
         label{
             color: #111;
@@ -48,6 +52,7 @@
             border-radius: 8px;
             border: 3px solid #000;
             background: #FFF;
+            margin-bottom: 25px;
         }
         .register-submit,
         .login-submit{
@@ -56,7 +61,13 @@
             background: #FFF766;
             color: #111;
             max-width: 570px;
-            width: 100%;    
+            width: 100%;
+            font-size: 24px;
+            font-family: 'Oswald';
+            font-weight: medium;
+            line-height: 130%;
+            letter-spacing: -0.24px;
+            padding: 15px 0;        
         }
         p, img{
             text-align: center;
@@ -66,11 +77,28 @@
         a{
             font-size: 12px;
             color: #FF2E22;
+            font-family: 'Inter Tight';
+            font-weight: 700;
+            letter-spacing: -0.12px;
         }
     }
     .register-password-field{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 32px;
+    }
+    .login-button,
+    .register-button{
+        p{
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%;
+            letter-spacing: -0.14px;
+            text-transform: uppercase;
+            color: #000;
+            margin-top: 5px;
+        }
     }
 }

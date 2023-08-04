@@ -42,7 +42,7 @@
             </div>
             <div class="register-button">
                 <button class="register-submit" type="submit">Let's go!</button>
-                <p>Already have an account?<a href="#">Access here.</a></p>
+                <p>Already have an account? <a href="#">Access here.</a></p>
                 <img src="" alt="">   
             </div>
             <div class="register-terms">

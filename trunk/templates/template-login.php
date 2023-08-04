@@ -12,7 +12,7 @@
     <section class="concordamos-balloon">
         <div class="balloon-content">
             <p class="balloon-subtitle">A way to vote for consensus</p>          
-            <img src= "/../../assets/images/login-logo.png" alt="">
+            <img src= "../../assets/images/login-logo.png" alt="">
         </div>    
     </section>
     <section class="login-form">
