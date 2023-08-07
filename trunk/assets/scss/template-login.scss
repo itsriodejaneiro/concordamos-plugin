@@ -76,6 +76,9 @@
             text-align: center;
         }
     }
+    .register-form input{
+        margin-bottom: 20px;
+    }
     .login-password-field{
         margin: 26px 0;
         a{
@@ -94,7 +97,7 @@
     .login-button,
     .register-button{
         p{
-            font-family: Inter;
+            font-family: 'Inter';
             font-size: 14px;
             font-style: normal;
             font-weight: 600;
@@ -103,6 +106,31 @@
             text-transform: uppercase;
             color: #000;
             margin-top: 5px;
+        }
+        a{
+            color: #26A9F9;
+            border-bottom: solid 3px #26A9F9;
+        }
+    }
+    .register-button p{
+        margin-top: 15px;
+    }
+    .register-terms{
+        max-width: 310px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -14px;
+        p{
+            color: #000;
+            text-align: center;
+            font-family: 'Inter Tight';
+            font-size: 12px;
+            font-weight: 400;    
+        }
+        a{
+            color: #26A9F9;
+            font-weight: 700;    
         }
     }
     .its-logo{
