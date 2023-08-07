@@ -46,14 +46,19 @@ $site_title = get_bloginfo( 'name' );
                     <span>Repeat password</span>
                     <input name="repeat-password" type="text">
                 </label>
+            </div> 
+            <div class="accept-checkbox-terms">    
+                <input type="checkbox" />
+                <label for="scales">You accept the <a>Privacy Policy</a> and <a>Terms of Use</a></label>
             </div>
+            <div class="accept-checkbox-image">    
+                <input type="checkbox" />
+                <label for="scales">You accept the <a>Image Terms of Use</a></label>
+            </div>    
             <div class="register-button">
                 <button class="register-submit" type="submit">Let's go!</button>
                 <p>Already have an account? <a href="#">Access here</a>.</p>
                 <img src="" alt="">   
-            </div>
-            <div class="register-terms">
-                <p>By creating an account on we agree you accept the <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></p> 
             </div>
             <div class="its-logo">
                 <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>" alt="Logo its Login">
