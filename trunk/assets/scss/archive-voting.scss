@@ -52,7 +52,8 @@
 			border-right: none;
 			border-radius: 32px 0 0 32px;
 			flex: 1;
-			padding: 29px 32px 17px;
+			max-height: 62px;
+			padding: 23px 32px 13px;
 			&::placeholder{
 				font-family: 'Oswald';
 				color: #666;

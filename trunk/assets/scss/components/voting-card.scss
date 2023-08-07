@@ -1,16 +1,20 @@
 .voting-card {
 	border: 3px solid black;
-	border-radius: 2rem;
+	border-radius: 16px;
 	background-color: #fff;
 
 	header {
-		border-radius: calc(2rem - 3px) calc(2rem - 3px) 0 0;
+		border-radius: 12px 12px 0 0 ;
 		display: flex;
 		justify-content: space-between;
-		padding: 0.5rem 2rem;
+		padding: 5.5px 18px;
 
 		& > :first-child {
 			font-weight: bold;
+		}
+		& > :last-child {
+			font-size: 12px;
+			margin-top: 3px;
 		}
 	}
 	
@@ -35,12 +39,26 @@
 	}
 
 	p {
+		font-family: 'Inter Tight';
 		margin: 16px 0;
 		color: #666;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.16px;
+	}
+	.voting-card__staus{
+		font-family: 'Inter Tight';
+		margin: 16px 0;
+		color: #000;
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 150%;
 		letter-spacing: -0.14px;
+		img{
+			margin-top: -2px;
+			margin-right: 4px;
+		}
 	}
 
 	&__tags {
