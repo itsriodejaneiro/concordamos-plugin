@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php the_title() ?></title>
     <?php wp_head(); ?>
+    
+<?php
+
+$site_title = get_bloginfo( 'name' );
+
+?>
+    
 </head>
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
@@ -13,7 +20,7 @@
         <div class="balloon-content">
             <p class="balloon-subtitle">A way to vote for consensus</p>
             <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="Logo do Login">
-            
+            <p class="balloon-subtitle with">With <?php echo $site_title ?></p>
         </div>    
     </section>
     <section class="register-form">

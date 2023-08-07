@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php the_title() ?></title>
+    
+<?php
+
+$site_title = get_bloginfo( 'name' );
+
+?>
+    
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -13,7 +20,7 @@
         <div class="balloon-content">
             <p class="balloon-subtitle">A way to vote for consensus</p>          
             <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="Logo de Login">
-
+            <p class="balloon-subtitle with">With <?php echo $site_title ?></p>
         </div>    
     </section>
     <section class="login-form">
