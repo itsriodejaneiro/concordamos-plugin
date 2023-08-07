@@ -12,7 +12,7 @@
     <section class="concordamos-balloon">
         <div class="balloon-content">
             <p class="balloon-subtitle">A way to vote for consensus</p>
-            <img src="" alt="">
+            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="Logo do Login">
             
         </div>    
     </section>
@@ -46,9 +46,11 @@
                 <img src="" alt="">   
             </div>
             <div class="register-terms">
-                <p>By creating an account on we agree you accept the <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></p>
-                <img src="" alt=""> 
-            </div>  
+                <p>By creating an account on we agree you accept the <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></p> 
+            </div>
+            <div class="its-logo">
+                <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>" alt="Logo its Login">
+            </div>
         </div>
     </section>
     <?php wp_footer(); ?>
