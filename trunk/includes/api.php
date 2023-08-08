@@ -65,70 +65,11 @@ function permission_check( \WP_REST_Request $request ) {
 
 }
 
-function list_my_votings_callback ( \WP_REST_Request $request ) {
-	$params = $request->get_params();
-
-	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
-
-	$args = [
-		'post_type' => 'voting',
-		'post_status' => 'publish',
-		'post_author' => get_current_user_id(),
-		'posts_per_page' => 6,
-		'paged' => $currentPage,
-	];
-
-	$query = new \WP_Query($args);
-
-	return [
-		'num_pages' => $query->max_num_pages,
-		'posts' => array_map('Concordamos\\prepare_voting_for_api', $query->posts),
-	];
-}
-
-function list_participated_votes_callback ( \WP_REST_Request $request ) {
-	$params = $request->get_params();
-
-	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
-
-	$args = [
-		'post_type' => 'vote',
-		'post_status' => 'publish',
-		'post_author' => get_current_user_id(),
-		'posts_per_page' => 6,
-		'paged' => $currentPage,
-	];
-
-	$query = new \WP_Query($args);
-
-	$prepareVoting = function ($vote) {
-		$votingId = get_post_meta($vote, 'voting_id', true);
-		$voting = get_post($votingId);
-		return prepare_voting_for_api($voting);
-	};
-
-	return [
-		'num_pages' => $query->max_num_pages,
-		'posts' => array_map($prepareVoting, $query->posts),
-	];
-}
-
-function search_votings_callback ( \WP_REST_Request $request ) {
-	$params = $request->get_params();
-
-	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
-
-	$args = [
-		'post_type' => 'voting',
-		'post_status' => 'publish',
-		'posts_per_page' => 6,
-		'paged' => $currentPage,
-	];
-
-	$meta_query = [];
+function build_query_from_params (array $query, array $params) {
+	$meta_query = empty($query['meta_query']) ? [] : $query['meta_query'];
 
 	if (!empty($params['query'])) {
-		$args['s'] = $params['query'];
+		$query['s'] = $params['query'];
 	}
 
 	if (!empty($params['type'])) {
@@ -156,8 +97,77 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 	}
 
 	if (!empty($meta_query)) {
-		$args['meta_query'] = $meta_query;
+		$query['meta_query'] = $meta_query;
 	}
+
+	return $query;
+}
+
+function list_my_votings_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+
+	$args = [
+		'post_type' => 'voting',
+		'post_status' => 'publish',
+		'post_author' => get_current_user_id(),
+		'posts_per_page' => 6,
+		'paged' => $currentPage,
+	];
+
+	$args = build_query_from_params($args, $params);
+
+	$query = new \WP_Query($args);
+
+	return [
+		'num_pages' => $query->max_num_pages,
+		'posts' => array_map('Concordamos\\prepare_voting_for_api', $query->posts),
+	];
+}
+
+function list_participated_votes_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+
+	$args = [
+		'post_type' => 'vote',
+		'post_status' => 'publish',
+		'post_author' => get_current_user_id(),
+		'posts_per_page' => 6,
+		'paged' => $currentPage,
+	];
+
+	$args = build_query_from_params($args, $params);
+
+	$query = new \WP_Query($args);
+
+	$prepareVoting = function ($vote) {
+		$votingId = get_post_meta($vote, 'voting_id', true);
+		$voting = get_post($votingId);
+		return prepare_voting_for_api($voting);
+	};
+
+	return [
+		'num_pages' => $query->max_num_pages,
+		'posts' => array_map($prepareVoting, $query->posts),
+	];
+}
+
+function search_votings_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+
+	$args = [
+		'post_type' => 'voting',
+		'post_status' => 'publish',
+		'posts_per_page' => 6,
+		'paged' => $currentPage,
+	];
+
+	$args = build_query_from_params($args, $params);
 
 	$query = new \WP_Query($args);
 
