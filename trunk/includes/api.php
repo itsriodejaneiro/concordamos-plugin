@@ -342,7 +342,7 @@ function vote_callback( \WP_REST_Request $request ) {
 					'status'  => 'error',
 					'message' => __( 'Expired link', 'concordamos' )
 				];
-				return new \WP_REST_Response( $response, 401 );
+				return new \WP_REST_Response( $response, 403 );
 			}
 		} else {
 			$response = [
