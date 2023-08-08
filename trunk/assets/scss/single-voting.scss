@@ -476,7 +476,7 @@
 			.panel-tabs{
 				width: 100%;
 				display: grid;
-				grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+				grid-template-columns: 0.19fr 1fr 1fr 0.19fr;
 				button{
 					background-color: transparent;
 					padding-top: 21px;
@@ -494,25 +494,30 @@
 				.panel-tab{
 					border-top: 3px solid #000;
 					border-bottom: 3px solid #000;
+					border-left: 1.7px solid #000;
+					border-right: 1.7px solid #000;
 					
 				}
 				.selected{
-					border: none;
 					border-top: 3px solid #000;
 					border-bottom: none;
+					border-left: 1.7px solid #000;
+					border-right: 1.7px solid #000;
 					
 				}
 				.panel-previous-tab{
-					padding-left: 52px;
+					padding-left: 0;
 					border-bottom: 3px solid #000;
-					border-right: 3px solid #000;
+					border-right: 1.7px solid #000;
 					border-top: 3px solid #000;
+					
 				}
 				.panel-next-tab{
-					padding-right: 52px;
+					padding-right: 0;
 					border-bottom: 3px solid #000;
-					border-left: 3px solid #000;
-					border-top: 3px solid #000;	
+					border-left: 1.7px solid #000;
+					border-top: 3px solid #000;
+						
 				}
 			}
 			.wrapper{
