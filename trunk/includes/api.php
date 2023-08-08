@@ -332,17 +332,24 @@ function vote_callback( \WP_REST_Request $request ) {
 		$is_private = true;
 	}
 
-	// Check if voting has unique ID and is private
-	if ( preg_match( '/^u-[A-Za-z0-9]+$/i', $unique_id ) && $is_private ) {
-		$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
+	if ( $is_private ) {
+		if ( preg_match( '/^u-[A-Za-z0-9]+$/i', $unique_id ) ) {
+			$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
 
-		// Checks that unique ID was not used
-		if ( in_array( $unique_id, $expired_unique_ids ) ) {
+			// Checks that unique ID was not used
+			if ( in_array( $unique_id, $expired_unique_ids ) ) {
+				$response = [
+					'status'  => 'error',
+					'message' => __( 'Expired link', 'concordamos' )
+				];
+				return new \WP_REST_Response( $response, 401 );
+			}
+		} else {
 			$response = [
-				'status'  => 'error',
-				'message' => __( 'Expired link', 'concordamos' )
+				'status' => 'error',
+				'message' => __( 'Invalid link', 'concordamos' ),
 			];
-			return new \WP_REST_Response( $response, 400 );
+			return new \WP_REST_Response( $response, 401 );
 		}
 	}
 
