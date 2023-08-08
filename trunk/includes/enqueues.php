@@ -22,6 +22,7 @@ function enqueue_scripts_frontend() {
 				[
 					'nonce'   => wp_create_nonce( 'wp_rest' ),
 					'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+					'rest_url' => rest_url( 'concordamos/v1/' ),
 					'user_id' => get_current_user_id()
 				]
 			);
@@ -46,6 +47,7 @@ function enqueue_scripts_frontend() {
 			[
 				'nonce' => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+				'rest_url' => rest_url( 'concordamos/v1/' ),
 				'u_id'  => $unique_id,
 				'v_id'  => get_the_ID(),
 			]
@@ -63,6 +65,7 @@ function enqueue_scripts_frontend() {
 				'is_admin' => current_user_can( 'manage_options' ),
 				'nonce' => wp_create_nonce( 'wp-rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+				'rest_url' => rest_url( 'concordamos/v1/' ),
 			]
 		);
 	}
@@ -75,6 +78,7 @@ function enqueue_scripts_frontend() {
 		wp_localize_script( 'corcordamos-my-account', 'concordamos', [
 			'nonce' => wp_create_nonce( 'wp-rest' ),
 			'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+			'rest_url' => rest_url( 'concordamos/v1/' ),
 			'user_id' => $author,
 		] );
 	}

@@ -270,13 +270,14 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		$response = [
 			'status'  => 'success',
 			'message' => __('Voting created successfully!', 'concordamos'),
+			'post_url' => get_permalink( $post_id ),
 		];
 		return new \WP_REST_Response( $response, 200 );
 
 	} else {
 		$response = [
 			'status'  => 'error',
-			'message' => __('Verify all fields and try again.'. 'concordamos'),
+			'message' => __('Verify all fields and try again'. 'concordamos'),
 		];
 		return new \WP_REST_Response( $response, 400 );
 	}
@@ -310,7 +311,7 @@ function get_my_vote_callback ( \WP_REST_Request $request ) {
 	} else {
 		$response = [
 			'status' => 'error',
-			'message' => __('Vote not found.', 'concordamos'),
+			'message' => __('Vote not found', 'concordamos'),
 		];
 		return new \WP_REST_Response($response, 404);
 	}
@@ -383,7 +384,7 @@ function vote_callback( \WP_REST_Request $request ) {
 
 		$response = [
 			'status'  => 'success',
-			'message' => __( 'Vote registered successfully', 'concordamos')
+			'message' => __( 'Vote registered successfully!', 'concordamos')
 		];
 
 		return new \WP_REST_Response( $response, 200 );

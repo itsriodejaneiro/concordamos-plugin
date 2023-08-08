@@ -9,6 +9,7 @@ import Radio from './Radio'
 import StartEnd from './StartEnd'
 import Text from './Text'
 import Textarea from './Textarea'
+import { navigateTo } from '../../shared/utils/location'
 
 const Form = () => {
 
@@ -33,16 +34,9 @@ const Form = () => {
 		setVotingAccess(event.target.checked ? 'yes' : 'no')
 	}
 
-	const baseUrl = window.location.origin + '/wp-json/concordamos/v1/create-voting/'
-
 	const votingTypeOptions = {
 		'public': __('Public voting', 'concordamos'),
 		'private': __('Private voting', 'concordamos'),
-	}
-
-	const votingAccessOptions = {
-		'yes': __('Yes', 'concordamos'),
-		'no': __('No', 'concordamos'),
 	}
 
 	const handleSubmit = (event) => {
@@ -68,7 +62,7 @@ const Form = () => {
 			return
 		}
 
-		fetch(baseUrl, {
+		fetch(new URL('create-voting/', concordamos.rest_url), {
 			headers: {
 				'Content-Type': 'application/json',
 				'X-WP-Nonce'  : concordamos.nonce
@@ -93,7 +87,7 @@ const Form = () => {
 			if (response.status === 'error') {
 				throw new Error(response.message)
 			} else {
-				console.log(response)
+				navigateTo(response.post_url)
 			}
 		})
 		.catch(error => console.error(error))

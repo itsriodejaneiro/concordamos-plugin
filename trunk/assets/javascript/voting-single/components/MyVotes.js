@@ -5,13 +5,11 @@ import Grid from './Grid'
 import Option from './Option'
 import { useFetch } from '../../shared/hooks/fetch'
 
-const baseUrl = `${window.location.origin}/wp-json/concordamos/v1/my-vote/?v_id=${concordamos.v_id}`
-
 export default function MyVotes ({ initialData }) {
 	const { credits_voter, options } = initialData
 	const parsedOptions = JSON.parse(options)
 
-	const { data: votes } = useFetch(baseUrl, {
+	const { data: votes } = useFetch(new URL(`my-vote/?v_id=${concordamos.v_id}`, concordamos.rest_url), {
 		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json',

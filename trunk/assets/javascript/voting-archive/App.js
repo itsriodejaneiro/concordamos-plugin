@@ -7,10 +7,8 @@ import Radio from './components/Radio'
 import VotingCard from './components/VotingCard'
 import { useFetch } from '../shared/hooks/fetch'
 
-const baseUrl = window.location.origin + '/wp-json/concordamos/v1/votings/'
-
 function buildUrl (query, filters, page) {
-	const url = new URL(baseUrl)
+	const url = new URL('votings/', concordamos.rest_url)
 	const params = url.searchParams
 
 	params.set('page', page)

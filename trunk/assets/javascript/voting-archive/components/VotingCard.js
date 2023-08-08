@@ -2,16 +2,9 @@ import { __, _x, sprintf } from '@wordpress/i18n'
 import classNames from 'classnames'
 
 import Image from './Image'
+import { getPanelUrl } from '../../shared/utils/location'
 
 const dateFormatter = new Intl.DateTimeFormat('pt-br', { dateStyle: 'short' })
-
-function buildPanelUrl (url) {
-	if (url.includes('?')) {
-		return `${url}&panel=1`
-	} else {
-		return `${url}?panel=1`
-	}
-}
 
 function formatDate (timestamp) {
 	return dateFormatter.format(timestamp)
@@ -50,7 +43,7 @@ export default function VotingCard ({ panel = false, voting }) {
 				<span>{getVotingDate(voting)}</span>
 			</header>
 			<main>
-				<h2><a href={panel ? buildPanelUrl(voting.permalink) : voting.permalink}>{voting.title}</a></h2>
+				<h2><a href={panel ? getPanelUrl(voting.permalink) : voting.permalink}>{voting.title}</a></h2>
 				<p>{voting.content}</p>
 				{ panel ? null : (
 					<p className="voting-card__staus"><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? __('Login required', 'concordamos') : __('Login required to see results', 'concordamos')) : __('No login', 'concordamos')}</p>
