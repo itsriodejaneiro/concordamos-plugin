@@ -15,7 +15,7 @@ export default function MyVotes ({ initialData }) {
 			'Content-Type': 'application/json',
 			'X-WP-Nonce': concordamos.nonce,
 		},
-	}, [])
+	})
 
 	const usedCredits = useMemo(() => {
 		if (!votes) {

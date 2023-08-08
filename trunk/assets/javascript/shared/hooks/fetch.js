@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
 
-export function useFetch (url, options, dependencies) {
+export function useFetch (url, options) {
 	const [data, setData] = useState(undefined)
 	const [error, setError] = useState(undefined)
 	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
 		const abort = new AbortController()
+		options.signal = abort.signal
 
 		async function fetchData () {
 			setLoading(true)
 
 			try {
-				const response = await fetch(url, {signal: abort.signal, ...options })
+				const response = await fetch(url, options)
 				const data = await response.json()
 
 				setLoading(false)
@@ -35,7 +36,7 @@ export function useFetch (url, options, dependencies) {
 		return () => {
 			abort.abort()
 		}
-	}, dependencies)
+	}, [url.toString()])
 
 	return { data, error, loading }
 }

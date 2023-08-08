@@ -49,7 +49,7 @@ export function App() {
 		headers: {
 			'Content-Type': 'application/json',
 		}
-	}, [query, filters, page])
+	})
 
 	function onQueryChange (event) {
 		setQuery(event.target.value)
