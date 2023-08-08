@@ -37,6 +37,18 @@ function load_voting_archive_template( $template ) {
 
 add_filter( 'archive_template', 'Concordamos\load_voting_archive_template' );
 
+function load_voter_account_template ( $template ) {
+	global $author;
+
+	if ( is_concordamos_user( $author ) ) {
+		return CONCORDAMOS_PLUGIN_PATH . 'templates/my-account.php';
+	}
+
+	return $template;
+}
+
+add_filter( 'author_template', 'Concordamos\load_voter_account_template', 10, 1 );
+
 function custom_page_templates( array $templates ): array {
     $templates[ 'concordamos/template-login.php' ] = __( 'Login', 'concordamos' ) . ' [Concordamos]';
 	$templates[ 'concordamos/template-create-user.php'] = __( 'Create user', 'concordamos' ) . '[Concordamos]';

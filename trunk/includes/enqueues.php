@@ -66,6 +66,18 @@ function enqueue_scripts_frontend() {
 			]
 		);
 	}
+
+	global $author;
+	if ( is_author() && is_concordamos_user( $author ) ) {
+		wp_enqueue_script( 'concordamos-my-account', CONCORDAMOS_PLUGIN_URL . 'build/js/my-account/index.js', [ 'wp-element', 'wp-i18n' ], CONCORDAMOS_PLUGIN_VERSION, true );
+		wp_enqueue_style( 'concordamos-my-account-style', CONCORDAMOS_PLUGIN_URL . 'build/css/my-acount.css', [ 'concordamos' ], CONCORDAMOS_PLUGIN_VERSION );
+
+		wp_localize_script( 'corcordamos-my-account', 'concordamos', [
+			'nonce' => wp_create_nonce( 'wp-rest' ),
+			'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+			'user_id' => $author,
+		] );
+	}
 }
 
 

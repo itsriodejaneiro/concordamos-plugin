@@ -127,6 +127,24 @@ function format_timestamp_date( $timestamp, $format = 'Y-m-d H:i:s' ) {
 }
 
 /**
+ * Check if the user is member of Concordamos network
+ *
+ * @param int The author ID
+ * @param bool Whether to return true for admin users
+ */
+function is_concordamos_user ( $author, $include_admin = false ) {
+	$user = get_user_by( 'ID', $author );
+
+	if ( in_array( 'concordamos_network', $user->roles ) ) {
+		return true;
+	} elseif ( $include_admin && in_array( 'administrator', $user->roles ) ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
  *
  * Checks whether a given date is in the future or present.
  *
