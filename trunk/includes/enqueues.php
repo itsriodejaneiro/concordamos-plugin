@@ -21,6 +21,7 @@ function enqueue_scripts_frontend() {
 				'concordamos',
 				[
 					'nonce'   => wp_create_nonce( 'wp_rest' ),
+					'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 					'user_id' => get_current_user_id()
 				]
 			);
@@ -44,8 +45,9 @@ function enqueue_scripts_frontend() {
 			'concordamos',
 			[
 				'nonce' => wp_create_nonce( 'wp_rest' ),
+				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'u_id'  => $unique_id,
-				'v_id'  => get_the_ID()
+				'v_id'  => get_the_ID(),
 			]
 		);
 	}

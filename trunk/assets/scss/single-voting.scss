@@ -2,6 +2,7 @@
 @import 'atoms/buttons';
 
 @import 'components/modal';
+@import 'components/tabs';
 
 .single-voting {
 
@@ -64,7 +65,7 @@
 				font-weight: 500;
 				line-height: 130%;
 				letter-spacing: -0.2px;
-				text-transform: uppercase;	
+				text-transform: uppercase;
 			}
 
 			.meta {
@@ -109,7 +110,7 @@
 					font-family: 'Inter Tight';
 					font-size: 12px;
 					font-weight: 400;
-					letter-spacing: -0.12px;	
+					letter-spacing: -0.12px;
 				}
 			}
 		}
@@ -284,7 +285,7 @@
 							line-height: 150%;
 							letter-spacing: -0.14px;
 							text-transform: uppercase;
-							color: #000;	
+							color: #000;
 						}
 
 						.option-voting-vote {
@@ -343,7 +344,7 @@
 							margin-bottom: 0;
 						}
 					}
-					
+
 				}
 
 				.votings-list {
@@ -452,7 +453,7 @@
 				text-align: center;
 			}
 		}
-		
+
 		.button.primary {
 			background-color: #FFF766;
 			border-radius: 80px;
