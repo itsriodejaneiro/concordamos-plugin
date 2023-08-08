@@ -333,7 +333,13 @@ function vote_callback( \WP_REST_Request $request ) {
 	}
 
 	if ( $is_private ) {
-		if ( preg_match( '/^u-[A-Za-z0-9]+$/i', $unique_id ) ) {
+		if ( empty( $unique_id ) ) {
+			$response = [
+				'status' => 'error',
+				'message' => __( 'Invalid link', 'concordamos' ),
+			];
+			return new \WP_REST_Response( $response, 401 );
+		} elseif ( preg_match( '/^u-[A-Za-z0-9]+$/i', $unique_id ) ) {
 			$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
 
 			// Checks that unique ID was not used
@@ -344,12 +350,6 @@ function vote_callback( \WP_REST_Request $request ) {
 				];
 				return new \WP_REST_Response( $response, 403 );
 			}
-		} else {
-			$response = [
-				'status' => 'error',
-				'message' => __( 'Invalid link', 'concordamos' ),
-			];
-			return new \WP_REST_Response( $response, 401 );
 		}
 	}
 
