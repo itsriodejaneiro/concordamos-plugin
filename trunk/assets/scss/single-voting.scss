@@ -12,6 +12,7 @@
 		padding-top: size(32);
 		min-height: 393px;
 		padding-top: 3.8rem;
+		border-bottom: 3px solid #000;
 		@media(max-width: 781px){
 			padding-top: 2rem;
 		}
@@ -492,14 +493,14 @@
 				}
 				
 				.panel-tab{
-					border-top: 3px solid #000;
+					
 					border-bottom: 3px solid #000;
 					border-left: 1.7px solid #000;
 					border-right: 1.7px solid #000;
 					
 				}
 				.selected{
-					border-top: 3px solid #000;
+					
 					border-bottom: none;
 					border-left: 1.7px solid #000;
 					border-right: 1.7px solid #000;
@@ -509,14 +510,14 @@
 					padding-left: 0;
 					border-bottom: 3px solid #000;
 					border-right: 1.7px solid #000;
-					border-top: 3px solid #000;
+					
 					
 				}
 				.panel-next-tab{
 					padding-right: 0;
 					border-bottom: 3px solid #000;
 					border-left: 1.7px solid #000;
-					border-top: 3px solid #000;
+					
 						
 				}
 			}
