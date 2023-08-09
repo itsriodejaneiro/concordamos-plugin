@@ -66,8 +66,8 @@ const Form = () => {
 			headers: {
 				'Content-Type': 'application/json',
 				'X-WP-Nonce'  : concordamos.nonce
-		  },
-		  method: 'POST',
+		  	},
+		  	method: 'POST',
 			body: JSON.stringify({
 				'user_id'           : concordamos.user_id,
 				'voting_type'       : votingType,
