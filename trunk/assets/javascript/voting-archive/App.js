@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { DebounceInput } from 'react-debounce-input'
 import Paginate from 'react-paginate'
 
-import Radio from './components/Radio'
+import Filters from '../shared/components/Filters'
 import VotingCard from './components/VotingCard'
 import { useFetch } from '../shared/hooks/fetch'
 
@@ -26,19 +26,6 @@ function buildUrl (query, filters, page) {
 	return url
 }
 
-const votingAccessOptions = {
-	'yes': __('Yes', 'concordamos'),
-	'no': __('No', 'concordamos'),
-	'': _x('All', 'accesses', 'concordamos'),
-}
-
-const votingTimeOptions = {
-	'past': _x('Concluded', 'votings', 'concordamos'),
-	'present': _x('Open', 'votings', 'concordamos'),
-	'future': _x('Future', 'votings', 'concordamos'),
-	'': _x('All', 'votings', 'concordamos'),
-}
-
 export function App() {
 	const [query, setQuery] = useState('')
 	const [filters, setFilters] = useState({ access: '', time: '' })
@@ -56,11 +43,9 @@ export function App() {
 		setPage(1)
 	}
 
-	function onFilterChange (key) {
-		return function (value) {
-			setFilters((filters) => ({ ...filters, [key]: value }))
-			setPage(1)
-		}
+	function onFiltersChange (value) {
+		setFilters(value)
+		setPage(1)
 	}
 
 	function onPageChange (event) {
@@ -79,13 +64,7 @@ export function App() {
 							<i className="icon"/>
 						</button>
 					</form>
-					<details>
-						<summary>{__('Filters', 'concordamos')}</summary>
-						<div class="filter-label">{__('Voting status', 'concordamos')}</div>
-						<Radio name="time" options={votingTimeOptions} value={filters.time} onChange={onFilterChange('time')}/>
-						<div class="filter-label">{__('Does it require login?', 'concordamos')}</div>
-						<Radio name="access" options={votingAccessOptions} value={filters.access} onChange={onFilterChange('access')}/>
-					</details>
+					<Filters filters={filters} onChange={onFiltersChange}/>
 				</div>
 			</div>
 			<div className="voting-archive-grid">
