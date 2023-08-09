@@ -35,6 +35,7 @@
 		color: #111;
 		a{
 			text-decoration: none;
+			color: #111;
 		}
 	}
 
@@ -81,12 +82,30 @@
 
 	&.past {
 
+		span{
+			color: #111;
+			font-family: 'Inter Tight';
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 150%;
+			letter-spacing: -0.16px;	
+		}
+
 		header {
 			background-color: #FF2E22;
 		}
 	}
 
 	&.present {
+
+		span{
+			color: #111;
+			font-family: 'Inter Tight';
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 150%;
+			letter-spacing: -0.16px;	
+		}
 
 		header {
 			
@@ -97,7 +116,7 @@
 	&.closed {
 		span{
 			color: #111;
-			font-family: 'Inter Tight' !important;
+			font-family: 'Inter Tight';
 			font-size: 16px;
 			font-weight: 700;
 			line-height: 150%;
