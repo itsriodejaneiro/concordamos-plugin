@@ -42,7 +42,7 @@ function enqueue_scripts_frontend() {
 
 			global $author;
 			wp_localize_script( 'concordamos-my-account', 'concordamos', [
-				'nonce' => wp_create_nonce( 'wp-rest' ),
+				'nonce' => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'rest_url' => rest_url( 'concordamos/v1/' ),
 				'user_id' => $author,
@@ -78,7 +78,7 @@ function enqueue_scripts_frontend() {
 			'concordamos',
 			[
 				'is_admin' => current_user_can( 'manage_options' ),
-				'nonce' => wp_create_nonce( 'wp-rest' ),
+				'nonce' => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'rest_url' => rest_url( 'concordamos/v1/' ),
 			]
