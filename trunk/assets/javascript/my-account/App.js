@@ -1,7 +1,9 @@
 import { __, sprintf } from '@wordpress/i18n'
 import { useState } from 'react'
 
-import Tabs from '../voting-single/components/Tabs'
+import CreatedVotings from './components/CreatedVotings'
+import ParticipatedVotings from './components/ParticipatedVotings'
+import Tabs from '../shared/components/Tabs'
 import UserSettings from './components/UserSettings'
 import { useFetch } from '../shared/hooks/fetch'
 
@@ -35,6 +37,11 @@ export function App ({ initialData }) {
 			<div className="my-account-panel">
 				<div className="content panel">
 					<Tabs tabs={tabs} value={tab} onChange={setTab}/>
+					{(tab === 'created') ? (
+						<CreatedVotings/>
+					) : (tab === 'participated') ? (
+						<ParticipatedVotings/>
+					) : null}
 				</div>
 			</div>
 		</div>

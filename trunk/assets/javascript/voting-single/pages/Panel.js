@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n'
 import { useState } from 'react'
 
 import MyVotes from '../components/MyVotes'
-import Tabs from '../components/Tabs'
+import Tabs from '../../shared/components/Tabs'
 
 export default function Panel ({ initialData }) {
 	let tabs = [

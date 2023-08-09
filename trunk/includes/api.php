@@ -132,7 +132,7 @@ function list_my_votings_callback ( \WP_REST_Request $request ) {
 	];
 }
 
-function list_participated_votes_callback ( \WP_REST_Request $request ) {
+function list_participated_votings_callback ( \WP_REST_Request $request ) {
 	$params = $request->get_params();
 
 	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
@@ -150,7 +150,7 @@ function list_participated_votes_callback ( \WP_REST_Request $request ) {
 	$query = new \WP_Query($args);
 
 	$prepareVoting = function ($vote) {
-		$votingId = get_post_meta($vote, 'voting_id', true);
+		$votingId = get_post_meta($vote->ID, 'voting_id', true);
 		$voting = get_post($votingId);
 		return prepare_voting_for_api($voting);
 	};
