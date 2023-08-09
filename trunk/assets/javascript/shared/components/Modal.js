@@ -27,7 +27,9 @@ export default function Modal ({ children, controller }) {
 		<div className={classNames('voting-modal__wrapper', { 'open': isOpen })}>
 			<dialog className="voting-modal" ref={dialogRef} open={isOpen}>
 				<header>
-					<button type="button" className="button close" onClick={close}>{__('Close', 'concordamos')}</button>
+					<button type="button" className="button close" onClick={close}>{__('', 'concordamos')}
+						<img src={concordamos.plugin_url + '/assets/images/red-close.png'} alt={__('Close modal', 'concordamos')}/>
+					</button>
 				</header>
 				<main>{children}</main>
 			</dialog>

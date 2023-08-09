@@ -25,19 +25,42 @@ button {
 	}
 
 	&.link {
-		border-color: transparent;
-	}
-
-	&.primary {
-		background-color: #FFF766;
-		border-radius: 80px;
-		border: 3px solid #000;
-		padding: 18px 24px;
+		border: none;
+		background-color: transparent;
 		color: #000;
 		font-family: 'Oswald';
 		font-size: 24px;
 		font-weight: 500;
 		line-height: 130%;
 		letter-spacing: -0.24px;
+		&:hover{
+			background-color: transparent;
+			color: #000;
+		}	
 	}
-}
+
+	&.primary {
+		background-color: #FFF766;
+		border-radius: 80px;
+		border: 3px solid #000;
+		padding: 9px 24px 11px;
+		color: #000;
+		font-family: 'Oswald';
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 130%;
+		letter-spacing: -0.24px;
+		&:hover{
+			background-color: transparent;
+			color: #000;
+			border: 3px solid #000;
+			background-color: #FFF766;
+		}	
+	}
+	&.close{
+		background-color: transparent;
+		&:hover{
+			background-color: transparent;
+		}	
+	}
+}	
