@@ -32,7 +32,7 @@ function enqueue_scripts_frontend() {
 
 		$template_slug = get_page_template_slug();
 
-		if ( $template_slug === 'concordamos/template-login.php' || $template_slug = 'concordamos/template-create-user.php' ) {
+		if ( $template_slug === 'concordamos/template-login.php' || $template_slug === 'concordamos/template-create-user.php' ) {
 			wp_enqueue_style( 'concordamos-template-login-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-login.css', ['concordamos-style'], CONCORDAMOS_PLUGIN_VERSION );
 		}
 
