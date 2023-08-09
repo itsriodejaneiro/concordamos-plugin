@@ -14,7 +14,7 @@
 		padding-top: 3.8rem;
 		border-bottom: 3px solid #000;
 		@media(max-width: 781px){
-			padding-top: 2rem;
+			padding: 16px 15px;
 		}
 
 		.container {
@@ -222,6 +222,9 @@
 		background-color: #F5F5F5;
 		border-top: 3px solid #000000;
 		padding-bottom: size(48);
+		@media(max-width: 781px){
+			padding: 16px 15px;
+		}
 
 		.wrapper {
 			display: grid;
@@ -388,6 +391,9 @@
 							line-height: 130%;
 							letter-spacing: -0.32px;
 							text-transform: none;
+							@media(max-width: 782px){
+								font-size: 24px;	
+							}
 						}
 						p{
 							font-family: 'Inter Tight';
@@ -395,6 +401,9 @@
 							font-weight: 400;
 							line-height: 150%;
 							letter-spacing: -0.16px;
+							@media(max-width: 782px){
+								font-size: 14px;	
+							}
 						}
 					}
 				}

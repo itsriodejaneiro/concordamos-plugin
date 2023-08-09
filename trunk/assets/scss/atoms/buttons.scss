@@ -33,6 +33,9 @@ button {
 		font-weight: 500;
 		line-height: 130%;
 		letter-spacing: -0.24px;
+		@media(max-width: 782px){
+			font-size: 16px;	
+		}
 		&:hover{
 			background-color: transparent;
 			color: #000;
@@ -50,6 +53,10 @@ button {
 		font-weight: 500;
 		line-height: 130%;
 		letter-spacing: -0.24px;
+		@media(max-width: 782px){
+			font-size: 16px;
+			padding: 6px 16px;	
+		}
 		&:hover{
 			background-color: transparent;
 			color: #000;

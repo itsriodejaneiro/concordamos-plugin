@@ -30,11 +30,22 @@
 		padding: 0;
 		.close{
 			padding: 13px 24px 16px;
+			@media(max-width: 782px){
+				padding: 5px 16px 8px;	
+			}
+			img{
+				@media(max-width: 782px){
+					max-width: 57%;	
+				}
+			}
 		}
 	}
 
 	main {
 		padding: 20px 28px 29px;
+		@media(max-width: 782px){
+			padding: 12px 20px 15px;
+		}
 		h2 {
 			text-transform: initial;
 		}
