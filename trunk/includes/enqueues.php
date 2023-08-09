@@ -29,9 +29,24 @@ function enqueue_scripts_frontend() {
 
 			wp_enqueue_style( 'concordamos-voting-form-style', CONCORDAMOS_PLUGIN_URL . 'build/css/voting-page.css', ['concordamos-style'], CONCORDAMOS_PLUGIN_VERSION );
 		}
+
 		$template_slug = get_page_template_slug();
-		if ($template_slug === 'concordamos/template-login.php' || $template_slug = 'concordamos/template-create-user.php') {
+
+		if ( $template_slug === 'concordamos/template-login.php' || $template_slug = 'concordamos/template-create-user.php' ) {
 			wp_enqueue_style( 'concordamos-template-login-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-login.css', ['concordamos-style'], CONCORDAMOS_PLUGIN_VERSION );
+		}
+
+		if ( $template_slug === 'concordamos/template-my-account.php' ) {
+			wp_enqueue_script( 'concordamos-my-account', CONCORDAMOS_PLUGIN_URL . 'build/js/my-account/index.js', [ 'wp-element', 'wp-i18n' ], CONCORDAMOS_PLUGIN_VERSION, true );
+			wp_enqueue_style( 'concordamos-my-account-style', CONCORDAMOS_PLUGIN_URL . 'build/css/my-account.css', [ 'concordamos-style' ], CONCORDAMOS_PLUGIN_VERSION );
+
+			global $author;
+			wp_localize_script( 'concordamos-my-account', 'concordamos', [
+				'nonce' => wp_create_nonce( 'wp-rest' ),
+				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+				'rest_url' => rest_url( 'concordamos/v1/' ),
+				'user_id' => $author,
+			] );
 		}
 	}
 
@@ -69,21 +84,6 @@ function enqueue_scripts_frontend() {
 			]
 		);
 	}
-
-	global $author;
-	if ( is_author() && is_concordamos_user( $author ) ) {
-		wp_enqueue_script( 'concordamos-my-account', CONCORDAMOS_PLUGIN_URL . 'build/js/my-account/index.js', [ 'wp-element', 'wp-i18n' ], CONCORDAMOS_PLUGIN_VERSION, true );
-		wp_enqueue_style( 'concordamos-my-account-style', CONCORDAMOS_PLUGIN_URL . 'build/css/my-account.css', [ 'concordamos-style' ], CONCORDAMOS_PLUGIN_VERSION );
-
-		wp_localize_script( 'concordamos-my-account', 'concordamos', [
-			'base_rest_url' => rest_url(),
-			'nonce' => wp_create_nonce( 'wp-rest' ),
-			'plugin_url' => CONCORDAMOS_PLUGIN_URL,
-			'rest_url' => rest_url( 'concordamos/v1/' ),
-			'user_id' => $author,
-		] );
-	}
 }
-
 
 add_action( 'wp_enqueue_scripts', 'Concordamos\enqueue_scripts_frontend' );
