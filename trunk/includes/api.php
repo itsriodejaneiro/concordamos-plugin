@@ -15,6 +15,12 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_vote_check'
 	] );
 
+	register_rest_route( 'concordamos/v1', '/my-account/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\get_my_account_callback',
+		'permission_callback' => 'Concordamos\\permission_check'
+	] );
+
 	register_rest_route( 'concordamos/v1', '/my-vote/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\get_my_vote_callback',
@@ -291,6 +297,19 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		];
 		return new \WP_REST_Response( $response, 400 );
 	}
+}
+
+function get_my_account_callback ( \WP_REST_Request $request ) {
+	$user = get_user_by('ID', get_current_user_id());
+
+	return [
+		'ID' => $user->ID,
+		'email' => $user->user_email,
+		'name' => $user->user_nicename,
+		'roles' => $user->roles,
+	];
+
+	return $user;
 }
 
 function get_my_vote_callback ( \WP_REST_Request $request ) {
