@@ -510,6 +510,11 @@
 			}	
 		}
 		.voting-content{
+			.container{
+				margin: 0;
+				padding: 0;
+				max-width: 100%;
+			}
 			border: none;
 			.panel-tabs{
 				width: 100%;
