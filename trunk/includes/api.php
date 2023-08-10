@@ -334,7 +334,7 @@ function patch_my_account_callback ( \WP_REST_Request $request ) {
 	}
 
 	if (!empty($params['password'])) {
-		$args['display_name'] = $params['password'];
+		$args['user_pass'] = $params['password'];
 	}
 
 	$userId = wp_update_user($args);
