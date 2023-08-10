@@ -311,7 +311,7 @@ function get_my_account_callback ( \WP_REST_Request $request ) {
 	return [
 		'ID' => $user->ID,
 		'email' => $user->user_email,
-		'name' => $user->user_nicename,
+		'name' => $user->display_name,
 		'roles' => $user->roles,
 	];
 
