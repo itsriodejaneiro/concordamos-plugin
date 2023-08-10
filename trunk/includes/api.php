@@ -21,6 +21,12 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
 
+	register_rest_route( 'concordamos/v1', '/my-account/', [
+		'methods'             => 'PATCH',
+		'callback'            => 'Concordamos\\patch_my_account_callback',
+		'permission_callback' => 'Concordamos\\permission_check'
+	] );
+
 	register_rest_route( 'concordamos/v1', '/my-vote/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\get_my_vote_callback',
@@ -59,7 +65,7 @@ function permission_check( \WP_REST_Request $request ) {
 		return new \WP_Error( 'rest_forbidden', __("You don't have enough permissions.", 'concordamos'), array( 'status' => 403 ) );
 	}
 
-	if ( $request->get_method() === 'POST' ) {
+	if ( $request->get_method() !== 'GET' ) {
 		$params = $request->get_json_params();
 
 		if ( $params['user_id'] != $user->ID ) {
@@ -310,6 +316,42 @@ function get_my_account_callback ( \WP_REST_Request $request ) {
 	];
 
 	return $user;
+}
+
+function patch_my_account_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$args = [
+		'ID' => $params['user_id'],
+	];
+
+	if (!empty($params['name'])) {
+		$args['display_name'] = $params['name'];
+	}
+
+	if (!empty($params['email'])) {
+		$args['user_email'] = $params['email'];
+	}
+
+	if (!empty($params['password'])) {
+		$args['display_name'] = $params['password'];
+	}
+
+	$userId = wp_update_user($args);
+
+	if ($userId) {
+		$response = [
+			'status' => 'success',
+			'message' => __('User updated successfully!', 'concordamos'),
+		];
+		return new \WP_REST_Response($response, 200);
+	} else {
+		$response = [
+			'status' => 'error',
+			'message' => __('Error updating user, please try again', 'concordamos'),
+		];
+		return new \WP_REST_Response($response, 400);
+	}
 }
 
 function get_my_vote_callback ( \WP_REST_Request $request ) {
