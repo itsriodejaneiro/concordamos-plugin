@@ -22,9 +22,11 @@ $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_dat
 
 $is_panel = get_query_var( 'panel' );
 ?>
-<div>	
+<div>
 	<div class="voting-header">
 		<div class="container">
+		<?php require 'part/navbar-mobile.php' ?>
+
 			<div class="info">
 				<span class="voting-breadcrumb">
 					<?php _e( 'Voting', 'concordamos' ); ?>
@@ -79,7 +81,11 @@ $is_panel = get_query_var( 'panel' );
 				data-date_end="<?php echo htmlspecialchars( $date_end ); ?>"
 				data-is_panel=<?php echo $is_panel; ?>
 			></div>
+			
+
 		</div>
 	</div>
+	
 </div>
+
 <?php get_footer(); ?>
