@@ -4,8 +4,7 @@ import { useMemo, useState } from 'react'
 import Grid from './Grid'
 import Modal, { useModal } from '../../shared/components/Modal'
 import Option from './Option'
-
-const baseUrl = window.location.origin + '/wp-json/concordamos/v1/vote/'
+import { getPanelUrl, navigateTo } from '../../shared/utils/location'
 
 export default function SingleVoting ({ handleViewChange, initialData }) {
 	const { credits_voter, date_end, options } = initialData
@@ -43,7 +42,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 	function handleSubmit (event) {
 		event.preventDefault()
 
-		fetch(baseUrl, {
+		fetch(new URL('vote/', concordamos.rest_url), {
 			headers: {
 				'Content-Type': 'application/json',
 				'X-WP-Nonce'  : concordamos.nonce
@@ -61,6 +60,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 				throw new Error(response.message)
 			} else {
 				setVotes(initialVotes)
+				navigateTo(getPanelUrl(window.location.href), true)
 			}
 		})
 		.catch(error => console.error(error))

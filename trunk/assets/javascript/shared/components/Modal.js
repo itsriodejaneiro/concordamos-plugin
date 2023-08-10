@@ -12,7 +12,7 @@ export function useModal (startOpen = false) {
 	return { close, isOpen, open, toggle }
 }
 
-export default function Modal ({ children, controller }) {
+export default function Modal ({ children, controller, danger = false }) {
 	const { close, isOpen } = controller
 
 	const dialogRef = useRef()
@@ -25,9 +25,11 @@ export default function Modal ({ children, controller }) {
 
 	return (
 		<div className={classNames('voting-modal__wrapper', { 'open': isOpen })}>
-			<dialog className="voting-modal" ref={dialogRef} open={isOpen}>
+			<dialog className={classNames('voting-modal', { 'danger': danger })} ref={dialogRef} open={isOpen}>
 				<header>
-					<button type="button" className="button close" onClick={close}>{__('Close', 'concordamos')}</button>
+					<button type="button" className="button close" onClick={close}>{__('', 'concordamos')}
+						<img src={concordamos.plugin_url + '/assets/images/' + (danger ? 'white-close.svg' : 'red-close.svg')} alt={__('Close', 'concordamos')}/>
+					</button>
 				</header>
 				<main>{children}</main>
 			</dialog>

@@ -9,6 +9,7 @@ import Radio from './Radio'
 import StartEnd from './StartEnd'
 import Text from './Text'
 import Textarea from './Textarea'
+import { navigateTo } from '../../shared/utils/location'
 
 const Form = () => {
 
@@ -33,16 +34,9 @@ const Form = () => {
 		setVotingAccess(event.target.checked ? 'yes' : 'no')
 	}
 
-	const baseUrl = window.location.origin + '/wp-json/concordamos/v1/create-voting/'
-
 	const votingTypeOptions = {
 		'public': __('Public voting', 'concordamos'),
 		'private': __('Private voting', 'concordamos'),
-	}
-
-	const votingAccessOptions = {
-		'yes': __('Yes', 'concordamos'),
-		'no': __('No', 'concordamos'),
 	}
 
 	const handleSubmit = (event) => {
@@ -68,12 +62,12 @@ const Form = () => {
 			return
 		}
 
-		fetch(baseUrl, {
+		fetch(new URL('create-voting/', concordamos.rest_url), {
 			headers: {
 				'Content-Type': 'application/json',
 				'X-WP-Nonce'  : concordamos.nonce
-		  },
-		  method: 'POST',
+		  	},
+		  	method: 'POST',
 			body: JSON.stringify({
 				'user_id'           : concordamos.user_id,
 				'voting_type'       : votingType,
@@ -93,7 +87,7 @@ const Form = () => {
 			if (response.status === 'error') {
 				throw new Error(response.message)
 			} else {
-				console.log(response)
+				navigateTo(response.post_url)
 			}
 		})
 		.catch(error => console.error(error))
@@ -173,7 +167,7 @@ const Form = () => {
 				<p dangerouslySetInnerHTML={ { __html: __('After creation the voting, you can <strong>only</strong> change its <strong>start</strong> and <strong>end dates</strong>.', 'concordamos') } }/>
 				<div className="buttons">
 					<button type="button" className="button primary" onClick={handleSubmit}>{__('Create voting', 'concordamos')}</button>
-					<button type="button" className="button link" onClick={confirmModal.close}>{__('Cancel', 'concordamos')}</button>
+					<button type="button" className="button link" onClick={confirmModal.close}>{__('Back', 'concordamos')}</button>
 				</div>
 			</Modal>
 		</>

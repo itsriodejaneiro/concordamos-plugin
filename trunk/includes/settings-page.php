@@ -75,17 +75,6 @@ function settings_init() {
             'name' => 'voting_page',
         ]
     );
-
-    add_settings_field(
-        'login_page',
-        __( 'Login', 'concordamos' ),
-        'Concordamos\select_field_render',
-        'concordamos-settings',
-        'concordamos_section',
-        [
-            'name' => 'login_page',
-        ]
-    );
 }
 add_action( 'admin_init', 'Concordamos\settings_init' );
 

@@ -39,7 +39,8 @@ add_filter( 'archive_template', 'Concordamos\load_voting_archive_template' );
 
 function custom_page_templates( array $templates ): array {
     $templates[ 'concordamos/template-login.php' ] = __( 'Login', 'concordamos' ) . ' [Concordamos]';
-	$templates[ 'concordamos/template-create-user.php'] = __( 'Create user', 'concordamos' ) . '[Concordamos]';
+	$templates[ 'concordamos/template-create-user.php'] = __( 'Create user', 'concordamos' ) . ' [Concordamos]';
+	$templates[ 'concordamos/template-my-account.php' ] = __( 'My account', 'concordamos' ) . ' [Concordamos]';
     return $templates;
 }
 
@@ -48,10 +49,8 @@ add_filter( 'theme_page_templates', 'Concordamos\custom_page_templates', 10, 1 )
 function page_templates ( string $template ): string {
     $template_slug = get_page_template_slug();
 
-    if ( $template_slug === 'concordamos/template-login.php' ) {
-        $template = CONCORDAMOS_PLUGIN_PATH . 'templates/template-login.php';
-	} elseif ( $template_slug === 'concordamos/template-create-user.php' ) {
-		$template = CONCORDAMOS_PLUGIN_PATH . 'templates/template-create-user.php';
+	if ( strpos( $template_slug, 'concordamos/' ) === 0 ) {
+		$template = CONCORDAMOS_PLUGIN_PATH . str_replace('concordamos/', 'templates/', $template_slug);
 	}
 
     return $template;

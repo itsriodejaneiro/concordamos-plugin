@@ -1,3 +1,7 @@
+<?php
+    $site_title = get_bloginfo('name');
+    $register_url = get_permalink( concordamos\get_page_by_template('concordamos/template-create-user.php') );
+?>
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +49,7 @@
                 <button class="login-submit" data-loading-text="<?php _e('Loading..', 'concordamos');?>" type="submit">
                    <?php _e("Let's go!",'concordamos');?>
                 </button>
-                <p><?php _e("Don't have an account?",'concordamos');?> <a href="#"><?php _e('Register here','concordamos');?></a>.</p>
+                <p><?php _e("Don't have an account?",'concordamos');?> <a href="<?php echo $register_url;?>"><?php _e('Register here','concordamos');?></a>.</p>
             </div>
             <div id="login-message"></div>
             <div class="its-logo">

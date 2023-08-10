@@ -2,6 +2,7 @@
 @import 'atoms/buttons';
 
 @import 'components/modal';
+@import 'components/tabs';
 
 .single-voting {
 
@@ -11,8 +12,9 @@
 		padding-top: size(32);
 		min-height: 393px;
 		padding-top: 3.8rem;
+		border-bottom: 3px solid #000;
 		@media(max-width: 781px){
-			padding-top: 2rem;
+			padding: 16px 15px;
 		}
 
 		.container {
@@ -56,6 +58,17 @@
 				font-weight: 700;
 			}
 
+			p{
+				color: #111;
+				font-family: 'Inter';
+				font-size: 20px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 130%;
+				letter-spacing: -0.2px;
+				text-transform: uppercase;
+			}
+
 			.meta {
 				align-items: center;
 				display: flex;
@@ -92,6 +105,13 @@
 							display: none;
 						}
 					}
+				}
+				.author{
+					color: #000;
+					font-family: 'Inter Tight';
+					font-size: 12px;
+					font-weight: 400;
+					letter-spacing: -0.12px;
 				}
 			}
 		}
@@ -202,6 +222,9 @@
 		background-color: #F5F5F5;
 		border-top: 3px solid #000000;
 		padding-bottom: size(48);
+		@media(max-width: 781px){
+			padding: 16px 15px;
+		}
 
 		.wrapper {
 			display: grid;
@@ -217,6 +240,16 @@
 			}
 
 			.content {
+				padding-top: 63px;
+				h2{
+					color: #111;
+					font-family: 'Oswald';
+					font-size: 32px;
+					font-weight: 700;
+					line-height: 130%;
+					letter-spacing: -0.32px;
+					text-transform: uppercase;
+				}
 				.option-voting {
 					align-items: center;
 					background-color: #FFFFFF;
@@ -241,12 +274,21 @@
 					> div {
 						h3 {
 							font-size: 24px;
-							margin-bottom: 0;
-							margin-top: 0;
+							margin-bottom: 26px;
+							margin-top: -10px;
 							font-family: 'Oswald';
 							font-weight: 500;
 							line-height: 130%;
 							letter-spacing: -0.24px;
+							color: #000;
+						}
+						p{
+							font-family: 'Inter';
+							font-size: 14px;
+							font-weight: 600;
+							line-height: 150%;
+							letter-spacing: -0.14px;
+							text-transform: uppercase;
 							color: #000;
 						}
 
@@ -291,15 +333,6 @@
 				}
 
 				&.view-mode {
-					h2{
-						color: #111;
-						font-family: 'Oswald';
-						font-size: 32px;
-						font-weight: 700;
-						line-height: 130%;
-						letter-spacing: -0.32px;
-						text-transform: uppercase;
-					}
 					.options {
 						display: grid;
 						grid-template-columns: 1fr 1fr;
@@ -315,12 +348,66 @@
 							margin-bottom: 0;
 						}
 					}
+
 				}
 
 				.votings-list {
 					padding-top: 4rem;
 				}
+
+				&.voting-mode{
+					h2{
+						margin-bottom: 22px;
+					}
+					p{
+						color: #111;
+						font-family: 'Inter';
+						font-size: 20px;
+						font-weight: 600;
+						line-height: 130%;
+						letter-spacing: -0.2px;
+						text-transform: none;
+						margin-bottom: 20px;
+					}
+					form{
+						margin-top: 77px;
+					}
+				}
 			}
+
+			.voting-modal__wrapper.open{
+				.voting-modal {
+					max-width: 569px;
+					width: 100%;
+					max-height: 313px;
+					
+					main{
+						h2{
+							margin-top: 5px;
+							margin-bottom: 10px;
+							font-family: 'Oswald';
+							font-size: 32px;
+							font-weight: 600;
+							line-height: 130%;
+							letter-spacing: -0.32px;
+							text-transform: none;
+							@media(max-width: 782px){
+								font-size: 24px;	
+							}
+						}
+						p{
+							font-family: 'Inter Tight';
+							font-size: 16px;
+							font-weight: 400;
+							line-height: 150%;
+							letter-spacing: -0.16px;
+							@media(max-width: 782px){
+								font-size: 14px;	
+							}
+						}
+					}
+				}
+			}	
 
 			.sidebar {
 				padding-top: size(64);
@@ -336,6 +423,13 @@
 				span {
 					display: block;
 					text-align: center;
+					font-family: 'Inter';
+					font-size: 20px;
+					font-weight: 500;
+					line-height: 130%;
+					letter-spacing: -0.2px;
+					text-transform: uppercase;
+					color: #000;
 				}
 			}
 		}
@@ -349,22 +443,131 @@
 			button {
 				background-color: #FFF766;
 				display: flex;
+				border-radius: 80px;
+				border: 3px solid #000;
+				font-family: 'Oswald';
+				font-size: 24px;
+				font-weight: medium;
+				line-height: 130%;
+				letter-spacing: 0.24px;
+				color: #111;
+				max-width: 278px;;
+				width: 100%;
+				padding: 10px 27px 8px;
 			}
 
 			.back-link {
 				cursor: pointer;
-				text-decoration: underline;
+				color: #000;
+				font-family: 'Inter';
+				font-size: 14px;
+				font-weight: 600;
+				line-height: 150%;
+				letter-spacing: -0.14px;
+				text-transform: uppercase;
+				border-bottom: solid 3px #000;
 			}
 		}
+	}
 
-		.voting-modal {
-			.button.primary {
-				background-color: #FFF766;
+	&.logged-in{
+		.voting-header{
+			p{
+				color: #111;
+				font-family: 'Inter Tight';
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 150%;
+				letter-spacing: -0.16px;
+				text-transform: none;
 			}
+			.meta{
+				span{
+					font-family: 'Oswald';
+					font-size: 24px;					
+					font-weight: 500;
+					line-height: 130%; 
+					letter-spacing: -0.24px;
+					color: #000;
+					img{
+						margin-top: -4px;
+						margin-right: 5px;
+					}
+				}
+			}
+			.dates{
+				.start-edit,
+				.end-edit{
+					color: #000;
+					font-family: 'Inter Tight';
+					font-size: 16px;
+					font-weight: 700;
+					line-height: normal;
+					letter-spacing: -0.16px;
+					text-decoration-line: underline;
+					text-transform: none;
+				}
+			}	
 		}
-
-		// Panel
-		&.is-panel {
-		}
+		.voting-content{
+			.container{
+				margin: 0;
+				padding: 0;
+				max-width: 100%;
+			}
+			border: none;
+			.panel-tabs{
+				width: 100%;
+				display: grid;
+				grid-template-columns: 0.19fr 1fr 1fr 0.19fr;
+				button{
+					background-color: transparent;
+					padding-top: 21px;
+					padding-bottom: 23px;
+					color: #000;
+					text-align: center;
+					font-family: 'Oswald';
+					font-size: 24px;
+					font-weight: 500;
+					line-height: 130%;
+					letter-spacing: -0.24px;
+					text-transform: uppercase;
+				}
+				
+				.panel-tab{
+					
+					border-bottom: 3px solid #000;
+					border-left: 1.7px solid #000;
+					border-right: 1.7px solid #000;
+					
+				}
+				.selected{
+					
+					border-bottom: none;
+					border-left: 1.7px solid #000;
+					border-right: 1.7px solid #000;
+					
+				}
+				.panel-previous-tab{
+					padding-left: 0;
+					border-bottom: 3px solid #000;
+					border-right: 1.7px solid #000;
+					
+					
+				}
+				.panel-next-tab{
+					padding-right: 0;
+					border-bottom: 3px solid #000;
+					border-left: 1.7px solid #000;
+					
+						
+				}
+			}
+			.wrapper{
+				.votings-list{
+					padding-top: 0;
+				}
+			}	
+		}	
 	}
 }

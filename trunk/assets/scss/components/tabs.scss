@@ -1,0 +1,17 @@
+.panel-tabs {
+
+	.panel-previous-tab, .panel-next-tab {
+
+		&.disabled {
+			cursor: not-allowed;
+			opacity: 1;
+		}
+	}
+
+	.panel-previous-tab {
+
+		img {
+			transform: scaleX(-1);
+		}
+	}
+}

@@ -43,8 +43,8 @@ $is_panel = get_query_var( 'panel' );
 					<?php else : ?>
 						<?php if ( Concordamos\is_voting_owner( $post_id ) ) : ?>
 							<?php // @todo: Adicionar links e ícones ?>
-							<span>Alterar duração</span>
-							<span>Deletar votação</span>
+							<span><img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/calendar2.svg'; ?>" alt="Calendar">Alterar duração</span>
+							<span><img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/delete-outline.svg'; ?>" alt="Calendar">Deletar votação</span>
 						<?php endif; ?>
 					<?php endif; ?>
 				</div>
@@ -56,12 +56,14 @@ $is_panel = get_query_var( 'panel' );
 					<h3><?php _e( 'Start', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'h\hi' ); ?></span>
+					<span class="start-edit">Editar</span>
 				</div>
 				<div class="<?php echo $date_end_class; ?>">
 					<div class="icon">2</div>
 					<h3><?php _e( 'End', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'h\hi' ); ?></span>
+					<span class="end-edit">Editar</span>
 				</div>
 			</div>
 		</div>

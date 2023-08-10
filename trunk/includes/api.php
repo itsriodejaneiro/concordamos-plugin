@@ -15,6 +15,18 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_vote_check'
 	] );
 
+	register_rest_route( 'concordamos/v1', '/my-account/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\get_my_account_callback',
+		'permission_callback' => 'Concordamos\\permission_check'
+	] );
+
+	register_rest_route( 'concordamos/v1', '/my-account/', [
+		'methods'             => 'PATCH',
+		'callback'            => 'Concordamos\\patch_my_account_callback',
+		'permission_callback' => 'Concordamos\\permission_check'
+	] );
+
 	register_rest_route( 'concordamos/v1', '/my-vote/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\get_my_vote_callback',
@@ -53,7 +65,7 @@ function permission_check( \WP_REST_Request $request ) {
 		return new \WP_Error( 'rest_forbidden', __("You don't have enough permissions.", 'concordamos'), array( 'status' => 403 ) );
 	}
 
-	if ( $request->get_method() === 'POST' ) {
+	if ( $request->get_method() !== 'GET' ) {
 		$params = $request->get_json_params();
 
 		if ( $params['user_id'] != $user->ID ) {
@@ -65,70 +77,11 @@ function permission_check( \WP_REST_Request $request ) {
 
 }
 
-function list_my_votings_callback ( \WP_REST_Request $request ) {
-	$params = $request->get_params();
-
-	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
-
-	$args = [
-		'post_type' => 'voting',
-		'post_status' => 'publish',
-		'post_author' => get_current_user_id(),
-		'posts_per_page' => 6,
-		'paged' => $currentPage,
-	];
-
-	$query = new \WP_Query($args);
-
-	return [
-		'num_pages' => $query->max_num_pages,
-		'posts' => array_map('Concordamos\\prepare_voting_for_api', $query->posts),
-	];
-}
-
-function list_participated_votes_callback ( \WP_REST_Request $request ) {
-	$params = $request->get_params();
-
-	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
-
-	$args = [
-		'post_type' => 'vote',
-		'post_status' => 'publish',
-		'post_author' => get_current_user_id(),
-		'posts_per_page' => 6,
-		'paged' => $currentPage,
-	];
-
-	$query = new \WP_Query($args);
-
-	$prepareVoting = function ($vote) {
-		$votingId = get_post_meta($vote, 'voting_id', true);
-		$voting = get_post($votingId);
-		return prepare_voting_for_api($voting);
-	};
-
-	return [
-		'num_pages' => $query->max_num_pages,
-		'posts' => array_map($prepareVoting, $query->posts),
-	];
-}
-
-function search_votings_callback ( \WP_REST_Request $request ) {
-	$params = $request->get_params();
-
-	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
-
-	$args = [
-		'post_type' => 'voting',
-		'post_status' => 'publish',
-		'posts_per_page' => 6,
-		'paged' => $currentPage,
-	];
-
-	$meta_query = [];
+function build_query_from_params (array $query, array $params) {
+	$meta_query = empty($query['meta_query']) ? [] : $query['meta_query'];
 
 	if (!empty($params['query'])) {
-		$args['s'] = $params['query'];
+		$query['s'] = $params['query'];
 	}
 
 	if (!empty($params['type'])) {
@@ -156,8 +109,77 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 	}
 
 	if (!empty($meta_query)) {
-		$args['meta_query'] = $meta_query;
+		$query['meta_query'] = $meta_query;
 	}
+
+	return $query;
+}
+
+function list_my_votings_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+
+	$args = [
+		'post_type' => 'voting',
+		'post_status' => 'publish',
+		'post_author' => get_current_user_id(),
+		'posts_per_page' => 6,
+		'paged' => $currentPage,
+	];
+
+	$args = build_query_from_params($args, $params);
+
+	$query = new \WP_Query($args);
+
+	return [
+		'num_pages' => $query->max_num_pages,
+		'posts' => array_map('Concordamos\\prepare_voting_for_api', $query->posts),
+	];
+}
+
+function list_participated_votings_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+
+	$args = [
+		'post_type' => 'vote',
+		'post_status' => 'publish',
+		'post_author' => get_current_user_id(),
+		'posts_per_page' => 6,
+		'paged' => $currentPage,
+	];
+
+	$args = build_query_from_params($args, $params);
+
+	$query = new \WP_Query($args);
+
+	$prepareVoting = function ($vote) {
+		$votingId = get_post_meta($vote->ID, 'voting_id', true);
+		$voting = get_post($votingId);
+		return prepare_voting_for_api($voting);
+	};
+
+	return [
+		'num_pages' => $query->max_num_pages,
+		'posts' => array_map($prepareVoting, $query->posts),
+	];
+}
+
+function search_votings_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+
+	$args = [
+		'post_type' => 'voting',
+		'post_status' => 'publish',
+		'posts_per_page' => 6,
+		'paged' => $currentPage,
+	];
+
+	$args = build_query_from_params($args, $params);
 
 	$query = new \WP_Query($args);
 
@@ -270,15 +292,65 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		$response = [
 			'status'  => 'success',
 			'message' => __('Voting created successfully!', 'concordamos'),
+			'post_url' => get_permalink( $post_id ),
 		];
 		return new \WP_REST_Response( $response, 200 );
 
 	} else {
 		$response = [
 			'status'  => 'error',
-			'message' => __('Verify all fields and try again.'. 'concordamos'),
+			'message' => __('Verify all fields and try again'. 'concordamos'),
 		];
 		return new \WP_REST_Response( $response, 400 );
+	}
+}
+
+function get_my_account_callback ( \WP_REST_Request $request ) {
+	$user = get_user_by('ID', get_current_user_id());
+
+	return [
+		'ID' => $user->ID,
+		'email' => $user->user_email,
+		'name' => $user->display_name,
+		'roles' => $user->roles,
+	];
+
+	return $user;
+}
+
+function patch_my_account_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+
+	$args = [
+		'ID' => $params['user_id'],
+	];
+
+	if (!empty($params['name'])) {
+		$args['display_name'] = $params['name'];
+	}
+
+	if (!empty($params['email'])) {
+		$args['user_email'] = $params['email'];
+	}
+
+	if (!empty($params['password'])) {
+		$args['user_pass'] = $params['password'];
+	}
+
+	$userId = wp_update_user($args);
+
+	if ($userId) {
+		$response = [
+			'status' => 'success',
+			'message' => __('User updated successfully!', 'concordamos'),
+		];
+		return new \WP_REST_Response($response, 200);
+	} else {
+		$response = [
+			'status' => 'error',
+			'message' => __('Error updating user, please try again', 'concordamos'),
+		];
+		return new \WP_REST_Response($response, 400);
 	}
 }
 
@@ -310,7 +382,7 @@ function get_my_vote_callback ( \WP_REST_Request $request ) {
 	} else {
 		$response = [
 			'status' => 'error',
-			'message' => __('Vote not found.', 'concordamos'),
+			'message' => __('Vote not found', 'concordamos'),
 		];
 		return new \WP_REST_Response($response, 404);
 	}
@@ -332,17 +404,24 @@ function vote_callback( \WP_REST_Request $request ) {
 		$is_private = true;
 	}
 
-	// Check if voting has unique ID and is private
-	if ( preg_match( '/^u-[A-Za-z0-9]+$/i', $unique_id ) && $is_private ) {
-		$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
-
-		// Checks that unique ID was not used
-		if ( in_array( $unique_id, $expired_unique_ids ) ) {
+	if ( $is_private ) {
+		if ( empty( $unique_id ) ) {
 			$response = [
-				'status'  => 'error',
-				'message' => __( 'Expired link', 'concordamos' )
+				'status' => 'error',
+				'message' => __( 'Invalid link', 'concordamos' ),
 			];
-			return new \WP_REST_Response( $response, 400 );
+			return new \WP_REST_Response( $response, 401 );
+		} elseif ( preg_match( '/^u-[A-Za-z0-9]+$/i', $unique_id ) ) {
+			$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
+
+			// Checks that unique ID was not used
+			if ( in_array( $unique_id, $expired_unique_ids ) ) {
+				$response = [
+					'status'  => 'error',
+					'message' => __( 'Expired link', 'concordamos' )
+				];
+				return new \WP_REST_Response( $response, 403 );
+			}
 		}
 	}
 
@@ -376,7 +455,7 @@ function vote_callback( \WP_REST_Request $request ) {
 
 		$response = [
 			'status'  => 'success',
-			'message' => __( 'Vote registered successfully', 'concordamos')
+			'message' => __( 'Vote registered successfully!', 'concordamos')
 		];
 
 		return new \WP_REST_Response( $response, 200 );
