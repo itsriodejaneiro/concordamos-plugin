@@ -1,11 +1,12 @@
 import { __ } from '@wordpress/i18n'
 
+import EditEmailModal from './EditEmailModal'
 import EditNameModal from './EditNameModal'
 import { useModal } from '../../shared/components/Modal'
 
 export default function UserSettings ({ user }) {
-	const editNameModal = useModal(true)
 	const editEmailModal = useModal(false)
+	const editNameModal = useModal(false)
 
 	return (
 		<>
@@ -21,10 +22,10 @@ export default function UserSettings ({ user }) {
 					</div>
 					<div className="my-account-field">
 						<dl>
-							<dt>{__('My e-mail', 'concordamos')}</dt>
+							<dt>{__('My email', 'concordamos')}</dt>
 							<dd>{user.email}</dd>
 						</dl>
-						<button type="button" onClick={editEmailModal.open}>{__('Edit e-mail', 'concordamos')}</button>
+						<button type="button" onClick={editEmailModal.open}>{__('Edit email', 'concordamos')}</button>
 					</div>
 				</div>
 				<div className="my-account-box">
@@ -36,6 +37,7 @@ export default function UserSettings ({ user }) {
 				</div>
 			</div>
 			<EditNameModal controller={editNameModal} value={user.name} onChange={(event) => user.name = event}/>
+			<EditEmailModal controller={editEmailModal} value={user.email} onChange={(event) => user.email = event}/>
 		</>
 	)
 }
