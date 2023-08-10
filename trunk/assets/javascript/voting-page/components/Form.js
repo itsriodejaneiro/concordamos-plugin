@@ -167,7 +167,7 @@ const Form = () => {
 				<p dangerouslySetInnerHTML={ { __html: __('After creation the voting, you can <strong>only</strong> change its <strong>start</strong> and <strong>end dates</strong>.', 'concordamos') } }/>
 				<div className="buttons">
 					<button type="button" className="button primary" onClick={handleSubmit}>{__('Create voting', 'concordamos')}</button>
-					<button type="button" className="button link" onClick={confirmModal.close}>{__('Cancel', 'concordamos')}</button>
+					<button type="button" className="button link" onClick={confirmModal.close}>{__('Back', 'concordamos')}</button>
 				</div>
 			</Modal>
 		</>
