@@ -29,7 +29,7 @@ function enqueue_scripts_frontend() {
 		}
 		$template_slug = get_page_template_slug();
 		if ($template_slug === 'concordamos/template-login.php' || $template_slug = 'concordamos/template-create-user.php') {
-			wp_enqueue_script( 'concordamos-my-account-login', CONCORDAMOS_PLUGIN_URL . 'build/js/my-account/login.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+			wp_enqueue_script( 'concordamos-my-account-login', CONCORDAMOS_PLUGIN_URL . 'build/js/user/login.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
 			wp_enqueue_style( 'concordamos-template-login-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-login.css', ['concordamos'], CONCORDAMOS_PLUGIN_VERSION );
 		}
 	}

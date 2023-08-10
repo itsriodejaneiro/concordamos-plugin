@@ -1,4 +1,5 @@
 @import 'settings/mixins';
+@import 'atoms/fields';
 
 
 .page-template-template-login,
@@ -37,6 +38,16 @@
     }
     .login-form,
     .register-form{
+        .error p {
+            color: #FF2E22;
+            font-family: 'Inter Tight';
+            letter-spacing: -0.12px;    
+        }
+        .success p {
+            color: #00d084;
+            font-family: 'Inter Tight';
+            letter-spacing: -0.12px;    
+        }
         .container{
             max-width: 576px;
             width: 100%;
@@ -78,6 +89,15 @@
         }
         p, img{
             text-align: center;
+        }
+        button.show-password {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            margin-top: 14px;
+            margin-left: -43px;
+            border: none;
+            background: none;
         }
     }
     .register-form{
