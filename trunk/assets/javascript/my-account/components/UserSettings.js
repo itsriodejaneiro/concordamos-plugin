@@ -1,6 +1,15 @@
 import { __ } from '@wordpress/i18n'
 
+import EditEmailModal from './EditEmailModal'
+import EditNameModal from './EditNameModal'
+import EditPasswordModal from './EditPasswordModal'
+import { useModal } from '../../shared/components/Modal'
+
 export default function UserSettings ({ user }) {
+	const editEmailModal = useModal(false)
+	const editNameModal = useModal(false)
+	const editPasswordModal = useModal(false)
+
 	return (
 		<div className="my-account-settings">
 			<div className="my-account-box">

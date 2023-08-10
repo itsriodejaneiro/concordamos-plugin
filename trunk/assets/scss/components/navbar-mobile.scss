@@ -1,0 +1,63 @@
+@use '../settings/mixins' as mixins;
+ 
+.navbar-mobile{
+    display: none;
+    @include mixins.mobile{
+        display: flex;
+        position: fixed;
+        z-index: 999;
+    }
+    button{   
+        padding: 0px;
+        & p{
+        margin: 0px;
+        color: #000;
+        text-align: center;
+        font-family: 'Inter Tight', sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.12px;
+        background-color: none;
+        }
+    }
+    .btn-1{
+        cursor:pointer;
+        width: 145px;			
+        height: 64px;
+        border-radius: 64px 0px 0px 64px;
+        border: 3px solid #000;
+        margin: 0px;
+        box-shadow: 4px 4px 0px 0px #000;
+        &:hover{
+            background-color:#FF73E7 ;
+        }
+    }
+
+    .btn-2{
+        cursor:pointer;
+        width: 90px;
+        height: 64px;	
+        border-top: 3px solid #000;
+        border-bottom: 3px solid #000;
+        border-left: 0px;
+        border-right: 0px;
+        box-shadow: 4px 4px 0px 0px #000;
+        &:hover{
+            background-color:#EDE103 ;
+        }
+    }
+    .btn-3 {
+        cursor:pointer;
+        width: 129px;
+        height: 64px;
+        border-radius: 0px 94px 94px 0px;
+        border: 3px solid #000;
+        background: var(--high-pure, #FFF);
+        box-shadow: 4px 4px 0px 0px #000;
+        &:hover{
+            background-color: #26A9F9;
+        }
+    }
+}
