@@ -4,6 +4,7 @@ namespace Concordamos;
 class User_Login {
     public function __construct() {
         add_action('rest_api_init', array($this, 'register_endpoint'));
+        add_action( 'template_redirect', array($this, 'redirect_logged_user') );
     }
 
     public function register_endpoint() {
@@ -49,6 +50,13 @@ class User_Login {
         wp_set_auth_cookie($user->ID);
 
         return array('message' => __('Login successful.', 'concordamos'));
+    }
+
+    public function redirect_logged_user() {
+        if( is_user_logged_in() && strstr(get_page_template(), 'template-login.php') ) {
+            wp_redirect( home_url() );
+            exit;
+        }
     }
 }
 
