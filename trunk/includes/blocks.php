@@ -34,6 +34,7 @@ function register_votings_block () {
 		'api_version' => 2,
 		'script' => 'concordamos-votings-block',
 		'editor_script' => 'concordamos-votings-block-admin',
+		'styles' => [ 'concordamos-votings-block-style' ],
 	] );
 }
 
