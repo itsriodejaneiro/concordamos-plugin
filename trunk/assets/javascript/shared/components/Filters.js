@@ -11,7 +11,7 @@ const votingAccessOptions = {
 const votingTimeOptions = {
 	'past': _x('Concluded', 'votings', 'concordamos'),
 	'present': _x('Open', 'votings', 'concordamos'),
-	'future': _x('Future', 'votings', 'concordamos'),
+	'future': _x('Scheduled', 'votings', 'concordamos'),
 	'': _x('All', 'votings', 'concordamos'),
 }
 

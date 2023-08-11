@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Concordamos
- * Description:       Sistema de voto quadrático do Concordamos
+ * Description:       Quadratic voting system by Concordamos
  * Version:           0.0.9
  * Requires at least: 5.8
  * Requires PHP:      7.4
