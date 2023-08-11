@@ -11,35 +11,40 @@ export default function UserSettings ({ user }) {
 	const editPasswordModal = useModal(false)
 
 	return (
-		<div className="my-account-settings">
-			<div className="my-account-box">
-				<div className="container">
-					<h2>{__('My data', 'concordamos')}</h2>
-					<div className="my-account-field">
-						<dl>
-							<dt>{__('Name', 'concordamos')}</dt>
-							<dd>{user.name}</dd>
-						</dl>
-						<button className="edit" type="button">{__('Edit name', 'concordamos')}</button>
+		<>
+			<div className="my-account-settings">
+				<div className="my-account-box">
+					<div className="container">
+						<h2>{__('My data', 'concordamos')}</h2>
+						<div className="my-account-field">
+							<dl>
+								<dt>{__('Name', 'concordamos')}</dt>
+								<dd>{user.name}</dd>
+							</dl>
+							<button className="edit" type="button" onClick={editNameModal.open}>{__('Edit name', 'concordamos')}</button>
+						</div>
+						<div className="my-account-field">
+							<dl>
+								<dt>{__('My email', 'concordamos')}</dt>
+								<dd>{user.email}</dd>
+							</dl>
+							<button className="edit" type="button" onClick={editEmailModal.open}>{__('Edit email', 'concordamos')}</button>
+						</div>
 					</div>
-					<div className="my-account-field">
-						<dl>
-							<dt>{__('My e-mail', 'concordamos')}</dt>
-							<dd>{user.email}</dd>
-						</dl>
-						<button className="edit" type="button">{__('Edit e-mail', 'concordamos')}</button>
+				</div>
+				<div className="my-account-box">
+					<div className="container">
+						<h2>{__('General settings', 'concordamos')}</h2>
+						<button className="edit" type="button" onClick={editPasswordModal.open}>{__('Edit password', 'concordamos')}</button>
+						<button className="edit" type="button">{__('Review our privacy policy', 'concordamos')}</button>
+						<button className="edit" type="button">{__('Review our terms of use', 'concordamos')}</button>
+						<button className="delete-acount" type="button delete">{__('Delete account', 'concordamos')}</button>
 					</div>
 				</div>
 			</div>
-			<div className="my-account-box">
-				<div className="container">
-					<h2>{__('General settings', 'concordamos')}</h2>
-					<button className="edit" type="button">{__('Edit password', 'concordamos')}</button>
-					<button className="edit" type="button">{__('Review our privacy policy', 'concordamos')}</button>
-					<button className="edit" type="button">{__('Review our terms of use', 'concordamos')}</button>
-					<button className="delete-acount" type="button delete">{__('Delete account', 'concordamos')}</button>
-				</div>
-			</div>
-		</div>
+			<EditNameModal controller={editNameModal} value={user.name} onChange={(event) => user.name = event}/>
+			<EditEmailModal controller={editEmailModal} value={user.email} onChange={(event) => user.email = event}/>
+			<EditPasswordModal controller={editPasswordModal}/>
+		</>
 	)
 }
