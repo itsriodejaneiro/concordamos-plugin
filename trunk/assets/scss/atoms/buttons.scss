@@ -25,50 +25,50 @@ button {
 	}
 
 	&.link {
-		border: none;
-		background-color: transparent;
-		color: #000;
-		font-family: 'Oswald';
-		font-size: 24px;
-		font-weight: 500;
-		line-height: 130%;
-		letter-spacing: -0.24px;
+		border: none !important;
+		background-color: transparent !important;
+		color: #000 !important;
+		font-family: 'Oswald' !important;
+		font-size: 24px !important;
+		font-weight: 500 !important;
+		line-height: 130% !important;
+		letter-spacing: -0.24px !important;
 		@media(max-width: 782px){
-			font-size: 16px;	
+			font-size: 16px !important;	
 		}
 		&:hover{
-			background-color: transparent;
-			color: #000;
+			background-color: transparent !important;
+			color: #000 !important;
 		}	
 	}
 
 	&.primary {
-		background-color: #FFF766;
-		border-radius: 80px;
-		border: 3px solid #000;
-		padding: 9px 24px 11px;
-		color: #000;
-		font-family: 'Oswald';
-		font-size: 24px;
-		font-weight: 500;
-		line-height: 130%;
-		letter-spacing: -0.24px;
+		background-color: #FFF766 !important;
+		border-radius: 80px !important;
+		border: 3px solid #000 !important;
+		padding: 9px 24px 11px !important;
+		color: #000 !important;
+		font-family: 'Oswald' !important;
+		font-size: 24px !important;
+		font-weight: 500 !important;
+		line-height: 130% !important;
+		letter-spacing: -0.24px !important;
 		@media(max-width: 782px){
-			font-size: 16px;
-			padding: 6px 16px;	
+			font-size: 16px !important;
+			padding: 6px 16px !important;	
 		}
 		&:hover{
-			background-color: transparent;
-			color: #000;
-			border: 3px solid #000;
-			background-color: #FFF766;
+			background-color: transparent !important;
+			color: #000 !important;
+			border: 3px solid #000 !important;
+			background-color: #FFF766 !important;
 		}	
 	}
 	&.close{
-		background-color: transparent;
-		border: none;
+		background-color: transparent !important;
+		border: none !important;
 		&:hover{
-			background-color: transparent;
+			background-color: transparent !important;
 		}	
 	}
 }	

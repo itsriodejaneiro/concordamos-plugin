@@ -132,6 +132,33 @@
 			}
 		}
 	}
+	.voting-modal__wrapper.open{
+		.voting-modal {
+			main{
+				h2{
+					margin-top: 5px;
+					margin-bottom: 10px;
+					font-family: 'Oswald';
+					font-size: 32px;
+					font-weight: 600;
+					line-height: 130%;
+					letter-spacing: -0.32px;
+					text-transform: none;
+					@media(max-width: 782px){
+						font-size: 24px;	
+					}
+				}
+				p{
+					font-family: 'Inter Tight';
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 150%;
+					letter-spacing: -0.16px;
+					margin-bottom: 19px;
+				}
+			}
+		}
+	}
 }
 
 .entry-content{
