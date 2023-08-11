@@ -17,3 +17,9 @@ Para gerar os arquivos POT, rode dentro da pasta do plugin o seguinte comando:
 ```bash
 wp i18n make-pot . languages/concordamos.pot
 ```
+
+Depois de atualizar as traduções, rode:
+
+```bash
+wp i18n make-json languages
+```

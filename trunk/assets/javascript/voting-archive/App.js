@@ -7,6 +7,8 @@ import Filters from '../shared/components/Filters'
 import VotingCard from './components/VotingCard'
 import { useFetch } from '../shared/hooks/fetch'
 
+const initialQuery = new URLSearchParams(window.location.search).get('search') ?? ''
+
 function buildUrl (query, filters, page) {
 	const url = new URL('votings/', concordamos.rest_url)
 	const params = url.searchParams
@@ -26,8 +28,8 @@ function buildUrl (query, filters, page) {
 	return url
 }
 
-export function App() {
-	const [query, setQuery] = useState('')
+export function App () {
+	const [query, setQuery] = useState(initialQuery)
 	const [filters, setFilters] = useState({ access: '', time: '' })
 	const [page, setPage] = useState(1)
 
@@ -58,8 +60,8 @@ export function App() {
 				<h1>{__('Search for a voting', 'concordamos')}</h1>
 				<div class="voting-archive-filters">
 					<form className="voting-search-form">
-						<DebounceInput type="search" debounceTimeout={500} placeholder="Buscar por..." value={query} onChange={onQueryChange}/>
-						<button type="submit">
+						<DebounceInput type="search" debounceTimeout={500} placeholder={__('Search by...', 'concordamos')} value={query} onChange={onQueryChange}/>
+						<button type="button">
 							<span className="sr-only">{__('Search', 'concordamos')}</span>
 							<i className="icon"/>
 						</button>

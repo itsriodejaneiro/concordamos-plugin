@@ -171,11 +171,12 @@ function search_votings_callback ( \WP_REST_Request $request ) {
 	$params = $request->get_params();
 
 	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+	$postsPerPage = empty($params['per_page']) ? 6 : intval($params['per_page']);
 
 	$args = [
 		'post_type' => 'voting',
 		'post_status' => 'publish',
-		'posts_per_page' => 6,
+		'posts_per_page' => $postsPerPage,
 		'paged' => $currentPage,
 	];
 
