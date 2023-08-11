@@ -188,3 +188,10 @@
 		}
 	}
 }
+.post-type-archive-voting{
+	.main-footer{
+		@include mobile{
+			display: none;
+		}
+	}
+}
