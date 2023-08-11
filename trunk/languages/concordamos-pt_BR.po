@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-08-11T17:58:59+00:00\n"
-"PO-Revision-Date: 2023-08-11 15:03-0300\n"
+"POT-Creation-Date: 2023-08-11T21:32:38+00:00\n"
+"PO-Revision-Date: 2023-08-11 18:34-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -40,39 +40,39 @@ msgstr "Você não está logado(a)."
 msgid "You don't have enough permissions."
 msgstr "Você não tem permissões suficientes."
 
-#: includes/api.php:217 includes/api.php:363
+#: includes/api.php:218 includes/api.php:364
 msgid "Required field is either missing or blank:"
 msgstr "Campo obrigatório está ausente ou vazio:"
 
-#: includes/api.php:294
+#: includes/api.php:295
 msgid "Voting created successfully!"
 msgstr "Votação criada com sucesso!"
 
-#: includes/api.php:345
+#: includes/api.php:346
 msgid "User updated successfully!"
 msgstr "Usuário atualizado com sucesso!"
 
-#: includes/api.php:351
+#: includes/api.php:352
 msgid "Error updating user, please try again"
 msgstr "Ero ao atualizar usuário, por favor tente novamente"
 
-#: includes/api.php:385
+#: includes/api.php:386
 msgid "Vote not found"
 msgstr "Voto não encontrado"
 
-#: includes/api.php:411
+#: includes/api.php:412
 msgid "Invalid link"
 msgstr "Link inválido"
 
-#: includes/api.php:421
+#: includes/api.php:422
 msgid "Expired link"
 msgstr "Link expirado"
 
-#: includes/api.php:458
+#: includes/api.php:459
 msgid "Vote registered successfully!"
 msgstr "Voto registrado com sucesso!"
 
-#: includes/api.php:465
+#: includes/api.php:466
 msgid "Error registering your vote, please try again"
 msgstr "Erro ao registar seu voto, por favor tente novamente"
 
@@ -177,6 +177,10 @@ msgid "My account"
 msgstr "Minha conta"
 
 #: templates/part/navbar-mobile.php:9
+#: assets/javascript/votings-block/editor.js:8
+#: assets/javascript/votings-block/editor.js:18
+#: build/js/votings-block/editor.js:134 build/js/votings-block/editor.js:144
+#: build/js/votings-block/editor.js:61 build/js/votings-block/editor.js:71
 msgid "Votings"
 msgstr "Votações"
 
@@ -242,34 +246,34 @@ msgstr "Olá, %s"
 
 #: assets/javascript/my-account/components/CreatedVotings.js:45
 #: assets/javascript/my-account/components/ParticipatedVotings.js:45
-#: assets/javascript/voting-archive/App.js:80 build/js/my-account/App.js:70
+#: assets/javascript/voting-archive/App.js:82 build/js/my-account/App.js:70
 #: build/js/my-account/App.js:392
 #: build/js/my-account/components/CreatedVotings.js:546
 #: build/js/my-account/components/ParticipatedVotings.js:546
 #: build/js/my-account/index.js:141 build/js/my-account/index.js:463
-#: build/js/voting-archive/App.js:1271 build/js/voting-archive/index.js:257
+#: build/js/voting-archive/App.js:1272 build/js/voting-archive/index.js:258
 #: build/js/my-account/App.js:45 build/js/my-account/App.js:294
 #: build/js/my-account/components/CreatedVotings.js:351
 #: build/js/my-account/components/ParticipatedVotings.js:351
 #: build/js/my-account/index.js:95 build/js/my-account/index.js:344
-#: build/js/voting-archive/App.js:1052 build/js/voting-archive/index.js:168
+#: build/js/voting-archive/App.js:1054 build/js/voting-archive/index.js:170
 msgctxt "page"
 msgid "Next"
 msgstr "Próxima"
 
 #: assets/javascript/my-account/components/CreatedVotings.js:47
 #: assets/javascript/my-account/components/ParticipatedVotings.js:47
-#: assets/javascript/voting-archive/App.js:82 build/js/my-account/App.js:72
+#: assets/javascript/voting-archive/App.js:84 build/js/my-account/App.js:72
 #: build/js/my-account/App.js:394
 #: build/js/my-account/components/CreatedVotings.js:548
 #: build/js/my-account/components/ParticipatedVotings.js:548
 #: build/js/my-account/index.js:143 build/js/my-account/index.js:465
-#: build/js/voting-archive/App.js:1273 build/js/voting-archive/index.js:259
+#: build/js/voting-archive/App.js:1274 build/js/voting-archive/index.js:260
 #: build/js/my-account/App.js:47 build/js/my-account/App.js:296
 #: build/js/my-account/components/CreatedVotings.js:353
 #: build/js/my-account/components/ParticipatedVotings.js:353
 #: build/js/my-account/index.js:97 build/js/my-account/index.js:346
-#: build/js/voting-archive/App.js:1054 build/js/voting-archive/index.js:170
+#: build/js/voting-archive/App.js:1056 build/js/voting-archive/index.js:172
 msgctxt "page"
 msgid "Previous"
 msgstr "Anterior"
@@ -724,15 +728,27 @@ msgstr "Aba anterior"
 msgid "Next tab"
 msgstr "Próxima aba"
 
-#: assets/javascript/voting-archive/App.js:58
-#: build/js/voting-archive/App.js:1243 build/js/voting-archive/index.js:229
-#: build/js/voting-archive/App.js:1030 build/js/voting-archive/index.js:146
+#: assets/javascript/voting-archive/App.js:60
+#: build/js/voting-archive/App.js:1244 build/js/voting-archive/index.js:230
+#: build/js/voting-archive/App.js:1032 build/js/voting-archive/index.js:148
 msgid "Search for a voting"
 msgstr "Pesquisar por uma votação"
 
 #: assets/javascript/voting-archive/App.js:63
-#: build/js/voting-archive/App.js:1257 build/js/voting-archive/index.js:243
+#: assets/javascript/votings-block/App.js:30
+#: build/js/voting-archive/App.js:1251 build/js/voting-archive/index.js:237
+#: build/js/votings-block/App.js:395 build/js/votings-block/index.js:236
 #: build/js/voting-archive/App.js:1035 build/js/voting-archive/index.js:151
+#: build/js/votings-block/App.js:259 build/js/votings-block/index.js:147
+msgid "Search by..."
+msgstr "Pesquisar por..."
+
+#: assets/javascript/voting-archive/App.js:65
+#: assets/javascript/votings-block/App.js:32
+#: build/js/voting-archive/App.js:1258 build/js/voting-archive/index.js:244
+#: build/js/votings-block/App.js:403 build/js/votings-block/index.js:244
+#: build/js/voting-archive/App.js:1037 build/js/voting-archive/index.js:153
+#: build/js/votings-block/App.js:261 build/js/votings-block/index.js:149
 msgid "Search"
 msgstr "Pesquisar"
 
@@ -742,12 +758,14 @@ msgstr "Pesquisar"
 #: build/js/my-account/components/ParticipatedVotings.js:270
 #: build/js/my-account/index.js:953 build/js/voting-archive/App.js:244
 #: build/js/voting-archive/components/VotingCard.js:232
-#: build/js/voting-archive/index.js:357 build/js/my-account/App.js:573
+#: build/js/voting-archive/index.js:358 build/js/votings-block/App.js:149
+#: build/js/votings-block/index.js:149 build/js/my-account/App.js:573
 #: build/js/my-account/components/CreatedVotings.js:148
 #: build/js/my-account/components/ParticipatedVotings.js:148
 #: build/js/my-account/index.js:623 build/js/voting-archive/App.js:133
 #: build/js/voting-archive/components/VotingCard.js:145
-#: build/js/voting-archive/index.js:223
+#: build/js/voting-archive/index.js:225 build/js/votings-block/App.js:73
+#: build/js/votings-block/index.js:73
 msgctxt "voting"
 msgid "Concluded"
 msgstr "Concluída"
@@ -758,12 +776,14 @@ msgstr "Concluída"
 #: build/js/my-account/components/ParticipatedVotings.js:272
 #: build/js/my-account/index.js:955 build/js/voting-archive/App.js:246
 #: build/js/voting-archive/components/VotingCard.js:234
-#: build/js/voting-archive/index.js:359 build/js/my-account/App.js:575
+#: build/js/voting-archive/index.js:360 build/js/votings-block/App.js:151
+#: build/js/votings-block/index.js:151 build/js/my-account/App.js:575
 #: build/js/my-account/components/CreatedVotings.js:150
 #: build/js/my-account/components/ParticipatedVotings.js:150
 #: build/js/my-account/index.js:625 build/js/voting-archive/App.js:135
 #: build/js/voting-archive/components/VotingCard.js:147
-#: build/js/voting-archive/index.js:225
+#: build/js/voting-archive/index.js:227 build/js/votings-block/App.js:75
+#: build/js/votings-block/index.js:75
 msgctxt "voting"
 msgid "Open"
 msgstr "Aberta"
@@ -774,12 +794,14 @@ msgstr "Aberta"
 #: build/js/my-account/components/ParticipatedVotings.js:274
 #: build/js/my-account/index.js:957 build/js/voting-archive/App.js:248
 #: build/js/voting-archive/components/VotingCard.js:236
-#: build/js/voting-archive/index.js:361 build/js/my-account/App.js:577
+#: build/js/voting-archive/index.js:362 build/js/votings-block/App.js:153
+#: build/js/votings-block/index.js:153 build/js/my-account/App.js:577
 #: build/js/my-account/components/CreatedVotings.js:152
 #: build/js/my-account/components/ParticipatedVotings.js:152
 #: build/js/my-account/index.js:627 build/js/voting-archive/App.js:137
 #: build/js/voting-archive/components/VotingCard.js:149
-#: build/js/voting-archive/index.js:227
+#: build/js/voting-archive/index.js:229 build/js/votings-block/App.js:77
+#: build/js/votings-block/index.js:77
 msgctxt "voting"
 msgid "Scheduled"
 msgstr "Agendada"
@@ -790,12 +812,14 @@ msgstr "Agendada"
 #: build/js/my-account/components/ParticipatedVotings.js:280
 #: build/js/my-account/index.js:963 build/js/voting-archive/App.js:254
 #: build/js/voting-archive/components/VotingCard.js:242
-#: build/js/voting-archive/index.js:367 build/js/my-account/App.js:584
+#: build/js/voting-archive/index.js:368 build/js/votings-block/App.js:159
+#: build/js/votings-block/index.js:159 build/js/my-account/App.js:584
 #: build/js/my-account/components/CreatedVotings.js:159
 #: build/js/my-account/components/ParticipatedVotings.js:159
 #: build/js/my-account/index.js:634 build/js/voting-archive/App.js:144
 #: build/js/voting-archive/components/VotingCard.js:156
-#: build/js/voting-archive/index.js:234
+#: build/js/voting-archive/index.js:236 build/js/votings-block/App.js:84
+#: build/js/votings-block/index.js:84
 msgctxt "date"
 msgid "Since %s"
 msgstr "Desde o dia %s"
@@ -806,12 +830,14 @@ msgstr "Desde o dia %s"
 #: build/js/my-account/components/ParticipatedVotings.js:282
 #: build/js/my-account/index.js:965 build/js/voting-archive/App.js:256
 #: build/js/voting-archive/components/VotingCard.js:244
-#: build/js/voting-archive/index.js:369 build/js/my-account/App.js:586
+#: build/js/voting-archive/index.js:370 build/js/votings-block/App.js:161
+#: build/js/votings-block/index.js:161 build/js/my-account/App.js:586
 #: build/js/my-account/components/CreatedVotings.js:161
 #: build/js/my-account/components/ParticipatedVotings.js:161
 #: build/js/my-account/index.js:636 build/js/voting-archive/App.js:146
 #: build/js/voting-archive/components/VotingCard.js:158
-#: build/js/voting-archive/index.js:236
+#: build/js/voting-archive/index.js:238 build/js/votings-block/App.js:86
+#: build/js/votings-block/index.js:86
 msgctxt "date"
 msgid "Until %s"
 msgstr "Até o dia %s"
@@ -822,12 +848,14 @@ msgstr "Até o dia %s"
 #: build/js/my-account/components/ParticipatedVotings.js:284
 #: build/js/my-account/index.js:967 build/js/voting-archive/App.js:258
 #: build/js/voting-archive/components/VotingCard.js:246
-#: build/js/voting-archive/index.js:371 build/js/my-account/App.js:588
+#: build/js/voting-archive/index.js:372 build/js/votings-block/App.js:163
+#: build/js/votings-block/index.js:163 build/js/my-account/App.js:588
 #: build/js/my-account/components/CreatedVotings.js:163
 #: build/js/my-account/components/ParticipatedVotings.js:163
 #: build/js/my-account/index.js:638 build/js/voting-archive/App.js:148
 #: build/js/voting-archive/components/VotingCard.js:160
-#: build/js/voting-archive/index.js:238
+#: build/js/voting-archive/index.js:240 build/js/votings-block/App.js:88
+#: build/js/votings-block/index.js:88
 msgctxt "date"
 msgid "From %s"
 msgstr "A partir do dia %s"
@@ -838,12 +866,14 @@ msgstr "A partir do dia %s"
 #: build/js/my-account/components/ParticipatedVotings.js:301
 #: build/js/my-account/index.js:984 build/js/voting-archive/App.js:275
 #: build/js/voting-archive/components/VotingCard.js:263
-#: build/js/voting-archive/index.js:388 build/js/my-account/App.js:606
+#: build/js/voting-archive/index.js:389 build/js/votings-block/App.js:180
+#: build/js/votings-block/index.js:180 build/js/my-account/App.js:606
 #: build/js/my-account/components/CreatedVotings.js:181
 #: build/js/my-account/components/ParticipatedVotings.js:181
 #: build/js/my-account/index.js:656 build/js/voting-archive/App.js:166
 #: build/js/voting-archive/components/VotingCard.js:178
-#: build/js/voting-archive/index.js:256
+#: build/js/voting-archive/index.js:258 build/js/votings-block/App.js:106
+#: build/js/votings-block/index.js:106
 msgid "Login required"
 msgstr "Login obrigatório"
 
@@ -853,12 +883,14 @@ msgstr "Login obrigatório"
 #: build/js/my-account/components/ParticipatedVotings.js:301
 #: build/js/my-account/index.js:984 build/js/voting-archive/App.js:275
 #: build/js/voting-archive/components/VotingCard.js:263
-#: build/js/voting-archive/index.js:388 build/js/my-account/App.js:606
+#: build/js/voting-archive/index.js:389 build/js/votings-block/App.js:180
+#: build/js/votings-block/index.js:180 build/js/my-account/App.js:606
 #: build/js/my-account/components/CreatedVotings.js:181
 #: build/js/my-account/components/ParticipatedVotings.js:181
 #: build/js/my-account/index.js:656 build/js/voting-archive/App.js:166
 #: build/js/voting-archive/components/VotingCard.js:178
-#: build/js/voting-archive/index.js:256
+#: build/js/voting-archive/index.js:258 build/js/votings-block/App.js:106
+#: build/js/votings-block/index.js:106
 msgid "Login required to see results"
 msgstr "Login obrigatório para ver os resultados"
 
@@ -868,12 +900,14 @@ msgstr "Login obrigatório para ver os resultados"
 #: build/js/my-account/components/ParticipatedVotings.js:301
 #: build/js/my-account/index.js:984 build/js/voting-archive/App.js:275
 #: build/js/voting-archive/components/VotingCard.js:263
-#: build/js/voting-archive/index.js:388 build/js/my-account/App.js:606
+#: build/js/voting-archive/index.js:389 build/js/votings-block/App.js:180
+#: build/js/votings-block/index.js:180 build/js/my-account/App.js:606
 #: build/js/my-account/components/CreatedVotings.js:181
 #: build/js/my-account/components/ParticipatedVotings.js:181
 #: build/js/my-account/index.js:656 build/js/voting-archive/App.js:166
 #: build/js/voting-archive/components/VotingCard.js:178
-#: build/js/voting-archive/index.js:256
+#: build/js/voting-archive/index.js:258 build/js/votings-block/App.js:106
+#: build/js/votings-block/index.js:106
 msgid "No login"
 msgstr "Sem login"
 
@@ -1482,6 +1516,12 @@ msgstr "Resultados detalhados"
 #: build/js/voting-single/pages/Panel.js:327
 msgid "User panel"
 msgstr "Painel de usuário"
+
+#: assets/javascript/votings-block/App.js:30 build/js/votings-block/App.js:396
+#: build/js/votings-block/index.js:237 build/js/votings-block/App.js:259
+#: build/js/votings-block/index.js:147
+msgid "Search votings"
+msgstr "Pesquisar votações"
 
 #~ msgctxt "votings"
 #~ msgid "Future"
