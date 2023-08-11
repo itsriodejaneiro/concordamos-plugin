@@ -14,7 +14,7 @@ registerBlockType('concordamos/votings', {
 		return (
 			<div {...blockProps}>
 				<Placeholder
-					icon="privacy"
+					icon="yes-alt"
 					label={__('Votings', 'concordamos')}
 					isColumnLayout={true}
 				/>

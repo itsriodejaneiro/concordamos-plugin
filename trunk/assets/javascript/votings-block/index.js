@@ -3,6 +3,8 @@ import { render } from 'react-dom'
 
 import { App } from './App'
 
-const elementRender = document.getElementById('concordamos-votings-block')
+const elementsRender = [...document.getElementsByClassName('concordamos-votings-block')]
 
-render(<StrictMode><App/></StrictMode>, elementRender)
+elementsRender.forEach((elementRender) => {
+	render(<StrictMode><App/></StrictMode>, elementRender)
+})

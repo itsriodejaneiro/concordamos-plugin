@@ -8,7 +8,7 @@ import { navigateTo } from '../shared/utils/location'
 export function App () {
 	const [query, setQuery] = useState('')
 
-	const { data } = useFetch(new URL('votings/?type=public&per_page=3'), {
+	const { data } = useFetch(new URL('votings/?type=public&per_page=3', concordamos.rest_url), {
 		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json',

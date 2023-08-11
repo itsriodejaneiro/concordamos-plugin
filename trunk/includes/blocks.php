@@ -3,9 +3,9 @@
 namespace Concordamos;
 
 function register_blocks () {
-	wp_register_script( 'concordamos-votings-block', CONCORDAMOS_PLUGIN_URL . 'builds/js/votings-block/index.js', [ 'wp-element', 'wp-i18n' ] , CONCORDAMOS_PLUGIN_VERSION );
+	wp_register_script( 'concordamos-votings-block', CONCORDAMOS_PLUGIN_URL . 'build/js/votings-block/index.js', [ 'wp-element', 'wp-i18n' ] , CONCORDAMOS_PLUGIN_VERSION );
 
-	wp_register_script( 'concordamos-votings-block-admin', CONCORDAMOS_PLUGIN_URL . 'builds/js/votings-block/editor.js', [ 'wp-element', 'wp-i18n' ] , CONCORDAMOS_PLUGIN_VERSION );
+	wp_register_script( 'concordamos-votings-block-admin', CONCORDAMOS_PLUGIN_URL . 'build/js/votings-block/editor.js', [ 'wp-editor', 'wp-element', 'wp-i18n' ] , CONCORDAMOS_PLUGIN_VERSION );
 
 	wp_set_script_translations( 'concordamos-votings-block', 'concordamos' );
 	wp_localize_script(
