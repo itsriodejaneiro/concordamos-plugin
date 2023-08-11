@@ -10,6 +10,12 @@
         min-height: 500px;
         margin-top: -166px;
         .balloon-content{
+            img{
+                @include mobile{
+                    width: 328px;
+                    height: 64px;
+                }
+            }
             max-width: 570px;
             width: 100%;
             margin-left: auto;
@@ -27,7 +33,7 @@
                 text-transform: uppercase;
                 color: #000;
                 margin-top: 210px;
-                margin-bottom: 24px;    
+                margin-bottom: 24px;
             }
             .with{
                 margin-top: 1px;   
@@ -37,6 +43,9 @@
     }
     .login-form,
     .register-form{
+        @include mobile{
+            margin: 0 16px;
+        }  
         .container{
             max-width: 576px;
             width: 100%;
@@ -44,7 +53,8 @@
             margin-right: auto;
             margin-top: 83px;
             padding-left: 0;
-            padding-right: 0;    
+            padding-right: 0;  
+           
         }
         label{
             color: #111;
@@ -74,7 +84,10 @@
             font-weight: medium;
             line-height: 130%;
             letter-spacing: -0.24px;
-            padding: 15px 0;        
+            padding: 15px 0;
+            @include mobile{
+                background-color: initial;
+            } 
         }
         p, img{
             text-align: center;
@@ -113,6 +126,9 @@
     }
     .login-password-field{
         margin: 26px 0;
+        @include mobile{
+            margin-bottom: 16px;
+        }
         a{
             font-size: 12px;
             color: #FF2E22;
