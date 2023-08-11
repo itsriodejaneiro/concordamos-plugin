@@ -3,6 +3,7 @@
 
 @import 'components/modal';
 @import 'components/tabs';
+@import 'components/voting-card';
 
 .page-template-template-my-account{
     #concordamos-my-account{
@@ -17,13 +18,13 @@
                     width: 100%;
                     margin-left: auto;
                     margin-right: auto;
-                    font-family: Inter;
+                    font-family: 'Inter';
                     font-size: 20px;
                     font-weight: 600;
                     line-height: 130%;
                     letter-spacing: -0.2px;
                     text-transform: uppercase;
-                   
+                    color: #000;
                 }
                 h1{
                     max-width: 1140px;
@@ -36,7 +37,8 @@
                     line-height: 112%; 
                     letter-spacing: -0.64px;
                     text-transform: uppercase;
-                    margin-top: 20px;    
+                    margin-top: 20px;
+                    color: #000;    
                 }
 
             }
@@ -46,9 +48,18 @@
                 grid-template-columns: 1.4fr 1fr;
                 h2{
                     font-size: 32px;
+                    color: #000;
+                    font-family: 'Oswald';
+                    font-size: 32px;
+                    font-weight: 500;
+                    letter-spacing: -0.32px;
+                    text-transform: uppercase;
+                    margin-top: 63px;
+                    margin-bottom: 41px;
                 }
                 .my-account-box:nth-of-type(1){
                     border-right: 3px solid #000;
+                    padding-bottom: 115px;
                     .container{
                         max-width: 675px;
                         width: 100%;
@@ -58,10 +69,45 @@
                     }
                     .my-account-field{
                         display: inline-block;
+                        margin-right: 130px;
+                        dt{
+                            font-family: 'Inter';
+                            font-size: 20px;
+                            font-weight: 500;
+                            line-height: 130%; 
+                            letter-spacing: -0.2px;
+                            text-transform: uppercase;
+                            color: #000;        
+                        }
                         dd{
                             margin-left: 0;
+                            font-family: 'Oswald';
+                            font-size: 24px;
+                            font-weight: 500;
+                            line-height: 130%;
+                            letter-spacing: -0.24px;
+                            color: #000;
+                            margin-bottom: 10px;
                         }
-                    }    
+                        .edit{
+                            font-size: 12px;
+                        }
+                        
+                    }
+                   
+                }
+                .my-account-box:nth-of-type(2){
+                    .container{
+                        margin-left: 62px;
+                        h2{
+                            margin-bottom: 38px;
+                        }
+                        .edit{
+                            display: block;
+                            font-size: 16px;
+                            margin-bottom: 16px;    
+                        }
+                    }
                 }
             }
             .my-account-panel{
@@ -109,7 +155,43 @@
                         
                             
                     }
-                }    
+                }
+                .my-account-voting-grid{
+                    display: grid;
+                    gap: 1rem;
+                    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+                    margin: 45px auto;
+                    max-width: 1140px;
+                    width: 100%;    
+                }
+                .my-account-paginator {
+                    align-items: center;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin: 2rem auto;
+                    padding: 0;
+                    
+            
+                    li {
+                        border: 3px solid transparent;
+                        list-style: none;
+                        padding: 0 0.5rem;
+                        a{
+                            color: #000;
+                        }
+                        
+            
+                        &.selected {
+                            background-color: #FF73E7;
+                            border-color: black;
+                        }
+            
+                        &.previous, &.next {
+                            font-weight: bold;
+                        }
+                    }
+                }        
             }    
         }    
     }    

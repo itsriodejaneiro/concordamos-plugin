@@ -71,4 +71,32 @@ button {
 			background-color: transparent !important;
 		}	
 	}
+	&.edit{
+		background-color: transparent !important;
+		border: none !important;
+		color: #000!important;
+		font-family: 'Inter' !important;
+		font-weight: 600 !important;
+		line-height: 150% !important; 
+		letter-spacing: -0.12px !important;
+		text-transform: uppercase !important;
+		border-bottom: 3px solid #000 !important;
+		&:hover{
+			background-color: transparent !important;
+		}		
+	}
+	&.delete-acount{
+		background-color: transparent !important;
+		border: none !important;
+		color: #FF2E22!important;
+		font-family: 'Inter' !important;
+		font-weight: 600 !important;
+		line-height: 150% !important; 
+		letter-spacing: -0.12px !important;
+		text-transform: uppercase !important;
+		border-bottom: 3px solid #FF2E22 !important;
+		&:hover{
+			background-color: transparent !important;
+		}	
+	}
 }	
