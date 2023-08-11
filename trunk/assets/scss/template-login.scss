@@ -9,7 +9,28 @@
         background-position: center;
         min-height: 500px;
         margin-top: -166px;
+        @include mobile{
+            margin-top: -170px;        
+        }
         .balloon-content{
+            @include mobile{
+                padding-top: 170px;
+            }
+            
+            .arrow{
+                display: none;
+                @include mobile{
+                    display: block;
+                    
+                }
+                img{
+                    @include mobile{
+                        padding-top: 35px;
+                        margin-bottom: 24px;
+                        margin-right: 300px;
+                    }
+                }
+            }
             img{
                 @include mobile{
                     width: 328px;
@@ -34,6 +55,9 @@
                 color: #000;
                 margin-top: 210px;
                 margin-bottom: 24px;
+                @include mobile{
+                    margin-top:0px;
+                }
             }
             .with{
                 margin-top: 1px;   
