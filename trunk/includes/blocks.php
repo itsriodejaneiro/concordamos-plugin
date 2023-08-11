@@ -9,7 +9,7 @@ function register_login_block () {
 	register_block_type( 'concordamos/login', [
 		'api_version' => 2,
 		'editor_script' => 'concordamos-login-block-admin',
-		'styles' => [ 'concordamos-login-block-style' ],
+		'style_handles' => [ 'concordamos-login-block-style' ],
 		'render_callback' => 'Concordamos\render_login_block',
 	] );
 }
@@ -34,7 +34,7 @@ function register_votings_block () {
 		'api_version' => 2,
 		'script' => 'concordamos-votings-block',
 		'editor_script' => 'concordamos-votings-block-admin',
-		'styles' => [ 'concordamos-votings-block-style' ],
+		'style_handles' => [ 'concordamos-votings-block-style' ],
 	] );
 }
 
