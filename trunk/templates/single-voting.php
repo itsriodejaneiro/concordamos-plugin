@@ -56,14 +56,14 @@ $is_panel = get_query_var( 'panel' );
 					<h3><?php _e( 'Start', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'h\hi' ); ?></span>
-					<span class="start-edit">Editar</span>
+					<!-- <span class="start-edit">Editar</span> -->
 				</div>
 				<div class="<?php echo $date_end_class; ?>">
 					<div class="icon">2</div>
 					<h3><?php _e( 'End', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'h\hi' ); ?></span>
-					<span class="end-edit">Editar</span>
+					<!-- <span class="end-edit">Editar</span> -->
 				</div>
 			</div>
 		</div>
