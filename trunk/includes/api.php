@@ -50,11 +50,16 @@ function register_endpoints() {
 		'callback'            => 'Concordamos\\search_votings_callback',
 		'permission_callback' => '__return_true',
 	]);
+
+	register_rest_route( 'concordamos/v1', '/logout/', [
+		'methods'             => 'POST',
+		'callback'            => 'Concordamos\\logout_callback',
+		'permission_callback' => 'Concordamos\\permission_check',
+	]);
 }
 add_action( 'rest_api_init', 'Concordamos\\register_endpoints' );
 
 function permission_check( \WP_REST_Request $request ) {
-
 	if ( ! is_user_logged_in() ) {
 		return new \WP_Error( 'rest_forbidden', __('You are not signed in.', 'concordamos'), array( 'status' => 401 ) );
 	}
@@ -74,7 +79,16 @@ function permission_check( \WP_REST_Request $request ) {
 	}
 
 	return true;
+}
 
+function permission_vote_check( \WP_REST_Request $request ) {
+	$nonce = isset( $_SERVER['HTTP_X_WP_NONCE'] ) ? $_SERVER['HTTP_X_WP_NONCE'] : '';
+
+	if ( ! wp_verify_nonce( $nonce, 'wp_rest' ) ) {
+		return false;
+	}
+
+	return true;
 }
 
 function build_query_from_params (array $query, array $params) {
@@ -470,12 +484,11 @@ function vote_callback( \WP_REST_Request $request ) {
 	}
 }
 
-function permission_vote_check( \WP_REST_Request $request ) {
-	$nonce = isset( $_SERVER['HTTP_X_WP_NONCE'] ) ? $_SERVER['HTTP_X_WP_NONCE'] : '';
+function logout_callback ( \WP_REST_Request $request ) {
+	wp_logout();
 
-	if ( ! wp_verify_nonce( $nonce, 'wp_rest' ) ) {
-		return false;
-	}
-
-	return true;
+	return [
+		'status' => 'success',
+		'message' => __( 'User signed out', 'concordamos' ),
+	];
 }

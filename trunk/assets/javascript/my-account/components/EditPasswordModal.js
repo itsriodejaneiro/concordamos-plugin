@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n'
 import { useState } from 'react'
 
 import Modal from '../../shared/components/Modal'
+import { apiFetch } from '../../shared/hooks/fetch'
 
 export default function EditPasswordModal ({ controller }) {
 	const [password, setPassword] = useState('')
@@ -19,18 +20,10 @@ export default function EditPasswordModal ({ controller }) {
 	function handleSubmit (event) {
 		event.preventDefault()
 		if (confirmPassword && matchingPassword) {
-			fetch(new URL('my-account', concordamos.rest_url), {
-				method: 'PATCH',
-				headers: {
-					'Content-Type': 'application/json',
-					'X-WP-Nonce': concordamos.nonce
-				},
-				body: JSON.stringify({
-					'user_id': concordamos.user_id,
-					'password': password,
-				}),
+			apiFetch('PATCH', 'my-account', {
+				'user_id': concordamos.user_id,
+				'password': password,
 			})
-			.then(response => response.json())
 			.then(response => {
 				if (response.status === 'error') {
 					throw new Error(response.message)
@@ -38,7 +31,6 @@ export default function EditPasswordModal ({ controller }) {
 					controller.close()
 				}
 			})
-			.catch(error => console.error(error))
 		}
 	}
 
