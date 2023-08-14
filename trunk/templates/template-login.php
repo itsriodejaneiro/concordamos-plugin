@@ -18,13 +18,16 @@ $site_title = get_bloginfo( 'name' );
 	<?php wp_body_open(); ?>
     <section class="concordamos-balloon">
         <div class="balloon-content">
-            <div class="arrow">
-                <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="Logo do Login">
+        <div class="arrow">
+                <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
             </div>
-            <p class="balloon-subtitle">A way to vote for consensus</p>          
-            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="Logo de Login">
-            <p class="balloon-subtitle with">With <?php echo $site_title ?></p>
-        </div>    
+
+            <p class="balloon-subtitle"><?php _e('A way to vote for consensus', 'concordamos' );?></p>
+            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="<?php _e('Login logo', 'concordamos' );?>'">
+            <p class="balloon-subtitle with"><?php _e('With', 'concordamos');?>
+                <?php echo $site_title ?>
+            </p>
+        </div>
     </section>
     <section class="login-form">
         <div class="container">

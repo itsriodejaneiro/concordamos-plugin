@@ -10,7 +10,7 @@
         min-height: 500px;
         margin-top: -166px;
         @include mobile{
-            margin-top: -170px;        
+            margin-top:-170px;        
         }
         .balloon-content{
             @include mobile{
@@ -68,8 +68,19 @@
     .login-form,
     .register-form{
         @include mobile{
-            margin: 0 16px;
-        }  
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+        .error p {
+            color: #FF2E22;
+            font-family: 'Inter Tight';
+            letter-spacing: -0.12px;    
+        }
+        .success p {
+            color: #00d084;
+            font-family: 'Inter Tight';
+            letter-spacing: -0.12px;    
+        }
         .container{
             max-width: 576px;
             width: 100%;
@@ -108,10 +119,7 @@
             font-weight: medium;
             line-height: 130%;
             letter-spacing: -0.24px;
-            padding: 15px 0;
-            @include mobile{
-                background-color: initial;
-            } 
+            padding: 15px 0; 
         }
         p, img{
             text-align: center;
