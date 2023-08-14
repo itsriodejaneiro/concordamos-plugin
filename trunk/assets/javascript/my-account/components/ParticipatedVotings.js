@@ -11,13 +11,7 @@ export default function ParticipatedVotings () {
 	const [filters, setFilters] = useState({ access: '', time: '' })
 	const [page, setPage] = useState(1)
 
-	const { data } = useFetch(buildUrl('participated-votings/', filters, page), {
-		method: 'GET',
-		headers: {
-			'Content-Type': 'application/json',
-			'X-WP-Nonce'  : concordamos.nonce,
-		}
-	})
+	const { data } = useFetch(buildUrl('participated-votings/', filters, page))
 
 	function onFiltersChange (value) {
 		setFilters(value)

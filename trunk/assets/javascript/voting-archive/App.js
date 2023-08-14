@@ -33,12 +33,7 @@ export function App () {
 	const [filters, setFilters] = useState({ access: '', time: '' })
 	const [page, setPage] = useState(1)
 
-	const { data } = useFetch(buildUrl(query, filters, page), {
-		method: 'GET',
-		headers: {
-			'Content-Type': 'application/json',
-		}
-	})
+	const { data } = useFetch(buildUrl(query, filters, page))
 
 	function onQueryChange (event) {
 		setQuery(event.target.value)

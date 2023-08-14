@@ -1,18 +1,30 @@
 import { useEffect, useState } from 'react'
 
-export function useFetch (url, options) {
+export function apiFetch (method, url, body, signal) {
+	return fetch(new URL(url, concordamos.rest_url), {
+		method,
+		headers: {
+			'Content-Type': 'application/json',
+			'X-WP-Nonce': concordamos.nonce,
+		},
+		body: body ? JSON.stringify(body) : undefined,
+		signal,
+	})
+	.then((response) => response.json())
+	.catch((error) => console.error(error))
+}
+
+export function useFetch (url) {
 	const [state, setState] = useState({ data: undefined, error: undefined, loading: false })
 
 	useEffect(() => {
 		const abort = new AbortController()
-		options.signal = abort.signal
 
 		async function fetchData () {
 			setState((state) => ({ ...state, loading: true }))
 
 			try {
-				const response = await fetch(url, options)
-				const data = await response.json()
+				const data = await apiFetch('GET', url, undefined, abort.signal)
 
 				if (data.status === 'error') {
 					setState({ data: undefined, error: new Error(data.message), loading: false })

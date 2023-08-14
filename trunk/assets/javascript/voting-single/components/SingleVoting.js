@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import Grid from './Grid'
 import Modal, { useModal } from '../../shared/components/Modal'
 import Option from './Option'
+import { apiFetch } from '../../shared/hooks/fetch'
 import { getPanelUrl, navigateTo } from '../../shared/utils/location'
 
 export default function SingleVoting ({ handleViewChange, initialData }) {
@@ -42,19 +43,11 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 	function handleSubmit (event) {
 		event.preventDefault()
 
-		fetch(new URL('vote/', concordamos.rest_url), {
-			headers: {
-				'Content-Type': 'application/json',
-				'X-WP-Nonce'  : concordamos.nonce
-		  },
-		  method: 'POST',
-			body: JSON.stringify({
-				'u_id'  : concordamos.u_id,
-				'v_id'  : concordamos.v_id,
-				'votes' : votes,
-			})
+		apiFetch('POST', 'vote/', {
+			'u_id'  : concordamos.u_id,
+			'v_id'  : concordamos.v_id,
+			'votes' : votes,
 		})
-		.then(response => response.json())
 		.then(response => {
 			if (response.status === 'error') {
 				throw new Error(response.message)
@@ -63,7 +56,6 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 				navigateTo(getPanelUrl(window.location.href), true)
 			}
 		})
-		.catch(error => console.error(error))
 	}
 
 	return (

@@ -9,6 +9,7 @@ import Radio from './Radio'
 import StartEnd from './StartEnd'
 import Text from './Text'
 import Textarea from './Textarea'
+import { apiFetch } from '../../shared/hooks/fetch'
 import { navigateTo } from '../../shared/utils/location'
 
 const Form = () => {
@@ -62,27 +63,19 @@ const Form = () => {
 			return
 		}
 
-		fetch(new URL('create-voting/', concordamos.rest_url), {
-			headers: {
-				'Content-Type': 'application/json',
-				'X-WP-Nonce'  : concordamos.nonce
-		  	},
-		  	method: 'POST',
-			body: JSON.stringify({
-				'user_id'           : concordamos.user_id,
-				'voting_type'       : votingType,
-				'voting_access'     : votingAccess,
-				'voting_name'       : votingName,
-				'voting_description': description,
-				'number_voters'     : numberOfVoters,
-				'credits_voter'     : votingCredits,
-				'tags'              : tags,
-				'date_start'        : startEndDateTime[0],
-				'date_end'          : startEndDateTime[1],
-				'voting_options'    : votingOptions
-			})
+		apiFetch('POST', 'create-voting/', {
+			'user_id'           : concordamos.user_id,
+			'voting_type'       : votingType,
+			'voting_access'     : votingAccess,
+			'voting_name'       : votingName,
+			'voting_description': description,
+			'number_voters'     : numberOfVoters,
+			'credits_voter'     : votingCredits,
+			'tags'              : tags,
+			'date_start'        : startEndDateTime[0],
+			'date_end'          : startEndDateTime[1],
+			'voting_options'    : votingOptions
 		})
-		.then(response => response.json())
 		.then(response => {
 			if (response.status === 'error') {
 				throw new Error(response.message)
@@ -90,7 +83,6 @@ const Form = () => {
 				navigateTo(response.post_url)
 			}
 		})
-		.catch(error => console.error(error))
 	}
 
 	return (

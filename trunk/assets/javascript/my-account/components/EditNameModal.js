@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n'
 import { useState } from 'react'
 
 import Modal from '../../shared/components/Modal'
+import { apiFetch } from '../../shared/hooks/fetch'
 
 export default function EditNameModal ({ controller, onChange, value }) {
 	const [innerValue, setInnerValue] = useState(value)
@@ -12,18 +13,10 @@ export default function EditNameModal ({ controller, onChange, value }) {
 
 	function handleSubmit (event) {
 		event.preventDefault()
-		fetch(new URL('my-account', concordamos.rest_url), {
-			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json',
-				'X-WP-Nonce': concordamos.nonce
-			},
-			body: JSON.stringify({
-				'user_id': concordamos.user_id,
-				'name': innerValue,
-			}),
+		apiFetch('PATCH', 'my-account', {
+			'user_id': concordamos.user_id,
+			'name': innerValue,
 		})
-		.then(response => response.json())
 		.then(response => {
 			if (response.status === 'error') {
 				throw new Error(response.message)
@@ -32,7 +25,6 @@ export default function EditNameModal ({ controller, onChange, value }) {
 				controller.close()
 			}
 		})
-		.catch(error => console.error(error))
 	}
 
 	function handleCancel (event) {
