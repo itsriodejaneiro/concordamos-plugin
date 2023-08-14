@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(`${field}-errors`);
                 if( field == 'general' ) {
                     showGeneralErrors( eachFieldErrors );
-                    return;
+                    continue;
                 }
                 const fieldElement = document.querySelector(`input[name='${field}']`);
                 const fieldErrorsElem = document.getElementById( `${field}-errors` );
                 fieldErrorsElem.innerHTML = '';
                 if( ! fieldErrorsElem ) {
-                    return;
+                    continue;
                 }
                 
                 if( ! fieldElement.classList.contains('error') ) {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         registerForm.querySelectorAll('input' ).forEach( (input) =>{
-            input.addEventListener('focus', (e) => {
+            input.addEventListener('change', (e) => {
                 if( e.target.classList.contains('error' ) ) {
                     e.target.classList.remove('error')
                 }

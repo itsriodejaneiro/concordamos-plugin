@@ -49,7 +49,7 @@ class User_Register
             }
         }
 
-        if ((!isset($data['password']) || empty($data['password'])) || (!isset($data['repeat-password']) || empty($data['repeat-password']))) {
+        if ((!isset($data['password']) || empty($data['password'])) ) {
             $errors['password'][] = __('Password field is empty.', 'concordamos');
         } else {
             if ($data['password'] != $data['repeat-password']) {
