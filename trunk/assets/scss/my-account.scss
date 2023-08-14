@@ -17,11 +17,16 @@
                     padding-left: 15px;
                     padding-right: 15px;
                 }
-                .my-account-header__name{
+				.my-account-header__wrapper {
+					align-items: center;
+					display: flex;
+					justify-content: space-between;
+					margin-left: auto;
+                    margin-right: auto;
                     max-width: 1140px;
                     width: 100%;
-                    margin-left: auto;
-                    margin-right: auto;
+				}
+                .my-account-header__name{
                     font-family: 'Inter';
                     font-size: 20px;
                     font-weight: 600;
@@ -31,21 +36,17 @@
                     color: #000;
                 }
                 h1{
-                    max-width: 1140px;
-                    width: 100%;
-                    margin-left: auto;
-                    margin-right: auto;
                     font-family: 'Oswald';
                     font-size: 64px;
                     font-weight: 600;
-                    line-height: 112%; 
+                    line-height: 112%;
                     letter-spacing: -0.64px;
                     text-transform: uppercase;
                     margin-top: 20px;
                     color: #000;
                     @media(max-width: 782px){
                         font-size: 32px;;
-                    }    
+                    }
                 }
 
             }
@@ -92,10 +93,10 @@
                             font-family: 'Inter';
                             font-size: 20px;
                             font-weight: 500;
-                            line-height: 130%; 
+                            line-height: 130%;
                             letter-spacing: -0.2px;
                             text-transform: uppercase;
-                            color: #000;        
+                            color: #000;
                         }
                         dd{
                             margin-left: 0;
@@ -110,9 +111,9 @@
                         .edit{
                             font-size: 12px;
                         }
-                        
+
                     }
-                   
+
                 }
                 .my-account-box:nth-of-type(2){
                     .container{
@@ -128,7 +129,7 @@
                         .edit{
                             display: block;
                             font-size: 16px;
-                            margin-bottom: 16px;    
+                            margin-bottom: 16px;
                         }
                     }
                 }
@@ -139,7 +140,7 @@
 					max-width: 563px;
 					width: 100%;
 					height: auto;
-					
+
 					main{
 						h2{
 							margin-top: 5px;
@@ -151,7 +152,7 @@
 							letter-spacing: -0.32px;
 							text-transform: none;
 							@media(max-width: 782px){
-								font-size: 24px;	
+								font-size: 24px;
 							}
 						}
 						label{
@@ -161,7 +162,7 @@
 							line-height: 150%;
 							letter-spacing: -0.16px;
 							@media(max-width: 782px){
-								font-size: 14px;	
+								font-size: 14px;
 							}
                             input{
                                 border-radius: 8px;
@@ -190,7 +191,7 @@
                     width: 100%;
                     display: grid;
                     grid-template-columns: 0.19fr 1fr 1fr 0.19fr;
-                    
+
                     button{
                         background-color: transparent;
                         padding-top: 21px;
@@ -204,32 +205,32 @@
                         letter-spacing: -0.24px;
                         text-transform: uppercase;
                     }
-                    
+
                     .panel-tab{
                         border-bottom: 3px solid #000;
                         border-left: 1.7px solid #000;
-                        border-right: 1.7px solid #000; 
+                        border-right: 1.7px solid #000;
                     }
                     .selected{
-                        
+
                         border-bottom: none;
                         border-left: 1.7px solid #000;
                         border-right: 1.7px solid #000;
-                        
+
                     }
                     .panel-previous-tab{
                         padding-left: 0;
                         border-bottom: 3px solid #000;
                         border-right: 1.7px solid #000;
-                        
-                        
+
+
                     }
                     .panel-next-tab{
                         padding-right: 0;
                         border-bottom: 3px solid #000;
                         border-left: 1.7px solid #000;
-                        
-                            
+
+
                     }
                 }
                 .my-account-tab{
@@ -246,7 +247,7 @@
                         @media(max-width: 782px){
                             margin-left: 15px;
                         }
-		
+
                         >summary{
                             display: flex;
                             color: var(--low-light, #666);
@@ -255,7 +256,7 @@
                             font-weight: 500;
                             letter-spacing: -0.24px;
                             gap: 110px;
-                
+
                             &:after{
                                 content: '';
                                 background-image: url(../../assets/images/filter.svg);
@@ -292,7 +293,7 @@
                     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
                     margin: 45px auto;
                     max-width: 1140px;
-                    width: 100%;    
+                    width: 100%;
                 }
                 .my-account-paginator {
                     align-items: center;
@@ -301,8 +302,8 @@
                     justify-content: center;
                     margin: 2rem auto;
                     padding: 0;
-                    
-            
+
+
                     li {
                         border: 3px solid transparent;
                         list-style: none;
@@ -310,19 +311,19 @@
                         a{
                             color: #000;
                         }
-                        
-            
+
+
                         &.selected {
                             background-color: #FF73E7;
                             border-color: black;
                         }
-            
+
                         &.previous, &.next {
                             font-weight: bold;
                         }
                     }
-                }        
-            }    
-        }    
-    }    
+                }
+            }
+        }
+    }
 }
