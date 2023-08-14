@@ -63,7 +63,7 @@ const Form = () => {
 			return
 		}
 
-		apiFetch('POST', 'create-voting/', {
+		apiFetch('POST', 'voting/', {
 			'user_id'           : concordamos.user_id,
 			'voting_type'       : votingType,
 			'voting_access'     : votingAccess,
