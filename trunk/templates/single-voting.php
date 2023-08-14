@@ -44,9 +44,7 @@ $is_panel = get_query_var( 'panel' );
 						<span class="author"><?php _e( 'Created by:', 'concordamos' ); ?> <?php echo $voting_author; ?></span>
 					<?php else : ?>
 						<?php if ( Concordamos\is_voting_owner( $post_id ) ) : ?>
-							<?php // @todo: Adicionar links e ícones ?>
-							<span><img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/calendar2.svg'; ?>" alt="Calendar">Alterar duração</span>
-							<span><img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/delete-outline.svg'; ?>" alt="Calendar">Deletar votação</span>
+							<div id="concordamos-voting-admin"></div>
 						<?php endif; ?>
 					<?php endif; ?>
 				</div>
@@ -78,14 +76,14 @@ $is_panel = get_query_var( 'panel' );
  			<div class="render" id="concordamos-voting-single"
 				data-credits_voter="<?php echo $raw_post_meta['credits_voter'][0]; ?>"
 				data-options="<?php echo htmlspecialchars( json_encode( $options ) , ENT_QUOTES, 'UTF-8' ); ?>"
+				data-date_start="<?php echo htmlspecialchars( $date_start ); ?>"
 				data-date_end="<?php echo htmlspecialchars( $date_end ); ?>"
 				data-is_panel=<?php echo $is_panel; ?>
 			></div>
-			
 
 		</div>
 	</div>
-	
+
 </div>
 
 <?php get_footer(); ?>

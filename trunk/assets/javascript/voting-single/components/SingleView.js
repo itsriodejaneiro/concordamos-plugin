@@ -29,7 +29,7 @@ export default function SingleView ({ handleViewChange, initialData }) {
 					<button type="button" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
 				</div>
 			</div>
-			<div className="sidebar">
+			<div className="sidebar view-mode">
 				<Grid squares={Number(credits_voter)} />
 				<span>{__('Available credits', 'concordamos')}</span>
 				<span>{`${credits_voter} / ${credits_voter}`}</span>

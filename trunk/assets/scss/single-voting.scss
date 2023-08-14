@@ -380,7 +380,7 @@
 					max-width: 569px;
 					width: 100%;
 					max-height: 313px;
-					
+
 					main{
 						h2{
 							margin-top: 5px;
@@ -392,7 +392,7 @@
 							letter-spacing: -0.32px;
 							text-transform: none;
 							@media(max-width: 782px){
-								font-size: 24px;	
+								font-size: 24px;
 							}
 						}
 						p{
@@ -402,12 +402,12 @@
 							line-height: 150%;
 							letter-spacing: -0.16px;
 							@media(max-width: 782px){
-								font-size: 14px;	
+								font-size: 14px;
 							}
 						}
 					}
 				}
-			}	
+			}
 
 			.sidebar {
 				padding-top: size(64);
@@ -430,6 +430,18 @@
 					letter-spacing: -0.2px;
 					text-transform: uppercase;
 					color: #000;
+				}
+
+				&.voting-mode {
+					.option-voting-grid {
+						&__cell {
+							background-color: #111;
+
+							&.consumed {
+								background-color: #1114;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -482,11 +494,13 @@
 				text-transform: none;
 			}
 			.meta{
-				span{
+				button{
+					background-color: transparent;
+					border: none;
 					font-family: 'Oswald';
-					font-size: 24px;					
+					font-size: 24px;
 					font-weight: 500;
-					line-height: 130%; 
+					line-height: 130%;
 					letter-spacing: -0.24px;
 					color: #000;
 					img{
@@ -507,7 +521,7 @@
 					text-decoration-line: underline;
 					text-transform: none;
 				}
-			}	
+			}
 		}
 		.voting-content{
 			.container{
@@ -533,42 +547,42 @@
 					letter-spacing: -0.24px;
 					text-transform: uppercase;
 				}
-				
+
 				.panel-tab{
-					
+
 					border-bottom: 3px solid #000;
 					border-left: 1.7px solid #000;
 					border-right: 1.7px solid #000;
-					
+
 				}
 				.selected{
-					
+
 					border-bottom: none;
 					border-left: 1.7px solid #000;
 					border-right: 1.7px solid #000;
-					
+
 				}
 				.panel-previous-tab{
 					padding-left: 0;
 					border-bottom: 3px solid #000;
 					border-right: 1.7px solid #000;
-					
-					
+
+
 				}
 				.panel-next-tab{
 					padding-right: 0;
 					border-bottom: 3px solid #000;
 					border-left: 1.7px solid #000;
-					
-						
+
+
 				}
 			}
 			.wrapper{
 				.votings-list{
 					padding-top: 0;
 				}
-			}	
-		}	
+			}
+		}
 	}
 	.footer-widgets{
 		@include mobile{

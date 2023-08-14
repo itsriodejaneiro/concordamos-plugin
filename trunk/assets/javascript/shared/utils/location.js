@@ -9,3 +9,7 @@ export function getPanelUrl (url) {
 export function navigateTo (url, replace = false) {
 	window.location[replace ? 'replace' : 'assign'](url)
 }
+
+export function reloadPage () {
+	window.location.reload()
+}

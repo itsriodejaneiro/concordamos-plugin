@@ -2,13 +2,20 @@ import { StrictMode } from 'react'
 import { render } from 'react-dom'
 
 import { App } from './App'
+import { VotingAdmin } from './VotingAdmin'
 
-const elementRender = document.getElementById('concordamos-voting-single')
+const mainAppRender = document.getElementById('concordamos-voting-single')
+const adminAppRender = document.getElementById('concordamos-voting-admin')
+
 const initialData = {
-	credits_voter: elementRender.dataset.credits_voter,
-	date_end: elementRender.dataset.date_end,
-	options: elementRender.dataset.options,
-	is_panel: elementRender.dataset.is_panel,
+	credits_voter: mainAppRender.dataset.credits_voter,
+	date_end: mainAppRender.dataset.date_end,
+	date_start: mainAppRender.dataset.date_start,
+	options: mainAppRender.dataset.options,
+	is_panel: mainAppRender.dataset.is_panel,
 }
 
-render(<StrictMode><App initialData={initialData}/></StrictMode>, elementRender)
+render(<StrictMode><App initialData={initialData}/></StrictMode>, mainAppRender)
+if (adminAppRender) {
+	render(<StrictMode><VotingAdmin initialData={initialData}/></StrictMode>, adminAppRender)
+}
