@@ -28,6 +28,7 @@ require_once( 'includes/class/class-metadata.php' );
 require_once( 'includes/class/class-taxonomy.php' );
 require_once( 'includes/class/class-user-metadata.php' );
 require_once( 'includes/class/class-user-login.php' );
+require_once( 'includes/class/class-user-register.php' );
 
 function concordamos_init() {
 	// Add custom role `concordamos_network`
