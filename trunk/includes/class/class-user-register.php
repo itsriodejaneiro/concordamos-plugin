@@ -39,7 +39,7 @@ class User_Register
         if (!isset($data['email']) || empty($data['email'])) {
             $errors['email'][] = __('Email field is empty.', 'concordamos');
         } else {
-            if (! filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {+
+            if (! filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $errors['email'][] = __('Email field is invalid.', 'concordamos');
             } else {
                 $user_exist = get_user_by('email', $data['email']);
