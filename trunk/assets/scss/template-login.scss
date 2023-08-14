@@ -68,11 +68,6 @@
     }
     .login-form,
     .register-form{
-<<<<<<< HEAD
-        @include mobile{
-            margin: 0 16px;
-        }  
-=======
         .error p {
             color: #FF2E22;
             font-family: 'Inter Tight';
@@ -83,7 +78,6 @@
             font-family: 'Inter Tight';
             letter-spacing: -0.12px;    
         }
->>>>>>> c53393c88839853de0c4d44d927247e5838c0a4b
         .container{
             max-width: 576px;
             width: 100%;
