@@ -22,14 +22,12 @@
     <?php wp_body_open(); ?>
     <section class="concordamos-balloon">
         <div class="balloon-content">
-            <p class="balloon-subtitle">
-                <?php _e('A way to vote for consensus', 'concordamos'); ?>
-            </p>
-            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>"
-                alt="<?php _e('Login Logo', 'concordamos'); ?>">
-            <p class="balloon-subtitle with">
-                <?php printf(__('With %s', 'concordamos'), $site_title); ?>
-            </p>
+        <div class="arrow">
+                <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
+            </div>
+            <p class="balloon-subtitle"><?php _e('A way to vote for consensus', 'concordamos'); ?></p>
+            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="<?php _e('Login Logo', 'concordamos'); ?>">
+            <p class="balloon-subtitle with"><?php printf(__('With %s', 'concordamos'), $site_title); ?></p>
         </div>
     </section>
     <form class="register-form" id="register-form">

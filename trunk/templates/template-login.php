@@ -13,6 +13,10 @@
     <?php wp_body_open(); ?>
     <section class="concordamos-balloon">
         <div class="balloon-content">
+        <div class="arrow">
+                <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
+            </div>
+
             <p class="balloon-subtitle"><?php _e('A way to vote for consensus', 'concordamos' );?></p>
             <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="<?php _e('Login logo', 'concordamos' );?>'">
             <p class="balloon-subtitle with"><?php _e('With', 'concordamos');?>
