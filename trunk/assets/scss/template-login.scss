@@ -1,4 +1,5 @@
 @import 'settings/mixins';
+@import 'atoms/fields';
 
 
 .page-template-template-login,
@@ -123,6 +124,15 @@
         }
         p, img{
             text-align: center;
+        }
+        button.show-password {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            margin-top: 14px;
+            margin-left: -43px;
+            border: none;
+            background: none;
         }
     }
     .register-form{
