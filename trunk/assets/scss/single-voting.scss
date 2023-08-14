@@ -431,6 +431,18 @@
 					text-transform: uppercase;
 					color: #000;
 				}
+
+				&.voting-mode {
+					.option-voting-grid {
+						&__cell {
+							background-color: #111;
+
+							&.consumed {
+								background-color: #1114;
+							}
+						}
+					}
+				}
 			}
 		}
 
