@@ -22,6 +22,8 @@ registerBlockType('concordamos/login', {
 		)
 	},
 	save () {
-		return null
+		return (
+			<div className="concordamos-login-block"/>	
+		)
 	},
 })

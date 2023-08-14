@@ -27,3 +27,4 @@ registerBlockType('concordamos/votings', {
 		)
 	},
 })
+

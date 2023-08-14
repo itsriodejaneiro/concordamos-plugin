@@ -87,6 +87,28 @@ function enqueue_scripts_frontend() {
 			]
 		);
 	}
+
+	$id = get_the_ID();
+  
+	$block_list = [
+	  'concordamos/login' => function() {
+		  wp_enqueue_style(
+			  'concordamos-login',
+			  CONCORDAMOS_PLUGIN_URL . 'build/css/blocks/login.css',
+			  [],
+			  CONCORDAMOS_PLUGIN_VERSION,
+			  'all'
+		  );
+	  },
+	];
+	
+	// Enqueue only used blocks
+	foreach( $block_list as $key => $block ) {
+		if( has_block( $key, $id ) ){
+			$block();
+		}
+	}
+	
 }
 
 add_action( 'wp_enqueue_scripts', 'Concordamos\enqueue_scripts_frontend' );
