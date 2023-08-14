@@ -107,5 +107,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('An error occurred:', error);
             });
         });
+
+        const buttonShowPassword = document.querySelector('button.show-password');
+        buttonShowPassword.addEventListener('click', (e) => {
+          const inputPassword = document.querySelector('[name="password"]');
+          const inputRepeatPassword = document.querySelector('[name="repeat-password"]');
+          if( inputPassword.getAttribute( 'type') == 'password' ) {
+            inputPassword.setAttribute('type', 'text' )
+            inputRepeatPassword.setAttribute('type', 'text');
+          } else {
+            inputPassword.setAttribute('type', 'password' )
+            inputRepeatPassword.setAttribute('type', 'password');
+          }
+        })
+      
     }
 });
