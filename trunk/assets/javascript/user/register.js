@@ -82,6 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const apiEndpoint = window.concordamos.rest_url + '/register';
 
+            const btnSubmit = registerForm.querySelector('button.register-submit');
+            const btnSubmitDefaultText = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = btnSubmit.getAttribute('data-loading-text');
+
             fetch(apiEndpoint, {
                 method: 'POST',
                 body: formData
@@ -96,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else {
                         showErrors( data );
                     }
+                    btnSubmit.innerHTML = btnSubmitDefaultText;
                 });            
             })
             .catch(error => {

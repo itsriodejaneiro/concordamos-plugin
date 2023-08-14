@@ -61,7 +61,7 @@ $site_title = get_bloginfo( 'name' );
             </div>
             <div id="status"></div>
             <div class="register-button">
-                <button class="register-submit" type="submit"><?php _e("Let's go!", 'concordamos'); ?></button>
+                <button class="register-submit" type="submit" data-loading-text="<?php _e('Loading..', 'concordamos');?>"><?php _e("Let's go!", 'concordamos'); ?></button>
                 <p><?php _e('Already have an account?', 'concordamos'); ?> <a href="#"><?php _e('Access here', 'concordamos'); ?></a>.</p>
                 <img src="" alt="">
             </div>
