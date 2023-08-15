@@ -28,7 +28,7 @@ $site_title = get_bloginfo('name');
                 <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
             </div>
             <p class="balloon-subtitle"><?php _e('A way to vote for consensus', 'concordamos'); ?></p>
-            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="<?php _e('Login Logo', 'concordamos'); ?>">
+            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="<?php _e('Concordamos Logo', 'concordamos'); ?>">
             <p class="balloon-subtitle with"><?php printf(__('With %s', 'concordamos'), $site_title); ?></p>
         </div>
     </section>
@@ -97,7 +97,7 @@ $site_title = get_bloginfo('name');
             <div id="status"></div>
             <div class="register-button">
                 <button class="register-submit" type="submit"
-                    data-loading-text="<?php _e('Loading..', 'concordamos'); ?>"><?php _e("Let's go!", 'concordamos'); ?></button>
+                    data-loading-text="<?php _e('Loading...', 'concordamos'); ?>"><?php _e("Let's go!", 'concordamos'); ?></button>
                 <p>
                     <?php _e('Already have an account?', 'concordamos'); ?> <a href="<?php echo $login_url;?>">
                         <?php _e('Access here', 'concordamos'); ?>
@@ -107,7 +107,7 @@ $site_title = get_bloginfo('name');
             </div>
             <div class="its-logo">
                 <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>"
-                    alt="<?php _e('ITS Login Logo', 'concordamos'); ?>">
+                    alt="<?php _e('ITS Logo', 'concordamos'); ?>">
             </div>
         </div>
     </form>

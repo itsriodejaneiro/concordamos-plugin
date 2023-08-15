@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-08-11T21:32:38+00:00\n"
+"POT-Creation-Date: 2023-08-15T17:57:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: concordamos\n"
@@ -26,54 +26,119 @@ msgstr ""
 msgid "Hacklab Team"
 msgstr ""
 
-#: concordamos.php:34
+#: concordamos.php:36
 msgid "Concordamos Network"
 msgstr ""
 
-#: includes/api.php:59
+#: includes/api.php:76
 msgid "You are not signed in."
 msgstr ""
 
-#: includes/api.php:65
-#: includes/api.php:72
+#: includes/api.php:82
+#: includes/api.php:89
+#: includes/api.php:341
+#: includes/api.php:378
 msgid "You don't have enough permissions."
 msgstr ""
 
-#: includes/api.php:218
-#: includes/api.php:364
+#: includes/api.php:244
+#: includes/api.php:461
 msgid "Required field is either missing or blank:"
 msgstr ""
 
-#: includes/api.php:295
+#: includes/api.php:321
 msgid "Voting created successfully!"
 msgstr ""
 
-#: includes/api.php:346
+#: includes/api.php:359
+msgid "Voting updated successfully!"
+msgstr ""
+
+#: includes/api.php:365
+msgid "Error updating voting, please try again"
+msgstr ""
+
+#: includes/api.php:443
 msgid "User updated successfully!"
 msgstr ""
 
-#: includes/api.php:352
+#: includes/api.php:449
 msgid "Error updating user, please try again"
 msgstr ""
 
-#: includes/api.php:386
+#: includes/api.php:483
 msgid "Vote not found"
 msgstr ""
 
-#: includes/api.php:412
+#: includes/api.php:509
 msgid "Invalid link"
 msgstr ""
 
-#: includes/api.php:422
+#: includes/api.php:519
 msgid "Expired link"
 msgstr ""
 
-#: includes/api.php:459
+#: includes/api.php:556
 msgid "Vote registered successfully!"
 msgstr ""
 
-#: includes/api.php:466
+#: includes/api.php:563
 msgid "Error registering your vote, please try again"
+msgstr ""
+
+#: includes/api.php:575
+msgid "User signed out"
+msgstr ""
+
+#: includes/blocks/login.php:9
+#: templates/template-create-user.php:49
+#: templates/template-login.php:31
+#: assets/javascript/my-account/components/EditEmailModal.js:40
+#: build/js/my-account/App.js:126
+#: build/js/my-account/components/EditEmailModal.js:360
+#: build/js/my-account/components/UserSettings.js:56
+#: build/js/my-account/index.js:206
+#: build/js/my-account/App.js:89
+#: build/js/my-account/components/EditEmailModal.js:242
+#: build/js/my-account/components/UserSettings.js:40
+#: build/js/my-account/index.js:148
+msgid "Email"
+msgstr ""
+
+#: includes/blocks/login.php:17
+#: templates/template-create-user.php:58
+#: templates/template-login.php:37
+#: assets/javascript/my-account/components/EditPasswordModal.js:48
+#: build/js/my-account/App.js:275
+#: build/js/my-account/components/EditPasswordModal.js:365
+#: build/js/my-account/components/UserSettings.js:205
+#: build/js/my-account/index.js:355
+#: build/js/my-account/App.js:199
+#: build/js/my-account/components/EditPasswordModal.js:250
+#: build/js/my-account/components/UserSettings.js:150
+#: build/js/my-account/index.js:258
+msgid "Password"
+msgstr ""
+
+#: includes/blocks/login.php:22
+#: templates/template-login.php:50
+msgid "I forgot my password"
+msgstr ""
+
+#: includes/blocks/login.php:27
+#: templates/template-create-user.php:100
+#: templates/template-login.php:54
+msgid "Let's go!"
+msgstr ""
+
+#: includes/blocks/login.php:30
+#: templates/template-login.php:56
+msgid "Don't have an account?"
+msgstr ""
+
+#: includes/blocks/login.php:31
+#: templates/template-login.php:56
+msgid "Register here"
 msgstr ""
 
 #: includes/class/class-taxonomy.php:22
@@ -119,14 +184,69 @@ msgid "New Tag Name"
 msgstr ""
 
 #: includes/class/class-taxonomy.php:32
-#: assets/javascript/voting-page/components/Form.js:141
-#: build/js/voting-page/App.js:3212
-#: build/js/voting-page/components/Form.js:17422
-#: build/js/voting-page/index.js:3234
-#: build/js/voting-page/App.js:2143
-#: build/js/voting-page/components/Form.js:13173
-#: build/js/voting-page/index.js:2155
+#: assets/javascript/voting-page/components/Form.js:133
+#: build/js/voting-page/App.js:3286
+#: build/js/voting-page/components/Form.js:17496
+#: build/js/voting-page/index.js:3308
+#: build/js/voting-page/App.js:2190
+#: build/js/voting-page/components/Form.js:13220
+#: build/js/voting-page/index.js:2202
 msgid "Tags"
+msgstr ""
+
+#: includes/class/class-user-login.php:20
+#: includes/class/class-user-register.php:25
+msgid "You're already logged in. No need to log in again."
+msgstr ""
+
+#: includes/class/class-user-login.php:23
+#: includes/class/class-user-register.php:37
+msgid "Username field is empty."
+msgstr ""
+
+#: includes/class/class-user-login.php:26
+#: includes/class/class-user-register.php:54
+msgid "Password field is empty."
+msgstr ""
+
+#: includes/class/class-user-login.php:48
+msgid "Invalid username or password."
+msgstr ""
+
+#: includes/class/class-user-login.php:54
+msgid "Login successful."
+msgstr ""
+
+#: includes/class/class-user-register.php:29
+msgid "You must accept the Privacy Policy and Terms of Use"
+msgstr ""
+
+#: includes/class/class-user-register.php:33
+msgid "You must accept the Image Terms of Use"
+msgstr ""
+
+#: includes/class/class-user-register.php:41
+msgid "Email field is empty."
+msgstr ""
+
+#: includes/class/class-user-register.php:44
+msgid "Email field is invalid."
+msgstr ""
+
+#: includes/class/class-user-register.php:48
+msgid "This email address is already registered. Please use a different email or log in."
+msgstr ""
+
+#: includes/class/class-user-register.php:57
+msgid "Passwords fields don't match."
+msgstr ""
+
+#: includes/class/class-user-register.php:105
+msgid "Account created successfully."
+msgstr ""
+
+#: includes/class/class-user-register.php:107
+msgid "Authentication failed."
 msgstr ""
 
 #: includes/init.php:154
@@ -148,13 +268,13 @@ msgstr ""
 
 #: includes/settings-page.php:70
 #: templates/part/navbar-mobile.php:5
-#: assets/javascript/voting-page/components/Form.js:169
-#: build/js/voting-page/App.js:3244
-#: build/js/voting-page/components/Form.js:17454
-#: build/js/voting-page/index.js:3266
-#: build/js/voting-page/App.js:2171
-#: build/js/voting-page/components/Form.js:13201
-#: build/js/voting-page/index.js:2183
+#: assets/javascript/voting-page/components/Form.js:161
+#: build/js/voting-page/App.js:3318
+#: build/js/voting-page/components/Form.js:17528
+#: build/js/voting-page/index.js:3340
+#: build/js/voting-page/App.js:2218
+#: build/js/voting-page/components/Form.js:13248
+#: build/js/voting-page/index.js:2230
 msgid "Create voting"
 msgstr ""
 
@@ -178,11 +298,11 @@ msgstr ""
 
 #: includes/templates.php:43
 #: templates/part/navbar-mobile.php:14
-#: assets/javascript/my-account/App.js:33
-#: build/js/my-account/App.js:1148
-#: build/js/my-account/index.js:60
-#: build/js/my-account/App.js:764
-#: build/js/my-account/index.js:33
+#: assets/javascript/my-account/App.js:39
+#: build/js/my-account/App.js:1140
+#: build/js/my-account/index.js:65
+#: build/js/my-account/App.js:750
+#: build/js/my-account/index.js:39
 msgid "My account"
 msgstr ""
 
@@ -196,437 +316,496 @@ msgstr ""
 msgid "Votings"
 msgstr ""
 
-#: templates/single-voting.php:32
+#: templates/single-voting.php:33
 msgid "Voting"
 msgstr ""
 
-#: templates/single-voting.php:44
+#: templates/single-voting.php:45
 msgid "Created by:"
 msgstr ""
 
-#: templates/single-voting.php:58
+#: templates/single-voting.php:57
 #: assets/javascript/voting-page/components/StartEnd.js:29
-#: build/js/voting-page/App.js:3504
-#: build/js/voting-page/components/Form.js:3324
+#: assets/javascript/voting-single/components/EditVotingModal.js:51
+#: build/js/voting-page/App.js:3578
+#: build/js/voting-page/components/Form.js:3403
 #: build/js/voting-page/components/StartEnd.js:16841
-#: build/js/voting-page/index.js:3526
-#: build/js/voting-page/App.js:2404
-#: build/js/voting-page/components/Form.js:2226
+#: build/js/voting-page/index.js:3600
+#: build/js/voting-single/components/EditVotingModal.js:17070
+#: build/js/voting-single/index.js:3459
+#: build/js/voting-single/VotingAdmin.js:3284
+#: build/js/voting-page/App.js:2451
+#: build/js/voting-page/components/Form.js:2281
 #: build/js/voting-page/components/StartEnd.js:12680
-#: build/js/voting-page/index.js:2416
+#: build/js/voting-page/index.js:2463
+#: build/js/voting-single/components/EditVotingModal.js:12827
+#: build/js/voting-single/index.js:2213
+#: build/js/voting-single/VotingAdmin.js:2134
 msgid "Start"
 msgstr ""
 
-#: templates/single-voting.php:65
+#: templates/single-voting.php:64
 #: assets/javascript/voting-page/components/StartEnd.js:56
-#: build/js/voting-page/App.js:3528
-#: build/js/voting-page/components/Form.js:3348
+#: assets/javascript/voting-single/components/EditVotingModal.js:60
+#: build/js/voting-page/App.js:3602
+#: build/js/voting-page/components/Form.js:3427
 #: build/js/voting-page/components/StartEnd.js:16865
-#: build/js/voting-page/index.js:3550
-#: build/js/voting-page/App.js:2431
-#: build/js/voting-page/components/Form.js:2253
+#: build/js/voting-page/index.js:3624
+#: build/js/voting-single/components/EditVotingModal.js:17075
+#: build/js/voting-single/index.js:3464
+#: build/js/voting-single/VotingAdmin.js:3289
+#: build/js/voting-page/App.js:2478
+#: build/js/voting-page/components/Form.js:2308
 #: build/js/voting-page/components/StartEnd.js:12707
-#: build/js/voting-page/index.js:2443
+#: build/js/voting-page/index.js:2490
+#: build/js/voting-single/components/EditVotingModal.js:12836
+#: build/js/voting-single/index.js:2222
+#: build/js/voting-single/VotingAdmin.js:2143
 msgid "End"
 msgstr ""
 
-#: assets/javascript/my-account/App.js:11
-#: assets/javascript/my-account/components/CreatedVotings.js:33
-#: build/js/my-account/App.js:58
-#: build/js/my-account/App.js:1121
-#: build/js/my-account/components/CreatedVotings.js:534
-#: build/js/my-account/index.js:33
-#: build/js/my-account/index.js:129
-#: build/js/my-account/App.js:33
-#: build/js/my-account/App.js:742
-#: build/js/my-account/components/CreatedVotings.js:339
-#: build/js/my-account/index.js:11
-#: build/js/my-account/index.js:83
-msgid "Votings created by me"
+#: templates/template-create-user.php:30
+#: templates/template-login.php:20
+msgid "A way to vote for consensus"
+msgstr ""
+
+#: templates/template-create-user.php:31
+msgid "Concordamos Logo"
+msgstr ""
+
+#: templates/template-create-user.php:32
+msgid "With %s"
+msgstr ""
+
+#: templates/template-create-user.php:40
+#: assets/javascript/my-account/components/EditNameModal.js:40
+#: assets/javascript/my-account/components/UserSettings.js:21
+#: build/js/my-account/App.js:198
+#: build/js/my-account/App.js:411
+#: build/js/my-account/components/EditNameModal.js:360
+#: build/js/my-account/components/UserSettings.js:128
+#: build/js/my-account/components/UserSettings.js:575
+#: build/js/my-account/index.js:278
+#: build/js/my-account/index.js:491
+#: build/js/my-account/App.js:140
+#: build/js/my-account/App.js:289
+#: build/js/my-account/components/EditNameModal.js:242
+#: build/js/my-account/components/UserSettings.js:91
+#: build/js/my-account/components/UserSettings.js:393
+#: build/js/my-account/index.js:199
+#: build/js/my-account/index.js:348
+msgid "Name"
+msgstr ""
+
+#: templates/template-create-user.php:72
+#: assets/javascript/my-account/components/EditPasswordModal.js:54
+#: build/js/my-account/App.js:282
+#: build/js/my-account/components/EditPasswordModal.js:372
+#: build/js/my-account/components/UserSettings.js:212
+#: build/js/my-account/index.js:362
+#: build/js/my-account/App.js:205
+#: build/js/my-account/components/EditPasswordModal.js:256
+#: build/js/my-account/components/UserSettings.js:156
+#: build/js/my-account/index.js:264
+msgid "Repeat password"
+msgstr ""
+
+#: templates/template-create-user.php:81
+#: templates/template-create-user.php:92
+msgid "You accept the"
+msgstr ""
+
+#: templates/template-create-user.php:82
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/template-create-user.php:84
+msgid "and"
+msgstr ""
+
+#: templates/template-create-user.php:85
+msgid "Terms of Use"
+msgstr ""
+
+#: templates/template-create-user.php:93
+msgid "Image Terms of Use"
+msgstr ""
+
+#: templates/template-create-user.php:100
+#: templates/template-login.php:53
+msgid "Loading..."
+msgstr ""
+
+#: templates/template-create-user.php:102
+msgid "Already have an account?"
+msgstr ""
+
+#: templates/template-create-user.php:103
+msgid "Access here"
+msgstr ""
+
+#: templates/template-create-user.php:110
+msgid "ITS Logo"
+msgstr ""
+
+#: templates/template-login.php:21
+msgid "Concordamos Logo"
+msgstr ""
+
+#: templates/template-login.php:22
+msgid "With"
 msgstr ""
 
 #: assets/javascript/my-account/App.js:12
-#: assets/javascript/my-account/components/ParticipatedVotings.js:33
-#: build/js/my-account/App.js:380
-#: build/js/my-account/App.js:1124
-#: build/js/my-account/components/ParticipatedVotings.js:534
-#: build/js/my-account/index.js:36
-#: build/js/my-account/index.js:451
-#: build/js/my-account/App.js:282
-#: build/js/my-account/App.js:743
-#: build/js/my-account/components/ParticipatedVotings.js:339
+#: assets/javascript/my-account/components/CreatedVotings.js:27
+#: build/js/my-account/App.js:52
+#: build/js/my-account/App.js:1110
+#: build/js/my-account/components/CreatedVotings.js:542
+#: build/js/my-account/index.js:35
+#: build/js/my-account/index.js:132
+#: build/js/my-account/App.js:27
+#: build/js/my-account/App.js:723
+#: build/js/my-account/components/CreatedVotings.js:349
 #: build/js/my-account/index.js:12
-#: build/js/my-account/index.js:332
+#: build/js/my-account/index.js:86
+msgid "Votings created by me"
+msgstr ""
+
+#: assets/javascript/my-account/App.js:13
+#: assets/javascript/my-account/components/ParticipatedVotings.js:27
+#: build/js/my-account/App.js:353
+#: build/js/my-account/App.js:1113
+#: build/js/my-account/components/ParticipatedVotings.js:542
+#: build/js/my-account/index.js:38
+#: build/js/my-account/index.js:433
+#: build/js/my-account/App.js:246
+#: build/js/my-account/App.js:724
+#: build/js/my-account/components/ParticipatedVotings.js:349
+#: build/js/my-account/index.js:13
+#: build/js/my-account/index.js:305
 msgid "Votings I participated"
 msgstr ""
 
-#: assets/javascript/my-account/App.js:34
-#: build/js/my-account/App.js:1148
-#: build/js/my-account/index.js:60
-#: build/js/my-account/App.js:765
-#: build/js/my-account/index.js:34
+#: assets/javascript/my-account/App.js:40
+#: build/js/my-account/App.js:1140
+#: build/js/my-account/index.js:65
+#: build/js/my-account/App.js:751
+#: build/js/my-account/index.js:40
 msgid "Hello, %s"
 msgstr ""
 
-#: assets/javascript/my-account/components/CreatedVotings.js:45
-#: assets/javascript/my-account/components/ParticipatedVotings.js:45
-#: assets/javascript/voting-archive/App.js:82
-#: build/js/my-account/App.js:70
-#: build/js/my-account/App.js:392
-#: build/js/my-account/components/CreatedVotings.js:546
-#: build/js/my-account/components/ParticipatedVotings.js:546
-#: build/js/my-account/index.js:141
-#: build/js/my-account/index.js:463
-#: build/js/voting-archive/App.js:1272
-#: build/js/voting-archive/index.js:258
-#: build/js/my-account/App.js:45
-#: build/js/my-account/App.js:294
-#: build/js/my-account/components/CreatedVotings.js:351
-#: build/js/my-account/components/ParticipatedVotings.js:351
-#: build/js/my-account/index.js:95
-#: build/js/my-account/index.js:344
-#: build/js/voting-archive/App.js:1054
-#: build/js/voting-archive/index.js:170
+#: assets/javascript/my-account/App.js:42
+#: build/js/my-account/App.js:1144
+#: build/js/my-account/index.js:69
+#: build/js/my-account/App.js:753
+#: build/js/my-account/index.js:42
+msgid "Sign out"
+msgstr ""
+
+#: assets/javascript/my-account/components/CreatedVotings.js:39
+#: assets/javascript/my-account/components/ParticipatedVotings.js:39
+#: assets/javascript/voting-archive/App.js:77
+#: build/js/my-account/App.js:64
+#: build/js/my-account/App.js:365
+#: build/js/my-account/components/CreatedVotings.js:554
+#: build/js/my-account/components/ParticipatedVotings.js:554
+#: build/js/my-account/index.js:144
+#: build/js/my-account/index.js:445
+#: build/js/voting-archive/App.js:1281
+#: build/js/voting-archive/index.js:267
+#: build/js/my-account/App.js:39
+#: build/js/my-account/App.js:258
+#: build/js/my-account/components/CreatedVotings.js:361
+#: build/js/my-account/components/ParticipatedVotings.js:361
+#: build/js/my-account/index.js:98
+#: build/js/my-account/index.js:317
+#: build/js/voting-archive/App.js:1065
+#: build/js/voting-archive/index.js:181
 msgctxt "page"
 msgid "Next"
 msgstr ""
 
-#: assets/javascript/my-account/components/CreatedVotings.js:47
-#: assets/javascript/my-account/components/ParticipatedVotings.js:47
-#: assets/javascript/voting-archive/App.js:84
-#: build/js/my-account/App.js:72
-#: build/js/my-account/App.js:394
-#: build/js/my-account/components/CreatedVotings.js:548
-#: build/js/my-account/components/ParticipatedVotings.js:548
-#: build/js/my-account/index.js:143
-#: build/js/my-account/index.js:465
-#: build/js/voting-archive/App.js:1274
-#: build/js/voting-archive/index.js:260
-#: build/js/my-account/App.js:47
-#: build/js/my-account/App.js:296
-#: build/js/my-account/components/CreatedVotings.js:353
-#: build/js/my-account/components/ParticipatedVotings.js:353
-#: build/js/my-account/index.js:97
-#: build/js/my-account/index.js:346
-#: build/js/voting-archive/App.js:1056
-#: build/js/voting-archive/index.js:172
+#: assets/javascript/my-account/components/CreatedVotings.js:41
+#: assets/javascript/my-account/components/ParticipatedVotings.js:41
+#: assets/javascript/voting-archive/App.js:79
+#: build/js/my-account/App.js:66
+#: build/js/my-account/App.js:367
+#: build/js/my-account/components/CreatedVotings.js:556
+#: build/js/my-account/components/ParticipatedVotings.js:556
+#: build/js/my-account/index.js:146
+#: build/js/my-account/index.js:447
+#: build/js/voting-archive/App.js:1283
+#: build/js/voting-archive/index.js:269
+#: build/js/my-account/App.js:41
+#: build/js/my-account/App.js:260
+#: build/js/my-account/components/CreatedVotings.js:363
+#: build/js/my-account/components/ParticipatedVotings.js:363
+#: build/js/my-account/index.js:100
+#: build/js/my-account/index.js:319
+#: build/js/voting-archive/App.js:1067
+#: build/js/voting-archive/index.js:183
 msgctxt "page"
 msgid "Previous"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditEmailModal.js:45
+#: assets/javascript/my-account/components/EditEmailModal.js:37
 #: assets/javascript/my-account/components/UserSettings.js:31
-#: build/js/my-account/App.js:135
-#: build/js/my-account/App.js:448
-#: build/js/my-account/components/EditEmailModal.js:288
-#: build/js/my-account/components/UserSettings.js:59
-#: build/js/my-account/components/UserSettings.js:525
-#: build/js/my-account/index.js:206
-#: build/js/my-account/index.js:519
-#: build/js/my-account/App.js:100
-#: build/js/my-account/App.js:335
-#: build/js/my-account/components/EditEmailModal.js:196
-#: build/js/my-account/components/UserSettings.js:45
-#: build/js/my-account/components/UserSettings.js:376
-#: build/js/my-account/index.js:150
-#: build/js/my-account/index.js:385
+#: build/js/my-account/App.js:124
+#: build/js/my-account/App.js:421
+#: build/js/my-account/components/EditEmailModal.js:358
+#: build/js/my-account/components/UserSettings.js:54
+#: build/js/my-account/components/UserSettings.js:585
+#: build/js/my-account/index.js:204
+#: build/js/my-account/index.js:501
+#: build/js/my-account/App.js:86
+#: build/js/my-account/App.js:299
+#: build/js/my-account/components/EditEmailModal.js:239
+#: build/js/my-account/components/UserSettings.js:37
+#: build/js/my-account/components/UserSettings.js:403
+#: build/js/my-account/index.js:145
+#: build/js/my-account/index.js:358
 msgid "Edit email"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditEmailModal.js:48
-#: build/js/my-account/App.js:137
-#: build/js/my-account/components/EditEmailModal.js:290
-#: build/js/my-account/components/UserSettings.js:61
+#: assets/javascript/my-account/components/EditEmailModal.js:41
+#: build/js/my-account/App.js:128
+#: build/js/my-account/components/EditEmailModal.js:362
+#: build/js/my-account/components/UserSettings.js:58
 #: build/js/my-account/index.js:208
-#: build/js/my-account/App.js:103
-#: build/js/my-account/components/EditEmailModal.js:199
-#: build/js/my-account/components/UserSettings.js:48
-#: build/js/my-account/index.js:153
-msgid "Email"
-msgstr ""
-
-#: assets/javascript/my-account/components/EditEmailModal.js:49
-#: build/js/my-account/App.js:139
-#: build/js/my-account/components/EditEmailModal.js:292
-#: build/js/my-account/components/UserSettings.js:63
-#: build/js/my-account/index.js:210
-#: build/js/my-account/App.js:104
-#: build/js/my-account/components/EditEmailModal.js:200
-#: build/js/my-account/components/UserSettings.js:49
-#: build/js/my-account/index.js:154
+#: build/js/my-account/App.js:90
+#: build/js/my-account/components/EditEmailModal.js:243
+#: build/js/my-account/components/UserSettings.js:41
+#: build/js/my-account/index.js:149
 msgid "youremail@email.com"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditEmailModal.js:53
-#: assets/javascript/my-account/components/EditNameModal.js:53
-#: assets/javascript/my-account/components/EditPasswordModal.js:70
-#: build/js/my-account/App.js:148
-#: build/js/my-account/App.js:225
-#: build/js/my-account/App.js:317
-#: build/js/my-account/components/EditEmailModal.js:301
-#: build/js/my-account/components/EditNameModal.js:301
-#: build/js/my-account/components/EditPasswordModal.js:316
-#: build/js/my-account/components/UserSettings.js:72
-#: build/js/my-account/components/UserSettings.js:149
-#: build/js/my-account/components/UserSettings.js:241
-#: build/js/my-account/index.js:219
-#: build/js/my-account/index.js:296
-#: build/js/my-account/index.js:388
-#: build/js/my-account/App.js:108
-#: build/js/my-account/App.js:167
-#: build/js/my-account/App.js:243
-#: build/js/my-account/components/EditEmailModal.js:204
-#: build/js/my-account/components/EditNameModal.js:204
-#: build/js/my-account/components/EditPasswordModal.js:221
-#: build/js/my-account/components/UserSettings.js:53
-#: build/js/my-account/components/UserSettings.js:112
-#: build/js/my-account/components/UserSettings.js:188
-#: build/js/my-account/index.js:158
+#: assets/javascript/my-account/components/EditEmailModal.js:45
+#: assets/javascript/my-account/components/EditNameModal.js:45
+#: assets/javascript/my-account/components/EditPasswordModal.js:62
+#: build/js/my-account/App.js:137
+#: build/js/my-account/App.js:209
+#: build/js/my-account/App.js:296
+#: build/js/my-account/components/EditEmailModal.js:371
+#: build/js/my-account/components/EditNameModal.js:371
+#: build/js/my-account/components/EditPasswordModal.js:386
+#: build/js/my-account/components/UserSettings.js:67
+#: build/js/my-account/components/UserSettings.js:139
+#: build/js/my-account/components/UserSettings.js:226
 #: build/js/my-account/index.js:217
-#: build/js/my-account/index.js:293
+#: build/js/my-account/index.js:289
+#: build/js/my-account/index.js:376
+#: build/js/my-account/App.js:94
+#: build/js/my-account/App.js:145
+#: build/js/my-account/App.js:213
+#: build/js/my-account/components/EditEmailModal.js:247
+#: build/js/my-account/components/EditNameModal.js:247
+#: build/js/my-account/components/EditPasswordModal.js:264
+#: build/js/my-account/components/UserSettings.js:45
+#: build/js/my-account/components/UserSettings.js:96
+#: build/js/my-account/components/UserSettings.js:164
+#: build/js/my-account/index.js:153
+#: build/js/my-account/index.js:204
+#: build/js/my-account/index.js:272
 msgid "Save"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditEmailModal.js:54
-#: assets/javascript/my-account/components/EditNameModal.js:54
-#: assets/javascript/my-account/components/EditPasswordModal.js:71
-#: assets/javascript/voting-single/components/SingleVoting.js:103
-#: build/js/my-account/App.js:152
-#: build/js/my-account/App.js:229
-#: build/js/my-account/App.js:321
-#: build/js/my-account/components/EditEmailModal.js:305
-#: build/js/my-account/components/EditNameModal.js:305
-#: build/js/my-account/components/EditPasswordModal.js:320
-#: build/js/my-account/components/UserSettings.js:76
-#: build/js/my-account/components/UserSettings.js:153
-#: build/js/my-account/components/UserSettings.js:245
-#: build/js/my-account/index.js:223
-#: build/js/my-account/index.js:300
-#: build/js/my-account/index.js:392
-#: build/js/voting-single/App.js:614
-#: build/js/voting-single/components/SingleVoting.js:514
-#: build/js/voting-single/index.js:647
-#: build/js/voting-single/pages/Single.js:410
-#: build/js/my-account/App.js:109
-#: build/js/my-account/App.js:168
-#: build/js/my-account/App.js:244
-#: build/js/my-account/components/EditEmailModal.js:205
-#: build/js/my-account/components/EditNameModal.js:205
-#: build/js/my-account/components/EditPasswordModal.js:222
-#: build/js/my-account/components/UserSettings.js:54
-#: build/js/my-account/components/UserSettings.js:113
-#: build/js/my-account/components/UserSettings.js:189
-#: build/js/my-account/index.js:159
-#: build/js/my-account/index.js:218
-#: build/js/my-account/index.js:294
-#: build/js/voting-single/App.js:405
-#: build/js/voting-single/components/SingleVoting.js:338
-#: build/js/voting-single/index.js:421
-#: build/js/voting-single/pages/Single.js:280
+#: assets/javascript/my-account/components/EditEmailModal.js:46
+#: assets/javascript/my-account/components/EditNameModal.js:46
+#: assets/javascript/my-account/components/EditPasswordModal.js:63
+#: assets/javascript/voting-single/components/SingleVoting.js:98
+#: build/js/my-account/App.js:141
+#: build/js/my-account/App.js:213
+#: build/js/my-account/App.js:300
+#: build/js/my-account/components/EditEmailModal.js:375
+#: build/js/my-account/components/EditNameModal.js:375
+#: build/js/my-account/components/EditPasswordModal.js:390
+#: build/js/my-account/components/UserSettings.js:71
+#: build/js/my-account/components/UserSettings.js:143
+#: build/js/my-account/components/UserSettings.js:230
+#: build/js/my-account/index.js:221
+#: build/js/my-account/index.js:293
+#: build/js/my-account/index.js:380
+#: build/js/voting-single/App.js:678
+#: build/js/voting-single/components/SingleVoting.js:591
+#: build/js/voting-single/index.js:3864
+#: build/js/voting-single/pages/Single.js:491
+#: build/js/my-account/App.js:95
+#: build/js/my-account/App.js:146
+#: build/js/my-account/App.js:214
+#: build/js/my-account/components/EditEmailModal.js:248
+#: build/js/my-account/components/EditNameModal.js:248
+#: build/js/my-account/components/EditPasswordModal.js:265
+#: build/js/my-account/components/UserSettings.js:46
+#: build/js/my-account/components/UserSettings.js:97
+#: build/js/my-account/components/UserSettings.js:165
+#: build/js/my-account/index.js:154
+#: build/js/my-account/index.js:205
+#: build/js/my-account/index.js:273
+#: build/js/voting-single/App.js:432
+#: build/js/voting-single/components/SingleVoting.js:388
+#: build/js/voting-single/index.js:2515
+#: build/js/voting-single/pages/Single.js:335
 msgid "Cancel"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditNameModal.js:45
+#: assets/javascript/my-account/components/EditNameModal.js:37
 #: assets/javascript/my-account/components/UserSettings.js:24
-#: build/js/my-account/App.js:212
-#: build/js/my-account/App.js:442
-#: build/js/my-account/components/EditNameModal.js:288
-#: build/js/my-account/components/UserSettings.js:136
-#: build/js/my-account/components/UserSettings.js:519
-#: build/js/my-account/index.js:283
-#: build/js/my-account/index.js:513
-#: build/js/my-account/App.js:159
-#: build/js/my-account/App.js:328
-#: build/js/my-account/components/EditNameModal.js:196
-#: build/js/my-account/components/UserSettings.js:104
-#: build/js/my-account/components/UserSettings.js:369
-#: build/js/my-account/index.js:209
-#: build/js/my-account/index.js:378
+#: build/js/my-account/App.js:196
+#: build/js/my-account/App.js:415
+#: build/js/my-account/components/EditNameModal.js:358
+#: build/js/my-account/components/UserSettings.js:126
+#: build/js/my-account/components/UserSettings.js:579
+#: build/js/my-account/index.js:276
+#: build/js/my-account/index.js:495
+#: build/js/my-account/App.js:137
+#: build/js/my-account/App.js:292
+#: build/js/my-account/components/EditNameModal.js:239
+#: build/js/my-account/components/UserSettings.js:88
+#: build/js/my-account/components/UserSettings.js:396
+#: build/js/my-account/index.js:196
+#: build/js/my-account/index.js:351
 msgid "Edit name"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditNameModal.js:48
-#: assets/javascript/my-account/components/UserSettings.js:21
-#: build/js/my-account/App.js:214
-#: build/js/my-account/App.js:438
-#: build/js/my-account/components/EditNameModal.js:290
-#: build/js/my-account/components/UserSettings.js:138
-#: build/js/my-account/components/UserSettings.js:515
-#: build/js/my-account/index.js:285
-#: build/js/my-account/index.js:509
-#: build/js/my-account/App.js:162
-#: build/js/my-account/App.js:325
-#: build/js/my-account/components/EditNameModal.js:199
-#: build/js/my-account/components/UserSettings.js:107
-#: build/js/my-account/components/UserSettings.js:366
-#: build/js/my-account/index.js:212
-#: build/js/my-account/index.js:375
-msgid "Name"
-msgstr ""
-
-#: assets/javascript/my-account/components/EditNameModal.js:49
-#: build/js/my-account/App.js:216
-#: build/js/my-account/components/EditNameModal.js:292
-#: build/js/my-account/components/UserSettings.js:140
-#: build/js/my-account/index.js:287
-#: build/js/my-account/App.js:163
-#: build/js/my-account/components/EditNameModal.js:200
-#: build/js/my-account/components/UserSettings.js:108
-#: build/js/my-account/index.js:213
+#: assets/javascript/my-account/components/EditNameModal.js:41
+#: build/js/my-account/App.js:200
+#: build/js/my-account/components/EditNameModal.js:362
+#: build/js/my-account/components/UserSettings.js:130
+#: build/js/my-account/index.js:280
+#: build/js/my-account/App.js:141
+#: build/js/my-account/components/EditNameModal.js:243
+#: build/js/my-account/components/UserSettings.js:92
+#: build/js/my-account/index.js:200
 msgid "Name Surname"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditPasswordModal.js:53
+#: assets/javascript/my-account/components/EditPasswordModal.js:45
 #: assets/javascript/my-account/components/UserSettings.js:38
-#: build/js/my-account/App.js:294
-#: build/js/my-account/App.js:456
-#: build/js/my-account/components/EditPasswordModal.js:293
-#: build/js/my-account/components/UserSettings.js:218
-#: build/js/my-account/components/UserSettings.js:533
+#: build/js/my-account/App.js:273
+#: build/js/my-account/App.js:429
+#: build/js/my-account/components/EditPasswordModal.js:363
+#: build/js/my-account/components/UserSettings.js:203
+#: build/js/my-account/components/UserSettings.js:593
+#: build/js/my-account/index.js:353
+#: build/js/my-account/index.js:509
+#: build/js/my-account/App.js:196
+#: build/js/my-account/App.js:306
+#: build/js/my-account/components/EditPasswordModal.js:247
+#: build/js/my-account/components/UserSettings.js:147
+#: build/js/my-account/components/UserSettings.js:410
+#: build/js/my-account/index.js:255
 #: build/js/my-account/index.js:365
-#: build/js/my-account/index.js:527
-#: build/js/my-account/App.js:226
-#: build/js/my-account/App.js:342
-#: build/js/my-account/components/EditPasswordModal.js:204
-#: build/js/my-account/components/UserSettings.js:171
-#: build/js/my-account/components/UserSettings.js:383
-#: build/js/my-account/index.js:276
-#: build/js/my-account/index.js:392
 msgid "Edit password"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditPasswordModal.js:56
-#: build/js/my-account/App.js:296
-#: build/js/my-account/components/EditPasswordModal.js:295
-#: build/js/my-account/components/UserSettings.js:220
-#: build/js/my-account/index.js:367
-#: build/js/my-account/App.js:229
-#: build/js/my-account/components/EditPasswordModal.js:207
-#: build/js/my-account/components/UserSettings.js:174
-#: build/js/my-account/index.js:279
-msgid "Password"
-msgstr ""
-
-#: assets/javascript/my-account/components/EditPasswordModal.js:57
-#: build/js/my-account/App.js:298
-#: build/js/my-account/components/EditPasswordModal.js:297
-#: build/js/my-account/components/UserSettings.js:222
-#: build/js/my-account/index.js:369
-#: build/js/my-account/App.js:230
-#: build/js/my-account/components/EditPasswordModal.js:208
-#: build/js/my-account/components/UserSettings.js:175
-#: build/js/my-account/index.js:280
+#: assets/javascript/my-account/components/EditPasswordModal.js:49
+#: build/js/my-account/App.js:277
+#: build/js/my-account/components/EditPasswordModal.js:367
+#: build/js/my-account/components/UserSettings.js:207
+#: build/js/my-account/index.js:357
+#: build/js/my-account/App.js:200
+#: build/js/my-account/components/EditPasswordModal.js:251
+#: build/js/my-account/components/UserSettings.js:151
+#: build/js/my-account/index.js:259
 msgid "Insert your password here"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditPasswordModal.js:62
-#: build/js/my-account/App.js:303
-#: build/js/my-account/components/EditPasswordModal.js:302
-#: build/js/my-account/components/UserSettings.js:227
-#: build/js/my-account/index.js:374
-#: build/js/my-account/App.js:235
-#: build/js/my-account/components/EditPasswordModal.js:213
-#: build/js/my-account/components/UserSettings.js:180
-#: build/js/my-account/index.js:285
-msgid "Repeat password"
-msgstr ""
-
-#: assets/javascript/my-account/components/EditPasswordModal.js:63
-#: build/js/my-account/App.js:305
-#: build/js/my-account/components/EditPasswordModal.js:304
-#: build/js/my-account/components/UserSettings.js:229
-#: build/js/my-account/index.js:376
-#: build/js/my-account/App.js:236
-#: build/js/my-account/components/EditPasswordModal.js:214
-#: build/js/my-account/components/UserSettings.js:181
-#: build/js/my-account/index.js:286
+#: assets/javascript/my-account/components/EditPasswordModal.js:55
+#: build/js/my-account/App.js:284
+#: build/js/my-account/components/EditPasswordModal.js:374
+#: build/js/my-account/components/UserSettings.js:214
+#: build/js/my-account/index.js:364
+#: build/js/my-account/App.js:206
+#: build/js/my-account/components/EditPasswordModal.js:257
+#: build/js/my-account/components/UserSettings.js:157
+#: build/js/my-account/index.js:265
 msgid "Repeat your password here"
 msgstr ""
 
-#: assets/javascript/my-account/components/EditPasswordModal.js:67
-#: build/js/my-account/App.js:310
-#: build/js/my-account/components/EditPasswordModal.js:309
-#: build/js/my-account/components/UserSettings.js:234
-#: build/js/my-account/index.js:381
-#: build/js/my-account/App.js:240
-#: build/js/my-account/components/EditPasswordModal.js:218
-#: build/js/my-account/components/UserSettings.js:185
-#: build/js/my-account/index.js:290
+#: assets/javascript/my-account/components/EditPasswordModal.js:59
+#: build/js/my-account/App.js:289
+#: build/js/my-account/components/EditPasswordModal.js:379
+#: build/js/my-account/components/UserSettings.js:219
+#: build/js/my-account/index.js:369
+#: build/js/my-account/App.js:210
+#: build/js/my-account/components/EditPasswordModal.js:261
+#: build/js/my-account/components/UserSettings.js:161
+#: build/js/my-account/index.js:269
 msgid "Passwords don't match"
 msgstr ""
 
 #: assets/javascript/my-account/components/UserSettings.js:18
-#: build/js/my-account/App.js:436
-#: build/js/my-account/components/UserSettings.js:513
-#: build/js/my-account/index.js:507
-#: build/js/my-account/App.js:322
-#: build/js/my-account/components/UserSettings.js:363
-#: build/js/my-account/index.js:372
+#: build/js/my-account/App.js:409
+#: build/js/my-account/components/UserSettings.js:573
+#: build/js/my-account/index.js:489
+#: build/js/my-account/App.js:286
+#: build/js/my-account/components/UserSettings.js:390
+#: build/js/my-account/index.js:345
 msgid "My data"
 msgstr ""
 
 #: assets/javascript/my-account/components/UserSettings.js:28
-#: build/js/my-account/App.js:444
-#: build/js/my-account/components/UserSettings.js:521
-#: build/js/my-account/index.js:515
-#: build/js/my-account/App.js:332
-#: build/js/my-account/components/UserSettings.js:373
-#: build/js/my-account/index.js:382
+#: build/js/my-account/App.js:417
+#: build/js/my-account/components/UserSettings.js:581
+#: build/js/my-account/index.js:497
+#: build/js/my-account/App.js:296
+#: build/js/my-account/components/UserSettings.js:400
+#: build/js/my-account/index.js:355
 msgid "My email"
 msgstr ""
 
 #: assets/javascript/my-account/components/UserSettings.js:37
-#: build/js/my-account/App.js:452
-#: build/js/my-account/components/UserSettings.js:529
-#: build/js/my-account/index.js:523
-#: build/js/my-account/App.js:341
-#: build/js/my-account/components/UserSettings.js:382
-#: build/js/my-account/index.js:391
+#: build/js/my-account/App.js:425
+#: build/js/my-account/components/UserSettings.js:589
+#: build/js/my-account/index.js:505
+#: build/js/my-account/App.js:305
+#: build/js/my-account/components/UserSettings.js:409
+#: build/js/my-account/index.js:364
 msgid "General settings"
 msgstr ""
 
 #: assets/javascript/my-account/components/UserSettings.js:39
-#: build/js/my-account/App.js:459
-#: build/js/my-account/components/UserSettings.js:536
-#: build/js/my-account/index.js:530
-#: build/js/my-account/App.js:343
-#: build/js/my-account/components/UserSettings.js:384
-#: build/js/my-account/index.js:393
+#: build/js/my-account/App.js:432
+#: build/js/my-account/components/UserSettings.js:596
+#: build/js/my-account/index.js:512
+#: build/js/my-account/App.js:307
+#: build/js/my-account/components/UserSettings.js:411
+#: build/js/my-account/index.js:366
 msgid "Review our privacy policy"
 msgstr ""
 
 #: assets/javascript/my-account/components/UserSettings.js:40
-#: build/js/my-account/App.js:462
-#: build/js/my-account/components/UserSettings.js:539
-#: build/js/my-account/index.js:533
-#: build/js/my-account/App.js:344
-#: build/js/my-account/components/UserSettings.js:385
-#: build/js/my-account/index.js:394
+#: build/js/my-account/App.js:435
+#: build/js/my-account/components/UserSettings.js:599
+#: build/js/my-account/index.js:515
+#: build/js/my-account/App.js:308
+#: build/js/my-account/components/UserSettings.js:412
+#: build/js/my-account/index.js:367
 msgid "Review our terms of use"
 msgstr ""
 
 #: assets/javascript/my-account/components/UserSettings.js:41
-#: build/js/my-account/App.js:465
-#: build/js/my-account/components/UserSettings.js:542
-#: build/js/my-account/index.js:536
-#: build/js/my-account/App.js:345
-#: build/js/my-account/components/UserSettings.js:386
-#: build/js/my-account/index.js:395
+#: build/js/my-account/App.js:438
+#: build/js/my-account/components/UserSettings.js:602
+#: build/js/my-account/index.js:518
+#: build/js/my-account/App.js:309
+#: build/js/my-account/components/UserSettings.js:413
+#: build/js/my-account/index.js:368
 msgid "Delete account"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:6
-#: build/js/my-account/App.js:523
+#: build/js/my-account/App.js:496
 #: build/js/my-account/components/CreatedVotings.js:47
 #: build/js/my-account/components/ParticipatedVotings.js:47
-#: build/js/my-account/index.js:594
+#: build/js/my-account/index.js:576
 #: build/js/shared/components/Filters.js:133
 #: build/js/voting-archive/App.js:21
 #: build/js/voting-archive/index.js:21
-#: build/js/my-account/App.js:376
+#: build/js/my-account/App.js:340
 #: build/js/my-account/components/CreatedVotings.js:21
 #: build/js/my-account/components/ParticipatedVotings.js:21
-#: build/js/my-account/index.js:426
+#: build/js/my-account/index.js:399
 #: build/js/shared/components/Filters.js:79
 #: build/js/voting-archive/App.js:6
 #: build/js/voting-archive/index.js:6
@@ -634,17 +813,17 @@ msgid "Yes"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:7
-#: build/js/my-account/App.js:524
+#: build/js/my-account/App.js:497
 #: build/js/my-account/components/CreatedVotings.js:48
 #: build/js/my-account/components/ParticipatedVotings.js:48
-#: build/js/my-account/index.js:595
+#: build/js/my-account/index.js:577
 #: build/js/shared/components/Filters.js:134
 #: build/js/voting-archive/App.js:22
 #: build/js/voting-archive/index.js:22
-#: build/js/my-account/App.js:377
+#: build/js/my-account/App.js:341
 #: build/js/my-account/components/CreatedVotings.js:22
 #: build/js/my-account/components/ParticipatedVotings.js:22
-#: build/js/my-account/index.js:427
+#: build/js/my-account/index.js:400
 #: build/js/shared/components/Filters.js:80
 #: build/js/voting-archive/App.js:7
 #: build/js/voting-archive/index.js:7
@@ -652,17 +831,17 @@ msgid "No"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:8
-#: build/js/my-account/App.js:525
+#: build/js/my-account/App.js:498
 #: build/js/my-account/components/CreatedVotings.js:49
 #: build/js/my-account/components/ParticipatedVotings.js:49
-#: build/js/my-account/index.js:596
+#: build/js/my-account/index.js:578
 #: build/js/shared/components/Filters.js:135
 #: build/js/voting-archive/App.js:23
 #: build/js/voting-archive/index.js:23
-#: build/js/my-account/App.js:378
+#: build/js/my-account/App.js:342
 #: build/js/my-account/components/CreatedVotings.js:23
 #: build/js/my-account/components/ParticipatedVotings.js:23
-#: build/js/my-account/index.js:428
+#: build/js/my-account/index.js:401
 #: build/js/shared/components/Filters.js:81
 #: build/js/voting-archive/App.js:8
 #: build/js/voting-archive/index.js:8
@@ -671,17 +850,17 @@ msgid "All"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:12
-#: build/js/my-account/App.js:528
+#: build/js/my-account/App.js:501
 #: build/js/my-account/components/CreatedVotings.js:52
 #: build/js/my-account/components/ParticipatedVotings.js:52
-#: build/js/my-account/index.js:599
+#: build/js/my-account/index.js:581
 #: build/js/shared/components/Filters.js:138
 #: build/js/voting-archive/App.js:26
 #: build/js/voting-archive/index.js:26
-#: build/js/my-account/App.js:382
+#: build/js/my-account/App.js:346
 #: build/js/my-account/components/CreatedVotings.js:27
 #: build/js/my-account/components/ParticipatedVotings.js:27
-#: build/js/my-account/index.js:432
+#: build/js/my-account/index.js:405
 #: build/js/shared/components/Filters.js:85
 #: build/js/voting-archive/App.js:12
 #: build/js/voting-archive/index.js:12
@@ -690,17 +869,17 @@ msgid "Concluded"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:13
-#: build/js/my-account/App.js:529
+#: build/js/my-account/App.js:502
 #: build/js/my-account/components/CreatedVotings.js:53
 #: build/js/my-account/components/ParticipatedVotings.js:53
-#: build/js/my-account/index.js:600
+#: build/js/my-account/index.js:582
 #: build/js/shared/components/Filters.js:139
 #: build/js/voting-archive/App.js:27
 #: build/js/voting-archive/index.js:27
-#: build/js/my-account/App.js:383
+#: build/js/my-account/App.js:347
 #: build/js/my-account/components/CreatedVotings.js:28
 #: build/js/my-account/components/ParticipatedVotings.js:28
-#: build/js/my-account/index.js:433
+#: build/js/my-account/index.js:406
 #: build/js/shared/components/Filters.js:86
 #: build/js/voting-archive/App.js:13
 #: build/js/voting-archive/index.js:13
@@ -709,17 +888,17 @@ msgid "Open"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:14
-#: build/js/my-account/App.js:530
+#: build/js/my-account/App.js:503
 #: build/js/my-account/components/CreatedVotings.js:54
 #: build/js/my-account/components/ParticipatedVotings.js:54
-#: build/js/my-account/index.js:601
+#: build/js/my-account/index.js:583
 #: build/js/shared/components/Filters.js:140
 #: build/js/voting-archive/App.js:28
 #: build/js/voting-archive/index.js:28
-#: build/js/my-account/App.js:384
+#: build/js/my-account/App.js:348
 #: build/js/my-account/components/CreatedVotings.js:29
 #: build/js/my-account/components/ParticipatedVotings.js:29
-#: build/js/my-account/index.js:434
+#: build/js/my-account/index.js:407
 #: build/js/shared/components/Filters.js:87
 #: build/js/voting-archive/App.js:14
 #: build/js/voting-archive/index.js:14
@@ -728,17 +907,17 @@ msgid "Scheduled"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:15
-#: build/js/my-account/App.js:531
+#: build/js/my-account/App.js:504
 #: build/js/my-account/components/CreatedVotings.js:55
 #: build/js/my-account/components/ParticipatedVotings.js:55
-#: build/js/my-account/index.js:602
+#: build/js/my-account/index.js:584
 #: build/js/shared/components/Filters.js:141
 #: build/js/voting-archive/App.js:29
 #: build/js/voting-archive/index.js:29
-#: build/js/my-account/App.js:385
+#: build/js/my-account/App.js:349
 #: build/js/my-account/components/CreatedVotings.js:30
 #: build/js/my-account/components/ParticipatedVotings.js:30
-#: build/js/my-account/index.js:435
+#: build/js/my-account/index.js:408
 #: build/js/shared/components/Filters.js:88
 #: build/js/voting-archive/App.js:15
 #: build/js/voting-archive/index.js:15
@@ -747,17 +926,17 @@ msgid "All"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:27
-#: build/js/my-account/App.js:545
+#: build/js/my-account/App.js:518
 #: build/js/my-account/components/CreatedVotings.js:69
 #: build/js/my-account/components/ParticipatedVotings.js:69
-#: build/js/my-account/index.js:616
+#: build/js/my-account/index.js:598
 #: build/js/shared/components/Filters.js:155
 #: build/js/voting-archive/App.js:43
 #: build/js/voting-archive/index.js:43
-#: build/js/my-account/App.js:397
+#: build/js/my-account/App.js:361
 #: build/js/my-account/components/CreatedVotings.js:42
 #: build/js/my-account/components/ParticipatedVotings.js:42
-#: build/js/my-account/index.js:447
+#: build/js/my-account/index.js:420
 #: build/js/shared/components/Filters.js:100
 #: build/js/voting-archive/App.js:27
 #: build/js/voting-archive/index.js:27
@@ -765,17 +944,17 @@ msgid "Filters"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:29
-#: build/js/my-account/App.js:549
+#: build/js/my-account/App.js:522
 #: build/js/my-account/components/CreatedVotings.js:73
 #: build/js/my-account/components/ParticipatedVotings.js:73
-#: build/js/my-account/index.js:620
+#: build/js/my-account/index.js:602
 #: build/js/shared/components/Filters.js:159
 #: build/js/voting-archive/App.js:47
 #: build/js/voting-archive/index.js:47
-#: build/js/my-account/App.js:399
+#: build/js/my-account/App.js:363
 #: build/js/my-account/components/CreatedVotings.js:44
 #: build/js/my-account/components/ParticipatedVotings.js:44
-#: build/js/my-account/index.js:449
+#: build/js/my-account/index.js:422
 #: build/js/shared/components/Filters.js:102
 #: build/js/voting-archive/App.js:29
 #: build/js/voting-archive/index.js:29
@@ -783,17 +962,17 @@ msgid "Voting status"
 msgstr ""
 
 #: assets/javascript/shared/components/Filters.js:31
-#: build/js/my-account/App.js:556
+#: build/js/my-account/App.js:529
 #: build/js/my-account/components/CreatedVotings.js:80
 #: build/js/my-account/components/ParticipatedVotings.js:80
-#: build/js/my-account/index.js:627
+#: build/js/my-account/index.js:609
 #: build/js/shared/components/Filters.js:166
 #: build/js/voting-archive/App.js:54
 #: build/js/voting-archive/index.js:54
-#: build/js/my-account/App.js:401
+#: build/js/my-account/App.js:365
 #: build/js/my-account/components/CreatedVotings.js:46
 #: build/js/my-account/components/ParticipatedVotings.js:46
-#: build/js/my-account/index.js:451
+#: build/js/my-account/index.js:424
 #: build/js/shared/components/Filters.js:104
 #: build/js/voting-archive/App.js:31
 #: build/js/voting-archive/index.js:31
@@ -801,984 +980,1184 @@ msgid "Does it require login?"
 msgstr ""
 
 #: assets/javascript/shared/components/Modal.js:31
-#: build/js/my-account/App.js:630
+#: build/js/my-account/App.js:603
 #: build/js/my-account/components/EditEmailModal.js:68
 #: build/js/my-account/components/EditNameModal.js:68
 #: build/js/my-account/components/EditPasswordModal.js:68
-#: build/js/my-account/components/UserSettings.js:314
-#: build/js/my-account/index.js:701
+#: build/js/my-account/components/UserSettings.js:299
+#: build/js/my-account/index.js:683
 #: build/js/shared/components/Modal.js:227
 #: build/js/voting-page/App.js:3013
 #: build/js/voting-page/components/Form.js:3013
 #: build/js/voting-page/index.js:3013
 #: build/js/voting-single/App.js:68
+#: build/js/voting-single/components/DeleteVotingModal.js:68
+#: build/js/voting-single/components/EditVotingModal.js:3013
 #: build/js/voting-single/components/SingleVoting.js:68
-#: build/js/voting-single/index.js:68
+#: build/js/voting-single/index.js:3013
 #: build/js/voting-single/pages/Single.js:68
-#: build/js/my-account/App.js:438
+#: build/js/voting-single/VotingAdmin.js:3013
+#: build/js/my-account/App.js:402
 #: build/js/my-account/components/EditEmailModal.js:31
 #: build/js/my-account/components/EditNameModal.js:31
 #: build/js/my-account/components/EditPasswordModal.js:31
-#: build/js/my-account/components/UserSettings.js:225
-#: build/js/my-account/index.js:488
+#: build/js/my-account/components/UserSettings.js:201
+#: build/js/my-account/index.js:461
 #: build/js/shared/components/Modal.js:143
 #: build/js/voting-page/App.js:1967
 #: build/js/voting-page/components/Form.js:1967
 #: build/js/voting-page/index.js:1967
 #: build/js/voting-single/App.js:31
+#: build/js/voting-single/components/DeleteVotingModal.js:31
+#: build/js/voting-single/components/EditVotingModal.js:1967
 #: build/js/voting-single/components/SingleVoting.js:31
-#: build/js/voting-single/index.js:31
+#: build/js/voting-single/index.js:1967
 #: build/js/voting-single/pages/Single.js:31
+#: build/js/voting-single/VotingAdmin.js:1967
 msgid "Close"
 msgstr ""
 
 #: assets/javascript/shared/components/Tabs.js:18
-#: build/js/my-account/App.js:678
-#: build/js/my-account/index.js:749
+#: build/js/my-account/App.js:651
+#: build/js/my-account/index.js:731
 #: build/js/shared/components/Tabs.js:194
 #: build/js/voting-single/App.js:116
-#: build/js/voting-single/index.js:116
+#: build/js/voting-single/index.js:3061
 #: build/js/voting-single/pages/Panel.js:46
-#: build/js/my-account/App.js:464
-#: build/js/my-account/index.js:514
+#: build/js/my-account/App.js:428
+#: build/js/my-account/index.js:487
 #: build/js/shared/components/Tabs.js:129
 #: build/js/voting-single/App.js:57
-#: build/js/voting-single/index.js:57
+#: build/js/voting-single/index.js:1993
 #: build/js/voting-single/pages/Panel.js:18
 msgid "Previous tab"
 msgstr ""
 
 #: assets/javascript/shared/components/Tabs.js:26
-#: build/js/my-account/App.js:696
-#: build/js/my-account/index.js:767
+#: build/js/my-account/App.js:669
+#: build/js/my-account/index.js:749
 #: build/js/shared/components/Tabs.js:212
 #: build/js/voting-single/App.js:134
-#: build/js/voting-single/index.js:134
+#: build/js/voting-single/index.js:3079
 #: build/js/voting-single/pages/Panel.js:64
-#: build/js/my-account/App.js:472
-#: build/js/my-account/index.js:522
+#: build/js/my-account/App.js:436
+#: build/js/my-account/index.js:495
 #: build/js/shared/components/Tabs.js:137
 #: build/js/voting-single/App.js:65
-#: build/js/voting-single/index.js:65
+#: build/js/voting-single/index.js:2001
 #: build/js/voting-single/pages/Panel.js:26
 msgid "Next tab"
 msgstr ""
 
-#: assets/javascript/voting-archive/App.js:60
-#: build/js/voting-archive/App.js:1244
-#: build/js/voting-archive/index.js:230
-#: build/js/voting-archive/App.js:1032
-#: build/js/voting-archive/index.js:148
+#: assets/javascript/voting-archive/App.js:55
+#: build/js/voting-archive/App.js:1253
+#: build/js/voting-archive/index.js:239
+#: build/js/voting-archive/App.js:1043
+#: build/js/voting-archive/index.js:159
 msgid "Search for a voting"
 msgstr ""
 
-#: assets/javascript/voting-archive/App.js:63
-#: assets/javascript/votings-block/App.js:30
-#: build/js/voting-archive/App.js:1251
-#: build/js/voting-archive/index.js:237
-#: build/js/votings-block/App.js:395
-#: build/js/votings-block/index.js:236
-#: build/js/voting-archive/App.js:1035
-#: build/js/voting-archive/index.js:151
-#: build/js/votings-block/App.js:259
-#: build/js/votings-block/index.js:147
+#: assets/javascript/voting-archive/App.js:58
+#: assets/javascript/votings-block/App.js:25
+#: build/js/voting-archive/App.js:1260
+#: build/js/voting-archive/index.js:246
+#: build/js/votings-block/App.js:404
+#: build/js/votings-block/index.js:245
+#: build/js/voting-archive/App.js:1046
+#: build/js/voting-archive/index.js:162
+#: build/js/votings-block/App.js:270
+#: build/js/votings-block/index.js:158
 msgid "Search by..."
 msgstr ""
 
-#: assets/javascript/voting-archive/App.js:65
-#: assets/javascript/votings-block/App.js:32
-#: build/js/voting-archive/App.js:1258
-#: build/js/voting-archive/index.js:244
-#: build/js/votings-block/App.js:403
-#: build/js/votings-block/index.js:244
-#: build/js/voting-archive/App.js:1037
-#: build/js/voting-archive/index.js:153
-#: build/js/votings-block/App.js:261
-#: build/js/votings-block/index.js:149
+#: assets/javascript/voting-archive/App.js:60
+#: assets/javascript/votings-block/App.js:27
+#: build/js/voting-archive/App.js:1267
+#: build/js/voting-archive/index.js:253
+#: build/js/votings-block/App.js:412
+#: build/js/votings-block/index.js:253
+#: build/js/voting-archive/App.js:1048
+#: build/js/voting-archive/index.js:164
+#: build/js/votings-block/App.js:272
+#: build/js/votings-block/index.js:160
 msgid "Search"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:16
-#: build/js/my-account/App.js:882
-#: build/js/my-account/components/CreatedVotings.js:270
-#: build/js/my-account/components/ParticipatedVotings.js:270
-#: build/js/my-account/index.js:953
-#: build/js/voting-archive/App.js:244
-#: build/js/voting-archive/components/VotingCard.js:232
-#: build/js/voting-archive/index.js:358
-#: build/js/votings-block/App.js:149
-#: build/js/votings-block/index.js:149
-#: build/js/my-account/App.js:573
-#: build/js/my-account/components/CreatedVotings.js:148
-#: build/js/my-account/components/ParticipatedVotings.js:148
-#: build/js/my-account/index.js:623
-#: build/js/voting-archive/App.js:133
-#: build/js/voting-archive/components/VotingCard.js:145
-#: build/js/voting-archive/index.js:225
-#: build/js/votings-block/App.js:73
-#: build/js/votings-block/index.js:73
+#: build/js/my-account/App.js:869
+#: build/js/my-account/components/CreatedVotings.js:284
+#: build/js/my-account/components/ParticipatedVotings.js:284
+#: build/js/my-account/index.js:949
+#: build/js/voting-archive/App.js:258
+#: build/js/voting-archive/components/VotingCard.js:236
+#: build/js/voting-archive/index.js:367
+#: build/js/votings-block/App.js:163
+#: build/js/votings-block/index.js:163
+#: build/js/my-account/App.js:553
+#: build/js/my-account/components/CreatedVotings.js:164
+#: build/js/my-account/components/ParticipatedVotings.js:164
+#: build/js/my-account/index.js:612
+#: build/js/voting-archive/App.js:149
+#: build/js/voting-archive/components/VotingCard.js:149
+#: build/js/voting-archive/index.js:236
+#: build/js/votings-block/App.js:89
+#: build/js/votings-block/index.js:89
 msgctxt "voting"
 msgid "Concluded"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:18
-#: build/js/my-account/App.js:884
-#: build/js/my-account/components/CreatedVotings.js:272
-#: build/js/my-account/components/ParticipatedVotings.js:272
-#: build/js/my-account/index.js:955
-#: build/js/voting-archive/App.js:246
-#: build/js/voting-archive/components/VotingCard.js:234
-#: build/js/voting-archive/index.js:360
-#: build/js/votings-block/App.js:151
-#: build/js/votings-block/index.js:151
-#: build/js/my-account/App.js:575
-#: build/js/my-account/components/CreatedVotings.js:150
-#: build/js/my-account/components/ParticipatedVotings.js:150
-#: build/js/my-account/index.js:625
-#: build/js/voting-archive/App.js:135
-#: build/js/voting-archive/components/VotingCard.js:147
-#: build/js/voting-archive/index.js:227
-#: build/js/votings-block/App.js:75
-#: build/js/votings-block/index.js:75
+#: build/js/my-account/App.js:871
+#: build/js/my-account/components/CreatedVotings.js:286
+#: build/js/my-account/components/ParticipatedVotings.js:286
+#: build/js/my-account/index.js:951
+#: build/js/voting-archive/App.js:260
+#: build/js/voting-archive/components/VotingCard.js:238
+#: build/js/voting-archive/index.js:369
+#: build/js/votings-block/App.js:165
+#: build/js/votings-block/index.js:165
+#: build/js/my-account/App.js:555
+#: build/js/my-account/components/CreatedVotings.js:166
+#: build/js/my-account/components/ParticipatedVotings.js:166
+#: build/js/my-account/index.js:614
+#: build/js/voting-archive/App.js:151
+#: build/js/voting-archive/components/VotingCard.js:151
+#: build/js/voting-archive/index.js:238
+#: build/js/votings-block/App.js:91
+#: build/js/votings-block/index.js:91
 msgctxt "voting"
 msgid "Open"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:20
-#: build/js/my-account/App.js:886
-#: build/js/my-account/components/CreatedVotings.js:274
-#: build/js/my-account/components/ParticipatedVotings.js:274
-#: build/js/my-account/index.js:957
-#: build/js/voting-archive/App.js:248
-#: build/js/voting-archive/components/VotingCard.js:236
-#: build/js/voting-archive/index.js:362
-#: build/js/votings-block/App.js:153
-#: build/js/votings-block/index.js:153
-#: build/js/my-account/App.js:577
-#: build/js/my-account/components/CreatedVotings.js:152
-#: build/js/my-account/components/ParticipatedVotings.js:152
-#: build/js/my-account/index.js:627
-#: build/js/voting-archive/App.js:137
-#: build/js/voting-archive/components/VotingCard.js:149
-#: build/js/voting-archive/index.js:229
-#: build/js/votings-block/App.js:77
-#: build/js/votings-block/index.js:77
+#: build/js/my-account/App.js:873
+#: build/js/my-account/components/CreatedVotings.js:288
+#: build/js/my-account/components/ParticipatedVotings.js:288
+#: build/js/my-account/index.js:953
+#: build/js/voting-archive/App.js:262
+#: build/js/voting-archive/components/VotingCard.js:240
+#: build/js/voting-archive/index.js:371
+#: build/js/votings-block/App.js:167
+#: build/js/votings-block/index.js:167
+#: build/js/my-account/App.js:557
+#: build/js/my-account/components/CreatedVotings.js:168
+#: build/js/my-account/components/ParticipatedVotings.js:168
+#: build/js/my-account/index.js:616
+#: build/js/voting-archive/App.js:153
+#: build/js/voting-archive/components/VotingCard.js:153
+#: build/js/voting-archive/index.js:240
+#: build/js/votings-block/App.js:93
+#: build/js/votings-block/index.js:93
 msgctxt "voting"
 msgid "Scheduled"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:27
-#: build/js/my-account/App.js:892
-#: build/js/my-account/components/CreatedVotings.js:280
-#: build/js/my-account/components/ParticipatedVotings.js:280
-#: build/js/my-account/index.js:963
-#: build/js/voting-archive/App.js:254
-#: build/js/voting-archive/components/VotingCard.js:242
-#: build/js/voting-archive/index.js:368
-#: build/js/votings-block/App.js:159
-#: build/js/votings-block/index.js:159
-#: build/js/my-account/App.js:584
-#: build/js/my-account/components/CreatedVotings.js:159
-#: build/js/my-account/components/ParticipatedVotings.js:159
-#: build/js/my-account/index.js:634
-#: build/js/voting-archive/App.js:144
-#: build/js/voting-archive/components/VotingCard.js:156
-#: build/js/voting-archive/index.js:236
-#: build/js/votings-block/App.js:84
-#: build/js/votings-block/index.js:84
+#: build/js/my-account/App.js:879
+#: build/js/my-account/components/CreatedVotings.js:294
+#: build/js/my-account/components/ParticipatedVotings.js:294
+#: build/js/my-account/index.js:959
+#: build/js/voting-archive/App.js:268
+#: build/js/voting-archive/components/VotingCard.js:246
+#: build/js/voting-archive/index.js:377
+#: build/js/votings-block/App.js:173
+#: build/js/votings-block/index.js:173
+#: build/js/my-account/App.js:564
+#: build/js/my-account/components/CreatedVotings.js:175
+#: build/js/my-account/components/ParticipatedVotings.js:175
+#: build/js/my-account/index.js:623
+#: build/js/voting-archive/App.js:160
+#: build/js/voting-archive/components/VotingCard.js:160
+#: build/js/voting-archive/index.js:247
+#: build/js/votings-block/App.js:100
+#: build/js/votings-block/index.js:100
 msgctxt "date"
 msgid "Since %s"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:29
-#: build/js/my-account/App.js:894
-#: build/js/my-account/components/CreatedVotings.js:282
-#: build/js/my-account/components/ParticipatedVotings.js:282
-#: build/js/my-account/index.js:965
-#: build/js/voting-archive/App.js:256
-#: build/js/voting-archive/components/VotingCard.js:244
-#: build/js/voting-archive/index.js:370
-#: build/js/votings-block/App.js:161
-#: build/js/votings-block/index.js:161
-#: build/js/my-account/App.js:586
-#: build/js/my-account/components/CreatedVotings.js:161
-#: build/js/my-account/components/ParticipatedVotings.js:161
-#: build/js/my-account/index.js:636
-#: build/js/voting-archive/App.js:146
-#: build/js/voting-archive/components/VotingCard.js:158
-#: build/js/voting-archive/index.js:238
-#: build/js/votings-block/App.js:86
-#: build/js/votings-block/index.js:86
+#: build/js/my-account/App.js:881
+#: build/js/my-account/components/CreatedVotings.js:296
+#: build/js/my-account/components/ParticipatedVotings.js:296
+#: build/js/my-account/index.js:961
+#: build/js/voting-archive/App.js:270
+#: build/js/voting-archive/components/VotingCard.js:248
+#: build/js/voting-archive/index.js:379
+#: build/js/votings-block/App.js:175
+#: build/js/votings-block/index.js:175
+#: build/js/my-account/App.js:566
+#: build/js/my-account/components/CreatedVotings.js:177
+#: build/js/my-account/components/ParticipatedVotings.js:177
+#: build/js/my-account/index.js:625
+#: build/js/voting-archive/App.js:162
+#: build/js/voting-archive/components/VotingCard.js:162
+#: build/js/voting-archive/index.js:249
+#: build/js/votings-block/App.js:102
+#: build/js/votings-block/index.js:102
 msgctxt "date"
 msgid "Until %s"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:31
-#: build/js/my-account/App.js:896
-#: build/js/my-account/components/CreatedVotings.js:284
-#: build/js/my-account/components/ParticipatedVotings.js:284
-#: build/js/my-account/index.js:967
-#: build/js/voting-archive/App.js:258
-#: build/js/voting-archive/components/VotingCard.js:246
-#: build/js/voting-archive/index.js:372
-#: build/js/votings-block/App.js:163
-#: build/js/votings-block/index.js:163
-#: build/js/my-account/App.js:588
-#: build/js/my-account/components/CreatedVotings.js:163
-#: build/js/my-account/components/ParticipatedVotings.js:163
-#: build/js/my-account/index.js:638
-#: build/js/voting-archive/App.js:148
-#: build/js/voting-archive/components/VotingCard.js:160
-#: build/js/voting-archive/index.js:240
-#: build/js/votings-block/App.js:88
-#: build/js/votings-block/index.js:88
+#: build/js/my-account/App.js:883
+#: build/js/my-account/components/CreatedVotings.js:298
+#: build/js/my-account/components/ParticipatedVotings.js:298
+#: build/js/my-account/index.js:963
+#: build/js/voting-archive/App.js:272
+#: build/js/voting-archive/components/VotingCard.js:250
+#: build/js/voting-archive/index.js:381
+#: build/js/votings-block/App.js:177
+#: build/js/votings-block/index.js:177
+#: build/js/my-account/App.js:568
+#: build/js/my-account/components/CreatedVotings.js:179
+#: build/js/my-account/components/ParticipatedVotings.js:179
+#: build/js/my-account/index.js:627
+#: build/js/voting-archive/App.js:164
+#: build/js/voting-archive/components/VotingCard.js:164
+#: build/js/voting-archive/index.js:251
+#: build/js/votings-block/App.js:104
+#: build/js/votings-block/index.js:104
 msgctxt "date"
 msgid "From %s"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:49
-#: build/js/my-account/App.js:913
-#: build/js/my-account/components/CreatedVotings.js:301
-#: build/js/my-account/components/ParticipatedVotings.js:301
-#: build/js/my-account/index.js:984
-#: build/js/voting-archive/App.js:275
-#: build/js/voting-archive/components/VotingCard.js:263
-#: build/js/voting-archive/index.js:389
-#: build/js/votings-block/App.js:180
-#: build/js/votings-block/index.js:180
-#: build/js/my-account/App.js:606
-#: build/js/my-account/components/CreatedVotings.js:181
-#: build/js/my-account/components/ParticipatedVotings.js:181
-#: build/js/my-account/index.js:656
-#: build/js/voting-archive/App.js:166
-#: build/js/voting-archive/components/VotingCard.js:178
-#: build/js/voting-archive/index.js:258
-#: build/js/votings-block/App.js:106
-#: build/js/votings-block/index.js:106
+#: build/js/my-account/App.js:900
+#: build/js/my-account/components/CreatedVotings.js:315
+#: build/js/my-account/components/ParticipatedVotings.js:315
+#: build/js/my-account/index.js:980
+#: build/js/voting-archive/App.js:289
+#: build/js/voting-archive/components/VotingCard.js:267
+#: build/js/voting-archive/index.js:398
+#: build/js/votings-block/App.js:194
+#: build/js/votings-block/index.js:194
+#: build/js/my-account/App.js:586
+#: build/js/my-account/components/CreatedVotings.js:197
+#: build/js/my-account/components/ParticipatedVotings.js:197
+#: build/js/my-account/index.js:645
+#: build/js/voting-archive/App.js:182
+#: build/js/voting-archive/components/VotingCard.js:182
+#: build/js/voting-archive/index.js:269
+#: build/js/votings-block/App.js:122
+#: build/js/votings-block/index.js:122
 msgid "Login required"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:49
-#: build/js/my-account/App.js:913
-#: build/js/my-account/components/CreatedVotings.js:301
-#: build/js/my-account/components/ParticipatedVotings.js:301
-#: build/js/my-account/index.js:984
-#: build/js/voting-archive/App.js:275
-#: build/js/voting-archive/components/VotingCard.js:263
-#: build/js/voting-archive/index.js:389
-#: build/js/votings-block/App.js:180
-#: build/js/votings-block/index.js:180
-#: build/js/my-account/App.js:606
-#: build/js/my-account/components/CreatedVotings.js:181
-#: build/js/my-account/components/ParticipatedVotings.js:181
-#: build/js/my-account/index.js:656
-#: build/js/voting-archive/App.js:166
-#: build/js/voting-archive/components/VotingCard.js:178
-#: build/js/voting-archive/index.js:258
-#: build/js/votings-block/App.js:106
-#: build/js/votings-block/index.js:106
+#: build/js/my-account/App.js:900
+#: build/js/my-account/components/CreatedVotings.js:315
+#: build/js/my-account/components/ParticipatedVotings.js:315
+#: build/js/my-account/index.js:980
+#: build/js/voting-archive/App.js:289
+#: build/js/voting-archive/components/VotingCard.js:267
+#: build/js/voting-archive/index.js:398
+#: build/js/votings-block/App.js:194
+#: build/js/votings-block/index.js:194
+#: build/js/my-account/App.js:586
+#: build/js/my-account/components/CreatedVotings.js:197
+#: build/js/my-account/components/ParticipatedVotings.js:197
+#: build/js/my-account/index.js:645
+#: build/js/voting-archive/App.js:182
+#: build/js/voting-archive/components/VotingCard.js:182
+#: build/js/voting-archive/index.js:269
+#: build/js/votings-block/App.js:122
+#: build/js/votings-block/index.js:122
 msgid "Login required to see results"
 msgstr ""
 
 #: assets/javascript/voting-archive/components/VotingCard.js:49
-#: build/js/my-account/App.js:913
-#: build/js/my-account/components/CreatedVotings.js:301
-#: build/js/my-account/components/ParticipatedVotings.js:301
-#: build/js/my-account/index.js:984
-#: build/js/voting-archive/App.js:275
-#: build/js/voting-archive/components/VotingCard.js:263
-#: build/js/voting-archive/index.js:389
-#: build/js/votings-block/App.js:180
-#: build/js/votings-block/index.js:180
-#: build/js/my-account/App.js:606
-#: build/js/my-account/components/CreatedVotings.js:181
-#: build/js/my-account/components/ParticipatedVotings.js:181
-#: build/js/my-account/index.js:656
-#: build/js/voting-archive/App.js:166
-#: build/js/voting-archive/components/VotingCard.js:178
-#: build/js/voting-archive/index.js:258
-#: build/js/votings-block/App.js:106
-#: build/js/votings-block/index.js:106
+#: build/js/my-account/App.js:900
+#: build/js/my-account/components/CreatedVotings.js:315
+#: build/js/my-account/components/ParticipatedVotings.js:315
+#: build/js/my-account/index.js:980
+#: build/js/voting-archive/App.js:289
+#: build/js/voting-archive/components/VotingCard.js:267
+#: build/js/voting-archive/index.js:398
+#: build/js/votings-block/App.js:194
+#: build/js/votings-block/index.js:194
+#: build/js/my-account/App.js:586
+#: build/js/my-account/components/CreatedVotings.js:197
+#: build/js/my-account/components/ParticipatedVotings.js:197
+#: build/js/my-account/index.js:645
+#: build/js/voting-archive/App.js:182
+#: build/js/voting-archive/components/VotingCard.js:182
+#: build/js/voting-archive/index.js:269
+#: build/js/votings-block/App.js:122
+#: build/js/votings-block/index.js:122
 msgid "No login"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:38
-#: build/js/voting-page/App.js:3128
-#: build/js/voting-page/components/Form.js:17338
-#: build/js/voting-page/index.js:3150
-#: build/js/voting-page/App.js:2040
-#: build/js/voting-page/components/Form.js:13070
-#: build/js/voting-page/index.js:2052
-msgid "Public voting"
-msgstr ""
-
 #: assets/javascript/voting-page/components/Form.js:39
-#: build/js/voting-page/App.js:3129
-#: build/js/voting-page/components/Form.js:17339
-#: build/js/voting-page/index.js:3151
-#: build/js/voting-page/App.js:2041
-#: build/js/voting-page/components/Form.js:13071
-#: build/js/voting-page/index.js:2053
-msgid "Private voting"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:46
-#: build/js/voting-page/App.js:3134
-#: build/js/voting-page/components/Form.js:17344
-#: build/js/voting-page/index.js:3156
-#: build/js/voting-page/App.js:2048
-#: build/js/voting-page/components/Form.js:13078
-#: build/js/voting-page/index.js:2060
-msgid "The number of voters must be greater than zero"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:51
-#: build/js/voting-page/App.js:3138
-#: build/js/voting-page/components/Form.js:17348
-#: build/js/voting-page/index.js:3160
-#: build/js/voting-page/App.js:2053
-#: build/js/voting-page/components/Form.js:13083
-#: build/js/voting-page/index.js:2065
-msgid "The number of credits must be greater than zero"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:56
-#: build/js/voting-page/App.js:3142
-#: build/js/voting-page/components/Form.js:17352
-#: build/js/voting-page/index.js:3164
-#: build/js/voting-page/App.js:2058
-#: build/js/voting-page/components/Form.js:13088
-#: build/js/voting-page/index.js:2070
-msgid "Check empty fields"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:61
-#: build/js/voting-page/App.js:3146
-#: build/js/voting-page/components/Form.js:17356
-#: build/js/voting-page/index.js:3168
-#: build/js/voting-page/App.js:2063
-#: build/js/voting-page/components/Form.js:13093
-#: build/js/voting-page/index.js:2075
-msgid "Check start and end date"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:101
-#: build/js/voting-page/App.js:3180
-#: build/js/voting-page/components/Form.js:17390
-#: build/js/voting-page/index.js:3202
-#: build/js/voting-page/App.js:2103
-#: build/js/voting-page/components/Form.js:13133
-#: build/js/voting-page/index.js:2115
-msgid "Type of the voting"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:108
-#: build/js/voting-page/App.js:3187
-#: build/js/voting-page/components/Form.js:17397
-#: build/js/voting-page/index.js:3209
-#: build/js/voting-page/App.js:2110
-#: build/js/voting-page/components/Form.js:13140
-#: build/js/voting-page/index.js:2122
-msgid "General voting settings"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:109
-#: build/js/voting-page/App.js:3187
-#: build/js/voting-page/components/Form.js:17397
-#: build/js/voting-page/index.js:3209
-#: build/js/voting-page/App.js:2111
-#: build/js/voting-page/components/Form.js:13141
-#: build/js/voting-page/index.js:2123
-msgid "Enter the name, description, number of voters, credits and tags for the poll"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:112
-#: build/js/voting-page/App.js:3188
-#: build/js/voting-page/components/Form.js:17398
-#: build/js/voting-page/index.js:3210
-#: build/js/voting-page/App.js:2114
-#: build/js/voting-page/components/Form.js:13144
-#: build/js/voting-page/index.js:2126
-msgid "Request login to vote"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:117
-#: build/js/voting-page/App.js:3192
-#: build/js/voting-page/components/Form.js:17402
-#: build/js/voting-page/index.js:3214
-#: build/js/voting-page/App.js:2119
-#: build/js/voting-page/components/Form.js:13149
-#: build/js/voting-page/index.js:2131
-msgid "Voting name"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:119
-#: build/js/voting-page/App.js:3194
-#: build/js/voting-page/components/Form.js:17404
-#: build/js/voting-page/index.js:3216
-#: build/js/voting-page/App.js:2121
-#: build/js/voting-page/components/Form.js:13151
-#: build/js/voting-page/index.js:2133
-msgid "Give the voting a name"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:123
-#: build/js/voting-page/App.js:3197
-#: build/js/voting-page/components/Form.js:17407
-#: build/js/voting-page/index.js:3219
-#: build/js/voting-page/App.js:2125
-#: build/js/voting-page/components/Form.js:13155
-#: build/js/voting-page/index.js:2137
-msgid "Voting description"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:125
-#: build/js/voting-page/App.js:3199
-#: build/js/voting-page/components/Form.js:17409
-#: build/js/voting-page/index.js:3221
-#: build/js/voting-page/App.js:2127
-#: build/js/voting-page/components/Form.js:13157
-#: build/js/voting-page/index.js:2139
-msgid "Describe voting details"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:129
-#: build/js/voting-page/App.js:3202
-#: build/js/voting-page/components/Form.js:17412
-#: build/js/voting-page/index.js:3224
-#: build/js/voting-page/App.js:2131
-#: build/js/voting-page/components/Form.js:13161
-#: build/js/voting-page/index.js:2143
-msgid "Number of voters"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:131
-#: build/js/voting-page/App.js:3204
-#: build/js/voting-page/components/Form.js:17414
-#: build/js/voting-page/index.js:3226
-#: build/js/voting-page/App.js:2133
-#: build/js/voting-page/components/Form.js:13163
-#: build/js/voting-page/index.js:2145
-msgid "How many voting links would you like to generate?"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:135
-#: build/js/voting-page/App.js:3207
-#: build/js/voting-page/components/Form.js:17417
-#: build/js/voting-page/index.js:3229
-#: build/js/voting-page/App.js:2137
-#: build/js/voting-page/components/Form.js:13167
-#: build/js/voting-page/index.js:2149
-msgid "Voting credits per voter"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:137
 #: build/js/voting-page/App.js:3209
 #: build/js/voting-page/components/Form.js:17419
 #: build/js/voting-page/index.js:3231
-#: build/js/voting-page/App.js:2139
-#: build/js/voting-page/components/Form.js:13169
-#: build/js/voting-page/index.js:2151
-msgid "How many votes will each voter receive?"
+#: build/js/voting-page/App.js:2096
+#: build/js/voting-page/components/Form.js:13126
+#: build/js/voting-page/index.js:2108
+msgid "Public voting"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:143
-#: build/js/voting-page/App.js:3214
-#: build/js/voting-page/components/Form.js:17424
-#: build/js/voting-page/index.js:3236
-#: build/js/voting-page/App.js:2145
-#: build/js/voting-page/components/Form.js:13175
-#: build/js/voting-page/index.js:2157
-msgid "Add comma-separated tags"
+#: assets/javascript/voting-page/components/Form.js:40
+#: build/js/voting-page/App.js:3210
+#: build/js/voting-page/components/Form.js:17420
+#: build/js/voting-page/index.js:3232
+#: build/js/voting-page/App.js:2097
+#: build/js/voting-page/components/Form.js:13127
+#: build/js/voting-page/index.js:2109
+msgid "Private voting"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:147
-#: build/js/voting-page/App.js:3217
-#: build/js/voting-page/components/Form.js:17427
-#: build/js/voting-page/index.js:3239
-#: build/js/voting-page/App.js:2149
-#: build/js/voting-page/components/Form.js:13179
-#: build/js/voting-page/index.js:2161
-msgid "Duration of the voting"
+#: assets/javascript/voting-page/components/Form.js:47
+#: build/js/voting-page/App.js:3215
+#: build/js/voting-page/components/Form.js:17425
+#: build/js/voting-page/index.js:3237
+#: build/js/voting-page/App.js:2104
+#: build/js/voting-page/components/Form.js:13134
+#: build/js/voting-page/index.js:2116
+msgid "The number of voters must be greater than zero"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:148
-#: build/js/voting-page/App.js:3218
-#: build/js/voting-page/components/Form.js:17428
-#: build/js/voting-page/index.js:3240
+#: assets/javascript/voting-page/components/Form.js:52
+#: build/js/voting-page/App.js:3219
+#: build/js/voting-page/components/Form.js:17429
+#: build/js/voting-page/index.js:3241
+#: build/js/voting-page/App.js:2109
+#: build/js/voting-page/components/Form.js:13139
+#: build/js/voting-page/index.js:2121
+msgid "The number of credits must be greater than zero"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:57
+#: build/js/voting-page/App.js:3223
+#: build/js/voting-page/components/Form.js:17433
+#: build/js/voting-page/index.js:3245
+#: build/js/voting-page/App.js:2114
+#: build/js/voting-page/components/Form.js:13144
+#: build/js/voting-page/index.js:2126
+msgid "Check empty fields"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:62
+#: build/js/voting-page/App.js:3227
+#: build/js/voting-page/components/Form.js:17437
+#: build/js/voting-page/index.js:3249
+#: build/js/voting-page/App.js:2119
+#: build/js/voting-page/components/Form.js:13149
+#: build/js/voting-page/index.js:2131
+msgid "Check start and end date"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:93
+#: build/js/voting-page/App.js:3254
+#: build/js/voting-page/components/Form.js:17464
+#: build/js/voting-page/index.js:3276
 #: build/js/voting-page/App.js:2150
 #: build/js/voting-page/components/Form.js:13180
 #: build/js/voting-page/index.js:2162
-msgid "Once the voting period has started, the vote cannot be deleted. You can change the duration of the poll later"
+msgid "Type of the voting"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:152
-#: build/js/voting-page/App.js:3221
-#: build/js/voting-page/components/Form.js:17431
-#: build/js/voting-page/index.js:3243
-#: build/js/voting-page/App.js:2154
-#: build/js/voting-page/components/Form.js:13184
-#: build/js/voting-page/index.js:2166
-msgid "Options of the voting"
+#: assets/javascript/voting-page/components/Form.js:100
+#: build/js/voting-page/App.js:3261
+#: build/js/voting-page/components/Form.js:17471
+#: build/js/voting-page/index.js:3283
+#: build/js/voting-page/App.js:2157
+#: build/js/voting-page/components/Form.js:13187
+#: build/js/voting-page/index.js:2169
+msgid "General voting settings"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:153
-#: build/js/voting-page/App.js:3222
-#: build/js/voting-page/components/Form.js:17432
-#: build/js/voting-page/index.js:3244
-#: build/js/voting-page/App.js:2155
-#: build/js/voting-page/components/Form.js:13185
-#: build/js/voting-page/index.js:2167
-msgid "Enter your poll options (add at least 2 options to advance)"
+#: assets/javascript/voting-page/components/Form.js:101
+#: build/js/voting-page/App.js:3261
+#: build/js/voting-page/components/Form.js:17471
+#: build/js/voting-page/index.js:3283
+#: build/js/voting-page/App.js:2158
+#: build/js/voting-page/components/Form.js:13188
+#: build/js/voting-page/index.js:2170
+msgid "Enter the name, description, number of voters, credits and tags for the poll"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:161
-#: build/js/voting-page/App.js:3229
-#: build/js/voting-page/components/Form.js:17439
-#: build/js/voting-page/index.js:3251
-#: build/js/voting-page/App.js:2163
-#: build/js/voting-page/components/Form.js:13193
-#: build/js/voting-page/index.js:2175
-msgid "Submit vote"
+#: assets/javascript/voting-page/components/Form.js:104
+#: build/js/voting-page/App.js:3262
+#: build/js/voting-page/components/Form.js:17472
+#: build/js/voting-page/index.js:3284
+#: build/js/voting-page/App.js:2161
+#: build/js/voting-page/components/Form.js:13191
+#: build/js/voting-page/index.js:2173
+msgid "Request login to vote"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:162
-#: build/js/voting-page/App.js:3232
-#: build/js/voting-page/components/Form.js:17442
-#: build/js/voting-page/index.js:3254
-#: build/js/voting-page/App.js:2164
-#: build/js/voting-page/components/Form.js:13194
-#: build/js/voting-page/index.js:2176
-msgid "Add at least two votes"
+#: assets/javascript/voting-page/components/Form.js:109
+#: build/js/voting-page/App.js:3266
+#: build/js/voting-page/components/Form.js:17476
+#: build/js/voting-page/index.js:3288
+#: build/js/voting-page/App.js:2166
+#: build/js/voting-page/components/Form.js:13196
+#: build/js/voting-page/index.js:2178
+msgid "Voting name"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:166
-#: build/js/voting-page/App.js:3234
-#: build/js/voting-page/components/Form.js:17444
-#: build/js/voting-page/index.js:3256
+#: assets/javascript/voting-page/components/Form.js:111
+#: build/js/voting-page/App.js:3268
+#: build/js/voting-page/components/Form.js:17478
+#: build/js/voting-page/index.js:3290
 #: build/js/voting-page/App.js:2168
 #: build/js/voting-page/components/Form.js:13198
 #: build/js/voting-page/index.js:2180
-msgid "Confirm voting creation"
+msgid "Give the voting a name"
 msgstr ""
 
-#: assets/javascript/voting-page/components/Form.js:167
-#: build/js/voting-page/App.js:3236
-#: build/js/voting-page/components/Form.js:17446
-#: build/js/voting-page/index.js:3258
-#: build/js/voting-page/App.js:2169
-#: build/js/voting-page/components/Form.js:13199
-#: build/js/voting-page/index.js:2181
-msgid "After creation the voting, you can <strong>only</strong> change its <strong>start</strong> and <strong>end dates</strong>."
-msgstr ""
-
-#: assets/javascript/voting-page/components/Form.js:170
-#: assets/javascript/voting-single/components/SingleView.js:28
-#: build/js/voting-page/App.js:3248
-#: build/js/voting-page/components/Form.js:17458
-#: build/js/voting-page/index.js:3270
-#: build/js/voting-single/App.js:472
-#: build/js/voting-single/components/SingleView.js:271
-#: build/js/voting-single/index.js:505
-#: build/js/voting-single/pages/Single.js:268
+#: assets/javascript/voting-page/components/Form.js:115
+#: build/js/voting-page/App.js:3271
+#: build/js/voting-page/components/Form.js:17481
+#: build/js/voting-page/index.js:3293
 #: build/js/voting-page/App.js:2172
 #: build/js/voting-page/components/Form.js:13202
 #: build/js/voting-page/index.js:2184
-#: build/js/voting-single/App.js:290
+msgid "Voting description"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:117
+#: build/js/voting-page/App.js:3273
+#: build/js/voting-page/components/Form.js:17483
+#: build/js/voting-page/index.js:3295
+#: build/js/voting-page/App.js:2174
+#: build/js/voting-page/components/Form.js:13204
+#: build/js/voting-page/index.js:2186
+msgid "Describe voting details"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:121
+#: build/js/voting-page/App.js:3276
+#: build/js/voting-page/components/Form.js:17486
+#: build/js/voting-page/index.js:3298
+#: build/js/voting-page/App.js:2178
+#: build/js/voting-page/components/Form.js:13208
+#: build/js/voting-page/index.js:2190
+msgid "Number of voters"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:123
+#: build/js/voting-page/App.js:3278
+#: build/js/voting-page/components/Form.js:17488
+#: build/js/voting-page/index.js:3300
+#: build/js/voting-page/App.js:2180
+#: build/js/voting-page/components/Form.js:13210
+#: build/js/voting-page/index.js:2192
+msgid "How many voting links would you like to generate?"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:127
+#: build/js/voting-page/App.js:3281
+#: build/js/voting-page/components/Form.js:17491
+#: build/js/voting-page/index.js:3303
+#: build/js/voting-page/App.js:2184
+#: build/js/voting-page/components/Form.js:13214
+#: build/js/voting-page/index.js:2196
+msgid "Voting credits per voter"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:129
+#: build/js/voting-page/App.js:3283
+#: build/js/voting-page/components/Form.js:17493
+#: build/js/voting-page/index.js:3305
+#: build/js/voting-page/App.js:2186
+#: build/js/voting-page/components/Form.js:13216
+#: build/js/voting-page/index.js:2198
+msgid "How many votes will each voter receive?"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:135
+#: build/js/voting-page/App.js:3288
+#: build/js/voting-page/components/Form.js:17498
+#: build/js/voting-page/index.js:3310
+#: build/js/voting-page/App.js:2192
+#: build/js/voting-page/components/Form.js:13222
+#: build/js/voting-page/index.js:2204
+msgid "Add comma-separated tags"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:139
+#: build/js/voting-page/App.js:3291
+#: build/js/voting-page/components/Form.js:17501
+#: build/js/voting-page/index.js:3313
+#: build/js/voting-page/App.js:2196
+#: build/js/voting-page/components/Form.js:13226
+#: build/js/voting-page/index.js:2208
+msgid "Duration of the voting"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:140
+#: build/js/voting-page/App.js:3292
+#: build/js/voting-page/components/Form.js:17502
+#: build/js/voting-page/index.js:3314
+#: build/js/voting-page/App.js:2197
+#: build/js/voting-page/components/Form.js:13227
+#: build/js/voting-page/index.js:2209
+msgid "Once the voting period has started, the vote cannot be deleted. You can change the duration of the poll later"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:144
+#: build/js/voting-page/App.js:3295
+#: build/js/voting-page/components/Form.js:17505
+#: build/js/voting-page/index.js:3317
+#: build/js/voting-page/App.js:2201
+#: build/js/voting-page/components/Form.js:13231
+#: build/js/voting-page/index.js:2213
+msgid "Options of the voting"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:145
+#: build/js/voting-page/App.js:3296
+#: build/js/voting-page/components/Form.js:17506
+#: build/js/voting-page/index.js:3318
+#: build/js/voting-page/App.js:2202
+#: build/js/voting-page/components/Form.js:13232
+#: build/js/voting-page/index.js:2214
+msgid "Enter your poll options (add at least 2 options to advance)"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:153
+#: build/js/voting-page/App.js:3303
+#: build/js/voting-page/components/Form.js:17513
+#: build/js/voting-page/index.js:3325
+#: build/js/voting-page/App.js:2210
+#: build/js/voting-page/components/Form.js:13240
+#: build/js/voting-page/index.js:2222
+msgid "Submit vote"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:154
+#: build/js/voting-page/App.js:3306
+#: build/js/voting-page/components/Form.js:17516
+#: build/js/voting-page/index.js:3328
+#: build/js/voting-page/App.js:2211
+#: build/js/voting-page/components/Form.js:13241
+#: build/js/voting-page/index.js:2223
+msgid "Add at least two votes"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:158
+#: build/js/voting-page/App.js:3308
+#: build/js/voting-page/components/Form.js:17518
+#: build/js/voting-page/index.js:3330
+#: build/js/voting-page/App.js:2215
+#: build/js/voting-page/components/Form.js:13245
+#: build/js/voting-page/index.js:2227
+msgid "Confirm voting creation"
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:159
+#: build/js/voting-page/App.js:3310
+#: build/js/voting-page/components/Form.js:17520
+#: build/js/voting-page/index.js:3332
+#: build/js/voting-page/App.js:2216
+#: build/js/voting-page/components/Form.js:13246
+#: build/js/voting-page/index.js:2228
+msgid "After creation the voting, you can <strong>only</strong> change its <strong>start</strong> and <strong>end dates</strong>."
+msgstr ""
+
+#: assets/javascript/voting-page/components/Form.js:162
+#: assets/javascript/voting-single/components/SingleView.js:28
+#: build/js/voting-page/App.js:3322
+#: build/js/voting-page/components/Form.js:17532
+#: build/js/voting-page/index.js:3344
+#: build/js/voting-single/App.js:535
+#: build/js/voting-single/components/SingleView.js:272
+#: build/js/voting-single/index.js:3721
+#: build/js/voting-single/pages/Single.js:348
+#: build/js/voting-page/App.js:2219
+#: build/js/voting-page/components/Form.js:13249
+#: build/js/voting-page/index.js:2231
+#: build/js/voting-single/App.js:317
 #: build/js/voting-single/components/SingleView.js:184
-#: build/js/voting-single/index.js:306
-#: build/js/voting-single/pages/Single.js:165
+#: build/js/voting-single/index.js:2400
+#: build/js/voting-single/pages/Single.js:220
 msgid "Back"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:85
-#: build/js/voting-page/App.js:3382
-#: build/js/voting-page/components/Form.js:3202
+#: build/js/voting-page/App.js:3456
+#: build/js/voting-page/components/Form.js:3281
 #: build/js/voting-page/components/Options.js:257
-#: build/js/voting-page/index.js:3404
-#: build/js/voting-page/App.js:2282
-#: build/js/voting-page/components/Form.js:2104
+#: build/js/voting-page/index.js:3478
+#: build/js/voting-page/App.js:2329
+#: build/js/voting-page/components/Form.js:2159
 #: build/js/voting-page/components/Options.js:197
-#: build/js/voting-page/index.js:2294
+#: build/js/voting-page/index.js:2341
 msgid "Edit"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:89
 #: assets/javascript/voting-page/components/Options.js:101
-#: build/js/voting-page/App.js:3386
-#: build/js/voting-page/App.js:3392
-#: build/js/voting-page/components/Form.js:3206
-#: build/js/voting-page/components/Form.js:3212
+#: build/js/voting-page/App.js:3460
+#: build/js/voting-page/App.js:3466
+#: build/js/voting-page/components/Form.js:3285
+#: build/js/voting-page/components/Form.js:3291
 #: build/js/voting-page/components/Options.js:261
 #: build/js/voting-page/components/Options.js:267
-#: build/js/voting-page/index.js:3408
-#: build/js/voting-page/index.js:3414
-#: build/js/voting-page/App.js:2286
-#: build/js/voting-page/App.js:2298
-#: build/js/voting-page/components/Form.js:2108
-#: build/js/voting-page/components/Form.js:2120
+#: build/js/voting-page/index.js:3482
+#: build/js/voting-page/index.js:3488
+#: build/js/voting-page/App.js:2333
+#: build/js/voting-page/App.js:2345
+#: build/js/voting-page/components/Form.js:2163
+#: build/js/voting-page/components/Form.js:2175
 #: build/js/voting-page/components/Options.js:201
 #: build/js/voting-page/components/Options.js:213
-#: build/js/voting-page/index.js:2298
-#: build/js/voting-page/index.js:2310
+#: build/js/voting-page/index.js:2345
+#: build/js/voting-page/index.js:2357
 msgid "Delete"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:101
 #: assets/javascript/voting-page/components/Options.js:102
-#: build/js/voting-page/App.js:3388
-#: build/js/voting-page/App.js:3392
-#: build/js/voting-page/components/Form.js:3208
-#: build/js/voting-page/components/Form.js:3212
+#: build/js/voting-page/App.js:3462
+#: build/js/voting-page/App.js:3466
+#: build/js/voting-page/components/Form.js:3287
+#: build/js/voting-page/components/Form.js:3291
 #: build/js/voting-page/components/Options.js:263
 #: build/js/voting-page/components/Options.js:267
-#: build/js/voting-page/index.js:3410
-#: build/js/voting-page/index.js:3414
-#: build/js/voting-page/App.js:2298
-#: build/js/voting-page/App.js:2299
-#: build/js/voting-page/components/Form.js:2120
-#: build/js/voting-page/components/Form.js:2121
+#: build/js/voting-page/index.js:3484
+#: build/js/voting-page/index.js:3488
+#: build/js/voting-page/App.js:2345
+#: build/js/voting-page/App.js:2346
+#: build/js/voting-page/components/Form.js:2175
+#: build/js/voting-page/components/Form.js:2176
 #: build/js/voting-page/components/Options.js:213
 #: build/js/voting-page/components/Options.js:214
-#: build/js/voting-page/index.js:2310
-#: build/js/voting-page/index.js:2311
+#: build/js/voting-page/index.js:2357
+#: build/js/voting-page/index.js:2358
 msgid "Option %s"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:107
-#: build/js/voting-page/App.js:3394
-#: build/js/voting-page/components/Form.js:3214
+#: build/js/voting-page/App.js:3468
+#: build/js/voting-page/components/Form.js:3293
 #: build/js/voting-page/components/Options.js:269
-#: build/js/voting-page/index.js:3416
-#: build/js/voting-page/App.js:2304
-#: build/js/voting-page/components/Form.js:2126
+#: build/js/voting-page/index.js:3490
+#: build/js/voting-page/App.js:2351
+#: build/js/voting-page/components/Form.js:2181
 #: build/js/voting-page/components/Options.js:219
-#: build/js/voting-page/index.js:2316
+#: build/js/voting-page/index.js:2363
 msgid "Title of the option"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:115
-#: build/js/voting-page/App.js:3398
-#: build/js/voting-page/components/Form.js:3218
+#: build/js/voting-page/App.js:3472
+#: build/js/voting-page/components/Form.js:3297
 #: build/js/voting-page/components/Options.js:273
-#: build/js/voting-page/index.js:3420
-#: build/js/voting-page/App.js:2312
-#: build/js/voting-page/components/Form.js:2134
+#: build/js/voting-page/index.js:3494
+#: build/js/voting-page/App.js:2359
+#: build/js/voting-page/components/Form.js:2189
 #: build/js/voting-page/components/Options.js:227
-#: build/js/voting-page/index.js:2324
+#: build/js/voting-page/index.js:2371
 msgid "Description of the option %s"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:118
-#: build/js/voting-page/App.js:3400
-#: build/js/voting-page/components/Form.js:3220
+#: build/js/voting-page/App.js:3474
+#: build/js/voting-page/components/Form.js:3299
 #: build/js/voting-page/components/Options.js:275
-#: build/js/voting-page/index.js:3422
-#: build/js/voting-page/App.js:2315
-#: build/js/voting-page/components/Form.js:2137
+#: build/js/voting-page/index.js:3496
+#: build/js/voting-page/App.js:2362
+#: build/js/voting-page/components/Form.js:2192
 #: build/js/voting-page/components/Options.js:230
-#: build/js/voting-page/index.js:2327
+#: build/js/voting-page/index.js:2374
 msgid "Description of the option"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:126
-#: build/js/voting-page/App.js:3404
-#: build/js/voting-page/components/Form.js:3224
+#: build/js/voting-page/App.js:3478
+#: build/js/voting-page/components/Form.js:3303
 #: build/js/voting-page/components/Options.js:279
-#: build/js/voting-page/index.js:3426
-#: build/js/voting-page/App.js:2323
-#: build/js/voting-page/components/Form.js:2145
+#: build/js/voting-page/index.js:3500
+#: build/js/voting-page/App.js:2370
+#: build/js/voting-page/components/Form.js:2200
 #: build/js/voting-page/components/Options.js:238
-#: build/js/voting-page/index.js:2335
+#: build/js/voting-page/index.js:2382
 msgid "Link of the option %s"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:141
-#: build/js/voting-page/App.js:3415
-#: build/js/voting-page/components/Form.js:3235
+#: build/js/voting-page/App.js:3489
+#: build/js/voting-page/components/Form.js:3314
 #: build/js/voting-page/components/Options.js:290
-#: build/js/voting-page/index.js:3437
-#: build/js/voting-page/App.js:2338
-#: build/js/voting-page/components/Form.js:2160
+#: build/js/voting-page/index.js:3511
+#: build/js/voting-page/App.js:2385
+#: build/js/voting-page/components/Form.js:2215
 #: build/js/voting-page/components/Options.js:253
-#: build/js/voting-page/index.js:2350
+#: build/js/voting-page/index.js:2397
 msgid "Add option"
 msgstr ""
 
 #: assets/javascript/voting-page/components/StartEnd.js:34
 #: assets/javascript/voting-page/components/StartEnd.js:61
-#: build/js/voting-page/App.js:3508
-#: build/js/voting-page/App.js:3532
-#: build/js/voting-page/components/Form.js:3328
-#: build/js/voting-page/components/Form.js:3352
+#: build/js/voting-page/App.js:3582
+#: build/js/voting-page/App.js:3606
+#: build/js/voting-page/components/Form.js:3407
+#: build/js/voting-page/components/Form.js:3431
 #: build/js/voting-page/components/StartEnd.js:16845
 #: build/js/voting-page/components/StartEnd.js:16869
-#: build/js/voting-page/index.js:3530
-#: build/js/voting-page/index.js:3554
-#: build/js/voting-page/App.js:2409
-#: build/js/voting-page/App.js:2436
-#: build/js/voting-page/components/Form.js:2231
-#: build/js/voting-page/components/Form.js:2258
+#: build/js/voting-page/index.js:3604
+#: build/js/voting-page/index.js:3628
+#: build/js/voting-page/App.js:2456
+#: build/js/voting-page/App.js:2483
+#: build/js/voting-page/components/Form.js:2286
+#: build/js/voting-page/components/Form.js:2313
 #: build/js/voting-page/components/StartEnd.js:12685
 #: build/js/voting-page/components/StartEnd.js:12712
-#: build/js/voting-page/index.js:2421
-#: build/js/voting-page/index.js:2448
+#: build/js/voting-page/index.js:2468
+#: build/js/voting-page/index.js:2495
 msgid "MM/dd/yyyy"
 msgstr ""
 
 #: assets/javascript/voting-page/components/StartEnd.js:40
 #: assets/javascript/voting-page/components/StartEnd.js:67
-#: build/js/voting-page/App.js:3514
-#: build/js/voting-page/App.js:3538
-#: build/js/voting-page/components/Form.js:3334
-#: build/js/voting-page/components/Form.js:3358
+#: build/js/voting-page/App.js:3588
+#: build/js/voting-page/App.js:3612
+#: build/js/voting-page/components/Form.js:3413
+#: build/js/voting-page/components/Form.js:3437
 #: build/js/voting-page/components/StartEnd.js:16851
 #: build/js/voting-page/components/StartEnd.js:16875
-#: build/js/voting-page/index.js:3536
-#: build/js/voting-page/index.js:3560
-#: build/js/voting-page/App.js:2415
-#: build/js/voting-page/App.js:2442
-#: build/js/voting-page/components/Form.js:2237
-#: build/js/voting-page/components/Form.js:2264
+#: build/js/voting-page/index.js:3610
+#: build/js/voting-page/index.js:3634
+#: build/js/voting-page/App.js:2462
+#: build/js/voting-page/App.js:2489
+#: build/js/voting-page/components/Form.js:2292
+#: build/js/voting-page/components/Form.js:2319
 #: build/js/voting-page/components/StartEnd.js:12691
 #: build/js/voting-page/components/StartEnd.js:12718
-#: build/js/voting-page/index.js:2427
-#: build/js/voting-page/index.js:2454
+#: build/js/voting-page/index.js:2474
+#: build/js/voting-page/index.js:2501
 msgctxt "hour"
 msgid "at"
 msgstr ""
 
 #: assets/javascript/voting-page/components/StartEnd.js:49
 #: assets/javascript/voting-page/components/StartEnd.js:76
-#: build/js/voting-page/App.js:3521
-#: build/js/voting-page/App.js:3545
-#: build/js/voting-page/components/Form.js:3341
-#: build/js/voting-page/components/Form.js:3365
+#: build/js/voting-page/App.js:3595
+#: build/js/voting-page/App.js:3619
+#: build/js/voting-page/components/Form.js:3420
+#: build/js/voting-page/components/Form.js:3444
 #: build/js/voting-page/components/StartEnd.js:16858
 #: build/js/voting-page/components/StartEnd.js:16882
-#: build/js/voting-page/index.js:3543
-#: build/js/voting-page/index.js:3567
-#: build/js/voting-page/App.js:2424
-#: build/js/voting-page/App.js:2451
-#: build/js/voting-page/components/Form.js:2246
-#: build/js/voting-page/components/Form.js:2273
+#: build/js/voting-page/index.js:3617
+#: build/js/voting-page/index.js:3641
+#: build/js/voting-page/App.js:2471
+#: build/js/voting-page/App.js:2498
+#: build/js/voting-page/components/Form.js:2301
+#: build/js/voting-page/components/Form.js:2328
 #: build/js/voting-page/components/StartEnd.js:12700
 #: build/js/voting-page/components/StartEnd.js:12727
-#: build/js/voting-page/index.js:2436
-#: build/js/voting-page/index.js:2463
+#: build/js/voting-page/index.js:2483
+#: build/js/voting-page/index.js:2510
 msgctxt "hour"
 msgid "Time"
 msgstr ""
 
 #: assets/javascript/voting-page/components/StartEnd.js:50
 #: assets/javascript/voting-page/components/StartEnd.js:77
-#: build/js/voting-page/App.js:3522
-#: build/js/voting-page/App.js:3546
-#: build/js/voting-page/components/Form.js:3342
-#: build/js/voting-page/components/Form.js:3366
+#: build/js/voting-page/App.js:3596
+#: build/js/voting-page/App.js:3620
+#: build/js/voting-page/components/Form.js:3421
+#: build/js/voting-page/components/Form.js:3445
 #: build/js/voting-page/components/StartEnd.js:16859
 #: build/js/voting-page/components/StartEnd.js:16883
-#: build/js/voting-page/index.js:3544
-#: build/js/voting-page/index.js:3568
-#: build/js/voting-page/App.js:2425
-#: build/js/voting-page/App.js:2452
-#: build/js/voting-page/components/Form.js:2247
-#: build/js/voting-page/components/Form.js:2274
+#: build/js/voting-page/index.js:3618
+#: build/js/voting-page/index.js:3642
+#: build/js/voting-page/App.js:2472
+#: build/js/voting-page/App.js:2499
+#: build/js/voting-page/components/Form.js:2302
+#: build/js/voting-page/components/Form.js:2329
 #: build/js/voting-page/components/StartEnd.js:12701
 #: build/js/voting-page/components/StartEnd.js:12728
-#: build/js/voting-page/index.js:2437
-#: build/js/voting-page/index.js:2464
+#: build/js/voting-page/index.js:2484
+#: build/js/voting-page/index.js:2511
 msgid "hh:mm aa"
 msgstr ""
 
-#: assets/javascript/voting-single/components/MyVotes.js:49
-#: build/js/voting-single/App.js:337
-#: build/js/voting-single/components/MyVotes.js:422
-#: build/js/voting-single/index.js:370
-#: build/js/voting-single/pages/Panel.js:242
-#: build/js/voting-single/App.js:187
-#: build/js/voting-single/components/MyVotes.js:272
-#: build/js/voting-single/index.js:203
-#: build/js/voting-single/pages/Panel.js:136
+#: assets/javascript/voting-single/components/DeleteVotingModal.js:8
+#: build/js/voting-single/components/DeleteVotingModal.js:255
+#: build/js/voting-single/index.js:3345
+#: build/js/voting-single/VotingAdmin.js:3170
+#: build/js/voting-single/components/DeleteVotingModal.js:159
+#: build/js/voting-single/index.js:2135
+#: build/js/voting-single/VotingAdmin.js:2056
+msgid "Do you want to delete voting?"
+msgstr ""
+
+#: assets/javascript/voting-single/components/DeleteVotingModal.js:11
+#: build/js/voting-single/components/DeleteVotingModal.js:265
+#: build/js/voting-single/index.js:3355
+#: build/js/voting-single/VotingAdmin.js:3180
+#: build/js/voting-single/components/DeleteVotingModal.js:162
+#: build/js/voting-single/index.js:2138
+#: build/js/voting-single/VotingAdmin.js:2059
+msgid "Go back"
+msgstr ""
+
+#: assets/javascript/voting-single/components/DurationInput.js:9
+#: build/js/voting-single/components/DurationInput.js:16824
+#: build/js/voting-single/components/EditVotingModal.js:3150
+#: build/js/voting-single/index.js:3387
+#: build/js/voting-single/VotingAdmin.js:3212
+#: build/js/voting-single/components/DurationInput.js:12660
+#: build/js/voting-single/components/EditVotingModal.js:2051
+#: build/js/voting-single/index.js:2152
+#: build/js/voting-single/VotingAdmin.js:2073
+msgid "MM/dd/yyyy hh:mm aa"
+msgstr ""
+
+#: assets/javascript/voting-single/components/EditVotingModal.js:49
+#: build/js/voting-single/components/EditVotingModal.js:17070
+#: build/js/voting-single/index.js:3459
+#: build/js/voting-single/VotingAdmin.js:3284
+#: build/js/voting-single/components/EditVotingModal.js:12825
+#: build/js/voting-single/index.js:2211
+#: build/js/voting-single/VotingAdmin.js:2132
+msgid "Change voting duration"
+msgstr ""
+
+#: assets/javascript/voting-single/components/EditVotingModal.js:69
+#: build/js/voting-single/components/EditVotingModal.js:17086
+#: build/js/voting-single/index.js:3475
+#: build/js/voting-single/VotingAdmin.js:3300
+#: build/js/voting-single/components/EditVotingModal.js:12845
+#: build/js/voting-single/index.js:2231
+#: build/js/voting-single/VotingAdmin.js:2152
+msgid "Done"
+msgstr ""
+
+#: assets/javascript/voting-single/components/EditVotingModal.js:70
+#: build/js/voting-single/components/EditVotingModal.js:17090
+#: build/js/voting-single/index.js:3479
+#: build/js/voting-single/VotingAdmin.js:3304
+#: build/js/voting-single/components/EditVotingModal.js:12846
+#: build/js/voting-single/index.js:2232
+#: build/js/voting-single/VotingAdmin.js:2153
+msgid "End voting"
+msgstr ""
+
+#: assets/javascript/voting-single/components/MyVotes.js:43
+#: build/js/voting-single/App.js:399
+#: build/js/voting-single/components/MyVotes.js:426
+#: build/js/voting-single/index.js:3585
+#: build/js/voting-single/pages/Panel.js:329
+#: build/js/voting-single/App.js:214
+#: build/js/voting-single/components/MyVotes.js:278
+#: build/js/voting-single/index.js:2297
+#: build/js/voting-single/pages/Panel.js:175
 msgid "Distributed credits"
 msgstr ""
 
 #: assets/javascript/voting-single/components/SingleView.js:14
-#: build/js/voting-single/App.js:459
-#: build/js/voting-single/components/SingleView.js:258
-#: build/js/voting-single/index.js:492
-#: build/js/voting-single/pages/Single.js:255
-#: build/js/voting-single/App.js:276
+#: build/js/voting-single/App.js:522
+#: build/js/voting-single/components/SingleView.js:259
+#: build/js/voting-single/index.js:3708
+#: build/js/voting-single/pages/Single.js:335
+#: build/js/voting-single/App.js:303
 #: build/js/voting-single/components/SingleView.js:170
-#: build/js/voting-single/index.js:292
-#: build/js/voting-single/pages/Single.js:151
+#: build/js/voting-single/index.js:2386
+#: build/js/voting-single/pages/Single.js:206
 msgid "Voting options"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleView.js:29
-#: build/js/voting-single/App.js:475
-#: build/js/voting-single/components/SingleView.js:274
-#: build/js/voting-single/index.js:508
-#: build/js/voting-single/pages/Single.js:271
-#: build/js/voting-single/App.js:291
-#: build/js/voting-single/components/SingleView.js:185
-#: build/js/voting-single/index.js:307
-#: build/js/voting-single/pages/Single.js:166
+#: assets/javascript/voting-single/components/SingleView.js:32
+#: build/js/voting-single/App.js:538
+#: build/js/voting-single/components/SingleView.js:275
+#: build/js/voting-single/index.js:3724
+#: build/js/voting-single/pages/Single.js:351
+#: build/js/voting-single/App.js:321
+#: build/js/voting-single/components/SingleView.js:188
+#: build/js/voting-single/index.js:2404
+#: build/js/voting-single/pages/Single.js:224
+msgid "See detailed results"
+msgstr ""
+
+#: assets/javascript/voting-single/components/SingleView.js:33
+#: build/js/voting-single/App.js:541
+#: build/js/voting-single/components/SingleView.js:278
+#: build/js/voting-single/index.js:3727
+#: build/js/voting-single/pages/Single.js:354
+#: build/js/voting-single/App.js:322
+#: build/js/voting-single/components/SingleView.js:189
+#: build/js/voting-single/index.js:2405
+#: build/js/voting-single/pages/Single.js:225
 msgid "Participate of the voting"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleView.js:34
-#: assets/javascript/voting-single/components/SingleVoting.js:109
-#: build/js/voting-single/App.js:479
-#: build/js/voting-single/App.js:619
-#: build/js/voting-single/components/SingleView.js:278
-#: build/js/voting-single/components/SingleVoting.js:519
-#: build/js/voting-single/index.js:512
-#: build/js/voting-single/index.js:652
-#: build/js/voting-single/pages/Single.js:275
-#: build/js/voting-single/pages/Single.js:415
-#: build/js/voting-single/App.js:296
-#: build/js/voting-single/App.js:411
-#: build/js/voting-single/components/SingleView.js:190
-#: build/js/voting-single/components/SingleVoting.js:344
-#: build/js/voting-single/index.js:312
-#: build/js/voting-single/index.js:427
-#: build/js/voting-single/pages/Single.js:171
-#: build/js/voting-single/pages/Single.js:286
+#: assets/javascript/voting-single/components/SingleView.js:39
+#: assets/javascript/voting-single/components/SingleVoting.js:104
+#: build/js/voting-single/App.js:545
+#: build/js/voting-single/App.js:683
+#: build/js/voting-single/components/SingleView.js:282
+#: build/js/voting-single/components/SingleVoting.js:596
+#: build/js/voting-single/index.js:3731
+#: build/js/voting-single/index.js:3869
+#: build/js/voting-single/pages/Single.js:358
+#: build/js/voting-single/pages/Single.js:496
+#: build/js/voting-single/App.js:328
+#: build/js/voting-single/App.js:438
+#: build/js/voting-single/components/SingleView.js:195
+#: build/js/voting-single/components/SingleVoting.js:394
+#: build/js/voting-single/index.js:2411
+#: build/js/voting-single/index.js:2521
+#: build/js/voting-single/pages/Single.js:231
+#: build/js/voting-single/pages/Single.js:341
 msgid "Available credits"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:72
-#: build/js/voting-single/App.js:574
-#: build/js/voting-single/components/SingleVoting.js:474
-#: build/js/voting-single/index.js:607
-#: build/js/voting-single/pages/Single.js:370
-#: build/js/voting-single/App.js:374
-#: build/js/voting-single/components/SingleVoting.js:307
-#: build/js/voting-single/index.js:390
-#: build/js/voting-single/pages/Single.js:249
+#: assets/javascript/voting-single/components/SingleVoting.js:67
+#: build/js/voting-single/App.js:638
+#: build/js/voting-single/components/SingleVoting.js:551
+#: build/js/voting-single/index.js:3824
+#: build/js/voting-single/pages/Single.js:451
+#: build/js/voting-single/App.js:401
+#: build/js/voting-single/components/SingleVoting.js:357
+#: build/js/voting-single/index.js:2484
+#: build/js/voting-single/pages/Single.js:304
 msgid "Distribute your votes"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:73
-#: build/js/voting-single/App.js:574
-#: build/js/voting-single/components/SingleVoting.js:474
-#: build/js/voting-single/index.js:607
-#: build/js/voting-single/pages/Single.js:370
-#: build/js/voting-single/App.js:375
-#: build/js/voting-single/components/SingleVoting.js:308
-#: build/js/voting-single/index.js:391
-#: build/js/voting-single/pages/Single.js:250
+#: assets/javascript/voting-single/components/SingleVoting.js:68
+#: build/js/voting-single/App.js:638
+#: build/js/voting-single/components/SingleVoting.js:551
+#: build/js/voting-single/index.js:3824
+#: build/js/voting-single/pages/Single.js:451
+#: build/js/voting-single/App.js:402
+#: build/js/voting-single/components/SingleVoting.js:358
+#: build/js/voting-single/index.js:2485
+#: build/js/voting-single/pages/Single.js:305
 msgid "You can use up to %s credits to vote during this poll"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:74
-#: build/js/voting-single/App.js:574
-#: build/js/voting-single/components/SingleVoting.js:474
-#: build/js/voting-single/index.js:607
-#: build/js/voting-single/pages/Single.js:370
-#: build/js/voting-single/App.js:376
-#: build/js/voting-single/components/SingleVoting.js:309
-#: build/js/voting-single/index.js:392
-#: build/js/voting-single/pages/Single.js:251
+#: assets/javascript/voting-single/components/SingleVoting.js:69
+#: build/js/voting-single/App.js:638
+#: build/js/voting-single/components/SingleVoting.js:551
+#: build/js/voting-single/index.js:3824
+#: build/js/voting-single/pages/Single.js:451
+#: build/js/voting-single/App.js:403
+#: build/js/voting-single/components/SingleVoting.js:359
+#: build/js/voting-single/index.js:2486
+#: build/js/voting-single/pages/Single.js:306
 msgid "This poll ends on %s, %s"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:93
-#: build/js/voting-single/App.js:596
-#: build/js/voting-single/components/SingleVoting.js:496
-#: build/js/voting-single/index.js:629
-#: build/js/voting-single/pages/Single.js:392
-#: build/js/voting-single/App.js:395
-#: build/js/voting-single/components/SingleVoting.js:328
-#: build/js/voting-single/index.js:411
-#: build/js/voting-single/pages/Single.js:270
+#: assets/javascript/voting-single/components/SingleVoting.js:88
+#: build/js/voting-single/App.js:660
+#: build/js/voting-single/components/SingleVoting.js:573
+#: build/js/voting-single/index.js:3846
+#: build/js/voting-single/pages/Single.js:473
+#: build/js/voting-single/App.js:422
+#: build/js/voting-single/components/SingleVoting.js:378
+#: build/js/voting-single/index.js:2505
+#: build/js/voting-single/pages/Single.js:325
 msgid "Back to poll options"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:94
-#: build/js/voting-single/App.js:598
-#: build/js/voting-single/components/SingleVoting.js:498
-#: build/js/voting-single/index.js:631
-#: build/js/voting-single/pages/Single.js:394
-#: build/js/voting-single/App.js:396
-#: build/js/voting-single/components/SingleVoting.js:329
-#: build/js/voting-single/index.js:412
-#: build/js/voting-single/pages/Single.js:271
+#: assets/javascript/voting-single/components/SingleVoting.js:89
+#: build/js/voting-single/App.js:662
+#: build/js/voting-single/components/SingleVoting.js:575
+#: build/js/voting-single/index.js:3848
+#: build/js/voting-single/pages/Single.js:475
+#: build/js/voting-single/App.js:423
+#: build/js/voting-single/components/SingleVoting.js:379
+#: build/js/voting-single/index.js:2506
+#: build/js/voting-single/pages/Single.js:326
 msgid "Confirm vote"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:99
-#: build/js/voting-single/App.js:600
-#: build/js/voting-single/components/SingleVoting.js:500
-#: build/js/voting-single/index.js:633
-#: build/js/voting-single/pages/Single.js:396
-#: build/js/voting-single/App.js:401
-#: build/js/voting-single/components/SingleVoting.js:334
-#: build/js/voting-single/index.js:417
-#: build/js/voting-single/pages/Single.js:276
+#: assets/javascript/voting-single/components/SingleVoting.js:94
+#: build/js/voting-single/App.js:664
+#: build/js/voting-single/components/SingleVoting.js:577
+#: build/js/voting-single/index.js:3850
+#: build/js/voting-single/pages/Single.js:477
+#: build/js/voting-single/App.js:428
+#: build/js/voting-single/components/SingleVoting.js:384
+#: build/js/voting-single/index.js:2511
+#: build/js/voting-single/pages/Single.js:331
 msgid "Vote confirmation"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:100
-#: build/js/voting-single/App.js:602
-#: build/js/voting-single/components/SingleVoting.js:502
-#: build/js/voting-single/index.js:635
-#: build/js/voting-single/pages/Single.js:398
-#: build/js/voting-single/App.js:402
-#: build/js/voting-single/components/SingleVoting.js:335
-#: build/js/voting-single/index.js:418
-#: build/js/voting-single/pages/Single.js:277
+#: assets/javascript/voting-single/components/SingleVoting.js:95
+#: build/js/voting-single/App.js:666
+#: build/js/voting-single/components/SingleVoting.js:579
+#: build/js/voting-single/index.js:3852
+#: build/js/voting-single/pages/Single.js:479
+#: build/js/voting-single/App.js:429
+#: build/js/voting-single/components/SingleVoting.js:385
+#: build/js/voting-single/index.js:2512
+#: build/js/voting-single/pages/Single.js:332
 msgid "After confirming your vote, it can't be changed. You can access your voting option on <a href='%s'>voting infos</a>."
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:102
-#: build/js/voting-single/App.js:610
-#: build/js/voting-single/components/SingleVoting.js:510
-#: build/js/voting-single/index.js:643
-#: build/js/voting-single/pages/Single.js:406
-#: build/js/voting-single/App.js:404
-#: build/js/voting-single/components/SingleVoting.js:337
-#: build/js/voting-single/index.js:420
-#: build/js/voting-single/pages/Single.js:279
+#: assets/javascript/voting-single/components/SingleVoting.js:97
+#: build/js/voting-single/App.js:674
+#: build/js/voting-single/components/SingleVoting.js:587
+#: build/js/voting-single/index.js:3860
+#: build/js/voting-single/pages/Single.js:487
+#: build/js/voting-single/App.js:431
+#: build/js/voting-single/components/SingleVoting.js:387
+#: build/js/voting-single/index.js:2514
+#: build/js/voting-single/pages/Single.js:334
 msgctxt "verb"
 msgid "Vote"
 msgstr ""
 
-#: assets/javascript/voting-single/pages/Panel.js:9
-#: build/js/voting-single/App.js:687
-#: build/js/voting-single/index.js:720
-#: build/js/voting-single/pages/Panel.js:519
-#: build/js/voting-single/App.js:440
-#: build/js/voting-single/index.js:456
-#: build/js/voting-single/pages/Panel.js:318
-msgid "My vote"
+#: assets/javascript/voting-single/components/VotingLink.js:11
+#: build/js/voting-single/App.js:758
+#: build/js/voting-single/App.js:759
+#: build/js/voting-single/index.js:3944
+#: build/js/voting-single/index.js:3945
+#: build/js/voting-single/pages/Panel.js:454
+#: build/js/voting-single/pages/Panel.js:455
+#: build/js/voting-single/App.js:469
+#: build/js/voting-single/index.js:2552
+#: build/js/voting-single/pages/Panel.js:247
+msgid "Copy to clipboard"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingLink.js:16
+#: build/js/voting-single/App.js:766
+#: build/js/voting-single/index.js:3952
+#: build/js/voting-single/pages/Panel.js:462
+#: build/js/voting-single/App.js:474
+#: build/js/voting-single/index.js:2557
+#: build/js/voting-single/pages/Panel.js:252
+msgctxt "verb"
+msgid "Copy"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingLinks.js:29
+#: build/js/voting-single/App.js:821
+#: build/js/voting-single/index.js:4007
+#: build/js/voting-single/pages/Panel.js:517
+#: build/js/voting-single/App.js:509
+#: build/js/voting-single/index.js:2592
+#: build/js/voting-single/pages/Panel.js:287
+msgid "Voting URL"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingLinks.js:30
+#: build/js/voting-single/App.js:821
+#: build/js/voting-single/index.js:4007
+#: build/js/voting-single/pages/Panel.js:517
+#: build/js/voting-single/App.js:510
+#: build/js/voting-single/index.js:2593
+#: build/js/voting-single/pages/Panel.js:288
+msgid "Detailed results URL"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingLinks.js:34
+#: build/js/voting-single/App.js:826
+#: build/js/voting-single/index.js:4012
+#: build/js/voting-single/pages/Panel.js:522
+#: build/js/voting-single/App.js:514
+#: build/js/voting-single/index.js:2597
+#: build/js/voting-single/pages/Panel.js:292
+msgid "Private administrator URL"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingLinks.js:35
+#: build/js/voting-single/App.js:826
+#: build/js/voting-single/index.js:4012
+#: build/js/voting-single/pages/Panel.js:522
+#: build/js/voting-single/App.js:515
+#: build/js/voting-single/index.js:2598
+#: build/js/voting-single/pages/Panel.js:293
+msgid "Save this URL for managing the event:"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingLinks.js:41
+#: build/js/voting-single/App.js:831
+#: build/js/voting-single/index.js:4017
+#: build/js/voting-single/pages/Panel.js:527
+#: build/js/voting-single/App.js:521
+#: build/js/voting-single/index.js:2604
+#: build/js/voting-single/pages/Panel.js:299
+msgid "Individual vote URLs"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingLinks.js:42
+#: build/js/voting-single/App.js:831
+#: build/js/voting-single/index.js:4017
+#: build/js/voting-single/pages/Panel.js:527
+#: build/js/voting-single/App.js:522
+#: build/js/voting-single/index.js:2605
+#: build/js/voting-single/pages/Panel.js:300
+msgid "To be shared privately with voters"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingLinks.js:46
+#: build/js/voting-single/App.js:836
+#: build/js/voting-single/index.js:4022
+#: build/js/voting-single/pages/Panel.js:532
+#: build/js/voting-single/App.js:526
+#: build/js/voting-single/index.js:2609
+#: build/js/voting-single/pages/Panel.js:304
+msgid "Download as text file (.TXT)"
 msgstr ""
 
 #: assets/javascript/voting-single/pages/Panel.js:10
-#: build/js/voting-single/App.js:690
-#: build/js/voting-single/index.js:723
-#: build/js/voting-single/pages/Panel.js:522
-#: build/js/voting-single/App.js:441
-#: build/js/voting-single/index.js:457
-#: build/js/voting-single/pages/Panel.js:319
+#: build/js/voting-single/App.js:869
+#: build/js/voting-single/index.js:4055
+#: build/js/voting-single/pages/Panel.js:745
+#: build/js/voting-single/App.js:544
+#: build/js/voting-single/index.js:2627
+#: build/js/voting-single/pages/Panel.js:440
+msgid "My vote"
+msgstr ""
+
+#: assets/javascript/voting-single/pages/Panel.js:11
+#: build/js/voting-single/App.js:872
+#: build/js/voting-single/index.js:4058
+#: build/js/voting-single/pages/Panel.js:748
+#: build/js/voting-single/App.js:545
+#: build/js/voting-single/index.js:2628
+#: build/js/voting-single/pages/Panel.js:441
 msgid "Detailed results"
 msgstr ""
 
-#: assets/javascript/voting-single/pages/Panel.js:18
-#: build/js/voting-single/App.js:697
-#: build/js/voting-single/index.js:730
-#: build/js/voting-single/pages/Panel.js:529
-#: build/js/voting-single/App.js:449
-#: build/js/voting-single/index.js:465
-#: build/js/voting-single/pages/Panel.js:327
+#: assets/javascript/voting-single/pages/Panel.js:15
+#: build/js/voting-single/App.js:877
+#: build/js/voting-single/index.js:4063
+#: build/js/voting-single/pages/Panel.js:753
+#: build/js/voting-single/App.js:549
+#: build/js/voting-single/index.js:2632
+#: build/js/voting-single/pages/Panel.js:445
+msgid "Voting links"
+msgstr ""
+
+#: assets/javascript/voting-single/pages/Panel.js:23
+#: build/js/voting-single/App.js:885
+#: build/js/voting-single/index.js:4071
+#: build/js/voting-single/pages/Panel.js:761
+#: build/js/voting-single/App.js:557
+#: build/js/voting-single/index.js:2640
+#: build/js/voting-single/pages/Panel.js:453
 msgid "User panel"
 msgstr ""
 
-#: assets/javascript/votings-block/App.js:30
-#: build/js/votings-block/App.js:396
-#: build/js/votings-block/index.js:237
-#: build/js/votings-block/App.js:259
-#: build/js/votings-block/index.js:147
+#: assets/javascript/voting-single/VotingAdmin.js:14
+#: build/js/voting-single/index.js:3279
+#: build/js/voting-single/VotingAdmin.js:17189
+#: build/js/voting-single/index.js:2109
+#: build/js/voting-single/VotingAdmin.js:12887
+msgid "Change duration"
+msgstr ""
+
+#: assets/javascript/voting-single/VotingAdmin.js:15
+#: build/js/voting-single/index.js:3284
+#: build/js/voting-single/VotingAdmin.js:17194
+#: build/js/voting-single/index.js:2110
+#: build/js/voting-single/VotingAdmin.js:12888
+msgid "Delete voting"
+msgstr ""
+
+#: assets/javascript/votings-block/App.js:25
+#: build/js/votings-block/App.js:405
+#: build/js/votings-block/index.js:246
+#: build/js/votings-block/App.js:270
+#: build/js/votings-block/index.js:158
 msgid "Search votings"
 msgstr ""

@@ -21,7 +21,7 @@ $register_url = get_permalink(concordamos\get_page_by_template('concordamos/temp
                 <?php _e('A way to vote for consensus', 'concordamos'); ?>
             </p>
             <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>"
-                alt="<?php _e('Login logo', 'concordamos'); ?>'">
+                alt="<?php _e('Concordamos Logo', 'concordamos'); ?>'">
             <p class="balloon-subtitle with">
                 <?php _e('With', 'concordamos'); ?>
                 <?php echo $site_title ?>
@@ -58,7 +58,7 @@ $register_url = get_permalink(concordamos\get_page_by_template('concordamos/temp
                 </a>
             </div>
             <div class="login-button">
-                <button class="login-submit" data-loading-text="<?php _e('Loading..', 'concordamos'); ?>" type="submit">
+                <button class="login-submit" data-loading-text="<?php _e('Loading...', 'concordamos'); ?>" type="submit">
                     <?php _e("Let's go!", 'concordamos'); ?>
                 </button>
                 <p>
@@ -68,7 +68,7 @@ $register_url = get_permalink(concordamos\get_page_by_template('concordamos/temp
             <div id="login-message"></div>
             <div class="its-logo">
                 <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>"
-                    alt="<?php _e('Logo ITS'); ?>">
+                    alt="<?php _e('ITS Logo');?>">
             </div>
 
         </div>
