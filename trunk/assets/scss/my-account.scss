@@ -235,44 +235,21 @@
                     }
                 }
                 .my-account-tab{
-                    .my-account-filter-button{
-                        padding-top: 40px;
-                        max-width: 1140px;
-                        width: 100%;
-                        margin-left: auto;
-                        margin-right: auto;
-                        display: flex;
-                        justify-content: space-between;
-                        .link-primary{
-                            background-color: #FFF766;
-                            border-radius: 80px;
-                            border: 3px solid #000;
-                            padding: 13px 24px 9px;
-                            color: #000;
-                            font-family: 'Oswald';
-                            font-size: 24px;
-                            font-weight: 500;
-                            line-height: 130%;
-                            letter-spacing: -0.24px;
-                            text-decoration: none;
-                            @media(max-width: 782px){
-                                font-size: 16px;
-                                padding: 6px 16px;	
-                            }
-                            &:hover{
-                                background-color: transparent;
-                                color: #000;
-                                border: 3px solid #000;
-                                background-color: #FFF766;
-                            }	
-                        }
-                    }
                     details{
                         height: 68px;
                         max-width: 270px;
                         width: 100%;
                         border-radius: 16px;
                         border: 3px solid #000;
+                        background: var(--wp--preset--color--high-pure);
+                        height: 68px;
+                        max-width: 273px;
+                        margin-left: 5px;
+                        flex-direction: row;
+                        align-content: center;
+                        align-items: center;
+                        justify-content: center;
+                        
                         padding: 16px 0 16px 32px;
                         background-color: #fff;
                         @media(max-width: 782px){
@@ -281,12 +258,23 @@
 
                         >summary{
                             display: flex;
-                            color: var(--low-light, #666);
-                            font-family: 'Oswald';
-                            font-size: 24px;
+                            color: var(--wp--preset--color--low-light);
+                            font-family: Oswald;
+                            font-size: var(--wp--preset--font-size--medium);
+                            font-style: normal;
                             font-weight: 500;
+                            line-height: normal;
                             letter-spacing: -0.24px;
-                            gap: 110px;
+                            margin: 0;
+                            flex-direction: row;
+                            align-content: center;
+                            margin-top: 12px;
+                            margin-right: 34px;
+                            align-items: center;
+                            margin-right: 0px;
+                            padding-left: 32px;
+                            padding-right: 32px;
+                            justify-content: space-between;
 
                             &:after{
                                 content: '';
@@ -299,18 +287,27 @@
                             }
                         }
                         .filters-open{
-                            border-bottom: 3px solid #000;
-                            border-right: 3px solid #000;
-                            border-left: 3px solid #000;
-                            width: 270px;
-                            margin-left: -35px;
-                            margin-top: 3px;
-                            padding: 20px 10px;
-                            position: relative;
-                            z-index: 0;
-                            background-color: #f5f5f5;
-                            border-radius: 0 0 16px 16px;
-
+                            display: flex;
+                            width: 100%;
+                            position: absolute;
+                            justify-content: center;
+                            color: #111;
+                            font-family: "Inter Tight";
+                            font-size: 17px;
+                            font-weight: 700;
+                            line-height: 150%;
+                            background-color: white;
+                            flex-direction: column;
+                            margin-top: 11px;
+                            border: 3px solid black;
+                            border-top: none;
+                            padding-left: 32px;
+                            padding-right: 32px;
+                            .radio-options{
+                                display: flex;
+                                gap: 5px;
+                                flex-direction: column;
+                            }
                         }
                     }
                 }
