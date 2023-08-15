@@ -24,6 +24,9 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 	}
 
 	const usedCredits = useMemo(() => {
+		if (!votes) {
+			return 0
+		}
 		return votes.reduce((credits, vote) => credits + (vote.count ** 2), 0)
 	}, [votes])
 
