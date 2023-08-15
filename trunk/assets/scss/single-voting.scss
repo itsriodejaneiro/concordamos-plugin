@@ -526,14 +526,52 @@
 				}
 			}
 			.voting-modal__wrapper.open{
+				.voting-modal{
+					max-width: 569px;
+					width: 100%;
+					main{
+						padding-right: 0;
+						h2{
+							margin: 8px auto 15px auto;
+							font-size: 32px;
+						}
+						label{
+							display: inline-grid;
+							margin-right: 20px;
+							span{
+								color: #111;
+								font-family: 'Libre Franklin';
+								font-size: 16px;
+								font-weight: 700;
+							}
+							input{
+								border: 3px solid #000;
+								border-radius: 8px;
+								padding: 10px 16px 11px 16px;
+								max-width: 243px;
+								width: 100%;
+								margin-bottom: 30px;	
+							}
+						}
+						.react-datepicker-popper{
+							padding-top: 0;
+							margin-top: -20px;
+						}
+						.primary{
+							margin-right: 20px;
+						}
+					}		
+				}
+				
 				.danger{
 					main{
-						
 						h2{
-							margin: 5px auto;
+							margin: 8px auto 15px auto;
+							font-size: 32px;
 						}
 						p{
-							margin-bottom: 26px;
+							margin-bottom: 28px;
+							margin-top: 28px;
 						}
 					}	
 				}
