@@ -88,7 +88,8 @@ class User_Register
             'user_login' => $username,
             'user_pass' => $data[ 'password' ],
             'user_email' => $data[ 'email' ],
-            'display_name' => $data['name']
+            'display_name' => $data['name'],
+            'role' => 'concordamos_network'
         ]);
 
         if( ! $user_id || is_wp_error( $user_id ) ) {
