@@ -237,6 +237,7 @@ function prepare_voting_for_api (\WP_Post $post) {
 	];
 }
 
+
 function get_page_by_template (string $template) {
 	$pages = get_pages([
 		'post_type' => 'page',
@@ -251,6 +252,7 @@ function get_page_by_template (string $template) {
 
 	return false;
 }
+
 
 /**
  *
