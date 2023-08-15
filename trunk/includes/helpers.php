@@ -237,6 +237,21 @@ function prepare_voting_for_api (\WP_Post $post) {
 	];
 }
 
+function get_page_by_template (string $template) {
+	$pages = get_pages([
+		'post_type' => 'page',
+		'meta_key' => '_wp_page_template',
+		'hierarchical' => 0,
+		'meta_value' => $template,
+	]);
+
+	foreach ($pages as $page) {
+		return $page;
+	}
+
+	return false;
+}
+
 /**
  *
  * Count votes of the voting.

@@ -33,8 +33,27 @@ function enqueue_scripts_frontend() {
 
 		$template_slug = get_page_template_slug();
 
-		if ( $template_slug === 'concordamos/template-login.php' || $template_slug === 'concordamos/template-create-user.php' ) {
+		if ( $template_slug === 'concordamos/template-login.php' ) {
 			wp_enqueue_style( 'concordamos-template-login-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-login.css', ['concordamos-style'], CONCORDAMOS_PLUGIN_VERSION );
+			wp_enqueue_script( 'concordamos-login', CONCORDAMOS_PLUGIN_URL . 'build/js/user/login.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+			wp_localize_script( 'concordamos-login', 'concordamos_login',
+				array(
+					'nonce' => wp_create_nonce( 'wp_rest' ),
+					'my_account_url' => get_permalink( get_page_by_template('concordamos/template-my-account.php') )
+				)
+			);	
+		}
+
+		if ( $template_slug === 'concordamos/template-create-user.php' ) {
+			wp_enqueue_style( 'concordamos-template-login-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-login.css', ['concordamos-style'], CONCORDAMOS_PLUGIN_VERSION );
+			wp_enqueue_script( 'concordamos-create-user', CONCORDAMOS_PLUGIN_URL . 'build/js/user/register.js', [], time(), true );
+			wp_localize_script( 'concordamos-create-user', 'concordamos', [
+				'nonce' => wp_create_nonce( 'wp_rest' ),
+				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+				'rest_url' => rest_url( 'concordamos/user/v1' ),
+				'my_account_url' => get_permalink( get_page_by_template('concordamos/template-my-account.php') )
+				,
+			] );
 		}
 
 		if ( $template_slug === 'concordamos/template-my-account.php' ) {

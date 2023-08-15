@@ -12,6 +12,14 @@ function register_login_block () {
 		'style_handles' => [ 'concordamos-login-block-style' ],
 		'render_callback' => 'Concordamos\render_login_block',
 	] );
+
+	wp_enqueue_script( 'concordamos-login', CONCORDAMOS_PLUGIN_URL . 'build/js/user/login.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
+	wp_localize_script( 'concordamos-login', 'concordamos_login',
+		array(
+			'nonce'   => wp_create_nonce( 'wp_rest' ),
+			'my_account_url' => get_permalink( get_page_by_template('concordamos/template-my-account.php') )
+		)
+	);	
 }
 
 function register_votings_block () {
