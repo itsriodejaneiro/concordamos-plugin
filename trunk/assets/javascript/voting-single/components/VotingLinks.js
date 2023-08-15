@@ -36,7 +36,7 @@ export default function VotingLinks ({ initialData }) {
 							<VotingLink href={getPanelUrl(data.permalink)} withButton/>
 						</div>
 					</div>
-					{ data.status === 'private' || true ? (
+					{ data.status === 'private' ? (
 						<div className="voting-links-column">
 							<h2>{__('Individual vote URL', 'concordamos')}</h2>
 							<p>{__('To be shared privately with voters', 'concordamos')}</p>
