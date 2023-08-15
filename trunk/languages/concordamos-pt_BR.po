@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Concordamos 0.0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
 "POT-Creation-Date: 2023-08-15T18:18:03+00:00\n"
-"PO-Revision-Date: 2023-08-15 15:21-0300\n"
+"PO-Revision-Date: 2023-08-15 15:43-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -457,7 +457,7 @@ msgstr "Olá, %s"
 #: build/js/my-account/index.js:69 build/js/my-account/App.js:753
 #: build/js/my-account/index.js:42
 msgid "Sign out"
-msgstr "Deslogado"
+msgstr "Sair"
 
 #: assets/javascript/my-account/components/CreatedVotings.js:39
 #: assets/javascript/my-account/components/ParticipatedVotings.js:39

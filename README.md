@@ -21,5 +21,5 @@ wp i18n make-pot . languages/concordamos.pot
 Depois de atualizar as traduções, rode:
 
 ```bash
-wp i18n make-json languages
+wp i18n make-json languages/
 ```

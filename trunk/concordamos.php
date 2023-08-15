@@ -22,6 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'CONCORDAMOS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CONCORDAMOS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'CONCORDAMOS_PLUGIN_VERSION', '0.0.9' );
+define( 'CONCORDAMOS_PLUGIN_TRANSLATIONS', CONCORDAMOS_PLUGIN_PATH . '/languages/' );
 
 require_once( 'includes/class/class-posttype.php' );
 require_once( 'includes/class/class-metadata.php' );
