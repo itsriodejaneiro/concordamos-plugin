@@ -38,7 +38,7 @@ export default function VotingLinks ({ initialData }) {
 					</div>
 					{ data.status === 'private' ? (
 						<div className="voting-links-column">
-							<h2>{__('Individual vote URL', 'concordamos')}</h2>
+							<h2>{__('Individual vote URLs', 'concordamos')}</h2>
 							<p>{__('To be shared privately with voters', 'concordamos')}</p>
 							{individualUrls.map((url) => (
 								<VotingLink href={url}/>
