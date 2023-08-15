@@ -27,7 +27,7 @@ export default function CreatedVotings () {
 			<h2 className="sr-only">{__('Votings created by me', 'concordamos')}</h2>
 			<div className='my-account-filter-button'>
 				<Filters filters={filters} onChange={onFiltersChange}/>
-				<a className="link-primary" href='#' >{__('Create voting', 'concordamos')}</a>
+				<a className="link-primary" href={concordamos.create_voting_url}>{__('Create voting', 'concordamos')}</a>
 			</div>
 			<div className="my-account-voting-grid">
 			{(data?.posts ?? []).map((post) => (

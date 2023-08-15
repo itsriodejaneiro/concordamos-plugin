@@ -1,5 +1,5 @@
-@use '../settings/mixins' as mixins;
- 
+@import '../settings/mixins';
+
 .navbar-mobile{
     display: none;
     @include mobile{
@@ -13,7 +13,7 @@
         height: 115%;
         justify-content: center;
     }
-    button{   
+    button{
         padding: 0px;
         & p{
         margin: 0px;
@@ -30,7 +30,7 @@
     }
     .btn-1{
         cursor:pointer;
-        width: 145px;			
+        width: 145px;
         height: 64px;
         border-radius: 64px 0px 0px 64px;
         border: 3px solid #000;
@@ -38,7 +38,7 @@
         box-shadow: 4px 4px 0px 0px #000;
         &:hover{
             background-color:#FF73E7 ;
-            
+
         }
         &:active{
             background-color:#FF73E7 ;
@@ -48,7 +48,7 @@
     .btn-2{
         cursor:pointer;
         width: 90px;
-        height: 64px;	
+        height: 64px;
         border-top: 3px solid #000;
         border-bottom: 3px solid #000;
         border-left: 0px;
