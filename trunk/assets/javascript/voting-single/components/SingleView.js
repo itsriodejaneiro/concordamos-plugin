@@ -4,7 +4,7 @@ import Grid from './Grid'
 import OptionView from './OptionView'
 
 export default function SingleView ({ handleViewChange, initialData }) {
-	const { credits_voter, options, voting_closed } = initialData
+	const { credits_voter, logged, options, voting_closed } = initialData
 
 	const parsedOptions = JSON.parse(options)
 
@@ -29,7 +29,9 @@ export default function SingleView ({ handleViewChange, initialData }) {
 
 					{
 						voting_closed
-						? <a className="button primary" href={window.location.pathname + "?panel=1"}>{__('See detailed results', 'concordamos')}</a>
+						? ( logged
+							? <a className="button primary" href={window.location.pathname + "?panel=1"}>{__('See detailed results', 'concordamos')}</a>
+							: null )
 						: <button type="button" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
 					}
 				</div>

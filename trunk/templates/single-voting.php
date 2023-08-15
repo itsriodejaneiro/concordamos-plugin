@@ -79,6 +79,7 @@ $voting_closed = ( Concordamos\get_vote_count( $post_id ) >= $raw_post_meta['num
 				data-options="<?php echo htmlspecialchars( json_encode( $options ) , ENT_QUOTES, 'UTF-8' ); ?>"
 				data-date_start="<?php echo htmlspecialchars( $date_start ); ?>"
 				data-date_end="<?php echo htmlspecialchars( $date_end ); ?>"
+				data-logged="<?php echo is_user_logged_in(); ?>"
 				data-voting_closed="<?php echo $voting_closed; ?>"
 				data-is_panel=<?php echo $is_panel; ?>
 			></div>

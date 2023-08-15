@@ -12,6 +12,7 @@ const initialData = {
 	date_end: mainAppRender.dataset.date_end,
 	date_start: mainAppRender.dataset.date_start,
 	options: mainAppRender.dataset.options,
+	logged: mainAppRender.dataset.logged,
 	voting_closed: mainAppRender.dataset.voting_closed,
 	is_panel: mainAppRender.dataset.is_panel,
 }
