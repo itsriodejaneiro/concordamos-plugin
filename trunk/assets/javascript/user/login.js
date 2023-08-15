@@ -28,6 +28,7 @@ function Login() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-WP-Nonce': window.concordamos_login.nonce,
         },
         body: JSON.stringify(data),
       });
@@ -39,7 +40,7 @@ function Login() {
         setMessageClass('success');
         setTimeout(() => {
           window.location.href = window.concordamos_login.my_account_url
-        }, 5000);
+        }, 3000);
       } else {
         setMessageClass('error')
       }

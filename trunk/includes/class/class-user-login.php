@@ -11,9 +11,11 @@ class User_Login {
         register_rest_route('concordamos/user/v1', '/login', array(
             'methods' => 'POST',
             'callback' => array($this, 'login'),
+            'permission_callback' => '__return_true',
         ));
     }
     protected function validate( $data ) {
+
         if( is_user_logged_in() ) {
             return new \WP_Error('invalid_data', __("You're already logged in. No need to log in again.", 'concordamos'), array('status' => 400));
         }

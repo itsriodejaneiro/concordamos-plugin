@@ -13,6 +13,7 @@ class User_Register
         register_rest_route('concordamos/user/v1', '/register', array(
                 'methods' => 'POST',
                 'callback' => array($this, 'register'),
+                'permission_callback' => '__return_true',
             )
         );
     }

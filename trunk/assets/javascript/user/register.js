@@ -88,6 +88,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             fetch(apiEndpoint, {
                 method: 'POST',
+                headers: {
+                    'X-WP-Nonce': window.concordamos.nonce,
+                },
                 body: formData
             })
             .then(response => {

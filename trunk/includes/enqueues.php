@@ -38,6 +38,7 @@ function enqueue_scripts_frontend() {
 			wp_enqueue_script( 'concordamos-login', CONCORDAMOS_PLUGIN_URL . 'build/js/user/login.js', ['wp-element'], CONCORDAMOS_PLUGIN_VERSION, true );
 			wp_localize_script( 'concordamos-login', 'concordamos_login',
 				array(
+					'nonce' => wp_create_nonce( 'wp_rest' ),
 					'my_account_url' => get_permalink( get_page_by_template('concordamos/template-my-account.php') )
 				)
 			);	
