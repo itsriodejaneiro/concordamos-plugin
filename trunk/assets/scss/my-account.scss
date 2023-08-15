@@ -235,6 +235,18 @@
                     }
                 }
                 .my-account-tab{
+                    .my-account-filter-button{
+                        padding-top: 40px;
+                        max-width: 1140px;
+                        width: 100%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: flex;
+                        justify-content: space-between;
+                        .primary{
+                            margin-right: 0 !important;
+                        }
+                    }
                     details{
                         height: 68px;
                         max-width: 270px;
@@ -242,8 +254,6 @@
                         border-radius: 16px;
                         border: 3px solid #000;
                         padding: 16px 0 16px 32px;
-                        margin-left: 106px;
-                        margin-top: 40px;
                         background-color: #fff;
                         @media(max-width: 782px){
                             margin-left: 15px;
