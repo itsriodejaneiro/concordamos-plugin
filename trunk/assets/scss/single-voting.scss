@@ -525,6 +525,19 @@
 					text-transform: none;
 				}
 			}
+			.voting-modal__wrapper.open{
+				.danger{
+					main{
+						
+						h2{
+							margin: 5px auto;
+						}
+						p{
+							margin-bottom: 26px;
+						}
+					}	
+				}
+			}
 		}
 		.voting-content{
 			.container{
