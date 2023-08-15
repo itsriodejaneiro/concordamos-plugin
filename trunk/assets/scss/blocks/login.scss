@@ -82,4 +82,12 @@
             border-bottom: solid 3px #26A9F9;
         }
     }
+    button.show-password {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        margin-top: 15px;
+        border: none;
+        background: none;
+    }
 }

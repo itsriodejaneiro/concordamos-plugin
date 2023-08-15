@@ -70,13 +70,21 @@ window.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Login />, loginFormContainer);
   
   const buttonShowPassword = document.querySelector('button.show-password');
+  const inputPassword = document.querySelector('[name="password"]');
+
   buttonShowPassword.addEventListener('click', (e) => {
-    const inputPassword = document.querySelector('[name="password"]');
     if( inputPassword.getAttribute( 'type') == 'password' ) {
       inputPassword.setAttribute('type', 'text' )
     } else {
       inputPassword.setAttribute('type', 'password' )
     }
   })
+
+  const fixButtonShowPasswordPosition = () => {
+    buttonShowPassword.style.marginLeft = inputPassword.clientWidth - 40 + 'px';
+  }
+
+  window.addEventListener('resize', fixButtonShowPasswordPosition);
+  fixButtonShowPasswordPosition();
 
 });

@@ -27,6 +27,12 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
 
+	register_rest_route( 'concordamos/v1', '/voting-links/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\get_voting_links_callback',
+		'permission_callback' => 'Concordamos\\permission_check'
+	] );
+
 	register_rest_route( 'concordamos/v1', '/my-account/', [
 		'methods'             => 'PATCH',
 		'callback'            => 'Concordamos\\patch_my_account_callback',
@@ -360,6 +366,41 @@ function patch_voting_callback ( \WP_REST_Request $request ) {
 		];
 		return new \WP_REST_Response( $response, 400 );
 	}
+}
+
+function get_voting_links_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_params();
+	$votingId = intval( $params['v_id'] );
+
+	if ( get_post_field( 'post_author', $votingId ) != get_current_user_id() ) {
+		$response = [
+			'status' => 'error',
+			'message' => __( "You don't have enough permissions.", 'concordamos' ),
+		];
+		return new \WP_REST_Response( $response, 403 );
+	}
+
+	$voting_uids = get_post_meta( $votingId, 'unique_ids', true );
+	if ( empty( $voting_uids ) ) {
+		$voting_uids = [];
+	} else {
+		$voting_uids = array_filter( explode( ',', $voting_uids ) );
+	}
+
+	$expired_uids = get_post_meta( $votingId, 'expired_unique_ids', true );
+	if ( empty( $expired_uids ) ) {
+		$expired_uids = [];
+	} else {
+		$expired_uids = array_filter( explode( ',', $expired_uids ) );
+	}
+
+	return [
+		'ID' => $votingId,
+		'slug' => get_post_field( 'post_name', $votingId ),
+		'permalink' => get_permalink( $votingId ),
+		'status' => get_post_meta( $votingId, 'voting_type', true ),
+		'uids' => array_diff( $voting_uids, $expired_uids ),
+	];
 }
 
 function get_my_account_callback ( \WP_REST_Request $request ) {
