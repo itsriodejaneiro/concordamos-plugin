@@ -14,8 +14,8 @@ export function apiFetch (method, url, body, signal) {
 	.catch((error) => console.error(error))
 }
 
-export function useFetch (url) {
-	const [state, setState] = useState({ data: undefined, error: undefined, loading: false })
+export function useFetch (url, defaultValue = undefined) {
+	const [state, setState] = useState({ data: defaultValue, error: undefined, loading: false })
 
 	useEffect(() => {
 		const abort = new AbortController()
@@ -27,13 +27,13 @@ export function useFetch (url) {
 				const data = await apiFetch('GET', url, undefined, abort.signal)
 
 				if (data.status === 'error') {
-					setState({ data: undefined, error: new Error(data.message), loading: false })
+					setState({ data: defaultValue, error: new Error(data.message), loading: false })
 				} else {
 					setState({ data, error: undefined, loading: false })
 				}
 			} catch (error) {
 				if (!error instanceof AbortController) {
-					setState({ data: undefined, error, loading: false })
+					setState({ data: defaultValue, error, loading: false })
 					console.error(error)
 				}
 			}

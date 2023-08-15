@@ -9,7 +9,7 @@ export default function MyVotes ({ initialData }) {
 	const { credits_voter, options } = initialData
 	const parsedOptions = JSON.parse(options)
 
-	const { data: votes } = useFetch(`my-vote/?v_id=${concordamos.v_id}`)
+	const { data: votes } = useFetch(`my-vote/?v_id=${concordamos.v_id}`, [])
 
 	const usedCredits = useMemo(() => {
 		if (!votes) {

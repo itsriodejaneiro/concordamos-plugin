@@ -1,4 +1,4 @@
-export function CopyToClipboard ({ className = '', children, text }) {
+export default function CopyToClipboard ({ className = '', children, text }) {
 	function copyToClipboard (e) {
 		e.preventDefault()
 		window.navigator.clipboard.writeText(text)

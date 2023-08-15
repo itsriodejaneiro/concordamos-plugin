@@ -4,16 +4,48 @@
 form {
 	margin-bottom: 2rem;
 }
+#register-form{
+	label{
+		margin-bottom: 20px;
+		.error{
+			margin-bottom: 10px;
+		}
+		.errors{
+			span{
+				color:red;
+				
+			}
+			
+		}
+		
+	}
+	.accept-checkbox-terms{
+		margin-top: 10px;
+	}
+	.name-field{
+		margin-bottom: 5px;
+	}
+	.email-field{
+		margin-top: 10px;
+	}
+	.register-password-field{
+		margin-top:10px;
+		.show-password{
+			display: none;
+		}
+	}
+}
 
 .field {
 	display: block;
 	margin-bottom: 1rem;
-
+	
 	label {
 		span {
 			display: block;
 			font-weight: 700;
 			margin-bottom: .25rem;
+			
 		}
 	}
 

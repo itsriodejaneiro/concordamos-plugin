@@ -6,7 +6,7 @@
             <div class="email-field">
                 <label>
                     <span>
-                        <?php _e('E-mail', 'concordamos'); ?>
+                        <?php _e('Email', 'concordamos'); ?>
                     </span>
                     <input name="email" type="text"></input>
                 </label>
