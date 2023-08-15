@@ -129,8 +129,7 @@
             position: absolute;
             width: 25px;
             height: 25px;
-            margin-top: 14px;
-            margin-left: -43px;
+            margin-top: 15px;
             border: none;
             background: none;
         }
@@ -163,6 +162,9 @@
                 font-weight: 700;    
             }
             
+        }
+        button.show-password {
+            margin-top:33px;
         }
     
     }

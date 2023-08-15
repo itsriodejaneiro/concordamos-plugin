@@ -55,8 +55,6 @@
                     <span>
                         <?php _e('Password', 'concordamos'); ?>
                     </span>
-                    <input name="password" type="password">
-                    <span class="errors" id="password-errors"></span>
                     <button class="show-password" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path
@@ -64,6 +62,8 @@
                                 fill="#666666" />
                         </svg>
                     </button>
+                    <input name="password" type="password">
+                    <span class="errors" id="password-errors"></span>
                 </label>
                 <label>
                     <span>

@@ -46,7 +46,7 @@ function enqueue_scripts_frontend() {
 
 		if ( $template_slug === 'concordamos/template-create-user.php' ) {
 			wp_enqueue_style( 'concordamos-template-login-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-login.css', ['concordamos-style'], CONCORDAMOS_PLUGIN_VERSION );
-			wp_enqueue_script( 'concordamos-create-user', CONCORDAMOS_PLUGIN_URL . 'build/js/user/register.js', [], time(), true );
+			wp_enqueue_script( 'concordamos-create-user', CONCORDAMOS_PLUGIN_URL . 'build/js/user/register.js', [], CONCORDAMOS_PLUGIN_VERSION, true );
 			wp_localize_script( 'concordamos-create-user', 'concordamos', [
 				'nonce' => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,

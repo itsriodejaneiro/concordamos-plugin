@@ -1,6 +1,6 @@
 <?php
-    $site_title = get_bloginfo('name');
-    $register_url = get_permalink( concordamos\get_page_by_template('concordamos/template-create-user.php') );
+$site_title = get_bloginfo('name');
+$register_url = get_permalink(concordamos\get_page_by_template('concordamos/template-create-user.php'));
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,13 +13,17 @@
     <?php wp_body_open(); ?>
     <section class="concordamos-balloon">
         <div class="balloon-content">
-        <div class="arrow">
+            <div class="arrow">
                 <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
             </div>
 
-            <p class="balloon-subtitle"><?php _e('A way to vote for consensus', 'concordamos' );?></p>
-            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="<?php _e('Login logo', 'concordamos' );?>'">
-            <p class="balloon-subtitle with"><?php _e('With', 'concordamos');?>
+            <p class="balloon-subtitle">
+                <?php _e('A way to vote for consensus', 'concordamos'); ?>
+            </p>
+            <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>"
+                alt="<?php _e('Login logo', 'concordamos'); ?>'">
+            <p class="balloon-subtitle with">
+                <?php _e('With', 'concordamos'); ?>
                 <?php echo $site_title ?>
             </p>
         </div>
@@ -28,15 +32,18 @@
         <div class="container">
             <div class="email-field">
                 <label>
-                    <span><?php _e('E-mail', 'concordamos');?></span>
+                    <span>
+                        <?php _e('E-mail', 'concordamos'); ?>
+                    </span>
                     <input name="email" type="text">
                 </label>
             </div>
             <div class="login-password-field">
                 <label>
-                    <span><?php _e('Password', 'concordamos');?></span>
+                    <span>
+                        <?php _e('Password', 'concordamos'); ?>
+                    </span>
                     <div class="password-input-box">
-                        <input name="password" type="password">
                         <button class="show-password" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none">
@@ -45,20 +52,25 @@
                                     fill="#666666" />
                             </svg>
                         </button>
+                        <input name="password" type="password">
                     </div>
                 </label>
-                <a href="#"><?php _e('I forgot my password','concordamos');?></a>
+                <a href="#">
+                    <?php _e('I forgot my password', 'concordamos'); ?>
+                </a>
             </div>
             <div class="login-button">
-                <button class="login-submit" data-loading-text="<?php _e('Loading..', 'concordamos');?>" type="submit">
-                   <?php _e("Let's go!",'concordamos');?>
+                <button class="login-submit" data-loading-text="<?php _e('Loading..', 'concordamos'); ?>" type="submit">
+                    <?php _e("Let's go!", 'concordamos'); ?>
                 </button>
-                <p><?php _e("Don't have an account?",'concordamos');?> <a href="<?php echo $register_url;?>"><?php _e('Register here','concordamos');?></a>.</p>
+                <p>
+                    <?php _e("Don't have an account?", 'concordamos'); ?> <a href="<?php echo $register_url; ?>"><?php _e('Register here', 'concordamos'); ?></a>.
+                </p>
             </div>
             <div id="login-message"></div>
             <div class="its-logo">
                 <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>"
-                    alt="<?php _e('Logo ITS');?>">
+                    alt="<?php _e('Logo ITS'); ?>">
             </div>
 
         </div>
