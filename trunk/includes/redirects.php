@@ -27,3 +27,61 @@ function restrict_voting_single_access() {
 }
 
 add_action( 'template_redirect', 'Concordamos\restrict_voting_single_access' );
+
+
+/**
+ * @return void
+ */
+function required_login_to_create_voting() {
+	if ( get_voting_page() != get_the_ID() ) {
+		return;
+	}
+	if( is_user_logged_in() ) {
+		return;
+	}
+
+	wp_redirect( home_url( '/login' ) );
+	exit;
+
+}
+
+add_action( 'template_redirect', 'Concordamos\required_login_to_create_voting' );
+
+/**
+ * @return void
+ */
+function required_login_to_my_account() {
+	if ( ! strstr(get_page_template(), 'template-my-account.php')) {
+		return;
+	}
+	if( is_user_logged_in() ) {
+		return;
+	}
+
+	wp_redirect( home_url( '/login' ) );
+	exit;
+
+}
+
+add_action( 'template_redirect', 'Concordamos\required_login_to_my_account' );
+
+/**
+ * @return void
+ */
+function required_login_to_voting_panel() {
+	if ( ! is_singular('voting') || get_query_var('panel') !== '1' ) {
+		return;
+	}
+	if( is_user_logged_in() ) {
+		return;
+	}
+
+	wp_redirect( home_url( '/login' ) );
+	exit;
+
+}
+
+add_action( 'template_redirect', 'Concordamos\required_login_to_voting_panel' );
+
+
+
