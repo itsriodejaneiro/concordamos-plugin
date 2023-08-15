@@ -1,3 +1,11 @@
+<?php 
+
+$login_url = get_permalink( concordamos\get_page_by_template('concordamos/template-login.php') );
+$site_title = get_bloginfo('name');
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -9,12 +17,6 @@
         <?php the_title() ?>
     </title>
     <?php wp_head(); ?>
-
-    <?php
-
-    $site_title = get_bloginfo('name');
-
-    ?>
 
 </head>
 
@@ -97,7 +99,7 @@
                 <button class="register-submit" type="submit"
                     data-loading-text="<?php _e('Loading..', 'concordamos'); ?>"><?php _e("Let's go!", 'concordamos'); ?></button>
                 <p>
-                    <?php _e('Already have an account?', 'concordamos'); ?> <a href="#">
+                    <?php _e('Already have an account?', 'concordamos'); ?> <a href="<?php echo $login_url;?>">
                         <?php _e('Access here', 'concordamos'); ?>
                     </a>.
                 </p>
