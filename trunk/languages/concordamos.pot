@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-08-15T17:57:10+00:00\n"
+"POT-Creation-Date: 2023-08-15T18:18:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: concordamos\n"
@@ -92,7 +92,7 @@ msgstr ""
 
 #: includes/blocks/login.php:9
 #: templates/template-create-user.php:49
-#: templates/template-login.php:31
+#: templates/template-login.php:35
 #: assets/javascript/my-account/components/EditEmailModal.js:40
 #: build/js/my-account/App.js:126
 #: build/js/my-account/components/EditEmailModal.js:360
@@ -107,7 +107,7 @@ msgstr ""
 
 #: includes/blocks/login.php:17
 #: templates/template-create-user.php:58
-#: templates/template-login.php:37
+#: templates/template-login.php:42
 #: assets/javascript/my-account/components/EditPasswordModal.js:48
 #: build/js/my-account/App.js:275
 #: build/js/my-account/components/EditPasswordModal.js:365
@@ -120,24 +120,24 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: includes/blocks/login.php:22
-#: templates/template-login.php:50
+#: includes/blocks/login.php:32
+#: templates/template-login.php:57
 msgid "I forgot my password"
 msgstr ""
 
-#: includes/blocks/login.php:27
+#: includes/blocks/login.php:37
 #: templates/template-create-user.php:100
-#: templates/template-login.php:54
+#: templates/template-login.php:62
 msgid "Let's go!"
 msgstr ""
 
-#: includes/blocks/login.php:30
-#: templates/template-login.php:56
+#: includes/blocks/login.php:40
+#: templates/template-login.php:65
 msgid "Don't have an account?"
 msgstr ""
 
-#: includes/blocks/login.php:31
-#: templates/template-login.php:56
+#: includes/blocks/login.php:41
+#: templates/template-login.php:65
 msgid "Register here"
 msgstr ""
 
@@ -365,11 +365,12 @@ msgid "End"
 msgstr ""
 
 #: templates/template-create-user.php:30
-#: templates/template-login.php:20
+#: templates/template-login.php:21
 msgid "A way to vote for consensus"
 msgstr ""
 
 #: templates/template-create-user.php:31
+#: templates/template-login.php:24
 msgid "Concordamos Logo"
 msgstr ""
 
@@ -432,7 +433,7 @@ msgid "Image Terms of Use"
 msgstr ""
 
 #: templates/template-create-user.php:100
-#: templates/template-login.php:53
+#: templates/template-login.php:61
 msgid "Loading..."
 msgstr ""
 
@@ -448,11 +449,7 @@ msgstr ""
 msgid "ITS Logo"
 msgstr ""
 
-#: templates/template-login.php:21
-msgid "Concordamos Logo"
-msgstr ""
-
-#: templates/template-login.php:22
+#: templates/template-login.php:26
 msgid "With"
 msgstr ""
 
