@@ -21,6 +21,7 @@ $date_start_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_d
 $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_date( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
 
 $is_panel = get_query_var( 'panel' );
+$voting_closed = ( Concordamos\get_vote_count( $post_id ) >= $raw_post_meta['number_voters'][0] ) ? true : false;
 ?>
 <div>
 	<div class="voting-header">
@@ -56,14 +57,14 @@ $is_panel = get_query_var( 'panel' );
 					<h3><?php _e( 'Start', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'h\hi' ); ?></span>
-					<span class="start-edit">Editar</span>
+					<!-- <span class="start-edit">Editar</span> -->
 				</div>
 				<div class="<?php echo $date_end_class; ?>">
 					<div class="icon">2</div>
 					<h3><?php _e( 'End', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'h\hi' ); ?></span>
-					<span class="end-edit">Editar</span>
+					<!-- <span class="end-edit">Editar</span> -->
 				</div>
 			</div>
 		</div>
@@ -78,9 +79,9 @@ $is_panel = get_query_var( 'panel' );
 				data-options="<?php echo htmlspecialchars( json_encode( $options ) , ENT_QUOTES, 'UTF-8' ); ?>"
 				data-date_start="<?php echo htmlspecialchars( $date_start ); ?>"
 				data-date_end="<?php echo htmlspecialchars( $date_end ); ?>"
+				data-voting_closed="<?php echo $voting_closed; ?>"
 				data-is_panel=<?php echo $is_panel; ?>
 			></div>
-
 		</div>
 	</div>
 

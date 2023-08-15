@@ -85,6 +85,7 @@ function enqueue_scripts_frontend() {
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'rest_url' => rest_url( 'concordamos/v1/' ),
 				'u_id'  => $unique_id,
+				'user_id' => get_current_user_id(),
 				'v_id'  => get_the_ID(),
 			]
 		);
@@ -108,7 +109,7 @@ function enqueue_scripts_frontend() {
 	}
 
 	$id = get_the_ID();
-  
+
 	$block_list = [
 	  'concordamos/login' => function() {
 		  wp_enqueue_style(
@@ -120,14 +121,14 @@ function enqueue_scripts_frontend() {
 		  );
 	  },
 	];
-	
+
 	// Enqueue only used blocks
 	foreach( $block_list as $key => $block ) {
 		if( has_block( $key, $id ) ){
 			$block();
 		}
 	}
-	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'Concordamos\enqueue_scripts_frontend' );

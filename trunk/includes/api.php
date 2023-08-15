@@ -3,11 +3,17 @@
 namespace Concordamos;
 
 function register_endpoints() {
-	register_rest_route( 'concordamos/v1', '/create-voting/', [
+	register_rest_route( 'concordamos/v1', '/voting/', [
 		'methods'             => 'POST',
 		'callback'            => 'Concordamos\\create_voting_callback',
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
+
+	register_rest_route( 'concordamos/v1', '/voting/', [
+		'methods'             => 'PATCH',
+		'callback'            => 'Concordamos\\patch_voting_callback',
+		'permission_callback' => 'Concordamos\\permission_check',
+	]);
 
 	register_rest_route( 'concordamos/v1', '/vote/', [
 		'methods'             => 'POST',
@@ -315,6 +321,42 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		$response = [
 			'status'  => 'error',
 			'message' => __('Verify all fields and try again'. 'concordamos'),
+		];
+		return new \WP_REST_Response( $response, 400 );
+	}
+}
+
+function patch_voting_callback ( \WP_REST_Request $request ) {
+	$params = $request->get_json_params();
+
+	if ( get_post_field( 'post_author', $params['v_id'] ) != $params['user_id'] ) {
+		$response = [
+			'status' => 'error',
+			'message' => __( "You don't have enough permissions.", 'concordamos' ),
+		];
+		return new \WP_REST_Response( $response, 403 );
+	}
+
+	$args = [
+		'ID' => intval( $params['v_id'] ),
+		'meta_input' => [
+			'date_end'      => intval( $params['date_end'] ),
+			'date_start'    => intval( $params['date_start'] ),
+		]
+	];
+
+	$postId = wp_update_post( $args );
+
+	if ( $postId ) {
+		$response = [
+			'status' => 'success',
+			'message' => __( 'Voting updated successfully!', 'concordamos' ),
+		];
+		return new \WP_REST_Response( $response, 200 );
+	} else {
+		$response = [
+			'status' => 'error',
+			'message' => __( 'Error updating voting, please try again', 'concordamos' ),
 		];
 		return new \WP_REST_Response( $response, 400 );
 	}

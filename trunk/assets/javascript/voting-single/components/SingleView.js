@@ -4,7 +4,7 @@ import Grid from './Grid'
 import OptionView from './OptionView'
 
 export default function SingleView ({ handleViewChange, initialData }) {
-	const { credits_voter, options } = initialData
+	const { credits_voter, options, voting_closed } = initialData
 
 	const parsedOptions = JSON.parse(options)
 
@@ -26,10 +26,15 @@ export default function SingleView ({ handleViewChange, initialData }) {
 
 				<div className="actions">
 					<a href="/voting" className="back-link">{__('Back', 'concordamos')}</a>
-					<button type="button" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
+
+					{
+						voting_closed
+						? <a className="button primary" href={window.location.pathname + "?panel=1"}>{__('See detailed results', 'concordamos')}</a>
+						: <button type="button" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
+					}
 				</div>
 			</div>
-			<div className="sidebar">
+			<div className="sidebar view-mode">
 				<Grid squares={Number(credits_voter)} />
 				<span>{__('Available credits', 'concordamos')}</span>
 				<span>{`${credits_voter} / ${credits_voter}`}</span>

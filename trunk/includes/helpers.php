@@ -237,7 +237,6 @@ function prepare_voting_for_api (\WP_Post $post) {
 	];
 }
 
-
 function get_page_by_template (string $template) {
 	$pages = get_pages([
 		'post_type' => 'page',
@@ -251,4 +250,36 @@ function get_page_by_template (string $template) {
 	}
 
 	return false;
+}
+
+/**
+ *
+ * Count votes of the voting.
+ *
+ * @param int $voting_id The ID of the voting to count.
+ *
+ * @return int count votes.
+ *
+ */
+function get_vote_count ( $voting_id ) {
+
+	$args = [
+		'post_type'  => 'vote',
+		'fields'     => 'ids',
+		'meta_query' => [
+			[
+				'key'     => 'voting_id',
+				'value'   => $voting_id,
+				'compare' => '=',
+				'type'    => 'NUMERIC'
+			],
+		]
+	];
+
+	$query = new \WP_Query( $args );
+
+	$votes = count( $query->posts );
+
+	return $votes;
+
 }

@@ -9,8 +9,6 @@ export function VotingAdmin ({ initialData }) {
 	const deleteVotingModal = useModal(false)
 	const editVotingModal = useModal(false)
 
-	console.log(initialData)
-
 	return (
 		<>
 			<button type="button link" onClick={editVotingModal.open}><Image src="calendar2.svg"/>{__('Change duration', 'concordamos')}</button>
