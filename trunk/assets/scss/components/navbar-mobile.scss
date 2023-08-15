@@ -2,7 +2,7 @@
  
 .navbar-mobile{
     display: none;
-    @include mixins.mobile{
+    @include mobile{
         display: flex;
         position: fixed;
         z-index: 999;
@@ -10,7 +10,7 @@
         align-items: center;
         text-align: center;
         width: 100%;
-        height: 90%;
+        height: 115%;
         justify-content: center;
     }
     button{   
