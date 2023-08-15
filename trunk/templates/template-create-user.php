@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $login_url = get_permalink( concordamos\get_page_by_template('concordamos/template-login.php') );
 $site_title = get_bloginfo('name');
@@ -46,7 +46,7 @@ $site_title = get_bloginfo('name');
             <div class="email-field">
                 <label>
                     <span>
-                        <?php _e('E-mail', 'concordamos'); ?>
+                        <?php _e('Email', 'concordamos'); ?>
                     </span>
                     <input name="email" type="text">
                     <span class="errors" id="email-errors"></span>

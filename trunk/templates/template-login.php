@@ -28,7 +28,7 @@
         <div class="container">
             <div class="email-field">
                 <label>
-                    <span><?php _e('E-mail', 'concordamos');?></span>
+                    <span><?php _e('Email', 'concordamos');?></span>
                     <input name="email" type="text">
                 </label>
             </div>
