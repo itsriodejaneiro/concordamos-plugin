@@ -41,7 +41,7 @@ function enqueue_scripts_frontend() {
 					'nonce' => wp_create_nonce( 'wp_rest' ),
 					'my_account_url' => get_permalink( get_page_by_template('concordamos/template-my-account.php') )
 				)
-			);	
+			);
 		}
 
 		if ( $template_slug === 'concordamos/template-create-user.php' ) {
@@ -81,6 +81,7 @@ function enqueue_scripts_frontend() {
 			'concordamos-voting-single',
 			'concordamos',
 			[
+				'is_author' => get_post_field( 'post_author', get_the_ID() ) == get_current_user_id() ? true : false,
 				'nonce' => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'rest_url' => rest_url( 'concordamos/v1/' ),
@@ -100,7 +101,6 @@ function enqueue_scripts_frontend() {
 			'concordamos-voting-archive',
 			'concordamos',
 			[
-				'is_admin' => current_user_can( 'manage_options' ),
 				'nonce' => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'rest_url' => rest_url( 'concordamos/v1/' ),
