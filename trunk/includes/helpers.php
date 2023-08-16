@@ -239,7 +239,7 @@ function prepare_voting_for_api (\WP_Post $post) {
 
 function register_localized_script ( $handle, $src, $deps, $object_name = 'concordamos', $l10n = [] ) {
 	wp_register_script( $handle, $src, $deps, CONCORDAMOS_PLUGIN_VERSION, true );
-	wp_set_script_translations( $handle, 'concordamos', CONCORDAMOS_PLUGIN_TRANSLATIONS );
+	wp_set_script_translations( $handle, 'concordamos', CONCORDAMOS_PLUGIN_PATH . 'languages/' );
 	wp_localize_script( $handle, $object_name, $l10n );
 }
 

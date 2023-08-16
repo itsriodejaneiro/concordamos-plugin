@@ -12,8 +12,8 @@
 		background-position: center;
 		background-size: 1em;
 		display: inline-block;
-		height: 16px;
-		width: 16px;
+		height: 24px;
+		width: 24px;
 		background-size: 100%;
 	}
 	
@@ -27,12 +27,13 @@
 			text-transform: uppercase;
 			font-weight: 600;
 			margin-top: 67px;
-			margin-bottom: 47px;
+			margin-bottom: 33px;
 		}
 
 		.voting-archive-filters{
 			display: grid;
 			grid-template-columns: 3fr 1fr;
+			gap: 28px;
 
 			details{
 				border-radius: 10px;
@@ -179,6 +180,9 @@
 		gap: 1rem;
 		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 		margin: 45px auto;
+		margin-top: 47px;
+		gap: 25px;
+		margin-bottom: 41px;
 
 		@media screen and (max-width: 20rem) {
 			grid-template-columns: 1fr;
@@ -199,6 +203,7 @@
 		justify-content: center;
 		margin: 2rem auto;
 		padding: 0;
+		margin-bottom: 57px;
 
 		li {
 			border: 3px solid transparent;
