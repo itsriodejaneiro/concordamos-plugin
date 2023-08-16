@@ -1,8 +1,7 @@
 @import 'settings/mixins';
 @import 'components/voting-card';
 
-.voting-archive,
-.post-type-archive-voting  {
+.voting-archive {
 	margin: auto;
 	max-width: 1200px;
 	padding-inline: 15px;
