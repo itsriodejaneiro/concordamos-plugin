@@ -2,7 +2,7 @@
 
 .navbar-mobile{
     display: none;
-    @include mobile{
+    @include small{
         display: flex;
         position: fixed;
         z-index: 999;
