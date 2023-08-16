@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import MyVotes from '../components/MyVotes'
 import Tabs from '../../shared/components/Tabs'
+import VotingResults from '../components/VotingResults'
 import VotingLinks from '../components/VotingLinks'
 
 export default function Panel ({ initialData }) {
@@ -26,6 +27,8 @@ export default function Panel ({ initialData }) {
 					<VotingLinks initialData={initialData}/>
 				) : (tab === 'my-vote') ? (
 					<MyVotes initialData={initialData}/>
+				) : (tab === 'results') ? (
+					<VotingResults />
 				) : /* TODO */ null}
 			</div>
 		</>

@@ -24,8 +24,9 @@ function get_login_page() {
 
 function get_options_by_voting( $voting_id ) {
 	$args = [
-		'post_type' => 'option',
-		'meta_query' => [
+		'post_type'      => 'option',
+		'posts_per_page' => -1,
+		'meta_query'     => [
 			[
 				'key' => 'voting_id',
 				'value' => $voting_id,

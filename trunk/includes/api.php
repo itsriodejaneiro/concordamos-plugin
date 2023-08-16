@@ -21,6 +21,12 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_vote_check'
 	] );
 
+	register_rest_route( 'concordamos/v1', '/votes/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\get_votes_callback',
+		'permission_callback' => 'Concordamos\\permission_vote_check'
+	]);
+
 	register_rest_route( 'concordamos/v1', '/my-account/', [
 		'methods'             => 'GET',
 		'callback'            => 'Concordamos\\get_my_account_callback',
@@ -572,6 +578,78 @@ function vote_callback( \WP_REST_Request $request ) {
 
 		return new \WP_REST_Response( $response, 400 );
 	}
+}
+
+// Get votes
+function get_votes_callback( \WP_Rest_Request $request ) {
+	$params = $request->get_params();
+	$voting_id = intval( $params['v_id'] );
+	$number_voters = get_post_meta( $voting_id, 'number_voters', true );
+
+	$data_graphic = [
+		'labels' => [],
+		'dataset' => [],
+	];
+
+	$args = [
+		'post_type'   => 'vote',
+		'post_status' => 'publish',
+		'meta_query'  => [
+			[
+				'key' => 'voting_id',
+				'value' => $voting_id
+			],
+		]
+	];
+
+	$votes = new \WP_Query( $args );
+	$used_credits = 0;
+
+	if ( $votes->have_posts() ) {
+		while ( $votes->have_posts() ) {
+			$votes->the_post();
+
+			$voting_options = get_post_meta( get_the_ID(), 'voting_options', true );
+
+			if ( is_array( $voting_options ) ) {
+				foreach ( $voting_options as $option ) {
+					$label = get_post_meta( $option['id'], 'option_name', true ); ;
+					$value = (int) $option['count'];
+
+					if ( $value == 1 ) {
+						$used_credits += $value;
+					} elseif ( $value > 1 ) {
+						$used_credits += $value ** 2;
+					} elseif ( $value == -1 ) {
+						$used_credits += 1;
+					} elseif ( $value < -1 ) {
+						$used_credits += abs( $value ) ** 2;
+					}
+
+					$index = array_search( $label, $data_graphic['labels'] );
+
+					if ( $index !== false ) {
+						$data_graphic['dataset'][$index] += $value;
+					} else {
+						$data_graphic['labels'][] = $label;
+						$data_graphic['dataset'][] = $value;
+					}
+				}
+			}
+		}
+	}
+
+	wp_reset_postdata();
+
+	return [
+		'dataset'       => $data_graphic['dataset'],
+		'labels'        => $data_graphic['labels'],
+		'number_voters' => $number_voters,
+		'participants'  => $votes->found_posts,
+		'total_credits' => get_post_meta( $voting_id, 'credits_voter', true ) * $votes->found_posts,
+		'used_credits'  => $used_credits
+	];
+
 }
 
 function logout_callback ( \WP_REST_Request $request ) {

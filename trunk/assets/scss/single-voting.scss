@@ -61,7 +61,7 @@
 					font-size: 32px;
 					line-height: 130%;
 					margin-bottom: 23px;
-					
+
 				}
 			}
 
@@ -463,6 +463,29 @@
 					}
 				}
 			}
+
+			// Panel voting results
+			&.voting-results {
+				display: flex;
+
+				.content {
+					width: 100%;
+
+					.voting-info {
+						align-items: center;
+						display: flex;
+						gap: 2rem;
+						justify-content: center;
+						margin-bottom: 2rem;
+						width: 100%;
+
+						span {
+							font-weight: 600;
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
 		}
 
 		.actions {
@@ -507,7 +530,7 @@
 				.panel-previous-tab,
 				.panel-next-tab{
 					display: none;
-				} 	
+				}
 			}
 		}
 	}
@@ -577,7 +600,7 @@
 								padding: 10px 16px 11px 16px;
 								max-width: 243px;
 								width: 100%;
-								margin-bottom: 30px;	
+								margin-bottom: 30px;
 							}
 						}
 						.react-datepicker-popper{
@@ -587,9 +610,9 @@
 						.primary{
 							margin-right: 20px;
 						}
-					}		
+					}
 				}
-				
+
 				.danger{
 					main{
 						h2{
@@ -600,7 +623,7 @@
 							margin-bottom: 28px;
 							margin-top: 28px;
 						}
-					}	
+					}
 				}
 			}
 		}
@@ -608,7 +631,7 @@
 			@media(max-width: 782px){
 				padding: 0
 			}
-			
+
 			.container{
 				margin: 0;
 				padding: 0;
@@ -668,7 +691,7 @@
 				.votings-list{
 					padding-top: 0;
 				}
-				
+
 			}
 			.wrapper-voting-links{
 				padding-top: 64px;
@@ -692,7 +715,7 @@
 										 "b c";
 						@media(max-width: 1080px){
 							display: block;
-						}				 
+						}
 					.voting-links-column{
 						max-width: 590px;
 						width: 100%;
@@ -702,7 +725,7 @@
 						@media(max-width: 1080px){
 							max-width: 590px;
 							margin-left: auto;
-							margin-right: auto;	
+							margin-right: auto;
 						}
 					}
 					.voting-links-column:nth-child(2){
@@ -718,7 +741,7 @@
 						.voting-links-scroll{
 							overflow-y: scroll;
 							height: 336px;
-						}	
+						}
 					}
 					.voting-links-card{
 						background-color: #FFFFFF;
@@ -727,18 +750,18 @@
 						background: #FFF;
 						margin-bottom: 24px;
 						padding: 22px 30px 29px;
-						
+
 					}
 					.voting-links-title{
-						color: #000; 
+						color: #000;
 						font-family: 'Oswald';
 						font-size: 24px;
 						font-weight: 600;
-						line-height: 130%; 
+						line-height: 130%;
 						letter-spacing: -0.24px;
 						text-transform: none;
 						margin-top: 0;
-						margin-bottom: 10px;	 	
+						margin-bottom: 10px;
 					}
 					P{
 						font-family: 'Inter';
@@ -747,7 +770,7 @@
 						line-height: 150%;
 						letter-spacing: -0.14px;
 						text-transform: uppercase;
-						margin-bottom: 12px;	
+						margin-bottom: 12px;
 					}
 					.voting-link{
 						button{
@@ -764,7 +787,7 @@
 							font-size: 16px;
 							font-weight: 700;
 							letter-spacing: -0.16px;
-							text-decoration: none;	
+							text-decoration: none;
 						}
 						.copy-button{
 							border-radius: 16px;
@@ -776,7 +799,7 @@
 							font-weight: 700;
 							letter-spacing: -0.16px;
 							margin-left: 20px;
-							padding: 10px 14px;	
+							padding: 10px 14px;
 						}
 					}
 					.link-primary{
@@ -795,15 +818,15 @@
 						top: 40px;
 						@media(max-width: 782px){
 							font-size: 16px;
-							padding: 6px 16px;	
+							padding: 6px 16px;
 						}
 						&:hover{
 							background-color: transparent;
 							color: #000;
 							border: 3px solid #000;
 							background-color: #FFF766;
-						}	
-					}			
+						}
+					}
 				}
 			}
 		}
