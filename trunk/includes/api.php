@@ -380,18 +380,25 @@ function get_voting_links_callback ( \WP_REST_Request $request ) {
 		return new \WP_REST_Response( $response, 403 );
 	}
 
-	$voting_uids = get_post_meta( $votingId, 'unique_ids', true );
-	if ( empty( $voting_uids ) ) {
-		$voting_uids = [];
+	$all_uids = get_post_meta( $votingId, 'unique_ids', true );
+	if ( empty( $all_uids ) ) {
+		$all_uids = [];
 	} else {
-		$voting_uids = array_filter( explode( ',', $voting_uids ) );
+		$all_uids = explode( ',', $all_uids );
 	}
 
 	$expired_uids = get_post_meta( $votingId, 'expired_unique_ids', true );
 	if ( empty( $expired_uids ) ) {
 		$expired_uids = [];
 	} else {
-		$expired_uids = array_filter( explode( ',', $expired_uids ) );
+		$expired_uids = explode( ',', $expired_uids );
+	}
+
+	$valid_uids = [];
+	foreach ( $all_uids as $uid ) {
+		if ( !empty( $uid ) && !in_array( $uid, $expired_uids ) ) {
+			$valid_uids[] = $uid;
+		}
 	}
 
 	return [
@@ -399,7 +406,7 @@ function get_voting_links_callback ( \WP_REST_Request $request ) {
 		'slug' => get_post_field( 'post_name', $votingId ),
 		'permalink' => get_permalink( $votingId ),
 		'status' => get_post_meta( $votingId, 'voting_type', true ),
-		'uids' => array_diff( $voting_uids, $expired_uids ),
+		'uids' => $valid_uids,
 	];
 }
 
