@@ -22,7 +22,6 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'CONCORDAMOS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CONCORDAMOS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'CONCORDAMOS_PLUGIN_VERSION', '0.0.10' );
-define( 'CONCORDAMOS_PLUGIN_TRANSLATIONS', CONCORDAMOS_PLUGIN_PATH . '/languages/' );
 
 require_once( 'includes/class/class-posttype.php' );
 require_once( 'includes/class/class-metadata.php' );
@@ -40,6 +39,7 @@ function concordamos_init() {
 register_activation_hook( __FILE__, 'concordamos_init' );
 
 require_once( 'includes/rewrite.php' );
+require_once( 'includes/translations.php' );
 require_once( 'includes/helpers.php' );
 require_once( 'includes/enqueues.php' );
 require_once( 'includes/blocks.php' );
