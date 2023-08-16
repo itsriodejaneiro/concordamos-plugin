@@ -483,6 +483,14 @@
 				border-bottom: solid 3px #000;
 			}
 		}
+		.panel-tabs{
+			@include small{
+				.panel-previous-tab,
+				.panel-next-tab{
+					display: none;
+				} 	
+			}
+		}
 	}
 
 	&.logged-in{
