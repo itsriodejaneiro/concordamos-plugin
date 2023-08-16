@@ -444,6 +444,29 @@
 					}
 				}
 			}
+
+			// Panel voting results
+			&.voting-results {
+				display: flex;
+
+				.content {
+					width: 100%;
+
+					.voting-info {
+						align-items: center;
+						display: flex;
+						gap: 2rem;
+						justify-content: center;
+						margin-bottom: 2rem;
+						width: 100%;
+
+						span {
+							font-weight: 600;
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
 		}
 
 		.actions {
@@ -550,7 +573,7 @@
 								padding: 10px 16px 11px 16px;
 								max-width: 243px;
 								width: 100%;
-								margin-bottom: 30px;	
+								margin-bottom: 30px;
 							}
 						}
 						.react-datepicker-popper{
@@ -560,9 +583,9 @@
 						.primary{
 							margin-right: 20px;
 						}
-					}		
+					}
 				}
-				
+
 				.danger{
 					main{
 						h2{
@@ -573,7 +596,7 @@
 							margin-bottom: 28px;
 							margin-top: 28px;
 						}
-					}	
+					}
 				}
 			}
 		}
@@ -639,16 +662,16 @@
 						padding: 28px;
 						margin-bottom: 24px;
 					}
-					
+
 					h2{
 						color: #000;
 						font-family: 'Oswald';
 						font-size: 24px;
 						font-weight: 600;
-						line-height: 130%; 
+						line-height: 130%;
 						letter-spacing: -0.24px;
 						text-transform: none;
-						margin-top: 0;	 	
+						margin-top: 0;
 					}
 					P{
 						font-family: 'Inter';
@@ -656,7 +679,7 @@
 						font-weight: 600;
 						line-height: 150%;
 						letter-spacing: -0.14px;
-						text-transform: uppercase;	
+						text-transform: uppercase;
 					}
 					.voting-link{
 						button{
@@ -670,7 +693,7 @@
 							font-size: 16px;
 							font-weight: 700;
 							letter-spacing: -0.16px;
-							text-decoration: none;	
+							text-decoration: none;
 						}
 						.copy-button{
 							border-radius: 16px;
@@ -682,10 +705,10 @@
 							font-weight: 700;
 							letter-spacing: -0.16px;
 							margin-left: 20px;
-							padding: 10px 14px;	
+							padding: 10px 14px;
 						}
-	
-					}		
+
+					}
 				}
 			}
 		}
