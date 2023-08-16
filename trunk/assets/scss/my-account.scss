@@ -54,10 +54,6 @@
                 border-bottom: 3px solid #000;
                 display: grid;
                 grid-template-columns: 1.4fr 1fr;
-                @media(max-width: 1210px){
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
                 @media(max-width: 782px){
                     display: block;
                 }
@@ -72,6 +68,12 @@
                     margin-top: 63px;
                     margin-bottom: 41px;
                 }
+				.content.panel {
+					@media(max-width: 1210px){
+						padding-left: 15px;
+						padding-right: 15px;
+					}
+				}
                 .my-account-box:nth-of-type(1){
                     border-right: 3px solid #000;
                     padding-bottom: 115px;
@@ -182,6 +184,7 @@
             .my-account-panel{
                 background-color: #f5f5f5;
                 @media(max-width: 1210px){
+					.cont
                     padding-left: 15px;
                     padding-right: 15px;
                 }
@@ -271,10 +274,10 @@
                                 color: #000;
                                 border: 3px solid #000;
                                 background-color: #FFF766;
-                            }	
+                            }
                         }
 
-                    }    
+                    }
                     details{
                         width: 100%;
                         cursor: pointer;
@@ -345,16 +348,16 @@
                             padding-top: 16px;
                             padding-bottom: 16px;
                             border-radius: 0 0 16px 16px;
-                        
-                        
-                        
+
+
+
                             .radio-options{
                                 display: flex;
                                 flex-direction: column;
-                               
+
                                 label {
                                     margin:0px;
-                                    margin-bottom: 8px;                                    
+                                    margin-bottom: 8px;
                                 }
                                 label span{
                                     color: var(--low-dark, #000);
@@ -369,7 +372,7 @@
                                     margin-bottom: 20px;
                                 }
                             }
-                            
+
                         }
                     }
                 }
