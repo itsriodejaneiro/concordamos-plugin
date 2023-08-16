@@ -130,6 +130,7 @@
                             display: block;
                             font-size: 16px;
                             margin-bottom: 16px;
+							text-align: start;
                         }
                     }
                 }
@@ -235,6 +236,39 @@
                     }
                 }
                 .my-account-tab{
+                    .my-account-filter-button{
+                        padding-top: 40px;
+                        max-width: 1140px;
+                        width: 100%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: flex;
+                        justify-content: space-between;
+                        .link-primary{
+                            background-color: #FFF766;
+                            border-radius: 80px;
+                            border: 3px solid #000;
+                            padding: 13px 24px 9px;
+                            color: #000;
+                            font-family: 'Oswald';
+                            font-size: 24px;
+                            font-weight: 500;
+                            line-height: 130%;
+                            letter-spacing: -0.24px;
+                            text-decoration: none;
+                            @media(max-width: 782px){
+                                font-size: 16px;
+                                padding: 6px 16px;	
+                            }
+                            &:hover{
+                                background-color: transparent;
+                                color: #000;
+                                border: 3px solid #000;
+                                background-color: #FFF766;
+                            }	
+                        }
+
+                    }    
                     details{
                         height: 68px;
                         max-width: 270px;
@@ -249,7 +283,7 @@
                         align-content: center;
                         align-items: center;
                         justify-content: center;
-                        
+
                         padding: 16px 0 16px 32px;
                         background-color: #fff;
                         @media(max-width: 782px){
