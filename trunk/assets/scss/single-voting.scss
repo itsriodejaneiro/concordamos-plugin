@@ -21,7 +21,7 @@
 			align-items: center;
 			display: grid;
 			gap: 3rem;
-			grid-template-columns: 2fr 1fr;
+			grid-template-columns: 1.8fr 1.2fr;
 			width: 100%;
 			max-width: 1140px;
 			margin-left: auto;
@@ -42,9 +42,10 @@
 			.voting-breadcrumb{
 				font-size: 20px;
 				margin-top: 10px;
-				font-family: 'Inter' !important;
+				font-family: 'Inter';
 				font-weight: 600;
 				text-transform: uppercase;
+				color: #000;
 			}
 			.voting-title {
 				font-size: 48px;
@@ -134,6 +135,7 @@
 				line-height: 130%;
 				letter-spacing: -0.24px;
 				font-weight: 500;
+				color: #000;
 			}
 
 			&::after {
@@ -157,6 +159,9 @@
 				flex-direction: column;
 				position: relative;
 				z-index: 1;
+				span{
+					color: #000;
+				}
 
 				.icon {
 					align-items: center;
