@@ -236,6 +236,11 @@
                     }
                 }
                 .my-account-tab{
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-content: center;
+                    margin-top: 8px;
                     .my-account-filter-button{
                         padding-top: 40px;
                         max-width: 1140px;
