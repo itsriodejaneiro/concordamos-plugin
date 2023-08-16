@@ -21,29 +21,31 @@ export default function VotingLinks ({ initialData }) {
 	}, [individualUrls])
 
 	return data ? (
-		<div className="wrapper">
+		<div className="wrapper-voting-links">
 			<div className="content">
 				<div className="voting-links-grid">
 					<div className="voting-links-column">
 						<div className="voting-links-card">
-							<h2>{__('Voting URL', 'concordamos')}</h2>
+							<h2 className="voting-links-title">{__('Voting URL', 'concordamos')}</h2>
 							<p>{__('Detailed results URL', 'concordamos')}</p>
 							<VotingLink href={data.permalink} withButton/>
 						</div>
 						<div className="voting-links-card">
-							<h2>{__('Private administrator URL', 'concordamos')}</h2>
+							<h2 className="voting-links-title">{__('Private administrator URL', 'concordamos')}</h2>
 							<p>{__('Save this URL for managing the event:', 'concordamos')}</p>
 							<VotingLink href={getPanelUrl(data.permalink)} withButton/>
 						</div>
 					</div>
 					{ data.status === 'private' ? (
 						<div className="voting-links-column">
-							<h2>{__('Individual vote URLs', 'concordamos')}</h2>
-							<p>{__('To be shared privately with voters', 'concordamos')}</p>
-							{individualUrls.map((url) => (
-								<VotingLink href={url}/>
-							))}
-							<a href={downloadUrl} download={`links_${data.slug}.txt`}>{__('Download as text file (.TXT)', 'concordamos')}</a>
+							<div className="voting-links-scroll">
+								<h2 className="voting-links-title">{__('Individual vote URLs', 'concordamos')}</h2>
+								<p>{__('To be shared privately with voters', 'concordamos')}</p>
+								{individualUrls.map((url) => (
+									<VotingLink href={url}/>
+								))}
+								<a className="link-primary" href={downloadUrl} download={`links_${data.slug}.txt`}>{__('Download as text file (.TXT)', 'concordamos')}</a>
+							</div>
 						</div>
 					) : null }
 				</div>

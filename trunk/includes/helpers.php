@@ -239,7 +239,7 @@ function prepare_voting_for_api (\WP_Post $post) {
 
 function register_localized_script ( $handle, $src, $deps, $object_name = 'concordamos', $l10n = [] ) {
 	wp_register_script( $handle, $src, $deps, CONCORDAMOS_PLUGIN_VERSION, true );
-	wp_set_script_translations( $handle, 'concordamos', CONCORDAMOS_PLUGIN_TRANSLATIONS );
+	wp_set_script_translations( $handle, 'concordamos', CONCORDAMOS_PLUGIN_PATH . 'languages/' );
 	wp_localize_script( $handle, $object_name, $l10n );
 }
 
@@ -294,4 +294,39 @@ function get_vote_count ( $voting_id ) {
 
 	return $votes;
 
+}
+
+function get_vote_by_user( $user_id = '' ) {
+
+	if ( empty( $user_id ) ) {
+		$user_id = get_current_user_id();
+	}
+
+	$args = [
+		'post_type'  => 'vote',
+		'fields'     => 'ids',
+		'author'     => $user_id,
+		'meta_query' => [
+			[
+				'key'     => 'logged_user',
+				'value'   => 'yes',
+				'compare' => '='
+			],
+		]
+	];
+
+	$query = new \WP_Query( $args );
+
+	$votes = count( $query->posts );
+
+	return $votes;
+
+}
+
+function get_panel_url( $url ) {
+    if ( strpos( $url, '?' ) !== false ) {
+        return $url . '&panel=1';
+    } else {
+        return $url . '?panel=1';
+    }
 }
