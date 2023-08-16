@@ -4,7 +4,8 @@ namespace Concordamos;
 
 // Custom post type `vote`
 new CPT( 'vote', [
-	'menu_icon' => 'dashicons-forms'
+	'menu_icon' => 'dashicons-forms',
+	'supports'  => ['author', 'title']
 ] );
 
 // new Metadata( 'vote', 'info', __( 'Additional information', 'concordamos' ), [

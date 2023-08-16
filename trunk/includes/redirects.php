@@ -15,12 +15,33 @@ function restrict_voting_single_access() {
 		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
 		$expired_unique_ids = array_filter( explode( ',', get_post_meta( $post_id, 'expired_unique_ids', true ) ) );
 
-		if ( ! in_array( $unique_id, $expired_unique_ids ) ) {
-			return;
+		// If the provided `unique_id` has already been used, redirect to the voting archive.
+		if ( in_array( $unique_id, $expired_unique_ids ) ) {
+			if ( is_user_logged_in() ) {
+				wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
+				exit;
+			} else {
+				wp_redirect( home_url( '/voting' ) );
+				exit;
+			}
 		}
 
-		wp_redirect( home_url( '/voting' ) );
-		exit;
+		// If the `unique_id` from the URL is empty, fetch the next available one and redirect.
+		if ( empty( $unique_id ) && get_query_var( 'panel' ) !== '1' ) {
+			if ( is_user_logged_in() ) {
+				wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
+				exit;
+			} else {
+				wp_redirect( home_url( '/voting' ) );
+				exit;
+			}
+		}
+
+		// Check if the logged-in user has already voted.
+		if ( is_user_logged_in() && get_vote_by_user() && get_query_var( 'panel' ) !== '1' ) {
+			wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
+			exit;
+		}
 	}
 
 	return;
@@ -81,7 +102,7 @@ function required_login_to_voting_panel() {
 
 }
 
-add_action( 'template_redirect', 'Concordamos\required_login_to_voting_panel' );
+// add_action( 'template_redirect', 'Concordamos\required_login_to_voting_panel' );
 
 
 
