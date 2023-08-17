@@ -21,7 +21,7 @@ function restrict_voting_single_access() {
 				wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
 				exit;
 			} else {
-				wp_redirect( home_url( '/voting' ) );
+				wp_redirect( get_post_type_archive_link( 'voting' ) );
 				exit;
 			}
 		}
@@ -32,7 +32,7 @@ function restrict_voting_single_access() {
 				wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
 				exit;
 			} else {
-				wp_redirect( home_url( '/voting' ) );
+				wp_redirect( get_post_type_archive_link( 'voting' ) );
 				exit;
 			}
 		}
@@ -61,7 +61,7 @@ function required_login_to_create_voting() {
 		return;
 	}
 
-	wp_redirect( home_url( '/login' ) );
+	wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
 	exit;
 
 }
@@ -79,7 +79,7 @@ function required_login_to_my_account() {
 		return;
 	}
 
-	wp_redirect( home_url( '/login' ) );
+	wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
 	exit;
 
 }
@@ -97,12 +97,22 @@ function required_login_to_voting_panel() {
 		return;
 	}
 
-	wp_redirect( home_url( '/login' ) );
+	wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
 	exit;
 
 }
 
-// add_action( 'template_redirect', 'Concordamos\required_login_to_voting_panel' );
+add_action( 'template_redirect', 'Concordamos\required_login_to_voting_panel' );
 
+function require_login_for_private_voting () {
+	if ( is_singular( 'voting' ) && !is_user_logged_in() ) {
+		$voting_access = get_post_meta( get_the_ID(), 'voting_access', true );
 
+		if ( !empty( $voting_access ) && $voting_access === 'yes' ) {
+			wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
+			exit;
+		}
+	}
+}
 
+add_action( 'template_redirect', 'Concordamos\require_login_for_private_voting' );
