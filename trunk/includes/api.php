@@ -589,6 +589,7 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 	$data_graphic = [
 		'labels' => [],
 		'dataset' => [],
+		'dataset_percentage' => [],
 	];
 
 	$args = [
@@ -630,24 +631,34 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 
 					if ( $index !== false ) {
 						$data_graphic['dataset'][$index] += $value;
+						$data_graphic['votes'][$index] += 1;
 					} else {
 						$data_graphic['labels'][] = $label;
 						$data_graphic['dataset'][] = $value;
+						$data_graphic['votes'][] = 1;
 					}
+
 				}
 			}
 		}
 	}
 
+	$dataset_percentage = [];
+
+	foreach ( $data_graphic['dataset'] as $dataset ) {
+		$dataset_percentage[] = round( ( ( abs( $dataset ) / $used_credits ) * 100), 2 );
+	}
+
 	wp_reset_postdata();
 
 	return [
-		'dataset'       => $data_graphic['dataset'],
-		'labels'        => $data_graphic['labels'],
-		'number_voters' => $number_voters,
-		'participants'  => $votes->found_posts,
-		'total_credits' => get_post_meta( $voting_id, 'credits_voter', true ) * $votes->found_posts,
-		'used_credits'  => $used_credits
+		'dataset'            => $data_graphic['dataset'],
+		'dataset_percentage' => $dataset_percentage,
+		'labels'             => $data_graphic['labels'],
+		'number_voters'      => $number_voters,
+		'participants'       => $votes->found_posts,
+		'total_credits'      => get_post_meta( $voting_id, 'credits_voter', true ) * $votes->found_posts,
+		'used_credits'       => $used_credits
 	];
 
 }

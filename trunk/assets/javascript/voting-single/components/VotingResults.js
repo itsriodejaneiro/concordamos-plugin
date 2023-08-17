@@ -32,28 +32,43 @@ export default function VotingResults () {
 			labels: data.labels,
 			datasets: [
 				{
-					label: 'Votes',
+					label: 'Credits',
 					data: data.dataset,
-					backgroundColor: [
-						'#26A9F9',
-						'#EDE103',
-						'#D41F29',
-						'#F5501E',
-						'#FFE4DC',
-						'#FFE8BD',
-						'#0E1725'
-					],
-					borderWidth: 0
-				}
+					yAxisID: 'y1',
+					backgroundColor: '#EDE103',
+					borderWidth: 0,
+				},
+				{
+					label: 'Percents',
+					data: data.dataset_percentage,
+					yAxisID: 'y2',
+					backgroundColor: '#26A9F9',
+					borderWidth: 0,
+				},
 			],
 		}
 	}, [data])
 
 	const chartOptions = {
-		indexAxis: 'y',
+		scales: {
+			y1: {
+				type: 'linear',
+				display: true,
+				position: 'left',
+			},
+			y2: {
+				type: 'linear',
+				display: true,
+				position: 'right',
+
+				grid: {
+					drawOnChartArea: false
+				},
+			},
+		},
 		plugins: {
 			legend: {
-				display: false
+				display: true
 			}
 		}
 	}
