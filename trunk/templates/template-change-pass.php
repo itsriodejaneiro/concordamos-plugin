@@ -1,4 +1,6 @@
 <?php
+get_header();
+
 $site_title = get_bloginfo('name');
 $register_url = get_permalink(concordamos\get_page_by_template('concordamos/template-create-user.php'));
 $token = concordamos\get_change_password_token_status();
@@ -42,7 +44,7 @@ $change_pass_url = get_permalink(concordamos\get_page_by_template('concordamos/t
                     <div class="email-field">
                         <label>
                             <span><?php _e('Email', 'concordamos');?></span>
-                            <input name="email" type="email">
+                            <input name="email" type="email" placeholder="e-mail@example.com">
                         </label>
                     </div>
                     </div>
@@ -57,13 +59,13 @@ $change_pass_url = get_permalink(concordamos\get_page_by_template('concordamos/t
                     <div class="password-field">
                         <label>
                             <span><?php _e('Password', 'concordamos');?></span>
-                            <input name="password" type="password">
+                            <input name="password" type="password" placeholder="your password">
                         </label>
                     </div>
                     <div class="repeat-password-field">
                         <label>
                             <span><?php _e('Repeat password', 'concordamos');?></span>
-                            <input name="repeat-password" type="password">
+                            <input name="repeat-password" type="password" placeholder="repeat your password">
                         </label>
                     </div>
                     <div class="change-password-button">
@@ -83,3 +85,4 @@ $change_pass_url = get_permalink(concordamos\get_page_by_template('concordamos/t
 </body>
 
 </html>
+<?php get_footer(); ?>
