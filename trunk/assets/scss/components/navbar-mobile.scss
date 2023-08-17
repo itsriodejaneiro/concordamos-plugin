@@ -6,25 +6,32 @@
         display: flex;
         position: fixed;
         z-index: 999;
-        margin-top: 370px;
         align-items: center;
         text-align: center;
         justify-content: center;
-        width: 100%;
+		left: 15px;
+		right: 15px;
+		bottom: 20px;
     }
-    button{
+    a {
+		align-items: center;
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
         padding: 0px;
+		text-decoration: none;
         & p{
-        margin: 0px;
-        color: #000;
-        text-align: center;
-        font-family: 'Inter Tight', sans-serif;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        letter-spacing: -0.12px;
-        background-color: none;
+			margin: 0px;
+			color: #000;
+			text-align: center;
+			font-family: 'Inter Tight', sans-serif;
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			letter-spacing: -0.12px;
+			background-color: none;
         }
     }
     .btn-1{
