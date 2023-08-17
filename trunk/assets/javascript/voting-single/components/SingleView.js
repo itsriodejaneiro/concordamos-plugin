@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n'
 
 import Grid from './Grid'
 import OptionView from './OptionView'
+import { getPanelUrl } from '../../shared/utils/location'
 
 export default function SingleView ({ handleViewChange, initialData }) {
 	const { credits_voter, logged, options, voting_closed } = initialData
@@ -30,7 +31,7 @@ export default function SingleView ({ handleViewChange, initialData }) {
 					{
 						voting_closed
 						? ( logged
-							? <a className="button primary" href={window.location.pathname + "?panel=1"}>{__('See detailed results', 'concordamos')}</a>
+							? <a className="button primary" href={getPanelUrl(window.location.href)}>{__('See detailed results', 'concordamos')}</a>
 							: null )
 						: <button type="button" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
 					}
