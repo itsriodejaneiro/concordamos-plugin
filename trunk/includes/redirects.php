@@ -21,7 +21,7 @@ function restrict_voting_single_access() {
 				wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
 				exit;
 			} else {
-				wp_redirect( home_url( '/voting' ) );
+				wp_redirect( get_post_type_archive_link( 'voting' ) );
 				exit;
 			}
 		}
@@ -32,7 +32,7 @@ function restrict_voting_single_access() {
 				wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
 				exit;
 			} else {
-				wp_redirect( home_url( '/voting' ) );
+				wp_redirect( get_post_type_archive_link( 'voting' ) );
 				exit;
 			}
 		}
