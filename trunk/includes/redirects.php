@@ -102,7 +102,17 @@ function required_login_to_voting_panel() {
 
 }
 
-// add_action( 'template_redirect', 'Concordamos\required_login_to_voting_panel' );
+add_action( 'template_redirect', 'Concordamos\required_login_to_voting_panel' );
 
+function require_login_for_private_voting () {
+	if ( is_singular( 'voting' ) && !is_user_logged_in() ) {
+		$voting_type = get_post_meta( get_the_ID(), 'voting_type' );
 
+		if ( !empty( $voting_type ) && $voting_type === 'private' ) {
+			wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
+			exit;
+		}
+	}
+}
 
+add_action( 'template_redirect', 'Concordamos\require_login_for_private_voting' );
