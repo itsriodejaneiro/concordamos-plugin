@@ -21,7 +21,7 @@ $date_start_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_d
 $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_date( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
 
 $is_panel = get_query_var( 'panel' );
-$voting_closed = ( Concordamos\get_vote_count( $post_id ) >= $raw_post_meta['number_voters'][0] ) ? true : false;
+$voting_closed = Concordamos\is_voting_closed( $post_id );
 ?>
 <div>
 	<div class="voting-header">
