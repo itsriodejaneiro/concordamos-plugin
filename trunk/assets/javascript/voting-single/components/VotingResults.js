@@ -32,7 +32,7 @@ export default function VotingResults () {
 			labels: data.labels,
 			datasets: [
 				{
-					label: 'Vores',
+					label: 'Votes',
 					data: data.dataset,
 					backgroundColor: [
 						'#26A9F9',
