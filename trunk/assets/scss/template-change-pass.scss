@@ -1,0 +1,217 @@
+@import 'settings/mixins';
+
+
+body.page-template-template-change-pass{
+
+    .concordamos-balloon{
+        display: none;
+    }
+
+    .change-password-form{
+        margin-top: 80px;
+        max-width: 770px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .container{
+
+            h1{
+                color: #000;
+                font-family: Oswald;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 130%; 
+                letter-spacing: -0.32px;
+                max-width: 300px;
+                width: 100%;
+                margin-bottom: 0;
+            }
+
+            >p{
+                color: #000;
+                font-feature-settings: 'calt' off;
+                font-family: Inter Tight;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                letter-spacing: -0.16px;
+                max-width: 570px;
+                width: 100%;
+            }
+
+            .password-field{
+
+                label{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-top: 32px;
+
+                    >span{
+                        color: #111;
+                        font-family: Libre Franklin;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        max-width: 130px;
+                        width: 100%;
+                    }
+
+                    input[name="password"] {
+                        max-width: 570px;
+                        width: 100%;
+                        display: flex;
+                        padding: 16px 96px 16px 16px;
+                        align-items: center;
+                        gap: 10px;
+                        border-radius: 8px;
+                        border: 3px solid var(--low-dark, #000);
+                        background: #FFF;
+                    }
+                }
+            }
+
+            .repeat-password-field{
+
+                >label{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    width: 570px;
+                    margin-top: 16px;
+
+                    >span{
+                        color: #111;
+                        font-family: Libre Franklin;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        max-width: 130px;
+                        width: 100%;
+                    }
+
+                    input{
+                        max-width: 570px;
+                        width: 100%;
+                        display: flex;
+                        padding: 16px 96px 16px 16px;
+                        align-items: center;
+                        gap: 10px;
+                        border-radius: 8px;
+                        border: 3px solid var(--low-dark, #000);
+                        background: #FFF;
+                    }
+                }
+            }
+
+            .email-field{
+
+                >label{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    width: 570px;
+
+                    >span{
+                        color: #111;
+                        font-family: Libre Franklin;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        max-width: 53px;
+                        width: 100%;
+                        margin-top: 16px;
+                    }
+
+                    input{
+                        max-width: 570px;
+                        width: 100%;
+                        display: flex;
+                        padding: 16px 96px 16px 16px;
+                        align-items: center;
+                        gap: 10px;
+                        border-radius: 8px;
+                        border: 3px solid var(--low-dark, #000);
+                        background: #FFF;
+                    }
+                }
+            }
+
+        }
+        
+        .change-password-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+
+            button{
+                border-radius: 80px;
+                border: 3px solid #000;
+                background: var(--wp--preset--color--primary-light);
+                width: 139px;
+                padding: 8px 24px;
+                align-items: flex-start;
+                gap: 10px;
+                color: #111;
+                text-align: center;
+                font-family: Oswald;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 130%;
+                letter-spacing: -0.24px;
+            }
+        }
+
+        .its-logo{
+            display: none;
+        }
+
+        #change-password-message{
+
+            .error{
+                text-align: center;
+                font-family: Oswald;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 130%;
+                letter-spacing: -0.24px;
+                position: relative;
+                top: -120px;
+
+                >p{
+                    color: #b01616;
+                }
+            }
+
+            .success{
+                text-align: center;
+                font-family: Oswald;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 130%;
+                letter-spacing: -0.24px;
+                position: relative;
+                top: -120px;
+
+                >p{
+                    color: #126f07;
+                }
+            }
+        }
+    }
+}

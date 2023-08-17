@@ -33,15 +33,15 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
 
-	register_rest_route( 'concordamos/v1', '/voting-links/', [
-		'methods'             => 'GET',
-		'callback'            => 'Concordamos\\get_voting_links_callback',
+	register_rest_route( 'concordamos/v1', '/my-account/', [
+		'methods'             => 'PATCH',
+		'callback'            => 'Concordamos\\patch_my_account_callback',
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
 
 	register_rest_route( 'concordamos/v1', '/my-account/', [
-		'methods'             => 'PATCH',
-		'callback'            => 'Concordamos\\patch_my_account_callback',
+		'methods'             => 'DELETE',
+		'callback'            => 'Concordamos\\delete_my_account_callback',
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
 
@@ -56,6 +56,12 @@ function register_endpoints() {
 		'callback'            => 'Concordamos\\list_my_votings_callback',
 		'permission_callback' => 'Concordamos\\permission_check',
 	]);
+
+	register_rest_route( 'concordamos/v1', '/voting-links/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\get_voting_links_callback',
+		'permission_callback' => 'Concordamos\\permission_check'
+	] );
 
 	register_rest_route( 'concordamos/v1', '/participated-votings/', [
 		'methods'             => 'GET',
@@ -465,6 +471,44 @@ function patch_my_account_callback ( \WP_REST_Request $request ) {
 	}
 }
 
+function delete_my_account_callback ( \WP_REST_Request $request ) {
+	// Required for using `wp_delete_user` function
+	require_once(ABSPATH . 'wp-admin/includes/user.php');
+
+	$userId = get_current_user_id();
+
+	$args = [
+		'author' => $userId,
+		'numberposts' => -1,
+		'post_type' => ['vote', 'voting'],
+	];
+
+	$posts = get_posts($args);
+
+	foreach ($posts as $post) {
+		$args = [
+			'ID' => $post->ID,
+			'post_author' => 0,
+			'meta_input' => [
+				'_deleted_user' => 1,
+			],
+		];
+
+		wp_update_post($args);
+	}
+
+	wp_logout();
+
+	wp_delete_user($userId, 0);
+
+	$response = [
+		'status' => 'success',
+		'message' => __('Account deleted successfully')
+	];
+
+	return new \WP_REST_Response($response, 200);
+}
+
 function get_my_vote_callback ( \WP_REST_Request $request ) {
 	$params = $request->get_params();
 
@@ -589,6 +633,7 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 	$data_graphic = [
 		'labels' => [],
 		'dataset' => [],
+		'dataset_percentage' => [],
 	];
 
 	$args = [
@@ -630,24 +675,34 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 
 					if ( $index !== false ) {
 						$data_graphic['dataset'][$index] += $value;
+						$data_graphic['votes'][$index] += 1;
 					} else {
 						$data_graphic['labels'][] = $label;
 						$data_graphic['dataset'][] = $value;
+						$data_graphic['votes'][] = 1;
 					}
+
 				}
 			}
 		}
 	}
 
+	$dataset_percentage = [];
+
+	foreach ( $data_graphic['dataset'] as $dataset ) {
+		$dataset_percentage[] = round( ( ( abs( $dataset ) / $used_credits ) * 100), 2 );
+	}
+
 	wp_reset_postdata();
 
 	return [
-		'dataset'       => $data_graphic['dataset'],
-		'labels'        => $data_graphic['labels'],
-		'number_voters' => $number_voters,
-		'participants'  => $votes->found_posts,
-		'total_credits' => get_post_meta( $voting_id, 'credits_voter', true ) * $votes->found_posts,
-		'used_credits'  => $used_credits
+		'dataset'            => $data_graphic['dataset'],
+		'dataset_percentage' => $dataset_percentage,
+		'labels'             => $data_graphic['labels'],
+		'number_voters'      => $number_voters,
+		'participants'       => $votes->found_posts,
+		'total_credits'      => get_post_meta( $voting_id, 'credits_voter', true ) * $votes->found_posts,
+		'used_credits'       => $used_credits
 	];
 
 }
