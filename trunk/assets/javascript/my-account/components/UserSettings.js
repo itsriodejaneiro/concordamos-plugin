@@ -1,11 +1,13 @@
 import { __ } from '@wordpress/i18n'
 
+import DeleteAccountModal from './DeleteAccountModal'
 import EditEmailModal from './EditEmailModal'
 import EditNameModal from './EditNameModal'
 import EditPasswordModal from './EditPasswordModal'
 import { useModal } from '../../shared/components/Modal'
 
 export default function UserSettings ({ user }) {
+	const deleteAccountModal = useModal(false)
 	const editEmailModal = useModal(false)
 	const editNameModal = useModal(false)
 	const editPasswordModal = useModal(false)
@@ -38,10 +40,11 @@ export default function UserSettings ({ user }) {
 						<button className="edit" type="button" onClick={editPasswordModal.open}>{__('Edit password', 'concordamos')}</button>
 						<button className="edit" type="button">{__('Review our privacy policy', 'concordamos')}</button>
 						<button className="edit" type="button">{__('Review our terms of use', 'concordamos')}</button>
-						<button className="delete-acount" type="button delete">{__('Delete account', 'concordamos')}</button>
+						<button className="delete-acount" type="button delete" onClick={deleteAccountModal.open}>{__('Delete account', 'concordamos')}</button>
 					</div>
 				</div>
 			</div>
+			<DeleteAccountModal controller={deleteAccountModal}/>
 			<EditNameModal controller={editNameModal} value={user.name} onChange={(event) => user.name = event}/>
 			<EditEmailModal controller={editEmailModal} value={user.email} onChange={(event) => user.email = event}/>
 			<EditPasswordModal controller={editPasswordModal}/>

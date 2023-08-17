@@ -33,15 +33,15 @@ function register_endpoints() {
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
 
-	register_rest_route( 'concordamos/v1', '/voting-links/', [
-		'methods'             => 'GET',
-		'callback'            => 'Concordamos\\get_voting_links_callback',
+	register_rest_route( 'concordamos/v1', '/my-account/', [
+		'methods'             => 'PATCH',
+		'callback'            => 'Concordamos\\patch_my_account_callback',
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
 
 	register_rest_route( 'concordamos/v1', '/my-account/', [
-		'methods'             => 'PATCH',
-		'callback'            => 'Concordamos\\patch_my_account_callback',
+		'methods'             => 'DELETE',
+		'callback'            => 'Concordamos\\delete_my_account_callback',
 		'permission_callback' => 'Concordamos\\permission_check'
 	] );
 
@@ -56,6 +56,12 @@ function register_endpoints() {
 		'callback'            => 'Concordamos\\list_my_votings_callback',
 		'permission_callback' => 'Concordamos\\permission_check',
 	]);
+
+	register_rest_route( 'concordamos/v1', '/voting-links/', [
+		'methods'             => 'GET',
+		'callback'            => 'Concordamos\\get_voting_links_callback',
+		'permission_callback' => 'Concordamos\\permission_check'
+	] );
 
 	register_rest_route( 'concordamos/v1', '/participated-votings/', [
 		'methods'             => 'GET',
@@ -463,6 +469,36 @@ function patch_my_account_callback ( \WP_REST_Request $request ) {
 		];
 		return new \WP_REST_Response($response, 400);
 	}
+}
+
+function delete_my_account_callback ( \WP_REST_Request $request ) {
+	$userId = get_current_user_id();
+
+	$args = [
+		'author' => $userId,
+		'numberposts' => -1,
+		'post_type' => ['vote', 'voting'],
+	];
+
+	$posts = get_posts($args);
+
+	foreach ($posts as $post) {
+		$args = [
+			'ID' => $post->ID,
+			'post_author' => 0,
+			'meta_input' => [
+				'_deleted_user' => 1,
+			],
+		];
+
+		wp_update_post($args);
+	}
+
+	wp_logout();
+
+	wp_delete_user($userId, 0);
+
+	return $posts;
 }
 
 function get_my_vote_callback ( \WP_REST_Request $request ) {

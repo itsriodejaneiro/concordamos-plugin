@@ -52,6 +52,7 @@ function enqueue_scripts_frontend() {
 
 			enqueue_localized_script( 'concordamos-my-account', CONCORDAMOS_PLUGIN_URL . 'build/js/my-account/index.js', [ 'wp-element', 'wp-i18n' ], 'concordamos', [
 				'create_voting_url' => get_permalink( get_voting_page() ),
+				'login_url' => get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ),
 				'nonce' => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'rest_url' => rest_url( 'concordamos/v1/' ),
