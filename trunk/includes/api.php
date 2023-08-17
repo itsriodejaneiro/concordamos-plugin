@@ -155,7 +155,7 @@ function list_my_votings_callback ( \WP_REST_Request $request ) {
 	$args = [
 		'post_type' => 'voting',
 		'post_status' => 'publish',
-		'post_author' => get_current_user_id(),
+		'author' => get_current_user_id(),
 		'posts_per_page' => 6,
 		'paged' => $currentPage,
 	];
@@ -178,7 +178,7 @@ function list_participated_votings_callback ( \WP_REST_Request $request ) {
 	$args = [
 		'post_type' => 'vote',
 		'post_status' => 'publish',
-		'post_author' => get_current_user_id(),
+		'author' => get_current_user_id(),
 		'posts_per_page' => 6,
 		'paged' => $currentPage,
 	];
@@ -479,7 +479,7 @@ function get_my_vote_callback ( \WP_REST_Request $request ) {
 	$args = [
 		'post_type' => 'vote',
 		'post_status' => 'publish',
-		'post_author' => get_current_user_id(),
+		'author' => get_current_user_id(),
 		'meta_query' => [
 			[ 'key' => 'voting_id', 'value' => $params['v_id'] ],
 		],
