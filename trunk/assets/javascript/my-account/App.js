@@ -34,9 +34,13 @@ export function App ({ initialData }) {
 	return (
 		<div className="my-account">
 			<div className="my-account-header">
+				<div className="my-account-header__name">{__('My account', 'concordamos')}
+				<div class="arrow">
+					<img src=".assets/images/arrow.svg"/>
+            	</div>
+				</div>
 				<div className="my-account-header__wrapper">
 					<div>
-						<div className="my-account-header__name">{__('My account', 'concordamos')}</div>
 						<h1>{sprintf(__('Hello, %s', 'concordamos'), user.name)}</h1>
 					</div>
 					<button type="button" className="button edit" onClick={handleSignOut}>{__('Sign out', 'concordamos')}</button>
