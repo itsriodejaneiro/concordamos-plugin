@@ -331,3 +331,16 @@ function get_panel_url( $url ) {
         return $url . '?panel=1';
     }
 }
+
+function get_change_password_token_status() {
+	if( ! isset( $_GET[ 'concordamos_change_pass_tk'] ) || empty( $_GET['concordamos_change_pass_tk'] ) ) {
+		return false;
+	}
+
+	$token_key = esc_attr( $_GET[ 'concordamos_change_pass_tk' ] );
+	$token = User_Change_Pass::get_token( $token_key );
+	if( ! $token ) {
+		return 'invalid';
+	}
+	return true;
+}

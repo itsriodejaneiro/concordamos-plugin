@@ -86,6 +86,18 @@ function enqueue_scripts_frontend() {
 		] );
 	}
 
+	if ( $template_slug === 'concordamos/template-change-pass.php' ) {
+		wp_enqueue_style( 'concordamos-template-template-change-pass', CONCORDAMOS_PLUGIN_URL . 'build/css/template-change-pass.css', ['concordamos-style'], CONCORDAMOS_PLUGIN_VERSION );
+
+		enqueue_localized_script( 'concordamos-change-pass', CONCORDAMOS_PLUGIN_URL . 'build/js/user/change-pass.js', [], 'concordamos', [
+			'nonce' => wp_create_nonce( 'wp_rest' ),
+			'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+			'rest_url' => rest_url( 'concordamos/user/v1' ),
+			'login_url' => get_permalink( get_page_by_template('concordamos/template-login.php') )
+		] );
+	}
+
+
 	$id = get_the_ID();
 
 	$block_list = [

@@ -41,6 +41,8 @@ function custom_page_templates( array $templates ): array {
     $templates[ 'concordamos/template-login.php' ] = __( 'Login', 'concordamos' ) . ' [Concordamos]';
 	$templates[ 'concordamos/template-create-user.php'] = __( 'Create user', 'concordamos' ) . ' [Concordamos]';
 	$templates[ 'concordamos/template-my-account.php' ] = __( 'My account', 'concordamos' ) . ' [Concordamos]';
+	$templates[ 'concordamos/template-change-pass.php' ] = __( 'Change password', 'concordamos' ) . ' [Concordamos]';
+
     return $templates;
 }
 
