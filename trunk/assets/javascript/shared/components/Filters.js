@@ -8,9 +8,8 @@ const votingAccessOptions = {
 }
 
 const votingTimeOptions = {
-	'past': _x('Open', 'votings', 'concordamos'),
-	'present': _x('Concluded', 'votings', 'concordamos'),
-	
+	'present': _x('Open', 'votings', 'concordamos'),
+	'past': _x('Concluded', 'votings', 'concordamos'),
 }
 
 export default function Filters ({ filters, onChange }) {
@@ -19,7 +18,7 @@ export default function Filters ({ filters, onChange }) {
 			return onChange({ ...filters, [key]: value })
 		}
 	}
- 
+
 	return (
 		<details>
 			<summary>{__('Filters', 'concordamos')}</summary>
