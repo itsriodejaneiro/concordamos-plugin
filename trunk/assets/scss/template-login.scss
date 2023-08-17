@@ -10,18 +10,18 @@
         min-height: 500px;
         margin-top: -166px;
         @include mobile{
-            margin-top:-170px;        
+            margin-top:-170px;
         }
         .balloon-content{
             @include mobile{
                 padding-top: 170px;
             }
-            
+
             .arrow{
                 display: none;
                 @include mobile{
                     display: block;
-                    
+
                 }
                 img{
                     @include mobile{
@@ -60,13 +60,14 @@
                 }
             }
             .with{
-                margin-top: 1px;   
+                margin-top: 1px;
             }
         }
-        
+
     }
     .login-form,
-    .register-form{
+    .register-form,
+	.change-password-form{
         @include mobile{
             margin-left: 16px;
             margin-right: 16px;
@@ -74,12 +75,12 @@
         .error p {
             color: #FF2E22;
             font-family: 'Inter Tight';
-            letter-spacing: -0.12px;    
+            letter-spacing: -0.12px;
         }
         .success p {
             color: #00d084;
             font-family: 'Inter Tight';
-            letter-spacing: -0.12px;    
+            letter-spacing: -0.12px;
         }
         .container{
             max-width: 576px;
@@ -88,8 +89,8 @@
             margin-right: auto;
             margin-top: 83px;
             padding-left: 0;
-            padding-right: 0;  
-           
+            padding-right: 0;
+
         }
         label{
             color: #111;
@@ -119,7 +120,7 @@
             font-weight: medium;
             line-height: 130%;
             letter-spacing: -0.24px;
-            padding: 15px 0; 
+            padding: 15px 0;
         }
         p, img{
             text-align: center;
@@ -146,7 +147,7 @@
                 height: 16px;
                 margin-right: 7px;
                 margin-bottom: 18px;
-               
+
             }
             label{
                 color: #000;
@@ -154,18 +155,18 @@
                 font-family: 'Inter';
                 font-size: 14px;
                 font-weight: 400;
-                    
+
             }
             a{
                 color: #26A9F9;
-                font-weight: 700;    
+                font-weight: 700;
             }
-            
+
         }
         button.show-password {
             margin-top:33px;
         }
-    
+
     }
     .login-password-field{
         margin: 26px 0;
@@ -209,6 +210,6 @@
     .its-logo{
         text-align: center;
         margin: 50px 0;
-    }    
+    }
 }
 

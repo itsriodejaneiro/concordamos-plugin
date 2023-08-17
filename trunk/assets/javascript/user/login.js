@@ -85,6 +85,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('resize', fixButtonShowPasswordPosition);
-  fixButtonShowPasswordPosition();
+  setTimeout( () => {
+    fixButtonShowPasswordPosition();
+  }, 10)
 
 });
