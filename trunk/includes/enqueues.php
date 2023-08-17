@@ -66,6 +66,7 @@ function enqueue_scripts_frontend() {
 		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
 
 		enqueue_localized_script( 'concordamos-voting-single', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-single/index.js', ['wp-element', 'wp-i18n'], 'concordamos', [
+			'admin_email' => get_bloginfo( 'admin_email' ),
 			'is_author' => get_post_field( 'post_author', get_the_ID() ) == get_current_user_id() ? true : false,
 			'nonce' => wp_create_nonce( 'wp_rest' ),
 			'plugin_url' => CONCORDAMOS_PLUGIN_URL,
