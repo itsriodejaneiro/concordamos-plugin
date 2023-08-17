@@ -26,7 +26,7 @@ body.page-template-template-change-pass{
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 600;
-                line-height: 130%; 
+                line-height: 130%;
                 letter-spacing: -0.32px;
                 max-width: 300px;
                 width: 100%;
@@ -148,7 +148,7 @@ body.page-template-template-change-pass{
             }
 
         }
-        
+
         .change-password-button{
             display: flex;
             align-items: center;
@@ -213,5 +213,13 @@ body.page-template-template-change-pass{
                 }
             }
         }
+		button.show-password {
+			position: absolute;
+            width: 25px;
+            height: 25px;
+            margin-top: 48px;
+            border: none;
+            background: none;
+		}
     }
 }

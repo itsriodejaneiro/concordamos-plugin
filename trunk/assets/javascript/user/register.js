@@ -123,12 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
         const fixButtonShowPasswordPosition = () => {
-            buttonShowPassword.style.marginLeft = inputPassword.clientWidth - 40 + 'px';
+            buttonShowPassword.style.marginLeft = inputPassword.clientWidth - 80 + 'px';
         }
 
         window.addEventListener('resize', fixButtonShowPasswordPosition);
-        fixButtonShowPasswordPosition();
-
+        setTimeout( () => {
+            fixButtonShowPasswordPosition();
+          }, 100)
 
     }
 });
