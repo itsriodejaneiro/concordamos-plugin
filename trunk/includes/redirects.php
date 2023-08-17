@@ -106,7 +106,7 @@ add_action( 'template_redirect', 'Concordamos\required_login_to_voting_panel' );
 
 function require_login_for_private_voting () {
 	if ( is_singular( 'voting' ) && !is_user_logged_in() ) {
-		$voting_access = get_post_meta( get_the_ID(), 'voting_access' );
+		$voting_access = get_post_meta( get_the_ID(), 'voting_access', true );
 
 		if ( !empty( $voting_access ) && $voting_access === 'yes' ) {
 			wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
