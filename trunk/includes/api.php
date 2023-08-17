@@ -472,6 +472,9 @@ function patch_my_account_callback ( \WP_REST_Request $request ) {
 }
 
 function delete_my_account_callback ( \WP_REST_Request $request ) {
+	// Required for using `wp_delete_user` function
+	require_once(ABSPATH . 'wp-admin/includes/user.php');
+
 	$userId = get_current_user_id();
 
 	$args = [
@@ -498,7 +501,12 @@ function delete_my_account_callback ( \WP_REST_Request $request ) {
 
 	wp_delete_user($userId, 0);
 
-	return $posts;
+	$response = [
+		'status' => 'success',
+		'message' => __('Account deleted successfully')
+	];
+
+	return new \WP_REST_Response($response, 200);
 }
 
 function get_my_vote_callback ( \WP_REST_Request $request ) {
