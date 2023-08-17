@@ -9,7 +9,9 @@ export default function DeleteAccountModal ({ controller }) {
 		apiFetch('DELETE', 'my-account', {
 			'user_id': concordamos.user_id,
 		}).then((response) => {
-			navigateTo(concordamos.login_url)
+			if (response.status !== 'error') {
+				navigateTo(concordamos.login_url)
+			}
 		})
 	}
 
