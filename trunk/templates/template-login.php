@@ -1,5 +1,6 @@
 <?php
 $site_title = get_bloginfo('name');
+$change_password_url = get_permalink(concordamos\get_page_by_template('concordamos/template-change-password.php'));
 $register_url = get_permalink(concordamos\get_page_by_template('concordamos/template-create-user.php'));
 ?>
 <!DOCTYPE html>
@@ -53,7 +54,7 @@ $register_url = get_permalink(concordamos\get_page_by_template('concordamos/temp
                         <input name="password" type="password">
                     </div>
                 </label>
-                <a href="#">
+                <a href="<?php echo $change_password_url;?>">
                     <?php _e('I forgot my password', 'concordamos'); ?>
                 </a>
             </div>

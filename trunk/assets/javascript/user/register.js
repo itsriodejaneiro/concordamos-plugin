@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
         const fixButtonShowPasswordPosition = () => {
-            buttonShowPassword.style.marginLeft = inputPassword.clientWidth - 110 + 'px';
+            buttonShowPassword.style.marginLeft = inputPassword.clientWidth - 40 + 'px';
         }
 
         window.addEventListener('resize', fixButtonShowPasswordPosition);

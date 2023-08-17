@@ -52,10 +52,22 @@ function enqueue_scripts_frontend() {
 
 			enqueue_localized_script( 'concordamos-my-account', CONCORDAMOS_PLUGIN_URL . 'build/js/my-account/index.js', [ 'wp-element', 'wp-i18n' ], 'concordamos', [
 				'create_voting_url' => get_permalink( get_voting_page() ),
+				'login_url' => get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ),
 				'nonce' => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'rest_url' => rest_url( 'concordamos/v1/' ),
 				'user_id' => get_current_user_id(),
+			] );
+		}
+
+		if ( $template_slug === 'concordamos/template-change-pass.php' ) {
+			wp_enqueue_style( 'concordamos-template-template-change-pass', CONCORDAMOS_PLUGIN_URL . 'build/css/template-change-pass.css', ['concordamos-style'], CONCORDAMOS_PLUGIN_VERSION );
+
+			enqueue_localized_script( 'concordamos-change-pass', CONCORDAMOS_PLUGIN_URL . 'build/js/user/change-pass.js', [], 'concordamos', [
+				'nonce' => wp_create_nonce( 'wp_rest' ),
+				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
+				'rest_url' => rest_url( 'concordamos/user/v1' ),
+				'login_url' => get_permalink( get_page_by_template('concordamos/template-login.php') )
 			] );
 		}
 	}
@@ -66,6 +78,7 @@ function enqueue_scripts_frontend() {
 		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
 
 		enqueue_localized_script( 'concordamos-voting-single', CONCORDAMOS_PLUGIN_URL . 'build/js/voting-single/index.js', ['wp-element', 'wp-i18n'], 'concordamos', [
+			'admin_email' => get_bloginfo( 'admin_email' ),
 			'is_author' => get_post_field( 'post_author', get_the_ID() ) == get_current_user_id() ? true : false,
 			'nonce' => wp_create_nonce( 'wp_rest' ),
 			'plugin_url' => CONCORDAMOS_PLUGIN_URL,
