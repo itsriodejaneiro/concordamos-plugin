@@ -1,6 +1,6 @@
 <?php
 $site_title = get_bloginfo('name');
-$change_password_url = get_permalink(concordamos\get_page_by_template('concordamos/template-change-password.php'));
+$change_password_url = get_permalink(concordamos\get_page_by_template('concordamos/template-change-pass.php'));
 $register_url = get_permalink(concordamos\get_page_by_template('concordamos/template-create-user.php'));
 ?>
 <!DOCTYPE html>
