@@ -32,7 +32,7 @@ export function useFetch (url, defaultValue = undefined) {
 					setState({ data, error: undefined, loading: false })
 				}
 			} catch (error) {
-				if (!error instanceof AbortController) {
+				if (error.name !== 'AbortError') {
 					setState({ data: defaultValue, error, loading: false })
 					console.error(error)
 				}
