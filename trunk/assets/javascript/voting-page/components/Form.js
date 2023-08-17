@@ -150,7 +150,7 @@ const Form = () => {
 
 				{
 					(votingOptions.length >= 2)
-					? <button type="submit" class="button-full">{__('Submit vote', 'concordamos')}</button>
+					? <button type="submit" class="button-full">{__('Create voting', 'concordamos')}</button>
 					: <button type="button" class="button-full disabled">{__('Add at least two votes', 'concordamos')}</button>
 				}
 			</form>
