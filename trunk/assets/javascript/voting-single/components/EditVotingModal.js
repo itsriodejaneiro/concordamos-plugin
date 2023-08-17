@@ -41,7 +41,7 @@ export default function EditVotingModal({ controller, initialData }) {
 	}
 
 	function finishVoting (event) {
-		patchDates(initialStart, Math.min(initialEnd, new Date()))
+		patchDates(initialStart, minDate(initialEnd, new Date()))
 	}
 
 	return (

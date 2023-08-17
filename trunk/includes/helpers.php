@@ -264,7 +264,6 @@ function get_page_by_template (string $template) {
 	return false;
 }
 
-
 /**
  *
  * Count votes of the voting.
@@ -295,6 +294,19 @@ function get_vote_count ( $voting_id ) {
 
 	return $votes;
 
+}
+
+function is_voting_closed ( $voting_id ) {
+	if ( get_vote_count( $voting_id ) >= intval( get_post_meta( $voting_id, 'number_voters', true ) ) ) {
+		return true;
+	}
+
+	$now = 1000 * time();
+	if ( intval( get_post_meta( $voting_id, 'date_end', true ) ) <= $now ) {
+		return true;
+	}
+
+	return false;
 }
 
 function get_vote_by_user( $user_id = '' ) {

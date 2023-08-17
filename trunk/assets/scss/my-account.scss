@@ -11,11 +11,15 @@
             .my-account-header{
                 border-bottom: 3px solid #000;
                 background-color: #f5f5f5;
-                padding-top: 55px;
-                padding-bottom: 30px;
+                padding-top: 76px;
+                padding-bottom: 76px;
                 @media(max-width: 1210px){
                     padding-left: 15px;
                     padding-right: 15px;
+                }
+                @include mobile{
+                    padding-bottom: 32px;
+                    padding-top: 24px;
                 }
 				.my-account-header__wrapper {
 					align-items: center;
@@ -25,8 +29,19 @@
                     margin-right: auto;
                     max-width: 1140px;
                     width: 100%;
+                    button{
+                        @include mobile{
+                            display: none;
+                        }
+                    }
 				}
                 .my-account-header__name{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 1140px;
+                    width: 100%;
                     font-family: 'Inter';
                     font-size: 20px;
                     font-weight: 600;
@@ -34,6 +49,26 @@
                     letter-spacing: -0.2px;
                     text-transform: uppercase;
                     color: #000;
+                    align-items: flex-start;
+                    @include mobile{
+                        border-bottom: 3px solid black;
+                        padding-bottom: 16px;
+                        display: revert;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        justify-content: flex-end;
+
+                    }
+                    .arrow{
+                        display: none;;
+                        @include mobile{
+                            display: inline;
+                            margin-right: 16px;
+                            background-image: url($p_theme_assets+"assets/images/arrow.png") ;
+                        }
+                    }
+                   
+                    
                 }
                 h1{
                     font-family: 'Oswald';
@@ -45,7 +80,10 @@
                     margin-top: 20px;
                     color: #000;
                     @media(max-width: 782px){
-                        font-size: 32px;;
+                        font-size: 32px;
+                    }
+                    @include mobile{
+                        margin-top: 62px;
                     }
                 }
 
@@ -244,6 +282,7 @@
                         line-height: 130%;
                         letter-spacing: -0.24px;
                         text-transform: uppercase;
+                        
                     }
 
                     .panel-tab{

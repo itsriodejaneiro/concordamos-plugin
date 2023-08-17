@@ -580,6 +580,14 @@ function vote_callback( \WP_REST_Request $request ) {
 		}
 	}
 
+	if ( is_voting_closed( $voting_id ) ) {
+		$response = [
+			'status'  => 'error',
+			'message' => __( 'Voting phase is already closed', 'concordamos' ),
+		];
+		return new \WP_REST_Response( $response, 400 );
+	}
+
 	// Generate the post_title using random_int and uniqid functions
 	$prefix = 'v-' . random_int( 100, 999 );
 	$post_title = uniqid( $prefix );
