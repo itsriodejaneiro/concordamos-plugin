@@ -3,21 +3,47 @@
 
 @import 'components/modal';
 
+body{
+	.entry-header {
+		display: none;
+	}
+
+	.entry-content{
+		max-width: 570px;
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
 #concordamos-voting-form {
 	max-width: 570px;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+
 	form{
 		@media (max-width: 782px){
 			padding-left: 15px;
 			padding-right: 15px;
 		}
 	}
+
+	.field-radio {
+		
+		label{
+			>.title-section{
+				margin-top: 0;
+				margin-bottom: 18px;
+			}
+		}
+
+	}
 	
 	.field-checkbox{
 		margin-top: 30px;
 	}
+
 	.field-text, .field-textarea, .field-checkbox{
 		label{
 			
@@ -78,24 +104,49 @@
 	}
 
 	.radio-options{
+		gap: 58px;
+
 		label{
 			font-weight: bold;
 			font-family: 'Inter Tight', sans-serif;
 			color: #000;
+			font-size: 16px;
+			display: flex;
+
+			input [name="voting_type"]{
+				width: 16px;
+				height: 16px;
+
+				&::after{
+					content: "";
+					opacity: 0;
+					display: block;
+					left: 0px;
+					top: 0px;
+					position: absolute;
+					width: 7px;
+					height: 7px;
+					border-radius: 50%;
+					background: var(--form--color-text);
+				}
+			}
 		}
 	}
+
 	.option{
+
 		@media(max-width: 781px){
 			margin-bottom: 5px;    
 		} 
+
 		span{
-		font-family: 'Oswald';
-		font-size: 24px;
-		line-height: 130%;
-		letter-spacing: -0.24px;
-		font-weight: 500;
-		margin-bottom: 11px;
-		color: #000;     
+			font-family: 'Oswald';
+			font-size: 24px;
+			line-height: 130%;
+			letter-spacing: -0.24px;
+			font-weight: 500;
+			margin-bottom: 11px;
+			color: #000;     
 		}
 	}
 
