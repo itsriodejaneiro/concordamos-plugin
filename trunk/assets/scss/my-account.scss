@@ -51,7 +51,7 @@
                     color: #000;
                     align-items: flex-start;
                     @include mobile{
-                        border-bottom: 3px solid black;
+                       
                         padding-bottom: 16px;
                         display: revert;
                         display: flex;
@@ -59,14 +59,7 @@
                         justify-content: flex-end;
 
                     }
-                    .arrow{
-                        display: none;;
-                        @include mobile{
-                            display: inline;
-                            margin-right: 16px;
-                            background-image: url(../../assets/images/arrow.png) ;
-                        }
-                    }
+                  
                 }
                 h1{
                     font-family: 'Oswald';
@@ -81,7 +74,7 @@
                         font-size: 32px;
                     }
                     @include mobile{
-                        margin-top: 62px;
+                        margin-top: 25px;
                     }
                 }
 
@@ -90,24 +83,25 @@
                 border-bottom: 3px solid #000;
                 display: grid;
                 grid-template-columns: 1.4fr 1fr;
+                background-color: #FFF;
                 @media(max-width: 782px){
                     display: flex;
                     flex-direction: column;
-                    margin-left: 16px;
+                    padding-left: 16px;
                 }
                 h2{
                     font-size: 32px;
                     color: #000;
                     font-family: 'Oswald';
                     font-size: 32px;
-                    font-weight: 500;
+                    font-weight: 600;
                     letter-spacing: -0.32px;
                     text-transform: uppercase;
                     margin-top: 64px;
                     margin-bottom: 64px;
                     @include mobile{
-                        margin-top: 42px;
-                        margin-bottom: 16px;
+                        margin-top: 37px;
+                        margin-bottom:0;
                     }
                 }
 				.content.panel {
@@ -169,7 +163,6 @@
                 .my-account-box:nth-of-type(2){
                     .container{
                         display: flex;
-                        margin-left: 62px;
                         flex-direction: column;
                         align-items: flex-start;
                         margin-bottom: 93px;
@@ -183,7 +176,7 @@
                         }
                         h2{
                             @include mobile{
-                                margin-bottom: 38px;
+                                margin-bottom: 15px;
                             }
 
                         }
@@ -267,6 +260,9 @@
                     width: 100%;
                     display: grid;
                     grid-template-columns: 0.19fr 1fr 1fr 0.19fr;
+                    @include small{
+                        grid-template-columns: 1fr 1fr;
+                    }
 
                     button{
                         background-color: transparent;
@@ -280,6 +276,9 @@
                         line-height: 130%;
                         letter-spacing: -0.24px;
                         text-transform: uppercase;
+                        @include mobile{
+                            font-size: 14px;
+                        }
                     }
 
                     .panel-tab{
@@ -305,9 +304,14 @@
                         padding-right: 0;
                         border-bottom: 3px solid #000;
                         border-left: 1.7px solid #000;
-
-
                     }
+                    .panel-previous-tab,
+                    .panel-next-tab{
+                        @include small{
+                            display: none;
+                        }
+                    }
+
                 }
                 .my-account-tab{
                     display: flex;
@@ -315,6 +319,9 @@
                     flex-wrap: wrap;
                     align-content: center;
                     margin-top: 8px;
+                    @include small{
+                        margin-top: 40px
+                    }
                     .my-account-filter-button{
                         padding-top: 40px;
                         max-width: 1140px;
@@ -323,6 +330,9 @@
                         margin-right: auto;
                         display: flex;
                         justify-content: space-between;
+                        @include small{
+                            padding-top: 0;
+                        }
                         .link-primary{
                             background-color: #FFF766;
                             border-radius: 80px;
@@ -339,6 +349,9 @@
                                 font-size: 16px;
                                 display: flex;
                                 align-items: center;
+                            }
+                            @include small{
+                                display: none;
                             }
                             &:hover{
                                 background-color: transparent;

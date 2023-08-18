@@ -462,10 +462,9 @@
 			}
 
 			.sidebar {
-				padding-top: size(64);
-
-				@include mobile {
-					padding-top: size(16);
+				padding-top: 64px;
+				@media(max-width: 782px){
+					padding-top: 40px;
 				}
 
 				.options-title-mobile{
