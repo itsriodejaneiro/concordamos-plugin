@@ -66,7 +66,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 			<div className="content voting-mode">
 				<h2>{__('Distribute your votes', 'concordamos')}</h2>
 				<p>{sprintf(__('You can use up to %s credits to vote during this poll', 'concordamos'), credits_voter)}</p>
-				<p>{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString('pt-BR'), formattedDateEnd.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: true }))}</p>
+				<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString('pt-BR'), formattedDateEnd.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: true }))}</p>
 
 				<form onSubmit={confirmVote}>
 					{Object.entries(parsedOptions).map(([key, option]) => {
@@ -100,6 +100,9 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 				</Modal>
 			</div>
 			<div className="sidebar voting-mode">
+				<h2>{__('Distribute your votes', 'concordamos')}</h2>
+				<p>{sprintf(__('You can use up to %s credits to vote during this poll', 'concordamos'), credits_voter)}</p>
+				<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString('pt-BR'), formattedDateEnd.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: true }))}</p>
 				<Grid squares={Number(credits_voter)} consumed={usedCredits}/>
 				<span>{__('Available credits', 'concordamos')}</span>
 				<span>{`${credits_voter - usedCredits} / ${credits_voter}`}</span>

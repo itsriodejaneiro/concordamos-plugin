@@ -12,7 +12,7 @@ export default function SingleView ({ handleViewChange, initialData }) {
 	return (
 		<div className="wrapper">
 			<div className="content view-mode">
-				<h2>{__('Voting options', 'concordamos')}</h2>
+				<h2 className="options-title-desktop">{__('Voting options', 'concordamos')}</h2>
 				<div className="options">
 					{Object.entries(parsedOptions).map(([key, option]) => (
 						<OptionView
@@ -38,6 +38,7 @@ export default function SingleView ({ handleViewChange, initialData }) {
 				</div>
 			</div>
 			<div className="sidebar view-mode">
+				<h2 className="options-title-mobile">{__('Voting options', 'concordamos')}</h2>
 				<Grid squares={Number(credits_voter)} />
 				<span>{__('Available credits', 'concordamos')}</span>
 				<span>{`${credits_voter} / ${credits_voter}`}</span>

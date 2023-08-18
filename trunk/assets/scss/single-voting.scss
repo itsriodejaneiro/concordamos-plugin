@@ -255,11 +255,16 @@
 			@include mobile {
 				display: flex;
 				flex-direction: column-reverse;
+				padding-left: 13px;
+				padding-right: 13px;
 			}
 
 			.content {
 				padding-top: 57px;
-				h2{
+				@media(max-width: 781px){
+					padding-top: 17px;
+				}
+				.options-title-desktop{
 					color: #111;
 					font-family: 'Oswald';
 					font-size: 32px;
@@ -268,6 +273,9 @@
 					letter-spacing: -0.32px;
 					text-transform: uppercase;
 					margin-bottom: 57px;
+					@media(max-width: 781px){
+						display: none;
+					}
 				}
 				.option-voting {
 					align-items: center;
@@ -377,6 +385,17 @@
 				&.voting-mode{
 					h2{
 						margin-bottom: 22px;
+						color: #111;
+						font-family: 'Oswald';
+						font-size: 32px;
+						font-weight: 700;
+						line-height: 130%;
+						letter-spacing: -0.32px;
+						text-transform: uppercase;
+						margin-bottom: 57px;
+						@media(max-width: 781px){
+							display: none;
+						}
 					}
 					p{
 						color: #111;
@@ -387,9 +406,23 @@
 						letter-spacing: -0.2px;
 						text-transform: none;
 						margin-bottom: 20px;
+						text-transform: uppercase;
+						@media(max-width: 781px){
+							display: none;
+						}
 					}
+					.end-date{
+						font-size: 14px;
+						text-transform: uppercase;
+						@media(max-width: 782px){
+							display: none;
+						}			
+					}	
 					form{
 						margin-top: 77px;
+						@media(max-width: 782px){
+							margin-top: 30px;
+						}
 					}
 				}
 			}
@@ -435,6 +468,21 @@
 					padding-top: size(16);
 				}
 
+				.options-title-mobile{
+					color: #111;
+					font-family: 'Oswald';
+					font-size: 32px;
+					font-weight: 700;
+					line-height: 130%;
+					letter-spacing: -0.32px;
+					text-transform: uppercase;
+					text-align: center;
+					margin: 20px 0 25px;
+					@media(min-width: 782px){
+						display: none;
+					}
+				}
+
 				.option-voting-grid {
 					margin-bottom: 16px;
 				}
@@ -452,6 +500,44 @@
 				}
 
 				&.voting-mode {
+					h2{
+						color: #111;
+						font-family: 'Oswald';
+						font-size: 32px;
+						font-weight: 700;
+						line-height: 130%;
+						letter-spacing: -0.32px;
+						text-transform: uppercase;
+						text-align: center;
+						margin: 20px 0 25px;
+						@media(min-width: 782px){
+						display: none;
+						}	
+					}
+					p{
+						color: #111;
+						font-family: 'Inter';
+						font-size: 20px;
+						font-weight: 600;
+						line-height: 130%;
+						letter-spacing: -0.2px;
+						text-transform: none;
+						margin-bottom: 20px;
+						text-transform: uppercase;
+						@media(min-width: 782px){
+							display: none;
+						}		
+					}
+					.end-date{
+						font-size: 12px;
+						text-transform: uppercase;
+						letter-spacing: -0.14px;
+						line-height: 150%;
+						margin-bottom: 30px;
+						@media(min-width: 782px){
+							display: none;
+						}			
+					}	
 					.option-voting-grid {
 						&__cell {
 							background-color: #111;
@@ -493,6 +579,9 @@
 			display: flex;
 			justify-content: center;
 			gap: size(32);
+			@media(max-width: 781px){
+				flex-direction: column-reverse;
+			}
 
 			button,
 			.button {
@@ -685,8 +774,8 @@
 			}
 			.wrapper{
 				@media(max-width: 782px){
-					padding-left: 15px;
-					padding-right: 15px;
+					padding-left: 12px;
+					padding-right: 12px;
 				}
 				.votings-list{
 					padding-top: 0;
