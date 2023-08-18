@@ -7,7 +7,7 @@ import { getPanelUrl } from '../../shared/utils/location'
 import { useFetch } from '../../shared/hooks/fetch'
 
 export default function VotingLinks ({ initialData }) {
-	const { data } = useFetch(`voting-links/?v_id=${concordamos.v_id}`)
+	const { data } = useFetch(`voting-links/?v_id=${concordamos.v_id}&a_id=${concordamos.a_id}`)
 
 	const individualUrls = useMemo(() => {
 		if (!data) {
@@ -33,7 +33,7 @@ export default function VotingLinks ({ initialData }) {
 						<div className="voting-links-card">
 							<h2 className="voting-links-title">{__('Private administrator URL', 'concordamos')}</h2>
 							<p>{__('Save this URL for managing the event:', 'concordamos')}</p>
-							<VotingLink href={getPanelUrl(data.permalink)} withButton/>
+							<VotingLink href={getPanelUrl(data.permalink + data.a_id)} withButton/>
 						</div>
 					</div>
 					{ data.status === 'private' ? (

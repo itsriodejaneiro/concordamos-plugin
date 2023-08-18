@@ -14,6 +14,13 @@ export default function Panel ({ initialData }) {
 
 	if (concordamos.is_author == true) {
 		tabs.unshift({ id: 'links', label: __('Voting links', 'concordamos') })
+	} else if (concordamos.a_id !== '') {
+		let currentURL = window.location.href;
+		let match = currentURL.match(/\/a-([a-fA-F0-9]+)/);
+
+		if (match && match[0] === "/" + concordamos.a_id) {
+			tabs.unshift({ id: 'links', label: __('Voting links', 'concordamos') })
+		}
 	}
 
 	const [tab, setTab] = useState(tabs[0].id)

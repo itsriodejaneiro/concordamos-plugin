@@ -88,6 +88,12 @@ function permission_check( \WP_REST_Request $request ) {
 		return new \WP_Error( 'rest_forbidden', __('You are not signed in.', 'concordamos'), array( 'status' => 401 ) );
 	}
 
+	$a_id = $request->get_param( 'a_id' );
+
+	if ( $a_id ) {
+		return true;
+	}
+
 	$user = wp_get_current_user();
 
 	if ( ! in_array( 'concordamos_network', $user->roles ) && ! in_array( 'administrator', $user->roles ) ) {
@@ -276,6 +282,9 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$prefix = 'v-' . random_int( 100, 999 );
 	$post_name = uniqid( $prefix );
 
+	// Generate admin id to use as permalink
+	$admin_id = 'a-' . bin2hex( random_bytes( 6 ) );
+
 	$args = [
 		'post_author'  => get_current_user_id(), // @todo: add option to vote without login
 		'post_content' => wp_kses_post( $params['voting_description'] ),
@@ -287,6 +296,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'tag' => sanitize_text_field( $params['tags'] )
 		],
 		'meta_input' => [
+			'admin_id'      => $admin_id,
 			'credits_voter' => intval( $params['credits_voter'] ),
 			'date_end'      => intval( $params['date_end'] ),
 			'date_start'    => intval( $params['date_start'] ),
@@ -383,8 +393,32 @@ function patch_voting_callback ( \WP_REST_Request $request ) {
 function get_voting_links_callback ( \WP_REST_Request $request ) {
 	$params = $request->get_params();
 	$votingId = intval( $params['v_id'] );
+	$voting_admin_id = get_post_meta( $votingId, 'admin_id', true );
 
-	if ( get_post_field( 'post_author', $votingId ) != get_current_user_id() ) {
+	$has_access = false;
+
+	/**
+	 * Check the `a_id` parameter passed in the URL with the post's `admin_id` metadata
+	 */
+	if ( isset( $params['a_id'] ) && ! empty( $params['a_id'] ) ) {
+		$admin_id = sanitize_title( $params['a_id'] );
+
+		if ( $admin_id == $voting_admin_id ) {
+			$has_access = true;
+		}
+	}
+
+	/**
+	 * Check if the current user is the `post_author`
+	 */
+	if ( get_post_field( 'post_author', $votingId ) == get_current_user_id() ) {
+		$has_access = true;
+	}
+
+	/**
+	 * Case user not has access, return error on API
+	 */
+	if ( ! $has_access ) {
 		$response = [
 			'status' => 'error',
 			'message' => __( "You don't have enough permissions.", 'concordamos' ),
@@ -414,11 +448,12 @@ function get_voting_links_callback ( \WP_REST_Request $request ) {
 	}
 
 	return [
-		'ID' => $votingId,
-		'slug' => get_post_field( 'post_name', $votingId ),
+		'a_id'      => $voting_admin_id,
+		'ID'        => $votingId,
 		'permalink' => get_permalink( $votingId ),
-		'status' => get_post_meta( $votingId, 'voting_type', true ),
-		'uids' => $valid_uids,
+		'slug'      => get_post_field( 'post_name', $votingId ),
+		'status'    => get_post_meta( $votingId, 'voting_type', true ),
+		'uids'      => $valid_uids
 	];
 }
 
