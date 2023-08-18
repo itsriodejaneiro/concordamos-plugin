@@ -64,11 +64,9 @@
                         @include mobile{
                             display: inline;
                             margin-right: 16px;
-                            background-image: url($p_theme_assets+"assets/images/arrow.png") ;
+                            background-image: url(../../assets/images/arrow.png) ;
                         }
                     }
-                   
-                    
                 }
                 h1{
                     font-family: 'Oswald';
@@ -282,7 +280,6 @@
                         line-height: 130%;
                         letter-spacing: -0.24px;
                         text-transform: uppercase;
-                        
                     }
 
                     .panel-tab{
