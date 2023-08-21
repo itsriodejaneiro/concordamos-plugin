@@ -123,21 +123,23 @@
 
 		.filters-open{
 			display: flex;
+			max-width: 203px;
 			width: 100%;
-			position: absolute;
+			position: relative;
+			left: -3px;
 			justify-content: center;
 			color: #111;
 			font-family: "Inter Tight";
 			font-size: 17px;
 			font-weight: 700;
 			line-height: 150%;
-			background-color: white;
 			flex-direction: column;
 			margin-top: 11px;
 			border: 3px solid black;
 			border-top: none;
 			padding-left: 32px;
 			padding-right: 32px;
+			background-color: #d1e4dd;
 		
 			
 			.radio-options{
@@ -163,11 +165,12 @@
 					span{
 						color: var(--low-dark, #000);
 						font-family: Oswald;
-						font-size: 24px;
+						font-size: 20px;
 						font-style: normal;
 						font-weight: 500;
 						line-height: normal;
 						letter-spacing: -0.24px;
+						padding-left: 5px;
 					}
 				}
 			}
