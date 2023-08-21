@@ -55,7 +55,7 @@ export function App () {
 				<h1>{__('Search for a voting', 'concordamos')}</h1>
 				<div class="voting-archive-filters">
 					<form className="voting-search-form">
-						<DebounceInput type="search" debounceTimeout={500} placeholder={__('Search by...', 'concordamos')} value={query} onChange={onQueryChange}/>
+						<DebounceInput type="search" name="search" debounceTimeout={500} placeholder={__('Search by...', 'concordamos')} value={query} onChange={onQueryChange}/>
 						<button type="button">
 							<span className="sr-only">{__('Search', 'concordamos')}</span>
 							<i className="icon"/>
