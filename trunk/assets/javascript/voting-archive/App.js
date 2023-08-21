@@ -35,6 +35,10 @@ export function App () {
 
 	const { data } = useFetch(buildUrl(query, filters, page))
 
+	function onFormSubmit (event) {
+		event.preventDefault()
+	}
+
 	function onQueryChange (event) {
 		setQuery(event.target.value)
 		setPage(1)
@@ -54,8 +58,8 @@ export function App () {
 			<div class="voting-archive-header">
 				<h1>{__('Search for a voting', 'concordamos')}</h1>
 				<div class="voting-archive-filters">
-					<form className="voting-search-form">
-						<DebounceInput type="search" debounceTimeout={500} placeholder={__('Search by...', 'concordamos')} value={query} onChange={onQueryChange}/>
+					<form className="voting-search-form" onSubmit={onFormSubmit}>
+						<DebounceInput type="search" name="search" debounceTimeout={500} placeholder={__('Search by...', 'concordamos')} value={query} onChange={onQueryChange}/>
 						<button type="button">
 							<span className="sr-only">{__('Search', 'concordamos')}</span>
 							<i className="icon"/>
