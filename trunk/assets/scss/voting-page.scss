@@ -23,6 +23,7 @@ body{
 	margin-right: auto;
 
 	form{
+
 		@media (max-width: 782px){
 			padding-left: 15px;
 			padding-right: 15px;
@@ -33,7 +34,7 @@ body{
 		
 		label{
 			>.title-section{
-				margin-top: 0;
+				margin-top: 24px;
 				margin-bottom: 18px;
 			}
 		}
@@ -195,9 +196,13 @@ body{
 			}
 		}
 	}
+	
 	.voting-modal__wrapper.open{
+
 		.voting-modal {
+
 			main{
+
 				h2{
 					margin-top: 5px;
 					margin-bottom: 10px;
@@ -207,10 +212,12 @@ body{
 					line-height: 130%;
 					letter-spacing: -0.32px;
 					text-transform: none;
+
 					@media(max-width: 782px){
 						font-size: 24px;	
 					}
 				}
+
 				p{
 					font-family: 'Inter Tight';
 					font-size: 16px;
