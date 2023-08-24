@@ -36,10 +36,15 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 		setVotes((prevVotes) => {
 			return prevVotes.map(vote => {
 				if (vote.id === id) {
+					if (concordamos.negative_votes !== "yes" && change < 0) {
+						if (vote.count <= 0) {
+							return vote
+						}
+					}
+
 					if ((usedCredits - (vote.count ** 2) + ((vote.count + change) ** 2)) <= Number(credits_voter)) {
 						return { ...vote, count: vote.count + change }
 					} else {
-						console.log('caiu aqui');
 						creditsModal.open()
 					}
 				}

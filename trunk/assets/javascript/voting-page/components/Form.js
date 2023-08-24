@@ -20,6 +20,7 @@ const Form = () => {
 	const [description, setDescription] = useState('')
 	const [numberOfVoters, setNumberOfVoters] = useState('')
 	const [votingCredits, setVotingCredits] = useState('')
+	const [negativeVotes, setNegativeVotes] = useState('no')
 	const [tags, setTags] = useState('')
 	const [votingOptions, setVotingOptions] = useState([])
 	const [startEndDateTime, setStartEndDateTime] = useState([])
@@ -33,6 +34,10 @@ const Form = () => {
 
 	const handleChange = (event) => {
 		setVotingAccess(event.target.checked ? 'yes' : 'no')
+	}
+
+	const handleNegativeVotes = (event) => {
+		setNegativeVotes(event.target.checked ? 'yes' : 'no')
 	}
 
 	const votingTypeOptions = {
@@ -64,17 +69,18 @@ const Form = () => {
 		}
 
 		apiFetch('POST', 'voting/', {
-			'user_id'           : concordamos.user_id,
-			'voting_type'       : votingType,
-			'voting_access'     : votingAccess,
-			'voting_name'       : votingName,
-			'voting_description': description,
-			'number_voters'     : numberOfVoters,
 			'credits_voter'     : votingCredits,
-			'tags'              : tags,
-			'date_start'        : startEndDateTime[0],
 			'date_end'          : startEndDateTime[1],
-			'voting_options'    : votingOptions
+			'date_start'        : startEndDateTime[0],
+			'negative_votes'    : negativeVotes,
+			'number_voters'     : numberOfVoters,
+			'tags'              : tags,
+			'user_id'           : concordamos.user_id,
+			'voting_access'     : votingAccess,
+			'voting_description': description,
+			'voting_name'       : votingName,
+			'voting_options'    : votingOptions,
+			'voting_type'       : votingType
 		})
 		.then(response => {
 			if (response.status === 'error') {
@@ -128,6 +134,11 @@ const Form = () => {
 					name="credits_voter"
 					placeholder={__('How many votes will each voter receive?', 'concordamos')}
 					onChange={e => setVotingCredits(e.target.value)}
+				/>
+				<Checkbox
+					label={__('Allow votes to be negative', 'concordamos')}
+					name="negative_votes"
+					onChange={e => handleNegativeVotes(e)}
 				/>
 				<Textarea
 					label={__('Tags', 'concordamos')}
