@@ -371,7 +371,7 @@ function get_link_to_faq() {
 	$faq_link = get_faq_page();
 
 	if($faq_link){
-		echo '<a href="'.get_permalink($faq_link).'" class="button-faq">'. __("Como votar", "concordamos") .' </a>';
+		echo '<a href="'.get_permalink($faq_link).'" class="concordamos-button-faq">'. __("Como votar", "concordamos") .' </a>';
 	}
 }
 add_action('wp_footer', 'Concordamos\get_link_to_faq');
