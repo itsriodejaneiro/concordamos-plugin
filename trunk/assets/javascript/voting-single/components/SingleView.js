@@ -38,10 +38,12 @@ export default function SingleView ({ handleViewChange, initialData }) {
 				</div>
 			</div>
 			<div className="sidebar view-mode">
-				<h2 className="options-title-mobile">{__('Voting options', 'concordamos')}</h2>
-				<Grid squares={Number(credits_voter)} />
-				<span>{__('Available credits', 'concordamos')}</span>
-				<span>{`${credits_voter} / ${credits_voter}`}</span>
+				<div className="sidebar-content">
+					<h2 className="options-title-mobile">{__('Voting options', 'concordamos')}</h2>
+					<Grid squares={Number(credits_voter)} />
+					<span>{__('Available credits', 'concordamos')}</span>
+					<span>{`${credits_voter} / ${credits_voter}`}</span>
+				</div>
 			</div>
 		</div>
 	)
