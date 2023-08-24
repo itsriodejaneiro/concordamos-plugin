@@ -14,6 +14,11 @@
 	border: 3px solid black;
 	border-radius: 16px;
 	background-color: #fff;
+	text-decoration: none;
+
+	&:hover{
+		opacity: inherit;
+	}
 
 	header {
 		border-radius: 12px 12px 0 0 ;
