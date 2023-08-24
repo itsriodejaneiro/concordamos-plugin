@@ -19,7 +19,7 @@ function register_login_block () {
 	wp_localize_script( 'concordamos-login', 'concordamos_login',
 		array(
 			'nonce'   => wp_create_nonce( 'wp_rest' ),
-			'my_account_url' => get_permalink( get_page_by_template('concordamos/template-my-account.php') )
+			'redirect_to' => ( isset( $_GET['redirect_to'] ) && ! empty( $_GET['redirect_to'] ) ) ? esc_url( get_home_url() . $_GET['redirect_to'] ) : get_permalink( get_page_by_template( 'concordamos/template-my-account.php' ) )
 		)
 	);
 }
