@@ -36,8 +36,8 @@ export default function VotingCard ({ panel = false, voting }) {
 	const isOpen = voting.time === 'present'
 	const requiresLogin = voting.meta.voting_access === 'yes'
 	return (
-		<a href={panel ? getPanelUrl(voting.permalink) : voting.permalink}>
-			<article className={classNames('voting-card', voting.time)}>
+		<a href={panel ? getPanelUrl(voting.permalink) : voting.permalink} className={classNames('voting-card', voting.time)}>
+			<article >
 				<header>
 					<span>{getVotingStatus(voting)}</span>
 					<span>{getVotingDate(voting)}</span>
