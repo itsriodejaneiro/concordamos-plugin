@@ -23,10 +23,6 @@ $register_url = get_permalink(concordamos\get_page_by_template('concordamos/temp
             </p>
             <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>"
                 alt="<?php _e('Concordamos Logo', 'concordamos'); ?>'">
-            <p class="balloon-subtitle with">
-                <?php _e('With', 'concordamos'); ?>
-                <?php echo $site_title ?>
-            </p>
         </div>
     </section>
     <form id="login-form" class="login-form">
