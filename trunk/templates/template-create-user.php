@@ -29,7 +29,6 @@ $site_title = get_bloginfo('name');
             </div>
             <p class="balloon-subtitle"><?php _e('A way to vote for consensus', 'concordamos'); ?></p>
             <img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="<?php _e('Concordamos Logo', 'concordamos'); ?>">
-            <p class="balloon-subtitle with"><?php printf(__('With %s', 'concordamos'), $site_title); ?></p>
         </div>
     </section>
     <form class="register-form" id="register-form">

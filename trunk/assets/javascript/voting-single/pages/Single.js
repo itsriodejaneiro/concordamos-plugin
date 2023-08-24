@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import SingleView from '../components/SingleView'
 import SingleVoting from '../components/SingleVoting'
@@ -9,6 +9,10 @@ export default function Single ({ initialData }) {
 		event.preventDefault()
 		setViewMode(!viewMode)
 	}
+
+	useEffect(() => {
+		window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+	}, [viewMode]);
 
 	return viewMode ? (
 		<SingleView

@@ -34,26 +34,27 @@ function getVotingDate (voting) {
 
 export default function VotingCard ({ panel = false, voting }) {
 	const isOpen = voting.time === 'present'
-	const requiresLogin = voting.access === 'yes'
-
+	const requiresLogin = voting.meta.voting_access === 'yes'
 	return (
-		<article className={classNames('voting-card', voting.time)}>
-			<header>
-				<span>{getVotingStatus(voting)}</span>
-				<span>{getVotingDate(voting)}</span>
-			</header>
-			<main>
-				<h2><a href={panel ? getPanelUrl(voting.permalink) : voting.permalink}>{voting.title}</a></h2>
-				<p>{voting.content}</p>
-				{ panel ? null : (
-					<p className="voting-card__staus"><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? __('Login required', 'concordamos') : __('Login required to see results', 'concordamos')) : __('No login', 'concordamos')}</p>
-				)}
-				<ul className="voting-card__tags">
-				{voting.tags.map((tag) => (
-					<li key={tag.ID}>#{tag.name}</li>
-				))}
-				</ul>
-			</main>
-		</article>
+		<a href={panel ? getPanelUrl(voting.permalink) : voting.permalink}>
+			<article className={classNames('voting-card', voting.time)}>
+				<header>
+					<span>{getVotingStatus(voting)}</span>
+					<span>{getVotingDate(voting)}</span>
+				</header>
+				<main>
+					<h2>{voting.title}</h2>
+					<p>{voting.content}</p>
+					{ panel ? null : (
+						<p className="voting-card__staus"><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? __('Login required', 'concordamos') : __('Login required to see results', 'concordamos')) : __('No login', 'concordamos')}</p>
+					)}
+					<ul className="voting-card__tags">
+					{voting.tags.map((tag) => (
+						<li key={tag.ID}>#{tag.name}</li>
+					))}
+					</ul>
+				</main>
+			</article>
+		</a>
 	)
 }

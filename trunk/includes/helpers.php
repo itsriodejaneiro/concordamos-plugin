@@ -12,6 +12,16 @@ function get_voting_page() {
 	return '';
 }
 
+function get_faq_page() {
+	$options = get_option( 'concordamos_options' );
+
+	if ( isset( $options['faq_page'] ) && ! empty( $options['faq_page'] ) ) {
+		return $options['faq_page'];
+	}
+
+	return '';
+}
+
 function get_login_page() {
 	$options = get_option( 'concordamos_options' );
 
@@ -356,3 +366,12 @@ function get_change_password_token_status() {
 	}
 	return true;
 }
+
+function get_link_to_faq() {
+	$faq_link = get_faq_page();
+
+	if($faq_link){
+		echo '<a href="'.get_permalink($faq_link).'" class="button-faq">'. __("Como votar", "concordamos") .' </a>';
+	}
+}
+add_action('wp_footer', 'Concordamos\get_link_to_faq');

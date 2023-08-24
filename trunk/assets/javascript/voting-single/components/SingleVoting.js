@@ -13,6 +13,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 
 	const initialVotes = Object.keys(parsedOptions).map((key) => ({ id: key, count: 0 }))
 	const [votes, setVotes] = useState(initialVotes)
+	const [hasVoted, setHasVoted] = useState(false)
 
 	const formattedDateEnd = new Date(Number(date_end))
 
@@ -55,10 +56,14 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 			if (response.status === 'error') {
 				throw new Error(response.message)
 			} else {
-				setVotes(initialVotes)
-				navigateTo(getPanelUrl(window.location.href), true)
+				setHasVoted(true)
 			}
 		})
+	}
+
+	function handleFinish(event) {
+		event.preventDefault()
+		navigateTo(getPanelUrl(window.location.href), true)
 	}
 
 	return (
@@ -91,21 +96,36 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 				</form>
 
 				<Modal controller={confirmVoteModal}>
-					<h2>{__('Vote confirmation', 'concordamos')}</h2>
-					<p dangerouslySetInnerHTML={ { __html: sprintf(__("After confirming your vote, it can't be changed. You can access your voting option on <a href='%s'>voting infos</a>.", 'concordamos'), '#') } }/>
-					<div class="buttons">
-						<button type="button" className="button primary" onClick={handleSubmit}>{_x('Vote', 'verb', 'concordamos')}</button>
-						<button type="button" className="button link" onClick={confirmVoteModal.close}>{__('Cancel', 'concordamos')}</button>
-					</div>
+					{ hasVoted ? (
+						<>
+							<h2>{__('Success voting', 'concordamos')}</h2>
+							<p>{__('Your vote has been successfully recorded', 'concordamos')}</p>
+							<div class="buttons">
+								<button type="button" className="button primary" onClick={handleFinish}>{_x('Finish', 'concordamos')}</button>
+							</div>
+						</>
+					) : (
+						<>
+							<h2>{__('Vote confirmation', 'concordamos')}</h2>
+							<p dangerouslySetInnerHTML={ { __html: sprintf(__("You still have %s credits available.", 'concordamos'), `${credits_voter - usedCredits}`) } }/>
+							<p dangerouslySetInnerHTML={ { __html: sprintf(__("After confirming your vote, it can't be changed. You can access your voting option on <a href='%s'>voting infos</a>.", 'concordamos'), '#') } }/>
+							<div class="buttons">
+								<button type="button" className="button primary" onClick={handleSubmit}>{_x('Vote', 'verb', 'concordamos')}</button>
+								<button type="button" className="button link" onClick={confirmVoteModal.close}>{__('Cancel', 'concordamos')}</button>
+							</div>
+						</>
+					) }
 				</Modal>
 			</div>
 			<div className="sidebar voting-mode">
-				<h2>{__('Distribute your votes', 'concordamos')}</h2>
-				<p>{sprintf(__('You can use up to %s credits to vote during this poll', 'concordamos'), credits_voter)}</p>
-				<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString('pt-BR'), formattedDateEnd.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: true }))}</p>
-				<Grid squares={Number(credits_voter)} consumed={usedCredits}/>
-				<span>{__('Available credits', 'concordamos')}</span>
-				<span>{`${credits_voter - usedCredits} / ${credits_voter}`}</span>
+				<div className="sidebar-content">
+					<h2>{__('Distribute your votes', 'concordamos')}</h2>
+					<p>{sprintf(__('You can use up to %s credits to vote during this poll', 'concordamos'), credits_voter)}</p>
+					<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString('pt-BR'), formattedDateEnd.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: true }))}</p>
+					<Grid squares={Number(credits_voter)} consumed={usedCredits}/>
+					<span>{__('Available credits', 'concordamos')}</span>
+					<span>{`${credits_voter - usedCredits} / ${credits_voter}`}</span>
+				</div>
 			</div>
 		</div>
 	)

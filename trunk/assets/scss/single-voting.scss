@@ -6,6 +6,10 @@
 
 .single-voting {
 
+	#app {
+		overflow: visible;
+	}
+
 	.voting-header {
 		background-color: #FFFFFF;
 		padding-bottom: size(32);
@@ -416,8 +420,8 @@
 						text-transform: uppercase;
 						@media(max-width: 782px){
 							display: none;
-						}			
-					}	
+						}
+					}
 					form{
 						margin-top: 77px;
 						@media(max-width: 782px){
@@ -429,9 +433,8 @@
 
 			.voting-modal__wrapper.open{
 				.voting-modal {
-					max-width: 569px;
+					max-width: 570px;
 					width: 100%;
-					max-height: 313px;
 
 					main{
 						h2{
@@ -465,6 +468,16 @@
 				padding-top: 64px;
 				@media(max-width: 782px){
 					padding-top: 40px;
+				}
+
+				&-content {
+					position: sticky;
+					top: 150px;
+
+					@include mobile {
+						position: relative;
+						top: 0;
+					}
 				}
 
 				.options-title-mobile{
@@ -511,7 +524,7 @@
 						margin: 20px 0 25px;
 						@media(min-width: 782px){
 						display: none;
-						}	
+						}
 					}
 					p{
 						color: #111;
@@ -525,7 +538,7 @@
 						text-transform: uppercase;
 						@media(min-width: 782px){
 							display: none;
-						}		
+						}
 					}
 					.end-date{
 						font-size: 12px;
@@ -535,8 +548,8 @@
 						margin-bottom: 30px;
 						@media(min-width: 782px){
 							display: none;
-						}			
-					}	
+						}
+					}
 					.option-voting-grid {
 						&__cell {
 							background-color: #111;
@@ -664,7 +677,7 @@
 			}
 			.voting-modal__wrapper.open{
 				.voting-modal{
-					max-width: 569px;
+					max-width: 570px;
 					width: 100%;
 					main{
 						padding-right: 0;

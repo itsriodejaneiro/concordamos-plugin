@@ -75,6 +75,17 @@ function settings_init() {
             'name' => 'voting_page',
         ]
     );
+
+	add_settings_field(
+        'faq_page',
+        __( 'FAQ', 'concordamos' ),
+        'Concordamos\select_field_render',
+        'concordamos-settings',
+        'concordamos_section',
+        [
+            'name' => 'faq_page',
+        ]
+    );
 }
 add_action( 'admin_init', 'Concordamos\settings_init' );
 
