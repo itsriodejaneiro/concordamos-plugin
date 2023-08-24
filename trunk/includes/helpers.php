@@ -22,6 +22,16 @@ function get_faq_page() {
 	return '';
 }
 
+function get_faq_page_url() {
+	$get_faq_page_id = get_faq_page();
+
+	if ( $get_faq_page_id ) {
+		return get_the_permalink( $get_faq_page_id );
+	}
+
+	return '';
+}
+
 function get_login_page() {
 	$options = get_option( 'concordamos_options' );
 

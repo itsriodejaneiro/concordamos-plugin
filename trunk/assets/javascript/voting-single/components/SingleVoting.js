@@ -18,6 +18,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 	const formattedDateEnd = new Date(Number(date_end))
 
 	const confirmVoteModal = useModal(false)
+	const creditsModal = useModal(false)
 
 	function confirmVote (event) {
 		event.preventDefault()
@@ -37,6 +38,9 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 				if (vote.id === id) {
 					if ((usedCredits - (vote.count ** 2) + ((vote.count + change) ** 2)) <= Number(credits_voter)) {
 						return { ...vote, count: vote.count + change }
+					} else {
+						console.log('caiu aqui');
+						creditsModal.open()
 					}
 				}
 				return vote
@@ -115,6 +119,35 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 							</div>
 						</>
 					) }
+				</Modal>
+
+				<Modal controller={creditsModal}>
+					{
+						((credits_voter - usedCredits) <= 0) ? (
+							<>
+								<h2>{__('Vote confirmation', 'concordamos')}</h2>
+								<p>{__('All your credits have been used', 'concordamos')}</p>
+								<div class="buttons">
+									<button type="button" className="button primary" onClick={handleSubmit}>{_x('Vote', 'verb', 'concordamos')}</button>
+									<button type="button" className="button link" onClick={creditsModal.close}>{__('Cancel', 'concordamos')}</button>
+								</div>
+							</>
+						) : (
+							<>
+								<h2>{__('Check your credits', 'concordamos')}</h2>
+								<p>{__('You still have credits available, redistribute your votes to use up all the credits or if you\'re satisfied, send your votes', 'concordamos')}</p>
+
+								{ concordamos.faq_url
+									? <p>{__('If you have any questions, please visit the', 'concordamos')} <a target="_blank" href={concordamos.faq_url}> {__('FAQ', 'concordamos')}</a></p>
+									: null
+								}
+
+								<div class="buttons">
+									<button type="button" className="button link" onClick={creditsModal.close}>{__('Cancel', 'concordamos')}</button>
+								</div>
+							</>
+						)
+					}
 				</Modal>
 			</div>
 			<div className="sidebar voting-mode">
