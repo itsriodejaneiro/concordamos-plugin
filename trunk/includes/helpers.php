@@ -356,3 +356,8 @@ function get_change_password_token_status() {
 	}
 	return true;
 }
+
+function get_link_to_faq() {
+	echo '<a href="#" class="button-faq">'. __("Como votar", "concordamos") .' </a>';
+}
+add_action('wp_footer', 'Concordamos\get_link_to_faq');
