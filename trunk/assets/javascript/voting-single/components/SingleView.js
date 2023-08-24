@@ -28,13 +28,20 @@ export default function SingleView ({ handleViewChange, initialData }) {
 				<div className="actions">
 					<a href="/voting" className="back-link">{__('Back', 'concordamos')}</a>
 
-					{voting_closed ? (
+					{ voting_closed ? (
 						logged ? (
 							<a className="button primary" href={getPanelUrl(window.location.href)}>{__('See detailed results', 'concordamos')}</a>
 						) : null
 					) : (
-						<button type="button" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
-					)}
+						logged ? (
+							<>
+								<button type="button primary" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
+								<a className="button primary" href={getPanelUrl(window.location.href)}>{__('See detailed results', 'concordamos')}</a>
+							</>
+						) : (
+							<button type="button primary" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
+						)
+					) }
 				</div>
 			</div>
 			<div className="sidebar view-mode">
