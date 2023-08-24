@@ -109,6 +109,11 @@ function require_login_for_private_voting () {
 		$voting_access = get_post_meta( get_the_ID(), 'voting_access', true );
 
 		if ( !empty( $voting_access ) && $voting_access === 'yes' ) {
+			if ( isset( $_SERVER['REQUEST_URI'] ) && ! empty( $_SERVER['REQUEST_URI'] ) ) {
+				wp_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) . '?redirect_to=' . $_SERVER["REQUEST_URI"] ) );
+				exit;
+			}
+
 			wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
 			exit;
 		}
