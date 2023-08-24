@@ -23,7 +23,7 @@ function Login() {
       };
 
       const url = window.location.origin + '/wp-json/concordamos/user/v1/login';
-      
+
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -35,11 +35,11 @@ function Login() {
 
       const responseData = await response.json();
       setMessage(responseData.message);
-      
+
       if (response.ok) {
         setMessageClass('success');
         setTimeout(() => {
-          window.location.href = window.concordamos_login.my_account_url
+          window.location.href = window.concordamos_login.redirect_to
         }, 3000);
       } else {
         setMessageClass('error')
@@ -66,9 +66,9 @@ window.addEventListener('DOMContentLoaded', () => {
   if ( ! loginFormContainer ) {
     return;
   }
-  
+
   ReactDOM.render(<Login />, loginFormContainer);
-  
+
   const buttonShowPassword = document.querySelector('button.show-password');
   const inputPassword = document.querySelector('[name="password"]');
 
