@@ -15,8 +15,8 @@ function get_voting_page() {
 function get_faq_page() {
 	$options = get_option( 'concordamos_options' );
 
-	if ( isset( $options['voting_page'] ) && ! empty( $options['voting_page'] ) ) {
-		return $options['voting_page'];
+	if ( isset( $options['faq_page'] ) && ! empty( $options['faq_page'] ) ) {
+		return $options['faq_page'];
 	}
 
 	return '';
@@ -25,8 +25,8 @@ function get_faq_page() {
 function get_login_page() {
 	$options = get_option( 'concordamos_options' );
 
-	if ( isset( $options['faq_page'] ) && ! empty( $options['faq_page'] ) ) {
-		return $options['faq_page'];
+	if ( isset( $options['login_page'] ) && ! empty( $options['login_page'] ) ) {
+		return $options['login_page'];
 	}
 
 	return '';
