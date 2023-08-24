@@ -147,6 +147,8 @@
                             letter-spacing: -0.24px;
                             color: #000;
                             margin-bottom: 10px;
+                            padding-left: 0;
+
                             @include mobile{
                                 font-weight: 500;
                                 margin-top: 16px;
@@ -187,6 +189,8 @@
                             font-size: 16px;
                             margin-bottom: 16px;
 							text-align: start;
+                            padding-left: 0;
+
                             @include mobile{
                                 color: #000;
                                 font-family: Inter;
@@ -461,17 +465,27 @@
                     }
                 }
                 .my-account-voting-grid{
+
                     @media(max-width: 782px){
                         padding-left: 15px;
                         padding-right: 15px;
                     }
+
                     display: grid;
                     gap: 1rem;
                     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
                     margin: 45px auto;
                     max-width: 1140px;
                     width: 100%;
+
+                    a{
+                        &:hover{
+                            box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+                        }
+                    }
+
                 }
+
                 .my-account-paginator {
                     align-items: center;
                     display: flex;
