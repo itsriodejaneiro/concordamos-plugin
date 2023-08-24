@@ -101,47 +101,47 @@ const Form = () => {
 				<p>{__('Enter the name, description, number of voters, credits and tags for the poll', 'concordamos')}</p>
 
 				<Checkbox
-					label={__('Request login to vote *', 'concordamos')}
+					label={__('Request login to vote', 'concordamos')}
 					name="voting_access"
 					onChange={e => handleChange(e)}
 				/>
 				<Text
-					label={__('Voting name *', 'concordamos')}
+					label={__('Voting name', 'concordamos')}
 					name="voting_name"
 					placeholder={__('Give the voting a name', 'concordamos')}
 					onChange={e => setVotingName(e.target.value)}
 				/>
 				<Textarea
-					label={__('Voting description *', 'concordamos')}
+					label={__('Voting description', 'concordamos')}
 					name="voting_description"
 					placeholder={__('Describe voting details', 'concordamos')}
 					onChange={e => setDescription(e.target.value)}
 				/>
 				<Number
-					label={__('Number of voters *', 'concordamos')}
+					label={__('Number of voters', 'concordamos')}
 					name="number_voters"
 					placeholder={__('How many voting links would you like to generate?', 'concordamos')}
 					onChange={e => setNumberOfVoters(e.target.value)}
 				/>
 				<Number
-					label={__('Voting credits per voter *', 'concordamos')}
+					label={__('Voting credits per voter', 'concordamos')}
 					name="credits_voter"
 					placeholder={__('How many votes will each voter receive?', 'concordamos')}
 					onChange={e => setVotingCredits(e.target.value)}
 				/>
 				<Textarea
-					label={__('Tags *', 'concordamos')}
+					label={__('Tags', 'concordamos')}
 					name="tags"
 					placeholder={__('Add comma-separated tags', 'concordamos')}
 					onChange={e => setTags(e.target.value)}
 				/>
 				<StartEnd
-					label={__('Duration of the voting *', 'concordamos')}
+					label={__('Duration of the voting', 'concordamos')}
 					description={__('Once the voting period has started, the vote cannot be deleted. You can change the duration of the poll later', 'concordamos')}
 					setStartEndDateTime={setStartEndDateTime}
 				/>
 				<Options
-					label={__('Options of the voting *', 'concordamos')}
+					label={__('Options of the voting', 'concordamos')}
 					description={__('Enter your poll options (add at least 2 options to advance)', 'concordamos')}
 					name="voting_options"
 					value={votingOptions}
