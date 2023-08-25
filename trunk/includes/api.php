@@ -243,14 +243,14 @@ function create_voting_callback( \WP_REST_Request $request ) {
 
 	$required_params = [
 		'credits_voter',
+		'date_end',
+		'date_start',
 		'number_voters',
 		'tags',
 		'user_id',
 		'voting_description',
 		'voting_name',
 		'voting_options',
-		'date_start',
-		'date_end',
 		'voting_type'
 	];
 
@@ -296,16 +296,17 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'tag' => sanitize_text_field( $params['tags'] )
 		],
 		'meta_input' => [
-			'admin_id'      => $admin_id,
-			'credits_voter' => intval( $params['credits_voter'] ),
-			'date_end'      => intval( $params['date_end'] ),
-			'date_start'    => intval( $params['date_start'] ),
-			'description'   => wp_kses_post( $params['voting_description'] ),
-			'number_voters' => $number_voters,
-			'unique_ids'    => $unique_ids,
-			'voting_access' => sanitize_text_field( $params['voting_access'] ),
-			'voting_name'   => sanitize_text_field( $params['voting_name'] ),
-			'voting_type'   => $voting_type
+			'admin_id'       => $admin_id,
+			'credits_voter'  => intval( $params['credits_voter'] ),
+			'date_end'       => intval( $params['date_end'] ),
+			'date_start'     => intval( $params['date_start'] ),
+			'description'    => wp_kses_post( $params['voting_description'] ),
+			'negative_votes' => sanitize_text_field( $params['negative_votes'] ),
+			'number_voters'  => $number_voters,
+			'unique_ids'     => $unique_ids,
+			'voting_access'  => sanitize_text_field( $params['voting_access'] ),
+			'voting_name'    => sanitize_text_field( $params['voting_name'] ),
+			'voting_type'    => $voting_type
 		]
 	];
 
