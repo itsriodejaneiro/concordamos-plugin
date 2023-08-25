@@ -26,17 +26,6 @@ function restrict_voting_single_access() {
 			}
 		}
 
-		// If the `unique_id` from the URL is empty, fetch the next available one and redirect.
-		if ( empty( $unique_id ) && get_query_var( 'panel' ) !== '1' ) {
-			if ( is_user_logged_in() ) {
-				wp_redirect( get_permalink( $post_id ) );
-				exit;
-			} else {
-				wp_redirect( get_post_type_archive_link( 'voting' ) );
-				exit;
-			}
-		}
-
 		// Check if the logged-in user has already voted.
 		if ( is_user_logged_in() && get_vote_by_user() && get_query_var( 'panel' ) !== '1' ) {
 			wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
