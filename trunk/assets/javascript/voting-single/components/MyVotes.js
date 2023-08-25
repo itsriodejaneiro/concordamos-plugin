@@ -19,7 +19,7 @@ export default function MyVotes ({ initialData }) {
 	}, [votes])
 
 	return votes ? (
-		<div className="wrapper">
+		<div className="wrapper my-votes">
 			<div className="content voting-mode">
 				<div className="votings-list">
 					{Object.entries(parsedOptions).map(([key, option]) => {

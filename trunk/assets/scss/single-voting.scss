@@ -584,6 +584,20 @@
 					}
 				}
 			}
+
+			&.my-votes {
+				.sidebar {
+					.option-voting-grid {
+						&__cell {
+							background-color: #111;
+
+							&.consumed {
+								background-color: #1114;
+							}
+						}
+					}
+				}
+			}
 		}
 
 		.actions {
