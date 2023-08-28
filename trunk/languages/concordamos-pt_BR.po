@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-08-28T18:53:36+00:00\n"
-"PO-Revision-Date: 2023-08-28 15:57-0300\n"
+"POT-Creation-Date: 2023-08-28T18:58:22+00:00\n"
+"PO-Revision-Date: 2023-08-28 16:03-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -1889,6 +1889,18 @@ msgstr "Voto registrado com sucesso!"
 #: build/js/voting-single/pages/Single.js:365
 msgid "Your vote has been successfully recorded"
 msgstr "Seu voto foi registrado com êxito"
+
+#: assets/javascript/voting-single/components/SingleVoting.js:113
+#: build/js/voting-single/App.js:702
+#: build/js/voting-single/components/SingleVoting.js:597
+#: build/js/voting-single/index.js:3889
+#: build/js/voting-single/pages/Single.js:513 build/js/voting-single/App.js:466
+#: build/js/voting-single/components/SingleVoting.js:403
+#: build/js/voting-single/index.js:2553
+#: build/js/voting-single/pages/Single.js:367
+msgctxt "verb"
+msgid "Finish"
+msgstr "Feito"
 
 #: assets/javascript/voting-single/components/SingleVoting.js:118
 #: assets/javascript/voting-single/components/SingleVoting.js:133
