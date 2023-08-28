@@ -110,7 +110,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 							<h2>{__('Success voting', 'concordamos')}</h2>
 							<p>{__('Your vote has been successfully recorded', 'concordamos')}</p>
 							<div class="buttons">
-								<button type="button" className="button primary" onClick={handleFinish}>{_x('Finish', 'concordamos')}</button>
+								<button type="button" className="button primary" onClick={handleFinish}>{_x('Finish', 'verb', 'concordamos')}</button>
 							</div>
 						</>
 					) : (

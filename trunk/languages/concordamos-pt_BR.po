@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-08-28T15:44:07+00:00\n"
-"PO-Revision-Date: 2023-08-28 12:47-0300\n"
+"POT-Creation-Date: 2023-08-28T18:53:36+00:00\n"
+"PO-Revision-Date: 2023-08-28 15:57-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -1648,6 +1648,21 @@ msgstr "HH:mm"
 #: build/js/voting-single/VotingAdmin.js:2056
 msgid "Do you want to delete voting?"
 msgstr "Você quer deletar a votação?"
+
+#: assets/javascript/voting-single/components/DeleteVotingModal.js:9
+#: build/js/voting-single/components/DeleteVotingModal.js:257
+#: build/js/voting-single/index.js:3348
+#: build/js/voting-single/VotingAdmin.js:3172
+#: build/js/voting-single/components/DeleteVotingModal.js:160
+#: build/js/voting-single/index.js:2140
+#: build/js/voting-single/VotingAdmin.js:2057
+msgid ""
+"For deleting this voting, send a message for the platform administration "
+"with the subject \"Delete voting\" at the email <a href=\"mailto:%s\">%s</a>"
+msgstr ""
+"Para excluir esta votação, envie uma mensagem para a administração da "
+"plataforma com o assunto “Excluir votação” no email <a href=\"mailto:"
+"%s\">%s</a>"
 
 #: assets/javascript/voting-single/components/DeleteVotingModal.js:11
 #: build/js/voting-single/components/DeleteVotingModal.js:265
