@@ -14,16 +14,17 @@ import { navigateTo } from '../../shared/utils/location'
 
 const Form = () => {
 
-	const [votingType, setVotingType] = useState('public')
-	const [votingAccess, setVotingAccess] = useState('no')
-	const [votingName, setVotingName] = useState('')
 	const [description, setDescription] = useState('')
-	const [numberOfVoters, setNumberOfVoters] = useState('')
-	const [votingCredits, setVotingCredits] = useState('')
 	const [negativeVotes, setNegativeVotes] = useState('no')
-	const [tags, setTags] = useState('')
-	const [votingOptions, setVotingOptions] = useState([])
+	const [numberOfVoters, setNumberOfVoters] = useState('')
+	const [resultsEnd, setResultsEnd] = useState('no')
 	const [startEndDateTime, setStartEndDateTime] = useState([])
+	const [tags, setTags] = useState('')
+	const [votingAccess, setVotingAccess] = useState('no')
+	const [votingCredits, setVotingCredits] = useState('')
+	const [votingName, setVotingName] = useState('')
+	const [votingOptions, setVotingOptions] = useState([])
+	const [votingType, setVotingType] = useState('public')
 
 	const confirmModal = useModal(false)
 
@@ -38,6 +39,10 @@ const Form = () => {
 
 	const handleNegativeVotes = (event) => {
 		setNegativeVotes(event.target.checked ? 'yes' : 'no')
+	}
+
+	const handleResultsEnd = (event) => {
+		setResultsEnd(event.target.checked ? 'yes' : 'no')
 	}
 
 	const votingTypeOptions = {
@@ -74,6 +79,7 @@ const Form = () => {
 			'date_start'        : startEndDateTime[0],
 			'negative_votes'    : negativeVotes,
 			'number_voters'     : numberOfVoters,
+			'results_end'       : resultsEnd,
 			'tags'              : tags,
 			'user_id'           : concordamos.user_id,
 			'voting_access'     : votingAccess,
@@ -150,6 +156,11 @@ const Form = () => {
 					label={__('Duration of the voting', 'concordamos')}
 					description={__('Once the voting period has started, the vote cannot be deleted. You can change the duration of the poll later', 'concordamos')}
 					setStartEndDateTime={setStartEndDateTime}
+				/>
+				<Checkbox
+					label={__('Display result only when voting is closed?', 'concordamos')}
+					name="results_end"
+					onChange={e => handleResultsEnd(e)}
 				/>
 				<Options
 					label={__('Options of the voting', 'concordamos')}

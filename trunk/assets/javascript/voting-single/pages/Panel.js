@@ -8,8 +8,7 @@ import VotingLinks from '../components/VotingLinks'
 
 export default function Panel ({ initialData }) {
 	const tabs = [
-		{ id: 'my-vote', label: __('My vote', 'concordamos') },
-		{ id: 'results', label: __('Detailed results', 'concordamos') },
+		{ id: 'my-vote', label: __('My vote', 'concordamos') }
 	]
 
 	if (concordamos.is_author == true) {
@@ -21,6 +20,10 @@ export default function Panel ({ initialData }) {
 		if (match && match[0] === "/" + concordamos.a_id) {
 			tabs.unshift({ id: 'links', label: __('Voting links', 'concordamos') })
 		}
+	}
+
+	if (initialData.results_end == 'no' || initialData.voting_closed == 'yes') {
+		tabs.push({ id: 'results', label: __('Detailed results', 'concordamos') })
 	}
 
 	const [tab, setTab] = useState(tabs[0].id)

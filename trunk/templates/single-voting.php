@@ -22,6 +22,8 @@ $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_dat
 
 $is_panel = get_query_var( 'panel' );
 $voting_closed = Concordamos\is_voting_closed( $post_id );
+
+$results_end = ( $raw_post_meta['results_end'] && $raw_post_meta['results_end'][0] ) ? 'yes' : 'no';
 ?>
 <div>
 	<div class="voting-header">
@@ -80,6 +82,7 @@ $voting_closed = Concordamos\is_voting_closed( $post_id );
 				data-date_start="<?php echo htmlspecialchars( $date_start ); ?>"
 				data-date_end="<?php echo htmlspecialchars( $date_end ); ?>"
 				data-logged="<?php echo is_user_logged_in(); ?>"
+				data-results_end="<?php echo $results_end; ?>"
 				data-voting_closed="<?php echo $voting_closed; ?>"
 				data-is_panel=<?php echo $is_panel; ?>
 			></div>

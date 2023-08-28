@@ -303,6 +303,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'description'    => wp_kses_post( $params['voting_description'] ),
 			'negative_votes' => sanitize_text_field( $params['negative_votes'] ),
 			'number_voters'  => $number_voters,
+			'results_end'    => sanitize_text_field( $params['results_end'] ),
 			'unique_ids'     => $unique_ids,
 			'voting_access'  => sanitize_text_field( $params['voting_access'] ),
 			'voting_name'    => sanitize_text_field( $params['voting_name'] ),

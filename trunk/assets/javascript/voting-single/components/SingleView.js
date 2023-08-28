@@ -5,7 +5,7 @@ import OptionView from './OptionView'
 import { getPanelUrl } from '../../shared/utils/location'
 
 export default function SingleView ({ handleViewChange, initialData }) {
-	const { credits_voter, logged, options, voting_closed } = initialData
+	const { credits_voter, logged, options, results_end, voting_closed } = initialData
 
 	const parsedOptions = JSON.parse(options)
 
@@ -36,7 +36,11 @@ export default function SingleView ({ handleViewChange, initialData }) {
 						logged ? (
 							<>
 								<button type="button primary" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
-								<a className="button primary" href={getPanelUrl(window.location.href)}>{__('See detailed results', 'concordamos')}</a>
+
+								{ (results_end == 'no') ? (
+									<a className="button primary" href={getPanelUrl(window.location.href)}>{__('See detailed results', 'concordamos')}</a>
+								) : null }
+
 							</>
 						) : (
 							<button type="button primary" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
