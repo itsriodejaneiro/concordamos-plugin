@@ -23,7 +23,7 @@ $date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_dat
 $is_panel = get_query_var( 'panel' );
 $voting_closed = Concordamos\is_voting_closed( $post_id );
 
-$results_end = ( $raw_post_meta['results_end'] && $raw_post_meta['results_end'][0] ) ? 'yes' : 'no';
+$results_end = ( $raw_post_meta['results_end'] && $raw_post_meta['results_end'][0] ) ? $raw_post_meta['results_end'][0] : 'no';
 ?>
 <div>
 	<div class="voting-header">
