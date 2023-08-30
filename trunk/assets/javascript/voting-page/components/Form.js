@@ -130,12 +130,14 @@ const Form = () => {
 					name="voting_name"
 					placeholder={__('Give the voting a name', 'concordamos')}
 					onChange={e => setVotingName(e.target.value)}
+					maxLength={100}
 				/>
 				<Textarea
 					label={__('Voting description', 'concordamos')}
 					name="voting_description"
 					placeholder={__('Describe voting details', 'concordamos')}
 					onChange={e => setDescription(e.target.value)}
+					maxLength={150}
 				/>
 				<Number
 					label={__('Number of voters', 'concordamos')}
@@ -159,6 +161,7 @@ const Form = () => {
 					name="tags"
 					placeholder={__('Add comma-separated tags', 'concordamos')}
 					onChange={e => setTags(e.target.value)}
+					maxLength={100}
 				/>
 				<StartEnd
 					label={__('Duration of the voting', 'concordamos')}

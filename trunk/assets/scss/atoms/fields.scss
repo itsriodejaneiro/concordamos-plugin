@@ -12,12 +12,9 @@ form {
 		}
 		.errors{
 			span{
-				color:red;
-				
+				color:#960000;
 			}
-			
 		}
-		
 	}
 	.accept-checkbox-terms{
 		margin-top: 10px;
@@ -36,13 +33,12 @@ form {
 .field {
 	display: block;
 	margin-bottom: 1rem;
-	
+
 	label {
 		span {
 			display: block;
 			font-weight: 700;
 			margin-bottom: .25rem;
-			
 		}
 	}
 
@@ -209,5 +205,15 @@ form {
 				}
 			}
 		}
+	}
+}
+
+.count-warning {
+	font-size: size(14);
+	font-style: italic;
+	margin-top: size(10);
+
+	&.limit-reached {
+		color: #960000;
 	}
 }
