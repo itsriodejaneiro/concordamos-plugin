@@ -1,6 +1,6 @@
-import { __, sprintf } from '@wordpress/i18n'
-import classNames from 'classnames'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { __, sprintf } from '@wordpress/i18n';
+import classNames from 'classnames';
 
 const Options = ({label, description, setVotingOptions}) => {
 
@@ -10,8 +10,22 @@ const Options = ({label, description, setVotingOptions}) => {
 
 	const [toggleStates, setToggleStates] = useState(inputFields.map(() => true))
 
+	const maxNameLength = 100
+	const maxDescriptionLength = 150
+
 	const handleFormChange = (index, event) => {
 		let data = [...inputFields]
+		const fieldName = event.target.name
+		const newValue = event.target.value
+
+		if (fieldName === 'option_name' && newValue.length > 100) {
+			return;
+		}
+
+		if (fieldName === 'option_description' && newValue.length > 150) {
+			return;
+		}
+
 		data[index][event.target.name] = event.target.value
 		setInputFields(data)
 	}
@@ -109,6 +123,15 @@ const Options = ({label, description, setVotingOptions}) => {
 											value={input.option_name}
 											onChange={event => handleFormChange(index, event)}
 										/>
+
+										{ input.option_name.length > maxNameLength * 0.8 && (
+											<div className={classNames('warning count-warning', { 'limit-reached': input.option_name.length >= maxNameLength })}>
+												{ input.option_name.length >= maxNameLength
+													? sprintf(__('Você atingiu o limite de %s caracteres', 'concordamos'), maxNameLength)
+													: sprintf(__('Você está próximo do limite de %s caracteres', 'concordamos'), maxNameLength)
+												}
+											</div>
+										)}
 									</label>
 
 									<label>
@@ -120,13 +143,22 @@ const Options = ({label, description, setVotingOptions}) => {
 											value={input.option_description}
 											onChange={e => handleFormChange(index, e)}
 										/>
+
+										{ input.option_description.length > maxDescriptionLength * 0.8 && (
+											<div className={classNames('warning count-warning', { 'limit-reached': input.option_description.length >= maxDescriptionLength })}>
+												{ input.option_description.length >= maxDescriptionLength
+													? sprintf(__('You have reached the %s character limit', 'concordamos'), maxDescriptionLength)
+													: sprintf(__('You are approaching the %s character limit', 'concordamos'), maxDescriptionLength)
+												}
+											</div>
+										)}
 									</label>
 
 									<label>
 										<span>{sprintf(__('Link of the option %s', 'concordamos'), index + 1)}</span>
 										<input
 											name='option_link'
-											placeholder='www.example.com'
+											placeholder={__('www.example.com', 'concordamos')}
 											type='text'
 											value={input.option_link}
 											onChange={e => handleFormChange(index, e)}

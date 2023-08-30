@@ -39,8 +39,8 @@ const Textarea = ({label, maxLength, name, onChange, placeholder}) => {
 				{maxLength && currentLength > maxLength * 0.8 && (
 					<div className={warningClass}>
 						{ limitReached
-							? sprintf(__('Você atingiu o limite de %s caracteres', 'concordamos'), maxLength)
-							: sprintf(__('Você está próximo do limite de %s caracteres', 'concordamos'), maxLength)
+							? sprintf(__('You have reached the %s character limit', 'concordamos'), maxLength)
+							: sprintf(__('You are approaching the %s character limit', 'concordamos'), maxLength)
 						}
 					</div>
 				)}
