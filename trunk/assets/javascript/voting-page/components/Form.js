@@ -25,6 +25,7 @@ const Form = () => {
 	const [votingName, setVotingName] = useState('')
 	const [votingOptions, setVotingOptions] = useState([])
 	const [votingType, setVotingType] = useState('public')
+	const [isSubmitting, setIsSubmitting] = useState(false)
 
 	const confirmModal = useModal(false)
 
@@ -73,6 +74,8 @@ const Form = () => {
 			return
 		}
 
+		setIsSubmitting(true)
+
 		apiFetch('POST', 'voting/', {
 			'credits_voter'     : votingCredits,
 			'date_end'          : startEndDateTime[1],
@@ -95,6 +98,11 @@ const Form = () => {
 				navigateTo(response.post_url)
 			}
 		})
+	}
+
+	const handleBack = () => {
+		setIsSubmitting(false)
+		confirmModal.close()
 	}
 
 	return (
@@ -180,8 +188,10 @@ const Form = () => {
 				<h2>{ __('Confirm voting creation', 'concordamos') }</h2>
 				<p dangerouslySetInnerHTML={ { __html: __('After creation the voting, you can <strong>only</strong> change its <strong>start</strong> and <strong>end dates</strong>.', 'concordamos') } }/>
 				<div className="buttons">
-					<button type="button" className="button primary" onClick={handleSubmit}>{__('Create voting', 'concordamos')}</button>
-					<button type="button" className="button link" onClick={confirmModal.close}>{__('Back', 'concordamos')}</button>
+					<button type="button" className="button primary" onClick={handleSubmit} disabled={isSubmitting}>
+						{isSubmitting ? __('Sending voting...', 'concordamos') : __('Create voting', 'concordamos')}
+					</button>
+					<button type="button" className="button link" onClick={handleBack}>{__('Back', 'concordamos')}</button>
 				</div>
 			</Modal>
 		</>
