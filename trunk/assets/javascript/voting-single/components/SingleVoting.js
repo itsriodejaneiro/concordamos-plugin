@@ -148,7 +148,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 								}
 
 								<div class="buttons">
-									<button type="button" className="button link" onClick={creditsModal.close}>{__('Cancel', 'concordamos')}</button>
+									<button type="button" className="button primary" onClick={creditsModal.close}>{__('Back', 'concordamos')}</button>
 								</div>
 							</>
 						)
