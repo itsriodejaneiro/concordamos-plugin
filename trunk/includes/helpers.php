@@ -321,6 +321,20 @@ function is_voting_closed ( $voting_id ) {
 		return true;
 	}
 
+	/**
+	 * Checks if voting requires login and user has already voted
+	 */
+	if ( get_post_meta( $voting_id, 'voting_access', true ) === "yes" && get_vote_by_user( $voting_id ) ) {
+		return true;
+	}
+
+	/**
+	 * Checks if user has already voted
+	 */
+	if ( get_vote_by_user( $voting_id ) ) {
+		return true;
+	}
+
 	$now = 1000 * time();
 	if ( intval( get_post_meta( $voting_id, 'date_end', true ) ) <= $now ) {
 		return true;
@@ -329,7 +343,7 @@ function is_voting_closed ( $voting_id ) {
 	return false;
 }
 
-function get_vote_by_user( $user_id = '' ) {
+function get_vote_by_user( $voting_id, $user_id = '' ) {
 
 	if ( empty( $user_id ) ) {
 		$user_id = get_current_user_id();
@@ -340,11 +354,17 @@ function get_vote_by_user( $user_id = '' ) {
 		'fields'     => 'ids',
 		'author'     => $user_id,
 		'meta_query' => [
+			'compare' => 'AND',
 			[
 				'key'     => 'logged_user',
 				'value'   => 'yes',
 				'compare' => '='
 			],
+			[
+				'key'     => 'voting_id',
+				'value'   => $voting_id,
+				'compare' => '='
+			]
 		]
 	];
 
