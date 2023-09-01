@@ -28,6 +28,10 @@ export default function Panel ({ initialData }) {
 
 	const [tab, setTab] = useState(tabs[0].id)
 
+	const votingUrl = new URL(window.location.href);
+	votingUrl.search = "";
+	const backVotingUrl = votingUrl.toString();
+
 	return (
 		<>
 			<div className="content panel">
@@ -40,6 +44,10 @@ export default function Panel ({ initialData }) {
 				) : (tab === 'results') ? (
 					<VotingResults />
 				) : /* TODO */ null}
+
+				<div className="actions">
+					<a href={backVotingUrl} className="back-link">{__('Back to voting', 'concordamos')}</a>
+				</div>
 			</div>
 		</>
 	)
