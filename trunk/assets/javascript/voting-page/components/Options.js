@@ -127,8 +127,8 @@ const Options = ({label, description, setVotingOptions}) => {
 										{ input.option_name.length > maxNameLength * 0.8 && (
 											<div className={classNames('warning count-warning', { 'limit-reached': input.option_name.length >= maxNameLength })}>
 												{ input.option_name.length >= maxNameLength
-													? sprintf(__('Você atingiu o limite de %s caracteres', 'concordamos'), maxNameLength)
-													: sprintf(__('Você está próximo do limite de %s caracteres', 'concordamos'), maxNameLength)
+													? sprintf(__('You have reached the %s character limit', 'concordamos'), maxNameLength)
+													: sprintf(__('You are approaching the %s character limit', 'concordamos'), maxNameLength)
 												}
 											</div>
 										)}
