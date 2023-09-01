@@ -8,16 +8,13 @@ body{
 		display: none;
 	}
 
-	.entry-content{
-		max-width: 570px;
-		width: 100%;
-		margin-right: auto;
-		margin-left: auto;
+	h1{
+		display: none;
 	}
 }
 
 #concordamos-voting-form {
-	max-width: 570px;
+	max-width: 585px;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -58,10 +55,12 @@ body{
 			}		
 		}
 	}
+
 	textarea{
 		border-radius: 8px;
 		border-color: #000;
 	}
+
 	.title-section{
 		font-family: 'Oswald';
 		font-weight: 500;
@@ -89,6 +88,7 @@ body{
 
 	.line{
 		margin-top: 1rem;
+
 		.label{
 			color: var(--wp--preset--color--black);
 			font-family: 'Libre Franklin';
@@ -106,6 +106,10 @@ body{
 
 	.radio-options{
 		gap: 58px;
+
+		@include mobile{
+			gap: inherit;
+		}
 
 		label{
 			font-weight: bold;
@@ -241,7 +245,9 @@ body{
 		line-height: 112%;
 		letter-spacing: -0.48px;
 		text-transform: uppercase;	
+		max-width: 585px;
 	}
+
 	p{
 		color: var(--wp--preset--color--black);
 		font-family: 'Inter';
@@ -250,6 +256,8 @@ body{
 		font-weight: 400;
 		line-height: 130%;
 		letter-spacing: -0.16px;
+		max-width: 585px;
+		width: 100%;
 	}
 }
 

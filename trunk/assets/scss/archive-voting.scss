@@ -75,9 +75,9 @@
 			.icon {
 				background-image: url(../../assets/images/search.svg);
 				
-				@include mixins.mobile{
-					position: relative !important;
-					right: 10px !important;
+				@include mobile{
+					position: relative;
+					right: 10px;
 				}
 			}
 		}
@@ -128,7 +128,7 @@
 
 		.filters-open{
 			display: flex;
-			max-width: 203px;
+			max-width: 218px;
 			width: 100%;
 			position: relative;
 			left: -3px;
@@ -144,12 +144,13 @@
 			border-top: none;
 			padding-left: 32px;
 			padding-right: 32px;
-			background-color: #d1e4dd;
+			background-color: #fff;
+			padding-bottom: 12px;
+			border-radius: 0 0 12px 12px;
 
-			@include mixins.mobile{
+			@include mobile{
 				max-width: 445px;
-			}
-		
+			}		
 			
 			.radio-options{
 				display: flex;
