@@ -110,3 +110,18 @@ function require_login_for_private_voting () {
 }
 
 add_action( 'template_redirect', 'Concordamos\require_login_for_private_voting' );
+
+/**
+ * Prevent of the user with role `concordamos_network` access the WP admin panel
+ */
+function restrict_admin_access() {
+	if ( is_admin() ) {
+		$user = wp_get_current_user();
+
+		if ( in_array( 'concordamos_network', (array) $user->roles ) ) {
+			wp_redirect( home_url() );
+			exit;
+		}
+	}
+}
+add_action( 'admin_init', 'Concordamos\restrict_admin_access' );
