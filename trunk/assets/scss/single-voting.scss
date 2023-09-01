@@ -255,6 +255,7 @@
 			max-width: 1140px;
 			margin-left: auto;
 			margin-right: auto;
+			min-height: inherit;
 
 			@include mobile {
 				display: flex;
@@ -601,6 +602,13 @@
 			}
 		}
 
+		.panel {
+			.actions {
+				margin: 2rem auto;
+				max-width: 1140px;
+			}
+		}
+
 		.actions {
 			align-items: center;
 			display: flex;
@@ -630,7 +638,7 @@
 
 			a.primary{
 				padding: 10px 27px 9px;
-				text-transform: none;	
+				text-transform: none;
 			}
 
 			.back-link {
@@ -791,6 +799,12 @@
 				}
 				.panel-previous-tab, .panel-next-tab {
 					flex: 1;
+
+					&.disabled {
+						img {
+							opacity: .5;
+						}
+					}
 				}
 				.panel-previous-tab{
 					padding-left: 0;

@@ -51,7 +51,7 @@
                     color: #000;
                     align-items: flex-start;
                     @include mobile{
-                       
+
                         padding-bottom: 16px;
                         display: revert;
                         display: flex;
@@ -59,7 +59,7 @@
                         justify-content: flex-end;
 
                     }
-                  
+
                 }
                 h1{
                     font-family: 'Oswald';
@@ -259,6 +259,11 @@
                     padding-right: 0;
                     padding-left: 0;
                 }
+
+				.panel {
+					min-height: 50vh;
+				}
+
                 .panel-tabs{
                     width: 100%;
                     display: grid;

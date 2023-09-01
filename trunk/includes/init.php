@@ -158,3 +158,14 @@ new UserMetadata( 'concordamos_network', 'info', __( 'Additional information (by
 		'label' => 'Sample'
 	]
 ] );
+
+/**
+ * Remove the admin_bar of the users with role `concordamos_network`
+ */
+function remove_admin_bar() {
+    $user = wp_get_current_user();
+    if ( in_array( 'concordamos_network', (array) $user->roles ) ) {
+        show_admin_bar( false );
+    }
+}
+add_action( 'after_setup_theme', 'Concordamos\remove_admin_bar' );
