@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-01T18:29:12+00:00\n"
+"POT-Creation-Date: 2023-09-01T19:11:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: concordamos\n"
@@ -1643,7 +1643,7 @@ msgstr ""
 #: build/js/voting-page/App.js:2252
 #: build/js/voting-page/components/Form.js:13388
 #: build/js/voting-page/index.js:2264
-msgid "Sending voting..."
+msgid "Creating voting..."
 msgstr ""
 
 #: assets/javascript/voting-page/components/Form.js:197
@@ -1741,27 +1741,81 @@ msgid "Title of the option"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:130
+#: assets/javascript/voting-page/components/Options.js:150
+#: assets/javascript/voting-page/components/Text.js:42
+#: assets/javascript/voting-page/components/Textarea.js:42
 #: build/js/voting-page/App.js:3514
+#: build/js/voting-page/App.js:3524
+#: build/js/voting-page/App.js:3729
+#: build/js/voting-page/App.js:3789
 #: build/js/voting-page/components/Form.js:3311
+#: build/js/voting-page/components/Form.js:3321
+#: build/js/voting-page/components/Form.js:3526
+#: build/js/voting-page/components/Form.js:3586
 #: build/js/voting-page/components/Options.js:287
+#: build/js/voting-page/components/Options.js:297
+#: build/js/voting-page/components/Text.js:147
+#: build/js/voting-page/components/Textarea.js:146
 #: build/js/voting-page/index.js:3536
+#: build/js/voting-page/index.js:3546
+#: build/js/voting-page/index.js:3751
+#: build/js/voting-page/index.js:3811
 #: build/js/voting-page/App.js:2409
+#: build/js/voting-page/App.js:2429
+#: build/js/voting-page/App.js:2619
+#: build/js/voting-page/App.js:2672
 #: build/js/voting-page/components/Form.js:2204
+#: build/js/voting-page/components/Form.js:2224
+#: build/js/voting-page/components/Form.js:2414
+#: build/js/voting-page/components/Form.js:2467
 #: build/js/voting-page/components/Options.js:242
+#: build/js/voting-page/components/Options.js:262
+#: build/js/voting-page/components/Text.js:93
+#: build/js/voting-page/components/Textarea.js:93
 #: build/js/voting-page/index.js:2421
-msgid "Você atingiu o limite de %s caracteres"
+#: build/js/voting-page/index.js:2441
+#: build/js/voting-page/index.js:2631
+#: build/js/voting-page/index.js:2684
+msgid "You have reached the %s character limit"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:131
+#: assets/javascript/voting-page/components/Options.js:151
+#: assets/javascript/voting-page/components/Text.js:43
+#: assets/javascript/voting-page/components/Textarea.js:43
 #: build/js/voting-page/App.js:3514
+#: build/js/voting-page/App.js:3524
+#: build/js/voting-page/App.js:3729
+#: build/js/voting-page/App.js:3789
 #: build/js/voting-page/components/Form.js:3311
+#: build/js/voting-page/components/Form.js:3321
+#: build/js/voting-page/components/Form.js:3526
+#: build/js/voting-page/components/Form.js:3586
 #: build/js/voting-page/components/Options.js:287
+#: build/js/voting-page/components/Options.js:297
+#: build/js/voting-page/components/Text.js:147
+#: build/js/voting-page/components/Textarea.js:146
 #: build/js/voting-page/index.js:3536
+#: build/js/voting-page/index.js:3546
+#: build/js/voting-page/index.js:3751
+#: build/js/voting-page/index.js:3811
 #: build/js/voting-page/App.js:2410
+#: build/js/voting-page/App.js:2430
+#: build/js/voting-page/App.js:2620
+#: build/js/voting-page/App.js:2673
 #: build/js/voting-page/components/Form.js:2205
+#: build/js/voting-page/components/Form.js:2225
+#: build/js/voting-page/components/Form.js:2415
+#: build/js/voting-page/components/Form.js:2468
 #: build/js/voting-page/components/Options.js:243
+#: build/js/voting-page/components/Options.js:263
+#: build/js/voting-page/components/Text.js:94
+#: build/js/voting-page/components/Textarea.js:94
 #: build/js/voting-page/index.js:2422
-msgid "Você está próximo do limite de %s caracteres"
+#: build/js/voting-page/index.js:2442
+#: build/js/voting-page/index.js:2632
+#: build/js/voting-page/index.js:2685
+msgid "You are approaching the %s character limit"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:138
@@ -1786,66 +1840,6 @@ msgstr ""
 #: build/js/voting-page/components/Options.js:253
 #: build/js/voting-page/index.js:2432
 msgid "Description of the option"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Options.js:150
-#: assets/javascript/voting-page/components/Text.js:42
-#: assets/javascript/voting-page/components/Textarea.js:42
-#: build/js/voting-page/App.js:3524
-#: build/js/voting-page/App.js:3729
-#: build/js/voting-page/App.js:3789
-#: build/js/voting-page/components/Form.js:3321
-#: build/js/voting-page/components/Form.js:3526
-#: build/js/voting-page/components/Form.js:3586
-#: build/js/voting-page/components/Options.js:297
-#: build/js/voting-page/components/Text.js:147
-#: build/js/voting-page/components/Textarea.js:146
-#: build/js/voting-page/index.js:3546
-#: build/js/voting-page/index.js:3751
-#: build/js/voting-page/index.js:3811
-#: build/js/voting-page/App.js:2429
-#: build/js/voting-page/App.js:2619
-#: build/js/voting-page/App.js:2672
-#: build/js/voting-page/components/Form.js:2224
-#: build/js/voting-page/components/Form.js:2414
-#: build/js/voting-page/components/Form.js:2467
-#: build/js/voting-page/components/Options.js:262
-#: build/js/voting-page/components/Text.js:93
-#: build/js/voting-page/components/Textarea.js:93
-#: build/js/voting-page/index.js:2441
-#: build/js/voting-page/index.js:2631
-#: build/js/voting-page/index.js:2684
-msgid "You have reached the %s character limit"
-msgstr ""
-
-#: assets/javascript/voting-page/components/Options.js:151
-#: assets/javascript/voting-page/components/Text.js:43
-#: assets/javascript/voting-page/components/Textarea.js:43
-#: build/js/voting-page/App.js:3524
-#: build/js/voting-page/App.js:3729
-#: build/js/voting-page/App.js:3789
-#: build/js/voting-page/components/Form.js:3321
-#: build/js/voting-page/components/Form.js:3526
-#: build/js/voting-page/components/Form.js:3586
-#: build/js/voting-page/components/Options.js:297
-#: build/js/voting-page/components/Text.js:147
-#: build/js/voting-page/components/Textarea.js:146
-#: build/js/voting-page/index.js:3546
-#: build/js/voting-page/index.js:3751
-#: build/js/voting-page/index.js:3811
-#: build/js/voting-page/App.js:2430
-#: build/js/voting-page/App.js:2620
-#: build/js/voting-page/App.js:2673
-#: build/js/voting-page/components/Form.js:2225
-#: build/js/voting-page/components/Form.js:2415
-#: build/js/voting-page/components/Form.js:2468
-#: build/js/voting-page/components/Options.js:263
-#: build/js/voting-page/components/Text.js:94
-#: build/js/voting-page/components/Textarea.js:94
-#: build/js/voting-page/index.js:2442
-#: build/js/voting-page/index.js:2632
-#: build/js/voting-page/index.js:2685
-msgid "You are approaching the %s character limit"
 msgstr ""
 
 #: assets/javascript/voting-page/components/Options.js:158
