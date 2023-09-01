@@ -391,7 +391,11 @@
                         }
 
                         @include mobile{
-                            max-width: 273px;
+                            max-width: 445px;
+                        }
+
+                        @include small{
+                            max-width: 323px;
                         }
 
                         >summary{
