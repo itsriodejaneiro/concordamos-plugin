@@ -3,7 +3,7 @@
 @import 'components/navbar-mobile';
 
 .concordamos-button-faq{
-    background-color: var(--wp--preset--color--primary-pure);
+    background-color: #EDE103;
     color: var(--wp--preset--color--low-dark);
     border: 3px solid #000;
     font-family: Oswald;
@@ -18,6 +18,10 @@
     bottom: 16px;
     text-decoration: none;
     z-index: 9;
+
+    @include mobile{
+        bottom: 93px;
+    }
 }
 
 

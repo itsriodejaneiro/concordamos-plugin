@@ -1,8 +1,6 @@
 
 .voting-archive-grid{
-	a{
-		height: 317px;
-		
+	a{		
 		&:hover{
 			opacity: inherit;
 		}
@@ -90,12 +88,14 @@
 	}
 
 	&__tags {
-		display: flex;
-		gap: 8px;
 		margin: 0;
 		padding: 16px 0 0;
+		max-width: 295px;
+		width: 100%;
+		overflow-x: hidden;
 
 		li {
+			display: inline-flex;
 			border: 3px solid #EDE103;
 			border-radius: 16px;
 			display: inline-block;
@@ -107,6 +107,7 @@
 			color: #111;
 			font-family: 'Inter Tight';
 			font-weight: 700;
+			margin-bottom: 5px;
 		}
 	}
 

@@ -576,6 +576,7 @@
 						justify-content: center;
 						margin-bottom: 2rem;
 						width: 100%;
+						padding-top: 20px;
 
 						span {
 							font-weight: 600;
@@ -814,16 +815,20 @@
 			}
 			.wrapper-voting-links{
 				padding-top: 64px;
+
 				@media(max-width: 1180px){
 					padding-left: 50px;
 				}
+
 				@media(max-width: 1080px){
 					padding-left: 15px;
 				}
+
 				@media(max-width: 782px){
 					padding-left: 15px;
 					padding-right: 15px;
 				}
+
 				.voting-links-grid{
 					max-width: 1170px;
 					width: 100%;
@@ -835,18 +840,22 @@
 						@media(max-width: 1080px){
 							display: block;
 						}
+
 					.voting-links-column{
 						max-width: 590px;
 						width: 100%;
+
 						@media(max-width: 1180px){
 							max-width: 490px;
 						}
+
 						@media(max-width: 1080px){
 							max-width: 590px;
 							margin-left: auto;
 							margin-right: auto;
 						}
 					}
+
 					.voting-links-column:nth-child(2){
 						background-color: #FFFFFF;
 						border-radius: 24px;
@@ -854,14 +863,17 @@
 						background: #FFF;
 						margin-bottom: 24px;
 						padding: 22px 0 29px 30px;
+
 						p{
 							margin-bottom: 30px;
 						}
+
 						.voting-links-scroll{
 							overflow-y: scroll;
 							height: 336px;
 						}
 					}
+
 					.voting-links-card{
 						background-color: #FFFFFF;
 						border-radius: 24px;
@@ -871,6 +883,7 @@
 						padding: 22px 30px 29px;
 
 					}
+
 					.voting-links-title{
 						color: #000;
 						font-family: 'Oswald';
@@ -882,7 +895,8 @@
 						margin-top: 0;
 						margin-bottom: 10px;
 					}
-					P{
+
+					p{
 						font-family: 'Inter';
 						font-size: 14px;
 						font-weight: 600;
@@ -891,15 +905,19 @@
 						text-transform: uppercase;
 						margin-bottom: 12px;
 					}
+
 					.voting-link{
+
 						button{
 							background-color: transparent;
 							border: none;
 							padding-left: 7px;
+
 							img{
 								margin-right: 5px;
 							}
 						}
+
 						a{
 							color: #000;
 							font-family: 'Inter Tight';
@@ -921,6 +939,7 @@
 							padding: 10px 14px;
 						}
 					}
+
 					.link-primary{
 						background-color: #FFF766;
 						border-radius: 80px;
@@ -935,10 +954,12 @@
 						text-decoration: none;
 						position: relative;
 						top: 40px;
+
 						@media(max-width: 782px){
 							font-size: 16px;
 							padding: 6px 16px;
 						}
+						
 						&:hover{
 							background-color: transparent;
 							color: #000;

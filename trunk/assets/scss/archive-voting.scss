@@ -74,6 +74,11 @@
 
 			.icon {
 				background-image: url(../../assets/images/search.svg);
+				
+				@include mixins.mobile{
+					position: relative !important;
+					right: 10px !important;
+				}
 			}
 		}
 	}
@@ -83,7 +88,7 @@
 		border: 3px solid #000;
 		background: var(--wp--preset--color--high-pure);
 		height: 68px;
-		max-width: 273px;
+		max-width: 445px;
 		margin-left: 5px;
 		flex-direction: row;
 		align-content: center;
@@ -140,6 +145,10 @@
 			padding-left: 32px;
 			padding-right: 32px;
 			background-color: #d1e4dd;
+
+			@include mixins.mobile{
+				max-width: 445px;
+			}
 		
 			
 			.radio-options{

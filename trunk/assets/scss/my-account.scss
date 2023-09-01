@@ -182,8 +182,7 @@
                             }
 
                         }
-                        button{
-                        }
+
                         .edit{
                             display: block;
                             font-size: 16px;
@@ -381,8 +380,13 @@
                         margin: 0px;
                         display: flex;
                         flex-direction: row;
+
                         @media(max-width: 782px){
                             margin-left: 15px;
+                        }
+
+                        @include mobile{
+                            max-width: 273px;
                         }
 
                         >summary{
