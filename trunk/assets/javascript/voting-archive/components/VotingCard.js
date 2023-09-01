@@ -46,7 +46,7 @@ export default function VotingCard ({ panel = false, voting }) {
 					<h2>{voting.title}</h2>
 					<p>{voting.content}</p>
 					{ panel ? null : (
-						<p className="voting-card__staus"><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? __('Login required', 'concordamos') : __('Login required to see results', 'concordamos')) : __('No login', 'concordamos')}</p>
+						<p className="voting-card__status"><Image src={requiresLogin ? 'private.svg' : 'public.svg'}/> {requiresLogin ? (isOpen ? __('Login required', 'concordamos') : __('Login required to see results', 'concordamos')) : __('No login', 'concordamos')}</p>
 					)}
 					<ul className="voting-card__tags">
 					{voting.tags.map((tag) => (
