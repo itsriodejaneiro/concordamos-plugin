@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Concordamos
  * Description:       Quadratic voting system by Concordamos
- * Version:           0.0.33
+ * Version:           0.0.34
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Hacklab Team
