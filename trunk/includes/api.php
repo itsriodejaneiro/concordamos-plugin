@@ -184,30 +184,47 @@ function list_my_votings_callback ( \WP_REST_Request $request ) {
 
 function list_participated_votings_callback ( \WP_REST_Request $request ) {
 	$params = $request->get_params();
-
-	$currentPage = empty($params['page']) ? 1 : intval($params['page']);
+	$current_page = empty($params['page']) ? 1 : intval($params['page']);
 
 	$args = [
-		'post_type' => 'vote',
-		'post_status' => 'publish',
-		'author' => get_current_user_id(),
-		'posts_per_page' => 6,
-		'paged' => $currentPage,
+		'author'         => get_current_user_id(),
+		'fields'         => 'ids',
+		'paged'          => $current_page,
+		'post_status'    => 'publish',
+		'post_type'      => 'vote',
+		'posts_per_page' => 6
 	];
 
-	$args = build_query_from_params($args, $params);
+	$get_votes = get_posts( $args );
+	$get_votings_ids = [];
 
-	$query = new \WP_Query($args);
+	foreach ( $get_votes as $vote_id ) {
+		$voting_id = get_post_meta( $vote_id, 'voting_id', true );
+		if( $voting_id ) {
+			$voting = get_post( $voting_id );
+			if( $voting ) {
+				$get_votings_ids[] = $voting->ID;
+			}
+		}
+	}
 
-	$prepareVoting = function ($vote) {
-		$votingId = get_post_meta($vote->ID, 'voting_id', true);
-		$voting = get_post($votingId);
-		return prepare_voting_for_api($voting);
+	$args_voting = [
+		'post__in'       => $get_votings_ids,
+		'post_type'      => 'voting',
+		'posts_per_page' => -1
+	];
+
+	$args_voting = build_query_from_params( $args_voting, $params );
+
+	$query = new \WP_Query( $args_voting );
+
+	$prepareVoting = function( $voting ) {
+		return prepare_voting_for_api( $voting );
 	};
 
 	return [
 		'num_pages' => $query->max_num_pages,
-		'posts' => array_map($prepareVoting, $query->posts),
+		'posts'     => array_map($prepareVoting, $query->posts)
 	];
 }
 

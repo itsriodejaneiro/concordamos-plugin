@@ -25,7 +25,9 @@ export default function ParticipatedVotings () {
 	return (
 		<div className="my-account-tab">
 			<h2 className="sr-only">{__('Votings I participated', 'concordamos')}</h2>
-			<Filters filters={filters} onChange={onFiltersChange}/>
+			<div className='my-account-filter-button'>
+				<Filters filters={filters} onChange={onFiltersChange}/>
+			</div>
 			<div className="my-account-voting-grid">
 			{(data?.posts ?? []).map((post) => (
 				<VotingCard key={post.ID} voting={post}/>
