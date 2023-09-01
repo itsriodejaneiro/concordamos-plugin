@@ -48,4 +48,4 @@ require_once( 'includes/redirects.php' );
 require_once( 'includes/templates.php' );
 require_once( 'includes/settings-page.php' );
 require_once( 'includes/api.php' );
-require_once( 'includes/init.php' );
+require_once( 'includes/setup.php' );
