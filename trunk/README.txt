@@ -21,16 +21,20 @@ This plugin allows the creation of ballots powered by quadratic voting, with gre
 - Voting may or may not allow a negative number of votes for any option
 - Generate single-use voting links for easily sharing anonymous polls
 
+The plugin is currently available in English and Portuguese.
+
 == Installation ==
 
 1. Upload the entire `concordamos` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the Plugins screen (Plugins > Installed Plugins)
 
-== Frequently Asked Questions ==
-
 == Screenshots ==
 
 1. List of public votings
+2. Voting creation form
+3. List of options
+4. Voting screen
+5. Detailed results page
 
 == Changelog ==
 
