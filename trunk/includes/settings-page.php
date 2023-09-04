@@ -128,3 +128,18 @@ function select_field_render( $args ) {
 	</select>
 	<?php
 }
+
+function switch_field_render( $args ) {
+	$options = get_option( 'concordamos_options' );
+	$name = $args['name'];
+
+	?>
+	<label class="switch">
+		<input type="checkbox" value="yes" name="concordamos_options[<?php echo $name; ?>]" <?php if ( 'yes' == $options[$name] ) echo 'checked="checked"'; ?>>
+		<span class="slider round"></span>
+	</label>
+
+	<?php if ( isset( $args['help'] ) && ! empty( $args['help'] ) ) : ?>
+		<p class="help"><?php echo esc_html( $args['help'] ); ?></p>
+	<?php endif;
+}
