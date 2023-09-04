@@ -5,22 +5,22 @@ get_header();
  * Sample URL: http://localhost/voting/v-67464b987448ca64/u-98564b987448ca50
  */
 
-$post_id = get_the_ID();
+$post_id       = get_the_ID();
 $raw_post_meta = get_post_meta( $post_id );
 
 $voting_id = get_post_field( 'post_name', $post_id );
-$options = Concordamos\get_options_by_voting( $post_id );
+$options   = Concordamos\get_options_by_voting( $post_id );
 
-$author_id = get_post_field( 'post_author', $post_id );
+$author_id     = get_post_field( 'post_author', $post_id );
 $voting_author = get_the_author_meta( 'display_name', $author_id );
 
 $date_start = $raw_post_meta['date_start'][0];
-$date_end = $raw_post_meta['date_end'][0];
+$date_end   = $raw_post_meta['date_end'][0];
 
 $date_start_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_date( $date_start ) ) ) ? 'date date-start' : 'date date-start started';
-$date_end_class = ( Concordamos\is_future_date( Concordamos\format_timestamp_date( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
+$date_end_class   = ( Concordamos\is_future_date( Concordamos\format_timestamp_date( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
 
-$is_panel = get_query_var( 'panel' );
+$is_panel      = get_query_var( 'panel' );
 $voting_closed = Concordamos\is_voting_closed( $post_id );
 
 $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta['results_end'][0] ) ) ? $raw_post_meta['results_end'][0] : 'no';
@@ -28,7 +28,7 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 <div>
 	<div class="voting-header">
 		<div class="container">
-		<?php require 'part/navbar-mobile.php' ?>
+		<?php require 'part/navbar-mobile.php'; ?>
 
 			<div class="info">
 				<span class="voting-breadcrumb">
@@ -72,13 +72,13 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 		</div>
 	</div>
 
-	<?php $content_class = $is_panel ? "voting-content is-panel" : "voting-content"; ?>
+	<?php $content_class = $is_panel ? 'voting-content is-panel' : 'voting-content'; ?>
 
 	<div class="<?php echo $content_class; ?>">
 		<div class="container">
- 			<div class="render" id="concordamos-voting-single"
+			<div class="render" id="concordamos-voting-single"
 				data-credits_voter="<?php echo $raw_post_meta['credits_voter'][0]; ?>"
-				data-options="<?php echo htmlspecialchars( json_encode( $options ) , ENT_QUOTES, 'UTF-8' ); ?>"
+				data-options="<?php echo htmlspecialchars( json_encode( $options ), ENT_QUOTES, 'UTF-8' ); ?>"
 				data-date_start="<?php echo htmlspecialchars( $date_start ); ?>"
 				data-date_end="<?php echo htmlspecialchars( $date_end ); ?>"
 				data-logged="<?php echo is_user_logged_in(); ?>"
