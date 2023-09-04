@@ -24,11 +24,11 @@ $site_title = get_bloginfo( 'name' );
 	<?php wp_body_open(); ?>
 	<section class="concordamos-balloon">
 		<div class="balloon-content">
-		<div class="arrow">
+			<div class="arrow">
 				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
 			</div>
 			<p class="balloon-subtitle"><?php _e( 'A way to vote for consensus', 'concordamos' ); ?></p>
-			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" alt="<?php _e( 'Concordamos Logo', 'concordamos' ); ?>">
+			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" class="logo-image" alt="<?php _e( 'Concordamos Logo', 'concordamos' ); ?>">
 		</div>
 	</section>
 	<form class="register-form" id="register-form">

@@ -7,6 +7,9 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 <html>
 
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
 
@@ -22,7 +25,7 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 				<?php _e( 'A way to vote for consensus', 'concordamos' ); ?>
 			</p>
 			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>"
-				alt="<?php _e( 'Concordamos Logo', 'concordamos' ); ?>'">
+			  class="logo-image" alt="<?php _e( 'Concordamos Logo', 'concordamos' ); ?>'">
 		</div>
 	</section>
 	<form id="login-form" class="login-form">
