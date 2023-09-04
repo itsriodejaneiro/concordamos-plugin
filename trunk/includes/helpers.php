@@ -42,6 +42,16 @@ function get_login_page() {
 	return '';
 }
 
+function use_unique_links() {
+	$options = get_option( 'concordamos_options' );
+
+	if ( isset( $options['use_unique_links'] ) && 'yes' === $options['use_unique_links'] ) {
+		return true;
+	}
+
+	return false;
+}
+
 function get_options_by_voting( $voting_id ) {
 	$args = array(
 		'post_type'      => 'option',

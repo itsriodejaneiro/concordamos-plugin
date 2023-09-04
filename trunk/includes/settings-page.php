@@ -35,7 +35,7 @@ function settings_page_html() {
 		return;
 	}
 
-	echo '<div class="wrap">';
+	echo '<div class="wrap concordamos-settings">';
 	echo '<h1>' . esc_html( get_admin_page_title() ) . '</h1>';
 	echo '<form action="options.php" method="post">';
 
@@ -85,6 +85,25 @@ function settings_init() {
 		array(
 			'name' => 'faq_page',
 		)
+	);
+
+	add_settings_section(
+        'concordamos_section_private_votings',
+        __( 'Private votings', 'concordamos' ),
+        'Concordamos\section_callback',
+        'concordamos-settings'
+    );
+
+	add_settings_field(
+		'use_unique_links',
+		__( 'Use unique links on private votings?', 'concordamos' ),
+		'Concordamos\switch_field_render',
+		'concordamos-settings',
+		'concordamos_section_private_votings',
+		[
+			'name' => 'use_unique_links',
+			'help' => __( 'By enabling this setting, only private votings that are created from now on will display the unique poll links.', 'concordamos' )
+		]
 	);
 }
 add_action( 'admin_init', 'Concordamos\settings_init' );

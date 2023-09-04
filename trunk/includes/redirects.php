@@ -11,8 +11,8 @@ function restrict_voting_single_access() {
 	$raw_post_meta = get_post_meta( $post_id );
 
 	// Check if is private voting
-	if ( $raw_post_meta['voting_type'][0] === 'private' ) {
-		$unique_id          = sanitize_title( get_query_var( 'unique_id' ) );
+	if ( $raw_post_meta['voting_type'][0] === 'private' && use_unique_links() ) {
+		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
 		$expired_unique_ids = array_filter( explode( ',', get_post_meta( $post_id, 'expired_unique_ids', true ) ) );
 
 		// If the provided `unique_id` has already been used, redirect to the voting archive.
@@ -80,11 +80,10 @@ function required_login_to_voting_panel() {
 	if ( ! is_singular( 'voting' ) || get_query_var( 'panel' ) !== '1' ) {
 		return;
 	}
+
 	if ( is_user_logged_in() ) {
 		return;
 	}
-
-	do_action( 'logger', 'ta caindo aqui' );
 
 	if ( isset( $_SERVER['REQUEST_URI'] ) && ! empty( $_SERVER['REQUEST_URI'] ) ) {
 		wp_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) . '?redirect_to=' . $_SERVER['REQUEST_URI'] ) );
