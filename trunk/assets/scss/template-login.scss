@@ -9,9 +9,11 @@
         background-position: center;
         min-height: 500px;
         margin-top: -166px;
+
         @include mobile{
             margin-top:-170px;
         }
+
         .balloon-content{
             @include mobile{
                 padding-top: 170px;
@@ -45,6 +47,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
             .balloon-subtitle{
                 font-family: 'Inter';
                 font-size: 20px;
@@ -55,8 +58,11 @@
                 color: #000;
                 margin-top: 210px;
                 margin-bottom: 24px;
+
                 @include mobile{
                     margin-top:0px;
+                    max-width: 390px;
+                    width: 100%;
                 }
             }
             .with{
@@ -68,10 +74,14 @@
     .login-form,
     .register-form,
 	.change-password-form{
+
         @include mobile{
             margin-left: 16px;
             margin-right: 16px;
+            max-width: 390px;
+            width: 100%;
         }
+
         .error p {
             color: #FF2E22;
             font-family: 'Inter Tight';
@@ -132,6 +142,14 @@
             margin-top: 15px;
             border: none;
             background: none;
+            
+            @include mobile{
+                margin-left: 86px;
+            }
+
+            @include small{
+                margin-left: 86px;
+            }
         }
     }
     .register-form{
@@ -142,6 +160,7 @@
         .accept-checkbox-image{
             display: flex;
             align-content: center;
+
             input{
                 width: 16px;
                 height: 16px;
@@ -165,6 +184,14 @@
         }
         button.show-password {
             margin-top:33px;
+
+            @include mobile{
+                margin-left: 86px;
+            }
+
+            @include small{
+                margin-left: 86px;
+            }
         }
 
     }

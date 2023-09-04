@@ -433,11 +433,13 @@
 			}
 
 			.voting-modal__wrapper.open{
+
 				.voting-modal {
 					max-width: 570px;
 					width: 100%;
 
 					main{
+
 						h2{
 							margin-top: 5px;
 							margin-bottom: 10px;
@@ -447,16 +449,31 @@
 							line-height: 130%;
 							letter-spacing: -0.32px;
 							text-transform: none;
+
+							@include mobile{
+								display: block;
+							}
+
 							@media(max-width: 782px){
 								font-size: 24px;
 							}
+
+							@include mobile{
+								display: block;
+							}
 						}
+
 						p{
 							font-family: 'Inter Tight';
 							font-size: 16px;
 							font-weight: 400;
 							line-height: 150%;
 							letter-spacing: -0.16px;
+
+							@include mobile{
+								display: block;
+							}
+
 							@media(max-width: 782px){
 								font-size: 14px;
 							}
