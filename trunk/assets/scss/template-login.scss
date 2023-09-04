@@ -3,6 +3,7 @@
 
 .page-template-template-login,
 .page-template-template-create-user{
+
     .concordamos-balloon{
         background-image: url(../../assets/images/meialua2.png);
         background-repeat: no-repeat;
@@ -17,26 +18,31 @@
         .balloon-content{
             @include mobile{
                 padding-top: 170px;
+                padding-left: 16px;
+                padding-right: 16px;
             }
 
             .arrow{
                 display: none;
+
                 @include mobile{
                     display: block;
-
+                    width: 100%;
                 }
+
                 img{
                     @include mobile{
                         padding-top: 35px;
                         margin-bottom: 24px;
-                        margin-right: 300px;
+                        margin-left: 8px;
                     }
                 }
             }
-            img{
+
+            .logo-image{
                 @include mobile{
-                    width: 328px;
-                    height: 64px;
+                    width: 100%;
+                    height: auto;
                 }
             }
             max-width: 570px;
@@ -76,9 +82,8 @@
 	.change-password-form{
 
         @include mobile{
-            margin-left: 16px;
-            margin-right: 16px;
-            max-width: 390px;
+            padding-left: 16px;
+            padding-right: 16px;
             width: 100%;
         }
 
@@ -97,7 +102,6 @@
             width: 100%;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 83px;
             padding-left: 0;
             padding-right: 0;
 
@@ -174,6 +178,14 @@
                 font-family: 'Inter';
                 font-size: 14px;
                 font-weight: 400;
+
+                @include small{
+                    text-align: left;
+                }
+
+                @include mobile{
+                    text-align: left;
+                }
 
             }
             a{
