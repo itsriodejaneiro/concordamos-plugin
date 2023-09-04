@@ -8,21 +8,21 @@ class Metadata {
 	private $metabox_title;
 	private $fields;
 
-	public function __construct( $post_type_name, $metabox_id, $metabox_title, $fields = [] ) {
+	public function __construct( $post_type_name, $metabox_id, $metabox_title, $fields = array() ) {
 		$this->post_type_name = strtolower( str_replace( ' ', '_', $post_type_name ) );
 		$this->metabox_id     = $metabox_id;
 		$this->metabox_title  = $metabox_title;
 		$this->fields         = $fields;
 
-		add_action( 'add_meta_boxes', [$this, 'add_meta_box'] );
-		add_action( 'save_post', [$this, 'save_meta_box'] );
+		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
+		add_action( 'save_post', array( $this, 'save_meta_box' ) );
 	}
 
 	public function add_meta_box() {
 		add_meta_box(
 			$this->metabox_id,
 			$this->metabox_title,
-			[$this, 'render_meta_box'],
+			array( $this, 'render_meta_box' ),
 			$this->post_type_name
 		);
 	}
@@ -36,18 +36,18 @@ class Metadata {
 
 		echo '<div class="post-metadata-fields">';
 
-			foreach ( $this->fields as $field ) {
-				// Get field ID and label
-				$field_id = $field['id'];
+		foreach ( $this->fields as $field ) {
+			// Get field ID and label
+			$field_id = $field['id'];
 
-				// Get metadata value for the field or set it to an empty string
-				$meta_value = isset( $metadata[$field_id][0] ) ? esc_attr( $metadata[$field_id][0] ) : '';
+			// Get metadata value for the field or set it to an empty string
+			$meta_value = isset( $metadata[ $field_id ][0] ) ? esc_attr( $metadata[ $field_id ][0] ) : '';
 
-				// Render field based on type
-				$html = $this->render_field( $field, $meta_value );
+			// Render field based on type
+			$html = $this->render_field( $field, $meta_value );
 
-				echo $html;
-			}
+			echo $html;
+		}
 
 		echo '</div>';
 	}
@@ -110,7 +110,7 @@ class Metadata {
 	public function render_input( $field, $value ) {
 		$id      = $field['id'];
 		$type    = isset( $field['type'] ) ? $field['type'] : 'text';
-		$options = isset( $field['options'] ) ? $field['options'] : [];
+		$options = isset( $field['options'] ) ? $field['options'] : array();
 
 		switch ( $type ) {
 			case 'text':
@@ -135,7 +135,7 @@ class Metadata {
 				$html = '<div class="radio-options">';
 				foreach ( $options as $option_value => $option_label ) {
 					$checked = ( $value == $option_value ) ? 'checked' : '';
-					$html .= "<input type='radio' id='{$id}_{$option_value}' name='{$id}' value='{$option_value}' {$checked}>{$option_label}<br>";
+					$html   .= "<input type='radio' id='{$id}_{$option_value}' name='{$id}' value='{$option_value}' {$checked}>{$option_label}<br>";
 				}
 				$html .= '</div>';
 				return $html;

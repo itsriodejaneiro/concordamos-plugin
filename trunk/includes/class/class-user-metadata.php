@@ -8,19 +8,19 @@ class UserMetadata {
 	private $metabox_title;
 	private $fields;
 
-	public function __construct( $user_role, $metabox_id, $metabox_title, $fields = [] ) {
+	public function __construct( $user_role, $metabox_id, $metabox_title, $fields = array() ) {
 		$this->user_role     = strtolower( str_replace( ' ', '_', $user_role ) );
 		$this->metabox_id    = $metabox_id;
 		$this->metabox_title = $metabox_title;
 		$this->fields        = $fields;
 
-		add_action( 'user_new_form', [$this, 'show_user_meta_fields'] );
-		add_action( 'show_user_profile', [$this, 'show_user_meta_fields'] );
-		add_action( 'edit_user_profile', [$this, 'show_user_meta_fields'] );
+		add_action( 'user_new_form', array( $this, 'show_user_meta_fields' ) );
+		add_action( 'show_user_profile', array( $this, 'show_user_meta_fields' ) );
+		add_action( 'edit_user_profile', array( $this, 'show_user_meta_fields' ) );
 
-		add_action( 'edit_user_created_user', [$this, 'save_user_meta_fields'] );
-		add_action( 'personal_options_update', [$this, 'save_user_meta_fields'] );
-		add_action( 'edit_user_profile_update', [$this, 'save_user_meta_fields'] );
+		add_action( 'edit_user_created_user', array( $this, 'save_user_meta_fields' ) );
+		add_action( 'personal_options_update', array( $this, 'save_user_meta_fields' ) );
+		add_action( 'edit_user_profile_update', array( $this, 'save_user_meta_fields' ) );
 	}
 
 	public function show_user_meta_fields( $user ) {
@@ -40,10 +40,10 @@ class UserMetadata {
 	public function render_user_meta_fields( $user ) {
 		foreach ( $this->fields as $field ) {
 			// Get field ID and label
-			$field_id = $field['id'];
+			$field_id    = $field['id'];
 			$field_label = $field['label'];
-			$field_type = isset( $field['type'] ) ? $field['type'] : 'text';
-			$field_css = isset( $field['css'] ) ? $field['css'] : '';
+			$field_type  = isset( $field['type'] ) ? $field['type'] : 'text';
+			$field_css   = isset( $field['css'] ) ? $field['css'] : '';
 
 			// Get metadata value for the field or set it to an empty string
 			$meta_value = get_user_meta( $user->ID, $field_id, true );
@@ -108,7 +108,6 @@ class UserMetadata {
 		";
 
 		return $html;
-
 	}
 
 	public function render_input( $id, $type, $value ) {
@@ -124,7 +123,7 @@ class UserMetadata {
 			case 'radio':
 				// For radio input, value should be an array of options
 				$html = '';
-				foreach ($value as $option_value => $option_label) {
+				foreach ( $value as $option_value => $option_label ) {
 					$html .= "<input type='radio' id='{$id}_{$option_value}' name='{$id}' value='{$option_value}'>{$option_label}<br>";
 				}
 				return $html;

@@ -8,17 +8,17 @@ class Taxonomy {
 	private $taxonomy_args;
 	private $labels;
 
-	public function __construct( $post_type, $taxonomy_slug, $taxonomy_args = [], $labels = [] ) {
+	public function __construct( $post_type, $taxonomy_slug, $taxonomy_args = array(), $labels = array() ) {
 		$this->post_type     = $post_type;
 		$this->taxonomy_slug = $taxonomy_slug;
 		$this->taxonomy_args = $taxonomy_args;
 		$this->labels        = $labels;
 
-		add_action( 'init', [$this, 'register_taxonomy'] );
+		add_action( 'init', array( $this, 'register_taxonomy' ) );
 	}
 
 	public function register_taxonomy() {
-		$default_labels = [
+		$default_labels = array(
 			'name'              => _x( 'Tags', 'taxonomy general name', 'concordamos' ),
 			'singular_name'     => _x( 'Tag', 'taxonomy singular name', 'concordamos' ),
 			'search_items'      => __( 'Search Tags', 'concordamos' ),
@@ -30,18 +30,18 @@ class Taxonomy {
 			'add_new_item'      => __( 'Add New Tag', 'concordamos' ),
 			'new_item_name'     => __( 'New Tag Name', 'concordamos' ),
 			'menu_name'         => __( 'Tags', 'concordamos' ),
-		];
-		$labels = wp_parse_args( $this->labels, $default_labels );
+		);
+		$labels         = wp_parse_args( $this->labels, $default_labels );
 
-		$default_args = [
+		$default_args = array(
 			'hierarchical'      => false,
 			'labels'            => $labels,
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'query_var'         => true,
-			'rewrite'           => ['slug' => $this->taxonomy_slug],
-		];
-		$args = wp_parse_args( $this->taxonomy_args, $default_args );
+			'rewrite'           => array( 'slug' => $this->taxonomy_slug ),
+		);
+		$args         = wp_parse_args( $this->taxonomy_args, $default_args );
 
 		register_taxonomy( $this->taxonomy_slug, $this->post_type, $args );
 	}
