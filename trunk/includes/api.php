@@ -287,8 +287,8 @@ function create_voting_callback( \WP_REST_Request $request ) {
 
 	$unique_ids = '';
 
-	// Generate all unique links to voting if is private
-	if ( $voting_type === 'private' ) {
+	// Generate all unique links to voting if is private when config use_unique_links is activated
+	if ( $voting_type === 'private' && use_unique_links() ) {
 		for ( $i = 0; $i < $number_voters; $i++ ) {
 			$prefix = 'u-' . bin2hex( random_bytes( 6 ) );
 			$unique_ids .= $prefix . ',';
@@ -613,7 +613,7 @@ function vote_callback( \WP_REST_Request $request ) {
 		$is_private = true;
 	}
 
-	if ( $is_private ) {
+	if ( $is_private && use_unique_links() ) {
 		if ( empty( $unique_id ) ) {
 			$response = [
 				'status' => 'error',

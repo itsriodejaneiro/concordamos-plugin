@@ -23,6 +23,12 @@
     }
 }
 
+@mixin tablet-large {
+	@media (max-width: $desktop-large-width) {
+			@content;
+	}
+}
+
 @mixin tablet-only {
     @media (min-width: $tablet-width) and (max-width: $desktop-width) {
         @content;

@@ -830,12 +830,9 @@
 			.wrapper-voting-links{
 				padding-top: 64px;
 
-				@media(max-width: 1180px){
-					padding-left: 50px;
-				}
-
-				@media(max-width: 1080px){
+				@include tablet-large {
 					padding-left: 15px;
+					padding-right: 15px;
 				}
 
 				@media(max-width: 782px){
@@ -843,31 +840,19 @@
 					padding-right: 15px;
 				}
 
-				.voting-links-grid{
+				.voting-links-grid {
+					display: flex;
 					max-width: 1170px;
 					width: 100%;
 					margin-left: auto;
 					margin-right: auto;
-					display: grid;
-					grid-template-areas: "a c"
-										 "b c";
-						@media(max-width: 1080px){
-							display: block;
-						}
+
+					@media(max-width: 1080px){
+						display: block;
+					}
 
 					.voting-links-column{
-						max-width: 590px;
-						width: 100%;
-
-						@media(max-width: 1180px){
-							max-width: 490px;
-						}
-
-						@media(max-width: 1080px){
-							max-width: 590px;
-							margin-left: auto;
-							margin-right: auto;
-						}
+						flex: 1;
 					}
 
 					.voting-links-column:nth-child(2){
@@ -973,7 +958,7 @@
 							font-size: 16px;
 							padding: 6px 16px;
 						}
-						
+
 						&:hover{
 							background-color: transparent;
 							color: #000;
