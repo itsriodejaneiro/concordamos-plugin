@@ -86,7 +86,14 @@ function required_login_to_voting_panel() {
 		return;
 	}
 
-	wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
+	do_action( 'logger', 'ta caindo aqui' );
+
+	if ( isset( $_SERVER['REQUEST_URI'] ) && ! empty( $_SERVER['REQUEST_URI'] ) ) {
+		wp_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) . '?redirect_to=' . $_SERVER["REQUEST_URI"] ) );
+		exit;
+	}
+
+	wp_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) ) );
 	exit;
 
 }

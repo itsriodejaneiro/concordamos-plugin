@@ -5,6 +5,7 @@ namespace Concordamos;
 // Custom post type `vote`
 new CPT( 'vote', [
 	'menu_icon' => 'dashicons-forms',
+	'show_ui'   => false,
 	'supports'  => ['author', 'title']
 ] );
 
@@ -45,7 +46,8 @@ new CPT( 'vote', [
 // Custom post type `voting`
 new CPT( 'voting', [
 	'menu_icon' => 'dashicons-yes-alt',
-	'supports' => ['author', 'editor', 'title']
+	'show_ui'   => false,
+	'supports'  => ['author', 'editor', 'title']
 ] );
 
 // new Metadata( 'voting', 'info', __( 'Additional information', 'concordamos' ), [
@@ -124,7 +126,8 @@ new Taxonomy( 'voting', 'tag', [
 // Custom post type `options`
 new CPT( 'option', [
 	'menu_icon' => 'dashicons-table-row-after',
-	'supports' => ['author', 'title']
+	'show_ui'   => false,
+	'supports'  => ['author', 'title'],
 ] );
 
 // new Metadata( 'option', 'info', __( 'Additional information', 'concordamos' ), [
@@ -169,3 +172,34 @@ function remove_admin_bar() {
     }
 }
 add_action( 'after_setup_theme', 'Concordamos\remove_admin_bar' );
+
+/**
+ * Delete options when a voting is deleted
+ */
+function delete_options_by_voting( $post_id, $post ) {
+	if ( 'voting' !== $post->post_type ) {
+		return;
+	}
+
+	$args = [
+		'author'         => $post->post_author,
+		'post_type'      => 'option',
+		'posts_per_page' => -1,
+		'meta_query'     => [
+			[
+				'key'   => 'voting_id',
+				'value' => $post_id
+			]
+		]
+	];
+
+	$options = new \WP_Query( $args );
+
+	if ( $options ) {
+		foreach ( $options->posts as $option ) {
+			wp_delete_post( $option->ID, true );
+		}
+	}
+
+}
+add_action( 'after_delete_post', 'Concordamos\delete_options_by_voting', 10, 2 );

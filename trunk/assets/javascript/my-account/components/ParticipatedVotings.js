@@ -32,6 +32,11 @@ export default function ParticipatedVotings () {
 			{(data?.posts ?? []).map((post) => (
 				<VotingCard key={post.ID} voting={post}/>
 			))}
+
+			{ ! data?.posts.lenght
+				? <h3>{__('No voting found.', 'concordamos')}</h3>
+				: null
+			}
 			</div>
 			{(data?.num_pages && data.num_pages > 1) ? (
 				<Paginate
