@@ -121,15 +121,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 inputRepeatPassword.setAttribute('type', 'password');
             }
         })
-
-        const fixButtonShowPasswordPosition = () => {
-            buttonShowPassword.style.marginLeft = inputPassword.clientWidth - 80 + 'px';
-        }
-
-        window.addEventListener('resize', fixButtonShowPasswordPosition);
-        setTimeout( () => {
-            fixButtonShowPasswordPosition();
-          }, 100)
-
     }
 });

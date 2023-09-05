@@ -4,7 +4,7 @@
     &.login-form{
         @include mobile{
             margin: 0 16px;
-        }  
+        }
         .container{
             max-width: 576px;
             width: 100%;
@@ -12,8 +12,8 @@
             margin-right: auto;
             margin-top: 83px;
             padding-left: 0;
-            padding-right: 0;  
-           
+            padding-right: 0;
+
         }
         label{
             color: #111;
@@ -45,7 +45,7 @@
             padding: 15px 0;
             @include mobile{
                 background-color: initial;
-            } 
+            }
         }
         p, img{
             text-align: center;
@@ -77,9 +77,11 @@
             color: #000;
             margin-top: 5px;
         }
-        a{
-            color: #26A9F9;
-            border-bottom: solid 3px #26A9F9;
+
+        a {
+			border-bottom: solid 3px #26A9F9;
+			color: #26A9F9;
+			text-decoration: none;
         }
     }
     button.show-password {

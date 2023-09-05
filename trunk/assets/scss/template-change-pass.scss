@@ -82,11 +82,12 @@ body.page-template-template-change-pass{
             .repeat-password-field{
 
                 >label{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                    width: 570px;
-                    margin-top: 16px;
+					display: flex;
+					flex-direction: column;
+					gap: 10px;
+					margin-top: 16px;
+					max-width: 570px;
+					width: 100%;
 
                     >span{
                         color: #111;
@@ -116,10 +117,11 @@ body.page-template-template-change-pass{
             .email-field{
 
                 >label{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                    width: 570px;
+						display: flex;
+						flex-direction: column;
+						gap: 10px;
+						max-width: 570px;
+						width: 100%;
 
                     >span{
                         color: #111;
@@ -160,7 +162,6 @@ body.page-template-template-change-pass{
                 border-radius: 80px;
                 border: 3px solid #000;
                 background: var(--wp--preset--color--primary-light);
-                width: 139px;
                 padding: 8px 24px;
                 align-items: flex-start;
                 gap: 10px;
@@ -213,7 +214,7 @@ body.page-template-template-change-pass{
                 }
             }
         }
-        
+
 		button.show-password {
 			position: absolute;
             width: 25px;
