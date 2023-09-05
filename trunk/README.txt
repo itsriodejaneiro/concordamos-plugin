@@ -14,11 +14,11 @@ Quadratic voting system by Concordamos.
 
 *Quadratic voting* (also known as *plural voting*) is a redesigned voting method reflecting the intensity of people's preferences in collective decisions. Voters receive budgets of credits, which they allocate to different questions on the ballot to signal the intensity of their conviction. Their credits are convertible to "counted votes" according to their square root: one credit equals one vote; four credits equals two votes; nine credits equals three votes, etc. Read more about quadratic voting [here](https://www.radicalxchange.org/concepts/plural-voting/).
 
-This plugin allows the creation of ballots powered by quadratic voting, with great flexibility:
+This plugin allows the creation of ballots powered by quadratic voting, with much flexibility:
 
 - Configuring the total number of credits each voter receives
 - Votings may or may not require registration/login (enforcing one budget per user)
-- Voting may or may not allow a negative number of votes for any option
+- Voting may or may not allow a negative number of counted votes for any option
 - Generate single-use voting links for easily sharing anonymous polls
 
 The plugin is currently available in English and Portuguese.
