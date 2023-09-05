@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Concordamos 0.0.37\n"
+"Project-Id-Version: Concordamos 0.0.41\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-04T19:51:44+00:00\n"
+"POT-Creation-Date: 2023-09-05T14:01:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: concordamos\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Hacklab Team"
 msgstr ""
 
-#: concordamos.php:37
+#: concordamos.php:36
 msgid "Concordamos Network"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 #: includes/blocks/login.php:10
 #: templates/template-change-pass.php:53
 #: templates/template-create-user.php:48
-#: templates/template-login.php:32
+#: templates/template-login.php:35
 #: assets/javascript/my-account/components/EditEmailModal.js:40
 #: build/js/my-account/App.js:183
 #: build/js/my-account/components/EditEmailModal.js:360
@@ -113,7 +113,7 @@ msgstr ""
 #: includes/blocks/login.php:18
 #: templates/template-change-pass.php:73
 #: templates/template-create-user.php:57
-#: templates/template-login.php:39
+#: templates/template-login.php:42
 #: assets/javascript/my-account/components/EditPasswordModal.js:48
 #: build/js/my-account/App.js:332
 #: build/js/my-account/components/EditPasswordModal.js:365
@@ -127,23 +127,23 @@ msgid "Password"
 msgstr ""
 
 #: includes/blocks/login.php:33
-#: templates/template-login.php:54
+#: templates/template-login.php:57
 msgid "I forgot my password"
 msgstr ""
 
 #: includes/blocks/login.php:38
-#: templates/template-create-user.php:99
-#: templates/template-login.php:59
+#: templates/template-create-user.php:102
+#: templates/template-login.php:62
 msgid "Let's go!"
 msgstr ""
 
 #: includes/blocks/login.php:41
-#: templates/template-login.php:62
+#: templates/template-login.php:65
 msgid "Don't have an account?"
 msgstr ""
 
 #: includes/blocks/login.php:42
-#: templates/template-login.php:62
+#: templates/template-login.php:65
 msgid "Register here"
 msgstr ""
 
@@ -373,8 +373,24 @@ msgstr ""
 msgid "Select a page"
 msgstr ""
 
-#: includes/setup.php:174
-msgid "Additional information (by Concordamos)"
+#: includes/setup.php:24
+msgctxt "Post type general name"
+msgid "Votings"
+msgstr ""
+
+#: includes/setup.php:25
+msgctxt "Post type singular name"
+msgid "Voting"
+msgstr ""
+
+#: includes/setup.php:26
+msgctxt "Admin menu text"
+msgid "Votings"
+msgstr ""
+
+#: includes/setup.php:27
+msgctxt "Add New on toolbar"
+msgid "Votings"
 msgstr ""
 
 #: includes/templates.php:41
@@ -465,13 +481,13 @@ msgstr ""
 
 #: templates/template-change-pass.php:26
 #: templates/template-create-user.php:30
-#: templates/template-login.php:22
+#: templates/template-login.php:25
 msgid "A way to vote for consensus"
 msgstr ""
 
 #: templates/template-change-pass.php:29
 #: templates/template-create-user.php:31
-#: templates/template-login.php:25
+#: templates/template-login.php:28
 msgid "Concordamos Logo"
 msgstr ""
 
@@ -492,9 +508,9 @@ msgid "Enter your email and we will send instructions to reset your password"
 msgstr ""
 
 #: templates/template-change-pass.php:60
-#: templates/template-change-pass.php:94
-#: templates/template-create-user.php:99
-#: templates/template-login.php:58
+#: templates/template-change-pass.php:97
+#: templates/template-create-user.php:102
+#: templates/template-login.php:61
 msgid "Loading..."
 msgstr ""
 
@@ -506,8 +522,8 @@ msgstr ""
 msgid "Insert new password"
 msgstr ""
 
-#: templates/template-change-pass.php:88
-#: templates/template-create-user.php:71
+#: templates/template-change-pass.php:91
+#: templates/template-create-user.php:74
 #: assets/javascript/my-account/components/EditPasswordModal.js:54
 #: build/js/my-account/App.js:339
 #: build/js/my-account/components/EditPasswordModal.js:372
@@ -520,7 +536,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: templates/template-change-pass.php:96
+#: templates/template-change-pass.php:99
 msgid "Confirm"
 msgstr ""
 
@@ -544,36 +560,36 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: templates/template-create-user.php:80
-#: templates/template-create-user.php:91
+#: templates/template-create-user.php:83
+#: templates/template-create-user.php:94
 msgid "You accept the"
 msgstr ""
 
-#: templates/template-create-user.php:81
+#: templates/template-create-user.php:84
 msgid "Privacy Policy"
 msgstr ""
 
-#: templates/template-create-user.php:83
+#: templates/template-create-user.php:86
 msgid "and"
 msgstr ""
 
-#: templates/template-create-user.php:84
+#: templates/template-create-user.php:87
 msgid "Terms of Use"
 msgstr ""
 
-#: templates/template-create-user.php:92
+#: templates/template-create-user.php:95
 msgid "Image Terms of Use"
 msgstr ""
 
-#: templates/template-create-user.php:101
+#: templates/template-create-user.php:104
 msgid "Already have an account?"
 msgstr ""
 
-#: templates/template-create-user.php:102
+#: templates/template-create-user.php:105
 msgid "Access here"
 msgstr ""
 
-#: templates/template-create-user.php:109
+#: templates/template-create-user.php:112
 msgid "ITS Logo"
 msgstr ""
 
