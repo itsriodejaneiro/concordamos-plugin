@@ -38,7 +38,7 @@ class CPT {
 			'rewrite'       => array( 'slug' => strtolower( $name ) ),
 		);
 
-		$this->post_type_args   = wp_parse_args( $this->post_type_args, $args );
+		$this->post_type_args = wp_parse_args( $this->post_type_args, $args );
 
 		register_post_type( $this->post_type_name, $this->post_type_args );
 	}
