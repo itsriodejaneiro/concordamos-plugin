@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-09-04T19:51:44+00:00\n"
-"PO-Revision-Date: 2023-09-04 16:58-0300\n"
+"POT-Creation-Date: 2023-09-05T14:01:15+00:00\n"
+"PO-Revision-Date: 2023-09-05 11:03-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -28,7 +28,7 @@ msgstr "Sistema de voto quadrático do Concordamos"
 msgid "Hacklab Team"
 msgstr "Time do Hacklab"
 
-#: concordamos.php:37
+#: concordamos.php:36
 msgid "Concordamos Network"
 msgstr "Rede Concordamos"
 
@@ -94,7 +94,7 @@ msgid "User signed out"
 msgstr "Usuário deslogado"
 
 #: includes/blocks/login.php:10 templates/template-change-pass.php:53
-#: templates/template-create-user.php:48 templates/template-login.php:32
+#: templates/template-create-user.php:48 templates/template-login.php:35
 #: assets/javascript/my-account/components/EditEmailModal.js:40
 #: build/js/my-account/App.js:183
 #: build/js/my-account/components/EditEmailModal.js:360
@@ -107,7 +107,7 @@ msgid "Email"
 msgstr "E-mail"
 
 #: includes/blocks/login.php:18 templates/template-change-pass.php:73
-#: templates/template-create-user.php:57 templates/template-login.php:39
+#: templates/template-create-user.php:57 templates/template-login.php:42
 #: assets/javascript/my-account/components/EditPasswordModal.js:48
 #: build/js/my-account/App.js:332
 #: build/js/my-account/components/EditPasswordModal.js:365
@@ -119,20 +119,20 @@ msgstr "E-mail"
 msgid "Password"
 msgstr "Senha"
 
-#: includes/blocks/login.php:33 templates/template-login.php:54
+#: includes/blocks/login.php:33 templates/template-login.php:57
 msgid "I forgot my password"
 msgstr "Esqueci minha senha"
 
-#: includes/blocks/login.php:38 templates/template-create-user.php:99
-#: templates/template-login.php:59
+#: includes/blocks/login.php:38 templates/template-create-user.php:102
+#: templates/template-login.php:62
 msgid "Let's go!"
 msgstr "Vamos!"
 
-#: includes/blocks/login.php:41 templates/template-login.php:62
+#: includes/blocks/login.php:41 templates/template-login.php:65
 msgid "Don't have an account?"
 msgstr "Não tenha uma conta?"
 
-#: includes/blocks/login.php:42 templates/template-login.php:62
+#: includes/blocks/login.php:42 templates/template-login.php:65
 msgid "Register here"
 msgstr "Cadastre-se aqui"
 
@@ -378,9 +378,25 @@ msgstr ""
 msgid "Select a page"
 msgstr "Selecione uma página"
 
-#: includes/setup.php:174
-msgid "Additional information (by Concordamos)"
-msgstr "Informação adicional (por Concordamos)"
+#: includes/setup.php:24
+msgctxt "Post type general name"
+msgid "Votings"
+msgstr "Votações"
+
+#: includes/setup.php:25
+msgctxt "Post type singular name"
+msgid "Voting"
+msgstr "Votação"
+
+#: includes/setup.php:26
+msgctxt "Admin menu text"
+msgid "Votings"
+msgstr "Votações"
+
+#: includes/setup.php:27
+msgctxt "Add New on toolbar"
+msgid "Votings"
+msgstr "Votações"
 
 #: includes/templates.php:41 assets/javascript/login-block/editor.js:8
 #: assets/javascript/login-block/editor.js:18
@@ -459,12 +475,12 @@ msgid "End"
 msgstr "Fim"
 
 #: templates/template-change-pass.php:26 templates/template-create-user.php:30
-#: templates/template-login.php:22
+#: templates/template-login.php:25
 msgid "A way to vote for consensus"
 msgstr "Uma forma de votar por consenso"
 
 #: templates/template-change-pass.php:29 templates/template-create-user.php:31
-#: templates/template-login.php:25
+#: templates/template-login.php:28
 msgid "Concordamos Logo"
 msgstr "Logo do Concordamos"
 
@@ -484,8 +500,8 @@ msgstr "Este link é inválido ou já expirou."
 msgid "Enter your email and we will send instructions to reset your password"
 msgstr "Entre seu e-mail e enviaremos instruções para redefinir sua senha"
 
-#: templates/template-change-pass.php:60 templates/template-change-pass.php:94
-#: templates/template-create-user.php:99 templates/template-login.php:58
+#: templates/template-change-pass.php:60 templates/template-change-pass.php:97
+#: templates/template-create-user.php:102 templates/template-login.php:61
 msgid "Loading..."
 msgstr "Carregando..."
 
@@ -497,7 +513,7 @@ msgstr "Enviar link"
 msgid "Insert new password"
 msgstr "Insira a nova senha"
 
-#: templates/template-change-pass.php:88 templates/template-create-user.php:71
+#: templates/template-change-pass.php:91 templates/template-create-user.php:74
 #: assets/javascript/my-account/components/EditPasswordModal.js:54
 #: build/js/my-account/App.js:339
 #: build/js/my-account/components/EditPasswordModal.js:372
@@ -509,7 +525,7 @@ msgstr "Insira a nova senha"
 msgid "Repeat password"
 msgstr "Repetir senha"
 
-#: templates/template-change-pass.php:96
+#: templates/template-change-pass.php:99
 msgid "Confirm"
 msgstr "Confirmar"
 
@@ -529,35 +545,35 @@ msgstr "Confirmar"
 msgid "Name"
 msgstr "Nome"
 
-#: templates/template-create-user.php:80 templates/template-create-user.php:91
+#: templates/template-create-user.php:83 templates/template-create-user.php:94
 msgid "You accept the"
 msgstr "Você aceita a"
 
-#: templates/template-create-user.php:81
+#: templates/template-create-user.php:84
 msgid "Privacy Policy"
 msgstr "Política de privacidade"
 
-#: templates/template-create-user.php:83
+#: templates/template-create-user.php:86
 msgid "and"
 msgstr "e"
 
-#: templates/template-create-user.php:84
+#: templates/template-create-user.php:87
 msgid "Terms of Use"
 msgstr "Termos de uso"
 
-#: templates/template-create-user.php:92
+#: templates/template-create-user.php:95
 msgid "Image Terms of Use"
 msgstr "Termos de uso de imagem"
 
-#: templates/template-create-user.php:101
+#: templates/template-create-user.php:104
 msgid "Already have an account?"
 msgstr "Já tem uma conta?"
 
-#: templates/template-create-user.php:102
+#: templates/template-create-user.php:105
 msgid "Access here"
 msgstr "Acesse aqui"
 
-#: templates/template-create-user.php:109
+#: templates/template-create-user.php:112
 msgid "ITS Logo"
 msgstr "Logo do ITS"
 
@@ -2315,3 +2331,6 @@ msgstr "Deletar votação"
 #: build/js/votings-block/index.js:159
 msgid "Search votings"
 msgstr "Pesquisar votações"
+
+#~ msgid "Additional information (by Concordamos)"
+#~ msgstr "Informação adicional (por Concordamos)"
