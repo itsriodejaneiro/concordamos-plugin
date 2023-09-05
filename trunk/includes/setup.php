@@ -51,7 +51,6 @@ new CPT(
 	'voting',
 	array(
 		'menu_icon' => 'dashicons-yes-alt',
-		'show_ui'   => false,
 		'supports'  => array( 'author', 'editor', 'title' ),
 	)
 );

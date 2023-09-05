@@ -139,22 +139,19 @@
         p, img{
             text-align: center;
         }
-        button.show-password {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            margin-top: 15px;
-            border: none;
-            background: none;
-            
-            @include mobile{
-                margin-left: 86px;
-            }
+		.password-input-box {
+			position: relative;
 
-            @include small{
-                margin-left: 86px;
-            }
-        }
+			button.show-password {
+				background: transparent;
+				border: none;
+				height: 25px;
+				margin-top: size(13);
+				position: absolute;
+				right: size(16);
+				width: 25px;
+			}
+		}
     }
     .register-form{
         input{
@@ -194,19 +191,21 @@
             }
 
         }
-        button.show-password {
-            margin-top:33px;
+        .password-input-box {
+			position: relative;
 
-            @include mobile{
-                margin-left: 86px;
-            }
-
-            @include small{
-                margin-left: 86px;
-            }
-        }
-
+			button.show-password {
+				background: transparent;
+				border: none;
+				height: 25px;
+				margin-top: size(13);
+				position: absolute;
+				right: size(16);
+				width: 25px;
+			}
+		}
     }
+
     .login-password-field{
         margin: 26px 0;
         @include mobile{
@@ -238,9 +237,11 @@
             color: #000;
             margin-top: 5px;
         }
-        a{
-            color: #26A9F9;
-            border-bottom: solid 3px #26A9F9;
+
+        a {
+			border-bottom: solid 3px #26A9F9;
+			color: #26A9F9;
+			text-decoration: none;
         }
     }
     .register-button p{
