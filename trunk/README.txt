@@ -40,3 +40,8 @@ The plugin is currently available in English and Portuguese.
 
 = 0.1.0 =
 * Initial public release of the plugin
+
+== Links ==
+
+* [Official site](https://concordamos.com.br/)
+* [Source code](https://gitlab.com/hacklab/concordamos-plugin)
