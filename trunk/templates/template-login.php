@@ -7,6 +7,9 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 <html>
 
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
 
@@ -21,8 +24,7 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 			<p class="balloon-subtitle">
 				<?php _e( 'A way to vote for consensus', 'concordamos' ); ?>
 			</p>
-			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>"
-				alt="<?php _e( 'Concordamos Logo', 'concordamos' ); ?>'">
+			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" class="logo-image" alt="<?php _e( 'Concordamos Logo', 'concordamos' ); ?>">
 		</div>
 	</section>
 	<form id="login-form" class="login-form">
@@ -39,6 +41,7 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 						<?php _e( 'Password', 'concordamos' ); ?>
 					</span>
 					<div class="password-input-box">
+						<input name="password" type="password">
 						<button class="show-password" type="button">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 								fill="none">
@@ -47,7 +50,6 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 									fill="#666666" />
 							</svg>
 						</button>
-						<input name="password" type="password">
 					</div>
 				</label>
 				<a href="<?php echo $change_password_url; ?>">

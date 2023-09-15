@@ -29,14 +29,11 @@ export default function ParticipatedVotings () {
 				<Filters filters={filters} onChange={onFiltersChange}/>
 			</div>
 			<div className="my-account-voting-grid">
-			{(data?.posts ?? []).map((post) => (
-				<VotingCard key={post.ID} voting={post}/>
-			))}
-
-			{ ! data?.posts.lenght
-				? <h3>{__('No voting found.', 'concordamos')}</h3>
-				: null
-			}
+				{ data?.posts?.length ? (
+					data.posts.map((post) => <VotingCard key={post.ID} voting={post} />)
+				) : (
+					<h3>{__('No voting found.', 'concordamos')}</h3>
+				) }
 			</div>
 			{(data?.num_pages && data.num_pages > 1) ? (
 				<Paginate

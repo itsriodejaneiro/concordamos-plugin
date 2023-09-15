@@ -28,12 +28,27 @@
 			font-weight: 600;
 			margin-top: 67px;
 			margin-bottom: 33px;
+
+			@include small{
+				max-width: 370px;
+				width: 100%;
+			}
 		}
 
 		.voting-archive-filters{
 			display: grid;
 			grid-template-columns: 3fr 1fr;
 			gap: 28px;
+
+			@include mobile{
+				display: flex;
+				flex-direction: column;
+			}
+
+			@include small{
+				display: flex;
+				flex-direction: column;
+			}
 
 			details{
 				border-radius: 10px;
@@ -45,6 +60,11 @@
 
 	.voting-search-form {
 		display: flex;
+		
+		@include mobile{
+			max-width: 370px;
+			width: 100%;
+		}
 
 		& > * {
 			border: 3px solid black;
@@ -94,6 +114,11 @@
 		align-content: center;
 		align-items: center;
 		justify-content: center;
+
+		@include mobile{
+			max-width: 370px;
+			width: 100%;
+		}
 		
 		>summary{
 			display: flex;
@@ -196,6 +221,18 @@
 		margin-top: 47px;
 		gap: 25px;
 		margin-bottom: 41px;
+
+		>a{
+			@include mobile{
+				max-width: 370px;
+				width: 100%;
+			}
+
+			@include small{
+				max-width: 370px;
+				width: 100%;
+			}
+		}
 
 		@media screen and (max-width: 20rem) {
 			grid-template-columns: 1fr;

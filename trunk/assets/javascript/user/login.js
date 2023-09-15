@@ -79,14 +79,4 @@ window.addEventListener('DOMContentLoaded', () => {
       inputPassword.setAttribute('type', 'password' )
     }
   })
-
-  const fixButtonShowPasswordPosition = () => {
-    buttonShowPassword.style.marginLeft = inputPassword.clientWidth - 40 + 'px';
-  }
-
-  window.addEventListener('resize', fixButtonShowPasswordPosition);
-  setTimeout( () => {
-    fixButtonShowPasswordPosition();
-  }, 10)
-
 });

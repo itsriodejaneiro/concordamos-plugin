@@ -330,6 +330,12 @@
                     @include small{
                         margin-top: 40px
                     }
+
+					@include tablet-large {
+						padding-left: 15px;
+						padding-right: 15px;
+					}
+
                     .my-account-filter-button{
                         padding-top: 40px;
                         max-width: 1140px;
@@ -385,10 +391,6 @@
                         margin: 0px;
                         display: flex;
                         flex-direction: row;
-
-                        @media(max-width: 782px){
-                            margin-left: 15px;
-                        }
 
                         @include mobile{
                             max-width: 445px;
@@ -478,12 +480,6 @@
                     }
                 }
                 .my-account-voting-grid{
-
-                    @media(max-width: 782px){
-                        padding-left: 15px;
-                        padding-right: 15px;
-                    }
-
                     display: grid;
                     gap: 1rem;
                     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));

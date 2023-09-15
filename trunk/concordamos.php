@@ -2,10 +2,10 @@
 /**
  * Plugin Name:       Concordamos
  * Description:       Quadratic voting system by Concordamos
- * Version:           0.0.35
+ * Version:           0.1.0
  * Requires at least: 5.8
  * Requires PHP:      7.4
- * Author:            Hacklab Team
+ * Author:            ITS Rio
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       concordamos
@@ -21,12 +21,11 @@ if ( ! defined( 'WPINC' ) ) {
 
 define( 'CONCORDAMOS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CONCORDAMOS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'CONCORDAMOS_PLUGIN_VERSION', '0.0.35' );
+define( 'CONCORDAMOS_PLUGIN_VERSION', '0.1.0' );
 
 require_once 'includes/class/class-posttype.php';
 require_once 'includes/class/class-metadata.php';
 require_once 'includes/class/class-taxonomy.php';
-require_once 'includes/class/class-user-metadata.php';
 require_once 'includes/class/class-user-login.php';
 require_once 'includes/class/class-user-register.php';
 require_once 'includes/class/class-user-change-pass.php';

@@ -36,7 +36,7 @@ export default function VotingLinks ({ initialData }) {
 							<VotingLink href={getPanelUrl(data.permalink + data.a_id)} withButton/>
 						</div>
 					</div>
-					{ data.status === 'private' ? (
+					{ (data.status === 'private' && individualUrls.length) ? (
 						<div className="voting-links-column">
 							<div className="voting-links-scroll">
 								<h2 className="voting-links-title">{__('Individual vote URLs', 'concordamos')}</h2>

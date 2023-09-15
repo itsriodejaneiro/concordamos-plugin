@@ -3,38 +3,46 @@
 
 .page-template-template-login,
 .page-template-template-create-user{
+
     .concordamos-balloon{
         background-image: url(../../assets/images/meialua2.png);
         background-repeat: no-repeat;
         background-position: center;
         min-height: 500px;
         margin-top: -166px;
+
         @include mobile{
             margin-top:-170px;
         }
+
         .balloon-content{
             @include mobile{
                 padding-top: 170px;
+                padding-left: 16px;
+                padding-right: 16px;
             }
 
             .arrow{
                 display: none;
+
                 @include mobile{
                     display: block;
-
+                    width: 100%;
                 }
+
                 img{
                     @include mobile{
                         padding-top: 35px;
                         margin-bottom: 24px;
-                        margin-right: 300px;
+                        margin-left: 8px;
                     }
                 }
             }
-            img{
+
+            .logo-image{
                 @include mobile{
-                    width: 328px;
-                    height: 64px;
+                    width: 100%;
+                    height: auto;
                 }
             }
             max-width: 570px;
@@ -45,6 +53,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
             .balloon-subtitle{
                 font-family: 'Inter';
                 font-size: 20px;
@@ -55,8 +64,11 @@
                 color: #000;
                 margin-top: 210px;
                 margin-bottom: 24px;
+
                 @include mobile{
                     margin-top:0px;
+                    max-width: 390px;
+                    width: 100%;
                 }
             }
             .with{
@@ -68,10 +80,13 @@
     .login-form,
     .register-form,
 	.change-password-form{
+
         @include mobile{
-            margin-left: 16px;
-            margin-right: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            width: 100%;
         }
+
         .error p {
             color: #FF2E22;
             font-family: 'Inter Tight';
@@ -87,7 +102,6 @@
             width: 100%;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 83px;
             padding-left: 0;
             padding-right: 0;
 
@@ -125,14 +139,19 @@
         p, img{
             text-align: center;
         }
-        button.show-password {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            margin-top: 15px;
-            border: none;
-            background: none;
-        }
+		.password-input-box {
+			position: relative;
+
+			button.show-password {
+				background: transparent;
+				border: none;
+				height: 25px;
+				margin-top: size(13);
+				position: absolute;
+				right: size(16);
+				width: 25px;
+			}
+		}
     }
     .register-form{
         input{
@@ -142,6 +161,7 @@
         .accept-checkbox-image{
             display: flex;
             align-content: center;
+
             input{
                 width: 16px;
                 height: 16px;
@@ -156,6 +176,14 @@
                 font-size: 14px;
                 font-weight: 400;
 
+                @include small{
+                    text-align: left;
+                }
+
+                @include mobile{
+                    text-align: left;
+                }
+
             }
             a{
                 color: #26A9F9;
@@ -163,11 +191,21 @@
             }
 
         }
-        button.show-password {
-            margin-top:33px;
-        }
+        .password-input-box {
+			position: relative;
 
+			button.show-password {
+				background: transparent;
+				border: none;
+				height: 25px;
+				margin-top: size(13);
+				position: absolute;
+				right: size(16);
+				width: 25px;
+			}
+		}
     }
+
     .login-password-field{
         margin: 26px 0;
         @include mobile{
@@ -199,9 +237,11 @@
             color: #000;
             margin-top: 5px;
         }
-        a{
-            color: #26A9F9;
-            border-bottom: solid 3px #26A9F9;
+
+        a {
+			border-bottom: solid 3px #26A9F9;
+			color: #26A9F9;
+			text-decoration: none;
         }
     }
     .register-button p{

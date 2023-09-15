@@ -26,8 +26,10 @@ class CPT {
 			'name_admin_bar' => _x( $name, 'Add New on toolbar', 'concordamos' ),
 		);
 
+		$this->post_type_labels = wp_parse_args( $this->post_type_labels, $labels );
+
 		$args = array(
-			'labels'        => $labels,
+			'labels'        => $this->post_type_labels,
 			'public'        => true,
 			'has_archive'   => true,
 			'supports'      => array( 'title', 'editor', 'thumbnail' ),
@@ -36,8 +38,7 @@ class CPT {
 			'rewrite'       => array( 'slug' => strtolower( $name ) ),
 		);
 
-		$this->post_type_args   = wp_parse_args( $this->post_type_args, $args );
-		$this->post_type_labels = wp_parse_args( $this->post_type_labels, $labels );
+		$this->post_type_args = wp_parse_args( $this->post_type_args, $args );
 
 		register_post_type( $this->post_type_name, $this->post_type_args );
 	}
