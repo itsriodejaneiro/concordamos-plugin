@@ -12,7 +12,7 @@ function restrict_voting_single_access() {
 
 	// Check if is private voting
 	if ( $raw_post_meta['voting_type'][0] === 'private' && use_unique_links() ) {
-		$unique_id = sanitize_title( get_query_var( 'unique_id' ) );
+		$unique_id          = sanitize_title( get_query_var( 'unique_id' ) );
 		$expired_unique_ids = array_filter( explode( ',', get_post_meta( $post_id, 'expired_unique_ids', true ) ) );
 
 		// If the provided `unique_id` has already been used, redirect to the voting archive.

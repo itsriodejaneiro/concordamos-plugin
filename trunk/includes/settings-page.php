@@ -88,11 +88,11 @@ function settings_init() {
 	);
 
 	add_settings_section(
-        'concordamos_section_private_votings',
-        __( 'Private votings', 'concordamos' ),
-        'Concordamos\section_callback',
-        'concordamos-settings'
-    );
+		'concordamos_section_private_votings',
+		__( 'Private votings', 'concordamos' ),
+		'Concordamos\section_callback',
+		'concordamos-settings'
+	);
 
 	add_settings_field(
 		'use_unique_links',
@@ -100,10 +100,10 @@ function settings_init() {
 		'Concordamos\switch_field_render',
 		'concordamos-settings',
 		'concordamos_section_private_votings',
-		[
+		array(
 			'name' => 'use_unique_links',
-			'help' => __( 'By enabling this setting, only private votings that are created from now on will display the unique poll links.', 'concordamos' )
-		]
+			'help' => __( 'By enabling this setting, only private votings that are created from now on will display the unique poll links.', 'concordamos' ),
+		)
 	);
 }
 add_action( 'admin_init', 'Concordamos\settings_init' );
@@ -131,15 +131,21 @@ function select_field_render( $args ) {
 
 function switch_field_render( $args ) {
 	$options = get_option( 'concordamos_options' );
-	$name = $args['name'];
+	$name    = $args['name'];
 
 	?>
 	<label class="switch">
-		<input type="checkbox" value="yes" name="concordamos_options[<?php echo $name; ?>]" <?php if ( 'yes' == $options[$name] ) echo 'checked="checked"'; ?>>
+		<input type="checkbox" value="yes" name="concordamos_options[<?php echo $name; ?>]"
+																				<?php
+																				if ( 'yes' == $options[ $name ] ) {
+																					echo 'checked="checked"';}
+																				?>
+		>
 		<span class="slider round"></span>
 	</label>
 
 	<?php if ( isset( $args['help'] ) && ! empty( $args['help'] ) ) : ?>
 		<p class="help"><?php echo esc_html( $args['help'] ); ?></p>
-	<?php endif;
+		<?php
+	endif;
 }

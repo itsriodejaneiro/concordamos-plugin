@@ -24,7 +24,7 @@ new CPT(
 		'name'           => _x( 'Votings', 'Post type general name', 'concordamos' ),
 		'singular_name'  => _x( 'Voting', 'Post type singular name', 'concordamos' ),
 		'menu_name'      => _x( 'Votings', 'Admin menu text', 'concordamos' ),
-		'name_admin_bar' => _x( 'Votings', 'Add New on toolbar', 'concordamos' )
+		'name_admin_bar' => _x( 'Votings', 'Add New on toolbar', 'concordamos' ),
 	)
 );
 
