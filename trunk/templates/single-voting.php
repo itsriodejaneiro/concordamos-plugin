@@ -78,7 +78,7 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 		<div class="container">
 			<div class="render" id="concordamos-voting-single"
 				data-credits_voter="<?php echo $raw_post_meta['credits_voter'][0]; ?>"
-				data-options="<?php echo htmlspecialchars( json_encode( $options ), ENT_QUOTES, 'UTF-8' ); ?>"
+				data-options="<?php echo htmlspecialchars( wp_json_encode( $options ), ENT_QUOTES, 'UTF-8' ); ?>"
 				data-date_start="<?php echo htmlspecialchars( $date_start ); ?>"
 				data-date_end="<?php echo htmlspecialchars( $date_end ); ?>"
 				data-logged="<?php echo is_user_logged_in(); ?>"

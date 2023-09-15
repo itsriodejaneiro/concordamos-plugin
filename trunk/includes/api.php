@@ -236,14 +236,14 @@ function build_query_from_params( array $query, array $params ) {
 function list_my_votings_callback( \WP_REST_Request $request ) {
 	$params = $request->get_params();
 
-	$currentPage = empty( $params['page'] ) ? 1 : intval( $params['page'] );
+	$current_page = empty( $params['page'] ) ? 1 : intval( $params['page'] );
 
 	$args = array(
 		'post_type'      => 'voting',
 		'post_status'    => 'publish',
 		'author'         => get_current_user_id(),
 		'posts_per_page' => 6,
-		'paged'          => $currentPage,
+		'paged'          => $current_page,
 	);
 
 	$args = build_query_from_params( $args, $params );
@@ -292,27 +292,27 @@ function list_participated_votings_callback( \WP_REST_Request $request ) {
 
 	$query = new \WP_Query( $args_voting );
 
-	$prepareVoting = function ( $voting ) {
+	$$prepare_voting = function ( $voting ) {
 		return prepare_voting_for_api( $voting );
 	};
 
 	return array(
 		'num_pages' => $query->max_num_pages,
-		'posts'     => array_map( $prepareVoting, $query->posts ),
+		'posts'     => array_map( $$prepare_voting, $query->posts ),
 	);
 }
 
 function search_votings_callback( \WP_REST_Request $request ) {
 	$params = $request->get_params();
 
-	$currentPage  = empty( $params['page'] ) ? 1 : intval( $params['page'] );
-	$postsPerPage = empty( $params['per_page'] ) ? 6 : intval( $params['per_page'] );
+	$current_page   = empty( $params['page'] ) ? 1 : intval( $params['page'] );
+	$posts_per_page = empty( $params['per_page'] ) ? 6 : intval( $params['per_page'] );
 
 	$args = array(
 		'post_type'      => 'voting',
 		'post_status'    => 'publish',
-		'posts_per_page' => $postsPerPage,
-		'paged'          => $currentPage,
+		'posts_per_page' => $posts_per_page,
+		'paged'          => $current_page,
 	);
 
 	$args = build_query_from_params( $args, $params );
@@ -466,9 +466,9 @@ function patch_voting_callback( \WP_REST_Request $request ) {
 		),
 	);
 
-	$postId = wp_update_post( $args );
+	$post_id = wp_update_post( $args );
 
-	if ( $postId ) {
+	if ( $post_id ) {
 		$response = array(
 			'status'  => 'success',
 			'message' => __( 'Voting updated successfully!', 'concordamos' ),
@@ -485,8 +485,8 @@ function patch_voting_callback( \WP_REST_Request $request ) {
 
 function get_voting_links_callback( \WP_REST_Request $request ) {
 	$params          = $request->get_params();
-	$votingId        = intval( $params['v_id'] );
-	$voting_admin_id = get_post_meta( $votingId, 'admin_id', true );
+	$voting_id       = intval( $params['v_id'] );
+	$voting_admin_id = get_post_meta( $voting_id, 'admin_id', true );
 
 	$has_access = false;
 
@@ -504,7 +504,7 @@ function get_voting_links_callback( \WP_REST_Request $request ) {
 	/**
 	 * Check if the current user is the `post_author`
 	 */
-	if ( get_post_field( 'post_author', $votingId ) == get_current_user_id() ) {
+	if ( get_post_field( 'post_author', $voting_id ) == get_current_user_id() ) {
 		$has_access = true;
 	}
 
@@ -519,14 +519,14 @@ function get_voting_links_callback( \WP_REST_Request $request ) {
 		return new \WP_REST_Response( $response, 403 );
 	}
 
-	$all_uids = get_post_meta( $votingId, 'unique_ids', true );
+	$all_uids = get_post_meta( $voting_id, 'unique_ids', true );
 	if ( empty( $all_uids ) ) {
 		$all_uids = array();
 	} else {
 		$all_uids = explode( ',', $all_uids );
 	}
 
-	$expired_uids = get_post_meta( $votingId, 'expired_unique_ids', true );
+	$expired_uids = get_post_meta( $voting_id, 'expired_unique_ids', true );
 	if ( empty( $expired_uids ) ) {
 		$expired_uids = array();
 	} else {
@@ -542,10 +542,10 @@ function get_voting_links_callback( \WP_REST_Request $request ) {
 
 	return array(
 		'a_id'      => $voting_admin_id,
-		'ID'        => $votingId,
-		'permalink' => get_permalink( $votingId ),
-		'slug'      => get_post_field( 'post_name', $votingId ),
-		'status'    => get_post_meta( $votingId, 'voting_type', true ),
+		'ID'        => $voting_id,
+		'permalink' => get_permalink( $voting_id ),
+		'slug'      => get_post_field( 'post_name', $voting_id ),
+		'status'    => get_post_meta( $voting_id, 'voting_type', true ),
 		'uids'      => $valid_uids,
 	);
 }
@@ -582,9 +582,9 @@ function patch_my_account_callback( \WP_REST_Request $request ) {
 		$args['user_pass'] = $params['password'];
 	}
 
-	$userId = wp_update_user( $args );
+	$user_id = wp_update_user( $args );
 
-	if ( $userId ) {
+	if ( $user_id ) {
 		$response = array(
 			'status'  => 'success',
 			'message' => __( 'User updated successfully!', 'concordamos' ),
@@ -603,10 +603,10 @@ function delete_my_account_callback( \WP_REST_Request $request ) {
 	// Required for using `wp_delete_user` function
 	require_once ABSPATH . 'wp-admin/includes/user.php';
 
-	$userId = get_current_user_id();
+	$user_id = get_current_user_id();
 
 	$args = array(
-		'author'      => $userId,
+		'author'      => $user_id,
 		'numberposts' => -1,
 		'post_type'   => array( 'vote', 'voting' ),
 	);
@@ -627,7 +627,7 @@ function delete_my_account_callback( \WP_REST_Request $request ) {
 
 	wp_logout();
 
-	wp_delete_user( $userId, 0 );
+	wp_delete_user( $user_id, 0 );
 
 	$response = array(
 		'status'  => 'success',

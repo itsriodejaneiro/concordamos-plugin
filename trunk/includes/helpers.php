@@ -224,25 +224,25 @@ function get_voting_status( \WP_Post $post ) {
 }
 
 function prepare_voting_for_api( \WP_Post $post ) {
-	$rawPostMeta = get_post_meta( $post->ID );
-	$postMeta    = array();
+	$raw_post_meta = get_post_meta( $post->ID );
+	$post_meta     = array();
 
-	$skippedMeta = array( 'expired_unique_id', 'unique_ids' );
+	$skipped_meta = array( 'expired_unique_id', 'unique_ids' );
 
-	foreach ( $rawPostMeta as $key => $value ) {
-		if ( ! str_starts_with( $key, '_' ) && ! in_array( $key, $skippedMeta ) && ! empty( $value ) ) {
+	foreach ( $raw_post_meta as $key => $value ) {
+		if ( ! str_starts_with( $key, '_' ) && ! in_array( $key, $skipped_meta ) && ! empty( $value ) ) {
 			if ( is_numeric( $value[0] ) ) {
-				$postMeta[ $key ] = intval( $value[0] );
+				$post_meta[ $key ] = intval( $value[0] );
 			} else {
-				$postMeta[ $key ] = $value[0];
+				$post_meta[ $key ] = $value[0];
 			}
 		}
 	}
 
-	$rawTags = get_the_terms( $post, 'tag' );
-	$tags    = array();
+	$raw_tags = get_the_terms( $post, 'tag' );
+	$tags     = array();
 
-	foreach ( $rawTags as $tag ) {
+	foreach ( $raw_tags as $tag ) {
 		$tags[] = array(
 			'ID'   => $tag->term_id,
 			'name' => $tag->name,
@@ -258,7 +258,7 @@ function prepare_voting_for_api( \WP_Post $post ) {
 		'status'    => $post->post_status,
 		'permalink' => get_permalink( $post ),
 		'time'      => get_voting_status( $post ),
-		'meta'      => $postMeta,
+		'meta'      => $post_meta,
 		'tags'      => $tags,
 	);
 }
