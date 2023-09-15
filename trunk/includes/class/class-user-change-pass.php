@@ -54,7 +54,7 @@ class User_Change_Pass {
 	protected function delete_old_tokens() {
 		global $wpdb;
 
-		$user_meta_key = User_Change_Pass::TRANSIENT_PREFIX;
+		$user_meta_key = self::TRANSIENT_PREFIX;
 
 		$tokens = $wpdb->get_results(
 			$wpdb->prepare(
@@ -70,7 +70,7 @@ class User_Change_Pass {
 	}
 
 	protected function delete_token( $user_id ) {
-		return delete_user_meta( $user_id, User_Change_Pass::TRANSIENT_PREFIX );
+		return delete_user_meta( $user_id, self::TRANSIENT_PREFIX );
 	}
 
 	protected function send_token_email( string $token_key, string $user_email ) {
@@ -95,7 +95,7 @@ class User_Change_Pass {
 
 	protected function save_token_transient( string $token_key_prefixed, object $user ) {
 		$token_expiration = time() + ( HOUR_IN_SECONDS / 4 );
-		$token_meta_key   = User_Change_Pass::TRANSIENT_PREFIX;
+		$token_meta_key   = self::TRANSIENT_PREFIX;
 
 		return update_user_meta(
 			$user->ID,
@@ -124,7 +124,7 @@ class User_Change_Pass {
 
 		// generate token
 		$token_key      = $user->ID . '_' . $this->generate_token_key( $user->ID );
-		$token_prefixed = User_Change_Pass::TRANSIENT_PREFIX . $token_key;
+		$token_prefixed = self::TRANSIENT_PREFIX . $token_key;
 
 		// save transient
 		$this->save_token_transient( $token_key, $user );
@@ -150,7 +150,7 @@ class User_Change_Pass {
 		}
 		$user_id = (int) $user_id;
 
-		$token_key_prefixed = User_Change_Pass::TRANSIENT_PREFIX;
+		$token_key_prefixed = self::TRANSIENT_PREFIX;
 
 		$token_data = get_user_meta( $user_id, $token_key_prefixed, true );
 
@@ -174,7 +174,7 @@ class User_Change_Pass {
 		if ( ! isset( $data['token'] ) || empty( $data['token'] ) ) {
 			return new \WP_Error( 'invalid_data', __( 'Token is empty.', 'concordamos' ), array( 'status' => 400 ) );
 		}
-		if ( ! User_Change_Pass::get_token( $data['token'] ) ) {
+		if ( ! self::get_token( $data['token'] ) ) {
 			return new \WP_Error( 'invalid_data', __( "The link you've used is invalid or has expired. Please restart the password reset process to receive a new link.", 'concordamos' ), array( 'status' => 400 ) );
 		}
 

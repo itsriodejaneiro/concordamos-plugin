@@ -39,23 +39,19 @@ class User_Register {
 
 		if ( ! isset( $data['email'] ) || empty( $data['email'] ) ) {
 			$errors['email'][] = __( 'Email field is empty.', 'concordamos' );
-		} else {
-			if ( ! filter_var( $data['email'], FILTER_VALIDATE_EMAIL ) ) {
+		} elseif ( ! filter_var( $data['email'], FILTER_VALIDATE_EMAIL ) ) {
 				$errors['email'][] = __( 'Email field is invalid.', 'concordamos' );
-			} else {
-				$user_exist = get_user_by( 'email', $data['email'] );
-				if ( $user_exist && ! is_wp_error( $user_exist ) && $user_exist !== false ) {
-					$errors['email'][] = __( 'This email address is already registered. Please use a different email or log in.', 'concordamos' );
-				}
+		} else {
+			$user_exist = get_user_by( 'email', $data['email'] );
+			if ( $user_exist && ! is_wp_error( $user_exist ) && $user_exist !== false ) {
+				$errors['email'][] = __( 'This email address is already registered. Please use a different email or log in.', 'concordamos' );
 			}
 		}
 
 		if ( ( ! isset( $data['password'] ) || empty( $data['password'] ) ) ) {
 			$errors['password'][] = __( 'Password field is empty.', 'concordamos' );
-		} else {
-			if ( $data['password'] != $data['repeat-password'] ) {
+		} elseif ( $data['password'] != $data['repeat-password'] ) {
 				$errors['repeat-password'][] = __( "Passwords fields don't match.", 'concordamos' );
-			}
 		}
 
 		return $errors;
