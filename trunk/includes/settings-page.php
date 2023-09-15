@@ -135,7 +135,7 @@ function switch_field_render( $args ) {
 
 	?>
 	<label class="switch">
-		<input type="checkbox" value="yes" name="concordamos_options[<?php echo $name; ?>]" 
+		<input type="checkbox" value="yes" name="concordamos_options[<?php echo $name; ?>]"
 																				<?php
 																				if ( 'yes' == $options[ $name ] ) {
 																					echo 'checked="checked"';}

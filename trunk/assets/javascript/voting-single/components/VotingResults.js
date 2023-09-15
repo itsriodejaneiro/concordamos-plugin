@@ -32,7 +32,7 @@ export default function VotingResults () {
 			labels: data.labels,
 			datasets: [
 				{
-					label: __('Credits', 'concordamos'),
+					label: __('Votes', 'concordamos'),
 					data: data.dataset,
 					yAxisID: 'y1',
 					backgroundColor: '#EDE103',
