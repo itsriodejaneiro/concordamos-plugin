@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-09-18T18:01:21+00:00\n"
-"PO-Revision-Date: 2023-09-18 15:05-0300\n"
+"POT-Creation-Date: 2023-09-18T18:11:34+00:00\n"
+"PO-Revision-Date: 2023-09-18 15:14-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -1850,7 +1850,7 @@ msgstr "Encerrar votação"
 #: build/js/voting-single/index.js:2302
 #: build/js/voting-single/pages/Panel.js:176
 msgid "Distributed credits"
-msgstr "Votos distribuídos"
+msgstr "Créditos distribuídos"
 
 #: assets/javascript/voting-single/components/SingleView.js:15
 #: assets/javascript/voting-single/components/SingleView.js:53
