@@ -72,7 +72,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 
 	function handleFinish(event) {
 		event.preventDefault()
-		navigateTo(getPanelUrl(window.location.href), true)
+		navigateTo(window.location.href, true)
 	}
 
 	return (

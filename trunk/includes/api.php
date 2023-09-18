@@ -828,7 +828,7 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 	$dataset_percentage = array();
 
 	foreach ( $data_graphic['dataset'] as $dataset ) {
-		$dataset_percentage[] = round( ( ( abs( $dataset ) / $used_credits ) * 100 ), 2 );
+		$dataset_percentage[] = round( ( ( abs( $dataset ) / array_sum( $data_graphic['dataset'] ) ) * 100 ), 2 );
 	}
 
 	wp_reset_postdata();
