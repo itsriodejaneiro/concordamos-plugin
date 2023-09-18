@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-09-18T13:39:26+00:00\n"
-"PO-Revision-Date: 2023-09-18 13:44-0300\n"
+"POT-Creation-Date: 2023-09-18T18:01:21+00:00\n"
+"PO-Revision-Date: 2023-09-18 15:05-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -309,7 +309,7 @@ msgstr "Conta criada com sucesso."
 msgid "Authentication failed."
 msgstr "Autenticação falhou."
 
-#: includes/helpers.php:408
+#: includes/helpers.php:412
 msgid "How to vote"
 msgstr "Como votar"
 
@@ -1842,19 +1842,13 @@ msgid "End voting"
 msgstr "Encerrar votação"
 
 #: assets/javascript/voting-single/components/MyVotes.js:44
-#: assets/javascript/voting-single/components/VotingResults.js:82
-#: build/js/voting-single/App.js:401 build/js/voting-single/App.js:1011
+#: build/js/voting-single/App.js:401
 #: build/js/voting-single/components/MyVotes.js:428
-#: build/js/voting-single/components/VotingResults.js:15469
-#: build/js/voting-single/index.js:3588 build/js/voting-single/index.js:4198
-#: build/js/voting-single/pages/Panel.js:331
-#: build/js/voting-single/pages/Panel.js:636 build/js/voting-single/App.js:215
-#: build/js/voting-single/App.js:698
+#: build/js/voting-single/index.js:3588
+#: build/js/voting-single/pages/Panel.js:331 build/js/voting-single/App.js:215
 #: build/js/voting-single/components/MyVotes.js:279
-#: build/js/voting-single/components/VotingResults.js:15142
-#: build/js/voting-single/index.js:2302 build/js/voting-single/index.js:2785
+#: build/js/voting-single/index.js:2302
 #: build/js/voting-single/pages/Panel.js:176
-#: build/js/voting-single/pages/Panel.js:398
 msgid "Distributed credits"
 msgstr "Votos distribuídos"
 
@@ -2281,6 +2275,17 @@ msgstr "Porcentagem"
 #: build/js/voting-single/pages/Panel.js:397
 msgid "Participants voting"
 msgstr "Participantes da votação"
+
+#: assets/javascript/voting-single/components/VotingResults.js:82
+#: build/js/voting-single/App.js:1011
+#: build/js/voting-single/components/VotingResults.js:15469
+#: build/js/voting-single/index.js:4198
+#: build/js/voting-single/pages/Panel.js:636 build/js/voting-single/App.js:698
+#: build/js/voting-single/components/VotingResults.js:15142
+#: build/js/voting-single/index.js:2785
+#: build/js/voting-single/pages/Panel.js:398
+msgid "Distributed votes"
+msgstr "Votos distribuídos"
 
 #: assets/javascript/voting-single/pages/Panel.js:11
 #: build/js/voting-single/App.js:1053 build/js/voting-single/index.js:4240
