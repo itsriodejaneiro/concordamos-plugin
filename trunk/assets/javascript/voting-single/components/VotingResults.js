@@ -78,8 +78,8 @@ export default function VotingResults () {
 			<div className="content">
 				{ votingInfo ? (
 					<div className="voting-info">
-						<span>Participants voting { votingInfo.participants } / { votingInfo.numberVoters }</span>
-						<span>Distributed credits { votingInfo.usedCredits } / { votingInfo.totalCredits }</span>
+						<span>{__('Participants voting', 'concordamos')} { votingInfo.participants } / { votingInfo.numberVoters }</span>
+						<span>{__('Distributed credits', 'concordamos')} { votingInfo.usedCredits } / { votingInfo.totalCredits }</span>
 					</div>
 				) : null }
 

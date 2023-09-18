@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-09-15T13:20:43+00:00\n"
-"PO-Revision-Date: 2023-09-15 10:23-0300\n"
+"POT-Creation-Date: 2023-09-18T13:39:26+00:00\n"
+"PO-Revision-Date: 2023-09-18 13:34-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -227,12 +227,12 @@ msgstr "Link enviado com sucesso! Por favor verifique seu e-mail."
 
 #: includes/class/class-user-change-pass.php:169
 #: includes/class/class-user-login.php:30
-#: includes/class/class-user-register.php:54
+#: includes/class/class-user-register.php:52
 msgid "Password field is empty."
 msgstr "Campo de senha está vazio."
 
 #: includes/class/class-user-change-pass.php:172
-#: includes/class/class-user-register.php:57
+#: includes/class/class-user-register.php:54
 msgid "Passwords fields don't match."
 msgstr "Campos de senha não batem."
 
@@ -289,11 +289,11 @@ msgstr "Você deve aceitar a política de privacidade e termos de uso"
 msgid "You must accept the Image Terms of Use"
 msgstr "Você deve aceitar os termos de uso de imagem"
 
-#: includes/class/class-user-register.php:44
+#: includes/class/class-user-register.php:43
 msgid "Email field is invalid."
 msgstr "Campo de e-mail inválido."
 
-#: includes/class/class-user-register.php:48
+#: includes/class/class-user-register.php:47
 msgid ""
 "This email address is already registered. Please use a different email or "
 "log in."
@@ -301,11 +301,11 @@ msgstr ""
 "Este e-mail já foi cadastrado. Por favor use um e-mail diferente ou faça "
 "login."
 
-#: includes/class/class-user-register.php:105
+#: includes/class/class-user-register.php:101
 msgid "Account created successfully."
 msgstr "Conta criada com sucesso."
 
-#: includes/class/class-user-register.php:107
+#: includes/class/class-user-register.php:103
 msgid "Authentication failed."
 msgstr "Autenticação falhou."
 
@@ -622,7 +622,7 @@ msgstr "Sair"
 #: build/js/my-account/components/ParticipatedVotings.js:353
 #: build/js/my-account/index.js:98 build/js/my-account/index.js:351
 msgid "No voting found."
-msgstr "Voto não encontrado."
+msgstr "Nenhuma votação encontrada."
 
 #: assets/javascript/my-account/components/CreatedVotings.js:47
 #: assets/javascript/my-account/components/ParticipatedVotings.js:43
@@ -1842,15 +1842,21 @@ msgid "End voting"
 msgstr "Encerrar votação"
 
 #: assets/javascript/voting-single/components/MyVotes.js:44
-#: build/js/voting-single/App.js:401
+#: assets/javascript/voting-single/components/VotingResults.js:82
+#: build/js/voting-single/App.js:401 build/js/voting-single/App.js:1011
 #: build/js/voting-single/components/MyVotes.js:428
-#: build/js/voting-single/index.js:3588
-#: build/js/voting-single/pages/Panel.js:331 build/js/voting-single/App.js:215
+#: build/js/voting-single/components/VotingResults.js:15469
+#: build/js/voting-single/index.js:3588 build/js/voting-single/index.js:4198
+#: build/js/voting-single/pages/Panel.js:331
+#: build/js/voting-single/pages/Panel.js:636 build/js/voting-single/App.js:215
+#: build/js/voting-single/App.js:698
 #: build/js/voting-single/components/MyVotes.js:279
-#: build/js/voting-single/index.js:2302
+#: build/js/voting-single/components/VotingResults.js:15142
+#: build/js/voting-single/index.js:2302 build/js/voting-single/index.js:2785
 #: build/js/voting-single/pages/Panel.js:176
+#: build/js/voting-single/pages/Panel.js:398
 msgid "Distributed credits"
-msgstr "Créditos distribuídos"
+msgstr "Votos distribuídos"
 
 #: assets/javascript/voting-single/components/SingleView.js:15
 #: assets/javascript/voting-single/components/SingleView.js:53
@@ -2264,6 +2270,17 @@ msgstr "Votos"
 #: build/js/voting-single/pages/Panel.js:358
 msgid "Percents"
 msgstr "Porcentagem"
+
+#: assets/javascript/voting-single/components/VotingResults.js:81
+#: build/js/voting-single/App.js:1011
+#: build/js/voting-single/components/VotingResults.js:15469
+#: build/js/voting-single/index.js:4198
+#: build/js/voting-single/pages/Panel.js:636 build/js/voting-single/App.js:697
+#: build/js/voting-single/components/VotingResults.js:15141
+#: build/js/voting-single/index.js:2784
+#: build/js/voting-single/pages/Panel.js:397
+msgid "Participants voting"
+msgstr "Participantes da votação"
 
 #: assets/javascript/voting-single/pages/Panel.js:11
 #: build/js/voting-single/App.js:1053 build/js/voting-single/index.js:4240

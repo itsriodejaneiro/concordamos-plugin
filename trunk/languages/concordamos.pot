@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-15T13:20:43+00:00\n"
+"POT-Creation-Date: 2023-09-18T13:39:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: concordamos\n"
@@ -232,12 +232,12 @@ msgstr ""
 
 #: includes/class/class-user-change-pass.php:169
 #: includes/class/class-user-login.php:30
-#: includes/class/class-user-register.php:54
+#: includes/class/class-user-register.php:52
 msgid "Password field is empty."
 msgstr ""
 
 #: includes/class/class-user-change-pass.php:172
-#: includes/class/class-user-register.php:57
+#: includes/class/class-user-register.php:54
 msgid "Passwords fields don't match."
 msgstr ""
 
@@ -285,19 +285,19 @@ msgstr ""
 msgid "You must accept the Image Terms of Use"
 msgstr ""
 
-#: includes/class/class-user-register.php:44
+#: includes/class/class-user-register.php:43
 msgid "Email field is invalid."
 msgstr ""
 
-#: includes/class/class-user-register.php:48
+#: includes/class/class-user-register.php:47
 msgid "This email address is already registered. Please use a different email or log in."
 msgstr ""
 
-#: includes/class/class-user-register.php:105
+#: includes/class/class-user-register.php:101
 msgid "Account created successfully."
 msgstr ""
 
-#: includes/class/class-user-register.php:107
+#: includes/class/class-user-register.php:103
 msgid "Authentication failed."
 msgstr ""
 
@@ -2082,14 +2082,23 @@ msgid "End voting"
 msgstr ""
 
 #: assets/javascript/voting-single/components/MyVotes.js:44
+#: assets/javascript/voting-single/components/VotingResults.js:82
 #: build/js/voting-single/App.js:401
+#: build/js/voting-single/App.js:1011
 #: build/js/voting-single/components/MyVotes.js:428
+#: build/js/voting-single/components/VotingResults.js:15469
 #: build/js/voting-single/index.js:3588
+#: build/js/voting-single/index.js:4198
 #: build/js/voting-single/pages/Panel.js:331
+#: build/js/voting-single/pages/Panel.js:636
 #: build/js/voting-single/App.js:215
+#: build/js/voting-single/App.js:698
 #: build/js/voting-single/components/MyVotes.js:279
+#: build/js/voting-single/components/VotingResults.js:15142
 #: build/js/voting-single/index.js:2302
+#: build/js/voting-single/index.js:2785
 #: build/js/voting-single/pages/Panel.js:176
+#: build/js/voting-single/pages/Panel.js:398
 msgid "Distributed credits"
 msgstr ""
 
@@ -2556,6 +2565,18 @@ msgstr ""
 #: build/js/voting-single/index.js:2745
 #: build/js/voting-single/pages/Panel.js:358
 msgid "Percents"
+msgstr ""
+
+#: assets/javascript/voting-single/components/VotingResults.js:81
+#: build/js/voting-single/App.js:1011
+#: build/js/voting-single/components/VotingResults.js:15469
+#: build/js/voting-single/index.js:4198
+#: build/js/voting-single/pages/Panel.js:636
+#: build/js/voting-single/App.js:697
+#: build/js/voting-single/components/VotingResults.js:15141
+#: build/js/voting-single/index.js:2784
+#: build/js/voting-single/pages/Panel.js:397
+msgid "Participants voting"
 msgstr ""
 
 #: assets/javascript/voting-single/pages/Panel.js:11
