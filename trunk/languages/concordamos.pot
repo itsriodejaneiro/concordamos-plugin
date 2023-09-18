@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-18T18:11:34+00:00\n"
+"POT-Creation-Date: 2023-09-18T19:51:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: concordamos\n"
@@ -2082,14 +2082,23 @@ msgid "End voting"
 msgstr ""
 
 #: assets/javascript/voting-single/components/MyVotes.js:44
+#: assets/javascript/voting-single/components/VotingResults.js:82
 #: build/js/voting-single/App.js:401
+#: build/js/voting-single/App.js:1011
 #: build/js/voting-single/components/MyVotes.js:428
+#: build/js/voting-single/components/VotingResults.js:15469
 #: build/js/voting-single/index.js:3588
+#: build/js/voting-single/index.js:4198
 #: build/js/voting-single/pages/Panel.js:331
+#: build/js/voting-single/pages/Panel.js:636
 #: build/js/voting-single/App.js:215
+#: build/js/voting-single/App.js:698
 #: build/js/voting-single/components/MyVotes.js:279
+#: build/js/voting-single/components/VotingResults.js:15142
 #: build/js/voting-single/index.js:2302
+#: build/js/voting-single/index.js:2785
 #: build/js/voting-single/pages/Panel.js:176
+#: build/js/voting-single/pages/Panel.js:398
 msgid "Distributed credits"
 msgstr ""
 
@@ -2568,18 +2577,6 @@ msgstr ""
 #: build/js/voting-single/index.js:2784
 #: build/js/voting-single/pages/Panel.js:397
 msgid "Participants voting"
-msgstr ""
-
-#: assets/javascript/voting-single/components/VotingResults.js:82
-#: build/js/voting-single/App.js:1011
-#: build/js/voting-single/components/VotingResults.js:15469
-#: build/js/voting-single/index.js:4198
-#: build/js/voting-single/pages/Panel.js:636
-#: build/js/voting-single/App.js:698
-#: build/js/voting-single/components/VotingResults.js:15142
-#: build/js/voting-single/index.js:2785
-#: build/js/voting-single/pages/Panel.js:398
-msgid "Distributed votes"
 msgstr ""
 
 #: assets/javascript/voting-single/pages/Panel.js:11

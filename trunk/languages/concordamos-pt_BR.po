@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-09-18T18:11:34+00:00\n"
-"PO-Revision-Date: 2023-09-18 15:14-0300\n"
+"POT-Creation-Date: 2023-09-18T19:51:38+00:00\n"
+"PO-Revision-Date: 2023-09-18 16:55-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -1842,13 +1842,19 @@ msgid "End voting"
 msgstr "Encerrar votação"
 
 #: assets/javascript/voting-single/components/MyVotes.js:44
-#: build/js/voting-single/App.js:401
+#: assets/javascript/voting-single/components/VotingResults.js:82
+#: build/js/voting-single/App.js:401 build/js/voting-single/App.js:1011
 #: build/js/voting-single/components/MyVotes.js:428
-#: build/js/voting-single/index.js:3588
-#: build/js/voting-single/pages/Panel.js:331 build/js/voting-single/App.js:215
+#: build/js/voting-single/components/VotingResults.js:15469
+#: build/js/voting-single/index.js:3588 build/js/voting-single/index.js:4198
+#: build/js/voting-single/pages/Panel.js:331
+#: build/js/voting-single/pages/Panel.js:636 build/js/voting-single/App.js:215
+#: build/js/voting-single/App.js:698
 #: build/js/voting-single/components/MyVotes.js:279
-#: build/js/voting-single/index.js:2302
+#: build/js/voting-single/components/VotingResults.js:15142
+#: build/js/voting-single/index.js:2302 build/js/voting-single/index.js:2785
 #: build/js/voting-single/pages/Panel.js:176
+#: build/js/voting-single/pages/Panel.js:398
 msgid "Distributed credits"
 msgstr "Créditos distribuídos"
 
@@ -2276,17 +2282,6 @@ msgstr "Porcentagem"
 msgid "Participants voting"
 msgstr "Participantes da votação"
 
-#: assets/javascript/voting-single/components/VotingResults.js:82
-#: build/js/voting-single/App.js:1011
-#: build/js/voting-single/components/VotingResults.js:15469
-#: build/js/voting-single/index.js:4198
-#: build/js/voting-single/pages/Panel.js:636 build/js/voting-single/App.js:698
-#: build/js/voting-single/components/VotingResults.js:15142
-#: build/js/voting-single/index.js:2785
-#: build/js/voting-single/pages/Panel.js:398
-msgid "Distributed votes"
-msgstr "Votos distribuídos"
-
 #: assets/javascript/voting-single/pages/Panel.js:11
 #: build/js/voting-single/App.js:1053 build/js/voting-single/index.js:4240
 #: build/js/voting-single/pages/Panel.js:16077
@@ -2353,6 +2348,9 @@ msgstr "Deletar votação"
 #: build/js/votings-block/index.js:159
 msgid "Search votings"
 msgstr "Pesquisar votações"
+
+#~ msgid "Distributed votes"
+#~ msgstr "Votos distribuídos"
 
 #~ msgid "Hacklab Team"
 #~ msgstr "Time do Hacklab"
