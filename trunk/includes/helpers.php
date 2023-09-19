@@ -350,6 +350,10 @@ function is_voting_closed( $voting_id ) {
 
 function get_vote_by_user( $voting_id, $user_id = '' ) {
 
+	if ( ! is_user_logged_in() ) {
+		return false;
+	}
+
 	if ( empty( $user_id ) ) {
 		$user_id = get_current_user_id();
 	}
