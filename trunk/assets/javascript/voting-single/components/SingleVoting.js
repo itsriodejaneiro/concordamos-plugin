@@ -17,6 +17,8 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 
 	const formattedDateEnd = new Date(Number(date_end))
 
+	const [isSubmitting, setIsSubmitting] = useState(false)
+
 	const confirmVoteModal = useModal(false)
 	const creditsModal = useModal(false)
 
@@ -56,6 +58,8 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 	function handleSubmit (event) {
 		event.preventDefault()
 
+		setIsSubmitting(true)
+
 		apiFetch('POST', 'vote/', {
 			'u_id'  : concordamos.u_id,
 			'v_id'  : concordamos.v_id,
@@ -73,6 +77,11 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 	function handleFinish(event) {
 		event.preventDefault()
 		navigateTo(window.location.href, true)
+	}
+
+	const handleClose = (modal) => {
+		modal.close()
+		setIsSubmitting(false)
 	}
 
 	return (
@@ -119,8 +128,10 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 							<p className="modal-text" dangerouslySetInnerHTML={ { __html: sprintf(__("You still have %s credits available.", 'concordamos'), `${credits_voter - usedCredits}`) } }/>
 							<p className="modal-text" dangerouslySetInnerHTML={ { __html: sprintf(__("After confirming your vote, it can't be changed. You can access your voting option on <a href='%s'>voting infos</a>.", 'concordamos'), '#') } }/>
 							<div class="buttons">
-								<button type="button" className="button primary" onClick={handleSubmit}>{_x('Vote', 'verb', 'concordamos')}</button>
-								<button type="button" className="button link" onClick={confirmVoteModal.close}>{__('Cancel', 'concordamos')}</button>
+								<button type="button" className="button primary" onClick={handleSubmit} disabled={isSubmitting}>
+									{isSubmitting ? __('Sending vote...', 'concordamos') : _x('Vote', 'verb', 'concordamos')}
+								</button>
+								<button type="button" className="button link" onClick={() => handleClose(confirmVoteModal)}>{__('Cancel', 'concordamos')}</button>
 							</div>
 						</>
 					) }
@@ -133,8 +144,10 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 								<h2>{__('Vote confirmation', 'concordamos')}</h2>
 								<p>{__('All your credits have been used', 'concordamos')}</p>
 								<div class="buttons">
-									<button type="button" className="button primary" onClick={handleSubmit}>{_x('Vote', 'verb', 'concordamos')}</button>
-									<button type="button" className="button link" onClick={creditsModal.close}>{__('Cancel', 'concordamos')}</button>
+									<button type="button" className="button primary" onClick={handleSubmit} disabled={isSubmitting}>
+										{isSubmitting ? __('Sending vote...', 'concordamos') : _x('Vote', 'verb', 'concordamos')}
+									</button>
+									<button type="button" className="button link" onClick={() => handleClose(creditsModal)}>{__('Cancel', 'concordamos')}</button>
 								</div>
 							</>
 						) : (
@@ -148,7 +161,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 								}
 
 								<div class="buttons">
-									<button type="button" className="button primary" onClick={creditsModal.close}>{__('Back', 'concordamos')}</button>
+									<button type="button" className="button primary" onClick={() => handleClose(creditsModal)}>{__('Back', 'concordamos')}</button>
 								</div>
 							</>
 						)
