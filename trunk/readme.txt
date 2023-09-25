@@ -44,4 +44,5 @@ The plugin is currently available in English and Portuguese.
 == Links ==
 
 * [Official site](https://concordamos.com.br/)
-* [Source code](https://gitlab.com/hacklab/concordamos-plugin)
+* [Source code](https://github.com/itsriodejaneiro/concordamos-plugin/)
+* [User manual](https://github.com/itsriodejaneiro/concordamos-plugin/blob/main/README.md) (in Portuguese)
