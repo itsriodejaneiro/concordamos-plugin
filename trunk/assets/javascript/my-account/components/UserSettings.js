@@ -4,6 +4,8 @@ import DeleteAccountModal from './DeleteAccountModal'
 import EditEmailModal from './EditEmailModal'
 import EditNameModal from './EditNameModal'
 import EditPasswordModal from './EditPasswordModal'
+import PrivacyPolicyModal from './PrivacyPolicyModal'
+import TermsOfUseModalModal from './TermsOfUseModal'
 import { useModal } from '../../shared/components/Modal'
 
 export default function UserSettings ({ user }) {
@@ -11,6 +13,9 @@ export default function UserSettings ({ user }) {
 	const editEmailModal = useModal(false)
 	const editNameModal = useModal(false)
 	const editPasswordModal = useModal(false)
+	const privacyPolicyModal = useModal(false)
+	const termsOfUseModal = useModal(false)
+
 
 	return (
 		<>
@@ -38,8 +43,8 @@ export default function UserSettings ({ user }) {
 					<div className="container">
 						<h2>{__('General settings', 'concordamos')}</h2>
 						<button className="edit" type="button" onClick={editPasswordModal.open}>{__('Edit password', 'concordamos')}</button>
-						<button className="edit" type="button">{__('Review our privacy policy', 'concordamos')}</button>
-						<button className="edit" type="button">{__('Review our terms of use', 'concordamos')}</button>
+						<button className="edit" type="button" onClick={privacyPolicyModal.open}>{__('Review our privacy policy', 'concordamos')}</button>
+						<button className="edit" type="button" onClick={termsOfUseModal.open}>{__('Review our terms of use', 'concordamos')}</button>
 						<button className="delete-acount" type="button delete" onClick={deleteAccountModal.open}>{__('Delete account', 'concordamos')}</button>
 					</div>
 				</div>
@@ -48,6 +53,10 @@ export default function UserSettings ({ user }) {
 			<EditNameModal controller={editNameModal} value={user.name} onChange={(event) => user.name = event}/>
 			<EditEmailModal controller={editEmailModal} value={user.email} onChange={(event) => user.email = event}/>
 			<EditPasswordModal controller={editPasswordModal}/>
+			<PrivacyPolicyModal controller={privacyPolicyModal}/>
+			<TermsOfUseModalModal controller={termsOfUseModal}/>
+
+
 		</>
 	)
 }
