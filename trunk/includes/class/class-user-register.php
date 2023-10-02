@@ -29,10 +29,6 @@ class User_Register {
 			$errors['general'][] = __( 'You must accept the Privacy Policy and Terms of Use', 'concordamos' );
 		}
 
-		if ( ! isset( $data['image-terms'] ) || empty( $data['image-terms'] ) ) {
-			$errors['general'][] = __( 'You must accept the Image Terms of Use', 'concordamos' );
-		}
-
 		if ( ! isset( $data['name'] ) || empty( $data['name'] ) ) {
 			$errors['name'][] = __( 'Username field is empty.', 'concordamos' );
 		}
