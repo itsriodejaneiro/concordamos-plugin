@@ -88,14 +88,6 @@ $site_title = get_bloginfo( 'name' );
 					</a>
 				</label>
 			</div>
-			<div class="accept-checkbox-image">
-				<input type="checkbox" name="image-terms" />
-				<label for="scales">
-					<?php _e( 'You accept the', 'concordamos' ); ?> <a>
-						<?php _e( 'Image Terms of Use', 'concordamos' ); ?>
-					</a>
-				</label>
-			</div>
 			<div id="status"></div>
 			<div class="register-button">
 				<button class="register-submit" type="submit"
