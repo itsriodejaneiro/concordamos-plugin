@@ -185,9 +185,12 @@
                 }
 
             }
-            a{
+
+            span a{
                 color: #26A9F9;
                 font-weight: 700;
+                margin-left: 2px;
+                margin-right: 2px;
             }
 
         }
@@ -251,5 +254,42 @@
         text-align: center;
         margin: 50px 0;
     }
+
+    .voting-modal{
+      width: 569px;
+      height: 642px;
+      padding: 0;
+      border-radius: 29px;
+
+      header{
+        align-items: center;
+		background-color: #26A9F9;
+		border-radius: 26px 26px 0 0;
+		display: flex;
+		justify-content: end;
+		padding: 0;
+		.close{
+            background-color: transparent;
+            border: none;
+			padding: 13px 24px 16px;
+			@media(max-width: 782px){
+				padding: 5px 16px 8px;
+			}
+			img{
+				@media(max-width: 782px){
+					max-width: 57%;
+				}
+			}
+		}
+      }
+      main{
+        .privacy-policy-text{
+            width: 569px;
+            height: 642px;
+            overflow-y: scroll;    
+        }
+      }  
+    }
+
 }
 

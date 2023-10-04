@@ -240,6 +240,17 @@
                                 padding: 10px 96px 11px 16px;
                             }
 						}
+                        .privacy-policy-text, .terms-of-use-text {
+                            height: 200px !important;
+                            overflow-y: scroll;
+                            h2{
+                               font-family: 'Oswald';
+                               font-size: 32px;
+                               font-weight: 600;
+                               line-height: 130%;
+                               letter-spacing: -0.32px; 
+                            }
+                        }
                         .primary{
                             background-color: #EDE103 !important;
                         }
