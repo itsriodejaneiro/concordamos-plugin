@@ -1,19 +1,11 @@
 import { __ } from '@wordpress/i18n'
-import { useState } from 'react'
-
 import Modal from '../../shared/components/Modal'
 
-export default function PrivacyPolicyModal ({ controller, onClick, value }) {
-    const [textPrivacyPolicy, setTextPrivacyPolicy] = useState('privacy policy text');
+export default function PrivacyPolicyModal ({ controller }) {
 
     return (
-		<Modal controller={controller}>
-			<h2>{__('Privacy Policy', 'concordamos')}</h2>
-			<div className="privacy-policy-text">
-				<p>
-                    {textPrivacyPolicy}   
-                </p>
-			</div>
+		<Modal className="privacy-modal" controller={controller}>
+			<div className="privacy-policy-text" dangerouslySetInnerHTML={{__html: concordamos.privacy_policy}}/>
 		</Modal>
 	)
 }

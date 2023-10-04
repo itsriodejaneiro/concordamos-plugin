@@ -78,8 +78,8 @@ $site_title = get_bloginfo( 'name' );
 				</label>
 			</div>
 			<div class="accept-checkbox-terms">
-				<input type="checkbox" name="terms" />
-				<label for="scales">
+				<input type="checkbox" id="terms" name="terms" />
+				<label for="terms">
 					<?php _e( 'You accept the', 'concordamos' ); ?> <a>
 						<?php _e( 'Privacy Policy', 'concordamos' ); ?>
 					</a>

@@ -1,7 +1,20 @@
+import { StrictMode } from 'react'
+import { render } from 'react-dom'
+
+import AcceptTerms from './components/AcceptTerms'
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const registerForm = document.getElementById('register-form');
 
     if (registerForm) {
+
+        const termsLabelEl = document.querySelector('label[for="terms"]');
+
+        if(termsLabelEl){
+            render(<StrictMode><AcceptTerms/></StrictMode>, termsLabelEl);
+
+        }
 
         const showErrors = (errors) => {
             for (const field in errors) {

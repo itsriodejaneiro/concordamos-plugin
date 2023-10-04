@@ -42,8 +42,8 @@ function custom_page_templates( array $templates ): array {
 	$templates['concordamos/template-create-user.php'] = __( 'Create user', 'concordamos' ) . ' [Concordamos]';
 	$templates['concordamos/template-my-account.php']  = __( 'My account', 'concordamos' ) . ' [Concordamos]';
 	$templates['concordamos/template-change-pass.php'] = __( 'Change password', 'concordamos' ) . ' [Concordamos]';
-	$templates['concordamos/privacy-policy.php'] = __( 'Privacy Policy', 'concordamos' ) . ' [Concordamos]';
-	$templates['concordamos/terms-of-use.php'] = __( 'Terms of Use', 'concordamos' ) . ' [Concordamos]';
+	$templates['concordamos/template-privacy-policy.php'] = __( 'Privacy Policy', 'concordamos' ) . ' [Concordamos]';
+	$templates['concordamos/template-terms-of-use.php'] = __( 'Terms of Use', 'concordamos' ) . ' [Concordamos]';
 
 
 
