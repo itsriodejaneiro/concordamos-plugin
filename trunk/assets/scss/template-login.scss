@@ -255,12 +255,27 @@
         margin: 50px 0;
     }
     .voting-modal__wrapper.open{
-        margin-top: -200px;
+        margin-top: -360px;
+        @media(max-width: 600px){
+            margin-top: -300px;
+        }
+        @media(max-width: 565px){
+            margin-top: -350px;
+        }
         .voting-modal{
             width: 583px;
             height: auto;
             padding: 0;
             border-radius: 29px;
+            @media(max-width: 600px){
+                width: 533px;    
+            }
+            @media(max-width: 565px){
+                width: 433px;    
+            }
+            @media(max-width: 465px){
+                width: 333px;    
+            }
       
             header{
               align-items: center;
@@ -287,17 +302,31 @@
               padding-left: 15px;
               padding-right: 15px;
               padding-bottom: 20px;
-              .privacy-policy-text, .terms-of-use-text{
-                  width: 553px;
-                  height: 300px !important;
-                  overflow-y: scroll;
+                .privacy-policy-text, .terms-of-use-text{
+                    width: 561px;
+                    height: 400px !important;
+                    overflow-y: scroll;
+                    @media(max-width: 600px){
+                        width: 503px;
+                    }
+                    @media(max-width: 565px){
+                        width: 403px;
+                        padding-right: 10px;    
+                    }
+                    @media(max-width: 465px){
+                        width: 311px;
+                    }
                   
-                  p, ul, h2, ol{
+                    p, ul, h2, ol{
                     text-align: start !important;
-                  }
-                  h2{
+                    }
+                    h2{
                     text-transform: inherit;
-                  }    
+                    font-size: 32px;
+                        @media(max-width: 465px){
+                            font-size: 28px;
+                        }
+                    }    
                 }
             }  
         } 

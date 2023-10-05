@@ -209,6 +209,15 @@
 					max-width: 563px;
 					width: 100%;
 					height: auto;
+                    @media(max-width: 600px){
+                        width: 533px;    
+                    }
+                    @media(max-width: 565px){
+                        width: 433px;    
+                    }
+                    @media(max-width: 465px){
+                        width: 333px;    
+                    }
 
 					main{
 						h2{
@@ -243,12 +252,26 @@
                         .privacy-policy-text, .terms-of-use-text {
                             height: 200px !important;
                             overflow-y: scroll;
+                            @media(max-width: 600px){
+                                width: 503px;
+                            }
+                            @media(max-width: 565px){
+                                width: 403px;
+                                padding-right: 10px;
+                                height: 300px !important;    
+                            }
+                            @media(max-width: 465px){
+                                width: 311px;
+                            }
                             h2{
                                font-family: 'Oswald';
                                font-size: 32px;
                                font-weight: 600;
                                line-height: 130%;
-                               letter-spacing: -0.32px; 
+                               letter-spacing: -0.32px;
+                               @media(max-width: 465px){
+                                font-size: 28px;
+                               } 
                             }
                         }
                         .primary{
