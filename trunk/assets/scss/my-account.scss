@@ -250,7 +250,9 @@
                             }
 						}
                         .privacy-policy-text, .terms-of-use-text {
-                            height: 200px !important;
+                            height: 400px !important;
+                            width: 529px;
+                            padding-right: 10px;
                             overflow-y: scroll;
                             @media(max-width: 600px){
                                 width: 503px;
