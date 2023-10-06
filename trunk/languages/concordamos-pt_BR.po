@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2023-09-21T18:30:46+00:00\n"
-"PO-Revision-Date: 2023-09-21 15:39-0300\n"
+"POT-Creation-Date: 2023-10-06T17:18:19+00:00\n"
+"PO-Revision-Date: 2023-10-06 14:28-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -123,7 +123,7 @@ msgstr "Senha"
 msgid "I forgot my password"
 msgstr "Esqueci minha senha"
 
-#: includes/blocks/login.php:38 templates/template-create-user.php:102
+#: includes/blocks/login.php:38 templates/template-create-user.php:94
 #: templates/template-login.php:61
 msgid "Let's go!"
 msgstr "Vamos!"
@@ -194,7 +194,7 @@ msgid "You're already logged in."
 msgstr "Você já está logado(a)."
 
 #: includes/class/class-user-change-pass.php:40
-#: includes/class/class-user-register.php:41
+#: includes/class/class-user-register.php:37
 msgid "Email field is empty."
 msgstr "Campo de e-mail está vazio."
 
@@ -227,12 +227,12 @@ msgstr "Link enviado com sucesso! Por favor verifique seu e-mail."
 
 #: includes/class/class-user-change-pass.php:169
 #: includes/class/class-user-login.php:30
-#: includes/class/class-user-register.php:52
+#: includes/class/class-user-register.php:48
 msgid "Password field is empty."
 msgstr "Campo de senha está vazio."
 
 #: includes/class/class-user-change-pass.php:172
-#: includes/class/class-user-register.php:54
+#: includes/class/class-user-register.php:50
 msgid "Passwords fields don't match."
 msgstr "Campos de senha não batem."
 
@@ -269,7 +269,7 @@ msgid "You're already logged in. No need to log in again."
 msgstr "Você já está logado(a). Não é necessário logar-se novamente."
 
 #: includes/class/class-user-login.php:27
-#: includes/class/class-user-register.php:37
+#: includes/class/class-user-register.php:33
 msgid "Username field is empty."
 msgstr "Campo de nome de usuário está vazio."
 
@@ -285,15 +285,11 @@ msgstr "Login bem sucedido."
 msgid "You must accept the Privacy Policy and Terms of Use"
 msgstr "Você deve aceitar a política de privacidade e termos de uso"
 
-#: includes/class/class-user-register.php:33
-msgid "You must accept the Image Terms of Use"
-msgstr "Você deve aceitar os termos de uso de imagem"
-
-#: includes/class/class-user-register.php:43
+#: includes/class/class-user-register.php:39
 msgid "Email field is invalid."
 msgstr "Campo de e-mail inválido."
 
-#: includes/class/class-user-register.php:47
+#: includes/class/class-user-register.php:43
 msgid ""
 "This email address is already registered. Please use a different email or "
 "log in."
@@ -301,11 +297,11 @@ msgstr ""
 "Este e-mail já foi cadastrado. Por favor use um e-mail diferente ou faça "
 "login."
 
-#: includes/class/class-user-register.php:101
+#: includes/class/class-user-register.php:97
 msgid "Account created successfully."
 msgstr "Conta criada com sucesso."
 
-#: includes/class/class-user-register.php:103
+#: includes/class/class-user-register.php:99
 msgid "Authentication failed."
 msgstr "Autenticação falhou."
 
@@ -410,8 +406,8 @@ msgid "Create user"
 msgstr "Criar usuário"
 
 #: includes/templates.php:43 templates/part/navbar-mobile.php:17
-#: assets/javascript/my-account/App.js:37 build/js/my-account/App.js:1195
-#: build/js/my-account/index.js:63 build/js/my-account/App.js:788
+#: assets/javascript/my-account/App.js:37 build/js/my-account/App.js:1270
+#: build/js/my-account/index.js:63 build/js/my-account/App.js:822
 #: build/js/my-account/index.js:37
 msgid "My account"
 msgstr "Minha conta"
@@ -419,6 +415,20 @@ msgstr "Minha conta"
 #: includes/templates.php:44
 msgid "Change password"
 msgstr "Alterar senha"
+
+#: includes/templates.php:45 templates/template-create-user.php:84
+#: assets/javascript/user/components/AcceptTerms.js:15
+#: build/js/user/components/AcceptTerms.js:322 build/js/user/register.js:163
+#: build/js/user/components/AcceptTerms.js:191 build/js/user/register.js:79
+msgid "Privacy Policy"
+msgstr "Política de privacidade"
+
+#: includes/templates.php:46 templates/template-create-user.php:87
+#: assets/javascript/user/components/AcceptTerms.js:19
+#: build/js/user/components/AcceptTerms.js:325 build/js/user/register.js:166
+#: build/js/user/components/AcceptTerms.js:195 build/js/user/register.js:83
+msgid "Terms of Use"
+msgstr "Termos de uso"
 
 #: templates/part/navbar-mobile.php:12
 #: assets/javascript/votings-block/editor.js:8
@@ -501,7 +511,7 @@ msgid "Enter your email and we will send instructions to reset your password"
 msgstr "Entre seu e-mail e enviaremos instruções para redefinir sua senha"
 
 #: templates/template-change-pass.php:60 templates/template-change-pass.php:97
-#: templates/template-create-user.php:102 templates/template-login.php:60
+#: templates/template-create-user.php:94 templates/template-login.php:60
 msgid "Loading..."
 msgstr "Carregando..."
 
@@ -531,58 +541,52 @@ msgstr "Confirmar"
 
 #: templates/template-create-user.php:39
 #: assets/javascript/my-account/components/EditNameModal.js:40
-#: assets/javascript/my-account/components/UserSettings.js:23
-#: build/js/my-account/App.js:255 build/js/my-account/App.js:473
+#: assets/javascript/my-account/components/UserSettings.js:28
+#: build/js/my-account/App.js:255 build/js/my-account/App.js:542
 #: build/js/my-account/components/EditNameModal.js:360
 #: build/js/my-account/components/UserSettings.js:180
-#: build/js/my-account/components/UserSettings.js:659
-#: build/js/my-account/index.js:335 build/js/my-account/index.js:553
-#: build/js/my-account/App.js:177 build/js/my-account/App.js:332
+#: build/js/my-account/components/UserSettings.js:728
+#: build/js/my-account/index.js:335 build/js/my-account/index.js:622
+#: build/js/my-account/App.js:177 build/js/my-account/App.js:362
 #: build/js/my-account/components/EditNameModal.js:242
 #: build/js/my-account/components/UserSettings.js:120
-#: build/js/my-account/components/UserSettings.js:440
-#: build/js/my-account/index.js:237 build/js/my-account/index.js:392
+#: build/js/my-account/components/UserSettings.js:470
+#: build/js/my-account/index.js:237 build/js/my-account/index.js:422
 msgid "Name"
 msgstr "Nome"
 
-#: templates/template-create-user.php:83 templates/template-create-user.php:94
+#: templates/template-create-user.php:83
+#: assets/javascript/user/components/AcceptTerms.js:13
+#: build/js/user/components/AcceptTerms.js:319 build/js/user/register.js:160
+#: build/js/user/components/AcceptTerms.js:189 build/js/user/register.js:77
 msgid "You accept the"
 msgstr "Você aceita a"
 
-#: templates/template-create-user.php:84
-msgid "Privacy Policy"
-msgstr "Política de privacidade"
-
 #: templates/template-create-user.php:86
+#: assets/javascript/user/components/AcceptTerms.js:17
+#: build/js/user/components/AcceptTerms.js:322 build/js/user/register.js:163
+#: build/js/user/components/AcceptTerms.js:193 build/js/user/register.js:81
 msgid "and"
 msgstr "e"
 
-#: templates/template-create-user.php:87
-msgid "Terms of Use"
-msgstr "Termos de uso"
-
-#: templates/template-create-user.php:95
-msgid "Image Terms of Use"
-msgstr "Termos de uso de imagem"
-
-#: templates/template-create-user.php:104
+#: templates/template-create-user.php:96
 msgid "Already have an account?"
 msgstr "Já tem uma conta?"
 
-#: templates/template-create-user.php:105
+#: templates/template-create-user.php:97
 msgid "Access here"
 msgstr "Acesse aqui"
 
-#: templates/template-create-user.php:112
+#: templates/template-create-user.php:104
 msgid "ITS Logo"
 msgstr "Logo do ITS"
 
 #: assets/javascript/my-account/App.js:12
 #: assets/javascript/my-account/components/CreatedVotings.js:27
-#: build/js/my-account/App.js:52 build/js/my-account/App.js:1167
+#: build/js/my-account/App.js:52 build/js/my-account/App.js:1242
 #: build/js/my-account/components/CreatedVotings.js:534
 #: build/js/my-account/index.js:35 build/js/my-account/index.js:132
-#: build/js/my-account/App.js:27 build/js/my-account/App.js:763
+#: build/js/my-account/App.js:27 build/js/my-account/App.js:797
 #: build/js/my-account/components/CreatedVotings.js:345
 #: build/js/my-account/index.js:12 build/js/my-account/index.js:87
 msgid "Votings created by me"
@@ -590,23 +594,23 @@ msgstr "Votações criadas por mim"
 
 #: assets/javascript/my-account/App.js:13
 #: assets/javascript/my-account/components/ParticipatedVotings.js:27
-#: build/js/my-account/App.js:410 build/js/my-account/App.js:1170
+#: build/js/my-account/App.js:410 build/js/my-account/App.js:1245
 #: build/js/my-account/components/ParticipatedVotings.js:534
 #: build/js/my-account/index.js:38 build/js/my-account/index.js:490
-#: build/js/my-account/App.js:283 build/js/my-account/App.js:764
+#: build/js/my-account/App.js:283 build/js/my-account/App.js:798
 #: build/js/my-account/components/ParticipatedVotings.js:345
 #: build/js/my-account/index.js:13 build/js/my-account/index.js:343
 msgid "Votings I participated"
 msgstr "Votações em que participei"
 
-#: assets/javascript/my-account/App.js:41 build/js/my-account/App.js:1197
-#: build/js/my-account/index.js:65 build/js/my-account/App.js:792
+#: assets/javascript/my-account/App.js:41 build/js/my-account/App.js:1272
+#: build/js/my-account/index.js:65 build/js/my-account/App.js:826
 #: build/js/my-account/index.js:41
 msgid "Hello, %s"
 msgstr "Olá, %s"
 
-#: assets/javascript/my-account/App.js:43 build/js/my-account/App.js:1201
-#: build/js/my-account/index.js:69 build/js/my-account/App.js:794
+#: assets/javascript/my-account/App.js:43 build/js/my-account/App.js:1276
+#: build/js/my-account/index.js:69 build/js/my-account/App.js:828
 #: build/js/my-account/index.js:43
 msgid "Sign out"
 msgstr "Sair"
@@ -741,17 +745,17 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: assets/javascript/my-account/components/EditEmailModal.js:37
-#: assets/javascript/my-account/components/UserSettings.js:33
-#: build/js/my-account/App.js:181 build/js/my-account/App.js:483
+#: assets/javascript/my-account/components/UserSettings.js:38
+#: build/js/my-account/App.js:181 build/js/my-account/App.js:552
 #: build/js/my-account/components/EditEmailModal.js:358
 #: build/js/my-account/components/UserSettings.js:106
-#: build/js/my-account/components/UserSettings.js:669
-#: build/js/my-account/index.js:261 build/js/my-account/index.js:563
-#: build/js/my-account/App.js:123 build/js/my-account/App.js:342
+#: build/js/my-account/components/UserSettings.js:738
+#: build/js/my-account/index.js:261 build/js/my-account/index.js:632
+#: build/js/my-account/App.js:123 build/js/my-account/App.js:372
 #: build/js/my-account/components/EditEmailModal.js:239
 #: build/js/my-account/components/UserSettings.js:66
-#: build/js/my-account/components/UserSettings.js:450
-#: build/js/my-account/index.js:183 build/js/my-account/index.js:402
+#: build/js/my-account/components/UserSettings.js:480
+#: build/js/my-account/index.js:183 build/js/my-account/index.js:432
 msgid "Edit email"
 msgstr "Editar e-mail"
 
@@ -792,17 +796,17 @@ msgid "Save"
 msgstr "Salvar"
 
 #: assets/javascript/my-account/components/EditNameModal.js:37
-#: assets/javascript/my-account/components/UserSettings.js:26
-#: build/js/my-account/App.js:253 build/js/my-account/App.js:477
+#: assets/javascript/my-account/components/UserSettings.js:31
+#: build/js/my-account/App.js:253 build/js/my-account/App.js:546
 #: build/js/my-account/components/EditNameModal.js:358
 #: build/js/my-account/components/UserSettings.js:178
-#: build/js/my-account/components/UserSettings.js:663
-#: build/js/my-account/index.js:333 build/js/my-account/index.js:557
-#: build/js/my-account/App.js:174 build/js/my-account/App.js:335
+#: build/js/my-account/components/UserSettings.js:732
+#: build/js/my-account/index.js:333 build/js/my-account/index.js:626
+#: build/js/my-account/App.js:174 build/js/my-account/App.js:365
 #: build/js/my-account/components/EditNameModal.js:239
 #: build/js/my-account/components/UserSettings.js:117
-#: build/js/my-account/components/UserSettings.js:443
-#: build/js/my-account/index.js:234 build/js/my-account/index.js:395
+#: build/js/my-account/components/UserSettings.js:473
+#: build/js/my-account/index.js:234 build/js/my-account/index.js:425
 msgid "Edit name"
 msgstr "Editar nome"
 
@@ -818,17 +822,17 @@ msgid "Name Surname"
 msgstr "Nome Sobrenome"
 
 #: assets/javascript/my-account/components/EditPasswordModal.js:45
-#: assets/javascript/my-account/components/UserSettings.js:40
-#: build/js/my-account/App.js:330 build/js/my-account/App.js:491
+#: assets/javascript/my-account/components/UserSettings.js:45
+#: build/js/my-account/App.js:330 build/js/my-account/App.js:560
 #: build/js/my-account/components/EditPasswordModal.js:363
 #: build/js/my-account/components/UserSettings.js:255
-#: build/js/my-account/components/UserSettings.js:677
-#: build/js/my-account/index.js:410 build/js/my-account/index.js:571
-#: build/js/my-account/App.js:233 build/js/my-account/App.js:349
+#: build/js/my-account/components/UserSettings.js:746
+#: build/js/my-account/index.js:410 build/js/my-account/index.js:640
+#: build/js/my-account/App.js:233 build/js/my-account/App.js:379
 #: build/js/my-account/components/EditPasswordModal.js:247
 #: build/js/my-account/components/UserSettings.js:176
-#: build/js/my-account/components/UserSettings.js:457
-#: build/js/my-account/index.js:293 build/js/my-account/index.js:409
+#: build/js/my-account/components/UserSettings.js:487
+#: build/js/my-account/index.js:293 build/js/my-account/index.js:439
 msgid "Edit password"
 msgstr "Editar senha"
 
@@ -865,93 +869,93 @@ msgstr "Repetir sua senha aqui"
 msgid "Passwords don't match"
 msgstr "Senhas não batem"
 
-#: assets/javascript/my-account/components/UserSettings.js:20
-#: build/js/my-account/App.js:471
-#: build/js/my-account/components/UserSettings.js:657
-#: build/js/my-account/index.js:551 build/js/my-account/App.js:329
-#: build/js/my-account/components/UserSettings.js:437
-#: build/js/my-account/index.js:389
+#: assets/javascript/my-account/components/UserSettings.js:25
+#: build/js/my-account/App.js:540
+#: build/js/my-account/components/UserSettings.js:726
+#: build/js/my-account/index.js:620 build/js/my-account/App.js:359
+#: build/js/my-account/components/UserSettings.js:467
+#: build/js/my-account/index.js:419
 msgid "My data"
 msgstr "Meus dados"
 
-#: assets/javascript/my-account/components/UserSettings.js:30
-#: build/js/my-account/App.js:479
-#: build/js/my-account/components/UserSettings.js:665
-#: build/js/my-account/index.js:559 build/js/my-account/App.js:339
-#: build/js/my-account/components/UserSettings.js:447
-#: build/js/my-account/index.js:399
+#: assets/javascript/my-account/components/UserSettings.js:35
+#: build/js/my-account/App.js:548
+#: build/js/my-account/components/UserSettings.js:734
+#: build/js/my-account/index.js:628 build/js/my-account/App.js:369
+#: build/js/my-account/components/UserSettings.js:477
+#: build/js/my-account/index.js:429
 msgid "My email"
 msgstr "Meu e-mail"
 
-#: assets/javascript/my-account/components/UserSettings.js:39
-#: build/js/my-account/App.js:487
-#: build/js/my-account/components/UserSettings.js:673
-#: build/js/my-account/index.js:567 build/js/my-account/App.js:348
-#: build/js/my-account/components/UserSettings.js:456
-#: build/js/my-account/index.js:408
+#: assets/javascript/my-account/components/UserSettings.js:44
+#: build/js/my-account/App.js:556
+#: build/js/my-account/components/UserSettings.js:742
+#: build/js/my-account/index.js:636 build/js/my-account/App.js:378
+#: build/js/my-account/components/UserSettings.js:486
+#: build/js/my-account/index.js:438
 msgid "General settings"
 msgstr "Configurações gerais"
 
-#: assets/javascript/my-account/components/UserSettings.js:41
-#: build/js/my-account/App.js:494
-#: build/js/my-account/components/UserSettings.js:680
-#: build/js/my-account/index.js:574 build/js/my-account/App.js:350
-#: build/js/my-account/components/UserSettings.js:458
-#: build/js/my-account/index.js:410
+#: assets/javascript/my-account/components/UserSettings.js:46
+#: build/js/my-account/App.js:564
+#: build/js/my-account/components/UserSettings.js:750
+#: build/js/my-account/index.js:644 build/js/my-account/App.js:380
+#: build/js/my-account/components/UserSettings.js:488
+#: build/js/my-account/index.js:440
 msgid "Review our privacy policy"
 msgstr "Reveja nossa política de privacidade"
 
-#: assets/javascript/my-account/components/UserSettings.js:42
-#: build/js/my-account/App.js:497
-#: build/js/my-account/components/UserSettings.js:683
-#: build/js/my-account/index.js:577 build/js/my-account/App.js:351
-#: build/js/my-account/components/UserSettings.js:459
-#: build/js/my-account/index.js:411
+#: assets/javascript/my-account/components/UserSettings.js:47
+#: build/js/my-account/App.js:568
+#: build/js/my-account/components/UserSettings.js:754
+#: build/js/my-account/index.js:648 build/js/my-account/App.js:381
+#: build/js/my-account/components/UserSettings.js:489
+#: build/js/my-account/index.js:441
 msgid "Review our terms of use"
 msgstr "Reveja nossos termos de uso"
 
-#: assets/javascript/my-account/components/UserSettings.js:43
-#: build/js/my-account/App.js:501
-#: build/js/my-account/components/UserSettings.js:687
-#: build/js/my-account/index.js:581 build/js/my-account/App.js:352
-#: build/js/my-account/components/UserSettings.js:460
-#: build/js/my-account/index.js:412
+#: assets/javascript/my-account/components/UserSettings.js:48
+#: build/js/my-account/App.js:572
+#: build/js/my-account/components/UserSettings.js:758
+#: build/js/my-account/index.js:652 build/js/my-account/App.js:382
+#: build/js/my-account/components/UserSettings.js:490
+#: build/js/my-account/index.js:442
 msgid "Delete account"
 msgstr "Deletar conta"
 
 #: assets/javascript/shared/components/Filters.js:6
-#: build/js/my-account/App.js:561
+#: build/js/my-account/App.js:636
 #: build/js/my-account/components/CreatedVotings.js:47
 #: build/js/my-account/components/ParticipatedVotings.js:47
-#: build/js/my-account/index.js:641 build/js/shared/components/Filters.js:133
+#: build/js/my-account/index.js:716 build/js/shared/components/Filters.js:133
 #: build/js/voting-archive/App.js:21 build/js/voting-archive/index.js:21
-#: build/js/my-account/App.js:384
+#: build/js/my-account/App.js:418
 #: build/js/my-account/components/CreatedVotings.js:21
 #: build/js/my-account/components/ParticipatedVotings.js:21
-#: build/js/my-account/index.js:444 build/js/shared/components/Filters.js:79
+#: build/js/my-account/index.js:478 build/js/shared/components/Filters.js:79
 #: build/js/voting-archive/App.js:6 build/js/voting-archive/index.js:6
 msgid "With login"
 msgstr "Com login"
 
 #: assets/javascript/shared/components/Filters.js:7
 #: assets/javascript/voting-archive/components/VotingCard.js:49
-#: build/js/my-account/App.js:562 build/js/my-account/App.js:957
+#: build/js/my-account/App.js:637 build/js/my-account/App.js:1032
 #: build/js/my-account/components/CreatedVotings.js:48
 #: build/js/my-account/components/CreatedVotings.js:307
 #: build/js/my-account/components/ParticipatedVotings.js:48
 #: build/js/my-account/components/ParticipatedVotings.js:307
-#: build/js/my-account/index.js:642 build/js/my-account/index.js:1037
+#: build/js/my-account/index.js:717 build/js/my-account/index.js:1112
 #: build/js/shared/components/Filters.js:134 build/js/voting-archive/App.js:22
 #: build/js/voting-archive/App.js:281
 #: build/js/voting-archive/components/VotingCard.js:266
 #: build/js/voting-archive/index.js:22 build/js/voting-archive/index.js:395
 #: build/js/votings-block/App.js:193 build/js/votings-block/index.js:193
-#: build/js/my-account/App.js:385 build/js/my-account/App.js:625
+#: build/js/my-account/App.js:419 build/js/my-account/App.js:659
 #: build/js/my-account/components/CreatedVotings.js:22
 #: build/js/my-account/components/CreatedVotings.js:192
 #: build/js/my-account/components/ParticipatedVotings.js:22
 #: build/js/my-account/components/ParticipatedVotings.js:192
-#: build/js/my-account/index.js:445 build/js/my-account/index.js:685
+#: build/js/my-account/index.js:479 build/js/my-account/index.js:719
 #: build/js/shared/components/Filters.js:80 build/js/voting-archive/App.js:7
 #: build/js/voting-archive/App.js:177
 #: build/js/voting-archive/components/VotingCard.js:182
@@ -961,57 +965,60 @@ msgid "No login"
 msgstr "Sem login"
 
 #: assets/javascript/shared/components/Filters.js:11
-#: build/js/my-account/App.js:565
+#: build/js/my-account/App.js:640
 #: build/js/my-account/components/CreatedVotings.js:51
 #: build/js/my-account/components/ParticipatedVotings.js:51
-#: build/js/my-account/index.js:645 build/js/shared/components/Filters.js:137
+#: build/js/my-account/index.js:720 build/js/shared/components/Filters.js:137
 #: build/js/voting-archive/App.js:25 build/js/voting-archive/index.js:25
-#: build/js/my-account/App.js:389
+#: build/js/my-account/App.js:423
 #: build/js/my-account/components/CreatedVotings.js:26
 #: build/js/my-account/components/ParticipatedVotings.js:26
-#: build/js/my-account/index.js:449 build/js/shared/components/Filters.js:84
+#: build/js/my-account/index.js:483 build/js/shared/components/Filters.js:84
 #: build/js/voting-archive/App.js:11 build/js/voting-archive/index.js:11
 msgctxt "votings"
 msgid "Open"
 msgstr "Abertas"
 
 #: assets/javascript/shared/components/Filters.js:12
-#: build/js/my-account/App.js:566
+#: build/js/my-account/App.js:641
 #: build/js/my-account/components/CreatedVotings.js:52
 #: build/js/my-account/components/ParticipatedVotings.js:52
-#: build/js/my-account/index.js:646 build/js/shared/components/Filters.js:138
+#: build/js/my-account/index.js:721 build/js/shared/components/Filters.js:138
 #: build/js/voting-archive/App.js:26 build/js/voting-archive/index.js:26
-#: build/js/my-account/App.js:390
+#: build/js/my-account/App.js:424
 #: build/js/my-account/components/CreatedVotings.js:27
 #: build/js/my-account/components/ParticipatedVotings.js:27
-#: build/js/my-account/index.js:450 build/js/shared/components/Filters.js:85
+#: build/js/my-account/index.js:484 build/js/shared/components/Filters.js:85
 #: build/js/voting-archive/App.js:12 build/js/voting-archive/index.js:12
 msgctxt "votings"
 msgid "Concluded"
 msgstr "Concluídas"
 
 #: assets/javascript/shared/components/Filters.js:24
-#: build/js/my-account/App.js:580
+#: build/js/my-account/App.js:655
 #: build/js/my-account/components/CreatedVotings.js:66
 #: build/js/my-account/components/ParticipatedVotings.js:66
-#: build/js/my-account/index.js:660 build/js/shared/components/Filters.js:152
+#: build/js/my-account/index.js:735 build/js/shared/components/Filters.js:152
 #: build/js/voting-archive/App.js:40 build/js/voting-archive/index.js:40
-#: build/js/my-account/App.js:402
+#: build/js/my-account/App.js:436
 #: build/js/my-account/components/CreatedVotings.js:39
 #: build/js/my-account/components/ParticipatedVotings.js:39
-#: build/js/my-account/index.js:462 build/js/shared/components/Filters.js:97
+#: build/js/my-account/index.js:496 build/js/shared/components/Filters.js:97
 #: build/js/voting-archive/App.js:24 build/js/voting-archive/index.js:24
 msgid "Filters"
 msgstr "Filtros"
 
 #: assets/javascript/shared/components/Modal.js:31
-#: build/js/my-account/App.js:661
+#: build/js/my-account/App.js:736
 #: build/js/my-account/components/DeleteAccountModal.js:68
 #: build/js/my-account/components/EditEmailModal.js:68
 #: build/js/my-account/components/EditNameModal.js:68
 #: build/js/my-account/components/EditPasswordModal.js:68
-#: build/js/my-account/components/UserSettings.js:351
-#: build/js/my-account/index.js:741 build/js/shared/components/Modal.js:227
+#: build/js/my-account/components/PrivacyPolicyModal.js:68
+#: build/js/my-account/components/TermsOfUseModal.js:68
+#: build/js/my-account/components/UserSettings.js:414
+#: build/js/my-account/index.js:816 build/js/shared/components/Modal.js:227
+#: build/js/user/components/AcceptTerms.js:131 build/js/user/register.js:131
 #: build/js/voting-page/App.js:3013
 #: build/js/voting-page/components/Form.js:3013
 #: build/js/voting-page/index.js:3013 build/js/voting-single/App.js:68
@@ -1020,13 +1027,16 @@ msgstr "Filtros"
 #: build/js/voting-single/components/SingleVoting.js:68
 #: build/js/voting-single/index.js:3013
 #: build/js/voting-single/pages/Single.js:68
-#: build/js/voting-single/VotingAdmin.js:3013 build/js/my-account/App.js:441
+#: build/js/voting-single/VotingAdmin.js:3013 build/js/my-account/App.js:475
 #: build/js/my-account/components/DeleteAccountModal.js:31
 #: build/js/my-account/components/EditEmailModal.js:31
 #: build/js/my-account/components/EditNameModal.js:31
 #: build/js/my-account/components/EditPasswordModal.js:31
-#: build/js/my-account/components/UserSettings.js:230
-#: build/js/my-account/index.js:501 build/js/shared/components/Modal.js:143
+#: build/js/my-account/components/PrivacyPolicyModal.js:31
+#: build/js/my-account/components/TermsOfUseModal.js:31
+#: build/js/my-account/components/UserSettings.js:255
+#: build/js/my-account/index.js:535 build/js/shared/components/Modal.js:143
+#: build/js/user/components/AcceptTerms.js:56 build/js/user/register.js:56
 #: build/js/voting-page/App.js:1967
 #: build/js/voting-page/components/Form.js:1967
 #: build/js/voting-page/index.js:1967 build/js/voting-single/App.js:31
@@ -1040,22 +1050,22 @@ msgid "Close"
 msgstr "Fechar"
 
 #: assets/javascript/shared/components/Tabs.js:18
-#: build/js/my-account/App.js:709 build/js/my-account/index.js:789
+#: build/js/my-account/App.js:784 build/js/my-account/index.js:864
 #: build/js/shared/components/Tabs.js:194 build/js/voting-single/App.js:116
 #: build/js/voting-single/index.js:3061
-#: build/js/voting-single/pages/Panel.js:46 build/js/my-account/App.js:467
-#: build/js/my-account/index.js:527 build/js/shared/components/Tabs.js:129
+#: build/js/voting-single/pages/Panel.js:46 build/js/my-account/App.js:501
+#: build/js/my-account/index.js:561 build/js/shared/components/Tabs.js:129
 #: build/js/voting-single/App.js:57 build/js/voting-single/index.js:1993
 #: build/js/voting-single/pages/Panel.js:18
 msgid "Previous tab"
 msgstr "Aba anterior"
 
 #: assets/javascript/shared/components/Tabs.js:26
-#: build/js/my-account/App.js:727 build/js/my-account/index.js:807
+#: build/js/my-account/App.js:802 build/js/my-account/index.js:882
 #: build/js/shared/components/Tabs.js:212 build/js/voting-single/App.js:134
 #: build/js/voting-single/index.js:3079
-#: build/js/voting-single/pages/Panel.js:64 build/js/my-account/App.js:475
-#: build/js/my-account/index.js:535 build/js/shared/components/Tabs.js:137
+#: build/js/voting-single/pages/Panel.js:64 build/js/my-account/App.js:509
+#: build/js/my-account/index.js:569 build/js/shared/components/Tabs.js:137
 #: build/js/voting-single/App.js:65 build/js/voting-single/index.js:2001
 #: build/js/voting-single/pages/Panel.js:26
 msgid "Next tab"
@@ -1086,16 +1096,16 @@ msgid "Search"
 msgstr "Pesquisar"
 
 #: assets/javascript/voting-archive/components/VotingCard.js:16
-#: build/js/my-account/App.js:927
+#: build/js/my-account/App.js:1002
 #: build/js/my-account/components/CreatedVotings.js:277
 #: build/js/my-account/components/ParticipatedVotings.js:277
-#: build/js/my-account/index.js:1007 build/js/voting-archive/App.js:251
+#: build/js/my-account/index.js:1082 build/js/voting-archive/App.js:251
 #: build/js/voting-archive/components/VotingCard.js:236
 #: build/js/voting-archive/index.js:365 build/js/votings-block/App.js:163
-#: build/js/votings-block/index.js:163 build/js/my-account/App.js:592
+#: build/js/votings-block/index.js:163 build/js/my-account/App.js:626
 #: build/js/my-account/components/CreatedVotings.js:159
 #: build/js/my-account/components/ParticipatedVotings.js:159
-#: build/js/my-account/index.js:652 build/js/voting-archive/App.js:144
+#: build/js/my-account/index.js:686 build/js/voting-archive/App.js:144
 #: build/js/voting-archive/components/VotingCard.js:149
 #: build/js/voting-archive/index.js:235 build/js/votings-block/App.js:89
 #: build/js/votings-block/index.js:89
@@ -1104,16 +1114,16 @@ msgid "Concluded"
 msgstr "Concluída"
 
 #: assets/javascript/voting-archive/components/VotingCard.js:18
-#: build/js/my-account/App.js:929
+#: build/js/my-account/App.js:1004
 #: build/js/my-account/components/CreatedVotings.js:279
 #: build/js/my-account/components/ParticipatedVotings.js:279
-#: build/js/my-account/index.js:1009 build/js/voting-archive/App.js:253
+#: build/js/my-account/index.js:1084 build/js/voting-archive/App.js:253
 #: build/js/voting-archive/components/VotingCard.js:238
 #: build/js/voting-archive/index.js:367 build/js/votings-block/App.js:165
-#: build/js/votings-block/index.js:165 build/js/my-account/App.js:594
+#: build/js/votings-block/index.js:165 build/js/my-account/App.js:628
 #: build/js/my-account/components/CreatedVotings.js:161
 #: build/js/my-account/components/ParticipatedVotings.js:161
-#: build/js/my-account/index.js:654 build/js/voting-archive/App.js:146
+#: build/js/my-account/index.js:688 build/js/voting-archive/App.js:146
 #: build/js/voting-archive/components/VotingCard.js:151
 #: build/js/voting-archive/index.js:237 build/js/votings-block/App.js:91
 #: build/js/votings-block/index.js:91
@@ -1122,16 +1132,16 @@ msgid "Open"
 msgstr "Aberta"
 
 #: assets/javascript/voting-archive/components/VotingCard.js:20
-#: build/js/my-account/App.js:931
+#: build/js/my-account/App.js:1006
 #: build/js/my-account/components/CreatedVotings.js:281
 #: build/js/my-account/components/ParticipatedVotings.js:281
-#: build/js/my-account/index.js:1011 build/js/voting-archive/App.js:255
+#: build/js/my-account/index.js:1086 build/js/voting-archive/App.js:255
 #: build/js/voting-archive/components/VotingCard.js:240
 #: build/js/voting-archive/index.js:369 build/js/votings-block/App.js:167
-#: build/js/votings-block/index.js:167 build/js/my-account/App.js:596
+#: build/js/votings-block/index.js:167 build/js/my-account/App.js:630
 #: build/js/my-account/components/CreatedVotings.js:163
 #: build/js/my-account/components/ParticipatedVotings.js:163
-#: build/js/my-account/index.js:656 build/js/voting-archive/App.js:148
+#: build/js/my-account/index.js:690 build/js/voting-archive/App.js:148
 #: build/js/voting-archive/components/VotingCard.js:153
 #: build/js/voting-archive/index.js:239 build/js/votings-block/App.js:93
 #: build/js/votings-block/index.js:93
@@ -1140,16 +1150,16 @@ msgid "Scheduled"
 msgstr "Agendada"
 
 #: assets/javascript/voting-archive/components/VotingCard.js:27
-#: build/js/my-account/App.js:937
+#: build/js/my-account/App.js:1012
 #: build/js/my-account/components/CreatedVotings.js:287
 #: build/js/my-account/components/ParticipatedVotings.js:287
-#: build/js/my-account/index.js:1017 build/js/voting-archive/App.js:261
+#: build/js/my-account/index.js:1092 build/js/voting-archive/App.js:261
 #: build/js/voting-archive/components/VotingCard.js:246
 #: build/js/voting-archive/index.js:375 build/js/votings-block/App.js:173
-#: build/js/votings-block/index.js:173 build/js/my-account/App.js:603
+#: build/js/votings-block/index.js:173 build/js/my-account/App.js:637
 #: build/js/my-account/components/CreatedVotings.js:170
 #: build/js/my-account/components/ParticipatedVotings.js:170
-#: build/js/my-account/index.js:663 build/js/voting-archive/App.js:155
+#: build/js/my-account/index.js:697 build/js/voting-archive/App.js:155
 #: build/js/voting-archive/components/VotingCard.js:160
 #: build/js/voting-archive/index.js:246 build/js/votings-block/App.js:100
 #: build/js/votings-block/index.js:100
@@ -1158,16 +1168,16 @@ msgid "Since %s"
 msgstr "Desde o dia %s"
 
 #: assets/javascript/voting-archive/components/VotingCard.js:29
-#: build/js/my-account/App.js:939
+#: build/js/my-account/App.js:1014
 #: build/js/my-account/components/CreatedVotings.js:289
 #: build/js/my-account/components/ParticipatedVotings.js:289
-#: build/js/my-account/index.js:1019 build/js/voting-archive/App.js:263
+#: build/js/my-account/index.js:1094 build/js/voting-archive/App.js:263
 #: build/js/voting-archive/components/VotingCard.js:248
 #: build/js/voting-archive/index.js:377 build/js/votings-block/App.js:175
-#: build/js/votings-block/index.js:175 build/js/my-account/App.js:605
+#: build/js/votings-block/index.js:175 build/js/my-account/App.js:639
 #: build/js/my-account/components/CreatedVotings.js:172
 #: build/js/my-account/components/ParticipatedVotings.js:172
-#: build/js/my-account/index.js:665 build/js/voting-archive/App.js:157
+#: build/js/my-account/index.js:699 build/js/voting-archive/App.js:157
 #: build/js/voting-archive/components/VotingCard.js:162
 #: build/js/voting-archive/index.js:248 build/js/votings-block/App.js:102
 #: build/js/votings-block/index.js:102
@@ -1176,16 +1186,16 @@ msgid "Until %s"
 msgstr "Até o dia %s"
 
 #: assets/javascript/voting-archive/components/VotingCard.js:31
-#: build/js/my-account/App.js:941
+#: build/js/my-account/App.js:1016
 #: build/js/my-account/components/CreatedVotings.js:291
 #: build/js/my-account/components/ParticipatedVotings.js:291
-#: build/js/my-account/index.js:1021 build/js/voting-archive/App.js:265
+#: build/js/my-account/index.js:1096 build/js/voting-archive/App.js:265
 #: build/js/voting-archive/components/VotingCard.js:250
 #: build/js/voting-archive/index.js:379 build/js/votings-block/App.js:177
-#: build/js/votings-block/index.js:177 build/js/my-account/App.js:607
+#: build/js/votings-block/index.js:177 build/js/my-account/App.js:641
 #: build/js/my-account/components/CreatedVotings.js:174
 #: build/js/my-account/components/ParticipatedVotings.js:174
-#: build/js/my-account/index.js:667 build/js/voting-archive/App.js:159
+#: build/js/my-account/index.js:701 build/js/voting-archive/App.js:159
 #: build/js/voting-archive/components/VotingCard.js:164
 #: build/js/voting-archive/index.js:250 build/js/votings-block/App.js:104
 #: build/js/votings-block/index.js:104
@@ -1194,16 +1204,16 @@ msgid "From %s"
 msgstr "A partir do dia %s"
 
 #: assets/javascript/voting-archive/components/VotingCard.js:49
-#: build/js/my-account/App.js:957
+#: build/js/my-account/App.js:1032
 #: build/js/my-account/components/CreatedVotings.js:307
 #: build/js/my-account/components/ParticipatedVotings.js:307
-#: build/js/my-account/index.js:1037 build/js/voting-archive/App.js:281
+#: build/js/my-account/index.js:1112 build/js/voting-archive/App.js:281
 #: build/js/voting-archive/components/VotingCard.js:266
 #: build/js/voting-archive/index.js:395 build/js/votings-block/App.js:193
-#: build/js/votings-block/index.js:193 build/js/my-account/App.js:625
+#: build/js/votings-block/index.js:193 build/js/my-account/App.js:659
 #: build/js/my-account/components/CreatedVotings.js:192
 #: build/js/my-account/components/ParticipatedVotings.js:192
-#: build/js/my-account/index.js:685 build/js/voting-archive/App.js:177
+#: build/js/my-account/index.js:719 build/js/voting-archive/App.js:177
 #: build/js/voting-archive/components/VotingCard.js:182
 #: build/js/voting-archive/index.js:268 build/js/votings-block/App.js:122
 #: build/js/votings-block/index.js:122
@@ -1211,16 +1221,16 @@ msgid "Login required"
 msgstr "Login obrigatório"
 
 #: assets/javascript/voting-archive/components/VotingCard.js:49
-#: build/js/my-account/App.js:957
+#: build/js/my-account/App.js:1032
 #: build/js/my-account/components/CreatedVotings.js:307
 #: build/js/my-account/components/ParticipatedVotings.js:307
-#: build/js/my-account/index.js:1037 build/js/voting-archive/App.js:281
+#: build/js/my-account/index.js:1112 build/js/voting-archive/App.js:281
 #: build/js/voting-archive/components/VotingCard.js:266
 #: build/js/voting-archive/index.js:395 build/js/votings-block/App.js:193
-#: build/js/votings-block/index.js:193 build/js/my-account/App.js:625
+#: build/js/votings-block/index.js:193 build/js/my-account/App.js:659
 #: build/js/my-account/components/CreatedVotings.js:192
 #: build/js/my-account/components/ParticipatedVotings.js:192
-#: build/js/my-account/index.js:685 build/js/voting-archive/App.js:177
+#: build/js/my-account/index.js:719 build/js/voting-archive/App.js:177
 #: build/js/voting-archive/components/VotingCard.js:182
 #: build/js/voting-archive/index.js:268 build/js/votings-block/App.js:122
 #: build/js/votings-block/index.js:122
@@ -2365,6 +2375,12 @@ msgstr "Deletar votação"
 #: build/js/votings-block/index.js:159
 msgid "Search votings"
 msgstr "Pesquisar votações"
+
+#~ msgid "You must accept the Image Terms of Use"
+#~ msgstr "Você deve aceitar os termos de uso de imagem"
+
+#~ msgid "Image Terms of Use"
+#~ msgstr "Termos de uso de imagem"
 
 #~ msgid "Distributed votes"
 #~ msgstr "Votos distribuídos"
