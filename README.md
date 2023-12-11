@@ -40,8 +40,11 @@ Esse _plugin_ foi testado na versão 6.3 do _WordPress_.
 
 ### INSTALAÇÃO:
 
-- Faça o upload completo da pasta `concordamos` no diretório de `/wp-content/plugins/`
-2. Ative o plugin através da tela dos Plugins instalados, em Plugins, no painel do _WordPress_
+1. Para preparar o plugin para uso é rodar o comando `./dev-scripts/producao.sh` na raiz do projeto.
+2. Faça o upload completo do arquivo `concordamos.zip` no diretório de `/wp-content/plugins/`
+3. Ative o plugin através da tela dos Plugins instalados, em Plugins, no painel do _WordPress_
+
+O comando do ponto 2 cria um zip na pasta `./trunk/zip/` com o nome concordamos.zip. Isso porque o script `./dev-scripts/producao.sh` gera o zip do plugin já com o nome correto e também remove a pasta node_modules.
 
 ### PRIMEIROS PASSOS
 
