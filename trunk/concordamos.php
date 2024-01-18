@@ -23,7 +23,7 @@ define( 'CONCORDAMOS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CONCORDAMOS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'CONCORDAMOS_PLUGIN_VERSION', '0.1.8' );
 
-require_once 'includes/class/class-posttype.php';
+require_once 'includes/class/class-cpt.php';
 require_once 'includes/class/class-metadata.php';
 require_once 'includes/class/class-taxonomy.php';
 require_once 'includes/class/class-user-login.php';

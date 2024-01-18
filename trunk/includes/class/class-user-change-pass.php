@@ -65,7 +65,6 @@ class User_Change_Pass {
 
 		foreach ( $tokens as $token ) {
 			$value = maybe_unserialize( $token['meta_value'] );
-			// delete_transient(str_replace('_transient_', '', $transient));
 		}
 	}
 

@@ -140,7 +140,6 @@ class Metadata {
 				$html .= '</div>';
 				return $html;
 			case 'csv':
-				// $value = array_filter( explode( ',', $value ) );
 				return "<input type='text' id='{$id}' name='{$id}' value='{$value}' />";
 			default:
 				return "<input type='text' id='{$id}' name='{$id}' value='{$value}' />";
