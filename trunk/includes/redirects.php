@@ -90,7 +90,7 @@ function required_login_to_voting_panel() {
 		return;
 	}
 
-	$login_url = get_permalink( get_page_by_template( 'concordamos/template-login.php' ) );
+	$login_url   = get_permalink( get_page_by_template( 'concordamos/template-login.php' ) );
 	$redirect_to = filter_input( INPUT_SERVER, 'REQUEST_URI', FILTER_VALIDATE_URL );
 
 	if ( ! empty( $redirect_to ) ) {
@@ -111,7 +111,7 @@ function require_login_for_private_voting() {
 		$voting_access = get_post_meta( get_the_ID(), 'voting_access', true );
 
 		if ( ! empty( $voting_access ) && $voting_access === 'yes' ) {
-			$login_url = get_permalink( get_page_by_template( 'concordamos/template-login.php' ) );
+			$login_url   = get_permalink( get_page_by_template( 'concordamos/template-login.php' ) );
 			$redirect_to = filter_input( INPUT_SERVER, 'REQUEST_URI', FILTER_VALIDATE_URL );
 
 			if ( ! empty( $redirect_to ) ) {
