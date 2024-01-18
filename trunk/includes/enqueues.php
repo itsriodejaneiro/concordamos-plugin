@@ -36,6 +36,8 @@ function enqueue_scripts_frontend() {
 		if ( $template_slug === 'concordamos/template-login.php' ) {
 			wp_enqueue_style( 'concordamos-template-login-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-login.css', array( 'concordamos-style' ), CONCORDAMOS_PLUGIN_VERSION );
 
+			$redirect_to = filter_input( INPUT_GET, 'redirect_to', FILTER_VALIDATE_URL );
+
 			enqueue_localized_script(
 				'concordamos-login',
 				CONCORDAMOS_PLUGIN_URL . 'build/js/user/login.js',
@@ -43,7 +45,7 @@ function enqueue_scripts_frontend() {
 				'concordamos_login',
 				array(
 					'nonce'       => wp_create_nonce( 'wp_rest' ),
-					'redirect_to' => ( isset( $_GET['redirect_to'] ) && ! empty( $_GET['redirect_to'] ) ) ? esc_url( get_home_url() . $_GET['redirect_to'] ) : get_permalink( get_page_by_template( 'concordamos/template-my-account.php' ) ),
+					'redirect_to' => empty( $redirect_to ) ? get_permalink( get_page_by_template( 'concordamos/template-my-account.php' ) ) : esc_url( get_home_url( null, $redirect_to ) ),
 				)
 			);
 		}

@@ -7,9 +7,10 @@ get_header();
 
 $site_title      = get_bloginfo( 'name' );
 $register_url    = get_permalink( concordamos\get_page_by_template( 'concordamos/template-create-user.php' ) );
-$token           = concordamos\get_change_password_token_status();
 $change_pass_url = get_permalink( concordamos\get_page_by_template( 'concordamos/template-change-pass.php' ) );
 
+$token        = sanitize_key( filter_input( INPUT_GET, 'concordamos_change_pass_tk' ) );
+$token_status = concordamos\get_change_password_token_status();
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,11 +40,11 @@ $change_pass_url = get_permalink( concordamos\get_page_by_template( 'concordamos
 	</section>
 	<form id="change-password-form" class="change-password-form">
 		<div class="container">
-			<?php if ( $token === false || 'invalid' === $token ) : ?>
+			<?php if ( false === $token_status || 'invalid' === $token_status ) : ?>
 				<h1>
 					<?php esc_html_e( 'Reset Password', 'concordamos' ); ?>
 				</h1>
-				<?php if ( 'invalid' === $token ) : ?>
+				<?php if ( 'invalid' === $token_status ) : ?>
 					<p class="error-invalid">
 						<?php esc_html_e( 'This link is invalid or already expired.', 'concordamos' ); ?>
 					</p>
@@ -70,7 +71,7 @@ $change_pass_url = get_permalink( concordamos\get_page_by_template( 'concordamos
 			<h1>
 				<?php esc_html_e( 'Insert new password', 'concordamos' ); ?>
 			</h1>
-			<input name="token" type="hidden" value="<?php echo esc_attr( $_GET['concordamos_change_pass_tk'] ); ?>">
+			<input name="token" type="hidden" value="<?php echo esc_attr( $token ); ?>">
 			<div class="password-field">
 				<label>
 					<span>

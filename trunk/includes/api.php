@@ -164,13 +164,9 @@ function permission_check( \WP_REST_Request $request ) {
 }
 
 function permission_vote_check( \WP_REST_Request $request ) {
-	$nonce = isset( $_SERVER['HTTP_X_WP_NONCE'] ) ? $_SERVER['HTTP_X_WP_NONCE'] : '';
+	$nonce = $request->get_header( 'X-WP-Nonce' ) ?: '';
 
-	if ( ! wp_verify_nonce( $nonce, 'wp_rest' ) ) {
-		return false;
-	}
-
-	return true;
+	return wp_verify_nonce( $nonce, 'wp_rest' );
 }
 
 function build_query_from_params( array $query, array $params ) {

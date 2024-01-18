@@ -393,15 +393,16 @@ function get_panel_url( $url ) {
 }
 
 function get_change_password_token_status() {
-	if ( ! isset( $_GET['concordamos_change_pass_tk'] ) || empty( $_GET['concordamos_change_pass_tk'] ) ) {
+	$token_key = sanitize_key( filter_input( INPUT_GET, 'concordamos_change_pass_tk' ) );
+	if ( empty( $token_key ) ) {
 		return false;
 	}
 
-	$token_key = esc_attr( $_GET['concordamos_change_pass_tk'] );
-	$token     = User_Change_Pass::get_token( $token_key );
+	$token = User_Change_Pass::get_token( $token_key );
 	if ( ! $token ) {
 		return 'invalid';
 	}
+
 	return true;
 }
 
