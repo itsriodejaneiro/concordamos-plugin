@@ -4,7 +4,7 @@ namespace Concordamos;
 
 function register_login_block() {
 	wp_register_style( 'concordamos-login-block-style', CONCORDAMOS_PLUGIN_URL . 'build/css/login-block.css', array( 'concordamos-style' ), CONCORDAMOS_PLUGIN_VERSION );
-	wp_register_script( 'concordamos-login-block-admin', CONCORDAMOS_PLUGIN_URL . 'build/js/login-block/editor.js', array( 'wp-editor', 'wp-element', 'wp-i18n' ), CONCORDAMOS_PLUGIN_VERSION );
+	wp_register_script( 'concordamos-login-block-admin', CONCORDAMOS_PLUGIN_URL . 'build/js/login-block/editor.js', array( 'wp-editor', 'wp-element', 'wp-i18n' ), CONCORDAMOS_PLUGIN_VERSION, true );
 
 	register_block_type(
 		'concordamos/login',
@@ -31,9 +31,9 @@ function register_login_block() {
 
 function register_votings_block() {
 	wp_register_style( 'concordamos-votings-block-style', CONCORDAMOS_PLUGIN_URL . 'build/css/votings-block.css', array( 'concordamos-style' ), CONCORDAMOS_PLUGIN_VERSION );
-	wp_register_script( 'concordamos-votings-block', CONCORDAMOS_PLUGIN_URL . 'build/js/votings-block/index.js', array( 'wp-element', 'wp-i18n' ), CONCORDAMOS_PLUGIN_VERSION );
+	wp_register_script( 'concordamos-votings-block', CONCORDAMOS_PLUGIN_URL . 'build/js/votings-block/index.js', array( 'wp-element', 'wp-i18n' ), CONCORDAMOS_PLUGIN_VERSION, true );
 
-	wp_register_script( 'concordamos-votings-block-admin', CONCORDAMOS_PLUGIN_URL . 'build/js/votings-block/editor.js', array( 'wp-editor', 'wp-element', 'wp-i18n' ), CONCORDAMOS_PLUGIN_VERSION );
+	wp_register_script( 'concordamos-votings-block-admin', CONCORDAMOS_PLUGIN_URL . 'build/js/votings-block/editor.js', array( 'wp-editor', 'wp-element', 'wp-i18n' ), CONCORDAMOS_PLUGIN_VERSION, true );
 
 	wp_set_script_translations( 'concordamos-votings-block', 'concordamos', CONCORDAMOS_PLUGIN_PATH . 'languages/' );
 	wp_localize_script(
