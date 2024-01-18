@@ -24,23 +24,23 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 			</div>
 
 			<p class="balloon-subtitle">
-				<?php _e( 'A way to vote for consensus', 'concordamos' ); ?>
+				<?php esc_html_e( 'A way to vote for consensus', 'concordamos' ); ?>
 			</p>
-			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" class="logo-image" alt="<?php _e( 'Concordamos Logo', 'concordamos' ); ?>">
+			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" class="logo-image" alt="<?php esc_attr_e( 'Concordamos Logo', 'concordamos' ); ?>">
 		</div>
 	</section>
 	<form id="login-form" class="login-form">
 		<div class="container">
 			<div class="email-field">
 				<label>
-					<span><?php _e( 'Email', 'concordamos' ); ?></span>
+					<span><?php esc_html_e( 'Email', 'concordamos' ); ?></span>
 					<input name="email" type="text">
 				</label>
 			</div>
 			<div class="login-password-field">
 				<label>
 					<span>
-						<?php _e( 'Password', 'concordamos' ); ?>
+						<?php esc_html_e( 'Password', 'concordamos' ); ?>
 					</span>
 					<div class="password-input-box">
 						<input name="password" type="password">
@@ -55,21 +55,21 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 					</div>
 				</label>
 				<a href="<?php echo $change_password_url; ?>">
-					<?php _e( 'I forgot my password', 'concordamos' ); ?>
+					<?php esc_html_e( 'I forgot my password', 'concordamos' ); ?>
 				</a>
 			</div>
 			<div class="login-button">
-				<button class="login-submit" data-loading-text="<?php _e( 'Loading...', 'concordamos' ); ?>" type="submit">
-					<?php _e( "Let's go!", 'concordamos' ); ?>
+				<button class="login-submit" data-loading-text="<?php esc_attr_e( 'Loading...', 'concordamos' ); ?>" type="submit">
+					<?php esc_html_e( "Let's go!", 'concordamos' ); ?>
 				</button>
 				<p>
-					<?php _e( "Don't have an account?", 'concordamos' ); ?> <a href="<?php echo $register_url; ?>"><?php _e( 'Register here', 'concordamos' ); ?></a>.
+					<?php esc_html_e( "Don't have an account?", 'concordamos' ); ?> <a href="<?php echo $register_url; ?>"><?php esc_html_e( 'Register here', 'concordamos' ); ?></a>.
 				</p>
 			</div>
 			<div id="login-message"></div>
 			<div class="its-logo">
 				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>"
-					alt="<?php _e( 'ITS Logo' ); ?>">
+					alt="<?php esc_attr_e( 'ITS Logo' ); ?>">
 			</div>
 
 		</div>

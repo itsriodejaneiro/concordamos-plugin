@@ -119,7 +119,7 @@ function select_field_render( $args ) {
 
 	?>
 	<select name='concordamos_options[<?php echo $name; ?>]'>
-		<option value='' <?php selected( $options[ $name ], '', false ); ?>><?php _e( 'Select a page', 'concordamos' ); ?></option>
+		<option value='' <?php selected( $options[ $name ], '', false ); ?>><?php esc_html_e( 'Select a page', 'concordamos' ); ?></option>
 		<?php
 		foreach ( $pages as $page ) {
 			echo "<option value='{$page->ID}' " . selected( $options[ $name ], $page->ID, false ) . ">{$page->post_title}</option>";

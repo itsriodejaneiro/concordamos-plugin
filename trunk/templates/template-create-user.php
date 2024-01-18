@@ -25,8 +25,8 @@ $site_title = get_bloginfo( 'name' );
 			<div class="arrow">
 				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
 			</div>
-			<p class="balloon-subtitle"><?php _e( 'A way to vote for consensus', 'concordamos' ); ?></p>
-			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" class="logo-image" alt="<?php _e( 'Concordamos Logo', 'concordamos' ); ?>">
+			<p class="balloon-subtitle"><?php esc_html_e( 'A way to vote for consensus', 'concordamos' ); ?></p>
+			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" class="logo-image" alt="<?php esc_attr_e( 'Concordamos Logo', 'concordamos' ); ?>">
 		</div>
 	</section>
 	<form class="register-form" id="register-form">
@@ -34,7 +34,7 @@ $site_title = get_bloginfo( 'name' );
 			<div class="name-field">
 				<label>
 					<span>
-						<?php _e( 'Name', 'concordamos' ); ?>
+						<?php esc_html_e( 'Name', 'concordamos' ); ?>
 					</span>
 					<input name="name" type="text">
 					<span class="errors" id="name-errors"></span>
@@ -43,7 +43,7 @@ $site_title = get_bloginfo( 'name' );
 			<div class="email-field">
 				<label>
 					<span>
-						<?php _e( 'Email', 'concordamos' ); ?>
+						<?php esc_html_e( 'Email', 'concordamos' ); ?>
 					</span>
 					<input name="email" type="text">
 					<span class="errors" id="email-errors"></span>
@@ -52,7 +52,7 @@ $site_title = get_bloginfo( 'name' );
 			<div class="register-password-field">
 				<label>
 					<span>
-						<?php _e( 'Password', 'concordamos' ); ?>
+						<?php esc_html_e( 'Password', 'concordamos' ); ?>
 					</span>
 					<div class="password-input-box">
 						<input name="password" type="password">
@@ -69,7 +69,7 @@ $site_title = get_bloginfo( 'name' );
 				</label>
 				<label>
 					<span>
-						<?php _e( 'Repeat password', 'concordamos' ); ?>
+						<?php esc_html_e( 'Repeat password', 'concordamos' ); ?>
 					</span>
 					<input name="repeat-password" type="password">
 					<span class="errors" id="repeat-password-errors"></span>
@@ -78,28 +78,28 @@ $site_title = get_bloginfo( 'name' );
 			<div class="accept-checkbox-terms">
 				<input type="checkbox" id="terms" name="terms" />
 				<label for="terms">
-					<?php _e( 'You accept the', 'concordamos' ); ?> <a>
-						<?php _e( 'Privacy Policy', 'concordamos' ); ?>
+					<?php esc_html_e( 'You accept the', 'concordamos' ); ?> <a>
+						<?php esc_html_e( 'Privacy Policy', 'concordamos' ); ?>
 					</a>
-					<?php _e( 'and', 'concordamos' ); ?> <a>
-						<?php _e( 'Terms of Use', 'concordamos' ); ?>
+					<?php esc_html_e( 'and', 'concordamos' ); ?> <a>
+						<?php esc_html_e( 'Terms of Use', 'concordamos' ); ?>
 					</a>
 				</label>
 			</div>
 			<div id="status"></div>
 			<div class="register-button">
 				<button class="register-submit" type="submit"
-					data-loading-text="<?php _e( 'Loading...', 'concordamos' ); ?>"><?php _e( "Let's go!", 'concordamos' ); ?></button>
+					data-loading-text="<?php esc_attr_e( 'Loading...', 'concordamos' ); ?>"><?php esc_html_e( "Let's go!", 'concordamos' ); ?></button>
 				<p>
-					<?php _e( 'Already have an account?', 'concordamos' ); ?> <a href="<?php echo $login_url; ?>">
-						<?php _e( 'Access here', 'concordamos' ); ?>
+					<?php esc_html_e( 'Already have an account?', 'concordamos' ); ?> <a href="<?php echo $login_url; ?>">
+						<?php esc_html_e( 'Access here', 'concordamos' ); ?>
 					</a>.
 				</p>
 				<img src="" alt="">
 			</div>
 			<div class="its-logo">
 				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>"
-					alt="<?php _e( 'ITS Logo', 'concordamos' ); ?>">
+					alt="<?php esc_attr_e( 'ITS Logo', 'concordamos' ); ?>">
 			</div>
 		</div>
 	</form>

@@ -10,7 +10,7 @@ if ( is_user_logged_in() ) {
 			<div class="email-field">
 				<label>
 					<span>
-						<?php _e( 'Email', 'concordamos' ); ?>
+						<?php esc_html_e( 'Email', 'concordamos' ); ?>
 					</span>
 					<input name="email" type="text"></input>
 				</label>
@@ -18,7 +18,7 @@ if ( is_user_logged_in() ) {
 			<div class="login-password-field">
 				<label>
 					<span>
-						<?php _e( 'Password', 'concordamos' ); ?>
+						<?php esc_html_e( 'Password', 'concordamos' ); ?>
 					</span>
 					<div class="password-input-box">
 						<button class="show-password" type="button">
@@ -33,16 +33,16 @@ if ( is_user_logged_in() ) {
 					</div>
 				</label>
 				<a href="#">
-					<?php _e( 'I forgot my password', 'concordamos' ); ?>
+					<?php esc_html_e( 'I forgot my password', 'concordamos' ); ?>
 				</a>
 			</div>
 			<div class="login-button">
 				<button class="login-submit" type="submit">
-					<?php _e( "Let's go!", 'concordamos' ); ?>
+					<?php esc_html_e( "Let's go!", 'concordamos' ); ?>
 				</button>
 				<p>
-					<?php _e( "Don't have an account?", 'concordamos' ); ?> <a href="<?php echo get_permalink( concordamos\get_page_by_template( 'concordamos/template-create-user.php' ) ); ?>">
-						<?php _e( 'Register here', 'concordamos' ); ?>
+					<?php esc_html_e( "Don't have an account?", 'concordamos' ); ?> <a href="<?php echo get_permalink( concordamos\get_page_by_template( 'concordamos/template-create-user.php' ) ); ?>">
+						<?php esc_html_e( 'Register here', 'concordamos' ); ?>
 					</a>.
 				</p>
 			</div>

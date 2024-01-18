@@ -34,7 +34,7 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 
 			<div class="info">
 				<span class="voting-breadcrumb">
-					<?php _e( 'Voting', 'concordamos' ); ?>
+					<?php esc_html_e( 'Voting', 'concordamos' ); ?>
 				</span>
 
 				<h1 class="voting-title"><?php echo apply_filters( 'the_title', $raw_post_meta['voting_name'][0] ); ?></h1>
@@ -46,7 +46,7 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 				<div class="meta">
 					<?php if ( ! $is_panel ) : ?>
 						<?php echo Concordamos\get_html_terms( $post_id, 'tag' ); ?>
-						<span class="author"><?php _e( 'Created by:', 'concordamos' ); ?> <?php echo $voting_author; ?></span>
+						<span class="author"><?php esc_html_e( 'Created by:', 'concordamos' ); ?> <?php echo $voting_author; ?></span>
 					<?php else : ?>
 						<?php if ( Concordamos\is_voting_owner( $post_id ) ) : ?>
 							<div id="concordamos-voting-admin"></div>
@@ -58,14 +58,14 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 			<div class="dates">
 				<div class="<?php echo $date_start_class; ?>">
 					<div class="icon">1</div>
-					<h3><?php _e( 'Start', 'concordamos' ); ?></h3>
+					<h3><?php esc_html_e( 'Start', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_start, 'h\hi' ); ?></span>
 					<!-- <span class="start-edit">Editar</span> -->
 				</div>
 				<div class="<?php echo $date_end_class; ?>">
 					<div class="icon">2</div>
-					<h3><?php _e( 'End', 'concordamos' ); ?></h3>
+					<h3><?php esc_html_e( 'End', 'concordamos' ); ?></h3>
 					<span class="date"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'd/m/Y' ); ?></span>
 					<span class="time"><?php echo /* @todo use WP format */ Concordamos\format_timestamp_date( $date_end, 'h\hi' ); ?></span>
 					<!-- <span class="end-edit">Editar</span> -->

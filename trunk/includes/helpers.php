@@ -409,7 +409,7 @@ function get_link_to_faq() {
 	$faq_link = get_faq_page();
 
 	if ( $faq_link ) {
-		echo '<a href="' . get_permalink( $faq_link ) . '" class="concordamos-button-faq">' . __( 'How to vote', 'concordamos' ) . ' </a>';
+		echo '<a href="' . get_permalink( $faq_link ) . '" class="concordamos-button-faq">' . esc_html__( 'How to vote', 'concordamos' ) . ' </a>';
 	}
 }
 add_action( 'wp_footer', 'Concordamos\get_link_to_faq' );
