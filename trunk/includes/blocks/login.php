@@ -32,7 +32,7 @@ if ( is_user_logged_in() ) {
 						<input name="password" type="password">
 					</div>
 				</label>
-				<a href="#">
+				<a href="<?php echo get_permalink( concordamos\get_page_by_template( 'concordamos/template-change-pass.php' ) ); ?>">
 					<?php esc_html_e( 'I forgot my password', 'concordamos' ); ?>
 				</a>
 			</div>
