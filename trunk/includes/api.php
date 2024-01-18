@@ -441,7 +441,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	} else {
 		$response = array(
 			'status'  => 'error',
-			'message' => __( 'Verify all fields and try again' . 'concordamos' ),
+			'message' => __( 'Verify all fields and try again', 'concordamos' ),
 		);
 		return new \WP_REST_Response( $response, 400 );
 	}

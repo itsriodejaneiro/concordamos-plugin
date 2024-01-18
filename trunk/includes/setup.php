@@ -9,7 +9,11 @@ new CPT(
 		'menu_icon' => 'dashicons-forms',
 		'show_ui'   => false,
 		'supports'  => array( 'author', 'title' ),
-	)
+	),
+	array(
+		'name'           => __( 'Votes', 'concordamos' ),
+		'singular_name'  => _x( 'Vote', 'noun', 'concordamos' ),
+	),
 );
 
 
@@ -21,11 +25,9 @@ new CPT(
 		'supports'  => array( 'author', 'editor', 'title' ),
 	),
 	array(
-		'name'           => _x( 'Votings', 'Post type general name', 'concordamos' ),
-		'singular_name'  => _x( 'Voting', 'Post type singular name', 'concordamos' ),
-		'menu_name'      => _x( 'Votings', 'Admin menu text', 'concordamos' ),
-		'name_admin_bar' => _x( 'Votings', 'Add New on toolbar', 'concordamos' ),
-	)
+		'name'           => __( 'Votings', 'concordamos' ),
+		'singular_name'  => __( 'Voting', 'concordamos' ),
+	),
 );
 
 
@@ -48,7 +50,11 @@ new CPT(
 		'menu_icon' => 'dashicons-table-row-after',
 		'show_ui'   => false,
 		'supports'  => array( 'author', 'title' ),
-	)
+	),
+	array(
+		'name'           => __( 'Options', 'concordamos' ),
+		'singular_name'  => __( 'Option', 'concordamos' ),
+	),
 );
 
 
