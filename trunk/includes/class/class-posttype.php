@@ -17,7 +17,7 @@ class CPT {
 
 	public function register_custom_post_type() {
 		$singular = $this->post_type_labels['singular_name'];
-		$plural = $this->post_type_labels['name'];
+		$plural   = $this->post_type_labels['name'];
 
 		$labels = array(
 			'name'           => $plural,

@@ -1,5 +1,7 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,9 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-    <div class="terms-of-use-text">
-        <p>teste</p>
-    </div>
+	<div class="terms-of-use-text">
+		<p>teste</p>
+	</div>
 
 </body>
 

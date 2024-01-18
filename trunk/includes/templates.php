@@ -38,12 +38,12 @@ function load_voting_archive_template( $template ) {
 add_filter( 'archive_template', 'Concordamos\load_voting_archive_template' );
 
 function custom_page_templates( array $templates ): array {
-	$templates['concordamos/template-login.php']       = __( 'Login', 'concordamos' ) . ' [Concordamos]';
-	$templates['concordamos/template-create-user.php'] = __( 'Create user', 'concordamos' ) . ' [Concordamos]';
-	$templates['concordamos/template-my-account.php']  = __( 'My account', 'concordamos' ) . ' [Concordamos]';
-	$templates['concordamos/template-change-pass.php'] = __( 'Change password', 'concordamos' ) . ' [Concordamos]';
+	$templates['concordamos/template-login.php']          = __( 'Login', 'concordamos' ) . ' [Concordamos]';
+	$templates['concordamos/template-create-user.php']    = __( 'Create user', 'concordamos' ) . ' [Concordamos]';
+	$templates['concordamos/template-my-account.php']     = __( 'My account', 'concordamos' ) . ' [Concordamos]';
+	$templates['concordamos/template-change-pass.php']    = __( 'Change password', 'concordamos' ) . ' [Concordamos]';
 	$templates['concordamos/template-privacy-policy.php'] = __( 'Privacy Policy', 'concordamos' ) . ' [Concordamos]';
-	$templates['concordamos/template-terms-of-use.php'] = __( 'Terms of Use', 'concordamos' ) . ' [Concordamos]';
+	$templates['concordamos/template-terms-of-use.php']   = __( 'Terms of Use', 'concordamos' ) . ' [Concordamos]';
 
 	return $templates;
 }
