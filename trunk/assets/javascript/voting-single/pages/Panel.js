@@ -43,7 +43,7 @@ export default function Panel ({ initialData }) {
 					<MyVotes initialData={initialData}/>
 				) : (tab === 'results') ? (
 					<VotingResults />
-				) : /* TODO */ null}
+				) : null}
 
 				<div className="actions">
 					<a href={backVotingUrl} className="back-link">{__('Back to voting', 'concordamos')}</a>

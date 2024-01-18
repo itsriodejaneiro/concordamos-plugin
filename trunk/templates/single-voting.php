@@ -61,15 +61,15 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 				<div class="<?php echo esc_attr( $date_start_class ); ?>">
 					<div class="icon">1</div>
 					<h3><?php esc_html_e( 'Start', 'concordamos' ); ?></h3>
-					<span class="date"><?php echo /* @todo use WP format */ esc_html( Concordamos\format_timestamp_date( $date_start, 'd/m/Y' ) ); ?></span>
-					<span class="time"><?php echo /* @todo use WP format */ esc_html( Concordamos\format_timestamp_date( $date_start, 'h\hi' ) ); ?></span>
+					<span class="date"><?php echo esc_html( Concordamos\format_timestamp_date( $date_start, 'd/m/Y' ) ); ?></span>
+					<span class="time"><?php echo esc_html( Concordamos\format_timestamp_date( $date_start, 'h\hi' ) ); ?></span>
 					<!-- <span class="start-edit">Editar</span> -->
 				</div>
 				<div class="<?php echo esc_attr( $date_end_class ); ?>">
 					<div class="icon">2</div>
 					<h3><?php esc_html_e( 'End', 'concordamos' ); ?></h3>
-					<span class="date"><?php echo /* @todo use WP format */ esc_html( Concordamos\format_timestamp_date( $date_end, 'd/m/Y' ) ); ?></span>
-					<span class="time"><?php echo /* @todo use WP format */ esc_html( Concordamos\format_timestamp_date( $date_end, 'h\hi' ) ); ?></span>
+					<span class="date"><?php echo esc_html( Concordamos\format_timestamp_date( $date_end, 'd/m/Y' ) ); ?></span>
+					<span class="time"><?php echo esc_html( Concordamos\format_timestamp_date( $date_end, 'h\hi' ) ); ?></span>
 					<!-- <span class="end-edit">Editar</span> -->
 				</div>
 			</div>
