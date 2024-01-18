@@ -23,17 +23,17 @@ $change_pass_url = get_permalink( concordamos\get_page_by_template( 'concordamos
 	<section class="concordamos-balloon">
 		<div class="balloon-content">
 			<div class="arrow">
-				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
+				<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg' ); ?>" alt="voltar">
 			</div>
 
 			<p class="balloon-subtitle">
 				<?php esc_html_e( 'A way to vote for consensus', 'concordamos' ); ?>
 			</p>
-			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>"
+			<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png' ); ?>"
 				alt="<?php esc_attr_e( 'Concordamos Logo', 'concordamos' ); ?>'">
 			<p class="balloon-subtitle with">
 				<?php esc_html_e( 'With', 'concordamos' ); ?>
-				<?php echo $site_title; ?>
+				<?php echo wp_kses( $site_title, 'data' ); ?>
 			</p>
 		</div>
 	</section>
@@ -106,7 +106,7 @@ $change_pass_url = get_permalink( concordamos\get_page_by_template( 'concordamos
 		<?php endif; ?>
 		<div id="change-password-message"></div>
 		<div class="its-logo">
-			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>"
+			<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png' ); ?>"
 				alt="<?php esc_attr_e( 'ITS Logo' ); ?>">
 		</div>
 		</div>

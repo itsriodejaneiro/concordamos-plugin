@@ -25,10 +25,10 @@ $site_title = get_bloginfo( 'name' );
 	<section class="concordamos-balloon">
 		<div class="balloon-content">
 			<div class="arrow">
-				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
+				<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg' ); ?>" alt="voltar">
 			</div>
 			<p class="balloon-subtitle"><?php esc_html_e( 'A way to vote for consensus', 'concordamos' ); ?></p>
-			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" class="logo-image" alt="<?php esc_attr_e( 'Concordamos Logo', 'concordamos' ); ?>">
+			<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png' ); ?>" class="logo-image" alt="<?php esc_attr_e( 'Concordamos Logo', 'concordamos' ); ?>">
 		</div>
 	</section>
 	<form class="register-form" id="register-form">
@@ -93,14 +93,14 @@ $site_title = get_bloginfo( 'name' );
 				<button class="register-submit" type="submit"
 					data-loading-text="<?php esc_attr_e( 'Loading...', 'concordamos' ); ?>"><?php esc_html_e( "Let's go!", 'concordamos' ); ?></button>
 				<p>
-					<?php esc_html_e( 'Already have an account?', 'concordamos' ); ?> <a href="<?php echo $login_url; ?>">
+					<?php esc_html_e( 'Already have an account?', 'concordamos' ); ?> <a href="<?php echo esc_url( $login_url ); ?>">
 						<?php esc_html_e( 'Access here', 'concordamos' ); ?>
 					</a>.
 				</p>
 				<img src="" alt="">
 			</div>
 			<div class="its-logo">
-				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>"
+				<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png' ); ?>"
 					alt="<?php esc_attr_e( 'ITS Logo', 'concordamos' ); ?>">
 			</div>
 		</div>

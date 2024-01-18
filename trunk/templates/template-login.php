@@ -22,13 +22,13 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 	<section class="concordamos-balloon">
 		<div class="balloon-content">
 			<div class="arrow">
-				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg'; ?>" alt="voltar">
+				<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/arrow1.svg' ); ?>" alt="voltar">
 			</div>
 
 			<p class="balloon-subtitle">
 				<?php esc_html_e( 'A way to vote for consensus', 'concordamos' ); ?>
 			</p>
-			<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png'; ?>" class="logo-image" alt="<?php esc_attr_e( 'Concordamos Logo', 'concordamos' ); ?>">
+			<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/login-logo.png' ); ?>" class="logo-image" alt="<?php esc_attr_e( 'Concordamos Logo', 'concordamos' ); ?>">
 		</div>
 	</section>
 	<form id="login-form" class="login-form">
@@ -56,7 +56,7 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 						</button>
 					</div>
 				</label>
-				<a href="<?php echo $change_password_url; ?>">
+				<a href="<?php echo esc_url( $change_password_url ); ?>">
 					<?php esc_html_e( 'I forgot my password', 'concordamos' ); ?>
 				</a>
 			</div>
@@ -65,12 +65,12 @@ $register_url        = get_permalink( concordamos\get_page_by_template( 'concord
 					<?php esc_html_e( "Let's go!", 'concordamos' ); ?>
 				</button>
 				<p>
-					<?php esc_html_e( "Don't have an account?", 'concordamos' ); ?> <a href="<?php echo $register_url; ?>"><?php esc_html_e( 'Register here', 'concordamos' ); ?></a>.
+					<?php esc_html_e( "Don't have an account?", 'concordamos' ); ?> <a href="<?php echo esc_url( $register_url ); ?>"><?php esc_html_e( 'Register here', 'concordamos' ); ?></a>.
 				</p>
 			</div>
 			<div id="login-message"></div>
 			<div class="its-logo">
-				<img src="<?php echo CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png'; ?>"
+				<img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/its-login-logo.png' ); ?>"
 					alt="<?php esc_attr_e( 'ITS Logo' ); ?>">
 			</div>
 

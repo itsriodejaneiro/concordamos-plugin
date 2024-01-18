@@ -46,7 +46,7 @@ class Metadata {
 			// Render field based on type
 			$html = $this->render_field( $field, $meta_value );
 
-			echo $html;
+			echo wp_kses_post( $html );
 		}
 
 		echo '</div>';

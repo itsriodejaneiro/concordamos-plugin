@@ -34,7 +34,7 @@ if ( is_user_logged_in() ) {
 						<input name="password" type="password">
 					</div>
 				</label>
-				<a href="<?php echo get_permalink( concordamos\get_page_by_template( 'concordamos/template-change-pass.php' ) ); ?>">
+				<a href="<?php echo esc_url( get_permalink( concordamos\get_page_by_template( 'concordamos/template-change-pass.php' ) ) ); ?>">
 					<?php esc_html_e( 'I forgot my password', 'concordamos' ); ?>
 				</a>
 			</div>
@@ -43,7 +43,7 @@ if ( is_user_logged_in() ) {
 					<?php esc_html_e( "Let's go!", 'concordamos' ); ?>
 				</button>
 				<p>
-					<?php esc_html_e( "Don't have an account?", 'concordamos' ); ?> <a href="<?php echo get_permalink( concordamos\get_page_by_template( 'concordamos/template-create-user.php' ) ); ?>">
+					<?php esc_html_e( "Don't have an account?", 'concordamos' ); ?> <a href="<?php echo esc_url( get_permalink( concordamos\get_page_by_template( 'concordamos/template-create-user.php' ) ) ); ?>">
 						<?php esc_html_e( 'Register here', 'concordamos' ); ?>
 					</a>.
 				</p>

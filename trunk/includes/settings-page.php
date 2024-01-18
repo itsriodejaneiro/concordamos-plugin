@@ -118,11 +118,11 @@ function select_field_render( $args ) {
 	$name    = $args['name'];
 
 	?>
-	<select name='concordamos_options[<?php echo $name; ?>]'>
+	<select name='concordamos_options[<?php echo esc_attr( $name ); ?>]'>
 		<option value='' <?php selected( $options[ $name ], '', false ); ?>><?php esc_html_e( 'Select a page', 'concordamos' ); ?></option>
 		<?php
 		foreach ( $pages as $page ) {
-			echo "<option value='{$page->ID}' " . selected( $options[ $name ], $page->ID, false ) . ">{$page->post_title}</option>";
+			echo "<option value='" . esc_attr( $page->ID ) . "' " . selected( $options[ $name ], $page->ID, false ) . '>' . wp_kses( $page->post_title, 'data' ) . '</option>';
 		}
 		?>
 	</select>
@@ -135,11 +135,11 @@ function switch_field_render( $args ) {
 
 	?>
 	<label class="switch">
-		<input type="checkbox" value="yes" name="concordamos_options[<?php echo $name; ?>]"
-																				<?php
-																				if ( 'yes' == $options[ $name ] ) {
-																					echo 'checked="checked"';}
-																				?>
+		<input type="checkbox" value="yes" name="concordamos_options[<?php echo esc_attr( $name ); ?>]"
+			<?php
+			if ( 'yes' === $options[ $name ] ) {
+				echo 'checked="checked"';}
+			?>
 		>
 		<span class="slider round"></span>
 	</label>
