@@ -1,11 +1,9 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 $login_url  = get_permalink( concordamos\get_page_by_template( 'concordamos/template-login.php' ) );
 $site_title = get_bloginfo( 'name' );
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
 

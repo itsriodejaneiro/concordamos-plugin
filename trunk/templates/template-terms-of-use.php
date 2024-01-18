@@ -1,6 +1,8 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 ?>
+<!DOCTYPE html>
+<html>
 
 <head>
 	<meta charset="utf-8">
@@ -15,11 +17,11 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	
+
     <div class="terms-of-use-text">
         <p>teste</p>
     </div>
-	
+
 </body>
 
 </html>

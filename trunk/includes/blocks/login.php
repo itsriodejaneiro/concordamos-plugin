@@ -1,4 +1,7 @@
-<?php if ( is_user_logged_in() ) {
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+if ( is_user_logged_in() ) {
 	return;} ?>
 <section class="concordamos-login-block login-form">
 

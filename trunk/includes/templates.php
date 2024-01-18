@@ -45,8 +45,6 @@ function custom_page_templates( array $templates ): array {
 	$templates['concordamos/template-privacy-policy.php'] = __( 'Privacy Policy', 'concordamos' ) . ' [Concordamos]';
 	$templates['concordamos/template-terms-of-use.php'] = __( 'Terms of Use', 'concordamos' ) . ' [Concordamos]';
 
-
-
 	return $templates;
 }
 

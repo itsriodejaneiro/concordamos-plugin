@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 get_header();
 
 $site_title      = get_bloginfo( 'name' );
