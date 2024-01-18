@@ -80,7 +80,7 @@ module.exports = {
 		new CleanWebpackPlugin({
 			cleanAfterEveryBuildPatterns: ['!fonts/**', '!images/**'],
 		}),
-		new FixStyleOnlyEntriesPlugin(),
+		// new FixStyleOnlyEntriesPlugin(),
 		new MiniCssExtractPlugin({
 			filename: ({ chunk }) => `css/${chunk.name.replace(/\\/g, '/')}.css`,
 		}),

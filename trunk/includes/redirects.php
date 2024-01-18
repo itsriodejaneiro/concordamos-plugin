@@ -18,17 +18,20 @@ function restrict_voting_single_access() {
 		// If the provided `unique_id` has already been used, redirect to the voting archive.
 		if ( in_array( $unique_id, $expired_unique_ids ) ) {
 			if ( is_user_logged_in() ) {
-				wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
+				nocache_headers();
+				wp_safe_redirect( get_panel_url( get_permalink( $post_id ) ) );
 				exit;
 			} else {
-				wp_redirect( get_post_type_archive_link( 'voting' ) );
+				nocache_headers();
+				wp_safe_redirect( get_post_type_archive_link( 'voting' ) );
 				exit;
 			}
 		}
 
 		// Check if the logged-in user has already voted.
 		if ( is_user_logged_in() && get_vote_by_user( $post_id ) && get_query_var( 'panel' ) !== '1' ) {
-			wp_redirect( get_panel_url( get_permalink( $post_id ) ) );
+			nocache_headers();
+			wp_safe_redirect( get_panel_url( get_permalink( $post_id ) ) );
 			exit;
 		}
 	}
@@ -50,7 +53,8 @@ function required_login_to_create_voting() {
 		return;
 	}
 
-	wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
+	nocache_headers();
+	wp_safe_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
 	exit;
 }
 
@@ -67,7 +71,8 @@ function required_login_to_my_account() {
 		return;
 	}
 
-	wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
+	nocache_headers();
+	wp_safe_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
 	exit;
 }
 
@@ -86,11 +91,13 @@ function required_login_to_voting_panel() {
 	}
 
 	if ( isset( $_SERVER['REQUEST_URI'] ) && ! empty( $_SERVER['REQUEST_URI'] ) ) {
-		wp_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) . '?redirect_to=' . $_SERVER['REQUEST_URI'] ) );
+		nocache_headers();
+		wp_safe_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) . '?redirect_to=' . $_SERVER['REQUEST_URI'] ) );
 		exit;
 	}
 
-	wp_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) ) );
+	nocache_headers();
+	wp_safe_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) ) );
 	exit;
 }
 
@@ -102,11 +109,13 @@ function require_login_for_private_voting() {
 
 		if ( ! empty( $voting_access ) && $voting_access === 'yes' ) {
 			if ( isset( $_SERVER['REQUEST_URI'] ) && ! empty( $_SERVER['REQUEST_URI'] ) ) {
-				wp_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) . '?redirect_to=' . $_SERVER['REQUEST_URI'] ) );
+				nocache_headers();
+				wp_safe_redirect( esc_url( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) . '?redirect_to=' . $_SERVER['REQUEST_URI'] ) );
 				exit;
 			}
 
-			wp_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
+			nocache_headers();
+			wp_safe_redirect( get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ) );
 			exit;
 		}
 	}
@@ -122,7 +131,8 @@ function restrict_admin_access() {
 		$user = wp_get_current_user();
 
 		if ( in_array( 'concordamos_network', (array) $user->roles ) ) {
-			wp_redirect( home_url() );
+			nocache_headers();
+			wp_safe_redirect( home_url() );
 			exit;
 		}
 	}

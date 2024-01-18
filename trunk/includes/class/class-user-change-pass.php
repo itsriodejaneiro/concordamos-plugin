@@ -136,7 +136,8 @@ class User_Change_Pass {
 
 	public function redirect_logged_user() {
 		if ( is_user_logged_in() && strstr( get_page_template(), 'template-login.php' ) ) {
-			wp_redirect( home_url() );
+			nocache_headers();
+			wp_safe_redirect( home_url() );
 			exit;
 		}
 	}
