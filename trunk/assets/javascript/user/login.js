@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const inputPassword = document.querySelector('[name="password"]');
 
   buttonShowPassword.addEventListener('click', (e) => {
-    if( inputPassword.getAttribute( 'type') == 'password' ) {
+    if( inputPassword.getAttribute( 'type') === 'password' ) {
       inputPassword.setAttribute('type', 'text' )
     } else {
       inputPassword.setAttribute('type', 'password' )

@@ -163,9 +163,9 @@ function format_timestamp_date( $timestamp, $format = 'Y-m-d H:i:s' ) {
 function is_concordamos_user( $author, $include_admin = false ) {
 	$user = get_user_by( 'ID', $author );
 
-	if ( in_array( 'concordamos_network', $user->roles ) ) {
+	if ( in_array( 'concordamos_network', $user->roles, true ) ) {
 		return true;
-	} elseif ( $include_admin && in_array( 'administrator', $user->roles ) ) {
+	} elseif ( $include_admin && in_array( 'administrator', $user->roles, true ) ) {
 		return true;
 	}
 
@@ -230,7 +230,7 @@ function prepare_voting_for_api( \WP_Post $post ) {
 	$skipped_meta = array( 'expired_unique_id', 'unique_ids' );
 
 	foreach ( $raw_post_meta as $key => $value ) {
-		if ( ! str_starts_with( $key, '_' ) && ! in_array( $key, $skipped_meta ) && ! empty( $value ) ) {
+		if ( ! str_starts_with( $key, '_' ) && ! in_array( $key, $skipped_meta, true ) && ! empty( $value ) ) {
 			if ( is_numeric( $value[0] ) ) {
 				$post_meta[ $key ] = intval( $value[0] );
 			} else {

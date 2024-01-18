@@ -22,7 +22,7 @@ export default function Panel ({ initialData }) {
 		}
 	}
 
-	if (initialData.results_end == 'no' || initialData.voting_closed == 'yes') {
+	if (initialData.results_end === 'no' || initialData.voting_closed === 'yes') {
 		tabs.push({ id: 'results', label: __('Detailed results', 'concordamos') })
 	}
 

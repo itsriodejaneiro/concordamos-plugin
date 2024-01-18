@@ -63,7 +63,7 @@ new CPT(
  */
 function remove_admin_bar() {
 	$user = wp_get_current_user();
-	if ( in_array( 'concordamos_network', (array) $user->roles ) ) {
+	if ( in_array( 'concordamos_network', (array) $user->roles, true ) ) {
 		show_admin_bar( false );
 	}
 }

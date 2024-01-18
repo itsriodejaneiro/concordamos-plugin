@@ -46,7 +46,7 @@ class User_Register {
 
 		if ( ( ! isset( $data['password'] ) || empty( $data['password'] ) ) ) {
 			$errors['password'][] = __( 'Password field is empty.', 'concordamos' );
-		} elseif ( $data['password'] != $data['repeat-password'] ) {
+		} elseif ( $data['password'] !== $data['repeat-password'] ) {
 				$errors['repeat-password'][] = __( "Passwords fields don't match.", 'concordamos' );
 		}
 

@@ -16,7 +16,7 @@ function restrict_voting_single_access() {
 		$expired_unique_ids = array_filter( explode( ',', get_post_meta( $post_id, 'expired_unique_ids', true ) ) );
 
 		// If the provided `unique_id` has already been used, redirect to the voting archive.
-		if ( in_array( $unique_id, $expired_unique_ids ) ) {
+		if ( in_array( $unique_id, $expired_unique_ids, true ) ) {
 			if ( is_user_logged_in() ) {
 				nocache_headers();
 				wp_safe_redirect( get_panel_url( get_permalink( $post_id ) ) );
@@ -130,7 +130,7 @@ function restrict_admin_access() {
 	if ( is_admin() ) {
 		$user = wp_get_current_user();
 
-		if ( in_array( 'concordamos_network', (array) $user->roles ) ) {
+		if ( in_array( 'concordamos_network', (array) $user->roles, true ) ) {
 			nocache_headers();
 			wp_safe_redirect( home_url() );
 			exit;

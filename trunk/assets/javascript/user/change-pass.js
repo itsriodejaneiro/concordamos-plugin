@@ -92,7 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	const inputPassword = document.querySelector('[name="password"]');
 	const inputRepeatPassword = document.querySelector('[name="repeat-password"]');
 	buttonShowPassword.addEventListener('click', (e) => {
-		if (inputPassword.getAttribute('type') == 'password') {
+		if (inputPassword.getAttribute('type') === 'password') {
 			inputPassword.setAttribute('type', 'text')
 			inputRepeatPassword.setAttribute('type', 'text');
 		} else {

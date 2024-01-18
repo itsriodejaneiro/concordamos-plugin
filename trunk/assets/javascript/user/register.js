@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const showErrors = (errors) => {
             for (const field in errors) {
                 const eachFieldErrors = errors[field];
-                if (field == 'general') {
+                if (field === 'general') {
                     showGeneralErrors(eachFieldErrors);
                     continue;
                 }
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputPassword = document.querySelector('[name="password"]');
         const inputRepeatPassword = document.querySelector('[name="repeat-password"]');
         buttonShowPassword.addEventListener('click', (e) => {
-            if (inputPassword.getAttribute('type') == 'password') {
+            if (inputPassword.getAttribute('type') === 'password') {
                 inputPassword.setAttribute('type', 'text')
                 inputRepeatPassword.setAttribute('type', 'text');
             } else {

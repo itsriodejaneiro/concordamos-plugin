@@ -168,7 +168,7 @@ class User_Change_Pass {
 		if ( ! isset( $data['password'] ) || empty( $data['password'] ) ) {
 			return new \WP_Error( 'invalid_data', __( 'Password field is empty.', 'concordamos' ), array( 'status' => 400 ) );
 		}
-		if ( ! isset( $data['repeat_password'] ) || $data['password'] != $data['repeat_password'] ) {
+		if ( ! isset( $data['repeat_password'] ) || $data['password'] !== $data['repeat_password'] ) {
 			return new \WP_Error( 'invalid_data', __( "Passwords fields don't match.", 'concordamos' ), array( 'status' => 400 ) );
 		}
 		if ( ! isset( $data['token'] ) || empty( $data['token'] ) ) {

@@ -37,7 +37,7 @@ export default function SingleView ({ handleViewChange, initialData }) {
 							<>
 								<button type="button primary" onClick={handleViewChange}>{__('Participate of the voting', 'concordamos')}</button>
 
-								{ (results_end == 'no') ? (
+								{ (results_end === 'no') ? (
 									<a className="button primary" href={getPanelUrl(window.location.href)}>{__('See detailed results', 'concordamos')}</a>
 								) : null }
 

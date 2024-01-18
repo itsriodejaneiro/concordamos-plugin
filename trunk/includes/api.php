@@ -148,14 +148,14 @@ function permission_check( \WP_REST_Request $request ) {
 
 	$user = wp_get_current_user();
 
-	if ( ! in_array( 'concordamos_network', $user->roles ) && ! in_array( 'administrator', $user->roles ) ) {
+	if ( ! in_array( 'concordamos_network', $user->roles, true ) && ! in_array( 'administrator', $user->roles, true ) ) {
 		return new \WP_Error( 'rest_forbidden', __( "You don't have enough permissions.", 'concordamos' ), array( 'status' => 403 ) );
 	}
 
 	if ( $request->get_method() !== 'GET' ) {
 		$params = $request->get_json_params();
 
-		if ( $params['user_id'] != $user->ID ) {
+		if ( intval( $params['user_id'] ) !== $user->ID ) {
 			return new \WP_Error( 'rest_forbidden', __( "You don't have enough permissions.", 'concordamos' ), array( 'status' => 403 ) );
 		}
 	}
@@ -450,7 +450,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 function patch_voting_callback( \WP_REST_Request $request ) {
 	$params = $request->get_json_params();
 
-	if ( get_post_field( 'post_author', $params['v_id'] ) != $params['user_id'] ) {
+	if ( get_post_field( 'post_author', $params['v_id'] ) !== $params['user_id'] ) {
 		$response = array(
 			'status'  => 'error',
 			'message' => __( "You don't have enough permissions.", 'concordamos' ),
@@ -535,7 +535,7 @@ function get_voting_links_callback( \WP_REST_Request $request ) {
 
 	$valid_uids = array();
 	foreach ( $all_uids as $uid ) {
-		if ( ! empty( $uid ) && ! in_array( $uid, $expired_uids ) ) {
+		if ( ! empty( $uid ) && ! in_array( $uid, $expired_uids, true ) ) {
 			$valid_uids[] = $uid;
 		}
 	}
@@ -701,7 +701,7 @@ function vote_callback( \WP_REST_Request $request ) {
 			$expired_unique_ids = array_filter( explode( ',', $raw_post_meta['expired_unique_ids'][0] ) );
 
 			// Checks that unique ID was not used
-			if ( in_array( $unique_id, $expired_unique_ids ) ) {
+			if ( in_array( $unique_id, $expired_unique_ids, true ) ) {
 				$response = array(
 					'status'  => 'error',
 					'message' => __( 'Expired link', 'concordamos' ),
@@ -810,7 +810,7 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 						$used_credits += abs( $value ) ** 2;
 					}
 
-					$index = array_search( $label, $data_graphic['labels'] );
+					$index = array_search( $label, $data_graphic['labels'], true );
 
 					if ( $index !== false ) {
 						$data_graphic['dataset'][ $index ] += $value;
