@@ -78,10 +78,10 @@ class User_Change_Pass {
 
 			$site_name = get_bloginfo( 'name' );
 			$url       = get_permalink( get_page_by_template( 'concordamos/template-change-pass.php' ) ) . '?concordamos_change_pass_tk=' . $token_key;
-			$link      = sprintf( '<a href="%s">%s</a>', esc_attr( $url ), esc_html( $url ) );
+			$link      = sprintf( '<a href="%s">%s</a>', esc_url( $url ), esc_url( $url ) );
 
 			$email_subject = sprintf( __( '[%s] Password Reset', 'concordamos' ), esc_html( $site_name ) );
-			$email_message = sprintf( __( 'You have requested a password reset. Click the following link to reset your password: %s', 'concordamos' ), esc_html( $link ) );
+			$email_message = sprintf( __( 'You have requested a password reset. Click the following link to reset your password: %s', 'concordamos' ), wp_kses( $link, 'data' ) );
 			$email_headers = array( 'Content-Type: text/html; charset=UTF-8' );
 
 			wp_mail( $user_email, $email_subject, $email_message, $email_headers );
