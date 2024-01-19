@@ -120,7 +120,7 @@ function enqueue_scripts_frontend() {
 			array(
 				'a_id'           => is_user_logged_in() ? get_post_meta( $get_the_id, 'admin_id', true ) : '',
 				'admin_email'    => get_bloginfo( 'admin_email' ),
-				'faq_url'        => get_faq_page_url(),
+				'faq_url'        => get_permalink( get_faq_page() ),
 				'is_author'      => get_post_field( 'post_author', $get_the_id ) == get_current_user_id() ? true : false,
 				'negative_votes' => get_post_meta( $get_the_id, 'negative_votes', true ),
 				'nonce'          => wp_create_nonce( 'wp_rest' ),

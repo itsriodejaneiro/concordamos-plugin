@@ -3,39 +3,13 @@
 namespace Concordamos;
 
 function get_faq_page() {
-	$options = get_option( 'concordamos_options' );
-
-	if ( isset( $options['faq_page'] ) && ! empty( $options['faq_page'] ) ) {
-		return $options['faq_page'];
-	}
-
-	return '';
-}
-
-function get_faq_page_url() {
-	$get_faq_page_id = get_faq_page();
-
-	if ( $get_faq_page_id ) {
-		return get_the_permalink( $get_faq_page_id );
-	}
-
-	return '';
-}
-
-function get_login_page() {
-	$options = get_option( 'concordamos_options' );
-
-	if ( isset( $options['login_page'] ) && ! empty( $options['login_page'] ) ) {
-		return $options['login_page'];
-	}
-
-	return '';
+	return get_option( 'concordamos_faq_page', false );
 }
 
 function use_unique_links() {
-	$options = get_option( 'concordamos_options' );
+	$option = get_option( 'concordamos_use_unique_links', '' );
 
-	if ( isset( $options['use_unique_links'] ) && 'yes' === $options['use_unique_links'] ) {
+	if ( ! empty( $option ) && 'yes' === $option ) {
 		return true;
 	}
 
@@ -397,10 +371,10 @@ function get_change_password_token_status() {
 }
 
 function get_link_to_faq() {
-	$faq_link = get_faq_page();
+	$faq_page = get_faq_page();
 
-	if ( $faq_link ) {
-		printf( '<a href="%s" class="concordamos-button-faq">%s</a>', esc_url( get_permalink( $faq_link ) ), esc_html__( 'How to vote', 'concordamos' ) );
+	if ( ! empty( $faq_page ) ) {
+		printf( '<a href="%s" class="concordamos-button-faq">%s</a>', esc_url( get_permalink( $faq_page ) ), esc_html__( 'How to vote', 'concordamos' ) );
 	}
 }
 add_action( 'wp_footer', 'Concordamos\get_link_to_faq' );

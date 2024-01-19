@@ -56,8 +56,6 @@ function settings_page_html() {
  * @return void
  */
 function settings_init() {
-	register_setting( 'concordamos', 'concordamos_options' );
-
 	add_settings_section(
 		'concordamos_section',
 		__( 'Pages Templates', 'concordamos' ),
@@ -65,14 +63,15 @@ function settings_init() {
 		'concordamos-settings'
 	);
 
+	register_setting( 'concordamos', 'concordamos_faq_page' );
 	add_settings_field(
-		'faq_page',
+		'concordamos_faq_page',
 		__( 'FAQ', 'concordamos' ),
 		'Concordamos\select_field_render',
 		'concordamos-settings',
 		'concordamos_section',
 		array(
-			'name' => 'faq_page',
+			'name' => 'concordamos_faq_page',
 		)
 	);
 
@@ -83,14 +82,15 @@ function settings_init() {
 		'concordamos-settings'
 	);
 
+	register_setting( 'concordamos', 'concordamos_use_unique_links' );
 	add_settings_field(
-		'use_unique_links',
+		'concordamos_use_unique_links',
 		__( 'Use unique links on private votings?', 'concordamos' ),
 		'Concordamos\switch_field_render',
 		'concordamos-settings',
 		'concordamos_section_private_votings',
 		array(
-			'name' => 'use_unique_links',
+			'name' => 'concordamos_use_unique_links',
 			'help' => __( 'By enabling this setting, only private votings that are created from now on will display the unique poll links.', 'concordamos' ),
 		)
 	);
@@ -102,16 +102,15 @@ function section_callback() {
 }
 
 function select_field_render( $args ) {
-	$options = get_option( 'concordamos_options' );
-	$pages   = get_pages();
-	$name    = $args['name'];
-
+	$name   = $args['name'];
+	$option = get_option( $name );
+	$pages  = get_pages();
 	?>
-	<select name='concordamos_options[<?php echo esc_attr( $name ); ?>]'>
-		<option value='' <?php selected( $options[ $name ], '', false ); ?>><?php esc_html_e( 'Select a page', 'concordamos' ); ?></option>
+	<select name='<?php echo esc_attr( $name ); ?>'>
+		<option value='' <?php selected( $option, '', false ); ?>><?php esc_html_e( 'Select a page', 'concordamos' ); ?></option>
 		<?php
 		foreach ( $pages as $page ) {
-			echo "<option value='" . esc_attr( $page->ID ) . "' " . selected( $options[ $name ], $page->ID, false ) . '>' . wp_kses( $page->post_title, 'data' ) . '</option>';
+			echo "<option value='" . esc_attr( $page->ID ) . "' " . selected( $option, $page->ID, false ) . '>' . wp_kses( $page->post_title, 'data' ) . '</option>';
 		}
 		?>
 	</select>
@@ -119,14 +118,13 @@ function select_field_render( $args ) {
 }
 
 function switch_field_render( $args ) {
-	$options = get_option( 'concordamos_options' );
-	$name    = $args['name'];
-
+	$name   = $args['name'];
+	$option = get_option( $name );
 	?>
 	<label class="switch">
-		<input type="checkbox" value="yes" name="concordamos_options[<?php echo esc_attr( $name ); ?>]"
+		<input type="checkbox" value="yes" name="<?php echo esc_attr( $name ); ?>"
 			<?php
-			if ( 'yes' === $options[ $name ] ) {
+			if ( 'yes' === $option ) {
 				echo 'checked="checked"';}
 			?>
 		>
