@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
 "POT-Creation-Date: 2024-01-19T17:14:02+00:00\n"
-"PO-Revision-Date: 2024-01-19 14:19-0300\n"
+"PO-Revision-Date: 2024-01-19 15:39-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -403,7 +403,7 @@ msgstr "Termos de uso"
 #: templates/single-voting.php:21
 msgctxt "date"
 msgid "M d, Y"
-msgstr "d/M/Y"
+msgstr "d/m/Y"
 
 #: templates/single-voting.php:22
 msgctxt "time"
