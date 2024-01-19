@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-01-19T17:14:02+00:00\n"
-"PO-Revision-Date: 2024-01-19 15:39-0300\n"
+"POT-Creation-Date: 2024-01-19T21:03:57+00:00\n"
+"PO-Revision-Date: 2024-01-19 18:04-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -335,32 +335,32 @@ msgstr ""
 msgid "Select a page"
 msgstr "Selecione uma página"
 
-#: includes/setup.php:14
+#: includes/setup.php:17
 #: assets/javascript/voting-single/components/VotingResults.js:35
 msgid "Votes"
 msgstr "Votos"
 
-#: includes/setup.php:15
+#: includes/setup.php:18
 msgctxt "noun"
 msgid "Vote"
 msgstr "Voto"
 
-#: includes/setup.php:28 templates/part/navbar-mobile.php:12
+#: includes/setup.php:29 templates/part/navbar-mobile.php:12
 #: assets/javascript/votings-block/editor.js:8
 #: assets/javascript/votings-block/editor.js:18
 #: build/js/votings-block/editor.js:1
 msgid "Votings"
 msgstr "Votações"
 
-#: includes/setup.php:29 templates/single-voting.php:42
+#: includes/setup.php:30 templates/single-voting.php:42
 msgid "Voting"
 msgstr "Votação"
 
-#: includes/setup.php:55
+#: includes/setup.php:52
 msgid "Options"
 msgstr "Opções"
 
-#: includes/setup.php:56
+#: includes/setup.php:53
 msgid "Option"
 msgstr "Opção"
 
@@ -518,11 +518,11 @@ msgstr "Votações criadas por mim"
 msgid "Votings I participated"
 msgstr "Votações em que participei"
 
-#: assets/javascript/my-account/App.js:42 build/js/my-account/index.js:1
+#: assets/javascript/my-account/App.js:41 build/js/my-account/index.js:1
 msgid "Hello, %s"
 msgstr "Olá, %s"
 
-#: assets/javascript/my-account/App.js:44 build/js/my-account/index.js:1
+#: assets/javascript/my-account/App.js:43 build/js/my-account/index.js:1
 msgid "Sign out"
 msgstr "Sair"
 
