@@ -59,7 +59,7 @@ class Metadata {
 		}
 
 		// Check if nonce is valid
-		$nonce = filter_input( INPUT_POST, $this->metabox_id . '_nonce' );
+		$nonce = sanitize_text_field( wp_unslash( $_POST[ $this->metabox_id . '_nonce' ] ) );
 		if ( ! wp_verify_nonce( $nonce, $this->metabox_id . '_save' ) ) {
 			return $post_id;
 		}
