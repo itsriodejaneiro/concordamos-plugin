@@ -32,7 +32,6 @@ O _plugin_ permite, com muita flexibilidade:
 
 Para instalar o _plugin_ em uma plataforma _WordPress_ é necessário que atenda pré-requisito(s):
 - Versão do _WordPress_: 5.8 ou mais atual
-- tag estável: 0.1.0
 - Versão do _PHP_: 7.4
 - Habilitar _API REST_
 

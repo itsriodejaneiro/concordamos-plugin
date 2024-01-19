@@ -2,8 +2,8 @@
 Contributors: itsrio
 Tags: quadratic, voting, vote
 Requires at least: 5.8
-Tested up to: 6.3
-Stable tag: 0.1.0
+Tested up to: 6.4
+Stable tag: 0.2.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,6 +37,11 @@ The plugin is currently available in English and Portuguese.
 5. Detailed results page
 
 == Changelog ==
+
+= 0.2.0 =
+* Fixed many bugs and vulnerabilities
+* BREAKING: "Create voting" page is now defined by a page template, not via plugin settings
+* BREAKING: Other plugin options were renamed; re-configure the plugin after updating
 
 = 0.1.0 =
 * Initial public release of the plugin

@@ -5,7 +5,7 @@ namespace Concordamos;
 /**
  * Register custom post types and taxonomies
  */
-function register_cpts () {
+function register_cpts() {
 	new CPT(
 		'vote',
 		array(
