@@ -35,8 +35,6 @@ function restrict_voting_single_access() {
 			exit;
 		}
 	}
-
-	return;
 }
 
 add_action( 'template_redirect', 'Concordamos\restrict_voting_single_access' );
