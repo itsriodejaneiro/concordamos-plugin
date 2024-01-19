@@ -59,14 +59,7 @@ Ocorrerá o direcionamento para o painel do _WordPress_:
 Para implementar as páginas de votações, após acessar o painel do WordPress, é necessário acessar **Páginas** e clicar em **adicionar nova** para adicionar uma nova página:
 ![image](https://github.com/itsrioadmin/Concordamos/assets/75261677/b7a86ed7-d2e2-40a6-83f7-55378dbcb6c6)
 
-Após clicar **adicionar nova**, deve atribuir um nome e clicar em **publicar**. Iremos chamá-la de **Criar votação**, mas você pode atribuir um nome de sua escolha. A página deve possuir direcionamento em seu tema, para que usuários da sua plataforma consigam acessá-la:
-![image](https://github.com/itsrioadmin/Concordamos/assets/75261677/e7398457-b6f4-4246-90e4-1016a167c169)
-
-Após criar uma página destinada para as páginas das votações, no menu lateral do _WordPress_ deve acessar **Configuração do Concordamos**:
-![image](https://github.com/itsrioadmin/Concordamos/assets/75261677/24f6e7c9-1856-4c54-94ca-6133150b18e0)
-
-No campo **Criar votação** deve selecionar a nova página adicionada no passo anterior. Não se esqueça de clicar em Salvar Configurações:
-![image](https://github.com/itsrioadmin/Concordamos/assets/75261677/edf0db6c-61ac-4820-86b3-021c896ce36c)
+Após clicar **adicionar nova**, deve atribuir um nome e clicar em **publicar**. Iremos chamá-la de **Criar votação**, mas você pode atribuir um nome de sua escolha. Em **Modelo**, selecionaremos **Criar votação**.
 
 Com isso, todas as páginas da votação serão implementadas no site. Sendo elas: **criação de votação**, **lista de votações públicas**, **detalhes da votação**, **votação** e **informações da votação**.
 
