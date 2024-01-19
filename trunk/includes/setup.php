@@ -2,61 +2,59 @@
 
 namespace Concordamos;
 
-// Custom post type `vote`
-new CPT(
-	'vote',
-	array(
-		'menu_icon' => 'dashicons-forms',
-		'show_ui'   => false,
-		'supports'  => array( 'author', 'title' ),
-	),
-	array(
-		'name'          => __( 'Votes', 'concordamos' ),
-		'singular_name' => _x( 'Vote', 'noun', 'concordamos' ),
-	),
-);
+/**
+ * Register custom post types and taxonomies
+ */
+function register_cpts () {
+	new CPT(
+		'vote',
+		array(
+			'menu_icon' => 'dashicons-forms',
+			'show_ui'   => false,
+			'supports'  => array( 'author', 'title' ),
+		),
+		array(
+			'name'          => __( 'Votes', 'concordamos' ),
+			'singular_name' => _x( 'Vote', 'noun', 'concordamos' ),
+		),
+	);
 
+	new CPT(
+		'voting',
+		array(
+			'menu_icon' => 'dashicons-yes-alt',
+			'supports'  => array( 'author', 'editor', 'title' ),
+		),
+		array(
+			'name'          => __( 'Votings', 'concordamos' ),
+			'singular_name' => __( 'Voting', 'concordamos' ),
+		),
+	);
 
-// Custom post type `voting`
-new CPT(
-	'voting',
-	array(
-		'menu_icon' => 'dashicons-yes-alt',
-		'supports'  => array( 'author', 'editor', 'title' ),
-	),
-	array(
-		'name'          => __( 'Votings', 'concordamos' ),
-		'singular_name' => __( 'Voting', 'concordamos' ),
-	),
-);
+	new Taxonomy(
+		'voting',
+		'tag',
+		array(
+			'hierarchical'      => false,
+			'public'            => true,
+			'show_in_nav_menus' => true,
+		)
+	);
 
-
-// Taxonomy `tag`
-new Taxonomy(
-	'voting',
-	'tag',
-	array(
-		'hierarchical'      => false,
-		'public'            => true,
-		'show_in_nav_menus' => true,
-	)
-);
-
-
-// Custom post type `options`
-new CPT(
-	'option',
-	array(
-		'menu_icon' => 'dashicons-table-row-after',
-		'show_ui'   => false,
-		'supports'  => array( 'author', 'title' ),
-	),
-	array(
-		'name'          => __( 'Options', 'concordamos' ),
-		'singular_name' => __( 'Option', 'concordamos' ),
-	),
-);
-
+	new CPT(
+		'option',
+		array(
+			'menu_icon' => 'dashicons-table-row-after',
+			'show_ui'   => false,
+			'supports'  => array( 'author', 'title' ),
+		),
+		array(
+			'name'          => __( 'Options', 'concordamos' ),
+			'singular_name' => __( 'Option', 'concordamos' ),
+		),
+	);
+}
+add_action( 'init', 'Concordamos\register_cpts', CPT::PRIORITY );
 
 /**
  * Remove the admin_bar of the users with role `concordamos_network`

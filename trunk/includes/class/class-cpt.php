@@ -7,12 +7,14 @@ class CPT {
 	private $post_type_labels;
 	private $post_type_name;
 
+	const PRIORITY = 0;
+
 	public function __construct( $name, $args, $labels ) {
 		$this->post_type_name   = strtolower( str_replace( ' ', '_', $name ) );
 		$this->post_type_args   = $args;
 		$this->post_type_labels = $labels;
 
-		add_action( 'init', array( $this, 'register_custom_post_type' ) );
+		add_action( 'init', array( $this, 'register_custom_post_type' ), self::PRIORITY + 1 );
 	}
 
 	public function register_custom_post_type() {
