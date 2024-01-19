@@ -2,20 +2,6 @@
 
 namespace Concordamos;
 
-function add_create_voting_form( $content ) {
-	if ( is_page() && is_main_query() ) {
-		$voting_page = get_voting_page();
-
-		if ( get_the_ID() == $voting_page ) {
-			$content .= '<div id="concordamos-voting-form"></div>';
-		}
-	}
-
-	return $content;
-}
-
-add_filter( 'the_content', 'Concordamos\add_create_voting_form' );
-
 function load_single_voting_template( $template ) {
 	if ( is_singular( 'voting' ) && $template !== locate_template( array( 'single-voting.php' ) ) ) {
 		return CONCORDAMOS_PLUGIN_PATH . 'templates/single-voting.php';
@@ -38,6 +24,7 @@ function load_voting_archive_template( $template ) {
 add_filter( 'archive_template', 'Concordamos\load_voting_archive_template' );
 
 function custom_page_templates( array $templates ): array {
+	$templates['concordamos/template-create-voting.php']  = __( 'Create voting', 'concordamos' ) . ' [Concordamos]';
 	$templates['concordamos/template-login.php']          = __( 'Login', 'concordamos' ) . ' [Concordamos]';
 	$templates['concordamos/template-create-user.php']    = __( 'Create user', 'concordamos' ) . ' [Concordamos]';
 	$templates['concordamos/template-my-account.php']     = __( 'My account', 'concordamos' ) . ' [Concordamos]';

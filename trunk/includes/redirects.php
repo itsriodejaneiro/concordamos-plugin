@@ -44,7 +44,9 @@ add_action( 'template_redirect', 'Concordamos\restrict_voting_single_access' );
  * @return void
  */
 function required_login_to_create_voting() {
-	if ( get_voting_page() != get_the_ID() ) {
+	$voting_page = get_page_by_template( 'concordamos/template-create-voting.php' );
+
+	if ( $voting_page->ID !== get_the_ID() ) {
 		return;
 	}
 	if ( is_user_logged_in() ) {

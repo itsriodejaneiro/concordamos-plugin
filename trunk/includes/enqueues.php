@@ -12,9 +12,9 @@ function enqueue_scripts_frontend() {
 	wp_register_style( 'concordamos-style', CONCORDAMOS_PLUGIN_URL . 'build/css/plugin.css', array(), CONCORDAMOS_PLUGIN_VERSION );
 
 	if ( is_page() ) {
-		$voting_page = get_voting_page();
+		$template_slug = get_page_template_slug();
 
-		if ( get_the_ID() == $voting_page ) {
+		if ( $template_slug === 'concordamos/template-create-voting.php' ) {
 			wp_enqueue_style( 'concordamos-voting-form-style', CONCORDAMOS_PLUGIN_URL . 'build/css/voting-page.css', array( 'concordamos-style' ), CONCORDAMOS_PLUGIN_VERSION );
 
 			enqueue_localized_script(
@@ -30,8 +30,6 @@ function enqueue_scripts_frontend() {
 				)
 			);
 		}
-
-		$template_slug = get_page_template_slug();
 
 		if ( $template_slug === 'concordamos/template-login.php' ) {
 			wp_enqueue_style( 'concordamos-template-login-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-login.css', array( 'concordamos-style' ), CONCORDAMOS_PLUGIN_VERSION );
@@ -78,7 +76,7 @@ function enqueue_scripts_frontend() {
 				array( 'wp-element', 'wp-i18n' ),
 				'concordamos',
 				array(
-					'create_voting_url' => get_permalink( get_voting_page() ),
+					'create_voting_url' => get_permalink( get_page_by_template( 'concordamos/template-create-voting.php' ) ),
 					'login_url'         => get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ),
 					'nonce'             => wp_create_nonce( 'wp_rest' ),
 					'plugin_url'        => CONCORDAMOS_PLUGIN_URL,

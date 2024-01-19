@@ -3,7 +3,7 @@ namespace Concordamos;
 
 if ( is_user_logged_in() ) : ?>
 	<nav class="navbar-mobile">
-		<a class="btn-1" href="<?php echo esc_url( get_permalink( get_voting_page() ) ); ?>">
+		<a class="btn-1" href="<?php echo esc_url( get_permalink( get_page_by_template( 'concordamos/template-create-voting.php' ) ) ); ?>">
 			<span><img src="<?php echo esc_url( CONCORDAMOS_PLUGIN_URL . 'assets/images/calendar-mob.svg' ); ?>"></span>
 			<p><?php esc_html_e( 'Create voting', 'concordamos' ); ?></p>
 		</a>

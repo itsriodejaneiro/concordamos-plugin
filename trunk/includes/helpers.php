@@ -2,16 +2,6 @@
 
 namespace Concordamos;
 
-function get_voting_page() {
-	$options = get_option( 'concordamos_options' );
-
-	if ( isset( $options['voting_page'] ) && ! empty( $options['voting_page'] ) ) {
-		return $options['voting_page'];
-	}
-
-	return '';
-}
-
 function get_faq_page() {
 	$options = get_option( 'concordamos_options' );
 
