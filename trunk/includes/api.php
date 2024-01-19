@@ -555,8 +555,6 @@ function get_my_account_callback( \WP_REST_Request $request ) {
 		'name'  => $user->display_name,
 		'roles' => $user->roles,
 	);
-
-	return $user;
 }
 
 function patch_my_account_callback( \WP_REST_Request $request ) {
