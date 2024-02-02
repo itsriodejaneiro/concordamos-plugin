@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-01-19T21:03:57+00:00\n"
-"PO-Revision-Date: 2024-01-19 18:04-0300\n"
+"POT-Creation-Date: 2024-02-02T20:08:25+00:00\n"
+"PO-Revision-Date: 2024-02-02 17:09-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -337,6 +337,7 @@ msgstr "Selecione uma página"
 
 #: includes/setup.php:17
 #: assets/javascript/voting-single/components/VotingResults.js:35
+#: build/js/voting-single/index.js:1
 msgid "Votes"
 msgstr "Votos"
 
@@ -391,12 +392,16 @@ msgid "Change password"
 msgstr "Alterar senha"
 
 #: includes/templates.php:32 templates/template-create-user.php:84
+#: assets/javascript/my-account/components/PrivacyPolicyModal.js:8
 #: assets/javascript/user/components/AcceptTerms.js:15
+#: build/js/my-account/index.js:1 build/js/user/register.js:1
 msgid "Privacy Policy"
 msgstr "Política de privacidade"
 
 #: includes/templates.php:33 templates/template-create-user.php:87
+#: assets/javascript/my-account/components/TermsOfUseModal.js:9
 #: assets/javascript/user/components/AcceptTerms.js:19
+#: build/js/my-account/index.js:1 build/js/user/register.js:1
 msgid "Terms of Use"
 msgstr "Termos de uso"
 
@@ -486,11 +491,13 @@ msgstr "Nome"
 
 #: templates/template-create-user.php:83
 #: assets/javascript/user/components/AcceptTerms.js:13
+#: build/js/user/register.js:1
 msgid "You accept the"
 msgstr "Você aceita a"
 
 #: templates/template-create-user.php:86
 #: assets/javascript/user/components/AcceptTerms.js:17
+#: build/js/user/register.js:1
 msgid "and"
 msgstr "e"
 
@@ -703,8 +710,8 @@ msgid "Filters"
 msgstr "Filtros"
 
 #: assets/javascript/shared/components/Modal.js:31
-#: build/js/my-account/index.js:1 build/js/voting-page/index.js:1
-#: build/js/voting-single/index.js:1
+#: build/js/my-account/index.js:1 build/js/user/register.js:1
+#: build/js/voting-page/index.js:1 build/js/voting-single/index.js:1
 msgid "Close"
 msgstr "Fechar"
 
@@ -1176,6 +1183,7 @@ msgstr ""
 
 #: assets/javascript/voting-single/components/SingleVoting.js:132
 #: assets/javascript/voting-single/components/SingleVoting.js:148
+#: build/js/voting-single/index.js:1
 msgid "Sending vote..."
 msgstr "Enviando voto..."
 
@@ -1262,6 +1270,7 @@ msgid "Percents"
 msgstr "Porcentagem"
 
 #: assets/javascript/voting-single/components/VotingResults.js:81
+#: build/js/voting-single/index.js:1
 msgid "Participants voting"
 msgstr "Participantes da votação"
 
@@ -1305,9 +1314,8 @@ msgstr "Deletar votação"
 msgid "Search votings"
 msgstr "Pesquisar votações"
 
-#: build/js/voting-single/index.js:1
-msgid "Credits"
-msgstr "Créditos"
+#~ msgid "Credits"
+#~ msgstr "Créditos"
 
 #~ msgid "You must accept the Image Terms of Use"
 #~ msgstr "Você deve aceitar os termos de uso de imagem"

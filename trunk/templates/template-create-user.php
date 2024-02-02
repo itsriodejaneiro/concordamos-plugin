@@ -80,10 +80,10 @@ $site_title = get_bloginfo( 'name' );
 			<div class="accept-checkbox-terms">
 				<input type="checkbox" id="terms" name="terms" />
 				<label for="terms">
-					<?php esc_html_e( 'You accept the', 'concordamos' ); ?> <a>
+					<?php esc_html_e( 'You accept the', 'concordamos' ); ?> <a href="javascript:void(0)">
 						<?php esc_html_e( 'Privacy Policy', 'concordamos' ); ?>
 					</a>
-					<?php esc_html_e( 'and', 'concordamos' ); ?> <a>
+					<?php esc_html_e( 'and', 'concordamos' ); ?> <a href="javascript:void(0)">
 						<?php esc_html_e( 'Terms of Use', 'concordamos' ); ?>
 					</a>
 				</label>
