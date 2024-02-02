@@ -27,7 +27,7 @@ export function App ({ initialData }) {
 			'user_id': concordamos.user_id,
 		})
 		.then(() => {
-			navigateTo('/voting')
+			navigateTo(concordamos.voting_archive_url)
 		})
 	}
 
@@ -35,7 +35,7 @@ export function App ({ initialData }) {
 		<div className="my-account">
 			<div className="my-account-header">
 				<div className="my-account-header__name">{__('My account', 'concordamos')}</div>
-				
+
 				<div className="my-account-header__wrapper">
 					<div>
 						<h1>{sprintf(__('Hello, %s', 'concordamos'), user.name)}</h1>

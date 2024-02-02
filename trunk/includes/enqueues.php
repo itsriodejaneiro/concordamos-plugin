@@ -76,14 +76,15 @@ function enqueue_scripts_frontend() {
 				array( 'wp-element', 'wp-i18n' ),
 				'concordamos',
 				array(
-					'create_voting_url' => get_permalink( get_page_by_template( 'concordamos/template-create-voting.php' ) ),
-					'login_url'         => get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ),
-					'nonce'             => wp_create_nonce( 'wp_rest' ),
-					'plugin_url'        => CONCORDAMOS_PLUGIN_URL,
-					'privacy_policy'    => get_the_content( null, false, get_page_by_template( 'concordamos/template-privacy-policy.php' ) ),
-					'rest_url'          => rest_url( 'concordamos/v1/' ),
-					'terms_of_use'      => get_the_content( null, false, get_page_by_template( 'concordamos/template-terms-of-use.php' ) ),
-					'user_id'           => get_current_user_id(),
+					'voting_archive_url' => get_post_type_archive_link( 'voting' ),
+					'create_voting_url'  => get_permalink( get_page_by_template( 'concordamos/template-create-voting.php' ) ),
+					'login_url'          => get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ),
+					'nonce'              => wp_create_nonce( 'wp_rest' ),
+					'plugin_url'         => CONCORDAMOS_PLUGIN_URL,
+					'privacy_policy'     => get_the_content( null, false, get_page_by_template( 'concordamos/template-privacy-policy.php' ) ),
+					'rest_url'           => rest_url( 'concordamos/v1/' ),
+					'terms_of_use'       => get_the_content( null, false, get_page_by_template( 'concordamos/template-terms-of-use.php' ) ),
+					'user_id'            => get_current_user_id(),
 				)
 			);
 		}

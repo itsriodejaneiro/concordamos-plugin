@@ -126,7 +126,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 						<>
 							<h2>{__('Vote confirmation', 'concordamos')}</h2>
 							<p className="modal-text" dangerouslySetInnerHTML={ { __html: sprintf(__("You still have %s credits available.", 'concordamos'), `${credits_voter - usedCredits}`) } }/>
-							<p className="modal-text" dangerouslySetInnerHTML={ { __html: sprintf(__("After confirming your vote, it can't be changed. You can access your voting option on <a href='%s'>voting infos</a>.", 'concordamos'), '#') } }/>
+							<p className="modal-text" dangerouslySetInnerHTML={ { __html: sprintf(__("After confirming your vote, it can't be changed. You can access your voting option on <a href='%s'>voting infos</a>.", 'concordamos'), getPanelUrl(window.location.href)) } }/>
 							<div class="buttons">
 								<button type="button" className="button primary" onClick={handleSubmit} disabled={isSubmitting}>
 									{isSubmitting ? __('Sending vote...', 'concordamos') : _x('Vote', 'verb', 'concordamos')}
