@@ -19,7 +19,7 @@ $author_id     = get_post_field( 'post_author', $single_id );
 $voting_author = get_the_author_meta( 'display_name', $author_id );
 
 $date_format = _x( 'M d, Y', 'date', 'concordamos' );
-$time_format = _x( 'h\hi', 'time', 'concordamos' );
+$time_format = _x( 'H\hi', 'time', 'concordamos' );
 
 $date_start = $raw_post_meta['date_start'][0];
 $date_end   = $raw_post_meta['date_end'][0];
