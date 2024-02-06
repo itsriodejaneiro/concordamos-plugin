@@ -105,7 +105,7 @@ function get_html_terms( int $post_id, string $tax, bool $use_link = false ) {
  * @param  string $format   The format in which the date should be output. Defaults to 'Y-m-d H:i:s'.
  * @return string           The formatted date string.
  */
-function format_timestamp_date( $timestamp, $format = 'Y-m-d H:i:s' ) {
+function format_datetime( $timestamp, $format = 'Y-m-d H:i:s' ) {
 	if ( strlen( $timestamp ) >= 13 ) {
 		$timestamp_in_seconds = $timestamp / 1000;
 		$date                 = new \DateTime();
