@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-06T21:18:22+00:00\n"
+"POT-Creation-Date: 2024-02-06T21:37:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: concordamos\n"
@@ -1762,7 +1762,7 @@ msgstr ""
 
 #: assets/javascript/voting-page/components/Form.js:197
 #: assets/javascript/voting-single/components/SingleView.js:29
-#: assets/javascript/voting-single/components/SingleVoting.js:174
+#: assets/javascript/voting-single/components/SingleVoting.js:173
 #: build/js/voting-page/App.js:3350
 #: build/js/voting-page/components/Form.js:17637
 #: build/js/voting-page/index.js:3372
@@ -2385,7 +2385,7 @@ msgid "Your vote has been successfully recorded"
 msgstr ""
 
 #: assets/javascript/voting-single/components/SingleVoting.js:137
-#: assets/javascript/voting-single/components/SingleVoting.js:154
+#: assets/javascript/voting-single/components/SingleVoting.js:153
 #: build/js/voting-single/App.js:703
 #: build/js/voting-single/App.js:726
 #: build/js/voting-single/components/SingleVoting.js:603
@@ -2431,7 +2431,7 @@ msgstr ""
 
 #: assets/javascript/voting-single/components/SingleVoting.js:142
 #: assets/javascript/voting-single/components/SingleVoting.js:158
-#: assets/javascript/voting-single/components/SingleVoting.js:176
+#: assets/javascript/voting-single/components/SingleVoting.js:175
 #: build/js/voting-single/App.js:720
 #: build/js/voting-single/App.js:733
 #: build/js/voting-single/App.js:751
@@ -2461,7 +2461,7 @@ msgstr ""
 
 #: assets/javascript/voting-single/components/SingleVoting.js:142
 #: assets/javascript/voting-single/components/SingleVoting.js:158
-#: assets/javascript/voting-single/components/SingleVoting.js:176
+#: assets/javascript/voting-single/components/SingleVoting.js:175
 #: build/js/voting-single/App.js:720
 #: build/js/voting-single/App.js:733
 #: build/js/voting-single/App.js:751
@@ -2490,7 +2490,7 @@ msgctxt "verb"
 msgid "Vote"
 msgstr ""
 
-#: assets/javascript/voting-single/components/SingleVoting.js:155
+#: assets/javascript/voting-single/components/SingleVoting.js:154
 #: build/js/voting-single/App.js:726
 #: build/js/voting-single/components/SingleVoting.js:626
 #: build/js/voting-single/index.js:3913

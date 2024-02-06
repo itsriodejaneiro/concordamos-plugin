@@ -152,6 +152,13 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 						<>
 							<h2>{__('Vote confirmation', 'concordamos')}</h2>
 							<p>{__('All your credits have been used', 'concordamos')}</p>
+
+							<div class="buttons">
+								<button type="button" className="button primary" onClick={handleSubmit} disabled={isSubmitting}>
+									{isSubmitting ? __('Sending vote...', 'concordamos') : _x('Vote', 'verb', 'concordamos')}
+								</button>
+								<button type="button" className="button link" onClick={() => handleClose(creditsModal)}>{__('Cancel', 'concordamos')}</button>
+							</div>
 						</>
 					) : (
 						<>
@@ -161,15 +168,15 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 							{ concordamos.faq_url ? (
 								<p>{__('If you have any questions, please visit the', 'concordamos')} <a target="_blank" href={concordamos.faq_url}> {__('FAQ', 'concordamos')}</a></p>
 							) : null }
+
+							<div class="buttons">
+								<button type="button" className="button primary" onClick={() => handleClose(creditsModal)}>{__('Back', 'concordamos')}</button>
+								<button type="button" className="button link" onClick={handleSubmit} disabled={isSubmitting}>
+									{isSubmitting ? __('Sending vote...', 'concordamos') : _x('Vote', 'verb', 'concordamos')}
+								</button>
+							</div>
 						</>
 					) }
-
-					<div class="buttons">
-						<button type="button" className="button primary" onClick={handleSubmit} disabled={isSubmitting}>
-							{isSubmitting ? __('Sending vote...', 'concordamos') : _x('Vote', 'verb', 'concordamos')}
-						</button>
-						<button type="button" className="button link" onClick={() => handleClose(creditsModal)}>{__('Cancel', 'concordamos')}</button>
-					</div>
 				</Modal>
 			</div>
 			<div className="sidebar voting-mode">
