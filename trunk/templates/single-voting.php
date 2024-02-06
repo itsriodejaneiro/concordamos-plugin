@@ -64,10 +64,10 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 				<div class="<?php echo esc_attr( $date_start_class ); ?>">
 					<div class="icon">1</div>
 					<h3><?php esc_html_e( 'Start', 'concordamos' ); ?></h3>
-					<time class="date" datetime="<?php echo Concordamos\format_datetime( $date_start, 'Y-m-d' ) ?>">
+					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'Y-m-d' ) ) ?>">
 						<?php echo esc_html( Concordamos\format_datetime( $date_start, $date_format ) ); ?>
 					</time>
-					<time class="date" datetime="<?php echo Concordamos\format_datetime( $date_start, 'H:i' ) ?>">
+					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'H:i' ) ) ?>">
 						<?php echo esc_html( Concordamos\format_datetime( $date_start, $time_format ) ); ?>
 					</time>
 					<!-- <span class="start-edit">Editar</span> -->
@@ -75,10 +75,10 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 				<div class="<?php echo esc_attr( $date_end_class ); ?>">
 					<div class="icon">2</div>
 					<h3><?php esc_html_e( 'End', 'concordamos' ); ?></h3>
-					<time class="date" datetime="<?php echo Concordamos\format_datetime( $date_end, 'Y-m-d' ) ?>">
+					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_end, 'Y-m-d' ) ) ?>">
 						<?php echo esc_html( Concordamos\format_datetime( $date_end, $date_format ) ); ?>
 					</time>
-					<time class="date" datetime="<?php echo Concordamos\format_datetime( $date_start, 'H:i' ) ?>">
+					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'H:i' ) ) ?>">
 						<?php echo esc_html( Concordamos\format_datetime( $date_end, $time_format ) ); ?>
 					</time>
 					<!-- <span class="end-edit">Editar</span> -->
