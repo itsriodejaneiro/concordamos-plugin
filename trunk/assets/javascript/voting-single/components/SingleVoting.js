@@ -14,6 +14,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 	const initialVotes = Object.keys(parsedOptions).map((key) => ({ id: key, count: 0 }))
 	const [votes, setVotes] = useState(initialVotes)
 	const [hasVoted, setHasVoted] = useState(false)
+	const [errorMessage, setErrorMessage] = useState('')
 
 	const formattedDateEnd = new Date(Number(date_end))
 
@@ -67,10 +68,9 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 		})
 		.then(response => {
 			if (response.status === 'error') {
-				throw new Error(response.message)
-			} else {
-				setHasVoted(true)
+				setErrorMessage(response.message)
 			}
+			setHasVoted(true)
 		})
 	}
 
@@ -113,15 +113,25 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 					</div>
 				</form>
 
-				<Modal controller={confirmVoteModal}>
+				<Modal controller={confirmVoteModal} danger={!!errorMessage}>
 					{ hasVoted ? (
-						<>
-							<h2>{__('Success voting', 'concordamos')}</h2>
-							<p>{__('Your vote has been successfully recorded', 'concordamos')}</p>
-							<div class="buttons">
-								<button type="button" className="button primary" onClick={handleFinish}>{_x('Finish', 'verb', 'concordamos')}</button>
-							</div>
-						</>
+						errorMessage ? (
+							<>
+								<h2>{__('An error occurred', 'concordamos')}</h2>
+								<p dangerouslySetInnerHTML={{ __html: errorMessage }}/>
+								<div class="buttons">
+									<button type="button" className="button primary" onClick={handleFinish}>{_x('Finish', 'verb', 'concordamos')}</button>
+								</div>
+							</>
+						) : (
+							<>
+								<h2>{__('Success voting', 'concordamos')}</h2>
+								<p>{__('Your vote has been successfully recorded', 'concordamos')}</p>
+								<div class="buttons">
+									<button type="button" className="button primary" onClick={handleFinish}>{_x('Finish', 'verb', 'concordamos')}</button>
+								</div>
+							</>
+						)
 					) : (
 						<>
 							<h2>{__('Vote confirmation', 'concordamos')}</h2>
