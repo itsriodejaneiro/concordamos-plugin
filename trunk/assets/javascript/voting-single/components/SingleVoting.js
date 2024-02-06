@@ -172,6 +172,9 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 
 								<div class="buttons">
 									<button type="button" className="button primary" onClick={() => handleClose(creditsModal)}>{__('Back', 'concordamos')}</button>
+									<button type="button" className="button link" onClick={handleSubmit} disabled={isSubmitting}>
+										{isSubmitting ? __('Sending vote...', 'concordamos') : _x('Vote', 'verb', 'concordamos')}
+									</button>
 								</div>
 							</>
 						)
