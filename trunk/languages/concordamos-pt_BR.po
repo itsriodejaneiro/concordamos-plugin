@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-02-06T20:34:34+00:00\n"
-"PO-Revision-Date: 2024-02-06 17:36-0300\n"
+"POT-Creation-Date: 2024-02-06T21:18:22+00:00\n"
+"PO-Revision-Date: 2024-02-06 18:24-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -326,7 +326,7 @@ msgid "Pages Templates"
 msgstr "Templates de páginas"
 
 #: includes/settings-page.php:69
-#: assets/javascript/voting-single/components/SingleVoting.js:159
+#: assets/javascript/voting-single/components/SingleVoting.js:169
 #: build/js/voting-single/App.js:740
 #: build/js/voting-single/components/SingleVoting.js:640
 #: build/js/voting-single/index.js:3927
@@ -504,7 +504,7 @@ msgstr "Criada por:"
 msgid "Start"
 msgstr "Começo"
 
-#: templates/single-voting.php:73
+#: templates/single-voting.php:77
 #: assets/javascript/voting-page/components/StartEnd.js:56
 #: assets/javascript/voting-single/components/EditVotingModal.js:60
 #: build/js/voting-page/App.js:3648
@@ -742,8 +742,8 @@ msgstr "Deletar minha conta"
 #: assets/javascript/my-account/components/EditEmailModal.js:46
 #: assets/javascript/my-account/components/EditNameModal.js:46
 #: assets/javascript/my-account/components/EditPasswordModal.js:63
-#: assets/javascript/voting-single/components/SingleVoting.js:134
-#: assets/javascript/voting-single/components/SingleVoting.js:150
+#: assets/javascript/voting-single/components/SingleVoting.js:144
+#: assets/javascript/voting-single/components/SingleVoting.js:160
 #: build/js/my-account/App.js:126 build/js/my-account/App.js:198
 #: build/js/my-account/App.js:270 build/js/my-account/App.js:357
 #: build/js/my-account/components/DeleteAccountModal.js:384
@@ -1549,7 +1549,7 @@ msgstr "Criando votação..."
 
 #: assets/javascript/voting-page/components/Form.js:197
 #: assets/javascript/voting-single/components/SingleView.js:29
-#: assets/javascript/voting-single/components/SingleVoting.js:164
+#: assets/javascript/voting-single/components/SingleVoting.js:174
 #: build/js/voting-page/App.js:3350
 #: build/js/voting-page/components/Form.js:17637
 #: build/js/voting-page/index.js:3372 build/js/voting-single/App.js:538
@@ -1959,7 +1959,7 @@ msgid "Participate of the voting"
 msgstr "Participar da votação"
 
 #: assets/javascript/voting-single/components/SingleView.js:55
-#: assets/javascript/voting-single/components/SingleVoting.js:180
+#: assets/javascript/voting-single/components/SingleVoting.js:190
 #: build/js/voting-single/App.js:558 build/js/voting-single/App.js:764
 #: build/js/voting-single/components/SingleView.js:322
 #: build/js/voting-single/components/SingleVoting.js:664
@@ -1976,7 +1976,7 @@ msgid "Available credits"
 msgstr "Créditos disponíveis"
 
 #: assets/javascript/voting-single/components/SingleVoting.js:90
-#: assets/javascript/voting-single/components/SingleVoting.js:176
+#: assets/javascript/voting-single/components/SingleVoting.js:186
 #: build/js/voting-single/App.js:669 build/js/voting-single/App.js:755
 #: build/js/voting-single/components/SingleVoting.js:569
 #: build/js/voting-single/components/SingleVoting.js:655
@@ -1993,7 +1993,7 @@ msgid "Distribute your votes"
 msgstr "Distribua seus votos"
 
 #: assets/javascript/voting-single/components/SingleVoting.js:91
-#: assets/javascript/voting-single/components/SingleVoting.js:177
+#: assets/javascript/voting-single/components/SingleVoting.js:187
 #: build/js/voting-single/App.js:669 build/js/voting-single/App.js:755
 #: build/js/voting-single/components/SingleVoting.js:569
 #: build/js/voting-single/components/SingleVoting.js:655
@@ -2010,7 +2010,7 @@ msgid "You can use up to %s credits to vote during this poll"
 msgstr "Você pode usar até %s créditos para votar durante esta votação"
 
 #: assets/javascript/voting-single/components/SingleVoting.js:92
-#: assets/javascript/voting-single/components/SingleVoting.js:178
+#: assets/javascript/voting-single/components/SingleVoting.js:188
 #: build/js/voting-single/App.js:671 build/js/voting-single/App.js:757
 #: build/js/voting-single/components/SingleVoting.js:571
 #: build/js/voting-single/components/SingleVoting.js:657
@@ -2048,29 +2048,12 @@ msgstr "Voltar às opções de votação"
 msgid "Confirm vote"
 msgstr "Confirmar voto"
 
-#: assets/javascript/voting-single/components/SingleVoting.js:119
-#: build/js/voting-single/App.js:697
-#: build/js/voting-single/components/SingleVoting.js:597
-#: build/js/voting-single/index.js:3884
-#: build/js/voting-single/pages/Single.js:508 build/js/voting-single/App.js:466
-#: build/js/voting-single/components/SingleVoting.js:409
-#: build/js/voting-single/index.js:2553
-#: build/js/voting-single/pages/Single.js:367
-msgid "Success voting"
-msgstr "Voto registrado com sucesso"
-
 #: assets/javascript/voting-single/components/SingleVoting.js:120
-#: build/js/voting-single/App.js:697
-#: build/js/voting-single/components/SingleVoting.js:597
-#: build/js/voting-single/index.js:3884
-#: build/js/voting-single/pages/Single.js:508 build/js/voting-single/App.js:467
-#: build/js/voting-single/components/SingleVoting.js:410
-#: build/js/voting-single/index.js:2554
-#: build/js/voting-single/pages/Single.js:368
-msgid "Your vote has been successfully recorded"
-msgstr "Seu voto foi registrado com êxito"
+msgid "An error occurred"
+msgstr "Um erro ocorreu"
 
-#: assets/javascript/voting-single/components/SingleVoting.js:122
+#: assets/javascript/voting-single/components/SingleVoting.js:123
+#: assets/javascript/voting-single/components/SingleVoting.js:131
 #: build/js/voting-single/App.js:703
 #: build/js/voting-single/components/SingleVoting.js:603
 #: build/js/voting-single/index.js:3890
@@ -2082,8 +2065,30 @@ msgctxt "verb"
 msgid "Finish"
 msgstr "Feito"
 
-#: assets/javascript/voting-single/components/SingleVoting.js:127
-#: assets/javascript/voting-single/components/SingleVoting.js:144
+#: assets/javascript/voting-single/components/SingleVoting.js:128
+#: build/js/voting-single/App.js:697
+#: build/js/voting-single/components/SingleVoting.js:597
+#: build/js/voting-single/index.js:3884
+#: build/js/voting-single/pages/Single.js:508 build/js/voting-single/App.js:466
+#: build/js/voting-single/components/SingleVoting.js:409
+#: build/js/voting-single/index.js:2553
+#: build/js/voting-single/pages/Single.js:367
+msgid "Success voting"
+msgstr "Voto registrado com sucesso"
+
+#: assets/javascript/voting-single/components/SingleVoting.js:129
+#: build/js/voting-single/App.js:697
+#: build/js/voting-single/components/SingleVoting.js:597
+#: build/js/voting-single/index.js:3884
+#: build/js/voting-single/pages/Single.js:508 build/js/voting-single/App.js:467
+#: build/js/voting-single/components/SingleVoting.js:410
+#: build/js/voting-single/index.js:2554
+#: build/js/voting-single/pages/Single.js:368
+msgid "Your vote has been successfully recorded"
+msgstr "Seu voto foi registrado com êxito"
+
+#: assets/javascript/voting-single/components/SingleVoting.js:137
+#: assets/javascript/voting-single/components/SingleVoting.js:154
 #: build/js/voting-single/App.js:703 build/js/voting-single/App.js:726
 #: build/js/voting-single/components/SingleVoting.js:603
 #: build/js/voting-single/components/SingleVoting.js:626
@@ -2099,7 +2104,7 @@ msgstr "Feito"
 msgid "Vote confirmation"
 msgstr "Confirmação de voto"
 
-#: assets/javascript/voting-single/components/SingleVoting.js:128
+#: assets/javascript/voting-single/components/SingleVoting.js:138
 #: build/js/voting-single/App.js:706
 #: build/js/voting-single/components/SingleVoting.js:606
 #: build/js/voting-single/index.js:3893
@@ -2110,7 +2115,7 @@ msgstr "Confirmação de voto"
 msgid "You still have %s credits available."
 msgstr "Você ainda tem %s créditos disponíveis."
 
-#: assets/javascript/voting-single/components/SingleVoting.js:129
+#: assets/javascript/voting-single/components/SingleVoting.js:139
 #: build/js/voting-single/App.js:711
 #: build/js/voting-single/components/SingleVoting.js:611
 #: build/js/voting-single/index.js:3898
@@ -2125,9 +2130,9 @@ msgstr ""
 "Depois de confirmar seu voto, ele não pode ser alterado. Você pode acessar "
 "sua opção de voto nas <a href='%s'>informações de votação</a>."
 
-#: assets/javascript/voting-single/components/SingleVoting.js:132
-#: assets/javascript/voting-single/components/SingleVoting.js:148
-#: assets/javascript/voting-single/components/SingleVoting.js:166
+#: assets/javascript/voting-single/components/SingleVoting.js:142
+#: assets/javascript/voting-single/components/SingleVoting.js:158
+#: assets/javascript/voting-single/components/SingleVoting.js:176
 #: build/js/voting-single/App.js:720 build/js/voting-single/App.js:733
 #: build/js/voting-single/App.js:751
 #: build/js/voting-single/components/SingleVoting.js:620
@@ -2150,9 +2155,9 @@ msgstr ""
 msgid "Sending vote..."
 msgstr "Enviando voto..."
 
-#: assets/javascript/voting-single/components/SingleVoting.js:132
-#: assets/javascript/voting-single/components/SingleVoting.js:148
-#: assets/javascript/voting-single/components/SingleVoting.js:166
+#: assets/javascript/voting-single/components/SingleVoting.js:142
+#: assets/javascript/voting-single/components/SingleVoting.js:158
+#: assets/javascript/voting-single/components/SingleVoting.js:176
 #: build/js/voting-single/App.js:720 build/js/voting-single/App.js:733
 #: build/js/voting-single/App.js:751
 #: build/js/voting-single/components/SingleVoting.js:620
@@ -2176,7 +2181,7 @@ msgctxt "verb"
 msgid "Vote"
 msgstr "Votar"
 
-#: assets/javascript/voting-single/components/SingleVoting.js:145
+#: assets/javascript/voting-single/components/SingleVoting.js:155
 #: build/js/voting-single/App.js:726
 #: build/js/voting-single/components/SingleVoting.js:626
 #: build/js/voting-single/index.js:3913
@@ -2187,7 +2192,7 @@ msgstr "Votar"
 msgid "All your credits have been used"
 msgstr "Todos os seus créditos foram usados"
 
-#: assets/javascript/voting-single/components/SingleVoting.js:155
+#: assets/javascript/voting-single/components/SingleVoting.js:165
 #: build/js/voting-single/App.js:737
 #: build/js/voting-single/components/SingleVoting.js:637
 #: build/js/voting-single/index.js:3924
@@ -2198,7 +2203,7 @@ msgstr "Todos os seus créditos foram usados"
 msgid "Check your credits"
 msgstr "Verifique seus créditos"
 
-#: assets/javascript/voting-single/components/SingleVoting.js:156
+#: assets/javascript/voting-single/components/SingleVoting.js:166
 #: build/js/voting-single/App.js:737
 #: build/js/voting-single/components/SingleVoting.js:637
 #: build/js/voting-single/index.js:3924
@@ -2213,7 +2218,7 @@ msgstr ""
 "Você ainda tem créditos disponíveis, redistribua-os para esgotar todos os "
 "créditos ou se estiver satisfeito, envie seu voto"
 
-#: assets/javascript/voting-single/components/SingleVoting.js:159
+#: assets/javascript/voting-single/components/SingleVoting.js:169
 #: build/js/voting-single/App.js:737
 #: build/js/voting-single/components/SingleVoting.js:637
 #: build/js/voting-single/index.js:3924
