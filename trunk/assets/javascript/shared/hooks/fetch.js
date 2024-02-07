@@ -11,7 +11,10 @@ export function apiFetch (method, url, body, signal) {
 		signal,
 	})
 	.then((response) => response.json())
-	.catch((error) => console.error(error))
+	.catch((error) => {
+		console.error(error)
+		throw error
+	})
 }
 
 export function useFetch (url, defaultValue = undefined) {

@@ -72,6 +72,10 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 			}
 			setHasVoted(true)
 		})
+		.catch(response => {
+			setErrorMessage(response.message)
+			setHasVoted(true)
+		})
 	}
 
 	function handleFinish(event) {
