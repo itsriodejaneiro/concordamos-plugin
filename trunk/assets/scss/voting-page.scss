@@ -13,11 +13,22 @@ body{
 	}
 }
 
+#the-content {
+	max-width: 585px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #concordamos-voting-form {
 	max-width: 585px;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+
+	#the-content:not(:empty) + & {
+		margin-top: 60px;
+	}
 
 	form{
 
@@ -28,7 +39,7 @@ body{
 	}
 
 	.field-radio {
-		
+
 		label{
 			>.title-section{
 				margin-top: 24px;
@@ -37,14 +48,14 @@ body{
 		}
 
 	}
-	
+
 	.field-checkbox{
 		margin-top: 30px;
 	}
 
 	.field-text, .field-textarea, .field-checkbox{
 		label{
-			
+
 			span{
 				color: #111;
 				font-size: 16px;
@@ -52,7 +63,7 @@ body{
 				font-weight: 700;
 				letter-spacing: -0.16px;
 				font-family: 'Inter Tight';
-			}		
+			}
 		}
 	}
 
@@ -67,12 +78,12 @@ body{
 		font-size: 24px;
 		margin-top: 40px;
 		margin-bottom: 20px;
-		line-height: 130%; 
+		line-height: 130%;
 		letter-spacing: -0.24px;
 		padding-right: 15px;
 		color: #000;
 		@media(max-width: 781px){
-			margin-top: 25px;    
+			margin-top: 25px;
 		}
 	}
 
@@ -83,7 +94,7 @@ body{
 		font-style: normal;
 		font-weight: 400;
 		line-height: 150%;
-		letter-spacing: -0.16px;			
+		letter-spacing: -0.16px;
 	}
 
 	.line{
@@ -95,7 +106,7 @@ body{
 			font-size: 16px;
 			font-style: normal;
 			font-weight: 700;
-			line-height: normal;	
+			line-height: normal;
 		}
 		.at{
 			padding-left: 7px;
@@ -141,8 +152,8 @@ body{
 	.option{
 
 		@media(max-width: 781px){
-			margin-bottom: 5px;    
-		} 
+			margin-bottom: 5px;
+		}
 
 		span{
 			font-family: 'Oswald';
@@ -151,7 +162,7 @@ body{
 			letter-spacing: -0.24px;
 			font-weight: 500;
 			margin-bottom: 11px;
-			color: #000;     
+			color: #000;
 		}
 	}
 
@@ -200,7 +211,7 @@ body{
 			}
 		}
 	}
-	
+
 	.voting-modal__wrapper.open{
 
 		.voting-modal {
@@ -218,7 +229,7 @@ body{
 					text-transform: none;
 
 					@media(max-width: 782px){
-						font-size: 24px;	
+						font-size: 24px;
 					}
 				}
 
@@ -236,7 +247,7 @@ body{
 }
 
 .entry-content{
-	
+
 	h2{
 		font-family: 'Oswald';
 		font-size: 48px;
@@ -244,7 +255,7 @@ body{
 		font-weight: 600;
 		line-height: 112%;
 		letter-spacing: -0.48px;
-		text-transform: uppercase;	
+		text-transform: uppercase;
 		max-width: 585px;
 	}
 
