@@ -18,6 +18,13 @@ const initialData = {
 	voting_closed: mainAppRender.dataset.voting_closed
 }
 
+document.querySelectorAll('time[data-format]').forEach((el) => {
+	const date = new Date(el.dateTime)
+	const format = JSON.parse(el.dataset.format)
+	const formatter = new Intl.DateTimeFormat(concordamos.locale, format)
+	el.textContent = formatter.format(date)
+})
+
 render(<StrictMode><App initialData={initialData}/></StrictMode>, mainAppRender)
 if (adminAppRender) {
 	render(<StrictMode><VotingAdmin initialData={initialData}/></StrictMode>, adminAppRender)
