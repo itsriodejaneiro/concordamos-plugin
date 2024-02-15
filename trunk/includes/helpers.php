@@ -119,6 +119,23 @@ function format_datetime( $timestamp, $format = 'Y-m-d H:i:s' ) {
 }
 
 /**
+ * Formats a timezone into an offset from GMT
+ *
+ * Adapted from WordPress' `wp_timezone_string`
+ */
+function timezone_offset() {
+	$offset  = (float) get_option( 'gmt_offset' );
+	$hours   = (int) $offset;
+	$minutes = ( $offset - $hours );
+
+	$sign      = ( $offset < 0 ) ? '-' : '+';
+	$abs_hour  = abs( $hours );
+	$abs_mins  = abs( $minutes * 60 );
+
+	return sprintf( '%s%02d:%02d', $sign, $abs_hour, $abs_mins );
+}
+
+/**
  * Check if the user is member of Concordamos network
  *
  * @param int The author ID

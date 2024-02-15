@@ -21,6 +21,7 @@ $voting_author = get_the_author_meta( 'display_name', $author_id );
 $date_format = _x( 'M d, Y', 'date', 'concordamos' );
 $time_format = _x( 'H\hi', 'time', 'concordamos' );
 
+$tz_offset = Concordamos\timezone_offset();
 $date_start = $raw_post_meta['date_start'][0];
 $date_end   = $raw_post_meta['date_end'][0];
 
@@ -67,9 +68,10 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'Y-m-d' ) ) ?>">
 						<?php echo esc_html( Concordamos\format_datetime( $date_start, $date_format ) ); ?>
 					</time>
-					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'H:i' ) ) ?>">
+					<time class="time" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'H:i' ) ) ?>">
 						<?php echo esc_html( Concordamos\format_datetime( $date_start, $time_format ) ); ?>
 					</time>
+					<div class="timezone">GMT<?php echo esc_html( $tz_offset ) ?></div>
 					<!-- <span class="start-edit">Editar</span> -->
 				</div>
 				<div class="<?php echo esc_attr( $date_end_class ); ?>">
@@ -78,9 +80,10 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_end, 'Y-m-d' ) ) ?>">
 						<?php echo esc_html( Concordamos\format_datetime( $date_end, $date_format ) ); ?>
 					</time>
-					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'H:i' ) ) ?>">
+					<time class="time" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'H:i' ) ) ?>">
 						<?php echo esc_html( Concordamos\format_datetime( $date_end, $time_format ) ); ?>
 					</time>
+					<div class="timezone">GMT<?php echo esc_html( $tz_offset ) ?></div>
 					<!-- <span class="end-edit">Editar</span> -->
 				</div>
 			</div>
