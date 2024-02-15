@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import Image from './Image'
 import { getPanelUrl } from '../../shared/utils/location'
 
-const dateFormatter = new Intl.DateTimeFormat('pt-br', { dateStyle: 'short' })
+const dateFormatter = new Intl.DateTimeFormat(concordamos.locale, { dateStyle: 'short' })
 
 function formatDate (timestamp) {
 	return dateFormatter.format(timestamp)

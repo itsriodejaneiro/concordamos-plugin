@@ -42,6 +42,7 @@ function register_votings_block() {
 		'concordamos-votings-block',
 		'concordamos',
 		array(
+			'locale'     => get_js_locale(),
 			'nonce'      => wp_create_nonce( 'wp_rest' ),
 			'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 			'rest_url'   => rest_url( 'concordamos/v1/' ),

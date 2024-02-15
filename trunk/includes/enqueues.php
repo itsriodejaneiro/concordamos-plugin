@@ -8,6 +8,10 @@ function enqueue_scripts_admin() {
 
 add_action( 'admin_enqueue_scripts', 'Concordamos\enqueue_scripts_admin' );
 
+function get_js_locale() {
+	return str_replace( '_', '-', get_locale() );
+}
+
 function enqueue_scripts_frontend() {
 	wp_register_style( 'concordamos-style', CONCORDAMOS_PLUGIN_URL . 'build/css/plugin.css', array(), CONCORDAMOS_PLUGIN_VERSION );
 
@@ -23,6 +27,7 @@ function enqueue_scripts_frontend() {
 				array( 'wp-element', 'wp-i18n' ),
 				'concordamos',
 				array(
+					'locale'     => get_js_locale(),
 					'nonce'      => wp_create_nonce( 'wp_rest' ),
 					'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 					'rest_url'   => rest_url( 'concordamos/v1/' ),
@@ -78,6 +83,7 @@ function enqueue_scripts_frontend() {
 				array(
 					'voting_archive_url' => get_post_type_archive_link( 'voting' ),
 					'create_voting_url'  => get_permalink( get_page_by_template( 'concordamos/template-create-voting.php' ) ),
+					'locale'             => get_js_locale(),
 					'login_url'          => get_permalink( get_page_by_template( 'concordamos/template-login.php' ) ),
 					'nonce'              => wp_create_nonce( 'wp_rest' ),
 					'plugin_url'         => CONCORDAMOS_PLUGIN_URL,
@@ -123,6 +129,7 @@ function enqueue_scripts_frontend() {
 				'admin_email'    => get_bloginfo( 'admin_email' ),
 				'faq_url'        => get_permalink( get_faq_page() ),
 				'is_author'      => get_post_field( 'post_author', $get_the_id ) == get_current_user_id() ? true : false,
+				'locale'         => get_js_locale(),
 				'negative_votes' => get_post_meta( $get_the_id, 'negative_votes', true ),
 				'nonce'          => wp_create_nonce( 'wp_rest' ),
 				'plugin_url'     => CONCORDAMOS_PLUGIN_URL,
@@ -143,6 +150,7 @@ function enqueue_scripts_frontend() {
 			array( 'wp-element', 'wp-i18n' ),
 			'concordamos',
 			array(
+				'locale'     => get_js_locale(),
 				'nonce'      => wp_create_nonce( 'wp_rest' ),
 				'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 				'rest_url'   => rest_url( 'concordamos/v1/' ),
