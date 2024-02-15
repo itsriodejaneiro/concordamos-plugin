@@ -34,7 +34,7 @@ export default function CreatedVotings () {
 				<VotingCard key={post.ID} voting={post}/>
 			))}
 
-			{ ! data?.posts.lenght
+			{ ! data?.posts.length
 				? <h3>{__('No voting found.', 'concordamos')}</h3>
 				: null
 			}
