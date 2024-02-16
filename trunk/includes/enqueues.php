@@ -8,10 +8,6 @@ function enqueue_scripts_admin() {
 
 add_action( 'admin_enqueue_scripts', 'Concordamos\enqueue_scripts_admin' );
 
-function get_js_locale() {
-	return str_replace( '_', '-', get_locale() );
-}
-
 function enqueue_scripts_frontend() {
 	wp_register_style( 'concordamos-style', CONCORDAMOS_PLUGIN_URL . 'build/css/plugin.css', array(), CONCORDAMOS_PLUGIN_VERSION );
 
