@@ -16,7 +16,7 @@ function add_admin_menu() {
 		'manage_options',
 		'concordamos-settings',
 		'Concordamos\settings_page_html',
-		'',
+		'data:image/svg+xml;base64,' . base64_encode( file_get_contents( CONCORDAMOS_PLUGIN_URL . '/assets/images/icon.svg' ) ),
 		null
 	);
 }
