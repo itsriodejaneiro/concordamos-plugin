@@ -15,7 +15,7 @@ E rode `docker-compose up` nos dois projetos.
 Para gerar os arquivos POT, rode dentro da pasta do plugin o seguinte comando:
 
 ```bash
-wp i18n make-pot . languages/concordamos.pot
+wp i18n make-pot --exclude=assets . languages/concordamos.pot
 ```
 
 Depois de atualizar as traduções, rode:

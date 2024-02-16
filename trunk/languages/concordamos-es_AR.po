@@ -1,18 +1,18 @@
-# Copyright (C) 2023 Hacklab Team
+# Copyright (C) 2024 ITS Rio
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Concordamos 0.0.25\n"
+"Project-Id-Version: Concordamos 0.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
 "POT-Creation-Date: 2024-02-15T16:26:24+00:00\n"
 "PO-Revision-Date: 2024-02-15 13:29-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: pt_BR\n"
+"Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 "X-Domain: concordamos\n"
 
@@ -22,7 +22,7 @@ msgstr "Concordamos"
 
 #. Description of the plugin
 msgid "Quadratic voting system by Concordamos"
-msgstr "Sistema de voto quadrático do Concordamos"
+msgstr "Sistema de votación cuadrática por Concordamos"
 
 #. Author of the plugin
 msgid "ITS Rio"
@@ -30,199 +30,195 @@ msgstr "ITS Rio"
 
 #: concordamos.php:36
 msgid "Concordamos Network"
-msgstr "Rede Concordamos"
+msgstr "Red Concordamos"
 
 #: includes/api.php:140
 msgid "You are not signed in."
-msgstr "Você não está logado(a)."
+msgstr ""
 
 #: includes/api.php:152 includes/api.php:159 includes/api.php:452
 #: includes/api.php:513
 msgid "You don't have enough permissions."
-msgstr "Você não tem permissões suficientes."
+msgstr ""
 
 #: includes/api.php:349 includes/api.php:640
 msgid "Required field is either missing or blank:"
-msgstr "Campo obrigatório está ausente ou vazio:"
+msgstr ""
 
 #: includes/api.php:432
 msgid "Voting created successfully!"
-msgstr "Votação criada com sucesso!"
+msgstr ""
 
 #: includes/api.php:440
 msgid "Verify all fields and try again"
-msgstr "Verifique todos os campos e tente novamente"
+msgstr ""
 
 #: includes/api.php:470
 msgid "Voting updated successfully!"
-msgstr "Votação atualizada com sucesso!"
+msgstr ""
 
 #: includes/api.php:476
 msgid "Error updating voting, please try again"
-msgstr "Erro ao atualizar votação, por favor tente novamente"
+msgstr ""
 
 #: includes/api.php:584
 msgid "User updated successfully!"
-msgstr "Usuário atualizado com sucesso!"
+msgstr ""
 
 #: includes/api.php:590
 msgid "Error updating user, please try again"
-msgstr "Erro ao atualizar usuário, por favor tente novamente"
+msgstr ""
 
 #: includes/api.php:665
 msgid "Vote not found"
-msgstr "Voto não encontrado"
+msgstr ""
 
 #: includes/api.php:691
 msgid "Invalid link"
-msgstr "Link inválido"
+msgstr ""
 
 #: includes/api.php:701
 msgid "Expired link"
-msgstr "Link expirado"
+msgstr ""
 
 #: includes/api.php:711
 msgid "Voting phase is already closed"
-msgstr "A fase de votação já está encerrada"
+msgstr ""
 
 #: includes/api.php:746
 msgid "Vote registered successfully!"
-msgstr "Voto registrado com sucesso!"
+msgstr ""
 
 #: includes/api.php:753
 msgid "Error registering your vote, please try again"
-msgstr "Erro ao registar seu voto, por favor tente novamente"
+msgstr ""
 
 #: includes/api.php:846
 msgid "User signed out"
-msgstr "Usuário deslogado"
+msgstr ""
 
 #: includes/blocks/login.php:15 templates/template-change-pass.php:58
 #: templates/template-create-user.php:48 templates/template-login.php:38
 #: build/js/my-account/index.js:1
 msgid "Email"
-msgstr "E-mail"
+msgstr ""
 
 #: includes/blocks/login.php:23 templates/template-change-pass.php:78
 #: templates/template-create-user.php:57 templates/template-login.php:45
 #: build/js/my-account/index.js:1
 msgid "Password"
-msgstr "Senha"
+msgstr ""
 
 #: includes/blocks/login.php:38 templates/template-login.php:60
 msgid "I forgot my password"
-msgstr "Esqueci minha senha"
+msgstr ""
 
 #: includes/blocks/login.php:43 templates/template-create-user.php:94
 #: templates/template-login.php:65
 msgid "Let's go!"
-msgstr "Vamos!"
+msgstr "¡Vamos!"
 
 #: includes/blocks/login.php:46 templates/template-login.php:68
 msgid "Don't have an account?"
-msgstr "Não tenha uma conta?"
+msgstr ""
 
 #: includes/blocks/login.php:47 templates/template-login.php:68
 msgid "Register here"
-msgstr "Cadastre-se aqui"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:22
 msgctxt "taxonomy general name"
 msgid "Tags"
-msgstr "Tags"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:23
 msgctxt "taxonomy singular name"
 msgid "Tag"
-msgstr "Tag"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:24
 msgid "Search Tags"
-msgstr "Pesquise tags"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:25
 msgid "All Tags"
-msgstr "Todas as tags"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:26
 msgid "Parent Tag"
-msgstr "Tag pai"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:27
 msgid "Parent Tag:"
-msgstr "Tag pai:"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:28
 msgid "Edit Tag"
-msgstr "Editar Tag"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:29
 msgid "Update Tag"
-msgstr "Atualizar tag"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:30
 msgid "Add New Tag"
-msgstr "Adicionar nova tag"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:31
 msgid "New Tag Name"
-msgstr "Nome da nova tag"
+msgstr ""
 
 #: includes/class/class-taxonomy.php:32 build/js/voting-page/index.js:1
 msgid "Tags"
-msgstr "Tags"
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:37
 #: includes/class/class-user-change-pass.php:166
 msgid "You're already logged in."
-msgstr "Você já está logado(a)."
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:40
 #: includes/class/class-user-register.php:37
 msgid "Email field is empty."
-msgstr "Campo de e-mail está vazio."
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:82
 msgid "[%s] Password Reset"
-msgstr "[%s] Redefinição de Senha"
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:83
 msgid ""
 "You have requested a password reset. Click the following link to reset your "
 "password: %s"
 msgstr ""
-"Você requisitou uma redefinição de senha. Clique no link a seguir para "
-"redefinir sua senha: %s"
 
 #: includes/class/class-user-change-pass.php:91
 msgid "Error sending email. Please try again later."
-msgstr "Erro ao enviar e-mail, por favor tente novamente."
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:121
 msgid ""
 "Email not found. Please make sure you've entered the correct email address."
 msgstr ""
-"E-mail não encontrado. Por favor certifique-se que o endereço de e-mail "
-"inserido está correto."
 
 #: includes/class/class-user-change-pass.php:133
 msgid "Link sent successfully! Please check your email."
-msgstr "Link enviado com sucesso! Por favor verifique seu e-mail."
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:169
 #: includes/class/class-user-login.php:30
 #: includes/class/class-user-register.php:48
 msgid "Password field is empty."
-msgstr "Campo de senha está vazio."
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:172
 #: includes/class/class-user-register.php:50
 msgid "Passwords fields don't match."
-msgstr "Campos de senha não batem."
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:175
 msgid "Token is empty."
-msgstr "Token está vazio."
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:178
 #: includes/class/class-user-change-pass.php:202
@@ -231,161 +227,153 @@ msgid ""
 "The link you've used is invalid or has expired. Please restart the password "
 "reset process to receive a new link."
 msgstr ""
-"O link usado é inválido ou está expirado. Por favor reinicie o processo de "
-"redefinição de senha para receber um novo link."
 
 #: includes/class/class-user-change-pass.php:210
 msgid ""
 "Password successfully changed! You can now log in with your new password."
-msgstr "Senha alterada com sucesso! Você pode fazer login com sua nova senha."
+msgstr ""
 
 #: includes/class/class-user-change-pass.php:213
 msgid ""
 "An unknown error occurred while attempting to change your password. Please "
 "try again later."
 msgstr ""
-"Um erro desconhecido ocorreu ao tentar modificar sua senha. Por favor tente "
-"novamente mais tarde."
 
 #: includes/class/class-user-login.php:24
 #: includes/class/class-user-register.php:25
 msgid "You're already logged in. No need to log in again."
-msgstr "Você já está logado(a). Não é necessário logar-se novamente."
+msgstr ""
 
 #: includes/class/class-user-login.php:27
 #: includes/class/class-user-register.php:33
 msgid "Username field is empty."
-msgstr "Campo de nome de usuário está vazio."
+msgstr ""
 
 #: includes/class/class-user-login.php:52
 msgid "Invalid username or password."
-msgstr "Usuário ou senha inválido."
+msgstr ""
 
 #: includes/class/class-user-login.php:58
 msgid "Login successful."
-msgstr "Login bem sucedido."
+msgstr ""
 
 #: includes/class/class-user-register.php:29
 msgid "You must accept the Privacy Policy and Terms of Use"
-msgstr "Você deve aceitar a política de privacidade e termos de uso"
+msgstr ""
 
 #: includes/class/class-user-register.php:39
 msgid "Email field is invalid."
-msgstr "Campo de e-mail inválido."
+msgstr ""
 
 #: includes/class/class-user-register.php:43
 msgid ""
 "This email address is already registered. Please use a different email or "
 "log in."
 msgstr ""
-"Este e-mail já foi cadastrado. Por favor use um e-mail diferente ou faça "
-"login."
 
 #: includes/class/class-user-register.php:97
 msgid "Account created successfully."
-msgstr "Conta criada com sucesso."
+msgstr ""
 
 #: includes/class/class-user-register.php:99
 msgid "Authentication failed."
-msgstr "Autenticação falhou."
+msgstr ""
 
 #: includes/helpers.php:394
 msgid "How to vote"
-msgstr "Como votar"
+msgstr ""
 
 #: includes/settings-page.php:14 includes/settings-page.php:15
 msgid "Concordamos Settings"
-msgstr "Configurações do Concordamos"
+msgstr "Configuración de Concordamos"
 
 #: includes/settings-page.php:44
 msgid "Save Settings"
-msgstr "Salvar configurações"
+msgstr ""
 
 #: includes/settings-page.php:61
 msgid "Pages Templates"
-msgstr "Templates de páginas"
+msgstr ""
 
 #: includes/settings-page.php:69 build/js/voting-single/index.js:1
 msgid "FAQ"
-msgstr "FAQ"
+msgstr ""
 
 #: includes/settings-page.php:80
 msgid "Private votings"
-msgstr "Votação privada"
+msgstr ""
 
 #: includes/settings-page.php:88
 msgid "Use unique links on private votings?"
-msgstr "Usar links únicos para votações privadas?"
+msgstr ""
 
 #: includes/settings-page.php:94
 msgid ""
 "By enabling this setting, only private votings that are created from now on "
 "will display the unique poll links."
 msgstr ""
-"Ao ativar essa configuração, apenas votações privadas criadas a partir de "
-"agora exibirão os links únicos de votação."
 
 #: includes/settings-page.php:110
 msgid "Select a page"
-msgstr "Selecione uma página"
+msgstr ""
 
 #: includes/setup.php:17 build/js/voting-single/index.js:1
 msgid "Votes"
-msgstr "Votos"
+msgstr ""
 
 #: includes/setup.php:18
 msgctxt "noun"
 msgid "Vote"
-msgstr "Voto"
+msgstr ""
 
 #: includes/setup.php:29 templates/part/navbar-mobile.php:12
 #: build/js/votings-block/editor.js:1
 msgid "Votings"
-msgstr "Votações"
+msgstr ""
 
 #: includes/setup.php:30 templates/single-voting.php:43
 msgid "Voting"
-msgstr "Votação"
+msgstr ""
 
 #: includes/setup.php:52
 msgid "Options"
-msgstr "Opções"
+msgstr "Opciones"
 
 #: includes/setup.php:53
 msgid "Option"
-msgstr "Opção"
+msgstr "Opción"
 
 #: includes/templates.php:27 templates/part/navbar-mobile.php:8
 #: build/js/my-account/index.js:1 build/js/voting-page/index.js:1
 msgid "Create voting"
-msgstr "Criar votação"
+msgstr ""
 
 #: includes/templates.php:28 build/js/login-block/editor.js:1
 msgid "Login"
-msgstr "Login"
+msgstr ""
 
 #: includes/templates.php:29
 msgid "Create user"
-msgstr "Criar usuário"
+msgstr ""
 
 #: includes/templates.php:30 templates/part/navbar-mobile.php:17
 #: build/js/my-account/index.js:1
 msgid "My account"
-msgstr "Minha conta"
+msgstr ""
 
 #: includes/templates.php:31
 msgid "Change password"
-msgstr "Alterar senha"
+msgstr ""
 
 #: includes/templates.php:32 templates/template-create-user.php:84
 #: build/js/my-account/index.js:1 build/js/user/register.js:1
 msgid "Privacy Policy"
-msgstr "Política de privacidade"
+msgstr ""
 
 #: includes/templates.php:33 templates/template-create-user.php:87
 #: build/js/my-account/index.js:1 build/js/user/register.js:1
 msgid "Terms of Use"
-msgstr "Termos de uso"
+msgstr ""
 
 #: templates/single-voting.php:21
 msgctxt "date"
@@ -399,89 +387,89 @@ msgstr "H\\hi"
 
 #: templates/single-voting.php:55
 msgid "Created by:"
-msgstr "Criada por:"
+msgstr ""
 
 #: templates/single-voting.php:67 build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Start"
-msgstr "Começo"
+msgstr ""
 
 #: templates/single-voting.php:79 build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "End"
-msgstr "Fim"
+msgstr ""
 
 #: templates/template-change-pass.php:31 templates/template-create-user.php:30
 #: templates/template-login.php:29
 msgid "A way to vote for consensus"
-msgstr "Uma forma de votar por consenso"
+msgstr ""
 
 #: templates/template-change-pass.php:34 templates/template-create-user.php:31
 #: templates/template-login.php:31
 msgid "Concordamos Logo"
-msgstr "Logo do Concordamos"
+msgstr "Logo de Concordamos"
 
 #: templates/template-change-pass.php:36
 msgid "With"
-msgstr "Com"
+msgstr ""
 
 #: templates/template-change-pass.php:45
 msgid "Reset Password"
-msgstr "Redefinir senha"
+msgstr ""
 
 #: templates/template-change-pass.php:49
 msgid "This link is invalid or already expired."
-msgstr "Este link é inválido ou já expirou."
+msgstr ""
 
 #: templates/template-change-pass.php:53
 msgid "Enter your email and we will send instructions to reset your password"
-msgstr "Entre seu e-mail e enviaremos instruções para redefinir sua senha"
+msgstr ""
 
 #: templates/template-change-pass.php:65 templates/template-change-pass.php:102
 #: templates/template-create-user.php:94 templates/template-login.php:64
 msgid "Loading..."
-msgstr "Carregando..."
+msgstr ""
 
 #: templates/template-change-pass.php:67
 msgid "Send link"
-msgstr "Enviar link"
+msgstr ""
 
 #: templates/template-change-pass.php:72
 msgid "Insert new password"
-msgstr "Insira a nova senha"
+msgstr ""
 
 #: templates/template-change-pass.php:96 templates/template-create-user.php:74
 #: build/js/my-account/index.js:1
 msgid "Repeat password"
-msgstr "Repetir senha"
+msgstr ""
 
 #: templates/template-change-pass.php:104
 msgid "Confirm"
-msgstr "Confirmar"
+msgstr ""
 
 #: templates/template-create-user.php:39 build/js/my-account/index.js:1
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #: templates/template-create-user.php:83 build/js/user/register.js:1
 msgid "You accept the"
-msgstr "Você aceita a"
+msgstr ""
 
 #: templates/template-create-user.php:86 build/js/user/register.js:1
 msgid "and"
-msgstr "e"
+msgstr "y"
 
 #: templates/template-create-user.php:96
 msgid "Already have an account?"
-msgstr "Já tem uma conta?"
+msgstr ""
 
 #: templates/template-create-user.php:97
 msgid "Access here"
-msgstr "Acesse aqui"
+msgstr ""
 
 #: templates/template-create-user.php:104
 msgid "ITS Logo"
-msgstr "Logo do ITS"
+msgstr "Logo de ITS"
 
 #: build/js/my-account/App.js:1
 #: build/js/my-account/components/CreatedVotings.js:1
@@ -489,7 +477,7 @@ msgstr "Logo do ITS"
 #: build/js/my-account/index.js:1 build/js/shared/components/Filters.js:1
 #: build/js/voting-archive/App.js:1 build/js/voting-archive/index.js:1
 msgid "With login"
-msgstr "Com login"
+msgstr ""
 
 #: build/js/my-account/App.js:1
 #: build/js/my-account/components/CreatedVotings.js:1
@@ -498,7 +486,7 @@ msgstr "Com login"
 #: build/js/voting-archive/App.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgid "No login"
-msgstr "Sem login"
+msgstr ""
 
 #: build/js/my-account/App.js:1
 #: build/js/my-account/components/CreatedVotings.js:1
@@ -507,7 +495,7 @@ msgstr "Sem login"
 #: build/js/voting-archive/App.js:1 build/js/voting-archive/index.js:1
 msgctxt "votings"
 msgid "Open"
-msgstr "Abertas"
+msgstr ""
 
 #: build/js/my-account/App.js:1
 #: build/js/my-account/components/CreatedVotings.js:1
@@ -516,366 +504,359 @@ msgstr "Abertas"
 #: build/js/voting-archive/App.js:1 build/js/voting-archive/index.js:1
 msgctxt "votings"
 msgid "Concluded"
-msgstr "Concluídas"
+msgstr ""
 
 #: build/js/my-account/App.js:1 build/js/my-account/index.js:1
 msgid "Votings created by me"
-msgstr "Votações criadas por mim"
+msgstr ""
 
 #: build/js/my-account/App.js:1 build/js/my-account/index.js:1
 msgid "Votings I participated"
-msgstr "Votações em que participei"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Hello, %s"
-msgstr "Olá, %s"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Sign out"
-msgstr "Sair"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "No voting found."
-msgstr "Nenhuma votação encontrada."
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 msgctxt "page"
 msgid "Next"
-msgstr "Próxima"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 msgctxt "page"
 msgid "Previous"
-msgstr "Anterior"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Delete account?"
-msgstr "Deletar conta?"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid ""
 "The votings you created will remain active. You can delete them before that. "
 "Your votes will remain computed, but anonymously"
 msgstr ""
-"As votações que você criou permanecerão ativas. Você pode deletá-las antes. "
-"Seus votos permanecerão computados, mas anonimamente"
 
 #: build/js/my-account/index.js:1
 msgid "Delete my account"
-msgstr "Deletar minha conta"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-single/index.js:1
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Edit email"
-msgstr "Editar e-mail"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "youremail@email.com"
-msgstr "seuemail@email.com.br"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Save"
-msgstr "Salvar"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Edit name"
-msgstr "Editar nome"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Name Surname"
-msgstr "Nome Sobrenome"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Edit password"
-msgstr "Editar senha"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Insert your password here"
-msgstr "Insira sua senha aqui"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Repeat your password here"
-msgstr "Repetir sua senha aqui"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Passwords don't match"
-msgstr "Senhas não batem"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "My data"
-msgstr "Meus dados"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "My email"
-msgstr "Meu e-mail"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "General settings"
-msgstr "Configurações gerais"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Review our privacy policy"
-msgstr "Reveja nossa política de privacidade"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Review our terms of use"
-msgstr "Reveja nossos termos de uso"
+msgstr ""
 
 #: build/js/my-account/index.js:1
 msgid "Delete account"
-msgstr "Deletar conta"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 msgid "Filters"
-msgstr "Filtros"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/user/register.js:1
 #: build/js/voting-page/index.js:1 build/js/voting-single/index.js:1
 msgid "Close"
-msgstr "Fechar"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-single/index.js:1
 msgid "Previous tab"
-msgstr "Aba anterior"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-single/index.js:1
 msgid "Next tab"
-msgstr "Próxima aba"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgctxt "voting"
 msgid "Concluded"
-msgstr "Concluída"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgctxt "voting"
 msgid "Open"
-msgstr "Aberta"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgctxt "voting"
 msgid "Scheduled"
-msgstr "Agendada"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgctxt "date"
 msgid "Since %s"
-msgstr "Desde o dia %s"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgctxt "date"
 msgid "Until %s"
-msgstr "Até o dia %s"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgctxt "date"
 msgid "From %s"
-msgstr "A partir do dia %s"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgid "Login required"
-msgstr "Login obrigatório"
+msgstr ""
 
 #: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgid "Login required to see results"
-msgstr "Login obrigatório para ver os resultados"
+msgstr ""
 
 #: build/js/voting-archive/index.js:1
 msgid "Search for a voting"
-msgstr "Pesquisar por uma votação"
+msgstr ""
 
 #: build/js/voting-archive/index.js:1 build/js/votings-block/index.js:1
 msgid "Search by..."
-msgstr "Pesquisar por..."
+msgstr ""
 
 #: build/js/voting-archive/index.js:1 build/js/votings-block/index.js:1
 msgid "Search"
-msgstr "Pesquisar"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Public voting"
-msgstr "Votação pública"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Private voting"
-msgstr "Votação privada"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Type of the voting"
-msgstr "Tipo de votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "General voting settings"
-msgstr "Configuração gerais de votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid ""
 "Enter the name, description, number of voters, credits and tags for the poll"
 msgstr ""
-"Insira o nome, descrição, número de eleitores, créditos e tags para a votação"
 
 #: build/js/voting-page/index.js:1
 msgid "Request login to vote"
-msgstr "Requer login para votar"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Voting name"
-msgstr "Nome da votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Give the voting a name"
-msgstr "Dê um nome à votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Voting description"
-msgstr "Descrição da votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Describe voting details"
-msgstr "Descreva os detalhes da votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Number of voters"
-msgstr "Número de eleitores"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "How many voting links would you like to generate?"
-msgstr "Quantos links de votação você gostaria de gerar?"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Voting credits per voter"
-msgstr "Créditos de votação por eleitor"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "How many votes will each voter receive?"
-msgstr "Quantos votos cada eleitor receberá?"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Allow votes to be negative"
-msgstr "Permitir que os votos sejam negativos"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Add comma-separated tags"
-msgstr "Adicione tags separadas por vírgula"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Duration of the voting"
-msgstr "Duração da votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid ""
 "Once the voting period has started, the vote cannot be deleted. You can "
 "change the duration of the poll later"
 msgstr ""
-"Uma vez que o período de votação tenha se iniciado, o voto não pode ser "
-"removido. Você pode alterar a duração da votação depois"
 
 #: build/js/voting-page/index.js:1
 msgid "Display result only when voting is closed?"
-msgstr "Exibir resultado apenas quando a votação estiver encerrada?"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Options of the voting"
-msgstr "Opções da votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Enter your poll options (add at least 2 options to advance)"
-msgstr "Insira as opções da votação (adicione ao menos 2 opções para avançar)"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Add at least two votes"
-msgstr "Adicione ao menos dois votos"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Confirm voting creation"
-msgstr "Confirmar criação da votação"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid ""
 "After creation the voting, you can <strong>only</strong> change its "
 "<strong>start</strong> and <strong>end dates</strong>."
 msgstr ""
-"Depois que a votação é criada, você pode <strong>apenas</strong> mudar a "
-"<strong>data de início</strong> e <strong>fim</strong>."
 
 #: build/js/voting-page/index.js:1
 msgid "The number of voters must be greater than zero"
-msgstr "O número de eleitores deve ser maior que zero"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "The number of credits must be greater than zero"
-msgstr "O número de créditos deve ser maior que zero"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Check start and end date"
-msgstr "Verifique as data de início e fim"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Check empty fields"
-msgstr "Verifique campos vazios"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Creating voting..."
-msgstr "Criando votação..."
+msgstr ""
 
 #: build/js/voting-page/index.js:1 build/js/voting-single/index.js:1
 msgid "Back"
-msgstr "Voltar"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Edit"
-msgstr "Editar"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Delete"
-msgstr "Deletar"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Option %s"
-msgstr "Opção %s"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Title of the option"
-msgstr "Título da opção"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "You have reached the %s character limit"
-msgstr "Você atingiu o limite de %s caracteres"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "You are approaching the %s character limit"
-msgstr "Você está se aproximando do limite de %s caracteres"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Description of the option %s"
-msgstr "Descrição da opção %s"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Description of the option"
-msgstr "Descrição da opção"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Link of the option %s"
-msgstr "Link da opção %s"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "www.example.com"
-msgstr "www.exemplo.com.br"
+msgstr "www.ejemplo.com"
 
 #: build/js/voting-page/index.js:1
 msgid "Add option"
-msgstr "Adicionar opção"
+msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "MM/dd/yyyy"
@@ -884,12 +865,12 @@ msgstr "dd/MM/yyyy"
 #: build/js/voting-page/index.js:1
 msgctxt "hour"
 msgid "at"
-msgstr "às"
+msgstr "a las"
 
 #: build/js/voting-page/index.js:1
 msgctxt "hour"
 msgid "Time"
-msgstr "Horário"
+msgstr "Hora"
 
 #: build/js/voting-page/index.js:1
 msgid "hh:mm aa"
@@ -897,28 +878,25 @@ msgstr "HH:mm"
 
 #: build/js/voting-single/index.js:1
 msgid "Change duration"
-msgstr "Mudar duração"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Delete voting"
-msgstr "Deletar votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Do you want to delete voting?"
-msgstr "Você quer deletar a votação?"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid ""
 "For deleting this voting, send a message for the platform administration "
 "with the subject \"Delete voting\" at the email <a href=\"mailto:%s\">%s</a>"
 msgstr ""
-"Para excluir esta votação, envie uma mensagem para a administração da "
-"plataforma com o assunto “Excluir votação” no email <a href=\"mailto:"
-"%s\">%s</a>"
 
 #: build/js/voting-single/index.js:1
 msgid "Go back"
-msgstr "Voltar"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "MM/dd/yyyy hh:mm aa"
@@ -926,221 +904,179 @@ msgstr "dd/MM/yyyy HH:mm"
 
 #: build/js/voting-single/index.js:1
 msgid "Change voting duration"
-msgstr "Mudar duração da votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Done"
-msgstr "Feito"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "End voting"
-msgstr "Encerrar votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Distributed credits"
-msgstr "Créditos distribuídos"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Voting options"
-msgstr "Opções de votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "See detailed results"
-msgstr "Ver resultados detalhados"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Participate of the voting"
-msgstr "Participar da votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Available credits"
-msgstr "Créditos disponíveis"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Distribute your votes"
-msgstr "Distribua seus votos"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "You can use up to %s credits to vote during this poll"
-msgstr "Você pode usar até %s créditos para votar durante esta votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "This poll ends on %s, %s"
-msgstr "Esta votação acaba em %s, %s"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Back to poll options"
-msgstr "Voltar às opções de votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Confirm vote"
-msgstr "Confirmar voto"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "An error occurred"
-msgstr "Um erro ocorreu"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgctxt "verb"
 msgid "Finish"
-msgstr "Feito"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Success voting"
-msgstr "Voto registrado com sucesso"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Your vote has been successfully recorded"
-msgstr "Seu voto foi registrado com êxito"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Vote confirmation"
-msgstr "Confirmação de voto"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "You still have %s credits available."
-msgstr "Você ainda tem %s créditos disponíveis."
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid ""
 "After confirming your vote, it can't be changed. You can access your voting "
 "option on <a href='%s'>voting infos</a>."
 msgstr ""
-"Depois de confirmar seu voto, ele não pode ser alterado. Você pode acessar "
-"sua opção de voto nas <a href='%s'>informações de votação</a>."
 
 #: build/js/voting-single/index.js:1
 msgid "Sending vote..."
-msgstr "Enviando voto..."
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgctxt "verb"
 msgid "Vote"
-msgstr "Votar"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "All your credits have been used"
-msgstr "Todos os seus créditos foram usados"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Check your credits"
-msgstr "Verifique seus créditos"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid ""
 "You still have credits available, redistribute your votes to use up all the "
 "credits or if you're satisfied, send your votes"
 msgstr ""
-"Você ainda tem créditos disponíveis, redistribua-os para esgotar todos os "
-"créditos ou se estiver satisfeito, envie seu voto"
 
 #: build/js/voting-single/index.js:1
 msgid "If you have any questions, please visit the"
-msgstr "Se você tiver alguma dúvida, visite o"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Copy to clipboard"
-msgstr "Copiar para a área de transferência"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgctxt "verb"
 msgid "Copy"
-msgstr "Copiar"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Voting URL"
-msgstr "URL da votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Detailed results URL"
-msgstr "URL dos resultados detalhados"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Private administrator URL"
-msgstr "URL privada de administrador"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Save this URL for managing the event:"
-msgstr "Salve esta URL para gerenciar o evento:"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Individual vote URLs"
-msgstr "URLs individuais de voto"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "To be shared privately with voters"
-msgstr "Para ser compartilhadas em privado com os eleitores"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Download as text file (.TXT)"
-msgstr "Baixar como arquivo de texto (.TXT)"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Percents"
-msgstr "Porcentagem"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Participants voting"
-msgstr "Participantes da votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "My vote"
-msgstr "Meu voto"
+msgstr "Mi voto"
 
 #: build/js/voting-single/index.js:1
 msgid "Voting links"
-msgstr "Links de votação"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Detailed results"
-msgstr "Resultados detalhados"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "User panel"
-msgstr "Painel de usuário"
+msgstr ""
 
 #: build/js/voting-single/index.js:1
 msgid "Back to voting"
-msgstr "Voltar às opções de votação"
+msgstr ""
 
 #: build/js/votings-block/index.js:1
 msgid "Search votings"
-msgstr "Pesquisar votações"
-
-#~ msgctxt "time"
-#~ msgid "h\\hi"
-#~ msgstr "h\\hi"
-
-#~ msgid "Credits"
-#~ msgstr "Créditos"
-
-#~ msgid "You must accept the Image Terms of Use"
-#~ msgstr "Você deve aceitar os termos de uso de imagem"
-
-#~ msgctxt "Post type general name"
-#~ msgid "Votings"
-#~ msgstr "Votações"
-
-#~ msgctxt "Post type singular name"
-#~ msgid "Voting"
-#~ msgstr "Votação"
-
-#~ msgctxt "Admin menu text"
-#~ msgid "Votings"
-#~ msgstr "Votações"
-
-#~ msgctxt "Add New on toolbar"
-#~ msgid "Votings"
-#~ msgstr "Votações"
-
-#~ msgid "Image Terms of Use"
-#~ msgstr "Termos de uso de imagem"
-
-#~ msgid "Distributed votes"
-#~ msgstr "Votos distribuídos"
-
-#~ msgid "Hacklab Team"
-#~ msgstr "Time do Hacklab"
-
-#~ msgid "Additional information (by Concordamos)"
-#~ msgstr "Informação adicional (por Concordamos)"
+msgstr ""
