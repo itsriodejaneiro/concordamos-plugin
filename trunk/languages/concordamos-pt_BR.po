@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-02-15T16:26:24+00:00\n"
-"PO-Revision-Date: 2024-02-15 13:29-0300\n"
+"POT-Creation-Date: 2024-02-16T15:22:02+00:00\n"
+"PO-Revision-Date: 2024-02-16 12:24-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -289,7 +289,7 @@ msgstr "Conta criada com sucesso."
 msgid "Authentication failed."
 msgstr "Autenticação falhou."
 
-#: includes/helpers.php:394
+#: includes/helpers.php:377
 msgid "How to vote"
 msgstr "Como votar"
 
@@ -343,7 +343,7 @@ msgstr "Voto"
 msgid "Votings"
 msgstr "Votações"
 
-#: includes/setup.php:30 templates/single-voting.php:43
+#: includes/setup.php:30 templates/single-voting.php:42
 msgid "Voting"
 msgstr "Votação"
 
@@ -387,26 +387,16 @@ msgstr "Política de privacidade"
 msgid "Terms of Use"
 msgstr "Termos de uso"
 
-#: templates/single-voting.php:21
-msgctxt "date"
-msgid "M d, Y"
-msgstr "d/m/Y"
-
-#: templates/single-voting.php:22
-msgctxt "time"
-msgid "H\\hi"
-msgstr "H\\hi"
-
-#: templates/single-voting.php:55
+#: templates/single-voting.php:54
 msgid "Created by:"
 msgstr "Criada por:"
 
-#: templates/single-voting.php:67 build/js/voting-page/index.js:1
+#: templates/single-voting.php:66 build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Start"
 msgstr "Começo"
 
-#: templates/single-voting.php:79 build/js/voting-page/index.js:1
+#: templates/single-voting.php:73 build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "End"
 msgstr "Fim"
@@ -496,7 +486,6 @@ msgstr "Com login"
 #: build/js/my-account/components/ParticipatedVotings.js:1
 #: build/js/my-account/index.js:1 build/js/shared/components/Filters.js:1
 #: build/js/voting-archive/App.js:1 build/js/voting-archive/index.js:1
-#: build/js/votings-block/index.js:1
 msgid "No login"
 msgstr "Sem login"
 
@@ -690,6 +679,11 @@ msgstr "Login obrigatório"
 #: build/js/votings-block/index.js:1
 msgid "Login required to see results"
 msgstr "Login obrigatório para ver os resultados"
+
+#: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
+#: build/js/votings-block/index.js:1
+msgid "No login required"
+msgstr "Login não obrigatório"
 
 #: build/js/voting-archive/index.js:1
 msgid "Search for a voting"
@@ -1106,6 +1100,14 @@ msgstr "Voltar às opções de votação"
 #: build/js/votings-block/index.js:1
 msgid "Search votings"
 msgstr "Pesquisar votações"
+
+#~ msgctxt "date"
+#~ msgid "M d, Y"
+#~ msgstr "d/m/Y"
+
+#~ msgctxt "time"
+#~ msgid "H\\hi"
+#~ msgstr "H\\hi"
 
 #~ msgctxt "time"
 #~ msgid "h\\hi"
