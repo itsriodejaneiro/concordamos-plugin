@@ -352,6 +352,12 @@ function create_voting_callback( \WP_REST_Request $request ) {
 		}
 	}
 
+	if ( empty( $params['locale'] ) ) {
+		$locale = sanitize_text_field( $params['locale'] );
+	} else {
+		$locale = get_default_language();
+	}
+
 	$number_voters = intval( $params['number_voters'] );
 	$voting_type   = sanitize_text_field( $params['voting_type'] );
 
@@ -388,6 +394,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'date_end'       => intval( $params['date_end'] ),
 			'date_start'     => intval( $params['date_start'] ),
 			'description'    => wp_kses_post( $params['voting_description'] ),
+			'locale'         => $locale,
 			'negative_votes' => sanitize_text_field( $params['negative_votes'] ),
 			'number_voters'  => $number_voters,
 			'results_end'    => sanitize_text_field( $params['results_end'] ),

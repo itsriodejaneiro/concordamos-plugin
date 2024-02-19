@@ -85,6 +85,7 @@ const Form = () => {
 			'credits_voter'     : votingCredits,
 			'date_end'          : startEndDateTime[1],
 			'date_start'        : startEndDateTime[0],
+			'locale'            : locale,
 			'negative_votes'    : negativeVotes,
 			'number_voters'     : numberOfVoters,
 			'results_end'       : resultsEnd,

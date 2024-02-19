@@ -21,7 +21,17 @@ function get_current_language() {
 		$locale = determine_locale();
 	}
 
-	return apply_filters( 'concordamos_locale', $locale );
+	return apply_filters( 'concordamos_locale', $locale, 'current' );
+}
+
+function get_default_language() {
+	$locale = apply_filters( 'wpml_default_language', null );
+
+	if ( empty( $locale ) ) {
+		$locale = get_locale();
+	}
+
+	return apply_filters( 'concordamos_locale', $locale, 'default' );
 }
 
 function get_language_options() {
