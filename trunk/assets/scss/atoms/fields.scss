@@ -50,7 +50,9 @@ form {
 
 	input[type="text"],
 	input[type="number"],
+	select,
 	textarea {
+		background-color: white;
 		border: 3px solid #000000;
 		border-radius: 8px;
 		display: block;

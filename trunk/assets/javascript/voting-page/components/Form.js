@@ -6,6 +6,7 @@ import Modal, { useModal } from '../../shared/components/Modal'
 import Number from './Number'
 import Options from './Options'
 import Radio from './Radio'
+import Select from './Select'
 import StartEnd from './StartEnd'
 import Text from './Text'
 import Textarea from './Textarea'
@@ -13,8 +14,8 @@ import { apiFetch } from '../../shared/hooks/fetch'
 import { navigateTo } from '../../shared/utils/location'
 
 const Form = () => {
-
 	const [description, setDescription] = useState('')
+	const [locale, setLocale] = useState(concordamos.locale)
 	const [negativeVotes, setNegativeVotes] = useState('no')
 	const [numberOfVoters, setNumberOfVoters] = useState('')
 	const [resultsEnd, setResultsEnd] = useState('no')
@@ -50,6 +51,10 @@ const Form = () => {
 		'public': __('Public voting', 'concordamos'),
 		'private': __('Private voting', 'concordamos'),
 	}
+
+	const localeOptions = concordamos.locales.map((locale) => {
+		return { label: locale.label, value: locale.key }
+	})
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
@@ -125,6 +130,15 @@ const Form = () => {
 					name="voting_access"
 					onChange={e => handleChange(e)}
 				/>
+				{(localeOptions.length > 0) ? (
+					<Select
+						label={__('Language', 'concordamos')}
+						name="locale"
+						onChange={e => setLocale(e.target.value)}
+						options={localeOptions}
+						value={locale}
+					/>
+				) : null}
 				<Text
 					label={__('Voting name', 'concordamos')}
 					name="voting_name"
