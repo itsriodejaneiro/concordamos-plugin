@@ -353,9 +353,9 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	}
 
 	if ( empty( $params['locale'] ) ) {
-		$locale = sanitize_text_field( $params['locale'] );
-	} else {
 		$locale = get_default_language();
+	} else {
+		$locale = sanitize_text_field( $params['locale'] );
 	}
 
 	$number_voters = intval( $params['number_voters'] );
