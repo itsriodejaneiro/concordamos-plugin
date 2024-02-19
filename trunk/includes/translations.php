@@ -6,14 +6,25 @@ function get_current_language() {
 	$locale = apply_filters( 'wpml_current_language', null );
 
 	if ( empty( $locale ) ) {
-		$locale = get_locale();
+		$locale = determine_locale();
 	}
 
 	return $locale;
 }
 
-function get_js_locale() {
-	return str_replace( '_', '-', get_current_language() );
+function get_language_options() {
+	$locales = apply_filters( 'wpml_active_languages', array() );
+	$options  = array();
+
+	foreach ( $locales as $key => $locale ) {
+		$options[] = array(
+			'key'    => $locale['default_locale'],
+			'label'  => $locale['translated_name'],
+			'native' => $locale['native_name'],
+		);
+	}
+
+	return $options;
 }
 
 function localize_plugin() {

@@ -5,12 +5,13 @@ import Grid from './Grid'
 import Modal, { useModal } from '../../shared/components/Modal'
 import Option from './Option'
 import { apiFetch } from '../../shared/hooks/fetch'
+import { getLocale } from '../../shared/utils/i18n'
 import { getPanelUrl, navigateTo } from '../../shared/utils/location'
 
 export default function SingleVoting ({ handleViewChange, initialData }) {
 	const { credits_voter, date_end, options } = initialData
 	const parsedOptions = JSON.parse(options)
-	const locale = concordamos.locale
+	const locale = getLocale()
 
 	const initialVotes = Object.keys(parsedOptions).map((key) => ({ id: key, count: 0 }))
 	const [votes, setVotes] = useState(initialVotes)
