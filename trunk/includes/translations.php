@@ -2,20 +2,26 @@
 
 namespace Concordamos;
 
+function format_locale( $locale ) {
+	$locales = apply_filters( 'wpml_active_languages', array() );
+
+	if ( ! empty( $locales[ $locale ] ) ) {
+		$locale = $locales[ $locale ]['default_locale'];
+	}
+
+	return $locale;
+}
+
+add_filter( 'concordamos_locale', 'Concordamos\format_locale' );
+
 function get_current_language() {
 	$locale = apply_filters( 'wpml_current_language', null );
 
 	if ( empty( $locale ) ) {
 		$locale = determine_locale();
-	} else {
-		$locales = apply_filters( 'wpml_active_languages', array() );
-
-		if ( ! empty( $locales[ $locale ] ) ) {
-			$locale = $locales[ $locale ]['default_locale'];
-		}
 	}
 
-	return $locale;
+	return apply_filters( 'concordamos_locale', $locale );
 }
 
 function get_language_options() {
