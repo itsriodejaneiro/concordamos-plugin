@@ -239,7 +239,7 @@ function enqueue_localized_script( $handle, $src, $deps, $object_name = 'concord
 }
 
 function get_page_by_template( string $template ) {
-	$pages = get_pages(
+	$pages = get_posts(
 		array(
 			'post_type'    => 'page',
 			'meta_key'     => '_wp_page_template',

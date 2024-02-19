@@ -18,8 +18,8 @@ $options   = Concordamos\get_options_by_voting( $single_id );
 $author_id     = get_post_field( 'post_author', $single_id );
 $voting_author = get_the_author_meta( 'display_name', $author_id );
 
-$js_date_format = wp_json_encode( [ 'dateStyle' => 'short' ] );
-$js_time_format = wp_json_encode( [ 'hour' => '2-digit', 'minute' => '2-digit' ] );
+$js_date_format = wp_json_encode( array( 'dateStyle' => 'short' ) );
+$js_time_format = wp_json_encode( array( 'hour' => '2-digit', 'minute' => '2-digit' ) );
 
 $date_start = $raw_post_meta['date_start'][0];
 $date_end   = $raw_post_meta['date_end'][0];
