@@ -18,7 +18,7 @@ function get_language_options() {
 
 	foreach ( $locales as $key => $locale ) {
 		$options[] = array(
-			'key'    => $locale['default_locale'],
+			'key'    => $key,
 			'label'  => $locale['translated_name'],
 			'native' => $locale['native_name'],
 		);

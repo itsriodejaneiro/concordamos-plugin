@@ -24,6 +24,7 @@ function enqueue_scripts_frontend() {
 				'concordamos',
 				array(
 					'locale'     => get_current_language(),
+					'locales'    => get_language_options(),
 					'nonce'      => wp_create_nonce( 'wp_rest' ),
 					'plugin_url' => CONCORDAMOS_PLUGIN_URL,
 					'rest_url'   => rest_url( 'concordamos/v1/' ),
