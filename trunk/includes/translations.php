@@ -7,6 +7,12 @@ function get_current_language() {
 
 	if ( empty( $locale ) ) {
 		$locale = determine_locale();
+	} else {
+		$locales = apply_filters( 'wpml_active_languages', array() );
+
+		if ( ! empty( $locales[ $locale ] ) ) {
+			$locale = $locales[ $locale ]['default_locale'];
+		}
 	}
 
 	return $locale;
@@ -18,7 +24,7 @@ function get_language_options() {
 
 	foreach ( $locales as $key => $locale ) {
 		$options[] = array(
-			'key'    => $key,
+			'key'    => $locale['default_locale'],
 			'label'  => $locale['translated_name'],
 			'native' => $locale['native_name'],
 		);
