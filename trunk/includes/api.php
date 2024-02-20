@@ -409,6 +409,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$post_id = wp_insert_post( $args );
 
 	if ( $post_id ) {
+		set_post_language( $post_id, 'voting', $locale, null );
 
 		$voting_options = $params['voting_options'];
 

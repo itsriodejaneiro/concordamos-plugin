@@ -36,7 +36,7 @@ function get_default_language() {
 
 function get_language_options() {
 	$locales = apply_filters( 'wpml_active_languages', array() );
-	$options  = array();
+	$options = array();
 
 	foreach ( $locales as $key => $locale ) {
 		$options[] = array(
@@ -49,8 +49,41 @@ function get_language_options() {
 	return $options;
 }
 
+function get_wpml_language_code( $locale ) {
+	if ( empty( $locale ) ) {
+		return $locale;
+	}
+
+	$locales = apply_filters( 'wpml_active_languages', array() );
+
+	foreach ( $locales as $key => $wpml_locale ) {
+		if ( $wpml_locale['default_locale'] === $locale ) {
+			return $wpml_locale['code'];
+		}
+	}
+
+	return $locale;
+}
+
 function localize_plugin() {
 	load_plugin_textdomain( 'concordamos', false, basename( CONCORDAMOS_PLUGIN_PATH ) . '/languages/' );
 }
 
 add_action( 'after_setup_theme', 'Concordamos\localize_plugin', 0 );
+
+function set_post_language( $post_id, $post_type, $locale, $original_locale = null ) {
+	$element_type   = 'post_' . $post_type;
+	$translation_id = apply_filters( 'wpml_element_trid', null, $post_id, $element_type );
+
+	if ( ! empty( $translation_id ) ) {
+		$language_details = array(
+			'element_id'           => $post_id,
+			'element_type'         => $element_type,
+			'trid'                 => $translation_id,
+			'language_code'        => get_wpml_language_code( $locale ),
+			'source_language_code' => get_wpml_language_code( $original_locale ),
+		);
+
+		do_action( 'wpml_set_element_language_details', $language_details );
+	}
+}
