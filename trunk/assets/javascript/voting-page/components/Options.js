@@ -100,7 +100,7 @@ const Options = ({label, description, setVotingOptions}) => {
 
 											{
 												inputFields.length >= 2
-												? <button className="trash" type="button" onClick={() => removeFields(index)}>{__('Delete', 'concordamos')}</button>
+												? <button className="edit trash" type="button" onClick={() => removeFields(index)}>{__('Delete', 'concordamos')}</button>
 												: null
 											}
 										</div>
