@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-02-20T13:09:12+00:00\n"
-"PO-Revision-Date: 2024-02-20 10:09-0300\n"
+"POT-Creation-Date: 2024-02-20T20:31:06+00:00\n"
+"PO-Revision-Date: 2024-02-20 17:34-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -343,7 +343,7 @@ msgstr "Voto"
 msgid "Votings"
 msgstr "Votações"
 
-#: includes/setup.php:30 templates/single-voting.php:51
+#: includes/setup.php:30 templates/single-voting.php:39
 msgid "Voting"
 msgstr "Votação"
 
@@ -387,16 +387,16 @@ msgstr "Política de privacidade"
 msgid "Terms of Use"
 msgstr "Termos de uso"
 
-#: templates/single-voting.php:63
+#: templates/single-voting.php:51
 msgid "Created by:"
 msgstr "Criada por:"
 
-#: templates/single-voting.php:75 build/js/voting-page/index.js:1
+#: templates/single-voting.php:63 build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Start"
 msgstr "Começo"
 
-#: templates/single-voting.php:82 build/js/voting-page/index.js:1
+#: templates/single-voting.php:70 build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "End"
 msgstr "Fim"
@@ -523,7 +523,7 @@ msgstr "Olá, %s"
 msgid "Sign out"
 msgstr "Sair"
 
-#: build/js/my-account/index.js:1
+#: build/js/my-account/index.js:1 build/js/voting-archive/index.js:1
 msgid "No voting found."
 msgstr "Nenhuma votação encontrada."
 

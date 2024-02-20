@@ -68,6 +68,9 @@ export function App () {
 					<Filters filters={filters} onChange={onFiltersChange}/>
 				</div>
 			</div>
+			{(data?.posts && data.posts.length === 0) ? (
+				<h3>{__('No voting found.', 'concordamos')}</h3>
+			) : null}
 			<div className="voting-archive-grid">
 			{(data?.posts ?? []).map((post) => (
 				<VotingCard key={post.ID} voting={post}/>
