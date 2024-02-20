@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-02-16T15:22:02+00:00\n"
-"PO-Revision-Date: 2024-02-20 09:58-0300\n"
+"POT-Creation-Date: 2024-02-20T13:09:12+00:00\n"
+"PO-Revision-Date: 2024-02-20 10:12-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -36,64 +36,64 @@ msgstr "Red Concordamos"
 msgid "You are not signed in."
 msgstr "No has iniciado sesión."
 
-#: includes/api.php:152 includes/api.php:159 includes/api.php:452
-#: includes/api.php:513
+#: includes/api.php:152 includes/api.php:159 includes/api.php:460
+#: includes/api.php:521
 msgid "You don't have enough permissions."
 msgstr "No tienes suficientes permisos."
 
-#: includes/api.php:349 includes/api.php:640
+#: includes/api.php:349 includes/api.php:648
 msgid "Required field is either missing or blank:"
 msgstr "El campo obligatorio falta o está en blanco:"
 
-#: includes/api.php:432
+#: includes/api.php:440
 msgid "Voting created successfully!"
 msgstr "¡Votación creada exitosamente!"
 
-#: includes/api.php:440
+#: includes/api.php:448
 msgid "Verify all fields and try again"
 msgstr "Verifica todos los campos y vuelve a intentarlo"
 
-#: includes/api.php:470
+#: includes/api.php:478
 msgid "Voting updated successfully!"
 msgstr "¡Votación actualizada exitosamente!"
 
-#: includes/api.php:476
+#: includes/api.php:484
 msgid "Error updating voting, please try again"
 msgstr "Error al actualizar la votación, inténtalo de nuevo"
 
-#: includes/api.php:584
+#: includes/api.php:592
 msgid "User updated successfully!"
 msgstr "Usuario actualizado exitosamente!"
 
-#: includes/api.php:590
+#: includes/api.php:598
 msgid "Error updating user, please try again"
 msgstr "Error al actualizar el usuario, inténtelo de nuevo"
 
-#: includes/api.php:665
+#: includes/api.php:673
 msgid "Vote not found"
 msgstr "Voto no encontrado"
 
-#: includes/api.php:691
+#: includes/api.php:699
 msgid "Invalid link"
 msgstr "Enlace no válido"
 
-#: includes/api.php:701
+#: includes/api.php:709
 msgid "Expired link"
 msgstr "Enlace caducado"
 
-#: includes/api.php:711
+#: includes/api.php:719
 msgid "Voting phase is already closed"
 msgstr "La fase de votación ya está cerrada"
 
-#: includes/api.php:746
+#: includes/api.php:754
 msgid "Vote registered successfully!"
 msgstr "¡Voto registrado exitosamente!"
 
-#: includes/api.php:753
+#: includes/api.php:761
 msgid "Error registering your vote, please try again"
 msgstr "Error al registrar tu voto, inténtalo de nuevo"
 
-#: includes/api.php:846
+#: includes/api.php:854
 msgid "User signed out"
 msgstr "El usuario cerró sesión"
 
@@ -347,7 +347,7 @@ msgstr "Voto"
 msgid "Votings"
 msgstr "Votaciones"
 
-#: includes/setup.php:30 templates/single-voting.php:42
+#: includes/setup.php:30 templates/single-voting.php:51
 msgid "Voting"
 msgstr "Votación"
 
@@ -362,7 +362,7 @@ msgstr "Opción"
 #: includes/templates.php:27 templates/part/navbar-mobile.php:8
 #: build/js/my-account/index.js:1 build/js/voting-page/index.js:1
 msgid "Create voting"
-msgstr "Crear votacion"
+msgstr "Crear votación"
 
 #: includes/templates.php:28 build/js/login-block/editor.js:1
 msgid "Login"
@@ -391,16 +391,16 @@ msgstr "Política de Privacidad"
 msgid "Terms of Use"
 msgstr "Condiciones de uso"
 
-#: templates/single-voting.php:54
+#: templates/single-voting.php:63
 msgid "Created by:"
 msgstr "Creado por:"
 
-#: templates/single-voting.php:66 build/js/voting-page/index.js:1
+#: templates/single-voting.php:75 build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Start"
 msgstr "Comenzar"
 
-#: templates/single-voting.php:73 build/js/voting-page/index.js:1
+#: templates/single-voting.php:82 build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "End"
 msgstr "Fin"
@@ -713,7 +713,7 @@ msgstr "Votación privada"
 
 #: build/js/voting-page/index.js:1
 msgid "Type of the voting"
-msgstr "Tipo de votacion"
+msgstr "Tipo de votación"
 
 #: build/js/voting-page/index.js:1
 msgid "General voting settings"
@@ -729,6 +729,10 @@ msgstr ""
 #: build/js/voting-page/index.js:1
 msgid "Request login to vote"
 msgstr "Solicitar iniciar sesión para votar"
+
+#: build/js/voting-page/index.js:1
+msgid "Language"
+msgstr "Idioma"
 
 #: build/js/voting-page/index.js:1
 msgid "Voting name"

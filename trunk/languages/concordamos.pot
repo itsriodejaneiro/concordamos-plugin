@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-16T15:22:02+00:00\n"
+"POT-Creation-Date: 2024-02-20T13:09:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: concordamos\n"
@@ -36,65 +36,65 @@ msgstr ""
 
 #: includes/api.php:152
 #: includes/api.php:159
-#: includes/api.php:452
-#: includes/api.php:513
+#: includes/api.php:460
+#: includes/api.php:521
 msgid "You don't have enough permissions."
 msgstr ""
 
 #: includes/api.php:349
-#: includes/api.php:640
+#: includes/api.php:648
 msgid "Required field is either missing or blank:"
 msgstr ""
 
-#: includes/api.php:432
+#: includes/api.php:440
 msgid "Voting created successfully!"
 msgstr ""
 
-#: includes/api.php:440
+#: includes/api.php:448
 msgid "Verify all fields and try again"
 msgstr ""
 
-#: includes/api.php:470
+#: includes/api.php:478
 msgid "Voting updated successfully!"
 msgstr ""
 
-#: includes/api.php:476
+#: includes/api.php:484
 msgid "Error updating voting, please try again"
 msgstr ""
 
-#: includes/api.php:584
+#: includes/api.php:592
 msgid "User updated successfully!"
 msgstr ""
 
-#: includes/api.php:590
+#: includes/api.php:598
 msgid "Error updating user, please try again"
 msgstr ""
 
-#: includes/api.php:665
+#: includes/api.php:673
 msgid "Vote not found"
 msgstr ""
 
-#: includes/api.php:691
+#: includes/api.php:699
 msgid "Invalid link"
 msgstr ""
 
-#: includes/api.php:701
+#: includes/api.php:709
 msgid "Expired link"
 msgstr ""
 
-#: includes/api.php:711
+#: includes/api.php:719
 msgid "Voting phase is already closed"
 msgstr ""
 
-#: includes/api.php:746
+#: includes/api.php:754
 msgid "Vote registered successfully!"
 msgstr ""
 
-#: includes/api.php:753
+#: includes/api.php:761
 msgid "Error registering your vote, please try again"
 msgstr ""
 
-#: includes/api.php:846
+#: includes/api.php:854
 msgid "User signed out"
 msgstr ""
 
@@ -334,7 +334,7 @@ msgid "Votings"
 msgstr ""
 
 #: includes/setup.php:30
-#: templates/single-voting.php:42
+#: templates/single-voting.php:51
 msgid "Voting"
 msgstr ""
 
@@ -386,17 +386,17 @@ msgstr ""
 msgid "Terms of Use"
 msgstr ""
 
-#: templates/single-voting.php:54
+#: templates/single-voting.php:63
 msgid "Created by:"
 msgstr ""
 
-#: templates/single-voting.php:66
+#: templates/single-voting.php:75
 #: build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Start"
 msgstr ""
 
-#: templates/single-voting.php:73
+#: templates/single-voting.php:82
 #: build/js/voting-page/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "End"
@@ -753,6 +753,10 @@ msgstr ""
 
 #: build/js/voting-page/index.js:1
 msgid "Request login to vote"
+msgstr ""
+
+#: build/js/voting-page/index.js:1
+msgid "Language"
 msgstr ""
 
 #: build/js/voting-page/index.js:1
