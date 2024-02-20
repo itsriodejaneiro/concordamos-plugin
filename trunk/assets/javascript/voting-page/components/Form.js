@@ -131,7 +131,7 @@ const Form = () => {
 					name="voting_access"
 					onChange={e => handleChange(e)}
 				/>
-				{(localeOptions.length > 0) ? (
+				{(localeOptions.length > 1) ? (
 					<Select
 						label={__('Language', 'concordamos')}
 						name="locale"
