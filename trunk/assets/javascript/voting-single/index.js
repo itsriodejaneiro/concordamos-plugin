@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 
 import { App } from './App'
 import { VotingAdmin } from './VotingAdmin'
-import { getLocale } from '../shared/utils/i18n'
+import { formatDate, formatTime } from '../shared/utils/i18n'
 
 const mainAppRender = document.getElementById('concordamos-voting-single')
 const adminAppRender = document.getElementById('concordamos-voting-admin')
@@ -21,9 +21,8 @@ const initialData = {
 
 document.querySelectorAll('time[data-format]').forEach((el) => {
 	const date = new Date(el.dateTime)
-	const format = JSON.parse(el.dataset.format)
-	const formatter = new Intl.DateTimeFormat(getLocale(), format)
-	el.textContent = formatter.format(date)
+	const format = el.dataset.format
+	el.textContent = (format === 'time') ? formatTime(date) : formatDate(date)
 })
 
 render(<StrictMode><App initialData={initialData}/></StrictMode>, mainAppRender)

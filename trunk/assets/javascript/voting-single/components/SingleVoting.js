@@ -5,13 +5,12 @@ import Grid from './Grid'
 import Modal, { useModal } from '../../shared/components/Modal'
 import Option from './Option'
 import { apiFetch } from '../../shared/hooks/fetch'
-import { getLocale } from '../../shared/utils/i18n'
+import { formatDate, formatTime } from '../../shared/utils/i18n'
 import { getPanelUrl, navigateTo } from '../../shared/utils/location'
 
 export default function SingleVoting ({ handleViewChange, initialData }) {
 	const { credits_voter, date_end, options } = initialData
 	const parsedOptions = JSON.parse(options)
-	const locale = getLocale()
 
 	const initialVotes = Object.keys(parsedOptions).map((key) => ({ id: key, count: 0 }))
 	const [votes, setVotes] = useState(initialVotes)
@@ -95,7 +94,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 			<div className="content voting-mode">
 				<h2>{__('Distribute your votes', 'concordamos')}</h2>
 				<p>{sprintf(__('You can use up to %s credits to vote during this poll', 'concordamos'), credits_voter)}</p>
-				<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString(locale), formattedDateEnd.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' }))}</p>
+				<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formatDate(formattedDateEnd), formatTime(formattedDateEnd))}</p>
 
 				<form onSubmit={confirmVote}>
 					{Object.entries(parsedOptions).map(([key, option]) => {
@@ -188,7 +187,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 				<div className="sidebar-content">
 					<h2>{__('Distribute your votes', 'concordamos')}</h2>
 					<p>{sprintf(__('You can use up to %s credits to vote during this poll', 'concordamos'), credits_voter)}</p>
-					<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formattedDateEnd.toLocaleDateString(locale), formattedDateEnd.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' }))}</p>
+					<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formatDate(formattedDateEnd), formatTime(formattedDateEnd))}</p>
 					<Grid squares={Number(credits_voter)} consumed={usedCredits}/>
 					<span>{__('Available credits', 'concordamos')}</span>
 					<span>{`${credits_voter - usedCredits} / ${credits_voter}`}</span>

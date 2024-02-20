@@ -18,18 +18,6 @@ $options   = Concordamos\get_options_by_voting( $single_id );
 $author_id     = get_post_field( 'post_author', $single_id );
 $voting_author = get_the_author_meta( 'display_name', $author_id );
 
-$js_date_format = wp_json_encode(
-	array(
-		'dateStyle' => 'short',
-	)
-);
-$js_time_format = wp_json_encode(
-	array(
-		'hour'   => '2-digit',
-		'minute' => '2-digit',
-	)
-);
-
 $date_start = $raw_post_meta['date_start'][0];
 $date_end   = $raw_post_meta['date_end'][0];
 
@@ -73,15 +61,15 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 				<div class="<?php echo esc_attr( $date_start_class ); ?>">
 					<div class="icon">1</div>
 					<h3><?php esc_html_e( 'Start', 'concordamos' ); ?></h3>
-					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'c' ) ); ?>" data-format="<?php echo esc_attr( $js_date_format ); ?>"></time>
-					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'c' ) ); ?>" data-format="<?php echo esc_attr( $js_time_format ); ?>"></time>
+					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'c' ) ); ?>" data-format="date"></time>
+					<time class="time" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'c' ) ); ?>" data-format="time"></time>
 					<!-- <span class="start-edit">Editar</span> -->
 				</div>
 				<div class="<?php echo esc_attr( $date_end_class ); ?>">
 					<div class="icon">2</div>
 					<h3><?php esc_html_e( 'End', 'concordamos' ); ?></h3>
-					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_end, 'c' ) ); ?>" data-format="<?php echo esc_attr( $js_date_format ); ?>"></time>
-					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_end, 'c' ) ); ?>" data-format="<?php echo esc_attr( $js_time_format ); ?>"></time>
+					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_end, 'c' ) ); ?>" data-format="date"></time>
+					<time class="time" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_end, 'c' ) ); ?>" data-format="time"></time>
 					<!-- <span class="end-edit">Editar</span> -->
 				</div>
 			</div>

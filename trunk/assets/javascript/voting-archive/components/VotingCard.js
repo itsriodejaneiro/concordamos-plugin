@@ -2,14 +2,8 @@ import { __, _x, sprintf } from '@wordpress/i18n'
 import classNames from 'classnames'
 
 import Image from './Image'
-import { getLocale } from '../../shared/utils/i18n'
+import { formatDate } from '../../shared/utils/i18n'
 import { getPanelUrl } from '../../shared/utils/location'
-
-const dateFormatter = new Intl.DateTimeFormat(getLocale(), { dateStyle: 'short' })
-
-function formatDate (timestamp) {
-	return dateFormatter.format(timestamp)
-}
 
 function getVotingStatus (voting) {
 	switch (voting.time) {
