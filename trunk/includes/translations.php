@@ -69,7 +69,7 @@ function get_wpml_locales() {
 	if ( class_exists( 'SitePress' ) ) {
 		global $sitepress;
 		if ( ! empty( $sitepress ) ) {
-			return $sitepress->get_languages( $sitepress->get_current_language(), true, false );
+			return $sitepress->get_languages( $sitepress->get_current_language(), true, false, false, 'display_name' );
 		}
 	}
 
