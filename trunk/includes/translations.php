@@ -3,7 +3,7 @@
 namespace Concordamos;
 
 function format_locale( $locale ) {
-	$locales = apply_filters( 'wpml_active_languages', array() );
+	$locales = get_wpml_locales();
 
 	if ( ! empty( $locales[ $locale ] ) ) {
 		$locale = $locales[ $locale ]['default_locale'];
@@ -35,13 +35,13 @@ function get_default_language() {
 }
 
 function get_language_options() {
-	$locales = apply_filters( 'wpml_active_languages', array() );
+	$locales = get_wpml_locales();
 	$options = array();
 
 	foreach ( $locales as $key => $locale ) {
 		$options[] = array(
 			'key'    => $locale['default_locale'],
-			'label'  => $locale['translated_name'],
+			'label'  => empty( $locale['display_name'] ) ? $locale['translated_name'] : $locale['display_name'],
 			'native' => $locale['native_name'],
 		);
 	}
@@ -54,7 +54,7 @@ function get_wpml_language_code( $locale ) {
 		return $locale;
 	}
 
-	$locales = apply_filters( 'wpml_active_languages', array() );
+	$locales = get_wpml_locales();
 
 	foreach ( $locales as $key => $wpml_locale ) {
 		if ( $wpml_locale['default_locale'] === $locale ) {
@@ -63,6 +63,18 @@ function get_wpml_language_code( $locale ) {
 	}
 
 	return $locale;
+}
+
+function get_wpml_locales() {
+	if ( class_exists( 'SitePress' ) ) {
+		global $sitepress;
+		if ( ! empty( $sitepress ) ) {
+			return $sitepress->get_languages( $sitepress->get_current_language(), true, false );
+		}
+	}
+
+	$options = array( 'skip_empty' => 0 );
+	return apply_filters( 'wpml_active_languages', array(), $options );
 }
 
 function localize_plugin() {
