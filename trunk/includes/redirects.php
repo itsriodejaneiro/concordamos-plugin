@@ -43,10 +43,14 @@ add_action( 'template_redirect', 'Concordamos\restrict_voting_single_access' );
 /**
  * @return void
  */
-function required_login_to_create_voting() {
-	$voting_page = get_page_by_template( 'concordamos/template-create-voting.php' );
+function require_login_to_create_or_translate_voting() {
+	$create_voting_page    = get_page_by_template( 'concordamos/template-create-voting.php' );
+	$translate_voting_page = get_page_by_template( 'concordamos/template-translate-voting.php' );
 
-	if ( $voting_page->ID !== get_the_ID() ) {
+	if ( !empty( $create_voting_page ) && $create_voting_page->ID !== get_the_ID() ) {
+		return;
+	}
+	if ( !empty( $translate_voting_page ) && $translate_voting_page->ID !== get_the_ID() ) {
 		return;
 	}
 	if ( is_user_logged_in() ) {
@@ -58,7 +62,34 @@ function required_login_to_create_voting() {
 	exit;
 }
 
-add_action( 'template_redirect', 'Concordamos\required_login_to_create_voting' );
+add_action( 'template_redirect', 'Concordamos\require_login_to_create_or_translate_voting' );
+
+/**
+ * @return void
+ */
+function authenticate_to_translate_voting() {
+	$translate_voting_page = get_page_by_template( 'concordamos/template-translate-voting.php' );
+
+	if ( empty( $translate_voting_page ) || $translate_voting_page->ID !== get_the_ID() ) {
+		return;
+	}
+
+	$voting_slug = sanitize_key( filter_input( INPUT_GET, 'voting_id' ) );
+
+	if ( ! empty( $voting_id ) ) {
+		$voting = get_post_by_slug( 'voting', $voting_slug );
+
+		if ( ! empty( $voting ) && $voting->post_author === get_current_user_id() ) {
+			return;
+		}
+	}
+
+	nocache_headers();
+	wp_safe_redirect( get_permalink( get_page_by_template( 'concordamos/template-create-voting.php' ) ) );
+	exit;
+}
+
+add_action( 'template_redirect', 'Concordamos\authenticate_to_translate_voting' );
 
 /**
  * @return void
