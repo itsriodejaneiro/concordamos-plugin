@@ -15,11 +15,11 @@ function enqueue_scripts_frontend() {
 		$template_slug = get_page_template_slug();
 
 		if ( $template_slug === 'concordamos/template-create-voting.php' ) {
-			wp_enqueue_style( 'concordamos-voting-form-style', CONCORDAMOS_PLUGIN_URL . 'build/css/voting-page.css', array( 'concordamos-style' ), CONCORDAMOS_PLUGIN_VERSION );
+			wp_enqueue_style( 'concordamos-create-voting-form-style', CONCORDAMOS_PLUGIN_URL . 'build/css/template-create-voting.css', array( 'concordamos-style' ), CONCORDAMOS_PLUGIN_VERSION );
 
 			enqueue_localized_script(
-				'concordamos-voting-form',
-				CONCORDAMOS_PLUGIN_URL . 'build/js/voting-page/index.js',
+				'concordamos-create-voting-form',
+				CONCORDAMOS_PLUGIN_URL . 'build/js/create-voting/index.js',
 				array( 'wp-element', 'wp-i18n' ),
 				'concordamos',
 				array(
