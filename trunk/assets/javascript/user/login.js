@@ -40,7 +40,7 @@ function Login() {
         setMessageClass('success');
         setTimeout(() => {
           window.location.href = window.concordamos_login.redirect_to
-        }, 3000);
+        }, 1000);
       } else {
         setMessageClass('error')
       }

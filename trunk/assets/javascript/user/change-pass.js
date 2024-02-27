@@ -52,7 +52,7 @@ function ChangePassword() {
 					if (formData.get('token')) {
 						setTimeout(() => {
 							window.location.href = window.concordamos.login_url
-						}, 3000);
+						}, 1000);
 					}
 					setMessageClass('success');
 				} else {

@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             showSuccessMsg(data.message);
                             setTimeout(() => {
                                 window.location.href = window.concordamos.my_account_url;
-                            }, 3000);
+                            }, 1000);
                         } else {
                             showErrors(data);
                         }
