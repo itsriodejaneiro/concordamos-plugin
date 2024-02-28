@@ -288,13 +288,9 @@ function list_participated_votings_callback( \WP_REST_Request $request ) {
 
 	$query = new \WP_Query( $args_voting );
 
-	$$prepare_voting = function ( $voting ) {
-		return prepare_voting_for_api( $voting );
-	};
-
 	return array(
 		'num_pages' => $query->max_num_pages,
-		'posts'     => array_map( $$prepare_voting, $query->posts ),
+		'posts'     => array_map( 'Concordamos\\prepare_voting_for_api', $query->posts ),
 	);
 }
 
