@@ -1,20 +1,20 @@
-import { useState } from "react"
-import { __, _x, sprintf } from '@wordpress/i18n'
+import { __, sprintf } from '@wordpress/i18n'
+import { useState } from 'react'
 
-const Text = ({label, maxLength, name, onChange, placeholder}) => {
+export default function TranslationText ({ label, maxLength, name, onChange, original }) {
 	const [currentLength, setCurrentLength] = useState(0)
 	const [limitReached, setLimitReached] = useState(false)
-	const [lastValue, setLastValue] = useState("")
+	const [lastValue, setLastValue] = useState('')
 
-	const handleChange = (e) => {
+	function handleChange (e) {
 		const newValue = e.target.value
-		const newLength = e.target.value.length
+		const newLength = newValue.length
 
 		if (maxLength && newLength <= maxLength) {
 			setCurrentLength(newLength)
 			setLastValue(newValue)
-			setLimitReached(newLength === maxLength)
 			onChange(e)
+			setLimitReached(newLength === maxLength)
 		} else if (newLength > maxLength) {
 			e.target.value = lastValue
 		} else if (!maxLength) {
@@ -28,7 +28,10 @@ const Text = ({label, maxLength, name, onChange, placeholder}) => {
 		<div className="field field-text">
 			<label>
 				<span>{label}</span>
-				<input name={name} placeholder={placeholder} type="text" onChange={handleChange} />
+				<div className="translation-row">
+					<input type="text" disabled={true} value={original} aria-label={__('Original text', 'concordamos')}/>
+					<input type="text" name={name} aria-label={__('Translated text', 'concordamos')} onChange={handleChange}/>
+				</div>
 			</label>
 			{maxLength && currentLength > maxLength * 0.8 && (
 				<div className={warningClass}>
@@ -41,5 +44,3 @@ const Text = ({label, maxLength, name, onChange, placeholder}) => {
 		</div>
 	)
 }
-
-export default Text

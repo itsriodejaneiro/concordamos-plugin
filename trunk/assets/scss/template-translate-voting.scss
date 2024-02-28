@@ -1,0 +1,46 @@
+@import 'atoms/fields';
+@import 'atoms/buttons';
+
+@import 'components/modal';
+
+body{
+	.entry-header {
+		display: none;
+	}
+
+	h1{
+		display: none;
+	}
+}
+
+#the-content {
+	max-width: 585px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#concordamos-translate-voting-form {
+	max-width: 585px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+
+	#the-content:not(:empty) + & {
+		margin-top: 60px;
+	}
+
+	form{
+
+		@media (max-width: 782px){
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+
+	.translation-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 0.5rem;
+	}
+}

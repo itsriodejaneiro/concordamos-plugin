@@ -1,7 +1,7 @@
 import Form from './components/Form'
 
-export function App (props) {
+export function App ({ template }) {
 	return (
-		<Form />
+		<Form template={template}/>
 	)
 }

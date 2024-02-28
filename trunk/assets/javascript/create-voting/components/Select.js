@@ -1,5 +1,3 @@
-import { __, _x, sprintf } from '@wordpress/i18n'
-
 function Select ({ label, name, onChange, options, value }) {
 	return (
 		<div className="field field-select">
