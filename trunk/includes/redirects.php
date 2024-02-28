@@ -76,10 +76,10 @@ function authenticate_to_translate_voting() {
 
 	$voting_slug = sanitize_key( filter_input( INPUT_GET, 'voting_id' ) );
 
-	if ( ! empty( $voting_id ) ) {
+	if ( ! empty( $voting_slug ) ) {
 		$voting = get_post_by_slug( 'voting', $voting_slug );
 
-		if ( ! empty( $voting ) && $voting->post_author === get_current_user_id() ) {
+		if ( ! empty( $voting ) && $voting->post_author == get_current_user_id() ) {
 			return;
 		}
 	}
