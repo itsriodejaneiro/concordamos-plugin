@@ -47,10 +47,10 @@ function require_login_to_create_or_translate_voting() {
 	$create_voting_page    = get_page_by_template( 'concordamos/template-create-voting.php' );
 	$translate_voting_page = get_page_by_template( 'concordamos/template-translate-voting.php' );
 
-	if ( !empty( $create_voting_page ) && $create_voting_page->ID !== get_the_ID() ) {
-		return;
-	}
-	if ( !empty( $translate_voting_page ) && $translate_voting_page->ID !== get_the_ID() ) {
+	$is_voting_creation    = ! empty( $create_voting_page ) && $create_voting_page->ID === get_the_ID();
+	$is_voting_translation = ! empty( $translate_voting_page ) && $translate_voting_page->ID === get_the_ID();
+
+	if ( ! $is_voting_creation && ! $is_voting_translation ) {
 		return;
 	}
 	if ( is_user_logged_in() ) {
