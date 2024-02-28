@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n'
+import { __, sprintf } from '@wordpress/i18n'
 import { useState } from 'react'
 
 import LocaleSelector from './LocaleSelector'
@@ -7,12 +7,25 @@ import TranslationText from './TranslationText'
 import { apiFetch } from '../../shared/hooks/fetch'
 import { navigateTo } from '../../shared/utils/location'
 
+function populateVotingOptions (template) {
+	const options = {}
+	for (const votingId of Object.keys(template.voting_options)) {
+		options[votingId] = {
+			option_name: '',
+			option_description: '',
+			option_link: '',
+		}
+	}
+	return options
+}
+
 export default function Form({ template }) {
 	const confirmModal = useModal(false)
 	const [locale, setLocale] = useState(null)
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [votingName, setVotingName] = useState('')
 	const [votingDescription, setVotingDescription] = useState('')
+	const [votingOptions, setVotingOptions] = useState(() => populateVotingOptions(template))
 
 	function confirmTranslation (event) {
 		event.preventDefault()
@@ -25,8 +38,10 @@ export default function Form({ template }) {
 		setIsSubmitting(true)
 
 		console.log({
+			locale,
 			voting_description: votingDescription,
 			voting_name: votingName,
+			voting_options: votingOptions,
 		})
 
 		setIsSubmitting(false)
@@ -35,6 +50,13 @@ export default function Form({ template }) {
 	function handleBack () {
 		setIsSubmitting(false)
 		confirmModal.close()
+	}
+
+	function setOption (optionId, field, value) {
+		setVotingOptions((options) => ({
+			...options,
+			[optionId]: { ...options[optionId], [field]: value },
+		}))
 	}
 
 	return <>
@@ -50,18 +72,49 @@ export default function Form({ template }) {
 				label={__('Voting name', 'concordamos')}
 				name="voting_name"
 				original={template.voting_name}
+				value={votingName}
 				maxLength={100}
 				onChange={e => setVotingName(e.target.value)}
-			/>
+				/>
 			<TranslationText
 				label={__('Voting description', 'concordamos')}
 				name="voting_description"
+				type="textarea"
 				original={template.voting_description}
-				maxLength={100}
+				value={votingDescription}
+				maxLength={150}
 				onChange={e => setVotingDescription(e.target.value)}
 			/>
 
 			<div class="title-section">{__('Options of the voting', 'concordamos')}</div>
+			{Object.entries(votingOptions).map(([optionId, option], index) => {
+				const originalOption = template.voting_options[optionId]
+				return <>
+					<div class="title-subsection">{sprintf(__('Option %s', 'concordamos'), index + 1)}</div>
+					<TranslationText
+						label={__('Title of the option', 'concordamos')}
+						name={`voting_options[${optionId}][option_name]`}
+						original={originalOption.option_name}
+						value={option.option_name}
+						onChange={e => setOption(optionId, 'option_name', e.target.value)}
+					/>
+					<TranslationText
+						label={__('Description of the option', 'concordamos')}
+						name={`voting_options[${optionId}][option_description]`}
+						original={originalOption.option_description}
+						value={option.option_description}
+						onChange={e => setOption(optionId, 'option_description', e.target.value)}
+					/>
+					<TranslationText
+						label={__('Link of the option', 'concordamos')}
+						name={`voting_options[${optionId}][option_link]`}
+						type="url"
+						original={originalOption.option_link}
+						value={option.option_link}
+						onChange={e => setOption(optionId, 'option_link', e.target.value)}
+					/>
+				</>
+			})}
 
 			<button type="submit" class="button-full">{__('Translate voting', 'concordamos')}</button>
 		</form>

@@ -41,6 +41,37 @@ body{
 	.translation-row {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-gap: 0.5rem;
+		grid-gap: 1rem;
+	}
+
+	.title-section, .title-subsection{
+		font-family: 'Oswald';
+		font-weight: 500;
+		line-height: 130%;
+		padding-right: 15px;
+		color: #000;
+	}
+
+	.title-section{
+		font-size: 24px;
+		margin-top: 40px;
+		margin-bottom: 24px;
+		letter-spacing: -0.24px;
+		padding-right: 15px;
+		color: #000;
+		@media(max-width: 781px){
+			margin-top: 24px;
+		}
+	}
+
+	.title-subsection{
+		font-size: 20px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding-right: 15px;
+		color: #000;
+		@media(max-width: 781px){
+			margin-top: 20px;
+		}
 	}
 }

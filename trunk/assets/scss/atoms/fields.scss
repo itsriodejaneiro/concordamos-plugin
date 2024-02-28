@@ -50,6 +50,7 @@ form {
 
 	input[type="text"],
 	input[type="number"],
+	input[type="url"],
 	select,
 	textarea {
 		background-color: white;
@@ -137,6 +138,7 @@ form {
 					}
 
 					input[type="text"],
+					input[type="url"],
 					textarea {
 						border: 3px solid #000000;
 						border-radius: 8px;
