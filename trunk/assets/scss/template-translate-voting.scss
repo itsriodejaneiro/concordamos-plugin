@@ -42,6 +42,10 @@ body{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 1rem;
+
+		& > :first-child {
+			background-color: rgba(#eee, 0.75);
+		}
 	}
 
 	.title-section, .title-subsection{
