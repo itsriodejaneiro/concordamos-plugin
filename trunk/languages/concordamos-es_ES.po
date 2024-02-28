@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-02-20T20:31:06+00:00\n"
-"PO-Revision-Date: 2024-02-20 17:34-0300\n"
+"POT-Creation-Date: 2024-02-28T14:45:37+00:00\n"
+"PO-Revision-Date: 2024-02-28 11:47-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -36,64 +36,64 @@ msgstr "Red Concordamos"
 msgid "You are not signed in."
 msgstr "No has iniciado sesión."
 
-#: includes/api.php:152 includes/api.php:159 includes/api.php:460
-#: includes/api.php:521
+#: includes/api.php:152 includes/api.php:159 includes/api.php:456
+#: includes/api.php:517
 msgid "You don't have enough permissions."
 msgstr "No tienes suficientes permisos."
 
-#: includes/api.php:349 includes/api.php:648
+#: includes/api.php:345 includes/api.php:644
 msgid "Required field is either missing or blank:"
 msgstr "El campo obligatorio falta o está en blanco:"
 
-#: includes/api.php:440
+#: includes/api.php:436
 msgid "Voting created successfully!"
 msgstr "¡Votación creada exitosamente!"
 
-#: includes/api.php:448
+#: includes/api.php:444
 msgid "Verify all fields and try again"
 msgstr "Verifica todos los campos y vuelve a intentarlo"
 
-#: includes/api.php:478
+#: includes/api.php:474
 msgid "Voting updated successfully!"
 msgstr "¡Votación actualizada exitosamente!"
 
-#: includes/api.php:484
+#: includes/api.php:480
 msgid "Error updating voting, please try again"
 msgstr "Error al actualizar la votación, inténtalo de nuevo"
 
-#: includes/api.php:592
+#: includes/api.php:588
 msgid "User updated successfully!"
 msgstr "Usuario actualizado exitosamente!"
 
-#: includes/api.php:598
+#: includes/api.php:594
 msgid "Error updating user, please try again"
 msgstr "Error al actualizar el usuario, inténtelo de nuevo"
 
-#: includes/api.php:673
+#: includes/api.php:669
 msgid "Vote not found"
 msgstr "Voto no encontrado"
 
-#: includes/api.php:699
+#: includes/api.php:695
 msgid "Invalid link"
 msgstr "Enlace no válido"
 
-#: includes/api.php:709
+#: includes/api.php:705
 msgid "Expired link"
 msgstr "Enlace caducado"
 
-#: includes/api.php:719
+#: includes/api.php:715
 msgid "Voting phase is already closed"
 msgstr "La fase de votación ya está cerrada"
 
-#: includes/api.php:754
+#: includes/api.php:750
 msgid "Vote registered successfully!"
 msgstr "¡Voto registrado exitosamente!"
 
-#: includes/api.php:761
+#: includes/api.php:757
 msgid "Error registering your vote, please try again"
 msgstr "Error al registrar tu voto, inténtalo de nuevo"
 
-#: includes/api.php:854
+#: includes/api.php:850
 msgid "User signed out"
 msgstr "El usuario cerró sesión"
 
@@ -168,7 +168,7 @@ msgstr "Agregar nueva etiqueta"
 msgid "New Tag Name"
 msgstr "Nuevo nombre de etiqueta"
 
-#: includes/class/class-taxonomy.php:32 build/js/voting-page/index.js:1
+#: includes/class/class-taxonomy.php:32 build/js/create-voting/index.js:1
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -293,7 +293,7 @@ msgstr "Cuenta creada exitosamente."
 msgid "Authentication failed."
 msgstr "La autenticación falló."
 
-#: includes/helpers.php:377
+#: includes/helpers.php:392
 msgid "How to vote"
 msgstr "Como votar"
 
@@ -360,7 +360,7 @@ msgid "Option"
 msgstr "Opción"
 
 #: includes/templates.php:27 templates/part/navbar-mobile.php:8
-#: build/js/my-account/index.js:1 build/js/voting-page/index.js:1
+#: build/js/create-voting/index.js:1 build/js/my-account/index.js:1
 msgid "Create voting"
 msgstr "Crear votación"
 
@@ -391,16 +391,20 @@ msgstr "Política de Privacidad"
 msgid "Terms of Use"
 msgstr "Condiciones de uso"
 
+#: includes/templates.php:34
+msgid "Translate voting"
+msgstr "Traducir votación"
+
 #: templates/single-voting.php:51
 msgid "Created by:"
 msgstr "Creado por:"
 
-#: templates/single-voting.php:63 build/js/voting-page/index.js:1
+#: templates/single-voting.php:63 build/js/create-voting/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Start"
 msgstr "Comenzar"
 
-#: templates/single-voting.php:70 build/js/voting-page/index.js:1
+#: templates/single-voting.php:70 build/js/create-voting/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "End"
 msgstr "Fin"
@@ -478,6 +482,209 @@ msgstr "Accede aquí"
 #: templates/template-create-user.php:104
 msgid "ITS Logo"
 msgstr "Logo de ITS"
+
+#: build/js/create-voting/index.js:1
+msgid "Public voting"
+msgstr "Votación pública"
+
+#: build/js/create-voting/index.js:1
+msgid "Private voting"
+msgstr "Votación privada"
+
+#: build/js/create-voting/index.js:1
+msgid "Type of the voting"
+msgstr "Tipo de votación"
+
+#: build/js/create-voting/index.js:1
+msgid "General voting settings"
+msgstr "Configuración general de votación"
+
+#: build/js/create-voting/index.js:1
+msgid ""
+"Enter the name, description, number of voters, credits and tags for the poll"
+msgstr ""
+"Ingrese el nombre, descripción, número de votantes, créditos y etiquetas "
+"para la votación"
+
+#: build/js/create-voting/index.js:1
+msgid "Request login to vote"
+msgstr "Solicitar iniciar sesión para votar"
+
+#: build/js/create-voting/index.js:1
+msgid "Language"
+msgstr "Idioma"
+
+#: build/js/create-voting/index.js:1
+msgid "Voting name"
+msgstr "Nombre de votación"
+
+#: build/js/create-voting/index.js:1
+msgid "Give the voting a name"
+msgstr "Dale un nombre a la votación"
+
+#: build/js/create-voting/index.js:1
+msgid "Voting description"
+msgstr "Descripción de la votación"
+
+#: build/js/create-voting/index.js:1
+msgid "Describe voting details"
+msgstr "Describe los detalles de la votación"
+
+#: build/js/create-voting/index.js:1
+msgid "Number of voters"
+msgstr "Número de votantes"
+
+#: build/js/create-voting/index.js:1
+msgid "How many voting links would you like to generate?"
+msgstr "¿Cuántos enlaces de votación te gustaría generar?"
+
+#: build/js/create-voting/index.js:1
+msgid "Voting credits per voter"
+msgstr "Créditos de votación por votante"
+
+#: build/js/create-voting/index.js:1
+msgid "How many votes will each voter receive?"
+msgstr "¿Cuántos votos recibirá cada elector?"
+
+#: build/js/create-voting/index.js:1
+msgid "Allow votes to be negative"
+msgstr "Permitir que los votos sean negativos"
+
+#: build/js/create-voting/index.js:1
+msgid "Add comma-separated tags"
+msgstr "Agregar etiquetas separadas por comas"
+
+#: build/js/create-voting/index.js:1
+msgid "Duration of the voting"
+msgstr "Duración de la votación"
+
+#: build/js/create-voting/index.js:1
+msgid ""
+"Once the voting period has started, the vote cannot be deleted. You can "
+"change the duration of the poll later"
+msgstr ""
+"Una vez iniciado el periodo de votación, el voto no podrá ser eliminado. "
+"Puedes cambiar la duración de la encuesta más tarde"
+
+#: build/js/create-voting/index.js:1
+msgid "Display result only when voting is closed?"
+msgstr "¿Mostrar el resultado solo cuando la votación está cerrada?"
+
+#: build/js/create-voting/index.js:1
+msgid "Options of the voting"
+msgstr "Opciones de la votación"
+
+#: build/js/create-voting/index.js:1
+msgid "Enter your poll options (add at least 2 options to advance)"
+msgstr ""
+"Ingrese sus opciones de encuesta (agregue al menos 2 opciones para avanzar)"
+
+#: build/js/create-voting/index.js:1
+msgid "Add at least two votes"
+msgstr "Suma al menos dos votos"
+
+#: build/js/create-voting/index.js:1
+msgid "Confirm voting creation"
+msgstr "Confirmar la creación de la votación"
+
+#: build/js/create-voting/index.js:1
+msgid ""
+"After creation the voting, you can <strong>only</strong> change its "
+"<strong>start</strong> and <strong>end dates</strong>."
+msgstr ""
+"Después de crear la votación, <strong>sólo</strong> puedes cambiar sus "
+"fechas de <strong>inicio</strong> y <strong>finalización</strong>."
+
+#: build/js/create-voting/index.js:1
+msgid "The number of voters must be greater than zero"
+msgstr "El número de votantes debe ser mayor que cero"
+
+#: build/js/create-voting/index.js:1
+msgid "The number of credits must be greater than zero"
+msgstr "El número de créditos debe ser mayor que cero"
+
+#: build/js/create-voting/index.js:1
+msgid "Check start and end date"
+msgstr "Consultar fecha de inicio y finalización"
+
+#: build/js/create-voting/index.js:1
+msgid "Check empty fields"
+msgstr "Comprobar campos vacíos"
+
+#: build/js/create-voting/index.js:1
+msgid "Creating voting..."
+msgstr "Creando votación..."
+
+#: build/js/create-voting/index.js:1 build/js/voting-single/index.js:1
+msgid "Back"
+msgstr "Atrás"
+
+#: build/js/create-voting/index.js:1
+msgid "Edit"
+msgstr "Editar"
+
+#: build/js/create-voting/index.js:1
+msgid "Delete"
+msgstr "Borrar"
+
+#: build/js/create-voting/index.js:1
+msgid "Option %s"
+msgstr "Opción %s"
+
+#: build/js/create-voting/index.js:1
+msgid "Title of the option"
+msgstr "Título de la opción"
+
+#: build/js/create-voting/index.js:1
+msgid "You have reached the %s character limit"
+msgstr "Has alcanzado el límite de %s caracteres"
+
+#: build/js/create-voting/index.js:1
+msgid "You are approaching the %s character limit"
+msgstr "Te estás acercando al límite de %s caracteres"
+
+#: build/js/create-voting/index.js:1
+msgid "Description of the option %s"
+msgstr "Descripción de la opción %s"
+
+#: build/js/create-voting/index.js:1
+msgid "Description of the option"
+msgstr "Descripción de la opción"
+
+#: build/js/create-voting/index.js:1
+msgid "Link of the option %s"
+msgstr "Enlace de la opción %s"
+
+#: build/js/create-voting/index.js:1
+msgid "www.example.com"
+msgstr "www.ejemplo.com"
+
+#: build/js/create-voting/index.js:1
+msgid "Add option"
+msgstr "Agregar opción"
+
+#: build/js/create-voting/index.js:1
+msgid "MM/dd/yyyy"
+msgstr "dd/MM/yyyy"
+
+#: build/js/create-voting/index.js:1
+msgctxt "hour"
+msgid "at"
+msgstr "a las"
+
+#: build/js/create-voting/index.js:1
+msgctxt "hour"
+msgid "Time"
+msgstr "Hora"
+
+#: build/js/create-voting/index.js:1
+msgid "hh:mm aa"
+msgstr "HH:mm"
+
+#: build/js/create-voting/index.js:1 build/js/my-account/index.js:1
+#: build/js/user/register.js:1 build/js/voting-single/index.js:1
+msgid "Close"
+msgstr "Cerca"
 
 #: build/js/my-account/App.js:1
 #: build/js/my-account/components/CreatedVotings.js:1
@@ -627,11 +834,6 @@ msgstr "Borrar cuenta"
 msgid "Filters"
 msgstr "Filtros"
 
-#: build/js/my-account/index.js:1 build/js/user/register.js:1
-#: build/js/voting-page/index.js:1 build/js/voting-single/index.js:1
-msgid "Close"
-msgstr "Cerca"
-
 #: build/js/my-account/index.js:1 build/js/voting-single/index.js:1
 msgid "Previous tab"
 msgstr "Pestaña anterior"
@@ -702,204 +904,6 @@ msgstr "Búsqueda por..."
 #: build/js/voting-archive/index.js:1 build/js/votings-block/index.js:1
 msgid "Search"
 msgstr "Buscar"
-
-#: build/js/voting-page/index.js:1
-msgid "Public voting"
-msgstr "Votación pública"
-
-#: build/js/voting-page/index.js:1
-msgid "Private voting"
-msgstr "Votación privada"
-
-#: build/js/voting-page/index.js:1
-msgid "Type of the voting"
-msgstr "Tipo de votación"
-
-#: build/js/voting-page/index.js:1
-msgid "General voting settings"
-msgstr "Configuración general de votación"
-
-#: build/js/voting-page/index.js:1
-msgid ""
-"Enter the name, description, number of voters, credits and tags for the poll"
-msgstr ""
-"Ingrese el nombre, descripción, número de votantes, créditos y etiquetas "
-"para la votación"
-
-#: build/js/voting-page/index.js:1
-msgid "Request login to vote"
-msgstr "Solicitar iniciar sesión para votar"
-
-#: build/js/voting-page/index.js:1
-msgid "Language"
-msgstr "Idioma"
-
-#: build/js/voting-page/index.js:1
-msgid "Voting name"
-msgstr "Nombre de votación"
-
-#: build/js/voting-page/index.js:1
-msgid "Give the voting a name"
-msgstr "Dale un nombre a la votación"
-
-#: build/js/voting-page/index.js:1
-msgid "Voting description"
-msgstr "Descripción de la votación"
-
-#: build/js/voting-page/index.js:1
-msgid "Describe voting details"
-msgstr "Describe los detalles de la votación"
-
-#: build/js/voting-page/index.js:1
-msgid "Number of voters"
-msgstr "Número de votantes"
-
-#: build/js/voting-page/index.js:1
-msgid "How many voting links would you like to generate?"
-msgstr "¿Cuántos enlaces de votación te gustaría generar?"
-
-#: build/js/voting-page/index.js:1
-msgid "Voting credits per voter"
-msgstr "Créditos de votación por votante"
-
-#: build/js/voting-page/index.js:1
-msgid "How many votes will each voter receive?"
-msgstr "¿Cuántos votos recibirá cada elector?"
-
-#: build/js/voting-page/index.js:1
-msgid "Allow votes to be negative"
-msgstr "Permitir que los votos sean negativos"
-
-#: build/js/voting-page/index.js:1
-msgid "Add comma-separated tags"
-msgstr "Agregar etiquetas separadas por comas"
-
-#: build/js/voting-page/index.js:1
-msgid "Duration of the voting"
-msgstr "Duración de la votación"
-
-#: build/js/voting-page/index.js:1
-msgid ""
-"Once the voting period has started, the vote cannot be deleted. You can "
-"change the duration of the poll later"
-msgstr ""
-"Una vez iniciado el periodo de votación, el voto no podrá ser eliminado. "
-"Puedes cambiar la duración de la encuesta más tarde"
-
-#: build/js/voting-page/index.js:1
-msgid "Display result only when voting is closed?"
-msgstr "¿Mostrar el resultado solo cuando la votación está cerrada?"
-
-#: build/js/voting-page/index.js:1
-msgid "Options of the voting"
-msgstr "Opciones de la votación"
-
-#: build/js/voting-page/index.js:1
-msgid "Enter your poll options (add at least 2 options to advance)"
-msgstr ""
-"Ingrese sus opciones de encuesta (agregue al menos 2 opciones para avanzar)"
-
-#: build/js/voting-page/index.js:1
-msgid "Add at least two votes"
-msgstr "Suma al menos dos votos"
-
-#: build/js/voting-page/index.js:1
-msgid "Confirm voting creation"
-msgstr "Confirmar la creación de la votación"
-
-#: build/js/voting-page/index.js:1
-msgid ""
-"After creation the voting, you can <strong>only</strong> change its "
-"<strong>start</strong> and <strong>end dates</strong>."
-msgstr ""
-"Después de crear la votación, <strong>sólo</strong> puedes cambiar sus "
-"fechas de <strong>inicio</strong> y <strong>finalización</strong>."
-
-#: build/js/voting-page/index.js:1
-msgid "The number of voters must be greater than zero"
-msgstr "El número de votantes debe ser mayor que cero"
-
-#: build/js/voting-page/index.js:1
-msgid "The number of credits must be greater than zero"
-msgstr "El número de créditos debe ser mayor que cero"
-
-#: build/js/voting-page/index.js:1
-msgid "Check start and end date"
-msgstr "Consultar fecha de inicio y finalización"
-
-#: build/js/voting-page/index.js:1
-msgid "Check empty fields"
-msgstr "Comprobar campos vacíos"
-
-#: build/js/voting-page/index.js:1
-msgid "Creating voting..."
-msgstr "Creando votación..."
-
-#: build/js/voting-page/index.js:1 build/js/voting-single/index.js:1
-msgid "Back"
-msgstr "Atrás"
-
-#: build/js/voting-page/index.js:1
-msgid "Edit"
-msgstr "Editar"
-
-#: build/js/voting-page/index.js:1
-msgid "Delete"
-msgstr "Borrar"
-
-#: build/js/voting-page/index.js:1
-msgid "Option %s"
-msgstr "Opción %s"
-
-#: build/js/voting-page/index.js:1
-msgid "Title of the option"
-msgstr "Título de la opción"
-
-#: build/js/voting-page/index.js:1
-msgid "You have reached the %s character limit"
-msgstr "Has alcanzado el límite de %s caracteres"
-
-#: build/js/voting-page/index.js:1
-msgid "You are approaching the %s character limit"
-msgstr "Te estás acercando al límite de %s caracteres"
-
-#: build/js/voting-page/index.js:1
-msgid "Description of the option %s"
-msgstr "Descripción de la opción %s"
-
-#: build/js/voting-page/index.js:1
-msgid "Description of the option"
-msgstr "Descripción de la opción"
-
-#: build/js/voting-page/index.js:1
-msgid "Link of the option %s"
-msgstr "Enlace de la opción %s"
-
-#: build/js/voting-page/index.js:1
-msgid "www.example.com"
-msgstr "www.ejemplo.com"
-
-#: build/js/voting-page/index.js:1
-msgid "Add option"
-msgstr "Agregar opción"
-
-#: build/js/voting-page/index.js:1
-msgid "MM/dd/yyyy"
-msgstr "dd/MM/yyyy"
-
-#: build/js/voting-page/index.js:1
-msgctxt "hour"
-msgid "at"
-msgstr "a las"
-
-#: build/js/voting-page/index.js:1
-msgctxt "hour"
-msgid "Time"
-msgstr "Hora"
-
-#: build/js/voting-page/index.js:1
-msgid "hh:mm aa"
-msgstr "HH:mm"
 
 #: build/js/voting-single/index.js:1
 msgid "Change duration"
