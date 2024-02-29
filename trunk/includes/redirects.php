@@ -8,12 +8,13 @@ function restrict_voting_single_access() {
 	}
 
 	$post_id       = get_the_ID();
-	$raw_post_meta = get_post_meta( $post_id );
+	$original_id   = get_original_post( 'voting', $post_id );
+	$raw_post_meta = get_post_meta( $original_id );
 
 	// Check if is private voting
 	if ( $raw_post_meta['voting_type'][0] === 'private' && use_unique_links() ) {
 		$unique_id          = sanitize_title( get_query_var( 'unique_id' ) );
-		$expired_unique_ids = array_filter( explode( ',', get_post_meta( $post_id, 'expired_unique_ids', true ) ) );
+		$expired_unique_ids = array_filter( explode( ',', get_post_meta( $original_id, 'expired_unique_ids', true ) ) );
 
 		// If the provided `unique_id` has already been used, redirect to the voting archive.
 		if ( in_array( $unique_id, $expired_unique_ids, true ) ) {

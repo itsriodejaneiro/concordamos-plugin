@@ -17,6 +17,8 @@
 		<custom-field action="ignore">unique_ids</custom-field>
 		<custom-field action="ignore">voting_access</custom-field>
 		<custom-field action="ignore">voting_type</custom-field>
+		<!-- voting / option-->
+		<custom-field action="ignore">original_id</custom-field>
 		<!-- option / vote -->
 		<custom-field action="ignore">voting_id</custom-field>
 		<!-- vote -->
