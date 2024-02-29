@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-02-29T17:44:21+00:00\n"
-"PO-Revision-Date: 2024-02-29 14:45-0300\n"
+"POT-Creation-Date: 2024-02-29T18:52:15+00:00\n"
+"PO-Revision-Date: 2024-02-29 15:53-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -36,64 +36,68 @@ msgstr "Rede Concordamos"
 msgid "You are not signed in."
 msgstr "Você não está logado(a)."
 
-#: includes/api.php:162 includes/api.php:169 includes/api.php:514
-#: includes/api.php:575
+#: includes/api.php:162 includes/api.php:169 includes/api.php:567
+#: includes/api.php:628
 msgid "You don't have enough permissions."
 msgstr "Você não tem permissões suficientes."
 
-#: includes/api.php:355 includes/api.php:481 includes/api.php:702
+#: includes/api.php:355 includes/api.php:484 includes/api.php:755
 msgid "Required field is either missing or blank:"
 msgstr "Campo obrigatório está ausente ou vazio:"
 
-#: includes/api.php:446
+#: includes/api.php:449
 msgid "Voting created successfully!"
 msgstr "Votação criada com sucesso!"
 
-#: includes/api.php:454
+#: includes/api.php:457 includes/api.php:555
 msgid "Verify all fields and try again"
 msgstr "Verifique todos os campos e tente novamente"
 
-#: includes/api.php:532
+#: includes/api.php:547
+msgid "Voting translated successfully!"
+msgstr "Votação traduzida com sucesso!"
+
+#: includes/api.php:585
 msgid "Voting updated successfully!"
 msgstr "Votação atualizada com sucesso!"
 
-#: includes/api.php:538
+#: includes/api.php:591
 msgid "Error updating voting, please try again"
 msgstr "Erro ao atualizar votação, por favor tente novamente"
 
-#: includes/api.php:646
+#: includes/api.php:699
 msgid "User updated successfully!"
 msgstr "Usuário atualizado com sucesso!"
 
-#: includes/api.php:652
+#: includes/api.php:705
 msgid "Error updating user, please try again"
 msgstr "Erro ao atualizar usuário, por favor tente novamente"
 
-#: includes/api.php:727
+#: includes/api.php:780
 msgid "Vote not found"
 msgstr "Voto não encontrado"
 
-#: includes/api.php:753
+#: includes/api.php:806
 msgid "Invalid link"
 msgstr "Link inválido"
 
-#: includes/api.php:763
+#: includes/api.php:816
 msgid "Expired link"
 msgstr "Link expirado"
 
-#: includes/api.php:773
+#: includes/api.php:826
 msgid "Voting phase is already closed"
 msgstr "A fase de votação já está encerrada"
 
-#: includes/api.php:808
+#: includes/api.php:861
 msgid "Vote registered successfully!"
 msgstr "Voto registrado com sucesso!"
 
-#: includes/api.php:815
+#: includes/api.php:868
 msgid "Error registering your vote, please try again"
 msgstr "Erro ao registar seu voto, por favor tente novamente"
 
-#: includes/api.php:908
+#: includes/api.php:961
 msgid "User signed out"
 msgstr "Usuário deslogado"
 

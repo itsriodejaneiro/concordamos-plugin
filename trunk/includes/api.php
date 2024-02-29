@@ -415,7 +415,7 @@ function create_voting_callback( \WP_REST_Request $request ) {
 	$post_id = wp_insert_post( $args );
 
 	if ( $post_id ) {
-		set_post_language( 'voting', $post_id, $locale, null );
+		set_post_language( 'voting', $post_id, $locale );
 
 		$voting_options = $params['voting_options'];
 
@@ -424,12 +424,13 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			$option_description = wp_kses_post( $item['option_description'] );
 			$option_link        = esc_url( $item['option_link'] );
 
-			$options_args = array(
+			$option_args = array(
 				'post_type'   => 'option',
 				'post_title'  => $option_name,
 				'post_status' => 'publish',
 				'post_author' => get_current_user_id(),
 				'meta_input'  => array(
+					'locale'             => $locale,
 					'option_name'        => $option_name,
 					'option_description' => $option_description,
 					'option_link'        => $option_link,
@@ -438,7 +439,9 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			);
 
 			// Create option
-			$option_id = wp_insert_post( $options_args );
+			$option_id = wp_insert_post( $option_args );
+
+			set_post_language( 'option', $option_id, $locale );
 		}
 
 		$response = array(
@@ -482,6 +485,76 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 			);
 			return new \WP_REST_Response( $response, 400 );
 		}
+	}
+
+	$original_id = sanitize_text_field( $params['voting_id'] );
+	$locale      = sanitize_text_field( $params['locale'] );
+
+	$args = array(
+		'post_author'  => get_current_user_id(),
+		'post_content' => wp_kses_post( $params['voting_description'] ),
+		'post_name'    => $original_id,
+		'post_status'  => 'publish',
+		'post_title'   => sanitize_text_field( $params['voting_name'] ),
+		'post_type'    => 'voting',
+		'text_input'   => array(
+			'tag' => sanitize_text_field( $params['tags'] ),
+		),
+		'meta_input' => array(
+			'description' => wp_kses_post( $params['voting_description'] ),
+			'locale'      => $locale,
+			'original_id' => $original_id,
+			'voting_name' => sanitize_text_field( $params['voting_name'] ),
+		),
+	);
+
+	// Create post
+	$post_id = wp_insert_post( $args );
+
+	if ( ! empty( $post_id ) ) {
+		set_post_translation( 'voting', $original_id, $post_id, $locale );
+
+		$voting_options = $params['voting_options'];
+
+		foreach ( $voting_options as $original_option_id => $item ) {
+			$option_name        = sanitize_text_field( $item['option_name'] );
+			$option_description = wp_kses_post( $item['option_description'] );
+			$option_link        = esc_url( $item['option_link'] );
+
+			$option_args = array(
+				'post_type'   => 'option',
+				'post_title'  => $option_name,
+				'post_status' => 'publish',
+				'post_author' => get_current_user_id(),
+				'meta_input'  => array(
+					'locale'             => $locale,
+					'option_name'        => $option_name,
+					'option_description' => $option_description,
+					'option_link'        => $option_link,
+					'original_id'        => $original_option_id,
+					'voting_id'          => $post_id,
+				),
+			);
+
+			// Create option
+			$option_id = wp_insert_post( $option_args );
+
+			set_post_translation( 'option', $original_option_id, $option_id, $locale );
+		}
+
+		$response = array(
+			'status'   => 'success',
+			'message'  => __( 'Voting translated successfully!', 'concordamos' ),
+			'post_url' => get_permalink( $post_id ),
+ 		);
+		return new \WP_REST_Request( $response, 200 );
+
+	} else {
+		$response = array(
+			'status'  => 'error',
+			'message' => __( 'Verify all fields and try again', 'concordamos' ),
+		);
+		return new \WP_REST_Response( $response, 400 );
 	}
 }
 

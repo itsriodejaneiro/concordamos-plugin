@@ -100,9 +100,35 @@ function localize_plugin() {
 
 add_action( 'after_setup_theme', 'Concordamos\localize_plugin', 0 );
 
-function set_post_language( $post_type, $post_id, $locale, $original_locale = null ) {
+/**
+ * Set language for original (i.e. non-translated) post
+ */
+function set_post_language( $post_type, $post_id, $locale ) {
 	$element_type   = 'post_' . $post_type;
 	$translation_id = apply_filters( 'wpml_element_trid', null, $post_id, $element_type );
+
+	if ( ! empty( $translation_id ) ) {
+		$language_details = array(
+			'element_id'           => $post_id,
+			'element_type'         => $element_type,
+			'trid'                 => $translation_id,
+			'language_code'        => get_wpml_language_code( $locale ),
+			'source_language_code' => null,
+		);
+
+		do_action( 'wpml_set_element_language_details', $language_details );
+	}
+}
+
+/**
+ * Mark an post as a translation for another post
+ */
+function set_post_translation( $post_type, $original_id, $post_id, $locale ) {
+	$element_type    = 'post_' . $post_type;
+	$translation_id  = apply_filters( 'wpml_element_trid', null, $original_id, $element_type );
+
+	$original_locale = get_post_meta( $original_id, 'locale', true );
+	$original_locale = empty( $original_locale ) ? get_default_language() : $original_locale;
 
 	if ( ! empty( $translation_id ) ) {
 		$language_details = array(
