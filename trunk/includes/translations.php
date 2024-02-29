@@ -49,6 +49,23 @@ function get_language_options() {
 	return $options;
 }
 
+function get_original_post( $post_type, $post_id ) {
+	$element_type   = 'post_' . $post_type;
+	$translation_id = apply_filters( 'wpml_element_trid', null, $post_id, $element_type );
+
+	if ( ! empty( $translation_id ) ) {
+		$translations = apply_filters( 'wpml_get_element_translations', array(), $translation_id, $element_type );
+		foreach ( $translations as $key => $translation ) {
+			if ( $translation->original === '1' ) {
+				return $translation->element_id;
+			}
+		}
+	}
+
+	// On failure, return the same ID
+	return $post_id;
+}
+
 function get_wpml_language_code( $locale ) {
 	if ( empty( $locale ) ) {
 		return $locale;
@@ -83,7 +100,7 @@ function localize_plugin() {
 
 add_action( 'after_setup_theme', 'Concordamos\localize_plugin', 0 );
 
-function set_post_language( $post_id, $post_type, $locale, $original_locale = null ) {
+function set_post_language( $post_type, $post_id, $locale, $original_locale = null ) {
 	$element_type   = 'post_' . $post_type;
 	$translation_id = apply_filters( 'wpml_element_trid', null, $post_id, $element_type );
 
