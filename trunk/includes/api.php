@@ -487,13 +487,18 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 		}
 	}
 
-	$original_id = sanitize_text_field( $params['voting_id'] );
-	$locale      = sanitize_text_field( $params['locale'] );
+	$original_slug   = sanitize_text_field( $params['voting_id'] );
+	$original_voting = get_post_by_slug( 'voting', $original_slug );
+	$locale          = sanitize_text_field( $params['locale'] );
 
-	$args = array(
+	// Generate the post_name using random_int and uniqid functions
+	$prefix    = 'v-' . random_int( 100, 999 );
+	$post_name = uniqid( $prefix );
+
+	$post_args = array(
 		'post_author'  => get_current_user_id(),
 		'post_content' => wp_kses_post( $params['voting_description'] ),
-		'post_name'    => $original_id,
+		'post_name'    => $post_name,
 		'post_status'  => 'publish',
 		'post_title'   => sanitize_text_field( $params['voting_name'] ),
 		'post_type'    => 'voting',
@@ -503,16 +508,16 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 		'meta_input' => array(
 			'description' => wp_kses_post( $params['voting_description'] ),
 			'locale'      => $locale,
-			'original_id' => $original_id,
+			'original_id' => $original_slug,
 			'voting_name' => sanitize_text_field( $params['voting_name'] ),
 		),
 	);
 
 	// Create post
-	$post_id = wp_insert_post( $args );
+	$post_id = wp_insert_post( $post_args );
 
 	if ( ! empty( $post_id ) ) {
-		set_post_translation( 'voting', $original_id, $post_id, $locale );
+		set_post_translation( 'voting', $original_voting->ID, $post_id, $locale );
 
 		$voting_options = $params['voting_options'];
 

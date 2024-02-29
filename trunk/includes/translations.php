@@ -125,20 +125,24 @@ function set_post_language( $post_type, $post_id, $locale ) {
  */
 function set_post_translation( $post_type, $original_id, $post_id, $locale ) {
 	$element_type    = 'post_' . $post_type;
-	$translation_id  = apply_filters( 'wpml_element_trid', null, $original_id, $element_type );
 
 	$original_locale = get_post_meta( $original_id, 'locale', true );
 	$original_locale = empty( $original_locale ) ? get_default_language() : $original_locale;
 
-	if ( ! empty( $translation_id ) ) {
-		$language_details = array(
+	$get_language_details = apply_filters( 'wpml_element_language_details', null, array(
+		'element_id'   => $original_id,
+		'element_type' => $post_type,
+	) );
+
+	if ( ! empty( $get_language_details ) ) {
+		$set_language_details = array(
 			'element_id'           => $post_id,
 			'element_type'         => $element_type,
-			'trid'                 => $translation_id,
+			'trid'                 => $get_language_details->trid,
 			'language_code'        => get_wpml_language_code( $locale ),
-			'source_language_code' => get_wpml_language_code( $original_locale ),
+			'source_language_code' => $get_language_details->language_code,
 		);
 
-		do_action( 'wpml_set_element_language_details', $language_details );
+		do_action( 'wpml_set_element_language_details', $set_language_details );
 	}
 }
