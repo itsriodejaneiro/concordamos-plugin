@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-28T14:45:37+00:00\n"
+"POT-Creation-Date: 2024-02-29T14:10:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: concordamos\n"
@@ -30,71 +30,72 @@ msgstr ""
 msgid "Concordamos Network"
 msgstr ""
 
-#: includes/api.php:140
+#: includes/api.php:150
 msgid "You are not signed in."
 msgstr ""
 
-#: includes/api.php:152
-#: includes/api.php:159
-#: includes/api.php:456
-#: includes/api.php:517
+#: includes/api.php:162
+#: includes/api.php:169
+#: includes/api.php:494
+#: includes/api.php:555
 msgid "You don't have enough permissions."
 msgstr ""
 
-#: includes/api.php:345
-#: includes/api.php:644
+#: includes/api.php:355
+#: includes/api.php:481
+#: includes/api.php:682
 msgid "Required field is either missing or blank:"
 msgstr ""
 
-#: includes/api.php:436
+#: includes/api.php:446
 msgid "Voting created successfully!"
 msgstr ""
 
-#: includes/api.php:444
+#: includes/api.php:454
 msgid "Verify all fields and try again"
 msgstr ""
 
-#: includes/api.php:474
+#: includes/api.php:512
 msgid "Voting updated successfully!"
 msgstr ""
 
-#: includes/api.php:480
+#: includes/api.php:518
 msgid "Error updating voting, please try again"
 msgstr ""
 
-#: includes/api.php:588
+#: includes/api.php:626
 msgid "User updated successfully!"
 msgstr ""
 
-#: includes/api.php:594
+#: includes/api.php:632
 msgid "Error updating user, please try again"
 msgstr ""
 
-#: includes/api.php:669
+#: includes/api.php:707
 msgid "Vote not found"
 msgstr ""
 
-#: includes/api.php:695
+#: includes/api.php:733
 msgid "Invalid link"
 msgstr ""
 
-#: includes/api.php:705
+#: includes/api.php:743
 msgid "Expired link"
 msgstr ""
 
-#: includes/api.php:715
+#: includes/api.php:753
 msgid "Voting phase is already closed"
 msgstr ""
 
-#: includes/api.php:750
+#: includes/api.php:788
 msgid "Vote registered successfully!"
 msgstr ""
 
-#: includes/api.php:757
+#: includes/api.php:795
 msgid "Error registering your vote, please try again"
 msgstr ""
 
-#: includes/api.php:850
+#: includes/api.php:888
 msgid "User signed out"
 msgstr ""
 
@@ -279,7 +280,7 @@ msgstr ""
 msgid "Authentication failed."
 msgstr ""
 
-#: includes/helpers.php:392
+#: includes/helpers.php:408
 msgid "How to vote"
 msgstr ""
 
@@ -387,6 +388,7 @@ msgid "Terms of Use"
 msgstr ""
 
 #: includes/templates.php:34
+#: build/js/translate-voting/index.js:1
 msgid "Translate voting"
 msgstr ""
 
@@ -499,6 +501,7 @@ msgid "Type of the voting"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "General voting settings"
 msgstr ""
 
@@ -511,10 +514,12 @@ msgid "Request login to vote"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "Language"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "Voting name"
 msgstr ""
 
@@ -523,6 +528,7 @@ msgid "Give the voting a name"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "Voting description"
 msgstr ""
 
@@ -567,6 +573,7 @@ msgid "Display result only when voting is closed?"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "Options of the voting"
 msgstr ""
 
@@ -607,6 +614,7 @@ msgid "Creating voting..."
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Back"
 msgstr ""
@@ -620,18 +628,22 @@ msgid "Delete"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "Option %s"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "Title of the option"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "You have reached the %s character limit"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "You are approaching the %s character limit"
 msgstr ""
 
@@ -640,6 +652,7 @@ msgid "Description of the option %s"
 msgstr ""
 
 #: build/js/create-voting/index.js:1
+#: build/js/translate-voting/index.js:1
 msgid "Description of the option"
 msgstr ""
 
@@ -675,6 +688,7 @@ msgstr ""
 
 #: build/js/create-voting/index.js:1
 #: build/js/my-account/index.js:1
+#: build/js/translate-voting/index.js:1
 #: build/js/user/register.js:1
 #: build/js/voting-single/index.js:1
 msgid "Close"
@@ -907,6 +921,38 @@ msgstr ""
 #: build/js/voting-archive/index.js:1
 #: build/js/votings-block/index.js:1
 msgid "No login required"
+msgstr ""
+
+#: build/js/translate-voting/index.js:1
+msgid "Link of the option"
+msgstr ""
+
+#: build/js/translate-voting/index.js:1
+msgid "Confirm voting translation"
+msgstr ""
+
+#: build/js/translate-voting/index.js:1
+msgid "Translating voting..."
+msgstr ""
+
+#: build/js/translate-voting/index.js:1
+msgid "Translate"
+msgstr ""
+
+#: build/js/translate-voting/index.js:1
+msgid "Original language"
+msgstr ""
+
+#: build/js/translate-voting/index.js:1
+msgid "New language"
+msgstr ""
+
+#: build/js/translate-voting/index.js:1
+msgid "Original text"
+msgstr ""
+
+#: build/js/translate-voting/index.js:1
+msgid "Translated text"
 msgstr ""
 
 #: build/js/voting-archive/index.js:1
