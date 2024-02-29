@@ -133,7 +133,7 @@ function enqueue_scripts_frontend() {
 		wp_enqueue_style( 'concordamos-single-voting-style', CONCORDAMOS_PLUGIN_URL . 'build/css/single-voting.css', array( 'concordamos-style' ), CONCORDAMOS_PLUGIN_VERSION );
 
 		$unique_id  = sanitize_title( get_query_var( 'unique_id' ) );
-		$get_the_id = get_the_ID();
+		$voting_id = get_the_ID();
 
 		enqueue_localized_script(
 			'concordamos-voting-single',
@@ -141,18 +141,18 @@ function enqueue_scripts_frontend() {
 			array( 'wp-element', 'wp-i18n' ),
 			'concordamos',
 			array(
-				'a_id'           => is_user_logged_in() ? get_post_meta( $get_the_id, 'admin_id', true ) : '',
+				'a_id'           => is_user_logged_in() ? get_post_meta( $voting_id, 'admin_id', true ) : '',
 				'admin_email'    => get_bloginfo( 'admin_email' ),
 				'faq_url'        => get_permalink( get_faq_page() ),
-				'is_author'      => get_post_field( 'post_author', $get_the_id ) == get_current_user_id() ? true : false,
+				'is_author'      => get_post_field( 'post_author', $voting_id ) == get_current_user_id() ? true : false,
 				'locale'         => get_current_language(),
-				'negative_votes' => get_post_meta( $get_the_id, 'negative_votes', true ),
+				'negative_votes' => get_post_meta( $voting_id, 'negative_votes', true ),
 				'nonce'          => wp_create_nonce( 'wp_rest' ),
 				'plugin_url'     => CONCORDAMOS_PLUGIN_URL,
 				'rest_url'       => rest_url( 'concordamos/v1/' ),
 				'u_id'           => $unique_id,
 				'user_id'        => get_current_user_id(),
-				'v_id'           => $get_the_id,
+				'v_id'           => $voting_id,
 			)
 		);
 	}
