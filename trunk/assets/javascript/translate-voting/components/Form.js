@@ -19,7 +19,9 @@ function populateVotingOptions (template) {
 	return options
 }
 
-export default function Form({ template }) {
+export default function Form() {
+	const template = concordamos.translation_template
+
 	const confirmModal = useModal(false)
 	const [locale, setLocale] = useState(null)
 	const [isSubmitting, setIsSubmitting] = useState(false)
@@ -37,14 +39,20 @@ export default function Form({ template }) {
 
 		setIsSubmitting(true)
 
-		console.log({
-			locale,
-			voting_description: votingDescription,
-			voting_name: votingName,
-			voting_options: votingOptions,
+		apiFetch('POST', 'translation/', {
+			'locale'             : locale,
+			'user_id'            : concordamos.user_id,
+			'voting_description' : votingDescription,
+			'voting_id'          : concordamos.voting_id,
+			'voting_name'        : votingName,
+			'voting_options'     : votingOptions,
+		}).then(response => {
+			if (response.status === 'error') {
+				throw new Error(response.message)
+			} else {
+				navigateTo(response.post_url)
+			}
 		})
-
-		setIsSubmitting(false)
 	}
 
 	function handleBack () {

@@ -74,7 +74,7 @@ function authenticate_to_translate_voting() {
 		return;
 	}
 
-	$voting_slug = sanitize_key( filter_input( INPUT_GET, 'voting_id' ) );
+	$voting_slug = sanitize_key( filter_input( INPUT_GET, 'v_id' ) );
 
 	if ( ! empty( $voting_slug ) ) {
 		$voting = get_post_by_slug( 'voting', $voting_slug );

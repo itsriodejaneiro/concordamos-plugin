@@ -15,6 +15,16 @@ function register_endpoints() {
 
 	register_rest_route(
 		'concordamos/v1',
+		'/translation/',
+		array(
+			'methods'             => 'POST',
+			'callback'            => 'Concordamos\\translate_voting_callback',
+			'permission_callback' => 'Concordamos\\permission_check',
+		)
+	);
+
+	register_rest_route(
+		'concordamos/v1',
 		'/voting/',
 		array(
 			'methods'             => 'PATCH',
@@ -444,6 +454,34 @@ function create_voting_callback( \WP_REST_Request $request ) {
 			'message' => __( 'Verify all fields and try again', 'concordamos' ),
 		);
 		return new \WP_REST_Response( $response, 400 );
+	}
+}
+
+function translate_voting_callback( \WP_REST_Request $request ) {
+
+	// Check if user has permission
+	permission_check( $request );
+
+	$params = $request->get_json_params();
+
+	$required_params = array(
+		'locale',
+		'user_id',
+		'voting_description',
+		'voting_id',
+		'voting_name',
+		'voting_options',
+	);
+
+	// Check required params
+	foreach ( $required_params as $param ) {
+		if ( ! isset( $params[ $param ] ) || empty( $params[ $param ] ) ) {
+			$response = array(
+				'status'  => 'error',
+				'message' => __( 'Required field is either missing or blank:', 'concordamos' ) . ' ' . $param,
+			);
+			return new \WP_REST_Response( $response, 400 );
+		}
 	}
 }
 

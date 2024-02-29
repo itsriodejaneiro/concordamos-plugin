@@ -173,6 +173,22 @@ function is_voting_owner( $voting_id ) {
 	}
 }
 
+function get_translation_template( $voting_slug ) {
+	$voting  = get_post_by_slug( 'voting', $voting_slug );
+	$options = get_options_by_voting( $voting->ID );
+
+	$locale = get_post_meta( $voting->ID, 'locale', true );
+	$locale = empty( $locale ) ? get_default_language() : $locale;
+
+	$translation_template = array(
+		'voting_description' => $voting->post_content,
+		'voting_name'        => $voting->post_title,
+		'voting_options'     => $options,
+	);
+
+	return $translation_template;
+}
+
 function get_voting_status( \WP_Post $post ) {
 	$start = get_post_meta( $post->ID, 'date_start', true );
 	$end   = get_post_meta( $post->ID, 'date_end', true );
