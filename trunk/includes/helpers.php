@@ -180,7 +180,14 @@ function get_translation_template( $voting_slug ) {
 	$locale = get_post_meta( $voting->ID, 'locale', true );
 	$locale = empty( $locale ) ? get_default_language() : $locale;
 
+	$raw_tags = get_the_terms( $voting->ID, 'tag' );
+	$tags     = array();
+	foreach ( $raw_tags as $tag ) {
+		$tags[] = $tag->name;
+	}
+
 	$translation_template = array(
+		'tags'               => implode( ',', $tags ),
 		'voting_description' => $voting->post_content,
 		'voting_name'        => $voting->post_title,
 		'voting_options'     => $options,

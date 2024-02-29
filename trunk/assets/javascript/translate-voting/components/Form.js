@@ -27,6 +27,7 @@ export default function Form() {
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [votingName, setVotingName] = useState('')
 	const [votingDescription, setVotingDescription] = useState('')
+	const [tags, setTags] = useState('')
 	const [votingOptions, setVotingOptions] = useState(() => populateVotingOptions(template))
 
 	function confirmTranslation (event) {
@@ -41,6 +42,7 @@ export default function Form() {
 
 		apiFetch('POST', 'translation/', {
 			'locale'             : locale,
+			'tags'               : tags,
 			'user_id'            : concordamos.user_id,
 			'voting_description' : votingDescription,
 			'voting_id'          : concordamos.voting_id,
@@ -92,6 +94,16 @@ export default function Form() {
 				value={votingDescription}
 				maxLength={150}
 				onChange={e => setVotingDescription(e.target.value)}
+			/>
+			<TranslationText
+				label={__('Tags', 'concordamos')}
+				name="tags"
+				type="textarea"
+				placeholder={__('Add comma-separated tags', 'concordamos')}
+				original={template.tags}
+				value={tags}
+				maxLength={150}
+				onChange={e => setTags(e.target.value)}
 			/>
 
 			<div class="title-section">{__('Options of the voting', 'concordamos')}</div>

@@ -1,6 +1,6 @@
 import { __, sprintf } from '@wordpress/i18n'
 
-export default function TranslationText ({ label, maxLength, name, original , type = 'text', value, onChange }) {
+export default function TranslationText ({ label, maxLength, name, original, placeholder, type = 'text', value, onChange }) {
 	const currentLength = value.length
 	const limitReached = currentLength === maxLength
 
@@ -26,7 +26,7 @@ export default function TranslationText ({ label, maxLength, name, original , ty
 				<span>{label}</span>
 				<div className="translation-row">
 					<Input type={type} disabled={true} value={original} aria-label={__('Original text', 'concordamos')}/>
-					<Input type={type} name={name} aria-label={__('Translated text', 'concordamos')} onChange={handleChange}/>
+					<Input type={type} name={name} placeholder={placeholder} aria-label={__('Translated text', 'concordamos')} onChange={handleChange}/>
 				</div>
 			</label>
 			{maxLength && currentLength > maxLength * 0.8 && (
