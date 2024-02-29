@@ -505,7 +505,7 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 		'text_input'   => array(
 			'tag' => sanitize_text_field( $params['tags'] ),
 		),
-		'meta_input' => array(
+		'meta_input'   => array(
 			'description' => wp_kses_post( $params['voting_description'] ),
 			'locale'      => $locale,
 			'original_id' => $original_slug,
@@ -551,7 +551,7 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 			'status'   => 'success',
 			'message'  => __( 'Voting translated successfully!', 'concordamos' ),
 			'post_url' => get_permalink( $post_id ),
- 		);
+		);
 		return new \WP_REST_Request( $response, 200 );
 
 	} else {

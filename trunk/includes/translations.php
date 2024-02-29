@@ -124,15 +124,16 @@ function set_post_language( $post_type, $post_id, $locale ) {
  * Mark an post as a translation for another post
  */
 function set_post_translation( $post_type, $original_id, $post_id, $locale ) {
-	$element_type    = 'post_' . $post_type;
+	$element_type = 'post_' . $post_type;
 
 	$original_locale = get_post_meta( $original_id, 'locale', true );
 	$original_locale = empty( $original_locale ) ? get_default_language() : $original_locale;
 
-	$get_language_details = apply_filters( 'wpml_element_language_details', null, array(
+	$get_language_details = array(
 		'element_id'   => $original_id,
 		'element_type' => $post_type,
-	) );
+	);
+	$get_language_details = apply_filters( 'wpml_element_language_details', null, $get_language_details );
 
 	if ( ! empty( $get_language_details ) ) {
 		$set_language_details = array(

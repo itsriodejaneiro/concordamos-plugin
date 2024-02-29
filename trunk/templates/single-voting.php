@@ -9,8 +9,8 @@ get_header();
  * Sample URL: http://localhost/voting/v-67464b987448ca64/u-98564b987448ca50
  */
 
-$single_id     = get_the_ID();
-$original_id   = Concordamos\get_original_post( 'voting', $single_id );
+$single_id   = get_the_ID();
+$original_id = Concordamos\get_original_post( 'voting', $single_id );
 
 $raw_post_meta      = get_post_meta( $single_id );
 $original_post_meta = get_post_meta( $original_id );
