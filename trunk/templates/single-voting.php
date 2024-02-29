@@ -11,7 +11,9 @@ get_header();
 
 $single_id     = get_the_ID();
 $original_id   = Concordamos\get_original_post( 'voting', $single_id );
-$raw_post_meta = get_post_meta( $original_id );
+
+$raw_post_meta      = get_post_meta( $single_id );
+$original_post_meta = get_post_meta( $original_id );
 
 $voting_id = get_post_field( 'post_name', $single_id );
 $options   = Concordamos\get_options_by_voting( $single_id );
@@ -19,8 +21,8 @@ $options   = Concordamos\get_options_by_voting( $single_id );
 $author_id     = get_post_field( 'post_author', $single_id );
 $voting_author = get_the_author_meta( 'display_name', $author_id );
 
-$date_start = $raw_post_meta['date_start'][0];
-$date_end   = $raw_post_meta['date_end'][0];
+$date_start = $original_post_meta['date_start'][0];
+$date_end   = $original_post_meta['date_end'][0];
 
 $date_start_class = ( Concordamos\is_future_date( Concordamos\format_datetime( $date_start ) ) ) ? 'date date-start' : 'date date-start started';
 $date_end_class   = ( Concordamos\is_future_date( Concordamos\format_datetime( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
@@ -28,7 +30,7 @@ $date_end_class   = ( Concordamos\is_future_date( Concordamos\format_datetime( $
 $is_panel      = get_query_var( 'panel' );
 $voting_closed = Concordamos\is_voting_closed( $original_id );
 
-$results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta['results_end'][0] ) ) ? $raw_post_meta['results_end'][0] : 'no';
+$results_end = ( isset( $original_post_meta['results_end'] ) && isset( $original_post_meta['results_end'][0] ) ) ? $original_post_meta['results_end'][0] : 'no';
 ?>
 <div>
 	<div class="voting-header">
@@ -82,7 +84,7 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 	<div class="<?php echo esc_attr( $content_class ); ?>">
 		<div class="container">
 			<div class="render" id="concordamos-voting-single"
-				data-credits_voter="<?php echo esc_attr( $raw_post_meta['credits_voter'][0] ); ?>"
+				data-credits_voter="<?php echo esc_attr( $original_post_meta['credits_voter'][0] ); ?>"
 				data-options="<?php echo esc_attr( wp_json_encode( $options ) ); ?>"
 				data-date_start="<?php echo esc_attr( $date_start ); ?>"
 				data-date_end="<?php echo esc_attr( $date_end ); ?>"
