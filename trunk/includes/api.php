@@ -504,7 +504,7 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 		'post_status'  => 'publish',
 		'post_title'   => sanitize_text_field( $params['voting_name'] ),
 		'post_type'    => 'voting',
-		'text_input'   => array(
+		'tax_input'    => array(
 			'tag' => sanitize_text_field( $params['tags'] ),
 		),
 		'meta_input'   => array(
