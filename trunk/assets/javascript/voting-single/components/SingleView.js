@@ -26,7 +26,7 @@ export default function SingleView ({ handleViewChange, initialData }) {
 				</div>
 
 				<div className="actions">
-					<a href="/voting" className="back-link">{__('Back', 'concordamos')}</a>
+					<a href={concordamos.archive_url} className="back-link">{__('Back', 'concordamos')}</a>
 
 					{ voting_closed ? (
 						logged ? (

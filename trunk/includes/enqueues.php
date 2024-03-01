@@ -148,6 +148,7 @@ function enqueue_scripts_frontend() {
 			array(
 				'a_id'           => is_user_logged_in() ? get_post_meta( $original_id, 'admin_id', true ) : '',
 				'admin_email'    => get_bloginfo( 'admin_email' ),
+				'archive_url'    => get_post_type_archive_link( 'voting' ),
 				'faq_url'        => get_permalink( get_faq_page() ),
 				'is_author'      => get_post_field( 'post_author', $voting_id ) == get_current_user_id() ? true : false,
 				'locale'         => get_current_language(),
