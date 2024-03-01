@@ -7,16 +7,16 @@
 	</taxonomies>
 	<custom-fields>
 		<!-- voting -->
-		<custom-field action="ignore">admin_id</custom-field>
-		<custom-field action="ignore">credits_voter</custom-field>
-		<custom-field action="ignore">date_end</custom-field>
-		<custom-field action="ignore">date_start</custom-field>
-		<custom-field action="ignore">negative_votes</custom-field>
-		<custom-field action="ignore">number_voters</custom-field>
-		<custom-field action="ignore">results_end</custom-field>
+		<custom-field action="copy">admin_id</custom-field>
+		<custom-field action="copy">credits_voter</custom-field>
+		<custom-field action="copy">date_end</custom-field>
+		<custom-field action="copy">date_start</custom-field>
+		<custom-field action="copy">negative_votes</custom-field>
+		<custom-field action="copy">number_voters</custom-field>
+		<custom-field action="copy">results_end</custom-field>
 		<custom-field action="ignore">unique_ids</custom-field>
-		<custom-field action="ignore">voting_access</custom-field>
-		<custom-field action="ignore">voting_type</custom-field>
+		<custom-field action="copy">voting_access</custom-field>
+		<custom-field action="copy">voting_type</custom-field>
 		<!-- voting / option-->
 		<custom-field action="ignore">original_id</custom-field>
 		<!-- option / vote -->

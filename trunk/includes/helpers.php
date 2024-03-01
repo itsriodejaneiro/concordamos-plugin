@@ -37,7 +37,9 @@ function get_options_by_voting( $voting_id ) {
 		foreach ( $options as $option ) {
 			$raw_post_meta = \get_post_meta( $option->ID );
 
-			$return[ $option->ID ] = array(
+			$option_id = empty( $raw_post_meta['original_id'] ) ? $option->ID : $raw_post_meta['original_id'][0];
+
+			$return[ $option_id ] = array(
 				'option_name'        => $raw_post_meta['option_name'][0],
 				'option_description' => $raw_post_meta['option_description'][0],
 				'option_link'        => $raw_post_meta['option_link'][0],

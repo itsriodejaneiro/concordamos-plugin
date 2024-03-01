@@ -495,6 +495,8 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 	$prefix    = 'v-' . random_int( 100, 999 );
 	$post_name = uniqid( $prefix );
 
+	$original_post_meta = get_post_meta( $original_voting->ID );
+
 	$post_args = array(
 		'post_author'  => get_current_user_id(),
 		'post_content' => wp_kses_post( $params['voting_description'] ),
@@ -510,6 +512,17 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 			'locale'      => $locale,
 			'original_id' => $original_slug,
 			'voting_name' => sanitize_text_field( $params['voting_name'] ),
+
+			// Copied from original post
+			'admin_id'       => $original_post_meta['admin_id'][0],
+			'credits_voter'  => $original_post_meta['credits_voter'][0],
+			'date_end'       => $original_post_meta['date_end'][0],
+			'date_start'     => $original_post_meta['date_start'][0],
+			'negative_votes' => $original_post_meta['negative_votes'][0],
+			'number_voters'  => $original_post_meta['number_voters'][0],
+			'results_end'    => $original_post_meta['results_end'][0],
+			'voting_access'  => $original_post_meta['voting_access'][0],
+			'voting_type'    => $original_post_meta['voting_type'][0],
 		),
 	);
 
