@@ -176,22 +176,26 @@ function is_voting_owner( $voting_id ) {
 }
 
 function get_translation_template( $voting_slug ) {
-	$voting  = get_post_by_slug( 'voting', $voting_slug );
-	$options = get_options_by_voting( $voting->ID );
+	$voting   = get_post_by_slug( 'voting', $voting_slug );
+	$original = get_post( get_original_post( 'voting', $voting->ID ) );
 
-	$locale = get_post_meta( $voting->ID, 'locale', true );
+	$options  = get_options_by_voting( $original->ID );
+
+	$locale = get_post_meta( $original, 'locale', true );
 	$locale = empty( $locale ) ? get_default_language() : $locale;
 
-	$raw_tags = get_the_terms( $voting->ID, 'tag' );
+	$raw_tags = get_the_terms( $original, 'tag' );
 	$tags     = array();
-	foreach ( $raw_tags as $tag ) {
-		$tags[] = $tag->name;
+	if ( ! empty( $raw_tags ) ) {
+		foreach ( $raw_tags as $tag ) {
+			$tags[] = $tag->name;
+		}
 	}
 
 	$translation_template = array(
 		'tags'               => implode( ',', $tags ),
-		'voting_description' => $voting->post_content,
-		'voting_name'        => $voting->post_title,
+		'voting_description' => $original->post_content,
+		'voting_name'        => $original->post_title,
 		'voting_options'     => $options,
 	);
 
