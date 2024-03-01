@@ -722,7 +722,7 @@ function delete_my_account_callback( \WP_REST_Request $request ) {
 	$args = array(
 		'author'      => $user_id,
 		'numberposts' => -1,
-		'post_type'   => array( 'vote', 'voting' ),
+		'post_type'   => array( 'vote', 'option', 'voting' ),
 	);
 
 	$posts = get_posts( $args );
