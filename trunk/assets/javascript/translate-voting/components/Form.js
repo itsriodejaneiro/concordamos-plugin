@@ -82,7 +82,7 @@ export default function Form() {
 			<TranslationText
 				label={__('Voting name', 'concordamos')}
 				name="voting_name"
-				original={template.voting_name}
+				source={template.voting_name}
 				value={votingName}
 				maxLength={100}
 				onChange={e => setVotingName(e.target.value)}
@@ -91,7 +91,7 @@ export default function Form() {
 				label={__('Voting description', 'concordamos')}
 				name="voting_description"
 				type="textarea"
-				original={template.voting_description}
+				source={template.voting_description}
 				value={votingDescription}
 				maxLength={150}
 				onChange={e => setVotingDescription(e.target.value)}
@@ -101,7 +101,7 @@ export default function Form() {
 				name="tags"
 				type="textarea"
 				placeholder={__('Add comma-separated tags', 'concordamos')}
-				original={template.tags}
+				source={template.tags}
 				value={tags}
 				maxLength={150}
 				onChange={e => setTags(e.target.value)}
@@ -109,20 +109,20 @@ export default function Form() {
 
 			<div class="title-section">{__('Options of the voting', 'concordamos')}</div>
 			{Object.entries(votingOptions).map(([optionId, option], index) => {
-				const originalOption = template.voting_options[optionId]
+				const sourceOption = template.voting_options[optionId]
 				return <>
 					<div class="title-subsection">{sprintf(__('Option %s', 'concordamos'), index + 1)}</div>
 					<TranslationText
 						label={__('Title of the option', 'concordamos')}
 						name={`voting_options[${optionId}][option_name]`}
-						original={originalOption.option_name}
+						source={sourceOption.option_name}
 						value={option.option_name}
 						onChange={e => setOption(optionId, 'option_name', e.target.value)}
 					/>
 					<TranslationText
 						label={__('Description of the option', 'concordamos')}
 						name={`voting_options[${optionId}][option_description]`}
-						original={originalOption.option_description}
+						source={sourceOption.option_description}
 						value={option.option_description}
 						onChange={e => setOption(optionId, 'option_description', e.target.value)}
 					/>
@@ -130,7 +130,7 @@ export default function Form() {
 						label={__('Link of the option', 'concordamos')}
 						name={`voting_options[${optionId}][option_link]`}
 						type="url"
-						original={originalOption.option_link}
+						source={sourceOption.option_link}
 						value={option.option_link}
 						onChange={e => setOption(optionId, 'option_link', e.target.value)}
 					/>

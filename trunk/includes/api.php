@@ -487,15 +487,15 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 		}
 	}
 
-	$original_slug   = sanitize_text_field( $params['voting_id'] );
-	$original_voting = get_post_by_slug( 'voting', $original_slug );
-	$locale          = sanitize_text_field( $params['locale'] );
+	$source_slug   = sanitize_text_field( $params['voting_id'] );
+	$source_voting = get_post_by_slug( 'voting', $source_slug );
+	$locale        = sanitize_text_field( $params['locale'] );
 
 	// Generate the post_name using random_int and uniqid functions
 	$prefix    = 'v-' . random_int( 100, 999 );
 	$post_name = uniqid( $prefix );
 
-	$original_post_meta = get_post_meta( $original_voting->ID );
+	$source_post_meta = get_post_meta( $source_voting->ID );
 
 	$post_args = array(
 		'post_author'  => get_current_user_id(),
@@ -508,21 +508,21 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 			'tag' => sanitize_text_field( $params['tags'] ),
 		),
 		'meta_input'   => array(
-			'description' => wp_kses_post( $params['voting_description'] ),
-			'locale'      => $locale,
-			'original_id' => $original_slug,
-			'voting_name' => sanitize_text_field( $params['voting_name'] ),
+			'description'    => wp_kses_post( $params['voting_description'] ),
+			'locale'         => $locale,
+			'original_id'    => $source_slug,
+			'voting_name'    => sanitize_text_field( $params['voting_name'] ),
 
-			// Copied from original post
-			'admin_id'       => $original_post_meta['admin_id'][0],
-			'credits_voter'  => $original_post_meta['credits_voter'][0],
-			'date_end'       => $original_post_meta['date_end'][0],
-			'date_start'     => $original_post_meta['date_start'][0],
-			'negative_votes' => $original_post_meta['negative_votes'][0],
-			'number_voters'  => $original_post_meta['number_voters'][0],
-			'results_end'    => $original_post_meta['results_end'][0],
-			'voting_access'  => $original_post_meta['voting_access'][0],
-			'voting_type'    => $original_post_meta['voting_type'][0],
+			// Copied from source post
+			'admin_id'       => $source_post_meta['admin_id'][0],
+			'credits_voter'  => $source_post_meta['credits_voter'][0],
+			'date_end'       => $source_post_meta['date_end'][0],
+			'date_start'     => $source_post_meta['date_start'][0],
+			'negative_votes' => $source_post_meta['negative_votes'][0],
+			'number_voters'  => $source_post_meta['number_voters'][0],
+			'results_end'    => $source_post_meta['results_end'][0],
+			'voting_access'  => $source_post_meta['voting_access'][0],
+			'voting_type'    => $source_post_meta['voting_type'][0],
 		),
 	);
 
@@ -530,11 +530,11 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 	$post_id = wp_insert_post( $post_args );
 
 	if ( ! empty( $post_id ) ) {
-		set_post_translation( 'voting', $original_voting->ID, $post_id, $locale );
+		set_post_translation( 'voting', $source_voting->ID, $post_id, $locale );
 
 		$voting_options = $params['voting_options'];
 
-		foreach ( $voting_options as $original_option_id => $item ) {
+		foreach ( $voting_options as $source_option_id => $item ) {
 			$option_name        = sanitize_text_field( $item['option_name'] );
 			$option_description = wp_kses_post( $item['option_description'] );
 			$option_link        = esc_url( $item['option_link'] );
@@ -549,7 +549,7 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 					'option_name'        => $option_name,
 					'option_description' => $option_description,
 					'option_link'        => $option_link,
-					'original_id'        => $original_option_id,
+					'original_id'        => $source_option_id,
 					'voting_id'          => $post_id,
 				),
 			);
@@ -557,7 +557,7 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 			// Create option
 			$option_id = wp_insert_post( $option_args );
 
-			set_post_translation( 'option', $original_option_id, $option_id, $locale );
+			set_post_translation( 'option', $source_option_id, $option_id, $locale );
 		}
 
 		$response = array(
@@ -615,8 +615,8 @@ function patch_voting_callback( \WP_REST_Request $request ) {
 function get_voting_links_callback( \WP_REST_Request $request ) {
 	$params          = $request->get_params();
 	$voting_id       = intval( $params['v_id'] );
-	$original_id     = get_original_post( 'voting', $voting_id );
-	$voting_admin_id = get_post_meta( $original_id, 'admin_id', true );
+	$source_id       = get_source_post_id( 'voting', $voting_id );
+	$voting_admin_id = get_post_meta( $source_id, 'admin_id', true );
 
 	$has_access = false;
 

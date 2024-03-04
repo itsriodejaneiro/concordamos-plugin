@@ -49,7 +49,11 @@ function get_language_options() {
 	return apply_filters( 'concordamos_language_options', $options );
 }
 
-function get_original_post( $post_type, $post_id ) {
+/**
+ * For translated posts, return the post ID of the source post, i.e.
+ * the original, not-translated post
+ */
+function get_source_post_id( string $post_type, $post_id ) {
 	$element_type   = 'post_' . $post_type;
 	$translation_id = apply_filters( 'wpml_element_trid', null, $post_id, $element_type );
 
@@ -62,7 +66,7 @@ function get_original_post( $post_type, $post_id ) {
 		}
 	}
 
-	// On failure, return the same ID
+	// On failure, return the input ID
 	return $post_id;
 }
 
@@ -101,7 +105,7 @@ function localize_plugin() {
 add_action( 'after_setup_theme', 'Concordamos\localize_plugin', 0 );
 
 /**
- * Set language for original (i.e. non-translated) post
+ * Set language for source (i.e. non-translated) post
  */
 function set_post_language( $post_type, $post_id, $locale ) {
 	$element_type   = 'post_' . $post_type;
@@ -123,14 +127,14 @@ function set_post_language( $post_type, $post_id, $locale ) {
 /**
  * Mark an post as a translation for another post
  */
-function set_post_translation( $post_type, $original_id, $post_id, $locale ) {
+function set_post_translation( $post_type, $source_id, $post_id, $locale ) {
 	$element_type = 'post_' . $post_type;
 
-	$original_locale = get_post_meta( $original_id, 'locale', true );
-	$original_locale = empty( $original_locale ) ? get_default_language() : $original_locale;
+	$source_locale = get_post_meta( $source_id, 'locale', true );
+	$source_locale = empty( $source_locale ) ? get_default_language() : $source_locale;
 
 	$get_language_details = array(
-		'element_id'   => $original_id,
+		'element_id'   => $source_id,
 		'element_type' => $post_type,
 	);
 	$get_language_details = apply_filters( 'wpml_element_language_details', null, $get_language_details );
