@@ -615,7 +615,8 @@ function patch_voting_callback( \WP_REST_Request $request ) {
 function get_voting_links_callback( \WP_REST_Request $request ) {
 	$params          = $request->get_params();
 	$voting_id       = intval( $params['v_id'] );
-	$voting_admin_id = get_post_meta( $voting_id, 'admin_id', true );
+	$original_id     = get_original_post( 'voting', $voting_id );
+	$voting_admin_id = get_post_meta( $original_id, 'admin_id', true );
 
 	$has_access = false;
 
