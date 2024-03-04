@@ -358,6 +358,7 @@ function is_voting_closed( $voting_id ) {
 }
 
 function get_vote_by_user( $voting_id, $user_id = '' ) {
+	$source_id = get_source_post_id( 'voting', $voting_id );
 
 	if ( ! is_user_logged_in() ) {
 		return false;
@@ -380,7 +381,7 @@ function get_vote_by_user( $voting_id, $user_id = '' ) {
 			),
 			array(
 				'key'     => 'voting_id',
-				'value'   => $voting_id,
+				'value'   => $source_id,
 				'compare' => '=',
 			),
 		),
