@@ -87,7 +87,11 @@ function get_translation_ids( string $post_type, $post_id, $include_input_id = t
 	}
 
 	// On failure, return the input ID
-	return array( intval( $post_id ) );
+	if ( $include_input_id ) {
+		return array( intval( $post_id ) );
+	} else {
+		return array();
+	}
 }
 
 function get_wpml_language_code( $locale ) {
