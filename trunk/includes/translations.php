@@ -46,7 +46,7 @@ function get_language_options() {
 		);
 	}
 
-	return $options;
+	return apply_filters( 'concordamos_language_options', $options );
 }
 
 function get_original_post( $post_type, $post_id ) {
