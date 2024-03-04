@@ -560,6 +560,8 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 			set_post_translation( 'option', $source_option_id, $option_id, $locale );
 		}
 
+		set_current_language( $locale );
+
 		$response = array(
 			'status'   => 'success',
 			'message'  => __( 'Voting translated successfully!', 'concordamos' ),

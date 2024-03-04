@@ -128,6 +128,10 @@ function localize_plugin() {
 
 add_action( 'after_setup_theme', 'Concordamos\localize_plugin', 0 );
 
+function set_current_language ( $locale ) {
+	do_action( 'wpml_switch_language', get_wpml_language_code( $locale ) );
+}
+
 /**
  * Set language for source (i.e. non-translated) post
  */
