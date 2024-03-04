@@ -567,7 +567,7 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 			'message'  => __( 'Voting translated successfully!', 'concordamos' ),
 			'post_url' => get_permalink( $post_id ),
 		);
-		return new \WP_REST_Request( $response, 200 );
+		return new \WP_REST_Response( $response, 200 );
 
 	} else {
 		$response = array(
