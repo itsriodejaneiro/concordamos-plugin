@@ -780,6 +780,8 @@ function get_my_vote_callback( \WP_REST_Request $request ) {
 		return new \WP_REST_Response( $response, 400 );
 	}
 
+	$source_id = get_source_post_id( 'voting', $params['v_id'] );
+
 	$args = array(
 		'post_type'   => 'vote',
 		'post_status' => 'publish',
@@ -787,7 +789,7 @@ function get_my_vote_callback( \WP_REST_Request $request ) {
 		'meta_query'  => array(
 			array(
 				'key'   => 'voting_id',
-				'value' => $params['v_id'],
+				'value' => $source_id,
 			),
 		),
 	);
@@ -813,8 +815,9 @@ function vote_callback( \WP_REST_Request $request ) {
 
 	$unique_id = sanitize_title( $params['u_id'] );
 	$voting_id = intval( $params['v_id'] );
+	$source_id = get_source_post_id( 'voting', $voting_id );
 
-	$raw_post_meta = get_post_meta( $voting_id );
+	$raw_post_meta = get_post_meta( $source_id );
 
 	$is_private = false;
 
@@ -843,7 +846,7 @@ function vote_callback( \WP_REST_Request $request ) {
 		}
 	}
 
-	if ( is_voting_closed( $voting_id ) ) {
+	if ( is_voting_closed( $source_id ) ) {
 		$response = array(
 			'status'  => 'error',
 			'message' => __( 'Voting phase is already closed', 'concordamos' ),
@@ -864,7 +867,7 @@ function vote_callback( \WP_REST_Request $request ) {
 			'logged_user'    => is_user_logged_in() ? 'yes' : 'no',
 			'unique_id'      => $unique_id,
 			'voting_date'    => gmdate( 'Y-m-d H:i:s' ),
-			'voting_id'      => $voting_id,
+			'voting_id'      => $source_id,
 			'voting_options' => $params['votes'],
 		),
 	);
@@ -874,9 +877,9 @@ function vote_callback( \WP_REST_Request $request ) {
 
 	if ( $post_id ) {
 		if ( $is_private ) {
-			$get_expired_unique_ids  = get_post_meta( $voting_id, 'expired_unique_ids', true );
+			$get_expired_unique_ids  = get_post_meta( $source_id, 'expired_unique_ids', true );
 			$get_expired_unique_ids .= $unique_id . ',';
-			update_post_meta( $voting_id, 'expired_unique_ids', $get_expired_unique_ids );
+			update_post_meta( $source_id, 'expired_unique_ids', $get_expired_unique_ids );
 		}
 
 		$response = array(
@@ -899,7 +902,8 @@ function vote_callback( \WP_REST_Request $request ) {
 function get_votes_callback( \WP_Rest_Request $request ) {
 	$params        = $request->get_params();
 	$voting_id     = intval( $params['v_id'] );
-	$number_voters = get_post_meta( $voting_id, 'number_voters', true );
+	$source_id     = get_source_post_id( 'voting', $voting_id );
+	$number_voters = get_post_meta( $source_id, 'number_voters', true );
 
 	$data_graphic = array(
 		'labels'             => array(),
@@ -913,7 +917,7 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 		'meta_query'  => array(
 			array(
 				'key'   => 'voting_id',
-				'value' => $voting_id,
+				'value' => $source_id,
 			),
 		),
 	);
@@ -971,7 +975,7 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 		'labels'             => $data_graphic['labels'],
 		'number_voters'      => $number_voters,
 		'participants'       => $votes->found_posts,
-		'total_credits'      => get_post_meta( $voting_id, 'credits_voter', true ) * $votes->found_posts,
+		'total_credits'      => get_post_meta( $source_id, 'credits_voter', true ) * $votes->found_posts,
 		'used_credits'       => $used_credits,
 	);
 }
