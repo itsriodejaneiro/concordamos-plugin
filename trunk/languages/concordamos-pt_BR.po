@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.0.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-02-29T18:52:15+00:00\n"
-"PO-Revision-Date: 2024-02-29 15:53-0300\n"
+"POT-Creation-Date: 2024-03-04T18:49:20+00:00\n"
+"PO-Revision-Date: 2024-03-04 15:50-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -36,12 +36,12 @@ msgstr "Rede Concordamos"
 msgid "You are not signed in."
 msgstr "Você não está logado(a)."
 
-#: includes/api.php:162 includes/api.php:169 includes/api.php:567
-#: includes/api.php:628
+#: includes/api.php:162 includes/api.php:169 includes/api.php:586
+#: includes/api.php:652
 msgid "You don't have enough permissions."
 msgstr "Você não tem permissões suficientes."
 
-#: includes/api.php:355 includes/api.php:484 includes/api.php:755
+#: includes/api.php:355 includes/api.php:484 includes/api.php:778
 msgid "Required field is either missing or blank:"
 msgstr "Campo obrigatório está ausente ou vazio:"
 
@@ -49,55 +49,55 @@ msgstr "Campo obrigatório está ausente ou vazio:"
 msgid "Voting created successfully!"
 msgstr "Votação criada com sucesso!"
 
-#: includes/api.php:457 includes/api.php:555
+#: includes/api.php:457 includes/api.php:573
 msgid "Verify all fields and try again"
 msgstr "Verifique todos os campos e tente novamente"
 
-#: includes/api.php:547
+#: includes/api.php:565
 msgid "Voting translated successfully!"
 msgstr "Votação traduzida com sucesso!"
 
-#: includes/api.php:585
-msgid "Voting updated successfully!"
-msgstr "Votação atualizada com sucesso!"
-
-#: includes/api.php:591
+#: includes/api.php:607
 msgid "Error updating voting, please try again"
 msgstr "Erro ao atualizar votação, por favor tente novamente"
 
-#: includes/api.php:699
+#: includes/api.php:615
+msgid "Voting updated successfully!"
+msgstr "Votação atualizada com sucesso!"
+
+#: includes/api.php:722
 msgid "User updated successfully!"
 msgstr "Usuário atualizado com sucesso!"
 
-#: includes/api.php:705
+#: includes/api.php:728
 msgid "Error updating user, please try again"
 msgstr "Erro ao atualizar usuário, por favor tente novamente"
 
-#: includes/api.php:780
+#: includes/api.php:805
 msgid "Vote not found"
 msgstr "Voto não encontrado"
 
-#: includes/api.php:806
+#: includes/api.php:832
 msgid "Invalid link"
 msgstr "Link inválido"
 
-#: includes/api.php:816
+#: includes/api.php:842
 msgid "Expired link"
 msgstr "Link expirado"
 
-#: includes/api.php:826
+#: includes/api.php:852
 msgid "Voting phase is already closed"
 msgstr "A fase de votação já está encerrada"
 
-#: includes/api.php:861
+#: includes/api.php:887
 msgid "Vote registered successfully!"
 msgstr "Voto registrado com sucesso!"
 
-#: includes/api.php:868
+#: includes/api.php:894
 msgid "Error registering your vote, please try again"
 msgstr "Erro ao registar seu voto, por favor tente novamente"
 
-#: includes/api.php:961
+#: includes/api.php:988
 msgid "User signed out"
 msgstr "Usuário deslogado"
 
@@ -294,7 +294,7 @@ msgstr "Conta criada com sucesso."
 msgid "Authentication failed."
 msgstr "Autenticação falhou."
 
-#: includes/helpers.php:415
+#: includes/helpers.php:434
 msgid "How to vote"
 msgstr "Como votar"
 
@@ -348,7 +348,7 @@ msgstr "Voto"
 msgid "Votings"
 msgstr "Votações"
 
-#: includes/setup.php:30 templates/single-voting.php:39
+#: includes/setup.php:30 templates/single-voting.php:42
 msgid "Voting"
 msgstr "Votação"
 
@@ -392,20 +392,21 @@ msgstr "Política de privacidade"
 msgid "Terms of Use"
 msgstr "Termos de uso"
 
-#: includes/templates.php:34 build/js/translate-voting/index.js:1
+#: includes/templates.php:34 templates/single-voting.php:82
+#: build/js/translate-voting/index.js:1
 msgid "Translate voting"
 msgstr "Traduzir votação"
 
-#: templates/single-voting.php:51
+#: templates/single-voting.php:54
 msgid "Created by:"
 msgstr "Criada por:"
 
-#: templates/single-voting.php:63 build/js/create-voting/index.js:1
+#: templates/single-voting.php:66 build/js/create-voting/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Start"
 msgstr "Começo"
 
-#: templates/single-voting.php:70 build/js/create-voting/index.js:1
+#: templates/single-voting.php:73 build/js/create-voting/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "End"
 msgstr "Fim"
@@ -909,7 +910,7 @@ msgid "Translate"
 msgstr "Traduzir"
 
 #: build/js/translate-voting/index.js:1
-msgid "Original language"
+msgid "Source language"
 msgstr "Idioma original"
 
 #: build/js/translate-voting/index.js:1
@@ -917,7 +918,7 @@ msgid "New language"
 msgstr "Novo idioma"
 
 #: build/js/translate-voting/index.js:1
-msgid "Original text"
+msgid "Source text"
 msgstr "Texto original"
 
 #: build/js/translate-voting/index.js:1
@@ -1147,6 +1148,12 @@ msgstr "Voltar às opções de votação"
 #: build/js/votings-block/index.js:1
 msgid "Search votings"
 msgstr "Pesquisar votações"
+
+#~ msgid "Original language"
+#~ msgstr "Idioma original"
+
+#~ msgid "Original text"
+#~ msgstr "Texto original"
 
 #~ msgctxt "date"
 #~ msgid "M d, Y"

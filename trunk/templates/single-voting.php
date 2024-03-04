@@ -1,4 +1,6 @@
 <?php
+namespace Concordamos;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -10,11 +12,11 @@ get_header();
  */
 
 $single_id     = get_the_ID();
-$source_id     = Concordamos\get_source_post_id( 'voting', $single_id );
+$source_id     = get_source_post_id( 'voting', $single_id );
 $raw_post_meta = get_post_meta( $single_id );
 
 $voting_id = get_post_field( 'post_name', $single_id );
-$options   = Concordamos\get_options_by_voting( $single_id );
+$options   = get_options_by_voting( $single_id );
 
 $author_id     = get_post_field( 'post_author', $single_id );
 $voting_author = get_the_author_meta( 'display_name', $author_id );
@@ -22,11 +24,11 @@ $voting_author = get_the_author_meta( 'display_name', $author_id );
 $date_start = $raw_post_meta['date_start'][0];
 $date_end   = $raw_post_meta['date_end'][0];
 
-$date_start_class = ( Concordamos\is_future_date( Concordamos\format_datetime( $date_start ) ) ) ? 'date date-start' : 'date date-start started';
-$date_end_class   = ( Concordamos\is_future_date( Concordamos\format_datetime( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
+$date_start_class = ( is_future_date( format_datetime( $date_start ) ) ) ? 'date date-start' : 'date date-start started';
+$date_end_class   = ( is_future_date( format_datetime( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
 
 $is_panel      = get_query_var( 'panel' );
-$voting_closed = Concordamos\is_voting_closed( $source_id );
+$voting_closed = is_voting_closed( $source_id );
 
 $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta['results_end'][0] ) ) ? $raw_post_meta['results_end'][0] : 'no';
 ?>
@@ -48,10 +50,10 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 
 				<div class="meta">
 					<?php if ( ! $is_panel ) : ?>
-						<?php echo wp_kses_post( Concordamos\get_html_terms( $single_id, 'tag' ) ); ?>
+						<?php echo wp_kses_post( get_html_terms( $single_id, 'tag' ) ); ?>
 						<span class="author"><?php esc_html_e( 'Created by:', 'concordamos' ); ?> <?php echo esc_html( $voting_author ); ?></span>
 					<?php else : ?>
-						<?php if ( Concordamos\is_voting_owner( $single_id ) ) : ?>
+						<?php if ( is_voting_owner( $single_id ) ) : ?>
 							<div id="concordamos-voting-admin"></div>
 						<?php endif; ?>
 					<?php endif; ?>
@@ -62,18 +64,24 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 				<div class="<?php echo esc_attr( $date_start_class ); ?>">
 					<div class="icon">1</div>
 					<h3><?php esc_html_e( 'Start', 'concordamos' ); ?></h3>
-					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'c' ) ); ?>" data-format="date"></time>
-					<time class="time" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_start, 'c' ) ); ?>" data-format="time"></time>
+					<time class="date" datetime="<?php echo esc_attr( format_datetime( $date_start, 'c' ) ); ?>" data-format="date"></time>
+					<time class="time" datetime="<?php echo esc_attr( format_datetime( $date_start, 'c' ) ); ?>" data-format="time"></time>
 					<!-- <span class="start-edit">Editar</span> -->
 				</div>
 				<div class="<?php echo esc_attr( $date_end_class ); ?>">
 					<div class="icon">2</div>
 					<h3><?php esc_html_e( 'End', 'concordamos' ); ?></h3>
-					<time class="date" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_end, 'c' ) ); ?>" data-format="date"></time>
-					<time class="time" datetime="<?php echo esc_attr( Concordamos\format_datetime( $date_end, 'c' ) ); ?>" data-format="time"></time>
+					<time class="date" datetime="<?php echo esc_attr( format_datetime( $date_end, 'c' ) ); ?>" data-format="date"></time>
+					<time class="time" datetime="<?php echo esc_attr( format_datetime( $date_end, 'c' ) ); ?>" data-format="time"></time>
 					<!-- <span class="end-edit">Editar</span> -->
 				</div>
 			</div>
+
+			<?php if ( is_voting_owner( $single_id ) && ( count( get_translation_ids( 'voting', $single_id ) ) < count( get_language_options() ) ) ) : ?>
+			<div class="translation-links">
+				<a class="button" href="<?php echo esc_url( get_translation_link( $single_id ) ); ?>"><?php esc_html_e( 'Translate voting', 'concordamos' ); ?></a>
+			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 

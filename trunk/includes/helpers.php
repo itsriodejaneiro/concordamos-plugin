@@ -416,6 +416,17 @@ function get_change_password_token_status() {
 	return true;
 }
 
+function get_translation_link( $voting_id ) {
+	$permalink   = get_permalink( get_page_by_template( 'concordamos/template-translate-voting.php' ) );
+	$voting_slug = get_post_field( 'post_name', $voting_id );
+
+	if ( strpos( $permalink, '?' ) == false ) {
+		return $permalink . '?v_id=' . $voting_slug;
+	} else {
+		return $permalink . '&v_id=' . $voting_slug;
+	}
+}
+
 function get_link_to_faq() {
 	$faq_page = get_faq_page();
 

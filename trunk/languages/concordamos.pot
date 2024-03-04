@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-29T18:52:15+00:00\n"
+"POT-Creation-Date: 2024-03-04T18:49:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: concordamos\n"
@@ -36,14 +36,14 @@ msgstr ""
 
 #: includes/api.php:162
 #: includes/api.php:169
-#: includes/api.php:567
-#: includes/api.php:628
+#: includes/api.php:586
+#: includes/api.php:652
 msgid "You don't have enough permissions."
 msgstr ""
 
 #: includes/api.php:355
 #: includes/api.php:484
-#: includes/api.php:755
+#: includes/api.php:778
 msgid "Required field is either missing or blank:"
 msgstr ""
 
@@ -52,55 +52,55 @@ msgid "Voting created successfully!"
 msgstr ""
 
 #: includes/api.php:457
-#: includes/api.php:555
+#: includes/api.php:573
 msgid "Verify all fields and try again"
 msgstr ""
 
-#: includes/api.php:547
+#: includes/api.php:565
 msgid "Voting translated successfully!"
 msgstr ""
 
-#: includes/api.php:585
-msgid "Voting updated successfully!"
-msgstr ""
-
-#: includes/api.php:591
+#: includes/api.php:607
 msgid "Error updating voting, please try again"
 msgstr ""
 
-#: includes/api.php:699
+#: includes/api.php:615
+msgid "Voting updated successfully!"
+msgstr ""
+
+#: includes/api.php:722
 msgid "User updated successfully!"
 msgstr ""
 
-#: includes/api.php:705
+#: includes/api.php:728
 msgid "Error updating user, please try again"
 msgstr ""
 
-#: includes/api.php:780
+#: includes/api.php:805
 msgid "Vote not found"
 msgstr ""
 
-#: includes/api.php:806
+#: includes/api.php:832
 msgid "Invalid link"
 msgstr ""
 
-#: includes/api.php:816
+#: includes/api.php:842
 msgid "Expired link"
 msgstr ""
 
-#: includes/api.php:826
+#: includes/api.php:852
 msgid "Voting phase is already closed"
 msgstr ""
 
-#: includes/api.php:861
+#: includes/api.php:887
 msgid "Vote registered successfully!"
 msgstr ""
 
-#: includes/api.php:868
+#: includes/api.php:894
 msgid "Error registering your vote, please try again"
 msgstr ""
 
-#: includes/api.php:961
+#: includes/api.php:988
 msgid "User signed out"
 msgstr ""
 
@@ -286,7 +286,7 @@ msgstr ""
 msgid "Authentication failed."
 msgstr ""
 
-#: includes/helpers.php:415
+#: includes/helpers.php:434
 msgid "How to vote"
 msgstr ""
 
@@ -341,7 +341,7 @@ msgid "Votings"
 msgstr ""
 
 #: includes/setup.php:30
-#: templates/single-voting.php:39
+#: templates/single-voting.php:42
 msgid "Voting"
 msgstr ""
 
@@ -394,21 +394,22 @@ msgid "Terms of Use"
 msgstr ""
 
 #: includes/templates.php:34
+#: templates/single-voting.php:82
 #: build/js/translate-voting/index.js:1
 msgid "Translate voting"
 msgstr ""
 
-#: templates/single-voting.php:51
+#: templates/single-voting.php:54
 msgid "Created by:"
 msgstr ""
 
-#: templates/single-voting.php:63
+#: templates/single-voting.php:66
 #: build/js/create-voting/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "Start"
 msgstr ""
 
-#: templates/single-voting.php:70
+#: templates/single-voting.php:73
 #: build/js/create-voting/index.js:1
 #: build/js/voting-single/index.js:1
 msgid "End"
@@ -947,7 +948,7 @@ msgid "Translate"
 msgstr ""
 
 #: build/js/translate-voting/index.js:1
-msgid "Original language"
+msgid "Source language"
 msgstr ""
 
 #: build/js/translate-voting/index.js:1
@@ -955,7 +956,7 @@ msgid "New language"
 msgstr ""
 
 #: build/js/translate-voting/index.js:1
-msgid "Original text"
+msgid "Source text"
 msgstr ""
 
 #: build/js/translate-voting/index.js:1

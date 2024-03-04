@@ -25,7 +25,7 @@ export default function TranslationText ({ label, maxLength, name, placeholder, 
 			<label>
 				<span>{label}</span>
 				<div className="translation-row">
-					<Input type={type} disabled={true} value={source} aria-label={__('Original text', 'concordamos')}/>
+					<Input type={type} disabled={true} value={source} aria-label={__('Source text', 'concordamos')}/>
 					<Input type={type} name={name} placeholder={placeholder} aria-label={__('Translated text', 'concordamos')} onChange={handleChange}/>
 				</div>
 			</label>

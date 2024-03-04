@@ -14,7 +14,7 @@ export default function LocaleSelector ({ label, name, template, value, onChange
 			<label>
 				<span>{label}</span>
 				<div className="translation-row">
-					<input type="text" disabled={true} value={sourceLocale.label} aria-label={__('Original language', 'concordamos')}/>
+					<input type="text" disabled={true} value={sourceLocale.label} aria-label={__('Source language', 'concordamos')}/>
 					<select name={name} value={value} onChange={onChange} aria-label={__('New language', 'concordamos')}>
 					{availableLocales.map((option) => (
 						<option value={option.key}>{option.label}</option>
