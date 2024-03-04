@@ -1,8 +1,8 @@
 import { __ } from '@wordpress/i18n'
 
-export default function LocaleSelector ({ label, name, value, onChange }) {
-	const originalLocale = concordamos.locales.find((locale) => locale.key === concordamos.locale)
-	const availableLocales = concordamos.locales.filter((locale) => locale.key !== concordamos.locale)
+export default function LocaleSelector ({ label, name, template, value, onChange }) {
+	const originalLocale = concordamos.locales.find((locale) => locale.key === template.locale)
+	const availableLocales = concordamos.locales.filter((locale) => locale.key !== template.locale)
 
 	if (!value) {
 		/** Mimic the shape of an event */

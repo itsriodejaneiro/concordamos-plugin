@@ -181,7 +181,7 @@ function get_translation_template( $voting_slug ) {
 
 	$options  = get_options_by_voting( $original->ID );
 
-	$locale = get_post_meta( $original, 'locale', true );
+	$locale = get_post_meta( $original->ID, 'locale', true );
 	$locale = empty( $locale ) ? get_default_language() : $locale;
 
 	$raw_tags = get_the_terms( $original, 'tag' );
@@ -193,6 +193,7 @@ function get_translation_template( $voting_slug ) {
 	}
 
 	$translation_template = array(
+		'locale'			 => $locale,
 		'tags'               => implode( ',', $tags ),
 		'voting_description' => $original->post_content,
 		'voting_name'        => $original->post_title,

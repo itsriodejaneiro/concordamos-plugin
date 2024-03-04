@@ -76,6 +76,7 @@ export default function Form() {
 				label={__('Language', 'concordamos')}
 				name="locale"
 				onChange={e => setLocale(e.target.value)}
+				template={template}
 				value={locale}
 			/>
 			<TranslationText
