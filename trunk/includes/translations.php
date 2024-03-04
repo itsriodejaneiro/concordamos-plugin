@@ -70,6 +70,26 @@ function get_source_post_id( string $post_type, $post_id ) {
 	return $post_id;
 }
 
+function get_translation_ids( string $post_type, $post_id, $include_input_id = true ) {
+	$element_type   = 'post_' . $post_type;
+	$translation_id = apply_filters( 'wpml_element_trid', null, $post_id, $element_type );
+
+	if ( ! empty( $translation_id ) ) {
+		$translations = apply_filters( 'wpml_get_element_translations', array(), $translation_id, $element_type );
+
+		$post_ids = array();
+		foreach ( $translations as $translation ) {
+			if ( $include_input_id || $translation->element_id != $post_id ) {
+				$post_ids[] = intval( $translation->element_id );
+			}
+		}
+		return $post_ids;
+	}
+
+	// On failure, return the input ID
+	return array( intval( $post_id ) );
+}
+
 function get_wpml_language_code( $locale ) {
 	if ( empty( $locale ) ) {
 		return $locale;

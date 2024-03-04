@@ -577,9 +577,10 @@ function translate_voting_callback( \WP_REST_Request $request ) {
 }
 
 function patch_voting_callback( \WP_REST_Request $request ) {
-	$params = $request->get_json_params();
+	$params  = $request->get_json_params();
+	$post_id = intval( $params['v_id'] );
 
-	if ( get_post_field( 'post_author', $params['v_id'] ) !== $params['user_id'] ) {
+	if ( get_post_field( 'post_author', $post_id ) !== $params['user_id'] ) {
 		$response = array(
 			'status'  => 'error',
 			'message' => __( "You don't have enough permissions.", 'concordamos' ),
@@ -587,29 +588,33 @@ function patch_voting_callback( \WP_REST_Request $request ) {
 		return new \WP_REST_Response( $response, 403 );
 	}
 
-	$args = array(
-		'ID'         => intval( $params['v_id'] ),
-		'meta_input' => array(
-			'date_end'   => intval( $params['date_end'] ),
-			'date_start' => intval( $params['date_start'] ),
-		),
-	);
+	$translation_ids = get_translation_ids( 'voting', $post_id, true );
 
-	$post_id = wp_update_post( $args );
+	foreach ( $translation_ids as $translation_id ) {
+		$patch_args = array(
+			'ID'         => $translation_id,
+			'meta_input' => array(
+				'date_end'   => intval( $params['date_end'] ),
+				'date_start' => intval( $params['date_start'] ),
+			),
+		);
 
-	if ( $post_id ) {
-		$response = array(
-			'status'  => 'success',
-			'message' => __( 'Voting updated successfully!', 'concordamos' ),
-		);
-		return new \WP_REST_Response( $response, 200 );
-	} else {
-		$response = array(
-			'status'  => 'error',
-			'message' => __( 'Error updating voting, please try again', 'concordamos' ),
-		);
-		return new \WP_REST_Response( $response, 400 );
+		$patched_id = wp_update_post( $patch_args );
+
+		if ( ! $patched_id ) {
+			$response = array(
+				'status'  => 'error',
+				'message' => __( 'Error updating voting, please try again', 'concordamos' ),
+			);
+			return new \WP_REST_Response( $response, 400 );
+		}
 	}
+
+	$response = array(
+		'status'  => 'success',
+		'message' => __( 'Voting updated successfully!', 'concordamos' ),
+	);
+	return new \WP_REST_Response( $response, 200 );
 }
 
 function get_voting_links_callback( \WP_REST_Request $request ) {
