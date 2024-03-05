@@ -70,7 +70,16 @@ function get_source_post_id( string $post_type, $post_id ) {
 	return $post_id;
 }
 
-function get_translation_ids( string $post_type, $post_id, $include_input_id = true ) {
+function get_translated_post_id ( string $post_type, $post_id, $locale = null ) {
+	if ( empty( $locale ) ) {
+		$locale = get_current_language();
+	}
+
+	$translated_id = apply_filters( 'wpml_object_id', $post_id, $post_type, true, get_wpml_language_code( $locale ) );
+	return intval( $translated_id );
+}
+
+function get_translated_post_ids( string $post_type, $post_id, $include_input_id = true ) {
 	$element_type   = 'post_' . $post_type;
 	$translation_id = apply_filters( 'wpml_element_trid', null, $post_id, $element_type );
 

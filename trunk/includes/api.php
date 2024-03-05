@@ -590,7 +590,7 @@ function patch_voting_callback( \WP_REST_Request $request ) {
 		return new \WP_REST_Response( $response, 403 );
 	}
 
-	$translation_ids = get_translation_ids( 'voting', $post_id, true );
+	$translation_ids = get_translated_post_ids( 'voting', $post_id, true );
 
 	foreach ( $translation_ids as $translation_id ) {
 		$patch_args = array(

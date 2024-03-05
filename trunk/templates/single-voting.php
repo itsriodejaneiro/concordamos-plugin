@@ -77,7 +77,7 @@ $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta
 				</div>
 			</div>
 
-			<?php if ( is_voting_owner( $single_id ) && ( count( get_translation_ids( 'voting', $single_id ) ) < count( get_language_options() ) ) ) : ?>
+			<?php if ( is_voting_owner( $single_id ) && ( count( get_translated_post_ids( 'voting', $single_id ) ) < count( get_language_options() ) ) ) : ?>
 			<div class="translation-links">
 				<a class="button" href="<?php echo esc_url( get_translation_link( $single_id ) ); ?>"><?php esc_html_e( 'Translate voting', 'concordamos' ); ?></a>
 			</div>
