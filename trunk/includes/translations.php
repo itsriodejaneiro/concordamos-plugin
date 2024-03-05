@@ -70,7 +70,7 @@ function get_source_post_id( string $post_type, $post_id ) {
 	return $post_id;
 }
 
-function get_translated_post_id ( string $post_type, $post_id, $locale = null ) {
+function get_translated_post_id( string $post_type, $post_id, $locale = null ) {
 	if ( empty( $locale ) ) {
 		$locale = get_current_language();
 	}
@@ -137,7 +137,7 @@ function localize_plugin() {
 
 add_action( 'after_setup_theme', 'Concordamos\localize_plugin', 0 );
 
-function set_current_language ( $locale ) {
+function set_current_language( $locale ) {
 	do_action( 'wpml_switch_language', get_wpml_language_code( $locale ) );
 }
 

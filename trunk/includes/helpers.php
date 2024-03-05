@@ -288,7 +288,7 @@ function get_page_by_template( string $template ) {
 function get_post_by_slug( string $post_type, string $slug ) {
 	$posts = get_posts(
 		array(
-			'name' => $slug,
+			'name'      => $slug,
 			'post_type' => $post_type,
 		)
 	);

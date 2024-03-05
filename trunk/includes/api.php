@@ -927,6 +927,9 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 	$votes        = new \WP_Query( $args );
 	$used_credits = 0;
 
+	$labels = array();
+	$locale = get_current_language();
+
 	if ( $votes->have_posts() ) {
 		while ( $votes->have_posts() ) {
 			$votes->the_post();
@@ -935,7 +938,13 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 
 			if ( is_array( $voting_options ) ) {
 				foreach ( $voting_options as $option ) {
-					$label = get_post_meta( $option['id'], 'option_name', true );
+					if ( empty( $labels[ $option['id'] ] ) ) {
+						$translated_id           = get_translated_post_id( 'option', $option['id'], $locale );
+						$label                   = get_post_meta( $translated_id, 'option_name', true );
+						$labels[ $option['id'] ] = $label;
+					} else {
+						$label = $labels[ $option['id'] ];
+					}
 					$value = (int) $option['count'];
 
 					if ( $value == 1 ) {
