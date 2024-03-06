@@ -3,7 +3,7 @@
 namespace Concordamos;
 
 function format_locale( $locale ) {
-	$locales = get_wpml_locales();
+	$locales = get_wpml_locales( false );
 
 	if ( ! empty( $locales[ $locale ] ) ) {
 		$locale = $locales[ $locale ]['default_locale'];
@@ -35,7 +35,7 @@ function get_default_language() {
 }
 
 function get_language_options() {
-	$locales = get_wpml_locales();
+	$locales = get_wpml_locales( true );
 	$options = array();
 
 	foreach ( $locales as $key => $locale ) {
@@ -108,7 +108,7 @@ function get_wpml_language_code( $locale ) {
 		return $locale;
 	}
 
-	$locales = get_wpml_locales();
+	$locales = get_wpml_locales( false );
 
 	foreach ( $locales as $key => $wpml_locale ) {
 		if ( $wpml_locale['default_locale'] === $locale ) {
@@ -119,11 +119,15 @@ function get_wpml_language_code( $locale ) {
 	return $locale;
 }
 
-function get_wpml_locales() {
+function get_wpml_locales( $active_only = false ) {
 	if ( class_exists( 'SitePress' ) ) {
 		global $sitepress;
 		if ( ! empty( $sitepress ) ) {
-			return $sitepress->get_languages( $sitepress->get_current_language(), true, false, false, 'display_name' );
+			if ( $active_only ) {
+				return $sitepress->get_active_languages( false, false, 'display_name' );
+			} else {
+				return $sitepress->get_languages( $sitepress->get_current_language(), true, false, false, 'display_name' );
+			}
 		}
 	}
 
