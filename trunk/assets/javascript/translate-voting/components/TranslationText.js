@@ -1,5 +1,7 @@
 import { __, sprintf } from '@wordpress/i18n'
 
+import ResizableTextarea from './ResizableTextarea'
+
 export default function TranslationText ({ label, maxLength, name, placeholder, source, type = 'text', value, onChange }) {
 	const currentLength = value.length
 	const limitReached = currentLength === maxLength
@@ -17,7 +19,7 @@ export default function TranslationText ({ label, maxLength, name, placeholder, 
 		}
 	}
 
-	const Input = (type === 'textarea') ? 'textarea' : 'input'
+	const Input = (type === 'textarea') ? ResizableTextarea : 'input'
 	const warningClass = limitReached ? 'warning count-warning limit-reached' : 'warning count-warning'
 
 	return (

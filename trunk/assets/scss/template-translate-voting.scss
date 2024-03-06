@@ -38,6 +38,12 @@ body{
 		}
 	}
 
+	.resizable-textarea {
+		height: auto;
+		min-height: auto;
+		overflow-y: hidden;
+	}
+
 	.translation-row {
 		display: grid;
 		grid-template-columns: 1fr 1fr;

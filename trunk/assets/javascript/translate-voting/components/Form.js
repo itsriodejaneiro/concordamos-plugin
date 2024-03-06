@@ -82,6 +82,7 @@ export default function Form() {
 			<TranslationText
 				label={__('Voting name', 'concordamos')}
 				name="voting_name"
+				type="textarea"
 				source={template.voting_name}
 				value={votingName}
 				maxLength={100}
@@ -115,6 +116,7 @@ export default function Form() {
 					<TranslationText
 						label={__('Title of the option', 'concordamos')}
 						name={`voting_options[${optionId}][option_name]`}
+						type="textarea"
 						source={sourceOption.option_name}
 						value={option.option_name}
 						onChange={e => setOption(optionId, 'option_name', e.target.value)}
@@ -122,6 +124,7 @@ export default function Form() {
 					<TranslationText
 						label={__('Description of the option', 'concordamos')}
 						name={`voting_options[${optionId}][option_description]`}
+						type="textarea"
 						source={sourceOption.option_description}
 						value={option.option_description}
 						onChange={e => setOption(optionId, 'option_description', e.target.value)}
