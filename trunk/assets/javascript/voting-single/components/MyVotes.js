@@ -7,7 +7,6 @@ import { useFetch } from '../../shared/hooks/fetch'
 
 export default function MyVotes ({ initialData }) {
 	const { credits_voter, options } = initialData
-	const parsedOptions = JSON.parse(options)
 
 	const { data: votes } = useFetch(`my-vote/?v_id=${concordamos.v_id}`, [])
 
@@ -22,7 +21,7 @@ export default function MyVotes ({ initialData }) {
 		<div className="wrapper my-votes">
 			<div className="content voting-mode">
 				<div className="votings-list">
-					{Object.entries(parsedOptions).map(([key, option]) => {
+					{Object.entries(options).map(([key, option]) => {
 						const voteCount = votes.find((vote) => vote.id === key)?.count ?? 0
 						return (
 							<Option

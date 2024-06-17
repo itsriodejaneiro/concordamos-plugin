@@ -10,9 +10,8 @@ import { getPanelUrl, navigateTo } from '../../shared/utils/location'
 
 export default function SingleVoting ({ handleViewChange, initialData }) {
 	const { credits_voter, date_end, options } = initialData
-	const parsedOptions = JSON.parse(options)
 
-	const initialVotes = Object.keys(parsedOptions).map((key) => ({ id: key, count: 0 }))
+	const initialVotes = Object.keys(options).map((key) => ({ id: key, count: 0 }))
 	const [votes, setVotes] = useState(initialVotes)
 	const [hasVoted, setHasVoted] = useState(false)
 	const [errorMessage, setErrorMessage] = useState('')
@@ -97,7 +96,7 @@ export default function SingleVoting ({ handleViewChange, initialData }) {
 				<p className="end-date">{sprintf(__('This poll ends on %s, %s', 'concordamos'), formatDate(formattedDateEnd), formatTime(formattedDateEnd))}</p>
 
 				<form onSubmit={confirmVote}>
-					{Object.entries(parsedOptions).map(([key, option]) => {
+					{Object.entries(options).map(([key, option]) => {
 						const voteCount = votes.find((vote) => vote.id === key)?.count ?? 0
 						return (
 							<Option

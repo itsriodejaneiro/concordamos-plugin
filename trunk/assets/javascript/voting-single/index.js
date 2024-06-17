@@ -14,9 +14,9 @@ const initialData = {
 	date_start: mainAppRender.dataset.date_start,
 	is_panel: mainAppRender.dataset.is_panel,
 	logged: mainAppRender.dataset.logged,
-	options: mainAppRender.dataset.options,
+	options: JSON.parse(mainAppRender.dataset.options),
 	results_end: mainAppRender.dataset.results_end,
-	voting_closed: mainAppRender.dataset.voting_closed
+	voting_closed: mainAppRender.dataset.voting_closed,
 }
 
 document.querySelectorAll('time[data-format]').forEach((el) => {

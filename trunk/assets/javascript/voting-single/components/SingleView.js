@@ -7,14 +7,12 @@ import { getPanelUrl } from '../../shared/utils/location'
 export default function SingleView ({ handleViewChange, initialData }) {
 	const { credits_voter, logged, options, results_end, voting_closed } = initialData
 
-	const parsedOptions = JSON.parse(options)
-
 	return (
 		<div className="wrapper">
 			<div className="content view-mode">
 				<h2 className="options-title-desktop">{__('Voting options', 'concordamos')}</h2>
 				<div className="options">
-					{Object.entries(parsedOptions).map(([key, option]) => (
+					{Object.entries(options).map(([key, option]) => (
 						<OptionView
 							key={key}
 							id={key}
