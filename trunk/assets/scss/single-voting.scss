@@ -691,12 +691,65 @@
 				border-bottom: solid 3px #000;
 			}
 		}
+
 		.panel-tabs{
+			display: flex;
+			width: 100%;
+
 			@include small{
 				.panel-previous-tab,
 				.panel-next-tab{
 					display: none;
 				}
+			}
+
+			button{
+				background-color: transparent;
+				border-color: transparent;
+				padding-top: 21px;
+				padding-bottom: 23px;
+				color: #000;
+				text-align: center;
+				font-family: 'Oswald';
+				font-size: 24px;
+				font-weight: 500;
+				line-height: 130%;
+				letter-spacing: -0.24px;
+				text-transform: uppercase;
+				@media(max-width: 782px){
+					font-size: 14px;
+				}
+			}
+
+			.panel-tab{
+				flex: 2;
+				border-bottom: 3px solid #000;
+				border-left: 1.7px solid #000;
+				border-right: 1.7px solid #000;
+			}
+			.selected{
+				border-bottom: none;
+				border-left: 1.7px solid #000;
+				border-right: 1.7px solid #000;
+			}
+			.panel-previous-tab, .panel-next-tab {
+				flex: 1;
+
+				&.disabled {
+					img {
+						opacity: .5;
+					}
+				}
+			}
+			.panel-previous-tab{
+				padding-left: 0;
+				border-bottom: 3px solid #000;
+				border-right: 1.7px solid #000;
+			}
+			.panel-next-tab{
+				padding-right: 0;
+				border-bottom: 3px solid #000;
+				border-left: 1.7px solid #000;
 			}
 		}
 	}
@@ -804,57 +857,7 @@
 				max-width: 100%;
 			}
 			border: none;
-			.panel-tabs{
-				width: 100%;
-				display: flex;
-				button{
-					background-color: transparent;
-					padding-top: 21px;
-					padding-bottom: 23px;
-					color: #000;
-					text-align: center;
-					font-family: 'Oswald';
-					font-size: 24px;
-					font-weight: 500;
-					line-height: 130%;
-					letter-spacing: -0.24px;
-					text-transform: uppercase;
-					@media(max-width: 782px){
-						font-size: 14px;
-					}
-				}
 
-				.panel-tab{
-					flex: 2;
-					border-bottom: 3px solid #000;
-					border-left: 1.7px solid #000;
-					border-right: 1.7px solid #000;
-				}
-				.selected{
-					border-bottom: none;
-					border-left: 1.7px solid #000;
-					border-right: 1.7px solid #000;
-				}
-				.panel-previous-tab, .panel-next-tab {
-					flex: 1;
-
-					&.disabled {
-						img {
-							opacity: .5;
-						}
-					}
-				}
-				.panel-previous-tab{
-					padding-left: 0;
-					border-bottom: 3px solid #000;
-					border-right: 1.7px solid #000;
-				}
-				.panel-next-tab{
-					padding-right: 0;
-					border-bottom: 3px solid #000;
-					border-left: 1.7px solid #000;
-				}
-			}
 			.wrapper{
 				@media(max-width: 782px){
 					padding-left: 12px;

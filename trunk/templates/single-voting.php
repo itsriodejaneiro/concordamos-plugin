@@ -28,7 +28,7 @@ $date_start_class = ( is_future_date( format_datetime( $date_start ) ) ) ? 'date
 $date_end_class   = ( is_future_date( format_datetime( $date_end ) ) ) ? 'date date-end' : 'date date-end finished';
 
 $is_panel      = get_query_var( 'panel' );
-$voting_closed = is_voting_closed( $source_id );
+$voting_closed = is_voting_closed( $source_id ) ? 'yes' : 'no';
 
 $results_end = ( isset( $raw_post_meta['results_end'] ) && isset( $raw_post_meta['results_end'][0] ) ) ? $raw_post_meta['results_end'][0] : 'no';
 ?>

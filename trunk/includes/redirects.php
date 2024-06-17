@@ -114,11 +114,11 @@ add_action( 'template_redirect', 'Concordamos\required_login_to_my_account' );
  * @return void
  */
 function required_login_to_voting_panel() {
-	if ( ! is_singular( 'voting' ) || get_query_var( 'panel' ) !== '1' ) {
+	if ( ! is_singular( 'voting' ) || is_user_logged_in() ) {
 		return;
 	}
 
-	if ( is_user_logged_in() ) {
+	if ( get_query_var( 'panel' ) !== '1' || is_voting_closed( get_the_ID() ) ) {
 		return;
 	}
 

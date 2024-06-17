@@ -7,22 +7,28 @@ import VotingResults from '../components/VotingResults'
 import VotingLinks from '../components/VotingLinks'
 
 export default function Panel ({ initialData }) {
-	const tabs = [
-		{ id: 'my-vote', label: __('My vote', 'concordamos') }
-	]
+	const { logged, results_end, voting_closed } = initialData
+
+	const canSeeResults = voting_closed === 'yes' || results_end === 'no'
+
+	const tabs = []
 
 	if (concordamos.is_author == true) {
-		tabs.unshift({ id: 'links', label: __('Voting links', 'concordamos') })
+		tabs.push({ id: 'links', label: __('Voting links', 'concordamos') })
 	} else if (concordamos.a_id !== '') {
 		let currentURL = window.location.href;
 		let match = currentURL.match(/\/a-([a-fA-F0-9]+)/);
 
 		if (match && match[0] === "/" + concordamos.a_id) {
-			tabs.unshift({ id: 'links', label: __('Voting links', 'concordamos') })
+			tabs.push({ id: 'links', label: __('Voting links', 'concordamos') })
 		}
 	}
 
-	if (initialData.results_end === 'no' || initialData.voting_closed === 'yes') {
+	if (logged) {
+		tabs.push({ id: 'my-vote', label: __('My vote', 'concordamos') })
+	}
+
+	if (canSeeResults) {
 		tabs.push({ id: 'results', label: __('Detailed results', 'concordamos') })
 	}
 

@@ -9,7 +9,7 @@ export function VotingAdmin ({ initialData }) {
 	const deleteVotingModal = useModal(false)
 	const editVotingModal = useModal(false)
 
-	const canEditVoting = !initialData.voting_closed
+	const canEditVoting = initialData.voting_closed === 'no'
 
 	return (
 		<>
