@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Concordamos 0.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/concordamos\n"
-"POT-Creation-Date: 2024-03-04T18:49:20+00:00\n"
-"PO-Revision-Date: 2024-03-04 15:50-0300\n"
+"POT-Creation-Date: 2024-06-17T14:58:59+00:00\n"
+"PO-Revision-Date: 2024-06-17 12:00-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -36,12 +36,12 @@ msgstr "Red Concordamos"
 msgid "You are not signed in."
 msgstr "No has iniciado sesión."
 
-#: includes/api.php:162 includes/api.php:169 includes/api.php:586
-#: includes/api.php:652
+#: includes/api.php:162 includes/api.php:169 includes/api.php:588
+#: includes/api.php:654
 msgid "You don't have enough permissions."
 msgstr "No tienes suficientes permisos."
 
-#: includes/api.php:355 includes/api.php:484 includes/api.php:778
+#: includes/api.php:355 includes/api.php:484 includes/api.php:780
 msgid "Required field is either missing or blank:"
 msgstr "El campo obligatorio falta o está en blanco:"
 
@@ -49,55 +49,55 @@ msgstr "El campo obligatorio falta o está en blanco:"
 msgid "Voting created successfully!"
 msgstr "¡Votación creada exitosamente!"
 
-#: includes/api.php:457 includes/api.php:573
+#: includes/api.php:457 includes/api.php:575
 msgid "Verify all fields and try again"
 msgstr "Verifica todos los campos y vuelve a intentarlo"
 
-#: includes/api.php:565
+#: includes/api.php:567
 msgid "Voting translated successfully!"
 msgstr "¡Votación traducida exitosamente!"
 
-#: includes/api.php:607
+#: includes/api.php:609
 msgid "Error updating voting, please try again"
 msgstr "Error al actualizar la votación, inténtalo de nuevo"
 
-#: includes/api.php:615
+#: includes/api.php:617
 msgid "Voting updated successfully!"
 msgstr "¡Votación actualizada exitosamente!"
 
-#: includes/api.php:722
+#: includes/api.php:724
 msgid "User updated successfully!"
 msgstr "Usuario actualizado exitosamente!"
 
-#: includes/api.php:728
+#: includes/api.php:730
 msgid "Error updating user, please try again"
 msgstr "Error al actualizar el usuario, inténtelo de nuevo"
 
-#: includes/api.php:805
+#: includes/api.php:807
 msgid "Vote not found"
 msgstr "Voto no encontrado"
 
-#: includes/api.php:832
+#: includes/api.php:834
 msgid "Invalid link"
 msgstr "Enlace no válido"
 
-#: includes/api.php:842
+#: includes/api.php:844
 msgid "Expired link"
 msgstr "Enlace caducado"
 
-#: includes/api.php:852
+#: includes/api.php:854
 msgid "Voting phase is already closed"
 msgstr "La fase de votación ya está cerrada"
 
-#: includes/api.php:887
+#: includes/api.php:889
 msgid "Vote registered successfully!"
 msgstr "¡Voto registrado exitosamente!"
 
-#: includes/api.php:894
+#: includes/api.php:896
 msgid "Error registering your vote, please try again"
 msgstr "Error al registrar tu voto, inténtalo de nuevo"
 
-#: includes/api.php:988
+#: includes/api.php:999
 msgid "User signed out"
 msgstr "El usuario cerró sesión"
 
@@ -298,7 +298,7 @@ msgstr "Cuenta creada exitosamente."
 msgid "Authentication failed."
 msgstr "La autenticación falló."
 
-#: includes/helpers.php:434
+#: includes/helpers.php:427
 msgid "How to vote"
 msgstr "Como votar"
 
@@ -995,12 +995,12 @@ msgid "Voting options"
 msgstr "Opciones de votación"
 
 #: build/js/voting-single/index.js:1
-msgid "See detailed results"
-msgstr "Ver resultados detallados"
-
-#: build/js/voting-single/index.js:1
 msgid "Participate of the voting"
 msgstr "Participar de la votación"
+
+#: build/js/voting-single/index.js:1
+msgid "See detailed results"
+msgstr "Ver resultados detallados"
 
 #: build/js/voting-single/index.js:1
 msgid "Available credits"
@@ -1134,12 +1134,12 @@ msgid "Participants voting"
 msgstr "Participantes votando"
 
 #: build/js/voting-single/index.js:1
-msgid "My vote"
-msgstr "Mi voto"
-
-#: build/js/voting-single/index.js:1
 msgid "Voting links"
 msgstr "Enlaces de votación"
+
+#: build/js/voting-single/index.js:1
+msgid "My vote"
+msgstr "Mi voto"
 
 #: build/js/voting-single/index.js:1
 msgid "Detailed results"
