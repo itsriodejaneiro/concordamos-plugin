@@ -336,13 +336,6 @@ function is_voting_closed( $voting_id ) {
 	}
 
 	/**
-	 * Checks if voting requires login and user has already voted
-	 */
-	if ( get_post_meta( $voting_id, 'voting_access', true ) === 'yes' && get_vote_by_user( $voting_id ) ) {
-		return true;
-	}
-
-	/**
 	 * Checks if user has already voted
 	 */
 	if ( get_vote_by_user( $voting_id ) ) {
