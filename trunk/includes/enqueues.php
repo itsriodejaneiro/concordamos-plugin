@@ -150,7 +150,7 @@ function enqueue_scripts_frontend() {
 				'admin_email'    => get_bloginfo( 'admin_email' ),
 				'archive_url'    => get_post_type_archive_link( 'voting' ),
 				'faq_url'        => get_permalink( get_faq_page() ),
-				'is_author'      => get_post_field( 'post_author', $voting_id ) == get_current_user_id() ? true : false,
+				'is_author'      => is_voting_owner( $voting_id ),
 				'locale'         => get_current_language(),
 				'negative_votes' => get_post_meta( $voting_id, 'negative_votes', true ),
 				'nonce'          => wp_create_nonce( 'wp_rest' ),

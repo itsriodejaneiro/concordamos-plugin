@@ -166,6 +166,10 @@ function is_future_date( $date_string ) {
 function is_voting_owner( $voting_id ) {
 	$current_user_id = get_current_user_id();
 
+	if ( empty( $current_user_id ) ) {
+		return false;
+	}
+
 	$post_author_id = get_post_field( 'post_author', $voting_id );
 
 	if ( $current_user_id == $post_author_id ) {
