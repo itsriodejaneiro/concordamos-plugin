@@ -315,9 +315,10 @@ function get_post_by_slug( string $post_type, string $slug ) {
 function get_vote_count( $voting_id ) {
 
 	$args = array(
-		'post_type'  => 'vote',
-		'fields'     => 'ids',
-		'meta_query' => array(
+		'post_type'      => 'vote',
+		'fields'         => 'ids',
+		'posts_per_page' => -1,
+		'meta_query'     => array(
 			array(
 				'key'     => 'voting_id',
 				'value'   => $voting_id,

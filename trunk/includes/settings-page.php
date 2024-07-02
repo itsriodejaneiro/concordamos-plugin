@@ -104,7 +104,10 @@ function section_callback() {
 function select_field_render( $args ) {
 	$name   = $args['name'];
 	$option = get_option( $name );
-	$pages  = get_posts( array( 'post_type' => 'page' ) );
+	$pages  = get_posts( array(
+		'post_type'      => 'page',
+		'posts_per_page' => -1,
+	 ) );
 	?>
 	<select name='<?php echo esc_attr( $name ); ?>'>
 		<option value='' <?php selected( $option, '', false ); ?>><?php esc_html_e( 'Select a page', 'concordamos' ); ?></option>

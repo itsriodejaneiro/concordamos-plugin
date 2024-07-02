@@ -914,9 +914,10 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 	);
 
 	$args = array(
-		'post_type'   => 'vote',
-		'post_status' => 'publish',
-		'meta_query'  => array(
+		'post_type'      => 'vote',
+		'post_status'    => 'publish',
+		'posts_per_page' => -1,
+		'meta_query'     => array(
 			array(
 				'key'   => 'voting_id',
 				'value' => $source_id,
@@ -945,17 +946,10 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 					} else {
 						$label = $labels[ $option['id'] ];
 					}
+
 					$value = (int) $option['count'];
 
-					if ( $value == 1 ) {
-						$used_credits += $value;
-					} elseif ( $value > 1 ) {
-						$used_credits += $value ** 2;
-					} elseif ( $value == -1 ) {
-						$used_credits += 1;
-					} elseif ( $value < -1 ) {
-						$used_credits += abs( $value ) ** 2;
-					}
+					$used_credits += $value ** 2;
 
 					$index = array_search( $label, $data_graphic['labels'], true );
 
@@ -984,7 +978,7 @@ function get_votes_callback( \WP_Rest_Request $request ) {
 		'dataset'            => $data_graphic['dataset'],
 		'dataset_percentage' => $dataset_percentage,
 		'labels'             => $data_graphic['labels'],
-		'number_voters'      => $number_voters,
+		'number_voters'      => (int) $number_voters,
 		'participants'       => $votes->found_posts,
 		'total_credits'      => get_post_meta( $source_id, 'credits_voter', true ) * $votes->found_posts,
 		'used_credits'       => $used_credits,
