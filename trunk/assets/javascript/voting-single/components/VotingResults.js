@@ -7,8 +7,19 @@ ChartJS.register( ArcElement, BarElement, CategoryScale, Legend, LinearScale, Li
 
 import { Bar } from 'react-chartjs-2';
 
+function trimLabels (isMobile) {
+	return function (label) {
+		if (!isMobile) {
+			return label;
+		}
+		return label.length > 15 ? (label.slice(0, 20).trim() + '…') : label;
+	}
+}
+
 export default function VotingResults () {
-	const { data } = useFetch(`votes/?v_id=${concordamos.v_id}`)
+	const { data } = useFetch(`votes/?v_id=${concordamos.v_id}`);
+
+	const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 	const votingInfo = useMemo(() => {
 		if (!data) {
@@ -29,7 +40,7 @@ export default function VotingResults () {
 		}
 
 		return {
-			labels: data.labels,
+			labels: data.labels.map(trimLabels(isMobile)),
 			datasets: [
 				{
 					label: __('Votes', 'concordamos'),
@@ -50,6 +61,7 @@ export default function VotingResults () {
 	}, [data])
 
 	const chartOptions = {
+		aspectRatio: isMobile ? 1 : 2,
 		scales: {
 			y1: {
 				type: 'linear',
