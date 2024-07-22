@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Concordamos
  * Description:       Quadratic voting system by Concordamos
- * Version:           0.6.4
+ * Version:           0.6.5
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            ITS Rio
@@ -22,7 +22,7 @@ if (!defined('WPINC')) {
 
 define('CONCORDAMOS_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('CONCORDAMOS_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('CONCORDAMOS_PLUGIN_VERSION', '0.6.4');
+define('CONCORDAMOS_PLUGIN_VERSION', '0.6.5');
 
 require_once 'includes/class/class-cpt.php';
 require_once 'includes/class/class-metadata.php';
